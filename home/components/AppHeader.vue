@@ -10,7 +10,7 @@
               alt="Cruzar Deportes Logo" 
               class="h-12 w-auto"
             />
-            <span class="text-xl font-bold text-gray-900">Cruzar Deportes</span>
+            <span class="hidden md:block text-xl font-bold text-gray-900">Cruzar Deportes</span>
           </NuxtLink>
         </div>
 
