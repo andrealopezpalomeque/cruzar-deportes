@@ -1,0 +1,21 @@
+{
+  "sessionId": "1755022416850_omh25n",
+  "startTime": "2025-08-12T18:13:36.850Z",
+  "totalCategories": 1,
+  "completedCategories": 1,
+  "totalProcessed": 7,
+  "totalSuccess": 6,
+  "totalFailed": 1,
+  "successRate": "85.71%",
+  "categories": [
+    {
+      "id": "caf",
+      "status": "completed",
+      "processed": 7,
+      "successful": 6,
+      "failed": 1,
+      "totalItems": 7,
+      "progress": "100.00%"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "sessionId": "1755023847287_yvjcxl",
+  "startTime": "2025-08-12T18:13:36.850Z",
+  "totalCategories": 2,
+  "completedCategories": 2,
+  "totalProcessed": 8,
+  "totalSuccess": 7,
+  "totalFailed": 1,
+  "successRate": "87.50%",
+  "categories": [
+    {
+      "id": "caf",
+      "status": "completed",
+      "processed": 8,
+      "successful": 7,
+      "failed": 1,
+      "totalItems": 7,
+      "progress": "114.29%"
+    },
+    {
+      "id": "caf_page_not_found_yupoo",
+      "status": "completed",
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "totalItems": 0,
+      "progress": "0%"
+    }
+  ]
+}

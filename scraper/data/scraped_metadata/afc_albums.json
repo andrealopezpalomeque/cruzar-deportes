@@ -1,0 +1,110 @@
+[
+  {
+    "url": "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010502006611",
+    "title": "浙公网安备 33010502006611 号",
+    "originalTitle": "浙公网安备 33010502006611 号",
+    "alt": "",
+    "selector": "a:has(img)",
+    "hasImage": true,
+    "folderName": "33010502006611"
+  },
+  {
+    "url": "https://wavesoccer.x.yupoo.com/albums/164746838?uid=1&isSubCate=false&referrercate=334305",
+    "title": "SUWON SAMSUNG",
+    "originalTitle": "SUWON SAMSUNG",
+    "alt": "",
+    "selector": "a[href*=\"album\"]",
+    "hasImage": true,
+    "folderName": "suwon_samsung"
+  },
+  {
+    "url": "https://wavesoccer.x.yupoo.com/albums/131694789?uid=1&isSubCate=false&referrercate=334305",
+    "title": "JOHOR KID KIT",
+    "originalTitle": "JOHOR KID KIT",
+    "alt": "",
+    "selector": "a[href*=\"album\"]",
+    "hasImage": true,
+    "folderName": "johor_kid_kit"
+  },
+  {
+    "url": "https://wavesoccer.x.yupoo.com/albums/137707973?uid=1&isSubCate=false&referrercate=334305",
+    "title": "SUWON FC",
+    "originalTitle": "SUWON FC",
+    "alt": "",
+    "selector": "a[href*=\"album\"]",
+    "hasImage": true,
+    "folderName": "suwon_fc"
+  },
+  {
+    "url": "https://wavesoccer.x.yupoo.com/albums/136712766?uid=1&isSubCate=false&referrercate=334305",
+    "title": "ULSAN HD",
+    "originalTitle": "ULSAN HD",
+    "alt": "",
+    "selector": "a[href*=\"album\"]",
+    "hasImage": true,
+    "folderName": "ulsan_hd"
+  },
+  {
+    "url": "https://wavesoccer.x.yupoo.com/albums/134752265?uid=1&isSubCate=false&referrercate=334305",
+    "title": "SEOUL FC",
+    "originalTitle": "SEOUL FC",
+    "alt": "",
+    "selector": "a[href*=\"album\"]",
+    "hasImage": true,
+    "folderName": "seoul_fc"
+  },
+  {
+    "url": "https://wavesoccer.x.yupoo.com/albums/93156278?uid=1&isSubCate=false&referrercate=334305",
+    "title": "JOHOR",
+    "originalTitle": "JOHOR",
+    "alt": "",
+    "selector": "a[href*=\"album\"]",
+    "hasImage": true,
+    "folderName": "johor"
+  },
+  {
+    "url": "https://x.yupoo.com",
+    "title": "Yupoo",
+    "originalTitle": "",
+    "alt": "Yupoo",
+    "selector": "a:has(img)",
+    "hasImage": true,
+    "folderName": "yupoo"
+  },
+  {
+    "url": "https://undefined.x.yupoo.com/albums",
+    "title": "home page",
+    "originalTitle": "home page",
+    "alt": "",
+    "selector": "a[href*=\"album\"]",
+    "hasImage": false,
+    "folderName": "home_page"
+  },
+  {
+    "url": "https://x.yupoo.com/gallery",
+    "title": "my album",
+    "originalTitle": "my album",
+    "alt": "",
+    "selector": "a[href*=\"gallery\"]",
+    "hasImage": false,
+    "folderName": "my_album"
+  },
+  {
+    "url": "https://wavesoccer.x.yupoo.com/albums?tab=gallery",
+    "title": "album",
+    "originalTitle": "album",
+    "alt": "",
+    "selector": "a[href*=\"album\"]",
+    "hasImage": false,
+    "folderName": "album"
+  },
+  {
+    "url": "https://wavesoccer.x.yupoo.com/albums",
+    "title": "Home",
+    "originalTitle": "Home",
+    "alt": "",
+    "selector": "a[href*=\"album\"]",
+    "hasImage": false,
+    "folderName": "home"
+  }
+]

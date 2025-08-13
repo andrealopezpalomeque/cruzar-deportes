@@ -1,0 +1,1317 @@
+{
+  "sessionId": "1755051753687_hcnjzs",
+  "startTime": "2025-08-12T18:13:36.850Z",
+  "categories": {
+    "caf": {
+      "startTime": "2025-08-12T18:13:36.859Z",
+      "totalItems": 7,
+      "processed": 70,
+      "successful": 63,
+      "failed": 7,
+      "status": "completed",
+      "items": {
+        "caf_0": {
+          "status": "failed",
+          "timestamp": "2025-08-12T18:13:41.951Z",
+          "error": "Downloaded file is not a valid image",
+          "originalUrl": "https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/categories/4667651"
+        },
+        "caf_1": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:13:43.985Z",
+          "filename": "caf_album_image_1_1755022423656.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/daf5bf89/medium.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/caf_album_image_1_1755022423656.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/categories/4667651",
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_2": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:13:45.918Z",
+          "filename": "caf_album_image_2_1755022425056.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/3a9f88cc/medium.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/caf_album_image_2_1755022425056.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/categories/4667651",
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_3": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:13:49.424Z",
+          "filename": "caf_album_image_3_1755022428271.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/f134f133/medium.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/caf_album_image_3_1755022428271.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/categories/4667651",
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_4": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:13:51.830Z",
+          "filename": "caf_album_image_4_1755022431271.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/b78fb9df/medium.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/caf_album_image_4_1755022431271.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/categories/4667651",
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_5": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:13:53.795Z",
+          "filename": "caf_album_image_5_1755022432981.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/91b18ebb/medium.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/caf_album_image_5_1755022432981.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/categories/4667651",
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_6": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:13:55.345Z",
+          "filename": "caf_album_image_6_1755022434846.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/7ada220b/medium.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/caf_album_image_6_1755022434846.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/categories/4667651",
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_page_not_found_yupoo_img0": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:36:45.036Z",
+          "filename": "page_not_found_yupoo_photo_img_0_1755023803654.png",
+          "originalUrl": "https://s.yupoo.com/website/4.28.1/imgs/notaccess/im_404.png",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/page_not_found_yupoo/page_not_found_yupoo_photo_img_0_1755023803654.png",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/200353962\\?uid\\=1\\&isSubCate\\=false\\&referrercate\\=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/200353962\\?uid\\=1\\&isSubCate\\=false\\&referrercate\\=4667651",
+          "albumTitle": "Page Not Found | Yupoo",
+          "albumFolder": "page_not_found_yupoo",
+          "albumIndex": 0,
+          "imageIndex": 0,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_al_ahly_img0": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:39:02.770Z",
+          "filename": "al_ahly_photo_img_0_1755023941760.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/daf5bf89/medium.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/al_ahly/al_ahly_photo_img_0_1755023941760.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "AL AHLY",
+          "albumFolder": "al_ahly",
+          "albumIndex": 0,
+          "imageIndex": 0,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_al_ahly_img1": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:39:05.629Z",
+          "filename": "al_ahly_photo_img_1_1755023945128.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/b93463f2/small.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/al_ahly/al_ahly_photo_img_1_1755023945128.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "AL AHLY",
+          "albumFolder": "al_ahly",
+          "albumIndex": 0,
+          "imageIndex": 1,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_al_ahly_img2": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:39:07.256Z",
+          "filename": "al_ahly_photo_img_2_1755023946666.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/c2dd8c86/small.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/al_ahly/al_ahly_photo_img_2_1755023946666.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "AL AHLY",
+          "albumFolder": "al_ahly",
+          "albumIndex": 0,
+          "imageIndex": 2,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_al_ahly_img3": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:39:10.843Z",
+          "filename": "al_ahly_photo_img_3_1755023950052.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/4ebd9c49/small.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/al_ahly/al_ahly_photo_img_3_1755023950052.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "AL AHLY",
+          "albumFolder": "al_ahly",
+          "albumIndex": 0,
+          "imageIndex": 3,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_al_ahly_img4": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:39:13.297Z",
+          "filename": "al_ahly_photo_img_4_1755023952749.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/daf5bf89/small.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/al_ahly/al_ahly_photo_img_4_1755023952749.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "AL AHLY",
+          "albumFolder": "al_ahly",
+          "albumIndex": 0,
+          "imageIndex": 4,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_al_ahly_img5": {
+          "status": "failed",
+          "timestamp": "2025-08-12T18:39:17.376Z",
+          "error": "Downloaded file is not a valid image",
+          "originalUrl": "https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "AL AHLY"
+        },
+        "caf_al_ahly_img6": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:39:19.557Z",
+          "filename": "al_ahly_photo_img_6_1755023958706.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/b93463f2/square.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/al_ahly/al_ahly_photo_img_6_1755023958706.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "AL AHLY",
+          "albumFolder": "al_ahly",
+          "albumIndex": 0,
+          "imageIndex": 6,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_al_ahly_img7": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:39:23.020Z",
+          "filename": "al_ahly_photo_img_7_1755023962376.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/c2dd8c86/square.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/al_ahly/al_ahly_photo_img_7_1755023962376.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "AL AHLY",
+          "albumFolder": "al_ahly",
+          "albumIndex": 0,
+          "imageIndex": 7,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_al_ahly_img8": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:39:26.057Z",
+          "filename": "al_ahly_photo_img_8_1755023965438.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/4ebd9c49/square.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/al_ahly/al_ahly_photo_img_8_1755023965438.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "AL AHLY",
+          "albumFolder": "al_ahly",
+          "albumIndex": 0,
+          "imageIndex": 8,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_al_ahly_img9": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:39:27.840Z",
+          "filename": "al_ahly_photo_img_9_1755023967111.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/daf5bf89/square.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/al_ahly/al_ahly_photo_img_9_1755023967111.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "AL AHLY",
+          "albumFolder": "al_ahly",
+          "albumIndex": 0,
+          "imageIndex": 9,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_cs_constantine_player_version_img0": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:40:22.357Z",
+          "filename": "cs_constantine_player_version_photo_img_0_1755024021912.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/3a9f88cc/medium.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/cs_constantine_player_version/cs_constantine_player_version_photo_img_0_1755024021912.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "CS CONSTANTINE PLAYER VERSION",
+          "albumFolder": "cs_constantine_player_version",
+          "albumIndex": 0,
+          "imageIndex": 0,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_cs_constantine_player_version_img1": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:40:24.879Z",
+          "filename": "cs_constantine_player_version_photo_img_1_1755024024293.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/e145f4ab/small.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/cs_constantine_player_version/cs_constantine_player_version_photo_img_1_1755024024293.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "CS CONSTANTINE PLAYER VERSION",
+          "albumFolder": "cs_constantine_player_version",
+          "albumIndex": 0,
+          "imageIndex": 1,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_cs_constantine_player_version_img2": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:40:28.255Z",
+          "filename": "cs_constantine_player_version_photo_img_2_1755024027758.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/d17cac76/small.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/cs_constantine_player_version/cs_constantine_player_version_photo_img_2_1755024027758.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "CS CONSTANTINE PLAYER VERSION",
+          "albumFolder": "cs_constantine_player_version",
+          "albumIndex": 0,
+          "imageIndex": 2,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_cs_constantine_player_version_img3": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:40:30.526Z",
+          "filename": "cs_constantine_player_version_photo_img_3_1755024030028.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/97c0b2d4/small.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/cs_constantine_player_version/cs_constantine_player_version_photo_img_3_1755024030028.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "CS CONSTANTINE PLAYER VERSION",
+          "albumFolder": "cs_constantine_player_version",
+          "albumIndex": 0,
+          "imageIndex": 3,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_cs_constantine_player_version_img4": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:40:33.474Z",
+          "filename": "cs_constantine_player_version_photo_img_4_1755024032920.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/3856f354/small.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/cs_constantine_player_version/cs_constantine_player_version_photo_img_4_1755024032920.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "CS CONSTANTINE PLAYER VERSION",
+          "albumFolder": "cs_constantine_player_version",
+          "albumIndex": 0,
+          "imageIndex": 4,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_cs_constantine_player_version_img5": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:40:35.964Z",
+          "filename": "cs_constantine_player_version_photo_img_5_1755024035468.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/9eb963a9/small.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/cs_constantine_player_version/cs_constantine_player_version_photo_img_5_1755024035468.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "CS CONSTANTINE PLAYER VERSION",
+          "albumFolder": "cs_constantine_player_version",
+          "albumIndex": 0,
+          "imageIndex": 5,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_cs_constantine_player_version_img6": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:40:38.542Z",
+          "filename": "cs_constantine_player_version_photo_img_6_1755024038059.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/49ec23b9/small.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/cs_constantine_player_version/cs_constantine_player_version_photo_img_6_1755024038059.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "CS CONSTANTINE PLAYER VERSION",
+          "albumFolder": "cs_constantine_player_version",
+          "albumIndex": 0,
+          "imageIndex": 6,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_cs_constantine_player_version_img7": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:40:41.167Z",
+          "filename": "cs_constantine_player_version_photo_img_7_1755024040533.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/3a9f88cc/small.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/cs_constantine_player_version/cs_constantine_player_version_photo_img_7_1755024040533.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "CS CONSTANTINE PLAYER VERSION",
+          "albumFolder": "cs_constantine_player_version",
+          "albumIndex": 0,
+          "imageIndex": 7,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_cs_constantine_player_version_img8": {
+          "status": "failed",
+          "timestamp": "2025-08-12T18:40:43.469Z",
+          "error": "Downloaded file is not a valid image",
+          "originalUrl": "https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "CS CONSTANTINE PLAYER VERSION"
+        },
+        "caf_cs_constantine_player_version_img9": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:40:45.348Z",
+          "filename": "cs_constantine_player_version_photo_img_9_1755024044758.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/e145f4ab/square.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/cs_constantine_player_version/cs_constantine_player_version_photo_img_9_1755024044758.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "CS CONSTANTINE PLAYER VERSION",
+          "albumFolder": "cs_constantine_player_version",
+          "albumIndex": 0,
+          "imageIndex": 9,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_cs_constantine_player_version_img10": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:40:48.735Z",
+          "filename": "cs_constantine_player_version_photo_img_10_1755024048158.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/d17cac76/square.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/cs_constantine_player_version/cs_constantine_player_version_photo_img_10_1755024048158.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "CS CONSTANTINE PLAYER VERSION",
+          "albumFolder": "cs_constantine_player_version",
+          "albumIndex": 0,
+          "imageIndex": 10,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_cs_constantine_player_version_img11": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:40:52.011Z",
+          "filename": "cs_constantine_player_version_photo_img_11_1755024051050.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/97c0b2d4/square.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/cs_constantine_player_version/cs_constantine_player_version_photo_img_11_1755024051050.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "CS CONSTANTINE PLAYER VERSION",
+          "albumFolder": "cs_constantine_player_version",
+          "albumIndex": 0,
+          "imageIndex": 11,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_cs_constantine_player_version_img12": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:40:53.794Z",
+          "filename": "cs_constantine_player_version_photo_img_12_1755024053208.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/3856f354/square.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/cs_constantine_player_version/cs_constantine_player_version_photo_img_12_1755024053208.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "CS CONSTANTINE PLAYER VERSION",
+          "albumFolder": "cs_constantine_player_version",
+          "albumIndex": 0,
+          "imageIndex": 12,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_cs_constantine_player_version_img13": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:40:56.826Z",
+          "filename": "cs_constantine_player_version_photo_img_13_1755024056199.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/9eb963a9/square.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/cs_constantine_player_version/cs_constantine_player_version_photo_img_13_1755024056199.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "CS CONSTANTINE PLAYER VERSION",
+          "albumFolder": "cs_constantine_player_version",
+          "albumIndex": 0,
+          "imageIndex": 13,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_cs_constantine_player_version_img14": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:40:58.667Z",
+          "filename": "cs_constantine_player_version_photo_img_14_1755024058063.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/49ec23b9/square.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/cs_constantine_player_version/cs_constantine_player_version_photo_img_14_1755024058063.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "CS CONSTANTINE PLAYER VERSION",
+          "albumFolder": "cs_constantine_player_version",
+          "albumIndex": 0,
+          "imageIndex": 14,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_cs_constantine_player_version_img15": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:41:00.818Z",
+          "filename": "cs_constantine_player_version_photo_img_15_1755024060166.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/3a9f88cc/square.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/cs_constantine_player_version/cs_constantine_player_version_photo_img_15_1755024060166.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "CS CONSTANTINE PLAYER VERSION",
+          "albumFolder": "cs_constantine_player_version",
+          "albumIndex": 0,
+          "imageIndex": 15,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[data-src*=\"jpg\"], img[data-src*=\"jpeg\"], img[data-src*=\"png\"], img[data-src*=\"webp\"]"
+          }
+        },
+        "caf_kaizer_chiefs_img0": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:45:44.298Z",
+          "filename": "kaizer_chiefs_photo_img_0_1755024343494.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/91b18ebb/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/kaizer_chiefs/kaizer_chiefs_photo_img_0_1755024343494.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "KAIZER CHIEFS",
+          "albumFolder": "kaizer_chiefs",
+          "albumIndex": 0,
+          "imageIndex": 0,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_kaizer_chiefs_img1": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:45:46.824Z",
+          "filename": "kaizer_chiefs_photo_img_1_1755024346183.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/4a84cade/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/kaizer_chiefs/kaizer_chiefs_photo_img_1_1755024346183.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "KAIZER CHIEFS",
+          "albumFolder": "kaizer_chiefs",
+          "albumIndex": 0,
+          "imageIndex": 1,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_kaizer_chiefs_img2": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:45:49.858Z",
+          "filename": "kaizer_chiefs_photo_img_2_1755024349282.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/3804a504/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/kaizer_chiefs/kaizer_chiefs_photo_img_2_1755024349282.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "KAIZER CHIEFS",
+          "albumFolder": "kaizer_chiefs",
+          "albumIndex": 0,
+          "imageIndex": 2,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_kaizer_chiefs_img3": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:45:52.598Z",
+          "filename": "kaizer_chiefs_photo_img_3_1755024351840.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/1b100491/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/kaizer_chiefs/kaizer_chiefs_photo_img_3_1755024351840.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "KAIZER CHIEFS",
+          "albumFolder": "kaizer_chiefs",
+          "albumIndex": 0,
+          "imageIndex": 3,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_kaizer_chiefs_img4": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:45:56.026Z",
+          "filename": "kaizer_chiefs_photo_img_4_1755024355296.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/87c711ce/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/kaizer_chiefs/kaizer_chiefs_photo_img_4_1755024355296.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "KAIZER CHIEFS",
+          "albumFolder": "kaizer_chiefs",
+          "albumIndex": 0,
+          "imageIndex": 4,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_kaizer_chiefs_img5": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:45:58.329Z",
+          "filename": "kaizer_chiefs_photo_img_5_1755024357599.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/a4cef37e/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/kaizer_chiefs/kaizer_chiefs_photo_img_5_1755024357599.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "KAIZER CHIEFS",
+          "albumFolder": "kaizer_chiefs",
+          "albumIndex": 0,
+          "imageIndex": 5,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_kaizer_chiefs_img6": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:46:01.770Z",
+          "filename": "kaizer_chiefs_photo_img_6_1755024361151.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/6cd6ca46/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/kaizer_chiefs/kaizer_chiefs_photo_img_6_1755024361151.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "KAIZER CHIEFS",
+          "albumFolder": "kaizer_chiefs",
+          "albumIndex": 0,
+          "imageIndex": 6,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_kaizer_chiefs_img7": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:46:05.229Z",
+          "filename": "kaizer_chiefs_photo_img_7_1755024364603.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/5be6e394/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/kaizer_chiefs/kaizer_chiefs_photo_img_7_1755024364603.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "KAIZER CHIEFS",
+          "albumFolder": "kaizer_chiefs",
+          "albumIndex": 0,
+          "imageIndex": 7,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_kaizer_chiefs_img8": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:46:08.718Z",
+          "filename": "kaizer_chiefs_photo_img_8_1755024368197.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/639a7590/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/kaizer_chiefs/kaizer_chiefs_photo_img_8_1755024368197.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "KAIZER CHIEFS",
+          "albumFolder": "kaizer_chiefs",
+          "albumIndex": 0,
+          "imageIndex": 8,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_kaizer_chiefs_img9": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:46:10.630Z",
+          "filename": "kaizer_chiefs_photo_img_9_1755024370063.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/bd57e718/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/kaizer_chiefs/kaizer_chiefs_photo_img_9_1755024370063.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "KAIZER CHIEFS",
+          "albumFolder": "kaizer_chiefs",
+          "albumIndex": 0,
+          "imageIndex": 9,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_kaizer_chiefs_img10": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:46:12.860Z",
+          "filename": "kaizer_chiefs_photo_img_10_1755024372305.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/fe32f585/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/kaizer_chiefs/kaizer_chiefs_photo_img_10_1755024372305.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "KAIZER CHIEFS",
+          "albumFolder": "kaizer_chiefs",
+          "albumIndex": 0,
+          "imageIndex": 10,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_kaizer_chiefs_img11": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:46:15.467Z",
+          "filename": "kaizer_chiefs_photo_img_11_1755024374875.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/60af242f/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/kaizer_chiefs/kaizer_chiefs_photo_img_11_1755024374875.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "KAIZER CHIEFS",
+          "albumFolder": "kaizer_chiefs",
+          "albumIndex": 0,
+          "imageIndex": 11,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_kaizer_chiefs_img12": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:46:17.569Z",
+          "filename": "kaizer_chiefs_photo_img_12_1755024376874.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/332602c5/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/kaizer_chiefs/kaizer_chiefs_photo_img_12_1755024376874.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "KAIZER CHIEFS",
+          "albumFolder": "kaizer_chiefs",
+          "albumIndex": 0,
+          "imageIndex": 12,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_kaizer_chiefs_img13": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:46:19.689Z",
+          "filename": "kaizer_chiefs_photo_img_13_1755024379093.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/7beb4569/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/kaizer_chiefs/kaizer_chiefs_photo_img_13_1755024379093.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "KAIZER CHIEFS",
+          "albumFolder": "kaizer_chiefs",
+          "albumIndex": 0,
+          "imageIndex": 13,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_kaizer_chiefs_img14": {
+          "status": "failed",
+          "timestamp": "2025-08-12T18:51:06.543Z",
+          "error": "Downloaded file is not a valid image",
+          "originalUrl": "https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "KAIZER CHIEFS"
+        },
+        "caf_young_africans_img0": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:54:07.703Z",
+          "filename": "young_africans_photo_img_0_1755024846013.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/f134f133/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/young_africans/young_africans_photo_img_0_1755024846013.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "YOUNG AFRICANS",
+          "albumFolder": "young_africans",
+          "albumIndex": 0,
+          "imageIndex": 0,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_young_africans_img1": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:54:10.530Z",
+          "filename": "young_africans_photo_img_1_1755024849500.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/39f4434f/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/young_africans/young_africans_photo_img_1_1755024849500.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "YOUNG AFRICANS",
+          "albumFolder": "young_africans",
+          "albumIndex": 0,
+          "imageIndex": 1,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_young_africans_img2": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:54:12.297Z",
+          "filename": "young_africans_photo_img_2_1755024851586.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/ddc5639e/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/young_africans/young_africans_photo_img_2_1755024851586.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "YOUNG AFRICANS",
+          "albumFolder": "young_africans",
+          "albumIndex": 0,
+          "imageIndex": 2,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_young_africans_img3": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:54:15.687Z",
+          "filename": "young_africans_photo_img_3_1755024854973.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/280504f8/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/young_africans/young_africans_photo_img_3_1755024854973.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "YOUNG AFRICANS",
+          "albumFolder": "young_africans",
+          "albumIndex": 0,
+          "imageIndex": 3,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_young_africans_img4": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:54:17.403Z",
+          "filename": "young_africans_photo_img_4_1755024856702.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/3f7da4b0/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/young_africans/young_africans_photo_img_4_1755024856702.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "YOUNG AFRICANS",
+          "albumFolder": "young_africans",
+          "albumIndex": 0,
+          "imageIndex": 4,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_young_africans_img5": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:54:22.196Z",
+          "filename": "young_africans_photo_img_5_1755024860347.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/ebd3d247/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/young_africans/young_africans_photo_img_5_1755024860347.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "YOUNG AFRICANS",
+          "albumFolder": "young_africans",
+          "albumIndex": 0,
+          "imageIndex": 5,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_young_africans_img6": {
+          "status": "failed",
+          "timestamp": "2025-08-12T18:54:24.897Z",
+          "error": "Downloaded file is not a valid image",
+          "originalUrl": "https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "YOUNG AFRICANS"
+        },
+        "caf_orlando_pirates_img0": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:55:23.435Z",
+          "filename": "orlando_pirates_photo_img_0_1755024922367.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/7ada220b/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/orlando_pirates/orlando_pirates_photo_img_0_1755024922367.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "ORLANDO PIRATES",
+          "albumFolder": "orlando_pirates",
+          "albumIndex": 0,
+          "imageIndex": 0,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_orlando_pirates_img1": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:55:25.818Z",
+          "filename": "orlando_pirates_photo_img_1_1755024924900.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/034c4eef/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/orlando_pirates/orlando_pirates_photo_img_1_1755024924900.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "ORLANDO PIRATES",
+          "albumFolder": "orlando_pirates",
+          "albumIndex": 0,
+          "imageIndex": 1,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_orlando_pirates_img2": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:55:27.857Z",
+          "filename": "orlando_pirates_photo_img_2_1755024927344.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/d4ff529d/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/orlando_pirates/orlando_pirates_photo_img_2_1755024927344.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "ORLANDO PIRATES",
+          "albumFolder": "orlando_pirates",
+          "albumIndex": 0,
+          "imageIndex": 2,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_orlando_pirates_img3": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:55:29.907Z",
+          "filename": "orlando_pirates_photo_img_3_1755024929205.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/371da480/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/orlando_pirates/orlando_pirates_photo_img_3_1755024929205.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "ORLANDO PIRATES",
+          "albumFolder": "orlando_pirates",
+          "albumIndex": 0,
+          "imageIndex": 3,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_orlando_pirates_img4": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:55:32.902Z",
+          "filename": "orlando_pirates_photo_img_4_1755024932268.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/8dec48e0/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/orlando_pirates/orlando_pirates_photo_img_4_1755024932268.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "ORLANDO PIRATES",
+          "albumFolder": "orlando_pirates",
+          "albumIndex": 0,
+          "imageIndex": 4,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_orlando_pirates_img5": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:55:36.537Z",
+          "filename": "orlando_pirates_photo_img_5_1755024935720.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/77633f62/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/orlando_pirates/orlando_pirates_photo_img_5_1755024935720.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "ORLANDO PIRATES",
+          "albumFolder": "orlando_pirates",
+          "albumIndex": 0,
+          "imageIndex": 5,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_orlando_pirates_img6": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:55:39.803Z",
+          "filename": "orlando_pirates_photo_img_6_1755024939046.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/dfd9d5be/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/orlando_pirates/orlando_pirates_photo_img_6_1755024939046.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "ORLANDO PIRATES",
+          "albumFolder": "orlando_pirates",
+          "albumIndex": 0,
+          "imageIndex": 6,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_orlando_pirates_img7": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:55:43.706Z",
+          "filename": "orlando_pirates_photo_img_7_1755024941877.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/17463b12/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/orlando_pirates/orlando_pirates_photo_img_7_1755024941877.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "ORLANDO PIRATES",
+          "albumFolder": "orlando_pirates",
+          "albumIndex": 0,
+          "imageIndex": 7,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_orlando_pirates_img8": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:55:46.478Z",
+          "filename": "orlando_pirates_photo_img_8_1755024945861.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/082666f1/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/orlando_pirates/orlando_pirates_photo_img_8_1755024945861.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "ORLANDO PIRATES",
+          "albumFolder": "orlando_pirates",
+          "albumIndex": 0,
+          "imageIndex": 8,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_orlando_pirates_img9": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:55:50.602Z",
+          "filename": "orlando_pirates_photo_img_9_1755024948797.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/ed8d247c/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/orlando_pirates/orlando_pirates_photo_img_9_1755024948797.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "ORLANDO PIRATES",
+          "albumFolder": "orlando_pirates",
+          "albumIndex": 0,
+          "imageIndex": 9,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_orlando_pirates_img10": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:55:52.842Z",
+          "filename": "orlando_pirates_photo_img_10_1755024952107.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/7c83d2b8/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/orlando_pirates/orlando_pirates_photo_img_10_1755024952107.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "ORLANDO PIRATES",
+          "albumFolder": "orlando_pirates",
+          "albumIndex": 0,
+          "imageIndex": 10,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_orlando_pirates_img11": {
+          "status": "success",
+          "timestamp": "2025-08-12T18:55:57.841Z",
+          "filename": "orlando_pirates_photo_img_11_1755024955227.jpg",
+          "originalUrl": "https://photo.yupoo.com/wavesoccer/35790aea/raw.jpg",
+          "alt": "",
+          "downloadPath": "/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/downloads/caf/orlando_pirates/orlando_pirates_photo_img_11_1755024955227.jpg",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "ORLANDO PIRATES",
+          "albumFolder": "orlando_pirates",
+          "albumIndex": 0,
+          "imageIndex": 11,
+          "imageInfo": {
+            "width": null,
+            "height": null,
+            "selector": "img[src*=\"jpg\"], img[src*=\"jpeg\"], img[src*=\"png\"], img[src*=\"webp\"]"
+          }
+        },
+        "caf_orlando_pirates_img12": {
+          "status": "failed",
+          "timestamp": "2025-08-12T18:56:01.352Z",
+          "error": "Downloaded file is not a valid image",
+          "originalUrl": "https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png",
+          "sourceUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumUrl": "https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651",
+          "albumTitle": "ORLANDO PIRATES"
+        }
+      },
+      "endTime": "2025-08-12T18:13:57.000Z"
+    },
+    "caf_page_not_found_yupoo": {
+      "startTime": "2025-08-12T18:36:41.632Z",
+      "totalItems": 0,
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "status": "completed",
+      "items": {},
+      "endTime": "2025-08-13T02:22:44.989Z",
+      "resumeTime": "2025-08-13T02:22:42.243Z"
+    },
+    "caf_al_ahly": {
+      "startTime": "2025-08-12T18:38:57.653Z",
+      "totalItems": 0,
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "status": "completed",
+      "items": {},
+      "endTime": "2025-08-13T02:20:32.374Z",
+      "resumeTime": "2025-08-13T02:20:24.831Z"
+    },
+    "caf_cs_constantine_player_version": {
+      "startTime": "2025-08-12T18:40:18.572Z",
+      "totalItems": 0,
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "status": "completed",
+      "items": {},
+      "endTime": "2025-08-12T18:48:08.764Z",
+      "resumeTime": "2025-08-12T18:48:04.412Z"
+    },
+    "caf_kaizer_chiefs": {
+      "startTime": "2025-08-12T18:45:38.977Z",
+      "totalItems": 0,
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "status": "completed",
+      "items": {},
+      "endTime": "2025-08-12T18:51:08.025Z",
+      "resumeTime": "2025-08-12T18:50:58.847Z"
+    },
+    "caf_mamelodi_player_version": {
+      "startTime": "2025-08-12T18:51:44.170Z",
+      "totalItems": 0,
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "status": "completed",
+      "items": {},
+      "endTime": "2025-08-12T18:52:54.162Z"
+    },
+    "caf_young_africans": {
+      "startTime": "2025-08-12T18:53:56.138Z",
+      "totalItems": 0,
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "status": "completed",
+      "items": {},
+      "endTime": "2025-08-12T18:54:27.204Z"
+    },
+    "caf_orlando_pirates": {
+      "startTime": "2025-08-12T18:55:14.611Z",
+      "totalItems": 0,
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "status": "completed",
+      "items": {},
+      "endTime": "2025-08-12T18:56:03.403Z"
+    }
+  },
+  "totalProcessed": 70,
+  "totalFailed": 7,
+  "totalSuccess": 63,
+  "endTime": "2025-08-13T02:22:44.989Z",
+  "duration": 29348139,
+  "resumedFrom": "1755051624821_zs5ena",
+  "resumeTime": "2025-08-13T02:22:33.700Z"
+}

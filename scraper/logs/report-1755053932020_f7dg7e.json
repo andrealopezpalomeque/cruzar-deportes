@@ -1,0 +1,93 @@
+{
+  "sessionId": "1755053932020_f7dg7e",
+  "startTime": "2025-08-12T18:13:36.850Z",
+  "totalCategories": 9,
+  "completedCategories": 9,
+  "totalProcessed": 155,
+  "totalSuccess": 135,
+  "totalFailed": 20,
+  "successRate": "87.10%",
+  "categories": [
+    {
+      "id": "caf",
+      "status": "completed",
+      "processed": 75,
+      "successful": 68,
+      "failed": 7,
+      "totalItems": 7,
+      "progress": "1071.43%"
+    },
+    {
+      "id": "caf_page_not_found_yupoo",
+      "status": "completed",
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "totalItems": 0,
+      "progress": "0%"
+    },
+    {
+      "id": "caf_kaizer_chiefs",
+      "status": "completed",
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "totalItems": 0,
+      "progress": "0%"
+    },
+    {
+      "id": "caf_young_africans",
+      "status": "completed",
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "totalItems": 0,
+      "progress": "0%"
+    },
+    {
+      "id": "caf_orlando_pirates",
+      "status": "completed",
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "totalItems": 0,
+      "progress": "0%"
+    },
+    {
+      "id": "caf_al_ahly",
+      "status": "completed",
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "totalItems": 0,
+      "progress": "0%"
+    },
+    {
+      "id": "caf_cs_constantine_player_version",
+      "status": "completed",
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "totalItems": 0,
+      "progress": "0%"
+    },
+    {
+      "id": "caf_mamelodi_player_version",
+      "status": "completed",
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "totalItems": 0,
+      "progress": "0%"
+    },
+    {
+      "id": "afc",
+      "status": "completed",
+      "processed": 48,
+      "successful": 39,
+      "failed": 9,
+      "totalItems": 28,
+      "progress": "171.43%"
+    }
+  ]
+}

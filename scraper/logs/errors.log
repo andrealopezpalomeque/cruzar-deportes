@@ -1,0 +1,68 @@
+2025-08-12 15:13:41 [ERROR]: Download failed: caf_0
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 15:39:17 [ERROR]: Download failed: al_ahly_img5
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 15:40:43 [ERROR]: Download failed: cs_constantine_player_version_img8
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 15:46:21 [ERROR]: Download failed: kaizer_chiefs_img14
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 15:51:06 [ERROR]: Download failed: kaizer_chiefs_img14
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 15:52:54 [ERROR]: Failed to extract image from viewer http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010502006611: Failed request after 3 attempts: Request failed with status code 404
+2025-08-12 15:54:01 [ERROR]: Failed to extract image viewer URLs from https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651: Assignment to constant variable.
+2025-08-12 15:54:24 [ERROR]: Download failed: young_africans_img6
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 15:55:19 [ERROR]: Failed to extract image viewer URLs from https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651: Assignment to constant variable.
+2025-08-12 15:56:01 [ERROR]: Download failed: orlando_pirates_img12
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 23:13:40 [ERROR]: Failed to extract image viewer URLs from https://wavesoccer.x.yupoo.com/albums/200353962\?uid\=1\&isSubCate\=false\&referrercate\=4667651: Assignment to constant variable.
+2025-08-12 23:16:48 [ERROR]: Failed to extract image viewer URLs from https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651: Assignment to constant variable.
+2025-08-12 23:24:34 [ERROR]: Download failed: al_ahly_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 23:31:36 [ERROR]: Download failed: al_ahly_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 23:35:07 [ERROR]: Download failed: cs_constantine_player_version_img7
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 23:37:49 [ERROR]: Download failed: mamelodi_player_version_img18
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 23:46:50 [ERROR]: Download failed: suwon_samsung_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 23:47:13 [ERROR]: Download failed: johor_kid_kit_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 23:47:50 [ERROR]: Download failed: suwon_fc_img5
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 23:48:28 [ERROR]: Download failed: ulsan_hd_img8
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 23:59:06 [ERROR]: Download failed: suwon_samsung_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 23:59:27 [ERROR]: Download failed: johor_kid_kit_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 23:59:42 [ERROR]: Download failed: suwon_fc_img5
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 00:00:00 [ERROR]: Download failed: ulsan_hd_img8
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 00:00:34 [ERROR]: Download failed: seoul_fc_img7
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 00:01:32 [ERROR]: Download failed: johor_img15
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)

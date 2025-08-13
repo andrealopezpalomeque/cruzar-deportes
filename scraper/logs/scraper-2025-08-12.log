@@ -1,0 +1,646 @@
+2025-08-12 14:57:31 [INFO]: Logger initialized successfully
+2025-08-12 14:57:31 [INFO]: Progress tracker initialized - Session ID: 1755021451188_g3khql
+2025-08-12 14:57:31 [WARN]: No categories.json file found. Creating empty categories structure.
+2025-08-12 14:57:31 [INFO]: Created sample categories.json file
+2025-08-12 14:57:31 [INFO]: Temporary files cleaned up
+2025-08-12 14:57:31 [INFO]: Sports Scraper initialized successfully
+2025-08-12 14:57:35 [INFO]: Logger initialized successfully
+2025-08-12 15:04:20 [INFO]: Logger initialized successfully
+2025-08-12 15:04:20 [INFO]: Progress tracker initialized - Session ID: 1755021860486_upht3o
+2025-08-12 15:04:20 [INFO]: Loaded 53 categories
+2025-08-12 15:04:20 [INFO]: Temporary files cleaned up
+2025-08-12 15:04:20 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:04:23 [INFO]: Logger initialized successfully
+2025-08-12 15:06:43 [INFO]: Logger initialized successfully
+2025-08-12 15:06:43 [INFO]: Progress tracker initialized - Session ID: 1755022003035_11d8hu
+2025-08-12 15:06:43 [INFO]: Loaded 53 categories
+2025-08-12 15:06:43 [INFO]: Temporary files cleaned up
+2025-08-12 15:06:43 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:06:46 [INFO]: Logger initialized successfully
+2025-08-12 15:09:31 [INFO]: Logger initialized successfully
+2025-08-12 15:09:31 [INFO]: Progress tracker initialized - Session ID: 1755022171814_l7u6xe
+2025-08-12 15:09:31 [INFO]: Loaded 53 categories
+2025-08-12 15:09:31 [INFO]: Temporary files cleaned up
+2025-08-12 15:09:31 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:13:36 [INFO]: Logger initialized successfully
+2025-08-12 15:13:36 [INFO]: Progress tracker initialized - Session ID: 1755022416850_omh25n
+2025-08-12 15:13:36 [INFO]: Loaded 53 categories
+2025-08-12 15:13:36 [INFO]: Temporary files cleaned up
+2025-08-12 15:13:36 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:13:36 [INFO]: === SCRAPING SESSION STARTED ===
+2025-08-12 15:13:36 [INFO]: Starting category processing: caf from URL: https://wavesoccer.x.yupoo.com/categories/4667651
+2025-08-12 15:13:36 [INFO]: Starting category: caf
+2025-08-12 15:13:36 [INFO]: Processing category: caf from URL: https://wavesoccer.x.yupoo.com/categories/4667651
+2025-08-12 15:13:36 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/categories/4667651
+2025-08-12 15:13:40 [INFO]: Found 7 potential images from https://wavesoccer.x.yupoo.com/categories/4667651
+2025-08-12 15:13:40 [INFO]: Found 7 images to process from https://wavesoccer.x.yupoo.com/categories/4667651
+2025-08-12 15:13:40 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-12 15:13:41 [WARN]: Image dimensions invalid: 20x20
+2025-08-12 15:13:41 [INFO]: Progress: 1/0 (Infinity%) - caf
+2025-08-12 15:13:41 [ERROR]: Download failed: caf_0
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 15:13:43 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/daf5bf89/medium.jpg (attempt 1/3)
+2025-08-12 15:13:43 [INFO]: Successfully downloaded: caf_album_image_1_1755022423656.jpg
+2025-08-12 15:13:43 [INFO]: Progress: 2/0 (Infinity%) - caf
+2025-08-12 15:13:43 [INFO]: Downloaded: caf_album_image_1_1755022423656.jpg
+2025-08-12 15:13:45 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/3a9f88cc/medium.jpg (attempt 1/3)
+2025-08-12 15:13:45 [INFO]: Successfully downloaded: caf_album_image_2_1755022425056.jpg
+2025-08-12 15:13:45 [INFO]: Progress: 3/0 (Infinity%) - caf
+2025-08-12 15:13:45 [INFO]: Downloaded: caf_album_image_2_1755022425056.jpg
+2025-08-12 15:13:48 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/f134f133/medium.jpg (attempt 1/3)
+2025-08-12 15:13:49 [INFO]: Successfully downloaded: caf_album_image_3_1755022428271.jpg
+2025-08-12 15:13:49 [INFO]: Progress: 4/0 (Infinity%) - caf
+2025-08-12 15:13:49 [INFO]: Downloaded: caf_album_image_3_1755022428271.jpg
+2025-08-12 15:13:51 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/b78fb9df/medium.jpg (attempt 1/3)
+2025-08-12 15:13:51 [INFO]: Successfully downloaded: caf_album_image_4_1755022431271.jpg
+2025-08-12 15:13:51 [INFO]: Progress: 5/0 (Infinity%) - caf
+2025-08-12 15:13:51 [INFO]: Downloaded: caf_album_image_4_1755022431271.jpg
+2025-08-12 15:13:52 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/91b18ebb/medium.jpg (attempt 1/3)
+2025-08-12 15:13:53 [INFO]: Successfully downloaded: caf_album_image_5_1755022432981.jpg
+2025-08-12 15:13:53 [INFO]: Progress: 6/0 (Infinity%) - caf
+2025-08-12 15:13:53 [INFO]: Downloaded: caf_album_image_5_1755022432981.jpg
+2025-08-12 15:13:54 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7ada220b/medium.jpg (attempt 1/3)
+2025-08-12 15:13:55 [INFO]: Successfully downloaded: caf_album_image_6_1755022434846.jpg
+2025-08-12 15:13:55 [INFO]: Progress: 7/0 (Infinity%) - caf
+2025-08-12 15:13:55 [INFO]: Downloaded: caf_album_image_6_1755022434846.jpg
+2025-08-12 15:13:57 [INFO]: Completed category: caf
+2025-08-12 15:13:57 [INFO]: Category caf completed: 6/7 successful
+2025-08-12 15:13:57 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1755022416850_omh25n.json
+2025-08-12 15:13:57 [INFO]: === SCRAPING SESSION COMPLETED ===
+2025-08-12 15:17:37 [INFO]: Logger initialized successfully
+2025-08-12 15:20:49 [INFO]: Logger initialized successfully
+2025-08-12 15:30:52 [INFO]: Logger initialized successfully
+2025-08-12 15:30:56 [INFO]: Logger initialized successfully
+2025-08-12 15:30:56 [INFO]: Resumed from previous session: 1755022416850_omh25n
+2025-08-12 15:30:56 [INFO]: Loaded 1 failed items from previous session
+2025-08-12 15:30:56 [INFO]: Progress tracker initialized - Session ID: 1755023456482_vzivr1
+2025-08-12 15:30:56 [INFO]: Loaded 53 categories
+2025-08-12 15:30:56 [INFO]: Temporary files cleaned up
+2025-08-12 15:30:56 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:34:05 [INFO]: Logger initialized successfully
+2025-08-12 15:34:05 [INFO]: Resumed from previous session: 1755022416850_omh25n
+2025-08-12 15:34:05 [INFO]: Loaded 1 failed items from previous session
+2025-08-12 15:34:05 [INFO]: Progress tracker initialized - Session ID: 1755023645402_ajq34g
+2025-08-12 15:34:05 [INFO]: Loaded 53 categories
+2025-08-12 15:34:05 [INFO]: Temporary files cleaned up
+2025-08-12 15:34:05 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:34:05 [INFO]: === SCRAPING SESSION STARTED ===
+2025-08-12 15:34:05 [INFO]: Extracting album links from: https://wavesoccer.x.yupoo.com/categories/4667651
+2025-08-12 15:34:09 [INFO]: Found 12 unique albums from https://wavesoccer.x.yupoo.com/categories/4667651
+2025-08-12 15:34:09 [INFO]: Album 1: "CS CONSTANTINE PLAYER VERSION" -> cs_constantine_player_version
+2025-08-12 15:34:09 [INFO]: Album 2: "MAMELODI PLAYER VERSION" -> mamelodi_player_version
+2025-08-12 15:34:09 [INFO]: Album 3: "浙公网安备 33010502006611 号" -> 33010502006611
+2025-08-12 15:34:09 [INFO]: Album 4: "ORLANDO PIRATES" -> orlando_pirates
+2025-08-12 15:34:09 [INFO]: Album 5: "YOUNG AFRICANS" -> young_africans
+2025-08-12 15:34:09 [INFO]: Album 6: "KAIZER CHIEFS" -> kaizer_chiefs
+2025-08-12 15:34:09 [INFO]: Album 7: "AL AHLY" -> al_ahly
+2025-08-12 15:34:09 [INFO]: Album 8: "Yupoo" -> yupoo
+2025-08-12 15:34:09 [INFO]: Album 9: "home page" -> home_page
+2025-08-12 15:34:09 [INFO]: Album 10: "my album" -> my_album
+2025-08-12 15:34:09 [INFO]: Album 11: "album" -> album
+2025-08-12 15:34:09 [INFO]: Album 12: "Home" -> home
+2025-08-12 15:36:37 [INFO]: Logger initialized successfully
+2025-08-12 15:36:37 [INFO]: Resumed from previous session: 1755022416850_omh25n
+2025-08-12 15:36:37 [INFO]: Loaded 1 failed items from previous session
+2025-08-12 15:36:37 [INFO]: Progress tracker initialized - Session ID: 1755023797473_vk0d55
+2025-08-12 15:36:37 [INFO]: Loaded 53 categories
+2025-08-12 15:36:37 [INFO]: Temporary files cleaned up
+2025-08-12 15:36:37 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:36:41 [INFO]: Starting category: caf_page_not_found_yupoo
+2025-08-12 15:36:41 [INFO]: Processing album 1: "Page Not Found | Yupoo"
+2025-08-12 15:36:41 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/200353962\?uid\=1\&isSubCate\=false\&referrercate\=4667651
+2025-08-12 15:36:41 [INFO]: Created album folder: page_not_found_yupoo
+2025-08-12 15:36:41 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/200353962\?uid\=1\&isSubCate\=false\&referrercate\=4667651
+2025-08-12 15:36:43 [INFO]: Found 1 potential images from https://wavesoccer.x.yupoo.com/albums/200353962\?uid\=1\&isSubCate\=false\&referrercate\=4667651
+2025-08-12 15:36:43 [INFO]: Found 1 images in album: "Page Not Found | Yupoo"
+2025-08-12 15:36:43 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/notaccess/im_404.png (attempt 1/3)
+2025-08-12 15:36:45 [INFO]: Successfully downloaded: page_not_found_yupoo_photo_img_0_1755023803654.png
+2025-08-12 15:36:45 [INFO]: Progress: 8/7 (114.3%) - caf
+2025-08-12 15:36:45 [INFO]: Downloaded: page_not_found_yupoo_photo_img_0_1755023803654.png
+2025-08-12 15:36:47 [INFO]: Completed album "Page Not Found | Yupoo": 1/1 images
+2025-08-12 15:36:47 [INFO]: Completed category: caf_page_not_found_yupoo
+2025-08-12 15:36:47 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1755023797473_vk0d55.json
+2025-08-12 15:36:47 [INFO]: === SCRAPING SESSION COMPLETED ===
+2025-08-12 15:37:27 [INFO]: Logger initialized successfully
+2025-08-12 15:37:27 [INFO]: Resumed from previous session: 1755023797473_vk0d55
+2025-08-12 15:37:27 [INFO]: Loaded 1 failed items from previous session
+2025-08-12 15:37:27 [INFO]: Progress tracker initialized - Session ID: 1755023847287_yvjcxl
+2025-08-12 15:37:27 [INFO]: Loaded 53 categories
+2025-08-12 15:37:27 [INFO]: Temporary files cleaned up
+2025-08-12 15:37:27 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:37:31 [INFO]: Starting category: caf_page_not_found_yupoo
+2025-08-12 15:37:31 [INFO]: Processing album 1: "Page Not Found | Yupoo"
+2025-08-12 15:37:31 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/200353962\?uid\=1\&isSubCate\=false\&referrercate\=4667651
+2025-08-12 15:37:31 [INFO]: Created album folder: page_not_found_yupoo
+2025-08-12 15:37:31 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/200353962\?uid\=1\&isSubCate\=false\&referrercate\=4667651
+2025-08-12 15:37:32 [INFO]: Found 1 potential images from https://wavesoccer.x.yupoo.com/albums/200353962\?uid\=1\&isSubCate\=false\&referrercate\=4667651
+2025-08-12 15:37:32 [INFO]: Found 1 images in album: "Page Not Found | Yupoo"
+2025-08-12 15:37:32 [INFO]: Completed album "Page Not Found | Yupoo": 0/0 images
+2025-08-12 15:37:32 [INFO]: Completed category: caf_page_not_found_yupoo
+2025-08-12 15:37:32 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1755023847287_yvjcxl.json
+2025-08-12 15:37:32 [INFO]: === SCRAPING SESSION COMPLETED ===
+2025-08-12 15:38:45 [INFO]: Logger initialized successfully
+2025-08-12 15:38:45 [INFO]: Resumed from previous session: 1755023847287_yvjcxl
+2025-08-12 15:38:45 [INFO]: Loaded 1 failed items from previous session
+2025-08-12 15:38:45 [INFO]: Progress tracker initialized - Session ID: 1755023925472_bo4tgy
+2025-08-12 15:38:45 [INFO]: Loaded 53 categories
+2025-08-12 15:38:45 [INFO]: Temporary files cleaned up
+2025-08-12 15:38:45 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:38:45 [INFO]: === SCRAPING SESSION STARTED ===
+2025-08-12 15:38:45 [INFO]: Extracting album links from: https://wavesoccer.x.yupoo.com/categories/4667651
+2025-08-12 15:38:49 [INFO]: Found 12 unique albums from https://wavesoccer.x.yupoo.com/categories/4667651
+2025-08-12 15:38:49 [INFO]: Album 1: "CS CONSTANTINE PLAYER VERSION" -> cs_constantine_player_version
+2025-08-12 15:38:49 [INFO]: Album 2: "MAMELODI PLAYER VERSION" -> mamelodi_player_version
+2025-08-12 15:38:49 [INFO]: Album 3: "浙公网安备 33010502006611 号" -> 33010502006611
+2025-08-12 15:38:49 [INFO]: Album 4: "ORLANDO PIRATES" -> orlando_pirates
+2025-08-12 15:38:49 [INFO]: Album 5: "YOUNG AFRICANS" -> young_africans
+2025-08-12 15:38:49 [INFO]: Album 6: "KAIZER CHIEFS" -> kaizer_chiefs
+2025-08-12 15:38:49 [INFO]: Album 7: "AL AHLY" -> al_ahly
+2025-08-12 15:38:49 [INFO]: Album 8: "Yupoo" -> yupoo
+2025-08-12 15:38:49 [INFO]: Album 9: "home page" -> home_page
+2025-08-12 15:38:49 [INFO]: Album 10: "my album" -> my_album
+2025-08-12 15:38:49 [INFO]: Album 11: "album" -> album
+2025-08-12 15:38:49 [INFO]: Album 12: "Home" -> home
+2025-08-12 15:38:57 [INFO]: Logger initialized successfully
+2025-08-12 15:38:57 [INFO]: Resumed from previous session: 1755023847287_yvjcxl
+2025-08-12 15:38:57 [INFO]: Loaded 1 failed items from previous session
+2025-08-12 15:38:57 [INFO]: Progress tracker initialized - Session ID: 1755023937642_qm0bap
+2025-08-12 15:38:57 [INFO]: Loaded 53 categories
+2025-08-12 15:38:57 [INFO]: Temporary files cleaned up
+2025-08-12 15:38:57 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:38:57 [INFO]: Starting category: caf_al_ahly
+2025-08-12 15:38:57 [INFO]: Processing album 1: "AL AHLY"
+2025-08-12 15:38:57 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:38:57 [INFO]: Created album folder: al_ahly
+2025-08-12 15:38:57 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:39:01 [INFO]: Found 10 potential images from https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:39:01 [INFO]: Found 10 images in album: "AL AHLY"
+2025-08-12 15:39:01 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/daf5bf89/medium.jpg (attempt 1/3)
+2025-08-12 15:39:02 [INFO]: Successfully downloaded: al_ahly_photo_img_0_1755023941760.jpg
+2025-08-12 15:39:02 [INFO]: Progress: 9/7 (128.6%) - caf
+2025-08-12 15:39:02 [INFO]: Downloaded: al_ahly_photo_img_0_1755023941760.jpg
+2025-08-12 15:39:05 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/b93463f2/small.jpg (attempt 1/3)
+2025-08-12 15:39:05 [INFO]: Successfully downloaded: al_ahly_photo_img_1_1755023945128.jpg
+2025-08-12 15:39:05 [INFO]: Progress: 10/7 (142.9%) - caf
+2025-08-12 15:39:05 [INFO]: Downloaded: al_ahly_photo_img_1_1755023945128.jpg
+2025-08-12 15:39:06 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/c2dd8c86/small.jpg (attempt 1/3)
+2025-08-12 15:39:07 [INFO]: Successfully downloaded: al_ahly_photo_img_2_1755023946666.jpg
+2025-08-12 15:39:07 [INFO]: Progress: 11/7 (157.1%) - caf
+2025-08-12 15:39:07 [INFO]: Downloaded: al_ahly_photo_img_2_1755023946666.jpg
+2025-08-12 15:39:10 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4ebd9c49/small.jpg (attempt 1/3)
+2025-08-12 15:39:10 [INFO]: Successfully downloaded: al_ahly_photo_img_3_1755023950052.jpg
+2025-08-12 15:39:10 [INFO]: Progress: 12/7 (171.4%) - caf
+2025-08-12 15:39:10 [INFO]: Downloaded: al_ahly_photo_img_3_1755023950052.jpg
+2025-08-12 15:39:12 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/daf5bf89/small.jpg (attempt 1/3)
+2025-08-12 15:39:13 [INFO]: Successfully downloaded: al_ahly_photo_img_4_1755023952749.jpg
+2025-08-12 15:39:13 [INFO]: Progress: 13/7 (185.7%) - caf
+2025-08-12 15:39:13 [INFO]: Downloaded: al_ahly_photo_img_4_1755023952749.jpg
+2025-08-12 15:39:15 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-12 15:39:17 [WARN]: Image dimensions invalid: 20x20
+2025-08-12 15:39:17 [INFO]: Progress: 14/7 (200.0%) - caf
+2025-08-12 15:39:17 [ERROR]: Download failed: al_ahly_img5
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 15:39:18 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/b93463f2/square.jpg (attempt 1/3)
+2025-08-12 15:39:19 [INFO]: Successfully downloaded: al_ahly_photo_img_6_1755023958706.jpg
+2025-08-12 15:39:19 [INFO]: Progress: 15/7 (214.3%) - caf
+2025-08-12 15:39:19 [INFO]: Downloaded: al_ahly_photo_img_6_1755023958706.jpg
+2025-08-12 15:39:22 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/c2dd8c86/square.jpg (attempt 1/3)
+2025-08-12 15:39:23 [INFO]: Successfully downloaded: al_ahly_photo_img_7_1755023962376.jpg
+2025-08-12 15:39:23 [INFO]: Progress: 16/7 (228.6%) - caf
+2025-08-12 15:39:23 [INFO]: Downloaded: al_ahly_photo_img_7_1755023962376.jpg
+2025-08-12 15:39:25 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4ebd9c49/square.jpg (attempt 1/3)
+2025-08-12 15:39:26 [INFO]: Successfully downloaded: al_ahly_photo_img_8_1755023965438.jpg
+2025-08-12 15:39:26 [INFO]: Progress: 17/7 (242.9%) - caf
+2025-08-12 15:39:26 [INFO]: Downloaded: al_ahly_photo_img_8_1755023965438.jpg
+2025-08-12 15:39:27 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/daf5bf89/square.jpg (attempt 1/3)
+2025-08-12 15:39:27 [INFO]: Successfully downloaded: al_ahly_photo_img_9_1755023967111.jpg
+2025-08-12 15:39:27 [INFO]: Progress: 18/7 (257.1%) - caf
+2025-08-12 15:39:27 [INFO]: Downloaded: al_ahly_photo_img_9_1755023967111.jpg
+2025-08-12 15:39:30 [INFO]: Completed album "AL AHLY": 9/10 images
+2025-08-12 15:39:30 [INFO]: Completed category: caf_al_ahly
+2025-08-12 15:39:30 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1755023937642_qm0bap.json
+2025-08-12 15:39:30 [INFO]: === SCRAPING SESSION COMPLETED ===
+2025-08-12 15:40:18 [INFO]: Logger initialized successfully
+2025-08-12 15:40:18 [INFO]: Resumed from previous session: 1755023937642_qm0bap
+2025-08-12 15:40:18 [INFO]: Loaded 2 failed items from previous session
+2025-08-12 15:40:18 [INFO]: Progress tracker initialized - Session ID: 1755024018563_n4054o
+2025-08-12 15:40:18 [INFO]: Loaded 53 categories
+2025-08-12 15:40:18 [INFO]: Temporary files cleaned up
+2025-08-12 15:40:18 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:40:18 [INFO]: Starting category: caf_cs_constantine_player_version
+2025-08-12 15:40:18 [INFO]: Processing album 1: "CS CONSTANTINE PLAYER VERSION"
+2025-08-12 15:40:18 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:40:18 [INFO]: Created album folder: cs_constantine_player_version
+2025-08-12 15:40:18 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:40:21 [INFO]: Found 16 potential images from https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:40:21 [INFO]: Found 16 images in album: "CS CONSTANTINE PLAYER VERSION"
+2025-08-12 15:40:21 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/3a9f88cc/medium.jpg (attempt 1/3)
+2025-08-12 15:40:22 [INFO]: Successfully downloaded: cs_constantine_player_version_photo_img_0_1755024021912.jpg
+2025-08-12 15:40:22 [INFO]: Progress: 19/7 (271.4%) - caf
+2025-08-12 15:40:22 [INFO]: Downloaded: cs_constantine_player_version_photo_img_0_1755024021912.jpg
+2025-08-12 15:40:24 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/e145f4ab/small.jpg (attempt 1/3)
+2025-08-12 15:40:24 [INFO]: Successfully downloaded: cs_constantine_player_version_photo_img_1_1755024024293.jpg
+2025-08-12 15:40:24 [INFO]: Progress: 20/7 (285.7%) - caf
+2025-08-12 15:40:24 [INFO]: Downloaded: cs_constantine_player_version_photo_img_1_1755024024293.jpg
+2025-08-12 15:40:27 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d17cac76/small.jpg (attempt 1/3)
+2025-08-12 15:40:28 [INFO]: Successfully downloaded: cs_constantine_player_version_photo_img_2_1755024027758.jpg
+2025-08-12 15:40:28 [INFO]: Progress: 21/7 (300.0%) - caf
+2025-08-12 15:40:28 [INFO]: Downloaded: cs_constantine_player_version_photo_img_2_1755024027758.jpg
+2025-08-12 15:40:30 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/97c0b2d4/small.jpg (attempt 1/3)
+2025-08-12 15:40:30 [INFO]: Successfully downloaded: cs_constantine_player_version_photo_img_3_1755024030028.jpg
+2025-08-12 15:40:30 [INFO]: Progress: 22/7 (314.3%) - caf
+2025-08-12 15:40:30 [INFO]: Downloaded: cs_constantine_player_version_photo_img_3_1755024030028.jpg
+2025-08-12 15:40:32 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/3856f354/small.jpg (attempt 1/3)
+2025-08-12 15:40:33 [INFO]: Successfully downloaded: cs_constantine_player_version_photo_img_4_1755024032920.jpg
+2025-08-12 15:40:33 [INFO]: Progress: 23/7 (328.6%) - caf
+2025-08-12 15:40:33 [INFO]: Downloaded: cs_constantine_player_version_photo_img_4_1755024032920.jpg
+2025-08-12 15:40:35 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/9eb963a9/small.jpg (attempt 1/3)
+2025-08-12 15:40:35 [INFO]: Successfully downloaded: cs_constantine_player_version_photo_img_5_1755024035468.jpg
+2025-08-12 15:40:35 [INFO]: Progress: 24/7 (342.9%) - caf
+2025-08-12 15:40:35 [INFO]: Downloaded: cs_constantine_player_version_photo_img_5_1755024035468.jpg
+2025-08-12 15:40:38 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/49ec23b9/small.jpg (attempt 1/3)
+2025-08-12 15:40:38 [INFO]: Successfully downloaded: cs_constantine_player_version_photo_img_6_1755024038059.jpg
+2025-08-12 15:40:38 [INFO]: Progress: 25/7 (357.1%) - caf
+2025-08-12 15:40:38 [INFO]: Downloaded: cs_constantine_player_version_photo_img_6_1755024038059.jpg
+2025-08-12 15:40:40 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/3a9f88cc/small.jpg (attempt 1/3)
+2025-08-12 15:40:41 [INFO]: Successfully downloaded: cs_constantine_player_version_photo_img_7_1755024040533.jpg
+2025-08-12 15:40:41 [INFO]: Progress: 26/7 (371.4%) - caf
+2025-08-12 15:40:41 [INFO]: Downloaded: cs_constantine_player_version_photo_img_7_1755024040533.jpg
+2025-08-12 15:40:42 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-12 15:40:43 [WARN]: Image dimensions invalid: 20x20
+2025-08-12 15:40:43 [INFO]: Progress: 27/7 (385.7%) - caf
+2025-08-12 15:40:43 [ERROR]: Download failed: cs_constantine_player_version_img8
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 15:40:44 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/e145f4ab/square.jpg (attempt 1/3)
+2025-08-12 15:40:45 [INFO]: Successfully downloaded: cs_constantine_player_version_photo_img_9_1755024044758.jpg
+2025-08-12 15:40:45 [INFO]: Progress: 28/7 (400.0%) - caf
+2025-08-12 15:40:45 [INFO]: Downloaded: cs_constantine_player_version_photo_img_9_1755024044758.jpg
+2025-08-12 15:40:48 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d17cac76/square.jpg (attempt 1/3)
+2025-08-12 15:40:48 [INFO]: Successfully downloaded: cs_constantine_player_version_photo_img_10_1755024048158.jpg
+2025-08-12 15:40:48 [INFO]: Progress: 29/7 (414.3%) - caf
+2025-08-12 15:40:48 [INFO]: Downloaded: cs_constantine_player_version_photo_img_10_1755024048158.jpg
+2025-08-12 15:40:51 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/97c0b2d4/square.jpg (attempt 1/3)
+2025-08-12 15:40:52 [INFO]: Successfully downloaded: cs_constantine_player_version_photo_img_11_1755024051050.jpg
+2025-08-12 15:40:52 [INFO]: Progress: 30/7 (428.6%) - caf
+2025-08-12 15:40:52 [INFO]: Downloaded: cs_constantine_player_version_photo_img_11_1755024051050.jpg
+2025-08-12 15:40:53 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/3856f354/square.jpg (attempt 1/3)
+2025-08-12 15:40:53 [INFO]: Successfully downloaded: cs_constantine_player_version_photo_img_12_1755024053208.jpg
+2025-08-12 15:40:53 [INFO]: Progress: 31/7 (442.9%) - caf
+2025-08-12 15:40:53 [INFO]: Downloaded: cs_constantine_player_version_photo_img_12_1755024053208.jpg
+2025-08-12 15:40:56 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/9eb963a9/square.jpg (attempt 1/3)
+2025-08-12 15:40:56 [INFO]: Successfully downloaded: cs_constantine_player_version_photo_img_13_1755024056199.jpg
+2025-08-12 15:40:56 [INFO]: Progress: 32/7 (457.1%) - caf
+2025-08-12 15:40:56 [INFO]: Downloaded: cs_constantine_player_version_photo_img_13_1755024056199.jpg
+2025-08-12 15:40:58 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/49ec23b9/square.jpg (attempt 1/3)
+2025-08-12 15:40:58 [INFO]: Successfully downloaded: cs_constantine_player_version_photo_img_14_1755024058063.jpg
+2025-08-12 15:40:58 [INFO]: Progress: 33/7 (471.4%) - caf
+2025-08-12 15:40:58 [INFO]: Downloaded: cs_constantine_player_version_photo_img_14_1755024058063.jpg
+2025-08-12 15:41:00 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/3a9f88cc/square.jpg (attempt 1/3)
+2025-08-12 15:41:00 [INFO]: Successfully downloaded: cs_constantine_player_version_photo_img_15_1755024060166.jpg
+2025-08-12 15:41:00 [INFO]: Progress: 34/7 (485.7%) - caf
+2025-08-12 15:41:00 [INFO]: Downloaded: cs_constantine_player_version_photo_img_15_1755024060166.jpg
+2025-08-12 15:41:02 [INFO]: Completed album "CS CONSTANTINE PLAYER VERSION": 15/16 images
+2025-08-12 15:41:02 [INFO]: Completed category: caf_cs_constantine_player_version
+2025-08-12 15:41:02 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1755024018563_n4054o.json
+2025-08-12 15:41:02 [INFO]: === SCRAPING SESSION COMPLETED ===
+2025-08-12 15:44:37 [INFO]: Logger initialized successfully
+2025-08-12 15:44:37 [INFO]: Resumed from previous session: 1755024018563_n4054o
+2025-08-12 15:44:37 [INFO]: Loaded 3 failed items from previous session
+2025-08-12 15:44:37 [INFO]: Progress tracker initialized - Session ID: 1755024277901_9hovwy
+2025-08-12 15:44:37 [INFO]: Loaded 53 categories
+2025-08-12 15:44:37 [INFO]: Temporary files cleaned up
+2025-08-12 15:44:37 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:44:37 [INFO]: Starting category: caf_cs_constantine_player_version
+2025-08-12 15:44:37 [INFO]: Processing album 1: "CS CONSTANTINE PLAYER VERSION"
+2025-08-12 15:44:37 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:44:37 [INFO]: Created album folder: cs_constantine_player_version
+2025-08-12 15:44:37 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:44:41 [INFO]: Found 8 potential images from https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:44:41 [INFO]: Found 8 images in album: "CS CONSTANTINE PLAYER VERSION"
+2025-08-12 15:44:41 [INFO]: Completed album "CS CONSTANTINE PLAYER VERSION": 0/0 images
+2025-08-12 15:44:41 [INFO]: Completed category: caf_cs_constantine_player_version
+2025-08-12 15:44:41 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1755024277901_9hovwy.json
+2025-08-12 15:44:41 [INFO]: === SCRAPING SESSION COMPLETED ===
+2025-08-12 15:45:19 [INFO]: Logger initialized successfully
+2025-08-12 15:45:19 [INFO]: Resumed from previous session: 1755024277901_9hovwy
+2025-08-12 15:45:19 [INFO]: Loaded 3 failed items from previous session
+2025-08-12 15:45:19 [INFO]: Progress tracker initialized - Session ID: 1755024319291_b95oke
+2025-08-12 15:45:19 [INFO]: Loaded 53 categories
+2025-08-12 15:45:19 [INFO]: Temporary files cleaned up
+2025-08-12 15:45:19 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:45:19 [INFO]: Starting category: caf_al_ahly
+2025-08-12 15:45:19 [INFO]: Processing album 1: "AL AHLY"
+2025-08-12 15:45:19 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:45:19 [INFO]: Created album folder: al_ahly
+2025-08-12 15:45:19 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:45:22 [INFO]: Found 5 potential images from https://wavesoccer.x.yupoo.com/albums/200353962?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:45:22 [INFO]: Found 5 images in album: "AL AHLY"
+2025-08-12 15:45:22 [INFO]: Completed album "AL AHLY": 0/0 images
+2025-08-12 15:45:22 [INFO]: Completed category: caf_al_ahly
+2025-08-12 15:45:22 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1755024319291_b95oke.json
+2025-08-12 15:45:22 [INFO]: === SCRAPING SESSION COMPLETED ===
+2025-08-12 15:45:38 [INFO]: Logger initialized successfully
+2025-08-12 15:45:38 [INFO]: Resumed from previous session: 1755024319291_b95oke
+2025-08-12 15:45:38 [INFO]: Loaded 3 failed items from previous session
+2025-08-12 15:45:38 [INFO]: Progress tracker initialized - Session ID: 1755024338967_bfsylm
+2025-08-12 15:45:38 [INFO]: Loaded 53 categories
+2025-08-12 15:45:38 [INFO]: Temporary files cleaned up
+2025-08-12 15:45:38 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:45:38 [INFO]: Starting category: caf_kaizer_chiefs
+2025-08-12 15:45:38 [INFO]: Processing album 1: "KAIZER CHIEFS"
+2025-08-12 15:45:38 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:45:38 [INFO]: Created album folder: kaizer_chiefs
+2025-08-12 15:45:38 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:45:43 [INFO]: Found 15 potential images from https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:45:43 [INFO]: Found 15 images in album: "KAIZER CHIEFS"
+2025-08-12 15:45:43 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/91b18ebb/raw.jpg (attempt 1/3)
+2025-08-12 15:45:44 [INFO]: Successfully downloaded: kaizer_chiefs_photo_img_0_1755024343494.jpg
+2025-08-12 15:45:44 [INFO]: Progress: 35/7 (500.0%) - caf
+2025-08-12 15:45:44 [INFO]: Downloaded: kaizer_chiefs_photo_img_0_1755024343494.jpg
+2025-08-12 15:45:46 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4a84cade/raw.jpg (attempt 1/3)
+2025-08-12 15:45:46 [INFO]: Successfully downloaded: kaizer_chiefs_photo_img_1_1755024346183.jpg
+2025-08-12 15:45:46 [INFO]: Progress: 36/7 (514.3%) - caf
+2025-08-12 15:45:46 [INFO]: Downloaded: kaizer_chiefs_photo_img_1_1755024346183.jpg
+2025-08-12 15:45:49 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/3804a504/raw.jpg (attempt 1/3)
+2025-08-12 15:45:49 [INFO]: Successfully downloaded: kaizer_chiefs_photo_img_2_1755024349282.jpg
+2025-08-12 15:45:49 [INFO]: Progress: 37/7 (528.6%) - caf
+2025-08-12 15:45:49 [INFO]: Downloaded: kaizer_chiefs_photo_img_2_1755024349282.jpg
+2025-08-12 15:45:51 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/1b100491/raw.jpg (attempt 1/3)
+2025-08-12 15:45:52 [INFO]: Successfully downloaded: kaizer_chiefs_photo_img_3_1755024351840.jpg
+2025-08-12 15:45:52 [INFO]: Progress: 38/7 (542.9%) - caf
+2025-08-12 15:45:52 [INFO]: Downloaded: kaizer_chiefs_photo_img_3_1755024351840.jpg
+2025-08-12 15:45:55 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/87c711ce/raw.jpg (attempt 1/3)
+2025-08-12 15:45:56 [INFO]: Successfully downloaded: kaizer_chiefs_photo_img_4_1755024355296.jpg
+2025-08-12 15:45:56 [INFO]: Progress: 39/7 (557.1%) - caf
+2025-08-12 15:45:56 [INFO]: Downloaded: kaizer_chiefs_photo_img_4_1755024355296.jpg
+2025-08-12 15:45:57 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/a4cef37e/raw.jpg (attempt 1/3)
+2025-08-12 15:45:58 [INFO]: Successfully downloaded: kaizer_chiefs_photo_img_5_1755024357599.jpg
+2025-08-12 15:45:58 [INFO]: Progress: 40/7 (571.4%) - caf
+2025-08-12 15:45:58 [INFO]: Downloaded: kaizer_chiefs_photo_img_5_1755024357599.jpg
+2025-08-12 15:46:01 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/6cd6ca46/raw.jpg (attempt 1/3)
+2025-08-12 15:46:01 [INFO]: Successfully downloaded: kaizer_chiefs_photo_img_6_1755024361151.jpg
+2025-08-12 15:46:01 [INFO]: Progress: 41/7 (585.7%) - caf
+2025-08-12 15:46:01 [INFO]: Downloaded: kaizer_chiefs_photo_img_6_1755024361151.jpg
+2025-08-12 15:46:04 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/5be6e394/raw.jpg (attempt 1/3)
+2025-08-12 15:46:05 [INFO]: Successfully downloaded: kaizer_chiefs_photo_img_7_1755024364603.jpg
+2025-08-12 15:46:05 [INFO]: Progress: 42/7 (600.0%) - caf
+2025-08-12 15:46:05 [INFO]: Downloaded: kaizer_chiefs_photo_img_7_1755024364603.jpg
+2025-08-12 15:46:08 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/639a7590/raw.jpg (attempt 1/3)
+2025-08-12 15:46:08 [INFO]: Successfully downloaded: kaizer_chiefs_photo_img_8_1755024368197.jpg
+2025-08-12 15:46:08 [INFO]: Progress: 43/7 (614.3%) - caf
+2025-08-12 15:46:08 [INFO]: Downloaded: kaizer_chiefs_photo_img_8_1755024368197.jpg
+2025-08-12 15:46:10 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/bd57e718/raw.jpg (attempt 1/3)
+2025-08-12 15:46:10 [INFO]: Successfully downloaded: kaizer_chiefs_photo_img_9_1755024370063.jpg
+2025-08-12 15:46:10 [INFO]: Progress: 44/7 (628.6%) - caf
+2025-08-12 15:46:10 [INFO]: Downloaded: kaizer_chiefs_photo_img_9_1755024370063.jpg
+2025-08-12 15:46:12 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/fe32f585/raw.jpg (attempt 1/3)
+2025-08-12 15:46:12 [INFO]: Successfully downloaded: kaizer_chiefs_photo_img_10_1755024372305.jpg
+2025-08-12 15:46:12 [INFO]: Progress: 45/7 (642.9%) - caf
+2025-08-12 15:46:12 [INFO]: Downloaded: kaizer_chiefs_photo_img_10_1755024372305.jpg
+2025-08-12 15:46:14 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/60af242f/raw.jpg (attempt 1/3)
+2025-08-12 15:46:15 [INFO]: Successfully downloaded: kaizer_chiefs_photo_img_11_1755024374875.jpg
+2025-08-12 15:46:15 [INFO]: Progress: 46/7 (657.1%) - caf
+2025-08-12 15:46:15 [INFO]: Downloaded: kaizer_chiefs_photo_img_11_1755024374875.jpg
+2025-08-12 15:46:16 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/332602c5/raw.jpg (attempt 1/3)
+2025-08-12 15:46:17 [INFO]: Successfully downloaded: kaizer_chiefs_photo_img_12_1755024376874.jpg
+2025-08-12 15:46:17 [INFO]: Progress: 47/7 (671.4%) - caf
+2025-08-12 15:46:17 [INFO]: Downloaded: kaizer_chiefs_photo_img_12_1755024376874.jpg
+2025-08-12 15:46:19 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7beb4569/raw.jpg (attempt 1/3)
+2025-08-12 15:46:19 [INFO]: Successfully downloaded: kaizer_chiefs_photo_img_13_1755024379093.jpg
+2025-08-12 15:46:19 [INFO]: Progress: 48/7 (685.7%) - caf
+2025-08-12 15:46:19 [INFO]: Downloaded: kaizer_chiefs_photo_img_13_1755024379093.jpg
+2025-08-12 15:46:20 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-12 15:46:21 [WARN]: Image dimensions invalid: 20x20
+2025-08-12 15:46:21 [INFO]: Progress: 49/7 (700.0%) - caf
+2025-08-12 15:46:21 [ERROR]: Download failed: kaizer_chiefs_img14
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 15:46:24 [INFO]: Completed album "KAIZER CHIEFS": 14/15 images
+2025-08-12 15:46:24 [INFO]: Completed category: caf_kaizer_chiefs
+2025-08-12 15:46:24 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1755024338967_bfsylm.json
+2025-08-12 15:46:24 [INFO]: === SCRAPING SESSION COMPLETED ===
+2025-08-12 15:48:04 [INFO]: Logger initialized successfully
+2025-08-12 15:48:04 [INFO]: Resumed from previous session: 1755024338967_bfsylm
+2025-08-12 15:48:04 [INFO]: Loaded 4 failed items from previous session
+2025-08-12 15:48:04 [INFO]: Progress tracker initialized - Session ID: 1755024484401_tlihom
+2025-08-12 15:48:04 [INFO]: Loaded 53 categories
+2025-08-12 15:48:04 [INFO]: Temporary files cleaned up
+2025-08-12 15:48:04 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:48:04 [INFO]: Starting category: caf_cs_constantine_player_version
+2025-08-12 15:48:04 [INFO]: Processing album 1: "CS CONSTANTINE PLAYER VERSION"
+2025-08-12 15:48:04 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:48:04 [INFO]: Created album folder: cs_constantine_player_version
+2025-08-12 15:48:04 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:48:08 [INFO]: Found 8 potential images from https://wavesoccer.x.yupoo.com/albums/192702603?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:48:08 [INFO]: Found 8 images in album: "CS CONSTANTINE PLAYER VERSION"
+2025-08-12 15:48:08 [INFO]: Completed album "CS CONSTANTINE PLAYER VERSION": 0/0 images
+2025-08-12 15:48:08 [INFO]: Completed category: caf_cs_constantine_player_version
+2025-08-12 15:48:08 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1755024484401_tlihom.json
+2025-08-12 15:48:08 [INFO]: === SCRAPING SESSION COMPLETED ===
+2025-08-12 15:50:58 [INFO]: Logger initialized successfully
+2025-08-12 15:50:58 [INFO]: Resumed from previous session: 1755024484401_tlihom
+2025-08-12 15:50:58 [INFO]: Loaded 4 failed items from previous session
+2025-08-12 15:50:58 [INFO]: Progress tracker initialized - Session ID: 1755024658839_uu0q2d
+2025-08-12 15:50:58 [INFO]: Loaded 53 categories
+2025-08-12 15:50:58 [INFO]: Temporary files cleaned up
+2025-08-12 15:50:58 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:50:58 [INFO]: Starting category: caf_kaizer_chiefs
+2025-08-12 15:50:58 [INFO]: Processing album 1: "KAIZER CHIEFS"
+2025-08-12 15:50:58 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:50:58 [INFO]: Created album folder: kaizer_chiefs
+2025-08-12 15:50:58 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:50:58 [INFO]: Extracting image viewer URLs from album: https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:51:02 [INFO]: Found 0 image viewer URLs
+2025-08-12 15:51:02 [INFO]: No image viewers found, falling back to direct image extraction
+2025-08-12 15:51:04 [INFO]: Found 15 potential images from https://wavesoccer.x.yupoo.com/albums/174494824?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:51:04 [INFO]: Found 15 images in album: "KAIZER CHIEFS"
+2025-08-12 15:51:04 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-12 15:51:06 [WARN]: Image dimensions invalid: 20x20
+2025-08-12 15:51:06 [INFO]: Progress: 50/7 (714.3%) - caf
+2025-08-12 15:51:06 [ERROR]: Download failed: kaizer_chiefs_img14
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 15:51:08 [INFO]: Completed album "KAIZER CHIEFS": 0/1 images
+2025-08-12 15:51:08 [INFO]: Completed category: caf_kaizer_chiefs
+2025-08-12 15:51:08 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1755024658839_uu0q2d.json
+2025-08-12 15:51:08 [INFO]: === SCRAPING SESSION COMPLETED ===
+2025-08-12 15:51:44 [INFO]: Logger initialized successfully
+2025-08-12 15:51:44 [INFO]: Resumed from previous session: 1755024658839_uu0q2d
+2025-08-12 15:51:44 [INFO]: Loaded 5 failed items from previous session
+2025-08-12 15:51:44 [INFO]: Progress tracker initialized - Session ID: 1755024704162_5cl7wn
+2025-08-12 15:51:44 [INFO]: Loaded 53 categories
+2025-08-12 15:51:44 [INFO]: Temporary files cleaned up
+2025-08-12 15:51:44 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:51:44 [INFO]: Starting category: caf_mamelodi_player_version
+2025-08-12 15:51:44 [INFO]: Processing album 1: "MAMELODI PLAYER VERSION"
+2025-08-12 15:51:44 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/175427056?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:51:44 [INFO]: Created album folder: mamelodi_player_version
+2025-08-12 15:51:44 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/175427056?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:51:44 [INFO]: Extracting image viewer URLs from album: https://wavesoccer.x.yupoo.com/albums/175427056?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:51:47 [INFO]: Found 8 image viewer URLs
+2025-08-12 15:51:47 [INFO]:   1. https://wavesoccer.x.yupoo.com/albums/175427056/download?uid=1
+2025-08-12 15:51:47 [INFO]:   2. https://wavesoccer.x.yupoo.com/albums/175427056/download?uid=1&act=1
+2025-08-12 15:51:47 [INFO]:   3. https://wavesoccer.x.yupoo.com/albums/175427056?uid=1&isSubCate=false&referrercate=4667651&tab=max
+2025-08-12 15:51:47 [INFO]:   ... and 5 more
+2025-08-12 15:51:47 [INFO]: Found album with 8 image viewers, extracting full-size images...
+2025-08-12 15:51:47 [INFO]: Processing image viewer 1/8: https://wavesoccer.x.yupoo.com/albums/175427056/download?uid=1
+2025-08-12 15:51:50 [WARN]: No full-size image found in viewer: https://wavesoccer.x.yupoo.com/albums/175427056/download?uid=1
+2025-08-12 15:51:50 [WARN]: ❌ No image found in viewer 1: https://wavesoccer.x.yupoo.com/albums/175427056/download?uid=1
+2025-08-12 15:51:52 [INFO]: Processing image viewer 2/8: https://wavesoccer.x.yupoo.com/albums/175427056/download?uid=1&act=1
+2025-08-12 15:51:55 [WARN]: No full-size image found in viewer: https://wavesoccer.x.yupoo.com/albums/175427056/download?uid=1&act=1
+2025-08-12 15:51:55 [WARN]: ❌ No image found in viewer 2: https://wavesoccer.x.yupoo.com/albums/175427056/download?uid=1&act=1
+2025-08-12 15:51:57 [INFO]: Processing image viewer 3/8: https://wavesoccer.x.yupoo.com/albums/175427056?uid=1&isSubCate=false&referrercate=4667651&tab=max
+2025-08-12 15:52:00 [WARN]: No full-size image found in viewer: https://wavesoccer.x.yupoo.com/albums/175427056?uid=1&isSubCate=false&referrercate=4667651&tab=max
+2025-08-12 15:52:00 [WARN]: ❌ No image found in viewer 3: https://wavesoccer.x.yupoo.com/albums/175427056?uid=1&isSubCate=false&referrercate=4667651&tab=max
+2025-08-12 15:52:02 [INFO]: Processing image viewer 4/8: https://wavesoccer.x.yupoo.com/albums/175427056?uid=1&isSubCate=false&referrercate=4667651&tab=nor
+2025-08-12 15:52:05 [WARN]: No full-size image found in viewer: https://wavesoccer.x.yupoo.com/albums/175427056?uid=1&isSubCate=false&referrercate=4667651&tab=nor
+2025-08-12 15:52:05 [WARN]: ❌ No image found in viewer 4: https://wavesoccer.x.yupoo.com/albums/175427056?uid=1&isSubCate=false&referrercate=4667651&tab=nor
+2025-08-12 15:52:07 [INFO]: Processing image viewer 5/8: https://wavesoccer.x.yupoo.com/albums/175427056?uid=1&isSubCate=false&referrercate=4667651&tab=min
+2025-08-12 15:52:09 [WARN]: No full-size image found in viewer: https://wavesoccer.x.yupoo.com/albums/175427056?uid=1&isSubCate=false&referrercate=4667651&tab=min
+2025-08-12 15:52:09 [WARN]: ❌ No image found in viewer 5: https://wavesoccer.x.yupoo.com/albums/175427056?uid=1&isSubCate=false&referrercate=4667651&tab=min
+2025-08-12 15:52:10 [INFO]: Processing image viewer 6/8: https://wavesoccer.x.yupoo.com/albums/?uid=1
+2025-08-12 15:52:14 [WARN]: No full-size image found in viewer: https://wavesoccer.x.yupoo.com/albums/?uid=1
+2025-08-12 15:52:14 [WARN]: ❌ No image found in viewer 6: https://wavesoccer.x.yupoo.com/albums/?uid=1
+2025-08-12 15:52:17 [INFO]: Processing image viewer 7/8: https://x.yupoo.com
+2025-08-12 15:52:21 [WARN]: No full-size image found in viewer: https://x.yupoo.com
+2025-08-12 15:52:21 [WARN]: ❌ No image found in viewer 7: https://x.yupoo.com
+2025-08-12 15:52:23 [INFO]: Processing image viewer 8/8: http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010502006611
+2025-08-12 15:52:24 [WARN]: Request attempt 1 failed: Request failed with status code 404
+2025-08-12 15:52:34 [WARN]: Request attempt 2 failed: Request failed with status code 404
+2025-08-12 15:52:54 [WARN]: Request attempt 3 failed: Request failed with status code 404
+2025-08-12 15:52:54 [ERROR]: Failed to extract image from viewer http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010502006611: Failed request after 3 attempts: Request failed with status code 404
+2025-08-12 15:52:54 [WARN]: ❌ No image found in viewer 8: http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010502006611
+2025-08-12 15:52:54 [INFO]: Successfully extracted 0/8 full-size images
+2025-08-12 15:52:54 [WARN]: No images found in album: MAMELODI PLAYER VERSION
+2025-08-12 15:52:54 [INFO]: Completed category: caf_mamelodi_player_version
+2025-08-12 15:52:54 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1755024704162_5cl7wn.json
+2025-08-12 15:52:54 [INFO]: === SCRAPING SESSION COMPLETED ===
+2025-08-12 15:53:56 [INFO]: Logger initialized successfully
+2025-08-12 15:53:56 [INFO]: Resumed from previous session: 1755024704162_5cl7wn
+2025-08-12 15:53:56 [INFO]: Loaded 5 failed items from previous session
+2025-08-12 15:53:56 [INFO]: Progress tracker initialized - Session ID: 1755024836129_glj1yi
+2025-08-12 15:53:56 [INFO]: Loaded 53 categories
+2025-08-12 15:53:56 [INFO]: Temporary files cleaned up
+2025-08-12 15:53:56 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:53:56 [INFO]: Starting category: caf_young_africans
+2025-08-12 15:53:56 [INFO]: Processing album 1: "YOUNG AFRICANS"
+2025-08-12 15:53:56 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:53:56 [INFO]: Created album folder: young_africans
+2025-08-12 15:53:56 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:53:56 [INFO]: Extracting image viewer URLs from album: https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:54:01 [ERROR]: Failed to extract image viewer URLs from https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651: Assignment to constant variable.
+2025-08-12 15:54:01 [INFO]: No image viewers found, falling back to direct image extraction
+2025-08-12 15:54:06 [INFO]: Found 7 potential images from https://wavesoccer.x.yupoo.com/albums/183503894?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:54:06 [INFO]: Found 7 images in album: "YOUNG AFRICANS"
+2025-08-12 15:54:06 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/f134f133/raw.jpg (attempt 1/3)
+2025-08-12 15:54:07 [INFO]: Successfully downloaded: young_africans_photo_img_0_1755024846013.jpg
+2025-08-12 15:54:07 [INFO]: Progress: 51/7 (728.6%) - caf
+2025-08-12 15:54:07 [INFO]: Downloaded: young_africans_photo_img_0_1755024846013.jpg
+2025-08-12 15:54:09 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/39f4434f/raw.jpg (attempt 1/3)
+2025-08-12 15:54:10 [INFO]: Successfully downloaded: young_africans_photo_img_1_1755024849500.jpg
+2025-08-12 15:54:10 [INFO]: Progress: 52/7 (742.9%) - caf
+2025-08-12 15:54:10 [INFO]: Downloaded: young_africans_photo_img_1_1755024849500.jpg
+2025-08-12 15:54:11 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ddc5639e/raw.jpg (attempt 1/3)
+2025-08-12 15:54:12 [INFO]: Successfully downloaded: young_africans_photo_img_2_1755024851586.jpg
+2025-08-12 15:54:12 [INFO]: Progress: 53/7 (757.1%) - caf
+2025-08-12 15:54:12 [INFO]: Downloaded: young_africans_photo_img_2_1755024851586.jpg
+2025-08-12 15:54:14 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/280504f8/raw.jpg (attempt 1/3)
+2025-08-12 15:54:15 [INFO]: Successfully downloaded: young_africans_photo_img_3_1755024854973.jpg
+2025-08-12 15:54:15 [INFO]: Progress: 54/7 (771.4%) - caf
+2025-08-12 15:54:15 [INFO]: Downloaded: young_africans_photo_img_3_1755024854973.jpg
+2025-08-12 15:54:16 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/3f7da4b0/raw.jpg (attempt 1/3)
+2025-08-12 15:54:17 [INFO]: Successfully downloaded: young_africans_photo_img_4_1755024856702.jpg
+2025-08-12 15:54:17 [INFO]: Progress: 55/7 (785.7%) - caf
+2025-08-12 15:54:17 [INFO]: Downloaded: young_africans_photo_img_4_1755024856702.jpg
+2025-08-12 15:54:20 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ebd3d247/raw.jpg (attempt 1/3)
+2025-08-12 15:54:22 [INFO]: Successfully downloaded: young_africans_photo_img_5_1755024860347.jpg
+2025-08-12 15:54:22 [INFO]: Progress: 56/7 (800.0%) - caf
+2025-08-12 15:54:22 [INFO]: Downloaded: young_africans_photo_img_5_1755024860347.jpg
+2025-08-12 15:54:23 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-12 15:54:24 [WARN]: Image dimensions invalid: 20x20
+2025-08-12 15:54:24 [INFO]: Progress: 57/7 (814.3%) - caf
+2025-08-12 15:54:24 [ERROR]: Download failed: young_africans_img6
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 15:54:27 [INFO]: Completed album "YOUNG AFRICANS": 6/7 images
+2025-08-12 15:54:27 [INFO]: Completed category: caf_young_africans
+2025-08-12 15:54:27 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1755024836129_glj1yi.json
+2025-08-12 15:54:27 [INFO]: === SCRAPING SESSION COMPLETED ===
+2025-08-12 15:55:14 [INFO]: Logger initialized successfully
+2025-08-12 15:55:14 [INFO]: Resumed from previous session: 1755024836129_glj1yi
+2025-08-12 15:55:14 [INFO]: Loaded 6 failed items from previous session
+2025-08-12 15:55:14 [INFO]: Progress tracker initialized - Session ID: 1755024914603_18j6az
+2025-08-12 15:55:14 [INFO]: Loaded 53 categories
+2025-08-12 15:55:14 [INFO]: Temporary files cleaned up
+2025-08-12 15:55:14 [INFO]: Sports Scraper initialized successfully
+2025-08-12 15:55:14 [INFO]: Starting category: caf_orlando_pirates
+2025-08-12 15:55:14 [INFO]: Processing album 1: "ORLANDO PIRATES"
+2025-08-12 15:55:14 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:55:14 [INFO]: Created album folder: orlando_pirates
+2025-08-12 15:55:14 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:55:14 [INFO]: Extracting image viewer URLs from album: https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:55:19 [ERROR]: Failed to extract image viewer URLs from https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651: Assignment to constant variable.
+2025-08-12 15:55:19 [INFO]: No image viewers found, falling back to direct image extraction
+2025-08-12 15:55:22 [INFO]: Found 13 potential images from https://wavesoccer.x.yupoo.com/albums/173664577?uid=1&isSubCate=false&referrercate=4667651
+2025-08-12 15:55:22 [INFO]: Found 13 images in album: "ORLANDO PIRATES"
+2025-08-12 15:55:22 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7ada220b/raw.jpg (attempt 1/3)
+2025-08-12 15:55:23 [INFO]: Successfully downloaded: orlando_pirates_photo_img_0_1755024922367.jpg
+2025-08-12 15:55:23 [INFO]: Progress: 58/7 (828.6%) - caf
+2025-08-12 15:55:23 [INFO]: Downloaded: orlando_pirates_photo_img_0_1755024922367.jpg
+2025-08-12 15:55:24 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/034c4eef/raw.jpg (attempt 1/3)
+2025-08-12 15:55:25 [INFO]: Successfully downloaded: orlando_pirates_photo_img_1_1755024924900.jpg
+2025-08-12 15:55:25 [INFO]: Progress: 59/7 (842.9%) - caf
+2025-08-12 15:55:25 [INFO]: Downloaded: orlando_pirates_photo_img_1_1755024924900.jpg
+2025-08-12 15:55:27 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d4ff529d/raw.jpg (attempt 1/3)
+2025-08-12 15:55:27 [INFO]: Successfully downloaded: orlando_pirates_photo_img_2_1755024927344.jpg
+2025-08-12 15:55:27 [INFO]: Progress: 60/7 (857.1%) - caf
+2025-08-12 15:55:27 [INFO]: Downloaded: orlando_pirates_photo_img_2_1755024927344.jpg
+2025-08-12 15:55:29 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/371da480/raw.jpg (attempt 1/3)
+2025-08-12 15:55:29 [INFO]: Successfully downloaded: orlando_pirates_photo_img_3_1755024929205.jpg
+2025-08-12 15:55:29 [INFO]: Progress: 61/7 (871.4%) - caf
+2025-08-12 15:55:29 [INFO]: Downloaded: orlando_pirates_photo_img_3_1755024929205.jpg
+2025-08-12 15:55:32 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/8dec48e0/raw.jpg (attempt 1/3)
+2025-08-12 15:55:32 [INFO]: Successfully downloaded: orlando_pirates_photo_img_4_1755024932268.jpg
+2025-08-12 15:55:32 [INFO]: Progress: 62/7 (885.7%) - caf
+2025-08-12 15:55:32 [INFO]: Downloaded: orlando_pirates_photo_img_4_1755024932268.jpg
+2025-08-12 15:55:35 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/77633f62/raw.jpg (attempt 1/3)
+2025-08-12 15:55:36 [INFO]: Successfully downloaded: orlando_pirates_photo_img_5_1755024935720.jpg
+2025-08-12 15:55:36 [INFO]: Progress: 63/7 (900.0%) - caf
+2025-08-12 15:55:36 [INFO]: Downloaded: orlando_pirates_photo_img_5_1755024935720.jpg
+2025-08-12 15:55:39 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/dfd9d5be/raw.jpg (attempt 1/3)
+2025-08-12 15:55:39 [INFO]: Successfully downloaded: orlando_pirates_photo_img_6_1755024939046.jpg
+2025-08-12 15:55:39 [INFO]: Progress: 64/7 (914.3%) - caf
+2025-08-12 15:55:39 [INFO]: Downloaded: orlando_pirates_photo_img_6_1755024939046.jpg
+2025-08-12 15:55:41 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/17463b12/raw.jpg (attempt 1/3)
+2025-08-12 15:55:43 [INFO]: Successfully downloaded: orlando_pirates_photo_img_7_1755024941877.jpg
+2025-08-12 15:55:43 [INFO]: Progress: 65/7 (928.6%) - caf
+2025-08-12 15:55:43 [INFO]: Downloaded: orlando_pirates_photo_img_7_1755024941877.jpg
+2025-08-12 15:55:45 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/082666f1/raw.jpg (attempt 1/3)
+2025-08-12 15:55:46 [INFO]: Successfully downloaded: orlando_pirates_photo_img_8_1755024945861.jpg
+2025-08-12 15:55:46 [INFO]: Progress: 66/7 (942.9%) - caf
+2025-08-12 15:55:46 [INFO]: Downloaded: orlando_pirates_photo_img_8_1755024945861.jpg
+2025-08-12 15:55:48 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ed8d247c/raw.jpg (attempt 1/3)
+2025-08-12 15:55:50 [INFO]: Successfully downloaded: orlando_pirates_photo_img_9_1755024948797.jpg
+2025-08-12 15:55:50 [INFO]: Progress: 67/7 (957.1%) - caf
+2025-08-12 15:55:50 [INFO]: Downloaded: orlando_pirates_photo_img_9_1755024948797.jpg
+2025-08-12 15:55:52 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7c83d2b8/raw.jpg (attempt 1/3)
+2025-08-12 15:55:52 [INFO]: Successfully downloaded: orlando_pirates_photo_img_10_1755024952107.jpg
+2025-08-12 15:55:52 [INFO]: Progress: 68/7 (971.4%) - caf
+2025-08-12 15:55:52 [INFO]: Downloaded: orlando_pirates_photo_img_10_1755024952107.jpg
+2025-08-12 15:55:55 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/35790aea/raw.jpg (attempt 1/3)
+2025-08-12 15:55:57 [INFO]: Successfully downloaded: orlando_pirates_photo_img_11_1755024955227.jpg
+2025-08-12 15:55:57 [INFO]: Progress: 69/7 (985.7%) - caf
+2025-08-12 15:55:57 [INFO]: Downloaded: orlando_pirates_photo_img_11_1755024955227.jpg
+2025-08-12 15:56:00 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-12 15:56:01 [WARN]: Image dimensions invalid: 20x20
+2025-08-12 15:56:01 [INFO]: Progress: 70/7 (1000.0%) - caf
+2025-08-12 15:56:01 [ERROR]: Download failed: orlando_pirates_img12
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-12 15:56:03 [INFO]: Completed album "ORLANDO PIRATES": 12/13 images
+2025-08-12 15:56:03 [INFO]: Completed category: caf_orlando_pirates
+2025-08-12 15:56:03 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1755024914603_18j6az.json
+2025-08-12 15:56:03 [INFO]: === SCRAPING SESSION COMPLETED ===

@@ -1,0 +1,39 @@
+{
+  "sessionId": "1755023937642_qm0bap",
+  "startTime": "2025-08-12T18:13:36.850Z",
+  "totalCategories": 3,
+  "completedCategories": 3,
+  "totalProcessed": 18,
+  "totalSuccess": 16,
+  "totalFailed": 2,
+  "successRate": "88.89%",
+  "categories": [
+    {
+      "id": "caf",
+      "status": "completed",
+      "processed": 18,
+      "successful": 16,
+      "failed": 2,
+      "totalItems": 7,
+      "progress": "257.14%"
+    },
+    {
+      "id": "caf_page_not_found_yupoo",
+      "status": "completed",
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "totalItems": 0,
+      "progress": "0%"
+    },
+    {
+      "id": "caf_al_ahly",
+      "status": "completed",
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "totalItems": 0,
+      "progress": "0%"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(npx nuxi:*)",
+      "Bash(yarn install)",
+      "Bash(node:*)",
+      "Bash(cp:*)",
+      "Bash(rm:*)",
+      "WebFetch(domain:wavesoccer.x.yupoo.com)",
+      "Bash(curl:*)"
+    ],
+    "deny": []
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "sessionId": "1755024836129_glj1yi",
+  "startTime": "2025-08-12T18:13:36.850Z",
+  "totalCategories": 7,
+  "completedCategories": 7,
+  "totalProcessed": 57,
+  "totalSuccess": 51,
+  "totalFailed": 6,
+  "successRate": "89.47%",
+  "categories": [
+    {
+      "id": "caf",
+      "status": "completed",
+      "processed": 57,
+      "successful": 51,
+      "failed": 6,
+      "totalItems": 7,
+      "progress": "814.29%"
+    },
+    {
+      "id": "caf_page_not_found_yupoo",
+      "status": "completed",
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "totalItems": 0,
+      "progress": "0%"
+    },
+    {
+      "id": "caf_al_ahly",
+      "status": "completed",
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "totalItems": 0,
+      "progress": "0%"
+    },
+    {
+      "id": "caf_cs_constantine_player_version",
+      "status": "completed",
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "totalItems": 0,
+      "progress": "0%"
+    },
+    {
+      "id": "caf_kaizer_chiefs",
+      "status": "completed",
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "totalItems": 0,
+      "progress": "0%"
+    },
+    {
+      "id": "caf_mamelodi_player_version",
+      "status": "completed",
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "totalItems": 0,
+      "progress": "0%"
+    },
+    {
+      "id": "caf_young_africans",
+      "status": "completed",
+      "processed": 0,
+      "successful": 0,
+      "failed": 0,
+      "totalItems": 0,
+      "progress": "0%"
+    }
+  ]
+}
