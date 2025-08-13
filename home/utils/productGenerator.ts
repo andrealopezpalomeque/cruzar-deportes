@@ -216,6 +216,350 @@ const teamData: Record<string, {
     category: 'eredivisie',
     price: 70,
     description: 'Official FC Twente jersey from Eredivisie'
+  },
+
+  // Serie A Enilive Teams
+  'atalanta': {
+    name: 'Atalanta BC',
+    category: 'serie_a_enilive',
+    price: 85,
+    originalPrice: 95,
+    description: 'Official Atalanta BC jersey from Serie A Enilive'
+  },
+  'atalanta_kit_kit': {
+    name: 'Atalanta BC Kids Kit',
+    category: 'serie_a_enilive',
+    price: 55,
+    description: 'Official Atalanta BC kids jersey from Serie A Enilive'
+  },
+  'atalanta_short': {
+    name: 'Atalanta BC Shorts',
+    category: 'serie_a_enilive',
+    price: 35,
+    description: 'Official Atalanta BC shorts from Serie A Enilive'
+  },
+  'cagliari': {
+    name: 'Cagliari Calcio',
+    category: 'serie_a_enilive',
+    price: 75,
+    description: 'Official Cagliari Calcio jersey from Serie A Enilive'
+  },
+  'cagliari_kid_kit': {
+    name: 'Cagliari Kids Kit',
+    category: 'serie_a_enilive',
+    price: 45,
+    description: 'Official Cagliari Calcio kids jersey from Serie A Enilive'
+  },
+  'cagliari_short': {
+    name: 'Cagliari Shorts',
+    category: 'serie_a_enilive',
+    price: 30,
+    description: 'Official Cagliari Calcio shorts from Serie A Enilive'
+  },
+  'fiorentina': {
+    name: 'ACF Fiorentina',
+    category: 'serie_a_enilive',
+    price: 85,
+    originalPrice: 95,
+    description: 'Official ACF Fiorentina jersey from Serie A Enilive'
+  },
+  'fiorentina_kid_kit': {
+    name: 'Fiorentina Kids Kit',
+    category: 'serie_a_enilive',
+    price: 55,
+    description: 'Official ACF Fiorentina kids jersey from Serie A Enilive'
+  },
+  'fiorentina_short': {
+    name: 'Fiorentina Shorts',
+    category: 'serie_a_enilive',
+    price: 35,
+    description: 'Official ACF Fiorentina shorts from Serie A Enilive'
+  },
+  'inter_authentic': {
+    name: 'Inter Milan Authentic',
+    category: 'serie_a_enilive',
+    price: 120,
+    originalPrice: 140,
+    description: 'Authentic Inter Milan jersey - player version from Serie A Enilive'
+  },
+  'inter_kid_kit': {
+    name: 'Inter Milan Kids Kit',
+    category: 'serie_a_enilive',
+    price: 60,
+    description: 'Official Inter Milan kids jersey from Serie A Enilive'
+  },
+  'inter_kid_kit_authentic': {
+    name: 'Inter Milan Kids Kit Authentic',
+    category: 'serie_a_enilive',
+    price: 75,
+    description: 'Authentic Inter Milan kids jersey from Serie A Enilive'
+  },
+  'bologna_kid_kit': {
+    name: 'Bologna FC Kids Kit',
+    category: 'serie_a_enilive',
+    price: 50,
+    description: 'Official Bologna FC kids jersey from Serie A Enilive'
+  },
+  'bologna_short': {
+    name: 'Bologna FC Shorts',
+    category: 'serie_a_enilive',
+    price: 30,
+    description: 'Official Bologna FC shorts from Serie A Enilive'
+  },
+  'bari_long_sleeve': {
+    name: 'FC Bari Long Sleeve',
+    category: 'serie_a_enilive',
+    price: 80,
+    description: 'Official FC Bari long sleeve jersey from Serie A Enilive'
+  },
+  'frosinone': {
+    name: 'Frosinone Calcio',
+    category: 'serie_a_enilive',
+    price: 70,
+    description: 'Official Frosinone Calcio jersey from Serie A Enilive'
+  },
+  'inter_girl_size': {
+    name: 'Inter Milan Girl Size',
+    category: 'serie_a_enilive',
+    price: 55,
+    description: 'Inter Milan jersey in girl sizes from Serie A Enilive'
+  },
+  'inter_long_sleeve_kid_kit': {
+    name: 'Inter Milan Long Sleeve Kids Kit',
+    category: 'serie_a_enilive',
+    price: 65,
+    description: 'Inter Milan long sleeve kids jersey from Serie A Enilive'
+  },
+  'inter_long_sleeve_player_version': {
+    name: 'Inter Milan Long Sleeve Player Version',
+    category: 'serie_a_enilive',
+    price: 130,
+    originalPrice: 150,
+    description: 'Inter Milan long sleeve player version jersey from Serie A Enilive'
+  },
+  'inter_short': {
+    name: 'Inter Milan Shorts',
+    category: 'serie_a_enilive',
+    price: 35,
+    description: 'Official Inter Milan shorts from Serie A Enilive'
+  },
+  'inter_short_player_version': {
+    name: 'Inter Milan Shorts Player Version',
+    category: 'serie_a_enilive',
+    price: 45,
+    description: 'Inter Milan player version shorts from Serie A Enilive'
+  },
+  'jv_authentic': {
+    name: 'Juventus Authentic',
+    category: 'serie_a_enilive',
+    price: 125,
+    originalPrice: 145,
+    description: 'Authentic Juventus jersey - player version from Serie A Enilive'
+  },
+  'jv_gk_kid_kit': {
+    name: 'Juventus GK Kids Kit',
+    category: 'serie_a_enilive',
+    price: 55,
+    description: 'Juventus goalkeeper kids jersey from Serie A Enilive'
+  },
+  'jv_gk_short': {
+    name: 'Juventus GK Shorts',
+    category: 'serie_a_enilive',
+    price: 30,
+    description: 'Juventus goalkeeper shorts from Serie A Enilive'
+  },
+  'jv_kid_kit': {
+    name: 'Juventus Kids Kit',
+    category: 'serie_a_enilive',
+    price: 65,
+    description: 'Official Juventus kids jersey from Serie A Enilive'
+  },
+  'jv_long_sleeve_authentic': {
+    name: 'Juventus Long Sleeve Authentic',
+    category: 'serie_a_enilive',
+    price: 135,
+    originalPrice: 155,
+    description: 'Authentic Juventus long sleeve jersey from Serie A Enilive'
+  },
+  'jv_long_sleeve_kid_kit': {
+    name: 'Juventus Long Sleeve Kids Kit',
+    category: 'serie_a_enilive',
+    price: 70,
+    description: 'Juventus long sleeve kids jersey from Serie A Enilive'
+  },
+  'jv_short_authentic': {
+    name: 'Juventus Shorts Authentic',
+    category: 'serie_a_enilive',
+    price: 50,
+    description: 'Authentic Juventus shorts from Serie A Enilive'
+  },
+  'lazio_authentic': {
+    name: 'SS Lazio Authentic',
+    category: 'serie_a_enilive',
+    price: 120,
+    originalPrice: 140,
+    description: 'Authentic SS Lazio jersey - player version from Serie A Enilive'
+  },
+  'lazio_kid_kit': {
+    name: 'SS Lazio Kids Kit',
+    category: 'serie_a_enilive',
+    price: 60,
+    description: 'Official SS Lazio kids jersey from Serie A Enilive'
+  },
+  'lazio_short': {
+    name: 'SS Lazio Shorts',
+    category: 'serie_a_enilive',
+    price: 35,
+    description: 'Official SS Lazio shorts from Serie A Enilive'
+  },
+  'milan_authentic': {
+    name: 'AC Milan Authentic',
+    category: 'serie_a_enilive',
+    price: 125,
+    originalPrice: 145,
+    description: 'Authentic AC Milan jersey - player version from Serie A Enilive'
+  },
+  'milan_gk_kid_kit': {
+    name: 'AC Milan GK Kids Kit',
+    category: 'serie_a_enilive',
+    price: 55,
+    description: 'AC Milan goalkeeper kids jersey from Serie A Enilive'
+  },
+  'milan_gk_short': {
+    name: 'AC Milan GK Shorts',
+    category: 'serie_a_enilive',
+    price: 30,
+    description: 'AC Milan goalkeeper shorts from Serie A Enilive'
+  },
+  'milan_kid_kit': {
+    name: 'AC Milan Kids Kit',
+    category: 'serie_a_enilive',
+    price: 65,
+    description: 'Official AC Milan kids jersey from Serie A Enilive'
+  },
+  'milan_kid_kit_long_sleeve': {
+    name: 'AC Milan Kids Kit Long Sleeve',
+    category: 'serie_a_enilive',
+    price: 70,
+    description: 'AC Milan long sleeve kids jersey from Serie A Enilive'
+  },
+  'milan_long_sleeve': {
+    name: 'AC Milan Long Sleeve',
+    category: 'serie_a_enilive',
+    price: 90,
+    description: 'Official AC Milan long sleeve jersey from Serie A Enilive'
+  },
+  'milan_long_sleeve_authentic': {
+    name: 'AC Milan Long Sleeve Authentic',
+    category: 'serie_a_enilive',
+    price: 135,
+    originalPrice: 155,
+    description: 'Authentic AC Milan long sleeve jersey from Serie A Enilive'
+  },
+  'milan_short': {
+    name: 'AC Milan Shorts',
+    category: 'serie_a_enilive',
+    price: 35,
+    description: 'Official AC Milan shorts from Serie A Enilive'
+  },
+  'milan_short_authentic': {
+    name: 'AC Milan Shorts Authentic',
+    category: 'serie_a_enilive',
+    price: 45,
+    description: 'Authentic AC Milan shorts from Serie A Enilive'
+  },
+  'napoles_authentic': {
+    name: 'SSC Napoli Authentic',
+    category: 'serie_a_enilive',
+    price: 125,
+    originalPrice: 145,
+    description: 'Authentic SSC Napoli jersey - player version from Serie A Enilive'
+  },
+  'napoles_kid_kit': {
+    name: 'SSC Napoli Kids Kit',
+    category: 'serie_a_enilive',
+    price: 65,
+    description: 'Official SSC Napoli kids jersey from Serie A Enilive'
+  },
+  'napoles_short': {
+    name: 'SSC Napoli Shorts',
+    category: 'serie_a_enilive',
+    price: 35,
+    description: 'Official SSC Napoli shorts from Serie A Enilive'
+  },
+  'roma_authentic': {
+    name: 'AS Roma Authentic',
+    category: 'serie_a_enilive',
+    price: 125,
+    originalPrice: 145,
+    description: 'Authentic AS Roma jersey - player version from Serie A Enilive'
+  },
+  'roma_kid_kit': {
+    name: 'AS Roma Kids Kit',
+    category: 'serie_a_enilive',
+    price: 65,
+    description: 'Official AS Roma kids jersey from Serie A Enilive'
+  },
+  'roma_short': {
+    name: 'AS Roma Shorts',
+    category: 'serie_a_enilive',
+    price: 35,
+    description: 'Official AS Roma shorts from Serie A Enilive'
+  },
+  'salernitana': {
+    name: 'US Salernitana',
+    category: 'serie_a_enilive',
+    price: 75,
+    description: 'Official US Salernitana jersey from Serie A Enilive'
+  },
+  'sampdoria': {
+    name: 'UC Sampdoria',
+    category: 'serie_a_enilive',
+    price: 80,
+    description: 'Official UC Sampdoria jersey from Serie A Enilive'
+  },
+  'torino_kid_kit': {
+    name: 'Torino FC Kids Kit',
+    category: 'serie_a_enilive',
+    price: 55,
+    description: 'Official Torino FC kids jersey from Serie A Enilive'
+  },
+  'torino_short': {
+    name: 'Torino FC Shorts',
+    category: 'serie_a_enilive',
+    price: 30,
+    description: 'Official Torino FC shorts from Serie A Enilive'
+  },
+  'venezia_gk': {
+    name: 'Venezia FC Goalkeeper',
+    category: 'serie_a_enilive',
+    price: 75,
+    description: 'Official Venezia FC goalkeeper jersey from Serie A Enilive'
+  },
+  'venezia_kid_kit': {
+    name: 'Venezia FC Kids Kit',
+    category: 'serie_a_enilive',
+    price: 50,
+    description: 'Official Venezia FC kids jersey from Serie A Enilive'
+  },
+  'venezia_long_sleeve': {
+    name: 'Venezia FC Long Sleeve',
+    category: 'serie_a_enilive',
+    price: 85,
+    description: 'Official Venezia FC long sleeve jersey from Serie A Enilive'
+  },
+  'venezia_short': {
+    name: 'Venezia FC Shorts',
+    category: 'serie_a_enilive',
+    price: 30,
+    description: 'Official Venezia FC shorts from Serie A Enilive'
+  },
+  '161842622uid1issubcatefalsereferrercate334382': {
+    name: 'Serie A Special Edition',
+    category: 'serie_a_enilive',
+    price: 95,
+    originalPrice: 110,
+    description: 'Special edition Serie A Enilive jersey'
   }
 }
 
@@ -255,21 +599,27 @@ export function generateCategories(): Category[] {
   return [
     {
       id: 'afc',
-      name: 'AFC Teams',
+      name: 'Equipos AFC',
       slug: 'afc',
-      description: 'Asian Football Confederation teams jerseys and merchandise'
+      description: 'Camisetas y mercadería de equipos de la Confederación Asiática de Fútbol'
     },
     {
       id: 'caf', 
-      name: 'CAF Teams',
+      name: 'Equipos CAF',
       slug: 'caf',
-      description: 'Confederation of African Football teams jerseys and merchandise'
+      description: 'Camisetas y mercadería de equipos de la Confederación Africana de Fútbol'
     },
     {
       id: 'eredivisie',
-      name: 'Eredivisie Teams',
+      name: 'Equipos Eredivisie',
       slug: 'eredivisie',
-      description: 'Dutch Eredivisie teams jerseys and merchandise'
+      description: 'Camisetas y mercadería de equipos de la Eredivisie holandesa'
+    },
+    {
+      id: 'serie_a_enilive',
+      name: 'Serie A Enilive',
+      slug: 'serie_a_enilive',
+      description: 'Camisetas y mercadería de equipos de la Serie A Enilive italiana'
     }
   ]
 }
@@ -305,7 +655,23 @@ function getImageCountForTeam(teamKey: string): number {
     'kaizer_chiefs': 14,
     'mamelodi_player_version': 18,
     'orlando_pirates': 12,
-    'young_africans': 6
+    'young_africans': 6,
+    // Serie A Enilive teams
+    'atalanta': 52,
+    'atalanta_kit_kit': 21,
+    'atalanta_short': 11,
+    'cagliari': 39,
+    'cagliari_kid_kit': 6,
+    'cagliari_short': 6,
+    'fiorentina': 30,
+    'fiorentina_kid_kit': 24,
+    'fiorentina_short': 12,
+    'inter_authentic': 55,
+    'inter_kid_kit': 44,
+    'inter_kid_kit_authentic': 18,
+    'bologna_kid_kit': 22,
+    'bologna_short': 8,
+    'bari_long_sleeve': 14
   }
   
   return imageCounts[teamKey] || 5

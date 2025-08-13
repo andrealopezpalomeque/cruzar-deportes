@@ -2,8 +2,8 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <!-- Header -->
     <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">All Products</h1>
-      <p class="text-lg text-gray-600">Browse our complete collection of authentic sports jerseys</p>
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">Todos los Productos</h1>
+      <p class="text-lg text-gray-600">Navega nuestra colección completa de camisetas deportivas</p>
     </div>
 
     <!-- Filters -->
@@ -18,7 +18,7 @@
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
           ]"
         >
-          All Categories
+          Todas las Categorías
         </button>
         <button
           v-for="category in categories"
@@ -36,7 +36,7 @@
       </div>
 
       <div class="text-sm text-gray-600">
-        {{ filteredProducts.length }} {{ filteredProducts.length === 1 ? 'product' : 'products' }}
+        {{ filteredProducts.length }} {{ filteredProducts.length === 1 ? 'producto' : 'productos' }}
       </div>
     </div>
 
@@ -46,20 +46,57 @@
     </div>
 
     <!-- Products Grid -->
-    <div v-else-if="filteredProducts.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      <ProductCard 
-        v-for="product in filteredProducts" 
-        :key="product.id"
-        :product="product"
-      />
+    <div v-else-if="paginatedProducts.length > 0">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+        <ProductCard 
+          v-for="product in paginatedProducts" 
+          :key="product.id"
+          :product="product"
+        />
+      </div>
+
+      <!-- Pagination -->
+      <div v-if="totalPages > 1" class="flex justify-center items-center space-x-2">
+        <button
+          @click="currentPage = Math.max(1, currentPage - 1)"
+          :disabled="currentPage === 1"
+          class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+        >
+          Anterior
+        </button>
+        
+        <div class="flex space-x-1">
+          <button
+            v-for="page in visiblePages"
+            :key="page"
+            @click="currentPage = page"
+            :class="[
+              'px-3 py-2 text-sm font-medium rounded-md',
+              currentPage === page
+                ? 'bg-primary-600 text-white'
+                : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'
+            ]"
+          >
+            {{ page }}
+          </button>
+        </div>
+
+        <button
+          @click="currentPage = Math.min(totalPages, currentPage + 1)"
+          :disabled="currentPage === totalPages"
+          class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+        >
+          Siguiente
+        </button>
+      </div>
     </div>
 
     <!-- Empty State -->
     <div v-else class="text-center py-12">
       <Icon name="mdi:tshirt-crew" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
-      <h3 class="text-lg font-medium text-gray-900 mb-2">No products found</h3>
+      <h3 class="text-lg font-medium text-gray-900 mb-2">No se encontraron productos</h3>
       <p class="text-gray-600 mb-6">
-        {{ selectedCategory ? 'No products found in this category.' : 'No products available at the moment.' }}
+        {{ selectedCategory ? 'No se encontraron productos en esta categoría.' : 'No hay productos disponibles en este momento.' }}
       </p>
       <button
         v-if="selectedCategory"
@@ -67,7 +104,7 @@
         class="inline-flex items-center px-4 py-2 bg-primary-600 text-white font-medium rounded-md hover:bg-primary-700 transition-colors"
       >
         <Icon name="mdi:refresh" class="mr-2 h-4 w-4" />
-        Show All Products
+        Mostrar Todos los Productos
       </button>
     </div>
   </div>
@@ -77,6 +114,8 @@
 const productsStore = useProductsStore()
 
 const selectedCategory = ref('')
+const currentPage = ref(1)
+const itemsPerPage = 20
 
 const categories = computed(() => productsStore.categories)
 const allProducts = computed(() => productsStore.products)
@@ -88,15 +127,47 @@ const filteredProducts = computed(() => {
   return productsStore.getProductsByCategory(selectedCategory.value)
 })
 
+const totalPages = computed(() => Math.ceil(filteredProducts.value.length / itemsPerPage))
+
+const paginatedProducts = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage
+  const end = start + itemsPerPage
+  return filteredProducts.value.slice(start, end)
+})
+
+const visiblePages = computed(() => {
+  const pages = []
+  const maxVisible = 5
+  const half = Math.floor(maxVisible / 2)
+  
+  let start = Math.max(1, currentPage.value - half)
+  let end = Math.min(totalPages.value, start + maxVisible - 1)
+  
+  if (end - start + 1 < maxVisible) {
+    start = Math.max(1, end - maxVisible + 1)
+  }
+  
+  for (let i = start; i <= end; i++) {
+    pages.push(i)
+  }
+  
+  return pages
+})
+
+// Reset to page 1 when category changes
+watch(selectedCategory, () => {
+  currentPage.value = 1
+})
+
 onMounted(() => {
   productsStore.fetchCategories()
   productsStore.fetchProducts()
 })
 
 useHead({
-  title: 'All Products - Cruzar Deportes',
+  title: 'Todos los Productos - Cruzar Deportes',
   meta: [
-    { name: 'description', content: 'Browse our complete collection of authentic sports jerseys from teams around the world.' }
+    { name: 'description', content: 'Navega nuestra colección completa de camisetas deportivas de equipos de todo el mundo.' }
   ]
 })
 </script>

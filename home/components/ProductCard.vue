@@ -38,7 +38,7 @@
       </div>
       
       <div v-if="!product.inStock" class="mt-2">
-        <span class="text-sm text-red-600 font-medium">Out of Stock</span>
+        <span class="text-sm text-red-600 font-medium">Agotado</span>
       </div>
     </div>
   </div>

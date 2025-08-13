@@ -20,19 +20,19 @@
             to="/" 
             class="text-gray-700 hover:text-primary-600 transition-colors"
           >
-            Home
+            Inicio
           </NuxtLink>
           <NuxtLink 
             to="/categories" 
             class="text-gray-700 hover:text-primary-600 transition-colors"
           >
-            Categories
+            Categorías
           </NuxtLink>
           <NuxtLink 
             to="/products" 
             class="text-gray-700 hover:text-primary-600 transition-colors"
           >
-            All Products
+            Todos los Productos
           </NuxtLink>
         </nav>
 
@@ -78,21 +78,21 @@
             class="block px-3 py-2 text-gray-700 hover:text-primary-600"
             @click="mobileMenuOpen = false"
           >
-            Home
+            Inicio
           </NuxtLink>
           <NuxtLink 
             to="/categories" 
             class="block px-3 py-2 text-gray-700 hover:text-primary-600"
             @click="mobileMenuOpen = false"
           >
-            Categories
+            Categorías
           </NuxtLink>
           <NuxtLink 
             to="/products" 
             class="block px-3 py-2 text-gray-700 hover:text-primary-600"
             @click="mobileMenuOpen = false"
           >
-            All Products
+            Todos los Productos
           </NuxtLink>
         </div>
       </div>
