@@ -11,7 +11,9 @@
       "Bash(curl:*)",
       "Bash(yarn add:*)",
       "Bash(yarn dev)",
-      "Bash(yarn remove:*)"
+      "Bash(yarn remove:*)",
+      "Bash(convert:*)",
+      "Bash(magick:*)"
     ],
     "deny": []
   }

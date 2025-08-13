@@ -20,7 +20,11 @@
           <div class="aspect-w-16 aspect-h-9 bg-gradient-to-br from-primary-500 to-primary-700 rounded-t-lg relative overflow-hidden">
             <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
             <div class="absolute inset-0 flex items-center justify-center">
-              <Icon name="mdi:soccer" class="h-16 w-16 text-white" />
+              <img 
+                src="/images/cruzar-logo-no-bg.png" 
+                alt="Cruzar Deportes" 
+                class="h-24 w-auto brightness-0 invert opacity-90"
+              />
             </div>
           </div>
           
