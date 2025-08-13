@@ -13,7 +13,7 @@
             <span class="text-xl font-bold">Cruzar Deportes</span>
           </div>
           <p class="text-gray-300 mb-4">
-            Your premier destination for authentic sports jerseys and apparel from teams around the world.
+            Porque cada hincha merece vestir los colores de su pasión. Camisetas deportivas del mundo entero.
           </p>
           <div class="flex space-x-4">
             <a href="#" class="text-gray-400 hover:text-white">
@@ -22,7 +22,7 @@
             <a href="#" class="text-gray-400 hover:text-white">
               <Icon name="mdi:twitter" class="h-6 w-6" />
             </a>
-            <a href="#" class="text-gray-400 hover:text-white">
+            <a href="https://www.instagram.com/cruzardeportes/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white">
               <Icon name="mdi:instagram" class="h-6 w-6" />
             </a>
           </div>
@@ -30,22 +30,22 @@
 
         <!-- Quick Links -->
         <div>
-          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <h3 class="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
           <ul class="space-y-2">
-            <li><NuxtLink to="/" class="text-gray-300 hover:text-white">Home</NuxtLink></li>
-            <li><NuxtLink to="/categories" class="text-gray-300 hover:text-white">Categories</NuxtLink></li>
-            <li><NuxtLink to="/products" class="text-gray-300 hover:text-white">All Products</NuxtLink></li>
-            <li><NuxtLink to="/about" class="text-gray-300 hover:text-white">About</NuxtLink></li>
+            <li><NuxtLink to="/" class="text-gray-300 hover:text-white">Inicio</NuxtLink></li>
+            <li><NuxtLink to="/categories" class="text-gray-300 hover:text-white">Categorías</NuxtLink></li>
+            <li><NuxtLink to="/products" class="text-gray-300 hover:text-white">Todos los Productos</NuxtLink></li>
+            <li><NuxtLink to="/about" class="text-gray-300 hover:text-white">Acerca de</NuxtLink></li>
           </ul>
         </div>
 
         <!-- Customer Service -->
         <div>
-          <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+          <h3 class="text-lg font-semibold mb-4">Atención al Cliente</h3>
           <ul class="space-y-2">
-            <li><NuxtLink to="/contact" class="text-gray-300 hover:text-white">Contact Us</NuxtLink></li>
-            <li><NuxtLink to="/shipping" class="text-gray-300 hover:text-white">Shipping Info</NuxtLink></li>
-            <li><NuxtLink to="/returns" class="text-gray-300 hover:text-white">Returns</NuxtLink></li>
+            <li><NuxtLink to="/contact" class="text-gray-300 hover:text-white">Contáctanos</NuxtLink></li>
+            <li><NuxtLink to="/shipping" class="text-gray-300 hover:text-white">Información de Envío</NuxtLink></li>
+            <li><NuxtLink to="/returns" class="text-gray-300 hover:text-white">Devoluciones</NuxtLink></li>
             <li><NuxtLink to="/faq" class="text-gray-300 hover:text-white">FAQ</NuxtLink></li>
           </ul>
         </div>
@@ -53,7 +53,7 @@
 
       <div class="border-t border-gray-800 mt-8 pt-8 text-center">
         <p class="text-gray-400">
-          © {{ currentYear }} Cruzar Deportes. All rights reserved.
+          © {{ currentYear }} Cruzar Deportes. Todos los derechos reservados.
         </p>
       </div>
     </div>

@@ -1,8 +1,8 @@
 <template>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">Shop by Category</h1>
-      <p class="text-lg text-gray-600">Explore our collection organized by football confederations</p>
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">Comprar por Categoría</h1>
+      <p class="text-lg text-gray-600">Explora nuestra colección organizada por confederaciones de fútbol</p>
     </div>
 
     <div v-if="productsStore.loading" class="flex justify-center">
@@ -35,7 +35,7 @@
             <p class="text-gray-600">{{ category.description }}</p>
             
             <div class="mt-4 flex items-center text-primary-600 group-hover:text-primary-700 transition-colors">
-              <span class="text-sm font-medium">Shop now</span>
+              <span class="text-sm font-medium">Comprar ahora</span>
               <Icon name="mdi:arrow-right" class="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
@@ -55,9 +55,9 @@ onMounted(() => {
 })
 
 useHead({
-  title: 'Categories - Cruzar Deportes',
+  title: 'Categorías - Cruzar Deportes',
   meta: [
-    { name: 'description', content: 'Browse our sports jersey categories organized by football confederations and leagues.' }
+    { name: 'description', content: 'Navega por nuestras categorías de camisetas deportivas organizadas por confederaciones y ligas de fútbol.' }
   ]
 })
 </script>
