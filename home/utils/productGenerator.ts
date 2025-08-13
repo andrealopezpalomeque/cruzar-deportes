@@ -1,4 +1,4 @@
-import type { Product, Category } from '~/types'
+import type { Product, Category, CategoryType } from '~/types'
 
 interface ImageMapping {
   [key: string]: string[]
@@ -7,7 +7,7 @@ interface ImageMapping {
 // Map from scraped folder names to product information
 const teamData: Record<string, {
   name: string
-  category: 'afc' | 'caf'
+  category: CategoryType
   price: number
   originalPrice?: number
   description?: string
@@ -90,10 +90,136 @@ const teamData: Record<string, {
     category: 'caf',
     price: 60,
     description: 'Official Young Africans SC jersey from Tanzanian Premier League'
+  },
+
+  // Eredivisie Teams
+  'ajax': {
+    name: 'AFC Ajax',
+    category: 'eredivisie',
+    price: 85,
+    originalPrice: 95,
+    description: 'Official AFC Ajax jersey from Eredivisie'
+  },
+  'ajax_authentic': {
+    name: 'AFC Ajax Authentic',
+    category: 'eredivisie',
+    price: 110,
+    originalPrice: 130,
+    description: 'Authentic AFC Ajax jersey - player version from Eredivisie'
+  },
+  'ajax_gk': {
+    name: 'AFC Ajax Goalkeeper',
+    category: 'eredivisie',
+    price: 80,
+    description: 'Official AFC Ajax goalkeeper jersey from Eredivisie'
+  },
+  'ajax_kid_kit': {
+    name: 'AFC Ajax Kids Kit',
+    category: 'eredivisie',
+    price: 55,
+    description: 'Official AFC Ajax kids jersey from Eredivisie'
+  },
+  'ajax_shorts': {
+    name: 'AFC Ajax Shorts',
+    category: 'eredivisie',
+    price: 35,
+    description: 'Official AFC Ajax shorts from Eredivisie'
+  },
+  'ajax_shorts_authentic': {
+    name: 'AFC Ajax Shorts Authentic',
+    category: 'eredivisie',
+    price: 45,
+    description: 'Authentic AFC Ajax shorts - player version from Eredivisie'
+  },
+  'az_alkmaar': {
+    name: 'AZ Alkmaar',
+    category: 'eredivisie',
+    price: 70,
+    description: 'Official AZ Alkmaar jersey from Eredivisie'
+  },
+  'az_alkmaar_kid_kit': {
+    name: 'AZ Alkmaar Kids Kit',
+    category: 'eredivisie',
+    price: 45,
+    description: 'Official AZ Alkmaar kids jersey from Eredivisie'
+  },
+  'az_alkmaar_shorts': {
+    name: 'AZ Alkmaar Shorts',
+    category: 'eredivisie',
+    price: 30,
+    description: 'Official AZ Alkmaar shorts from Eredivisie'
+  },
+  'feyenoord': {
+    name: 'Feyenoord Rotterdam',
+    category: 'eredivisie',
+    price: 80,
+    originalPrice: 90,
+    description: 'Official Feyenoord Rotterdam jersey from Eredivisie'
+  },
+  'feyenoord_kid_kit': {
+    name: 'Feyenoord Kids Kit',
+    category: 'eredivisie',
+    price: 50,
+    description: 'Official Feyenoord Rotterdam kids jersey from Eredivisie'
+  },
+  'feyenoord_short': {
+    name: 'Feyenoord Shorts',
+    category: 'eredivisie',
+    price: 30,
+    description: 'Official Feyenoord Rotterdam shorts from Eredivisie'
+  },
+  'psv': {
+    name: 'PSV Eindhoven',
+    category: 'eredivisie',
+    price: 80,
+    originalPrice: 90,
+    description: 'Official PSV Eindhoven jersey from Eredivisie'
+  },
+  'psv_gk': {
+    name: 'PSV Eindhoven Goalkeeper',
+    category: 'eredivisie',
+    price: 75,
+    description: 'Official PSV Eindhoven goalkeeper jersey from Eredivisie'
+  },
+  'psv_gk_kid_kit': {
+    name: 'PSV GK Kids Kit',
+    category: 'eredivisie',
+    price: 45,
+    description: 'Official PSV Eindhoven goalkeeper kids jersey from Eredivisie'
+  },
+  'psv_gk_short': {
+    name: 'PSV GK Shorts',
+    category: 'eredivisie',
+    price: 30,
+    description: 'Official PSV Eindhoven goalkeeper shorts from Eredivisie'
+  },
+  'psv_kid_kit': {
+    name: 'PSV Eindhoven Kids Kit',
+    category: 'eredivisie',
+    price: 50,
+    description: 'Official PSV Eindhoven kids jersey from Eredivisie'
+  },
+  'psv_short': {
+    name: 'PSV Eindhoven Shorts',
+    category: 'eredivisie',
+    price: 30,
+    description: 'Official PSV Eindhoven shorts from Eredivisie'
+  },
+  'sc_heerenveen': {
+    name: 'SC Heerenveen',
+    category: 'eredivisie',
+    price: 65,
+    description: 'Official SC Heerenveen jersey from Eredivisie'
+  },
+  'twente': {
+    name: 'FC Twente',
+    category: 'eredivisie',
+    price: 70,
+    description: 'Official FC Twente jersey from Eredivisie'
   }
 }
 
-async function getImagesForTeam(teamKey: string, category: 'afc' | 'caf'): Promise<string[]> {
+async function getImagesForTeam(teamKey: string, category: CategoryType): Promise<string[]> {
   const { getTeamImages } = await import('~/utils/imageLoader')
   return getTeamImages(teamKey, category)
 }
@@ -138,12 +264,18 @@ export function generateCategories(): Category[] {
       name: 'CAF Teams',
       slug: 'caf',
       description: 'Confederation of African Football teams jerseys and merchandise'
+    },
+    {
+      id: 'eredivisie',
+      name: 'Eredivisie Teams',
+      slug: 'eredivisie',
+      description: 'Dutch Eredivisie teams jerseys and merchandise'
     }
   ]
 }
 
 // Helper function to get actual image files from the public directory
-export function getActualImages(teamKey: string, category: 'afc' | 'caf'): string[] {
+export function getActualImages(teamKey: string, category: CategoryType): string[] {
   // This would typically be done server-side or with a build-time script
   // For now, we'll return placeholder paths that match our folder structure
   const basePath = `/images/${category}/${teamKey}`
