@@ -5,7 +5,11 @@
         <!-- Company Info -->
         <div class="col-span-1 md:col-span-2">
           <div class="flex items-center space-x-2 mb-4">
-            <Icon name="mdi:soccer" class="h-8 w-8 text-primary-400" />
+            <img 
+              src="/images/cruzar-logo-no-bg.png" 
+              alt="Cruzar Deportes Logo" 
+              class="h-12 w-auto brightness-0 invert"
+            />
             <span class="text-xl font-bold">Cruzar Deportes</span>
           </div>
           <p class="text-gray-300 mb-4">

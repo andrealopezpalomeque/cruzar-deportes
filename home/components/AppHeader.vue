@@ -5,7 +5,11 @@
         <!-- Logo -->
         <div class="flex-shrink-0">
           <NuxtLink to="/" class="flex items-center space-x-2">
-            <Icon name="mdi:soccer" class="h-8 w-8 text-primary-600" />
+            <img 
+              src="/images/cruzar-logo-1.png" 
+              alt="Cruzar Deportes Logo" 
+              class="h-12 w-auto"
+            />
             <span class="text-xl font-bold text-gray-900">Cruzar Deportes</span>
           </NuxtLink>
         </div>
