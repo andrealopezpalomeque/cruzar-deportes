@@ -8,7 +8,10 @@
       "Bash(cp:*)",
       "Bash(rm:*)",
       "WebFetch(domain:wavesoccer.x.yupoo.com)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(yarn add:*)",
+      "Bash(yarn dev)",
+      "Bash(yarn remove:*)"
     ],
     "deny": []
   }
