@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pkill:*)",
+      "Bash(yarn dev)",
+      "Bash(mv:*)",
+      "Bash(rm:*)",
+      "Bash(true)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
