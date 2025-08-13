@@ -903,3 +903,1606 @@ Error: Downloaded file is not a valid image
 2025-08-13 00:01:34 [INFO]: Completed category: afc
 2025-08-13 00:01:34 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1755053932020_f7dg7e.json
 2025-08-13 00:01:34 [INFO]: === SCRAPING SESSION COMPLETED ===
+2025-08-13 01:15:50 [INFO]: Logger initialized successfully
+2025-08-13 01:15:50 [INFO]: Resumed from previous session: 1755053932020_f7dg7e
+2025-08-13 01:15:50 [INFO]: Loaded 20 failed items from previous session
+2025-08-13 01:15:50 [INFO]: Progress tracker initialized - Session ID: 1755058550118_2ytceq
+2025-08-13 01:15:50 [INFO]: Loaded 53 categories
+2025-08-13 01:15:50 [INFO]: Temporary files cleaned up
+2025-08-13 01:15:50 [INFO]: Sports Scraper initialized successfully
+2025-08-13 01:16:27 [INFO]: Logger initialized successfully
+2025-08-13 01:16:27 [INFO]: Resumed from previous session: 1755053932020_f7dg7e
+2025-08-13 01:16:27 [INFO]: Loaded 20 failed items from previous session
+2025-08-13 01:16:27 [INFO]: Progress tracker initialized - Session ID: 1755058587663_n80vv1
+2025-08-13 01:16:27 [INFO]: Loaded 53 categories
+2025-08-13 01:16:27 [INFO]: Temporary files cleaned up
+2025-08-13 01:16:27 [INFO]: Sports Scraper initialized successfully
+2025-08-13 01:16:27 [INFO]: Extracting album links from: https://wavesoccer.x.yupoo.com/categories/334344
+2025-08-13 01:16:45 [INFO]: Found 26 unique albums from https://wavesoccer.x.yupoo.com/categories/334344
+2025-08-13 01:16:45 [INFO]: Album 1: "164829969?uid=1&isSubCate=false&referrercate=334344" -> 164829969uid1issubcatefalsereferrercate334344
+2025-08-13 01:16:45 [INFO]: Album 2: "浙公网安备 33010502006611 号" -> 33010502006611
+2025-08-13 01:16:45 [INFO]: Album 3: "AJAX SHORTS AUTHENTIC" -> ajax_shorts_authentic
+2025-08-13 01:16:45 [INFO]: Album 4: "AZ ALKMAAR KID KIT" -> az_alkmaar_kid_kit
+2025-08-13 01:16:45 [INFO]: Album 5: "FEYENOORD KID KIT" -> feyenoord_kid_kit
+2025-08-13 01:16:45 [INFO]: Album 6: "AZ ALKMAAR SHORTS" -> az_alkmaar_shorts
+2025-08-13 01:16:45 [INFO]: Album 7: "FEYENOORD SHORT" -> feyenoord_short
+2025-08-13 01:16:45 [INFO]: Album 8: "PSV GK KID KIT" -> psv_gk_kid_kit
+2025-08-13 01:16:45 [INFO]: Album 9: "AJAX AUTHENTIC" -> ajax_authentic
+2025-08-13 01:16:45 [INFO]: Album 10: "SC HEERENVEEN" -> sc_heerenveen
+2025-08-13 01:16:45 [INFO]: Album 11: "PSV GK SHORT" -> psv_gk_short
+2025-08-13 01:16:45 [INFO]: Album 12: "AJAX KID KIT" -> ajax_kid_kit
+2025-08-13 01:16:45 [INFO]: Album 13: "PSV KID KIT" -> psv_kid_kit
+2025-08-13 01:16:45 [INFO]: Album 14: "AJAX SHORTS" -> ajax_shorts
+2025-08-13 01:16:45 [INFO]: Album 15: "AZ ALKMAAR" -> az_alkmaar
+2025-08-13 01:16:45 [INFO]: Album 16: "PSV SHORT" -> psv_short
+2025-08-13 01:16:45 [INFO]: Album 17: "FEYENOORD" -> feyenoord
+2025-08-13 01:16:45 [INFO]: Album 18: "AJAX GK" -> ajax_gk
+2025-08-13 01:16:45 [INFO]: Album 19: "PSV GK" -> psv_gk
+2025-08-13 01:16:45 [INFO]: Album 20: "TWENTE" -> twente
+2025-08-13 01:16:45 [INFO]: Album 21: "Yupoo" -> yupoo
+2025-08-13 01:16:45 [INFO]: Album 22: "AJAX" -> ajax
+2025-08-13 01:16:45 [INFO]: Album 23: "home page" -> home_page
+2025-08-13 01:16:45 [INFO]: Album 24: "my album" -> my_album
+2025-08-13 01:16:45 [INFO]: Album 25: "album" -> album
+2025-08-13 01:16:45 [INFO]: Album 26: "Home" -> home
+2025-08-13 01:16:45 [INFO]: Starting category: eredivisie
+2025-08-13 01:16:45 [INFO]: Processing album 1: "164829969?uid=1&isSubCate=false&referrercate=334344"
+2025-08-13 01:16:45 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/164829969?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:16:45 [INFO]: Created album folder: 164829969uid1issubcatefalsereferrercate334344
+2025-08-13 01:16:45 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/164829969?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:16:45 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:16:45 [INFO]: Extracting images directly from page content
+2025-08-13 01:16:57 [INFO]: Found 43 potential images from https://wavesoccer.x.yupoo.com/albums/164829969?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:16:57 [INFO]: Found 43 images in album: "164829969?uid=1&isSubCate=false&referrercate=334344"
+2025-08-13 01:16:57 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d27315c1/orig.jpg (attempt 1/3)
+2025-08-13 01:17:00 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_0_1755058617736.jpg
+2025-08-13 01:17:00 [INFO]: Progress: 1/0 (Infinity%) - eredivisie
+2025-08-13 01:17:00 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_0_1755058617736.jpg
+2025-08-13 01:17:02 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/55a3c6dc/orig.jpg (attempt 1/3)
+2025-08-13 01:17:03 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_1_1755058622603.jpg
+2025-08-13 01:17:03 [INFO]: Progress: 2/0 (Infinity%) - eredivisie
+2025-08-13 01:17:03 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_1_1755058622603.jpg
+2025-08-13 01:17:06 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ea66a0d5/orig.jpg (attempt 1/3)
+2025-08-13 01:17:06 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_2_1755058626082.jpg
+2025-08-13 01:17:06 [INFO]: Progress: 3/0 (Infinity%) - eredivisie
+2025-08-13 01:17:06 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_2_1755058626082.jpg
+2025-08-13 01:17:07 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/2d2d1183/orig.jpg (attempt 1/3)
+2025-08-13 01:17:08 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_3_1755058627899.jpg
+2025-08-13 01:17:08 [INFO]: Progress: 4/0 (Infinity%) - eredivisie
+2025-08-13 01:17:08 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_3_1755058627899.jpg
+2025-08-13 01:17:10 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/2e17f943/orig.jpg (attempt 1/3)
+2025-08-13 01:17:11 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_4_1755058630446.jpg
+2025-08-13 01:17:11 [INFO]: Progress: 5/0 (Infinity%) - eredivisie
+2025-08-13 01:17:11 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_4_1755058630446.jpg
+2025-08-13 01:17:13 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/879c9f0f/orig.jpg (attempt 1/3)
+2025-08-13 01:17:14 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_5_1755058633950.jpg
+2025-08-13 01:17:14 [INFO]: Progress: 6/0 (Infinity%) - eredivisie
+2025-08-13 01:17:14 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_5_1755058633950.jpg
+2025-08-13 01:17:17 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/57ad5da9/orig.jpg (attempt 1/3)
+2025-08-13 01:17:17 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_6_1755058637221.jpg
+2025-08-13 01:17:17 [INFO]: Progress: 7/0 (Infinity%) - eredivisie
+2025-08-13 01:17:17 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_6_1755058637221.jpg
+2025-08-13 01:17:20 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/5fb14da1/orig.jpg (attempt 1/3)
+2025-08-13 01:17:21 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_7_1755058640799.jpg
+2025-08-13 01:17:21 [INFO]: Progress: 8/0 (Infinity%) - eredivisie
+2025-08-13 01:17:21 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_7_1755058640799.jpg
+2025-08-13 01:17:24 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/0bf1f9af/orig.jpg (attempt 1/3)
+2025-08-13 01:17:24 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_8_1755058644131.jpg
+2025-08-13 01:17:24 [INFO]: Progress: 9/0 (Infinity%) - eredivisie
+2025-08-13 01:17:24 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_8_1755058644131.jpg
+2025-08-13 01:17:27 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4abeb327/orig.jpg (attempt 1/3)
+2025-08-13 01:17:27 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_9_1755058647326.jpg
+2025-08-13 01:17:27 [INFO]: Progress: 10/0 (Infinity%) - eredivisie
+2025-08-13 01:17:27 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_9_1755058647326.jpg
+2025-08-13 01:17:30 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/66d32890/orig.jpg (attempt 1/3)
+2025-08-13 01:17:30 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_10_1755058650222.jpg
+2025-08-13 01:17:30 [INFO]: Progress: 11/0 (Infinity%) - eredivisie
+2025-08-13 01:17:30 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_10_1755058650222.jpg
+2025-08-13 01:17:31 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/0b922476/orig.jpg (attempt 1/3)
+2025-08-13 01:17:32 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_11_1755058651951.jpg
+2025-08-13 01:17:32 [INFO]: Progress: 12/0 (Infinity%) - eredivisie
+2025-08-13 01:17:32 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_11_1755058651951.jpg
+2025-08-13 01:17:35 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/86eb657b/orig.jpg (attempt 1/3)
+2025-08-13 01:17:35 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_12_1755058655204.jpg
+2025-08-13 01:17:35 [INFO]: Progress: 13/0 (Infinity%) - eredivisie
+2025-08-13 01:17:35 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_12_1755058655204.jpg
+2025-08-13 01:17:38 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/e07cbd35/orig.jpg (attempt 1/3)
+2025-08-13 01:17:39 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_13_1755058658563.jpg
+2025-08-13 01:17:39 [INFO]: Progress: 14/0 (Infinity%) - eredivisie
+2025-08-13 01:17:39 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_13_1755058658563.jpg
+2025-08-13 01:17:40 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/bf1c6b06/orig.jpg (attempt 1/3)
+2025-08-13 01:17:40 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_14_1755058660346.jpg
+2025-08-13 01:17:40 [INFO]: Progress: 15/0 (Infinity%) - eredivisie
+2025-08-13 01:17:40 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_14_1755058660346.jpg
+2025-08-13 01:17:43 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/536e5a82/orig.jpg (attempt 1/3)
+2025-08-13 01:17:43 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_15_1755058663117.jpg
+2025-08-13 01:17:43 [INFO]: Progress: 16/0 (Infinity%) - eredivisie
+2025-08-13 01:17:43 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_15_1755058663117.jpg
+2025-08-13 01:17:44 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/16cad3af/orig.jpg (attempt 1/3)
+2025-08-13 01:17:45 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_16_1755058664849.jpg
+2025-08-13 01:17:45 [INFO]: Progress: 17/0 (Infinity%) - eredivisie
+2025-08-13 01:17:45 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_16_1755058664849.jpg
+2025-08-13 01:17:47 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/8de7869d/orig.jpg (attempt 1/3)
+2025-08-13 01:17:49 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_17_1755058667378.jpg
+2025-08-13 01:17:49 [INFO]: Progress: 18/0 (Infinity%) - eredivisie
+2025-08-13 01:17:49 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_17_1755058667378.jpg
+2025-08-13 01:17:51 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/9020b95b/orig.jpg (attempt 1/3)
+2025-08-13 01:17:52 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_18_1755058671694.jpg
+2025-08-13 01:17:52 [INFO]: Progress: 19/0 (Infinity%) - eredivisie
+2025-08-13 01:17:52 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_18_1755058671694.jpg
+2025-08-13 01:17:53 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/cbc604ff/orig.jpg (attempt 1/3)
+2025-08-13 01:17:55 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_19_1755058673739.jpg
+2025-08-13 01:17:55 [INFO]: Progress: 20/0 (Infinity%) - eredivisie
+2025-08-13 01:17:55 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_19_1755058673739.jpg
+2025-08-13 01:17:58 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/9775d93f/orig.jpg (attempt 1/3)
+2025-08-13 01:17:58 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_20_1755058678024.jpg
+2025-08-13 01:17:58 [INFO]: Progress: 21/0 (Infinity%) - eredivisie
+2025-08-13 01:17:58 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_20_1755058678024.jpg
+2025-08-13 01:18:01 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/3320aaf8/orig.jpg (attempt 1/3)
+2025-08-13 01:18:03 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_21_1755058681319.jpg
+2025-08-13 01:18:03 [INFO]: Progress: 22/0 (Infinity%) - eredivisie
+2025-08-13 01:18:03 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_21_1755058681319.jpg
+2025-08-13 01:18:05 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/0cfae7ff/orig.jpg (attempt 1/3)
+2025-08-13 01:18:06 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_22_1755058685346.jpg
+2025-08-13 01:18:06 [INFO]: Progress: 23/0 (Infinity%) - eredivisie
+2025-08-13 01:18:06 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_22_1755058685346.jpg
+2025-08-13 01:18:09 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/3e0ebd9b/orig.jpg (attempt 1/3)
+2025-08-13 01:18:10 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_23_1755058689608.jpg
+2025-08-13 01:18:10 [INFO]: Progress: 24/0 (Infinity%) - eredivisie
+2025-08-13 01:18:10 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_23_1755058689608.jpg
+2025-08-13 01:18:12 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/b7c8481d/orig.jpg (attempt 1/3)
+2025-08-13 01:18:13 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_24_1755058692158.jpg
+2025-08-13 01:18:13 [INFO]: Progress: 25/0 (Infinity%) - eredivisie
+2025-08-13 01:18:13 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_24_1755058692158.jpg
+2025-08-13 01:18:15 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/0232dd74/orig.jpg (attempt 1/3)
+2025-08-13 01:18:15 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_25_1755058695333.jpg
+2025-08-13 01:18:15 [INFO]: Progress: 26/0 (Infinity%) - eredivisie
+2025-08-13 01:18:15 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_25_1755058695333.jpg
+2025-08-13 01:18:18 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ab66f779/orig.jpg (attempt 1/3)
+2025-08-13 01:18:19 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_26_1755058698388.jpg
+2025-08-13 01:18:19 [INFO]: Progress: 27/0 (Infinity%) - eredivisie
+2025-08-13 01:18:19 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_26_1755058698388.jpg
+2025-08-13 01:18:21 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/eb7c1115/orig.jpg (attempt 1/3)
+2025-08-13 01:18:22 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_27_1755058701023.jpg
+2025-08-13 01:18:22 [INFO]: Progress: 28/0 (Infinity%) - eredivisie
+2025-08-13 01:18:22 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_27_1755058701023.jpg
+2025-08-13 01:18:23 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/cf968550/orig.jpg (attempt 1/3)
+2025-08-13 01:18:24 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_28_1755058703460.jpg
+2025-08-13 01:18:24 [INFO]: Progress: 29/0 (Infinity%) - eredivisie
+2025-08-13 01:18:24 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_28_1755058703460.jpg
+2025-08-13 01:18:26 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/35fb8c24/orig.jpg (attempt 1/3)
+2025-08-13 01:18:27 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_29_1755058706645.jpg
+2025-08-13 01:18:27 [INFO]: Progress: 30/0 (Infinity%) - eredivisie
+2025-08-13 01:18:27 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_29_1755058706645.jpg
+2025-08-13 01:18:29 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7068e2ff/orig.jpg (attempt 1/3)
+2025-08-13 01:18:31 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_30_1755058709511.jpg
+2025-08-13 01:18:31 [INFO]: Progress: 31/0 (Infinity%) - eredivisie
+2025-08-13 01:18:31 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_30_1755058709511.jpg
+2025-08-13 01:18:33 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/68f77fec/orig.jpg (attempt 1/3)
+2025-08-13 01:18:35 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_31_1755058713371.jpg
+2025-08-13 01:18:35 [INFO]: Progress: 32/0 (Infinity%) - eredivisie
+2025-08-13 01:18:35 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_31_1755058713371.jpg
+2025-08-13 01:18:38 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/6a30087a/orig.jpg (attempt 1/3)
+2025-08-13 01:18:39 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_32_1755058718541.jpg
+2025-08-13 01:18:39 [INFO]: Progress: 33/0 (Infinity%) - eredivisie
+2025-08-13 01:18:39 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_32_1755058718541.jpg
+2025-08-13 01:18:41 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/b2c9bfd5/orig.jpg (attempt 1/3)
+2025-08-13 01:18:43 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_33_1755058721230.jpg
+2025-08-13 01:18:43 [INFO]: Progress: 34/0 (Infinity%) - eredivisie
+2025-08-13 01:18:43 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_33_1755058721230.jpg
+2025-08-13 01:18:45 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/43faf5ef/orig.jpg (attempt 1/3)
+2025-08-13 01:18:46 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_34_1755058725459.jpg
+2025-08-13 01:18:46 [INFO]: Progress: 35/0 (Infinity%) - eredivisie
+2025-08-13 01:18:46 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_34_1755058725459.jpg
+2025-08-13 01:18:48 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/8d7936f9/orig.jpg (attempt 1/3)
+2025-08-13 01:18:50 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_35_1755058728237.jpg
+2025-08-13 01:18:50 [INFO]: Progress: 36/0 (Infinity%) - eredivisie
+2025-08-13 01:18:50 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_35_1755058728237.jpg
+2025-08-13 01:18:53 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/f1a9f195/orig.jpg (attempt 1/3)
+2025-08-13 01:18:54 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_36_1755058733127.jpg
+2025-08-13 01:18:54 [INFO]: Progress: 37/0 (Infinity%) - eredivisie
+2025-08-13 01:18:54 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_36_1755058733127.jpg
+2025-08-13 01:18:56 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ed7249eb/orig.jpg (attempt 1/3)
+2025-08-13 01:18:58 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_37_1755058736785.jpg
+2025-08-13 01:18:58 [INFO]: Progress: 38/0 (Infinity%) - eredivisie
+2025-08-13 01:18:58 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_37_1755058736785.jpg
+2025-08-13 01:19:00 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/789eb50c/orig.jpg (attempt 1/3)
+2025-08-13 01:19:00 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_38_1755058740019.jpg
+2025-08-13 01:19:00 [INFO]: Progress: 39/0 (Infinity%) - eredivisie
+2025-08-13 01:19:00 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_38_1755058740019.jpg
+2025-08-13 01:19:03 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d195c2e5/orig.jpg (attempt 1/3)
+2025-08-13 01:19:05 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_39_1755058743308.jpg
+2025-08-13 01:19:05 [INFO]: Progress: 40/0 (Infinity%) - eredivisie
+2025-08-13 01:19:05 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_39_1755058743308.jpg
+2025-08-13 01:19:07 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/63fed092/orig.jpg (attempt 1/3)
+2025-08-13 01:19:09 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_40_1755058747733.jpg
+2025-08-13 01:19:09 [INFO]: Progress: 41/0 (Infinity%) - eredivisie
+2025-08-13 01:19:09 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_40_1755058747733.jpg
+2025-08-13 01:19:11 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/2dfbe5cc/orig.jpg (attempt 1/3)
+2025-08-13 01:19:13 [INFO]: Successfully downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_41_1755058751278.jpg
+2025-08-13 01:19:13 [INFO]: Progress: 42/0 (Infinity%) - eredivisie
+2025-08-13 01:19:13 [INFO]: Downloaded: 164829969uid1issubcatefalsereferrercate334344_photo_img_41_1755058751278.jpg
+2025-08-13 01:19:15 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:19:16 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:19:16 [INFO]: Progress: 43/0 (Infinity%) - eredivisie
+2025-08-13 01:19:16 [ERROR]: Download failed: 164829969uid1issubcatefalsereferrercate334344_img42
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:19:17 [INFO]: Completed album "164829969?uid=1&isSubCate=false&referrercate=334344": 42/43 images
+2025-08-13 01:19:21 [INFO]: Processing album 2: "AJAX SHORTS AUTHENTIC"
+2025-08-13 01:19:21 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/170942453?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:19:21 [INFO]: Created album folder: ajax_shorts_authentic
+2025-08-13 01:19:21 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/170942453?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:19:21 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:19:21 [INFO]: Extracting images directly from page content
+2025-08-13 01:19:27 [INFO]: Found 11 potential images from https://wavesoccer.x.yupoo.com/albums/170942453?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:19:27 [INFO]: Found 11 images in album: "AJAX SHORTS AUTHENTIC"
+2025-08-13 01:19:27 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/8606af0a/orig.jpg (attempt 1/3)
+2025-08-13 01:19:29 [INFO]: Successfully downloaded: ajax_shorts_authentic_photo_img_0_1755058767709.jpg
+2025-08-13 01:19:29 [INFO]: Progress: 44/0 (Infinity%) - eredivisie
+2025-08-13 01:19:29 [INFO]: Downloaded: ajax_shorts_authentic_photo_img_0_1755058767709.jpg
+2025-08-13 01:19:32 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/813c6faf/orig.jpg (attempt 1/3)
+2025-08-13 01:19:33 [INFO]: Successfully downloaded: ajax_shorts_authentic_photo_img_1_1755058772405.jpg
+2025-08-13 01:19:33 [INFO]: Progress: 45/0 (Infinity%) - eredivisie
+2025-08-13 01:19:33 [INFO]: Downloaded: ajax_shorts_authentic_photo_img_1_1755058772405.jpg
+2025-08-13 01:19:36 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d9f2c648/orig.jpg (attempt 1/3)
+2025-08-13 01:19:37 [INFO]: Successfully downloaded: ajax_shorts_authentic_photo_img_2_1755058776805.jpg
+2025-08-13 01:19:37 [INFO]: Progress: 46/0 (Infinity%) - eredivisie
+2025-08-13 01:19:37 [INFO]: Downloaded: ajax_shorts_authentic_photo_img_2_1755058776805.jpg
+2025-08-13 01:19:40 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/0443a34c/orig.jpg (attempt 1/3)
+2025-08-13 01:19:41 [INFO]: Successfully downloaded: ajax_shorts_authentic_photo_img_3_1755058780207.jpg
+2025-08-13 01:19:41 [INFO]: Progress: 47/0 (Infinity%) - eredivisie
+2025-08-13 01:19:41 [INFO]: Downloaded: ajax_shorts_authentic_photo_img_3_1755058780207.jpg
+2025-08-13 01:19:43 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d9c13e87/orig.jpg (attempt 1/3)
+2025-08-13 01:19:43 [INFO]: Successfully downloaded: ajax_shorts_authentic_photo_img_4_1755058783193.jpg
+2025-08-13 01:19:43 [INFO]: Progress: 48/0 (Infinity%) - eredivisie
+2025-08-13 01:19:43 [INFO]: Downloaded: ajax_shorts_authentic_photo_img_4_1755058783193.jpg
+2025-08-13 01:19:46 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/36d6817a/orig.jpg (attempt 1/3)
+2025-08-13 01:19:47 [INFO]: Successfully downloaded: ajax_shorts_authentic_photo_img_5_1755058786619.jpg
+2025-08-13 01:19:47 [INFO]: Progress: 49/0 (Infinity%) - eredivisie
+2025-08-13 01:19:47 [INFO]: Downloaded: ajax_shorts_authentic_photo_img_5_1755058786619.jpg
+2025-08-13 01:19:50 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/71ce9998/orig.jpg (attempt 1/3)
+2025-08-13 01:19:51 [INFO]: Successfully downloaded: ajax_shorts_authentic_photo_img_6_1755058790209.jpg
+2025-08-13 01:19:51 [INFO]: Progress: 50/0 (Infinity%) - eredivisie
+2025-08-13 01:19:51 [INFO]: Downloaded: ajax_shorts_authentic_photo_img_6_1755058790209.jpg
+2025-08-13 01:19:52 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/c8c79227/orig.jpg (attempt 1/3)
+2025-08-13 01:19:53 [INFO]: Successfully downloaded: ajax_shorts_authentic_photo_img_7_1755058792746.jpg
+2025-08-13 01:19:53 [INFO]: Progress: 51/0 (Infinity%) - eredivisie
+2025-08-13 01:19:53 [INFO]: Downloaded: ajax_shorts_authentic_photo_img_7_1755058792746.jpg
+2025-08-13 01:19:55 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/b8965924/orig.jpg (attempt 1/3)
+2025-08-13 01:19:57 [INFO]: Successfully downloaded: ajax_shorts_authentic_photo_img_8_1755058795643.jpg
+2025-08-13 01:19:57 [INFO]: Progress: 52/0 (Infinity%) - eredivisie
+2025-08-13 01:19:57 [INFO]: Downloaded: ajax_shorts_authentic_photo_img_8_1755058795643.jpg
+2025-08-13 01:19:59 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/9d832b92/orig.jpg (attempt 1/3)
+2025-08-13 01:20:00 [INFO]: Successfully downloaded: ajax_shorts_authentic_photo_img_9_1755058799918.jpg
+2025-08-13 01:20:00 [INFO]: Progress: 53/0 (Infinity%) - eredivisie
+2025-08-13 01:20:00 [INFO]: Downloaded: ajax_shorts_authentic_photo_img_9_1755058799918.jpg
+2025-08-13 01:20:01 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:20:04 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:20:04 [INFO]: Progress: 54/0 (Infinity%) - eredivisie
+2025-08-13 01:20:04 [ERROR]: Download failed: ajax_shorts_authentic_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:20:06 [INFO]: Completed album "AJAX SHORTS AUTHENTIC": 10/11 images
+2025-08-13 01:20:11 [INFO]: Processing album 3: "AZ ALKMAAR KID KIT"
+2025-08-13 01:20:11 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/170113164?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:20:11 [INFO]: Created album folder: az_alkmaar_kid_kit
+2025-08-13 01:20:11 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/170113164?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:20:11 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:20:11 [INFO]: Extracting images directly from page content
+2025-08-13 01:20:23 [INFO]: Found 3 potential images from https://wavesoccer.x.yupoo.com/albums/170113164?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:20:23 [INFO]: Found 3 images in album: "AZ ALKMAAR KID KIT"
+2025-08-13 01:20:23 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/dbf1a76e/orig.jpg (attempt 1/3)
+2025-08-13 01:20:25 [INFO]: Successfully downloaded: az_alkmaar_kid_kit_photo_img_0_1755058823628.jpg
+2025-08-13 01:20:25 [INFO]: Progress: 55/0 (Infinity%) - eredivisie
+2025-08-13 01:20:25 [INFO]: Downloaded: az_alkmaar_kid_kit_photo_img_0_1755058823628.jpg
+2025-08-13 01:20:26 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/0c51241a/orig.jpg (attempt 1/3)
+2025-08-13 01:20:27 [INFO]: Successfully downloaded: az_alkmaar_kid_kit_photo_img_1_1755058826236.jpg
+2025-08-13 01:20:27 [INFO]: Progress: 56/0 (Infinity%) - eredivisie
+2025-08-13 01:20:27 [INFO]: Downloaded: az_alkmaar_kid_kit_photo_img_1_1755058826236.jpg
+2025-08-13 01:20:28 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:20:29 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:20:29 [INFO]: Progress: 57/0 (Infinity%) - eredivisie
+2025-08-13 01:20:29 [ERROR]: Download failed: az_alkmaar_kid_kit_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:20:32 [INFO]: Completed album "AZ ALKMAAR KID KIT": 2/3 images
+2025-08-13 01:20:37 [INFO]: Processing album 4: "FEYENOORD KID KIT"
+2025-08-13 01:20:37 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/171422581?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:20:37 [INFO]: Created album folder: feyenoord_kid_kit
+2025-08-13 01:20:37 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/171422581?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:20:37 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:20:37 [INFO]: Extracting images directly from page content
+2025-08-13 01:21:16 [WARN]: Request attempt 1 failed: stream has been aborted
+2025-08-13 01:21:33 [INFO]: Found 10 potential images from https://wavesoccer.x.yupoo.com/albums/171422581?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:21:33 [INFO]: Found 10 images in album: "FEYENOORD KID KIT"
+2025-08-13 01:21:33 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/86cfeee7/orig.jpg (attempt 1/3)
+2025-08-13 01:21:35 [INFO]: Successfully downloaded: feyenoord_kid_kit_photo_img_0_1755058893629.jpg
+2025-08-13 01:21:35 [INFO]: Progress: 58/0 (Infinity%) - eredivisie
+2025-08-13 01:21:35 [INFO]: Downloaded: feyenoord_kid_kit_photo_img_0_1755058893629.jpg
+2025-08-13 01:21:36 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/e3f113a7/orig.jpg (attempt 1/3)
+2025-08-13 01:21:38 [INFO]: Successfully downloaded: feyenoord_kid_kit_photo_img_1_1755058896925.jpg
+2025-08-13 01:21:38 [INFO]: Progress: 59/0 (Infinity%) - eredivisie
+2025-08-13 01:21:38 [INFO]: Downloaded: feyenoord_kid_kit_photo_img_1_1755058896925.jpg
+2025-08-13 01:21:40 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4d68dcfe/orig.jpg (attempt 1/3)
+2025-08-13 01:21:42 [INFO]: Successfully downloaded: feyenoord_kid_kit_photo_img_2_1755058900974.jpg
+2025-08-13 01:21:42 [INFO]: Progress: 60/0 (Infinity%) - eredivisie
+2025-08-13 01:21:42 [INFO]: Downloaded: feyenoord_kid_kit_photo_img_2_1755058900974.jpg
+2025-08-13 01:21:43 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/907ba857/orig.jpg (attempt 1/3)
+2025-08-13 01:21:45 [INFO]: Successfully downloaded: feyenoord_kid_kit_photo_img_3_1755058903633.jpg
+2025-08-13 01:21:45 [INFO]: Progress: 61/0 (Infinity%) - eredivisie
+2025-08-13 01:21:45 [INFO]: Downloaded: feyenoord_kid_kit_photo_img_3_1755058903633.jpg
+2025-08-13 01:21:47 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/b496087f/orig.jpg (attempt 1/3)
+2025-08-13 01:21:48 [INFO]: Successfully downloaded: feyenoord_kid_kit_photo_img_4_1755058907048.jpg
+2025-08-13 01:21:48 [INFO]: Progress: 62/0 (Infinity%) - eredivisie
+2025-08-13 01:21:48 [INFO]: Downloaded: feyenoord_kid_kit_photo_img_4_1755058907048.jpg
+2025-08-13 01:21:49 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/e6a1af85/orig.jpg (attempt 1/3)
+2025-08-13 01:21:50 [INFO]: Successfully downloaded: feyenoord_kid_kit_photo_img_5_1755058909645.jpg
+2025-08-13 01:21:50 [INFO]: Progress: 63/0 (Infinity%) - eredivisie
+2025-08-13 01:21:50 [INFO]: Downloaded: feyenoord_kid_kit_photo_img_5_1755058909645.jpg
+2025-08-13 01:21:52 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/2020ac7d/orig.jpg (attempt 1/3)
+2025-08-13 01:21:52 [INFO]: Successfully downloaded: feyenoord_kid_kit_photo_img_6_1755058912339.jpg
+2025-08-13 01:21:52 [INFO]: Progress: 64/0 (Infinity%) - eredivisie
+2025-08-13 01:21:52 [INFO]: Downloaded: feyenoord_kid_kit_photo_img_6_1755058912339.jpg
+2025-08-13 01:21:55 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:21:56 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:21:56 [INFO]: Progress: 65/0 (Infinity%) - eredivisie
+2025-08-13 01:21:56 [ERROR]: Download failed: feyenoord_kid_kit_img7
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:21:57 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/0b2ae420/small.png (attempt 1/3)
+2025-08-13 01:21:59 [INFO]: Successfully downloaded: feyenoord_kid_kit_photo_img_8_1755058917886.png
+2025-08-13 01:21:59 [INFO]: Progress: 66/0 (Infinity%) - eredivisie
+2025-08-13 01:21:59 [INFO]: Downloaded: feyenoord_kid_kit_photo_img_8_1755058917886.png
+2025-08-13 01:22:01 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/625468d8/small.png (attempt 1/3)
+2025-08-13 01:22:03 [INFO]: Successfully downloaded: feyenoord_kid_kit_photo_img_9_1755058921729.png
+2025-08-13 01:22:03 [INFO]: Progress: 67/0 (Infinity%) - eredivisie
+2025-08-13 01:22:03 [INFO]: Downloaded: feyenoord_kid_kit_photo_img_9_1755058921729.png
+2025-08-13 01:22:06 [INFO]: Completed album "FEYENOORD KID KIT": 9/10 images
+2025-08-13 01:22:10 [INFO]: Processing album 5: "AZ ALKMAAR SHORTS"
+2025-08-13 01:22:10 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/170113156?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:22:10 [INFO]: Created album folder: az_alkmaar_shorts
+2025-08-13 01:22:10 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/170113156?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:22:10 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:22:10 [INFO]: Extracting images directly from page content
+2025-08-13 01:22:16 [INFO]: Found 9 potential images from https://wavesoccer.x.yupoo.com/albums/170113156?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:22:16 [INFO]: Found 9 images in album: "AZ ALKMAAR SHORTS"
+2025-08-13 01:22:16 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/90121dbc/orig.jpg (attempt 1/3)
+2025-08-13 01:22:17 [INFO]: Successfully downloaded: az_alkmaar_shorts_photo_img_0_1755058936529.jpg
+2025-08-13 01:22:17 [INFO]: Progress: 68/0 (Infinity%) - eredivisie
+2025-08-13 01:22:17 [INFO]: Downloaded: az_alkmaar_shorts_photo_img_0_1755058936529.jpg
+2025-08-13 01:22:19 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ceda431a/orig.jpg (attempt 1/3)
+2025-08-13 01:22:20 [INFO]: Successfully downloaded: az_alkmaar_shorts_photo_img_1_1755058939527.jpg
+2025-08-13 01:22:20 [INFO]: Progress: 69/0 (Infinity%) - eredivisie
+2025-08-13 01:22:20 [INFO]: Downloaded: az_alkmaar_shorts_photo_img_1_1755058939527.jpg
+2025-08-13 01:22:21 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/98cdf00f/orig.jpg (attempt 1/3)
+2025-08-13 01:22:22 [INFO]: Successfully downloaded: az_alkmaar_shorts_photo_img_2_1755058941295.jpg
+2025-08-13 01:22:22 [INFO]: Progress: 70/0 (Infinity%) - eredivisie
+2025-08-13 01:22:22 [INFO]: Downloaded: az_alkmaar_shorts_photo_img_2_1755058941295.jpg
+2025-08-13 01:22:23 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4a8dfe84/orig.jpg (attempt 1/3)
+2025-08-13 01:22:23 [INFO]: Successfully downloaded: az_alkmaar_shorts_photo_img_3_1755058943332.jpg
+2025-08-13 01:22:23 [INFO]: Progress: 71/0 (Infinity%) - eredivisie
+2025-08-13 01:22:23 [INFO]: Downloaded: az_alkmaar_shorts_photo_img_3_1755058943332.jpg
+2025-08-13 01:22:25 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/cffff2c1/orig.jpg (attempt 1/3)
+2025-08-13 01:22:26 [INFO]: Successfully downloaded: az_alkmaar_shorts_photo_img_4_1755058945476.jpg
+2025-08-13 01:22:26 [INFO]: Progress: 72/0 (Infinity%) - eredivisie
+2025-08-13 01:22:26 [INFO]: Downloaded: az_alkmaar_shorts_photo_img_4_1755058945476.jpg
+2025-08-13 01:22:27 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/65579755/orig.jpg (attempt 1/3)
+2025-08-13 01:22:27 [INFO]: Successfully downloaded: az_alkmaar_shorts_photo_img_5_1755058947194.jpg
+2025-08-13 01:22:27 [INFO]: Progress: 73/0 (Infinity%) - eredivisie
+2025-08-13 01:22:27 [INFO]: Downloaded: az_alkmaar_shorts_photo_img_5_1755058947194.jpg
+2025-08-13 01:22:30 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d75feb96/orig.jpg (attempt 1/3)
+2025-08-13 01:22:31 [INFO]: Successfully downloaded: az_alkmaar_shorts_photo_img_6_1755058950831.jpg
+2025-08-13 01:22:31 [INFO]: Progress: 74/0 (Infinity%) - eredivisie
+2025-08-13 01:22:31 [INFO]: Downloaded: az_alkmaar_shorts_photo_img_6_1755058950831.jpg
+2025-08-13 01:22:33 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4ba1244d/orig.jpg (attempt 1/3)
+2025-08-13 01:22:34 [INFO]: Successfully downloaded: az_alkmaar_shorts_photo_img_7_1755058953438.jpg
+2025-08-13 01:22:34 [INFO]: Progress: 75/0 (Infinity%) - eredivisie
+2025-08-13 01:22:34 [INFO]: Downloaded: az_alkmaar_shorts_photo_img_7_1755058953438.jpg
+2025-08-13 01:22:35 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:22:36 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:22:36 [INFO]: Progress: 76/0 (Infinity%) - eredivisie
+2025-08-13 01:22:36 [ERROR]: Download failed: az_alkmaar_shorts_img8
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:22:37 [INFO]: Completed album "AZ ALKMAAR SHORTS": 8/9 images
+2025-08-13 01:22:43 [INFO]: Processing album 6: "FEYENOORD SHORT"
+2025-08-13 01:22:43 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/183450330?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:22:43 [INFO]: Created album folder: feyenoord_short
+2025-08-13 01:22:43 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/183450330?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:22:43 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:22:43 [INFO]: Extracting images directly from page content
+2025-08-13 01:22:52 [INFO]: Found 3 potential images from https://wavesoccer.x.yupoo.com/albums/183450330?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:22:52 [INFO]: Found 3 images in album: "FEYENOORD SHORT"
+2025-08-13 01:22:52 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/6d889717/medium.png (attempt 1/3)
+2025-08-13 01:22:53 [INFO]: Successfully downloaded: feyenoord_short_photo_img_0_1755058972588.png
+2025-08-13 01:22:53 [INFO]: Progress: 77/0 (Infinity%) - eredivisie
+2025-08-13 01:22:53 [INFO]: Downloaded: feyenoord_short_photo_img_0_1755058972588.png
+2025-08-13 01:22:54 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:22:55 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:22:55 [INFO]: Progress: 78/0 (Infinity%) - eredivisie
+2025-08-13 01:22:55 [ERROR]: Download failed: feyenoord_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:22:58 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d1bd681e/small.png (attempt 1/3)
+2025-08-13 01:22:59 [INFO]: Successfully downloaded: feyenoord_short_photo_img_2_1755058978379.png
+2025-08-13 01:22:59 [INFO]: Progress: 79/0 (Infinity%) - eredivisie
+2025-08-13 01:22:59 [INFO]: Downloaded: feyenoord_short_photo_img_2_1755058978379.png
+2025-08-13 01:23:01 [INFO]: Completed album "FEYENOORD SHORT": 2/3 images
+2025-08-13 01:23:07 [INFO]: Processing album 7: "PSV GK KID KIT"
+2025-08-13 01:23:07 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/179069431?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:23:07 [INFO]: Created album folder: psv_gk_kid_kit
+2025-08-13 01:23:07 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/179069431?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:23:07 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:23:07 [INFO]: Extracting images directly from page content
+2025-08-13 01:23:13 [INFO]: Found 5 potential images from https://wavesoccer.x.yupoo.com/albums/179069431?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:23:13 [INFO]: Found 5 images in album: "PSV GK KID KIT"
+2025-08-13 01:23:13 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/5648e75d/orig.jpg (attempt 1/3)
+2025-08-13 01:23:14 [INFO]: Successfully downloaded: psv_gk_kid_kit_photo_img_0_1755058993835.jpg
+2025-08-13 01:23:14 [INFO]: Progress: 80/0 (Infinity%) - eredivisie
+2025-08-13 01:23:14 [INFO]: Downloaded: psv_gk_kid_kit_photo_img_0_1755058993835.jpg
+2025-08-13 01:23:17 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7fa59381/orig.jpg (attempt 1/3)
+2025-08-13 01:23:18 [INFO]: Successfully downloaded: psv_gk_kid_kit_photo_img_1_1755058997694.jpg
+2025-08-13 01:23:18 [INFO]: Progress: 81/0 (Infinity%) - eredivisie
+2025-08-13 01:23:18 [INFO]: Downloaded: psv_gk_kid_kit_photo_img_1_1755058997694.jpg
+2025-08-13 01:23:21 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/de877db1/orig.jpg (attempt 1/3)
+2025-08-13 01:23:22 [INFO]: Successfully downloaded: psv_gk_kid_kit_photo_img_2_1755059001195.jpg
+2025-08-13 01:23:22 [INFO]: Progress: 82/0 (Infinity%) - eredivisie
+2025-08-13 01:23:22 [INFO]: Downloaded: psv_gk_kid_kit_photo_img_2_1755059001195.jpg
+2025-08-13 01:23:24 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/cc6c9e54/orig.jpg (attempt 1/3)
+2025-08-13 01:23:25 [INFO]: Successfully downloaded: psv_gk_kid_kit_photo_img_3_1755059004372.jpg
+2025-08-13 01:23:25 [INFO]: Progress: 83/0 (Infinity%) - eredivisie
+2025-08-13 01:23:25 [INFO]: Downloaded: psv_gk_kid_kit_photo_img_3_1755059004372.jpg
+2025-08-13 01:23:27 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:23:28 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:23:28 [INFO]: Progress: 84/0 (Infinity%) - eredivisie
+2025-08-13 01:23:28 [ERROR]: Download failed: psv_gk_kid_kit_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:23:30 [INFO]: Completed album "PSV GK KID KIT": 4/5 images
+2025-08-13 01:23:35 [INFO]: Processing album 8: "AJAX AUTHENTIC"
+2025-08-13 01:23:35 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/167443938?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:23:35 [INFO]: Created album folder: ajax_authentic
+2025-08-13 01:23:35 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/167443938?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:23:35 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:23:35 [INFO]: Extracting images directly from page content
+2025-08-13 01:23:49 [INFO]: Found 33 potential images from https://wavesoccer.x.yupoo.com/albums/167443938?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:23:49 [INFO]: Found 33 images in album: "AJAX AUTHENTIC"
+2025-08-13 01:23:49 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/c0536e2a/orig.jpg (attempt 1/3)
+2025-08-13 01:23:51 [INFO]: Successfully downloaded: ajax_authentic_photo_img_0_1755059029828.jpg
+2025-08-13 01:23:51 [INFO]: Progress: 85/0 (Infinity%) - eredivisie
+2025-08-13 01:23:51 [INFO]: Downloaded: ajax_authentic_photo_img_0_1755059029828.jpg
+2025-08-13 01:23:53 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/79326c22/orig.jpg (attempt 1/3)
+2025-08-13 01:23:54 [INFO]: Successfully downloaded: ajax_authentic_photo_img_1_1755059033719.jpg
+2025-08-13 01:23:54 [INFO]: Progress: 86/0 (Infinity%) - eredivisie
+2025-08-13 01:23:54 [INFO]: Downloaded: ajax_authentic_photo_img_1_1755059033719.jpg
+2025-08-13 01:23:57 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/193b9b58/orig.jpg (attempt 1/3)
+2025-08-13 01:23:59 [INFO]: Successfully downloaded: ajax_authentic_photo_img_2_1755059037183.jpg
+2025-08-13 01:23:59 [INFO]: Progress: 87/0 (Infinity%) - eredivisie
+2025-08-13 01:23:59 [INFO]: Downloaded: ajax_authentic_photo_img_2_1755059037183.jpg
+2025-08-13 01:24:00 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/fabd6cc4/orig.jpg (attempt 1/3)
+2025-08-13 01:24:02 [INFO]: Successfully downloaded: ajax_authentic_photo_img_3_1755059040941.jpg
+2025-08-13 01:24:02 [INFO]: Progress: 88/0 (Infinity%) - eredivisie
+2025-08-13 01:24:02 [INFO]: Downloaded: ajax_authentic_photo_img_3_1755059040941.jpg
+2025-08-13 01:24:05 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/fccd8f64/orig.jpg (attempt 1/3)
+2025-08-13 01:24:07 [INFO]: Successfully downloaded: ajax_authentic_photo_img_4_1755059045570.jpg
+2025-08-13 01:24:07 [INFO]: Progress: 89/0 (Infinity%) - eredivisie
+2025-08-13 01:24:07 [INFO]: Downloaded: ajax_authentic_photo_img_4_1755059045570.jpg
+2025-08-13 01:24:09 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4a37f007/orig.jpg (attempt 1/3)
+2025-08-13 01:24:10 [INFO]: Successfully downloaded: ajax_authentic_photo_img_5_1755059049202.jpg
+2025-08-13 01:24:10 [INFO]: Progress: 90/0 (Infinity%) - eredivisie
+2025-08-13 01:24:10 [INFO]: Downloaded: ajax_authentic_photo_img_5_1755059049202.jpg
+2025-08-13 01:24:13 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/eb39f6fe/orig.jpg (attempt 1/3)
+2025-08-13 01:24:15 [INFO]: Successfully downloaded: ajax_authentic_photo_img_6_1755059053040.jpg
+2025-08-13 01:24:15 [INFO]: Progress: 91/0 (Infinity%) - eredivisie
+2025-08-13 01:24:15 [INFO]: Downloaded: ajax_authentic_photo_img_6_1755059053040.jpg
+2025-08-13 01:24:17 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/440176e9/orig.jpg (attempt 1/3)
+2025-08-13 01:24:18 [INFO]: Successfully downloaded: ajax_authentic_photo_img_7_1755059057521.jpg
+2025-08-13 01:24:18 [INFO]: Progress: 92/0 (Infinity%) - eredivisie
+2025-08-13 01:24:18 [INFO]: Downloaded: ajax_authentic_photo_img_7_1755059057521.jpg
+2025-08-13 01:24:21 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/8ef929db/orig.jpg (attempt 1/3)
+2025-08-13 01:24:22 [INFO]: Successfully downloaded: ajax_authentic_photo_img_8_1755059061064.jpg
+2025-08-13 01:24:22 [INFO]: Progress: 93/0 (Infinity%) - eredivisie
+2025-08-13 01:24:22 [INFO]: Downloaded: ajax_authentic_photo_img_8_1755059061064.jpg
+2025-08-13 01:24:25 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/f4ae50f6/orig.jpg (attempt 1/3)
+2025-08-13 01:24:26 [INFO]: Successfully downloaded: ajax_authentic_photo_img_9_1755059065559.jpg
+2025-08-13 01:24:26 [INFO]: Progress: 94/0 (Infinity%) - eredivisie
+2025-08-13 01:24:26 [INFO]: Downloaded: ajax_authentic_photo_img_9_1755059065559.jpg
+2025-08-13 01:24:29 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/5c1c6d16/orig.jpg (attempt 1/3)
+2025-08-13 01:24:29 [INFO]: Successfully downloaded: ajax_authentic_photo_img_10_1755059069189.jpg
+2025-08-13 01:24:29 [INFO]: Progress: 95/0 (Infinity%) - eredivisie
+2025-08-13 01:24:29 [INFO]: Downloaded: ajax_authentic_photo_img_10_1755059069189.jpg
+2025-08-13 01:24:31 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/8a316006/orig.jpg (attempt 1/3)
+2025-08-13 01:24:31 [INFO]: Successfully downloaded: ajax_authentic_photo_img_11_1755059071010.jpg
+2025-08-13 01:24:31 [INFO]: Progress: 96/0 (Infinity%) - eredivisie
+2025-08-13 01:24:31 [INFO]: Downloaded: ajax_authentic_photo_img_11_1755059071010.jpg
+2025-08-13 01:24:33 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/9581097c/orig.jpg (attempt 1/3)
+2025-08-13 01:24:33 [INFO]: Successfully downloaded: ajax_authentic_photo_img_12_1755059073063.jpg
+2025-08-13 01:24:33 [INFO]: Progress: 97/0 (Infinity%) - eredivisie
+2025-08-13 01:24:33 [INFO]: Downloaded: ajax_authentic_photo_img_12_1755059073063.jpg
+2025-08-13 01:24:35 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/5eb7a1f3/orig.jpg (attempt 1/3)
+2025-08-13 01:24:36 [INFO]: Successfully downloaded: ajax_authentic_photo_img_13_1755059075887.jpg
+2025-08-13 01:24:36 [INFO]: Progress: 98/0 (Infinity%) - eredivisie
+2025-08-13 01:24:36 [INFO]: Downloaded: ajax_authentic_photo_img_13_1755059075887.jpg
+2025-08-13 01:24:38 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/bfd0d286/orig.jpg (attempt 1/3)
+2025-08-13 01:24:39 [INFO]: Successfully downloaded: ajax_authentic_photo_img_14_1755059078735.jpg
+2025-08-13 01:24:39 [INFO]: Progress: 99/0 (Infinity%) - eredivisie
+2025-08-13 01:24:39 [INFO]: Downloaded: ajax_authentic_photo_img_14_1755059078735.jpg
+2025-08-13 01:24:41 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/e33b1949/orig.jpg (attempt 1/3)
+2025-08-13 01:24:42 [INFO]: Successfully downloaded: ajax_authentic_photo_img_15_1755059081432.jpg
+2025-08-13 01:24:42 [INFO]: Progress: 100/0 (Infinity%) - eredivisie
+2025-08-13 01:24:42 [INFO]: Downloaded: ajax_authentic_photo_img_15_1755059081432.jpg
+2025-08-13 01:24:43 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/bf842b34/orig.jpg (attempt 1/3)
+2025-08-13 01:24:44 [INFO]: Successfully downloaded: ajax_authentic_photo_img_16_1755059083468.jpg
+2025-08-13 01:24:44 [INFO]: Progress: 101/0 (Infinity%) - eredivisie
+2025-08-13 01:24:44 [INFO]: Downloaded: ajax_authentic_photo_img_16_1755059083468.jpg
+2025-08-13 01:24:46 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/c71a9fb9/orig.jpg (attempt 1/3)
+2025-08-13 01:24:47 [INFO]: Successfully downloaded: ajax_authentic_photo_img_17_1755059086800.jpg
+2025-08-13 01:24:47 [INFO]: Progress: 102/0 (Infinity%) - eredivisie
+2025-08-13 01:24:47 [INFO]: Downloaded: ajax_authentic_photo_img_17_1755059086800.jpg
+2025-08-13 01:24:49 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4c9ba232/orig.jpg (attempt 1/3)
+2025-08-13 01:24:50 [INFO]: Successfully downloaded: ajax_authentic_photo_img_18_1755059089351.jpg
+2025-08-13 01:24:50 [INFO]: Progress: 103/0 (Infinity%) - eredivisie
+2025-08-13 01:24:50 [INFO]: Downloaded: ajax_authentic_photo_img_18_1755059089351.jpg
+2025-08-13 01:24:52 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4cde8648/orig.jpg (attempt 1/3)
+2025-08-13 01:24:53 [INFO]: Successfully downloaded: ajax_authentic_photo_img_19_1755059092859.jpg
+2025-08-13 01:24:53 [INFO]: Progress: 104/0 (Infinity%) - eredivisie
+2025-08-13 01:24:53 [INFO]: Downloaded: ajax_authentic_photo_img_19_1755059092859.jpg
+2025-08-13 01:24:54 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/c5ec4981/orig.jpg (attempt 1/3)
+2025-08-13 01:24:55 [INFO]: Successfully downloaded: ajax_authentic_photo_img_20_1755059094593.jpg
+2025-08-13 01:24:55 [INFO]: Progress: 105/0 (Infinity%) - eredivisie
+2025-08-13 01:24:55 [INFO]: Downloaded: ajax_authentic_photo_img_20_1755059094593.jpg
+2025-08-13 01:24:56 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/f845709d/orig.jpg (attempt 1/3)
+2025-08-13 01:24:57 [INFO]: Successfully downloaded: ajax_authentic_photo_img_21_1755059096937.jpg
+2025-08-13 01:24:57 [INFO]: Progress: 106/0 (Infinity%) - eredivisie
+2025-08-13 01:24:57 [INFO]: Downloaded: ajax_authentic_photo_img_21_1755059096937.jpg
+2025-08-13 01:24:58 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/19c9d29d/orig.jpg (attempt 1/3)
+2025-08-13 01:24:59 [INFO]: Successfully downloaded: ajax_authentic_photo_img_22_1755059098751.jpg
+2025-08-13 01:24:59 [INFO]: Progress: 107/0 (Infinity%) - eredivisie
+2025-08-13 01:24:59 [INFO]: Downloaded: ajax_authentic_photo_img_22_1755059098751.jpg
+2025-08-13 01:25:02 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/11f4c6e5/orig.jpg (attempt 1/3)
+2025-08-13 01:25:02 [INFO]: Successfully downloaded: ajax_authentic_photo_img_23_1755059102348.jpg
+2025-08-13 01:25:02 [INFO]: Progress: 108/0 (Infinity%) - eredivisie
+2025-08-13 01:25:02 [INFO]: Downloaded: ajax_authentic_photo_img_23_1755059102348.jpg
+2025-08-13 01:25:05 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/5d3ace3c/orig.jpg (attempt 1/3)
+2025-08-13 01:25:06 [INFO]: Successfully downloaded: ajax_authentic_photo_img_24_1755059105821.jpg
+2025-08-13 01:25:06 [INFO]: Progress: 109/0 (Infinity%) - eredivisie
+2025-08-13 01:25:06 [INFO]: Downloaded: ajax_authentic_photo_img_24_1755059105821.jpg
+2025-08-13 01:25:08 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d752538a/orig.jpg (attempt 1/3)
+2025-08-13 01:25:09 [INFO]: Successfully downloaded: ajax_authentic_photo_img_25_1755059108293.jpg
+2025-08-13 01:25:09 [INFO]: Progress: 110/0 (Infinity%) - eredivisie
+2025-08-13 01:25:09 [INFO]: Downloaded: ajax_authentic_photo_img_25_1755059108293.jpg
+2025-08-13 01:25:10 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/410bd1ba/orig.jpg (attempt 1/3)
+2025-08-13 01:25:10 [INFO]: Successfully downloaded: ajax_authentic_photo_img_26_1755059110151.jpg
+2025-08-13 01:25:10 [INFO]: Progress: 111/0 (Infinity%) - eredivisie
+2025-08-13 01:25:10 [INFO]: Downloaded: ajax_authentic_photo_img_26_1755059110151.jpg
+2025-08-13 01:25:12 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/1734fc0f/orig.jpg (attempt 1/3)
+2025-08-13 01:25:13 [INFO]: Successfully downloaded: ajax_authentic_photo_img_27_1755059112385.jpg
+2025-08-13 01:25:13 [INFO]: Progress: 112/0 (Infinity%) - eredivisie
+2025-08-13 01:25:13 [INFO]: Downloaded: ajax_authentic_photo_img_27_1755059112385.jpg
+2025-08-13 01:25:14 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/2761d66e/orig.jpg (attempt 1/3)
+2025-08-13 01:25:15 [INFO]: Successfully downloaded: ajax_authentic_photo_img_28_1755059114697.jpg
+2025-08-13 01:25:15 [INFO]: Progress: 113/0 (Infinity%) - eredivisie
+2025-08-13 01:25:15 [INFO]: Downloaded: ajax_authentic_photo_img_28_1755059114697.jpg
+2025-08-13 01:25:16 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4cc1f2dc/orig.jpg (attempt 1/3)
+2025-08-13 01:25:17 [INFO]: Successfully downloaded: ajax_authentic_photo_img_29_1755059116919.jpg
+2025-08-13 01:25:17 [INFO]: Progress: 114/0 (Infinity%) - eredivisie
+2025-08-13 01:25:17 [INFO]: Downloaded: ajax_authentic_photo_img_29_1755059116919.jpg
+2025-08-13 01:25:20 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/759b8fdd/orig.jpg (attempt 1/3)
+2025-08-13 01:25:20 [INFO]: Successfully downloaded: ajax_authentic_photo_img_30_1755059120089.jpg
+2025-08-13 01:25:20 [INFO]: Progress: 115/0 (Infinity%) - eredivisie
+2025-08-13 01:25:20 [INFO]: Downloaded: ajax_authentic_photo_img_30_1755059120089.jpg
+2025-08-13 01:25:22 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/3f0adb40/orig.jpg (attempt 1/3)
+2025-08-13 01:25:23 [INFO]: Successfully downloaded: ajax_authentic_photo_img_31_1755059122339.jpg
+2025-08-13 01:25:23 [INFO]: Progress: 116/0 (Infinity%) - eredivisie
+2025-08-13 01:25:23 [INFO]: Downloaded: ajax_authentic_photo_img_31_1755059122339.jpg
+2025-08-13 01:25:24 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:25:25 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:25:25 [INFO]: Progress: 117/0 (Infinity%) - eredivisie
+2025-08-13 01:25:25 [ERROR]: Download failed: ajax_authentic_img32
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:25:26 [INFO]: Completed album "AJAX AUTHENTIC": 32/33 images
+2025-08-13 01:25:31 [INFO]: Processing album 9: "SC HEERENVEEN"
+2025-08-13 01:25:31 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/177954069?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:25:31 [INFO]: Created album folder: sc_heerenveen
+2025-08-13 01:25:31 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/177954069?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:25:31 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:25:31 [INFO]: Extracting images directly from page content
+2025-08-13 01:25:40 [INFO]: Found 11 potential images from https://wavesoccer.x.yupoo.com/albums/177954069?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:25:40 [INFO]: Found 11 images in album: "SC HEERENVEEN"
+2025-08-13 01:25:40 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/cbc90f26/orig.jpg (attempt 1/3)
+2025-08-13 01:25:42 [INFO]: Successfully downloaded: sc_heerenveen_photo_img_0_1755059140838.jpg
+2025-08-13 01:25:42 [INFO]: Progress: 118/0 (Infinity%) - eredivisie
+2025-08-13 01:25:42 [INFO]: Downloaded: sc_heerenveen_photo_img_0_1755059140838.jpg
+2025-08-13 01:25:43 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/efc37d0a/orig.jpg (attempt 1/3)
+2025-08-13 01:25:44 [INFO]: Successfully downloaded: sc_heerenveen_photo_img_1_1755059143979.jpg
+2025-08-13 01:25:44 [INFO]: Progress: 119/0 (Infinity%) - eredivisie
+2025-08-13 01:25:44 [INFO]: Downloaded: sc_heerenveen_photo_img_1_1755059143979.jpg
+2025-08-13 01:25:47 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/c3e4c611/orig.jpg (attempt 1/3)
+2025-08-13 01:25:47 [INFO]: Successfully downloaded: sc_heerenveen_photo_img_2_1755059147359.jpg
+2025-08-13 01:25:47 [INFO]: Progress: 120/0 (Infinity%) - eredivisie
+2025-08-13 01:25:47 [INFO]: Downloaded: sc_heerenveen_photo_img_2_1755059147359.jpg
+2025-08-13 01:25:49 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/9fc099d2/orig.jpg (attempt 1/3)
+2025-08-13 01:25:50 [INFO]: Successfully downloaded: sc_heerenveen_photo_img_3_1755059149856.jpg
+2025-08-13 01:25:50 [INFO]: Progress: 121/0 (Infinity%) - eredivisie
+2025-08-13 01:25:50 [INFO]: Downloaded: sc_heerenveen_photo_img_3_1755059149856.jpg
+2025-08-13 01:25:51 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/600f7bbe/orig.jpg (attempt 1/3)
+2025-08-13 01:25:52 [INFO]: Successfully downloaded: sc_heerenveen_photo_img_4_1755059151893.jpg
+2025-08-13 01:25:52 [INFO]: Progress: 122/0 (Infinity%) - eredivisie
+2025-08-13 01:25:52 [INFO]: Downloaded: sc_heerenveen_photo_img_4_1755059151893.jpg
+2025-08-13 01:25:54 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/edfaacff/orig.jpg (attempt 1/3)
+2025-08-13 01:25:54 [INFO]: Successfully downloaded: sc_heerenveen_photo_img_5_1755059154266.jpg
+2025-08-13 01:25:54 [INFO]: Progress: 123/0 (Infinity%) - eredivisie
+2025-08-13 01:25:54 [INFO]: Downloaded: sc_heerenveen_photo_img_5_1755059154266.jpg
+2025-08-13 01:25:57 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/463a67ca/orig.jpg (attempt 1/3)
+2025-08-13 01:25:58 [INFO]: Successfully downloaded: sc_heerenveen_photo_img_6_1755059157602.jpg
+2025-08-13 01:25:58 [INFO]: Progress: 124/0 (Infinity%) - eredivisie
+2025-08-13 01:25:58 [INFO]: Downloaded: sc_heerenveen_photo_img_6_1755059157602.jpg
+2025-08-13 01:26:00 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/606c9523/orig.jpg (attempt 1/3)
+2025-08-13 01:26:01 [INFO]: Successfully downloaded: sc_heerenveen_photo_img_7_1755059160819.jpg
+2025-08-13 01:26:01 [INFO]: Progress: 125/0 (Infinity%) - eredivisie
+2025-08-13 01:26:01 [INFO]: Downloaded: sc_heerenveen_photo_img_7_1755059160819.jpg
+2025-08-13 01:26:04 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/5d857395/orig.jpg (attempt 1/3)
+2025-08-13 01:26:04 [INFO]: Successfully downloaded: sc_heerenveen_photo_img_8_1755059164316.jpg
+2025-08-13 01:26:04 [INFO]: Progress: 126/0 (Infinity%) - eredivisie
+2025-08-13 01:26:04 [INFO]: Downloaded: sc_heerenveen_photo_img_8_1755059164316.jpg
+2025-08-13 01:26:06 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/44386e51/orig.jpg (attempt 1/3)
+2025-08-13 01:26:07 [INFO]: Successfully downloaded: sc_heerenveen_photo_img_9_1755059166410.jpg
+2025-08-13 01:26:07 [INFO]: Progress: 127/0 (Infinity%) - eredivisie
+2025-08-13 01:26:07 [INFO]: Downloaded: sc_heerenveen_photo_img_9_1755059166410.jpg
+2025-08-13 01:26:09 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:26:09 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:26:09 [INFO]: Progress: 128/0 (Infinity%) - eredivisie
+2025-08-13 01:26:09 [ERROR]: Download failed: sc_heerenveen_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:26:12 [INFO]: Completed album "SC HEERENVEEN": 10/11 images
+2025-08-13 01:26:16 [INFO]: Processing album 10: "PSV GK SHORT"
+2025-08-13 01:26:16 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/179069425?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:26:16 [INFO]: Created album folder: psv_gk_short
+2025-08-13 01:26:16 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/179069425?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:26:16 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:26:16 [INFO]: Extracting images directly from page content
+2025-08-13 01:26:23 [INFO]: Found 5 potential images from https://wavesoccer.x.yupoo.com/albums/179069425?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:26:23 [INFO]: Found 5 images in album: "PSV GK SHORT"
+2025-08-13 01:26:23 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/27900f4f/medium.png (attempt 1/3)
+2025-08-13 01:26:23 [INFO]: Successfully downloaded: psv_gk_short_photo_img_0_1755059183160.png
+2025-08-13 01:26:23 [INFO]: Progress: 129/0 (Infinity%) - eredivisie
+2025-08-13 01:26:23 [INFO]: Downloaded: psv_gk_short_photo_img_0_1755059183160.png
+2025-08-13 01:26:25 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:26:26 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:26:26 [INFO]: Progress: 130/0 (Infinity%) - eredivisie
+2025-08-13 01:26:26 [ERROR]: Download failed: psv_gk_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:26:29 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/daca59b5/small.png (attempt 1/3)
+2025-08-13 01:26:30 [INFO]: Successfully downloaded: psv_gk_short_photo_img_2_1755059189255.png
+2025-08-13 01:26:30 [INFO]: Progress: 131/0 (Infinity%) - eredivisie
+2025-08-13 01:26:30 [INFO]: Downloaded: psv_gk_short_photo_img_2_1755059189255.png
+2025-08-13 01:26:31 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/58b1b553/small.png (attempt 1/3)
+2025-08-13 01:26:32 [INFO]: Successfully downloaded: psv_gk_short_photo_img_3_1755059191393.png
+2025-08-13 01:26:32 [INFO]: Progress: 132/0 (Infinity%) - eredivisie
+2025-08-13 01:26:32 [INFO]: Downloaded: psv_gk_short_photo_img_3_1755059191393.png
+2025-08-13 01:26:34 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/25ab0218/small.png (attempt 1/3)
+2025-08-13 01:26:35 [INFO]: Successfully downloaded: psv_gk_short_photo_img_4_1755059194474.png
+2025-08-13 01:26:35 [INFO]: Progress: 133/0 (Infinity%) - eredivisie
+2025-08-13 01:26:35 [INFO]: Downloaded: psv_gk_short_photo_img_4_1755059194474.png
+2025-08-13 01:26:37 [INFO]: Completed album "PSV GK SHORT": 4/5 images
+2025-08-13 01:26:42 [INFO]: Processing album 11: "AJAX KID KIT"
+2025-08-13 01:26:42 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/165823944?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:26:42 [INFO]: Created album folder: ajax_kid_kit
+2025-08-13 01:26:42 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/165823944?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:26:42 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:26:42 [INFO]: Extracting images directly from page content
+2025-08-13 01:26:46 [INFO]: Found 38 potential images from https://wavesoccer.x.yupoo.com/albums/165823944?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:26:46 [INFO]: Found 38 images in album: "AJAX KID KIT"
+2025-08-13 01:26:46 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/cc30b143/orig.jpg (attempt 1/3)
+2025-08-13 01:26:48 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_0_1755059206956.jpg
+2025-08-13 01:26:48 [INFO]: Progress: 134/0 (Infinity%) - eredivisie
+2025-08-13 01:26:48 [INFO]: Downloaded: ajax_kid_kit_photo_img_0_1755059206956.jpg
+2025-08-13 01:26:50 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/b52cdd4f/orig.jpg (attempt 1/3)
+2025-08-13 01:26:51 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_1_1755059210021.jpg
+2025-08-13 01:26:51 [INFO]: Progress: 135/0 (Infinity%) - eredivisie
+2025-08-13 01:26:51 [INFO]: Downloaded: ajax_kid_kit_photo_img_1_1755059210021.jpg
+2025-08-13 01:26:52 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7cabcf39/orig.jpg (attempt 1/3)
+2025-08-13 01:26:53 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_2_1755059212792.jpg
+2025-08-13 01:26:53 [INFO]: Progress: 136/0 (Infinity%) - eredivisie
+2025-08-13 01:26:53 [INFO]: Downloaded: ajax_kid_kit_photo_img_2_1755059212792.jpg
+2025-08-13 01:26:56 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/9e168f9c/orig.jpg (attempt 1/3)
+2025-08-13 01:26:56 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_3_1755059216156.jpg
+2025-08-13 01:26:56 [INFO]: Progress: 137/0 (Infinity%) - eredivisie
+2025-08-13 01:26:56 [INFO]: Downloaded: ajax_kid_kit_photo_img_3_1755059216156.jpg
+2025-08-13 01:26:58 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/091c5195/orig.jpg (attempt 1/3)
+2025-08-13 01:26:59 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_4_1755059218573.jpg
+2025-08-13 01:26:59 [INFO]: Progress: 138/0 (Infinity%) - eredivisie
+2025-08-13 01:26:59 [INFO]: Downloaded: ajax_kid_kit_photo_img_4_1755059218573.jpg
+2025-08-13 01:27:01 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/5dd73f51/orig.jpg (attempt 1/3)
+2025-08-13 01:27:01 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_5_1755059221033.jpg
+2025-08-13 01:27:01 [INFO]: Progress: 139/0 (Infinity%) - eredivisie
+2025-08-13 01:27:01 [INFO]: Downloaded: ajax_kid_kit_photo_img_5_1755059221033.jpg
+2025-08-13 01:27:02 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/8b0bf296/orig.jpg (attempt 1/3)
+2025-08-13 01:27:03 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_6_1755059222739.jpg
+2025-08-13 01:27:03 [INFO]: Progress: 140/0 (Infinity%) - eredivisie
+2025-08-13 01:27:03 [INFO]: Downloaded: ajax_kid_kit_photo_img_6_1755059222739.jpg
+2025-08-13 01:27:06 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/0472e354/orig.jpg (attempt 1/3)
+2025-08-13 01:27:06 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_7_1755059226108.jpg
+2025-08-13 01:27:06 [INFO]: Progress: 141/0 (Infinity%) - eredivisie
+2025-08-13 01:27:06 [INFO]: Downloaded: ajax_kid_kit_photo_img_7_1755059226108.jpg
+2025-08-13 01:27:08 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7d1bb6cb/orig.jpg (attempt 1/3)
+2025-08-13 01:27:09 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_8_1755059228589.jpg
+2025-08-13 01:27:09 [INFO]: Progress: 142/0 (Infinity%) - eredivisie
+2025-08-13 01:27:09 [INFO]: Downloaded: ajax_kid_kit_photo_img_8_1755059228589.jpg
+2025-08-13 01:27:11 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/46f29595/orig.jpg (attempt 1/3)
+2025-08-13 01:27:12 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_9_1755059231203.jpg
+2025-08-13 01:27:12 [INFO]: Progress: 143/0 (Infinity%) - eredivisie
+2025-08-13 01:27:12 [INFO]: Downloaded: ajax_kid_kit_photo_img_9_1755059231203.jpg
+2025-08-13 01:27:14 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/8e1d4e71/orig.jpg (attempt 1/3)
+2025-08-13 01:27:15 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_10_1755059234453.jpg
+2025-08-13 01:27:15 [INFO]: Progress: 144/0 (Infinity%) - eredivisie
+2025-08-13 01:27:15 [INFO]: Downloaded: ajax_kid_kit_photo_img_10_1755059234453.jpg
+2025-08-13 01:27:17 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7af59834/orig.jpg (attempt 1/3)
+2025-08-13 01:27:18 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_11_1755059237658.jpg
+2025-08-13 01:27:18 [INFO]: Progress: 145/0 (Infinity%) - eredivisie
+2025-08-13 01:27:18 [INFO]: Downloaded: ajax_kid_kit_photo_img_11_1755059237658.jpg
+2025-08-13 01:27:20 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/f5afc3fe/orig.jpg (attempt 1/3)
+2025-08-13 01:27:21 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_12_1755059240835.jpg
+2025-08-13 01:27:21 [INFO]: Progress: 146/0 (Infinity%) - eredivisie
+2025-08-13 01:27:21 [INFO]: Downloaded: ajax_kid_kit_photo_img_12_1755059240835.jpg
+2025-08-13 01:27:24 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/50acd04b/orig.jpg (attempt 1/3)
+2025-08-13 01:27:25 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_13_1755059244506.jpg
+2025-08-13 01:27:25 [INFO]: Progress: 147/0 (Infinity%) - eredivisie
+2025-08-13 01:27:25 [INFO]: Downloaded: ajax_kid_kit_photo_img_13_1755059244506.jpg
+2025-08-13 01:27:28 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/6de0f86b/orig.jpg (attempt 1/3)
+2025-08-13 01:27:28 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_14_1755059248081.jpg
+2025-08-13 01:27:28 [INFO]: Progress: 148/0 (Infinity%) - eredivisie
+2025-08-13 01:27:28 [INFO]: Downloaded: ajax_kid_kit_photo_img_14_1755059248081.jpg
+2025-08-13 01:27:29 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/f1e6a258/orig.jpg (attempt 1/3)
+2025-08-13 01:27:30 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_15_1755059249785.jpg
+2025-08-13 01:27:30 [INFO]: Progress: 149/0 (Infinity%) - eredivisie
+2025-08-13 01:27:30 [INFO]: Downloaded: ajax_kid_kit_photo_img_15_1755059249785.jpg
+2025-08-13 01:27:33 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/c28ab002/orig.jpg (attempt 1/3)
+2025-08-13 01:27:34 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_16_1755059253391.jpg
+2025-08-13 01:27:34 [INFO]: Progress: 150/0 (Infinity%) - eredivisie
+2025-08-13 01:27:34 [INFO]: Downloaded: ajax_kid_kit_photo_img_16_1755059253391.jpg
+2025-08-13 01:27:36 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4cd5368d/orig.jpg (attempt 1/3)
+2025-08-13 01:27:36 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_17_1755059256168.jpg
+2025-08-13 01:27:36 [INFO]: Progress: 151/0 (Infinity%) - eredivisie
+2025-08-13 01:27:36 [INFO]: Downloaded: ajax_kid_kit_photo_img_17_1755059256168.jpg
+2025-08-13 01:27:39 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/a5219c74/orig.jpg (attempt 1/3)
+2025-08-13 01:27:40 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_18_1755059259621.jpg
+2025-08-13 01:27:40 [INFO]: Progress: 152/0 (Infinity%) - eredivisie
+2025-08-13 01:27:40 [INFO]: Downloaded: ajax_kid_kit_photo_img_18_1755059259621.jpg
+2025-08-13 01:27:42 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/54b01d59/orig.jpg (attempt 1/3)
+2025-08-13 01:27:43 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_19_1755059262871.jpg
+2025-08-13 01:27:43 [INFO]: Progress: 153/0 (Infinity%) - eredivisie
+2025-08-13 01:27:43 [INFO]: Downloaded: ajax_kid_kit_photo_img_19_1755059262871.jpg
+2025-08-13 01:27:45 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/27d419ba/orig.jpg (attempt 1/3)
+2025-08-13 01:27:46 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_20_1755059265841.jpg
+2025-08-13 01:27:46 [INFO]: Progress: 154/0 (Infinity%) - eredivisie
+2025-08-13 01:27:46 [INFO]: Downloaded: ajax_kid_kit_photo_img_20_1755059265841.jpg
+2025-08-13 01:27:48 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7cdd77ac/orig.jpg (attempt 1/3)
+2025-08-13 01:27:49 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_21_1755059268864.jpg
+2025-08-13 01:27:49 [INFO]: Progress: 155/0 (Infinity%) - eredivisie
+2025-08-13 01:27:49 [INFO]: Downloaded: ajax_kid_kit_photo_img_21_1755059268864.jpg
+2025-08-13 01:27:51 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/25e7845f/orig.jpg (attempt 1/3)
+2025-08-13 01:27:52 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_22_1755059271135.jpg
+2025-08-13 01:27:52 [INFO]: Progress: 156/0 (Infinity%) - eredivisie
+2025-08-13 01:27:52 [INFO]: Downloaded: ajax_kid_kit_photo_img_22_1755059271135.jpg
+2025-08-13 01:27:55 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/29e5c689/orig.jpg (attempt 1/3)
+2025-08-13 01:27:55 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_23_1755059275020.jpg
+2025-08-13 01:27:55 [INFO]: Progress: 157/0 (Infinity%) - eredivisie
+2025-08-13 01:27:55 [INFO]: Downloaded: ajax_kid_kit_photo_img_23_1755059275020.jpg
+2025-08-13 01:27:57 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ce33cb65/orig.jpg (attempt 1/3)
+2025-08-13 01:27:57 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_24_1755059277174.jpg
+2025-08-13 01:27:57 [INFO]: Progress: 158/0 (Infinity%) - eredivisie
+2025-08-13 01:27:57 [INFO]: Downloaded: ajax_kid_kit_photo_img_24_1755059277174.jpg
+2025-08-13 01:28:00 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/eb80b2c1/orig.jpg (attempt 1/3)
+2025-08-13 01:28:00 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_25_1755059280159.jpg
+2025-08-13 01:28:00 [INFO]: Progress: 159/0 (Infinity%) - eredivisie
+2025-08-13 01:28:00 [INFO]: Downloaded: ajax_kid_kit_photo_img_25_1755059280159.jpg
+2025-08-13 01:28:02 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7265aaf6/orig.jpg (attempt 1/3)
+2025-08-13 01:28:03 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_26_1755059282395.jpg
+2025-08-13 01:28:03 [INFO]: Progress: 160/0 (Infinity%) - eredivisie
+2025-08-13 01:28:03 [INFO]: Downloaded: ajax_kid_kit_photo_img_26_1755059282395.jpg
+2025-08-13 01:28:06 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d4e917e1/orig.jpg (attempt 1/3)
+2025-08-13 01:28:07 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_27_1755059286474.jpg
+2025-08-13 01:28:07 [INFO]: Progress: 161/0 (Infinity%) - eredivisie
+2025-08-13 01:28:07 [INFO]: Downloaded: ajax_kid_kit_photo_img_27_1755059286474.jpg
+2025-08-13 01:28:08 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/fde7ce65/orig.jpg (attempt 1/3)
+2025-08-13 01:28:09 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_28_1755059288889.jpg
+2025-08-13 01:28:09 [INFO]: Progress: 162/0 (Infinity%) - eredivisie
+2025-08-13 01:28:09 [INFO]: Downloaded: ajax_kid_kit_photo_img_28_1755059288889.jpg
+2025-08-13 01:28:11 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ef15f155/orig.jpg (attempt 1/3)
+2025-08-13 01:28:12 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_29_1755059291162.jpg
+2025-08-13 01:28:12 [INFO]: Progress: 163/0 (Infinity%) - eredivisie
+2025-08-13 01:28:12 [INFO]: Downloaded: ajax_kid_kit_photo_img_29_1755059291162.jpg
+2025-08-13 01:28:13 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/a1f9f31c/orig.jpg (attempt 1/3)
+2025-08-13 01:28:13 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_30_1755059293161.jpg
+2025-08-13 01:28:13 [INFO]: Progress: 164/0 (Infinity%) - eredivisie
+2025-08-13 01:28:13 [INFO]: Downloaded: ajax_kid_kit_photo_img_30_1755059293161.jpg
+2025-08-13 01:28:15 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7c43e34b/orig.jpg (attempt 1/3)
+2025-08-13 01:28:16 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_31_1755059295759.jpg
+2025-08-13 01:28:16 [INFO]: Progress: 165/0 (Infinity%) - eredivisie
+2025-08-13 01:28:16 [INFO]: Downloaded: ajax_kid_kit_photo_img_31_1755059295759.jpg
+2025-08-13 01:28:18 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/9b7cb4af/orig.jpg (attempt 1/3)
+2025-08-13 01:28:19 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_32_1755059298675.jpg
+2025-08-13 01:28:19 [INFO]: Progress: 166/0 (Infinity%) - eredivisie
+2025-08-13 01:28:19 [INFO]: Downloaded: ajax_kid_kit_photo_img_32_1755059298675.jpg
+2025-08-13 01:28:21 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d0c72f5a/orig.jpg (attempt 1/3)
+2025-08-13 01:28:22 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_33_1755059301696.jpg
+2025-08-13 01:28:22 [INFO]: Progress: 167/0 (Infinity%) - eredivisie
+2025-08-13 01:28:22 [INFO]: Downloaded: ajax_kid_kit_photo_img_33_1755059301696.jpg
+2025-08-13 01:28:24 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/fe0c24f8/orig.jpg (attempt 1/3)
+2025-08-13 01:28:25 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_34_1755059304598.jpg
+2025-08-13 01:28:25 [INFO]: Progress: 168/0 (Infinity%) - eredivisie
+2025-08-13 01:28:25 [INFO]: Downloaded: ajax_kid_kit_photo_img_34_1755059304598.jpg
+2025-08-13 01:28:27 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/8ddcf561/orig.jpg (attempt 1/3)
+2025-08-13 01:28:28 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_35_1755059307956.jpg
+2025-08-13 01:28:28 [INFO]: Progress: 169/0 (Infinity%) - eredivisie
+2025-08-13 01:28:28 [INFO]: Downloaded: ajax_kid_kit_photo_img_35_1755059307956.jpg
+2025-08-13 01:28:31 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/b0f83f88/orig.jpg (attempt 1/3)
+2025-08-13 01:28:31 [INFO]: Successfully downloaded: ajax_kid_kit_photo_img_36_1755059311271.jpg
+2025-08-13 01:28:31 [INFO]: Progress: 170/0 (Infinity%) - eredivisie
+2025-08-13 01:28:31 [INFO]: Downloaded: ajax_kid_kit_photo_img_36_1755059311271.jpg
+2025-08-13 01:28:33 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:28:34 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:28:34 [INFO]: Progress: 171/0 (Infinity%) - eredivisie
+2025-08-13 01:28:34 [ERROR]: Download failed: ajax_kid_kit_img37
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:28:36 [INFO]: Completed album "AJAX KID KIT": 37/38 images
+2025-08-13 01:28:42 [INFO]: Processing album 12: "PSV KID KIT"
+2025-08-13 01:28:42 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/165101533?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:28:42 [INFO]: Created album folder: psv_kid_kit
+2025-08-13 01:28:42 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/165101533?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:28:42 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:28:42 [INFO]: Extracting images directly from page content
+2025-08-13 01:28:56 [INFO]: Found 45 potential images from https://wavesoccer.x.yupoo.com/albums/165101533?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:28:56 [INFO]: Found 45 images in album: "PSV KID KIT"
+2025-08-13 01:28:56 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d5778b54/orig.jpg (attempt 1/3)
+2025-08-13 01:28:58 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_0_1755059336331.jpg
+2025-08-13 01:28:58 [INFO]: Progress: 172/0 (Infinity%) - eredivisie
+2025-08-13 01:28:58 [INFO]: Downloaded: psv_kid_kit_photo_img_0_1755059336331.jpg
+2025-08-13 01:29:00 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/aaf272ec/orig.jpg (attempt 1/3)
+2025-08-13 01:29:02 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_1_1755059340789.jpg
+2025-08-13 01:29:02 [INFO]: Progress: 173/0 (Infinity%) - eredivisie
+2025-08-13 01:29:02 [INFO]: Downloaded: psv_kid_kit_photo_img_1_1755059340789.jpg
+2025-08-13 01:29:03 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/2c1d812d/orig.jpg (attempt 1/3)
+2025-08-13 01:29:04 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_2_1755059343954.jpg
+2025-08-13 01:29:04 [INFO]: Progress: 174/0 (Infinity%) - eredivisie
+2025-08-13 01:29:04 [INFO]: Downloaded: psv_kid_kit_photo_img_2_1755059343954.jpg
+2025-08-13 01:29:07 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ff4689b4/orig.jpg (attempt 1/3)
+2025-08-13 01:29:09 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_3_1755059347361.jpg
+2025-08-13 01:29:09 [INFO]: Progress: 175/0 (Infinity%) - eredivisie
+2025-08-13 01:29:09 [INFO]: Downloaded: psv_kid_kit_photo_img_3_1755059347361.jpg
+2025-08-13 01:29:12 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/e191b35e/orig.jpg (attempt 1/3)
+2025-08-13 01:29:13 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_4_1755059352229.jpg
+2025-08-13 01:29:13 [INFO]: Progress: 176/0 (Infinity%) - eredivisie
+2025-08-13 01:29:13 [INFO]: Downloaded: psv_kid_kit_photo_img_4_1755059352229.jpg
+2025-08-13 01:29:14 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/8f84f46d/orig.jpg (attempt 1/3)
+2025-08-13 01:29:16 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_5_1755059354934.jpg
+2025-08-13 01:29:16 [INFO]: Progress: 177/0 (Infinity%) - eredivisie
+2025-08-13 01:29:16 [INFO]: Downloaded: psv_kid_kit_photo_img_5_1755059354934.jpg
+2025-08-13 01:29:18 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4de3c62f/orig.jpg (attempt 1/3)
+2025-08-13 01:29:19 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_6_1755059358912.jpg
+2025-08-13 01:29:19 [INFO]: Progress: 178/0 (Infinity%) - eredivisie
+2025-08-13 01:29:19 [INFO]: Downloaded: psv_kid_kit_photo_img_6_1755059358912.jpg
+2025-08-13 01:29:21 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4b36ad9f/orig.jpg (attempt 1/3)
+2025-08-13 01:29:23 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_7_1755059361772.jpg
+2025-08-13 01:29:23 [INFO]: Progress: 179/0 (Infinity%) - eredivisie
+2025-08-13 01:29:23 [INFO]: Downloaded: psv_kid_kit_photo_img_7_1755059361772.jpg
+2025-08-13 01:29:26 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/8ab3f1a7/orig.jpg (attempt 1/3)
+2025-08-13 01:29:26 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_8_1755059366085.jpg
+2025-08-13 01:29:26 [INFO]: Progress: 180/0 (Infinity%) - eredivisie
+2025-08-13 01:29:26 [INFO]: Downloaded: psv_kid_kit_photo_img_8_1755059366085.jpg
+2025-08-13 01:29:28 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/e47965cf/orig.jpg (attempt 1/3)
+2025-08-13 01:29:30 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_9_1755059368967.jpg
+2025-08-13 01:29:30 [INFO]: Progress: 181/0 (Infinity%) - eredivisie
+2025-08-13 01:29:30 [INFO]: Downloaded: psv_kid_kit_photo_img_9_1755059368967.jpg
+2025-08-13 01:29:31 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/debf54d4/orig.jpg (attempt 1/3)
+2025-08-13 01:29:32 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_10_1755059371668.jpg
+2025-08-13 01:29:32 [INFO]: Progress: 182/0 (Infinity%) - eredivisie
+2025-08-13 01:29:32 [INFO]: Downloaded: psv_kid_kit_photo_img_10_1755059371668.jpg
+2025-08-13 01:29:33 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/830563bd/orig.jpg (attempt 1/3)
+2025-08-13 01:29:35 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_11_1755059373358.jpg
+2025-08-13 01:29:35 [INFO]: Progress: 183/0 (Infinity%) - eredivisie
+2025-08-13 01:29:35 [INFO]: Downloaded: psv_kid_kit_photo_img_11_1755059373358.jpg
+2025-08-13 01:29:37 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4a17ba85/orig.jpg (attempt 1/3)
+2025-08-13 01:29:38 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_12_1755059377475.jpg
+2025-08-13 01:29:38 [INFO]: Progress: 184/0 (Infinity%) - eredivisie
+2025-08-13 01:29:38 [INFO]: Downloaded: psv_kid_kit_photo_img_12_1755059377475.jpg
+2025-08-13 01:29:39 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/04d08e24/orig.jpg (attempt 1/3)
+2025-08-13 01:29:41 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_13_1755059379446.jpg
+2025-08-13 01:29:41 [INFO]: Progress: 185/0 (Infinity%) - eredivisie
+2025-08-13 01:29:41 [INFO]: Downloaded: psv_kid_kit_photo_img_13_1755059379446.jpg
+2025-08-13 01:29:42 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/075868e1/orig.jpg (attempt 1/3)
+2025-08-13 01:29:43 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_14_1755059382489.jpg
+2025-08-13 01:29:43 [INFO]: Progress: 186/0 (Infinity%) - eredivisie
+2025-08-13 01:29:43 [INFO]: Downloaded: psv_kid_kit_photo_img_14_1755059382489.jpg
+2025-08-13 01:29:44 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/56379552/orig.jpg (attempt 1/3)
+2025-08-13 01:29:46 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_15_1755059384355.jpg
+2025-08-13 01:29:46 [INFO]: Progress: 187/0 (Infinity%) - eredivisie
+2025-08-13 01:29:46 [INFO]: Downloaded: psv_kid_kit_photo_img_15_1755059384355.jpg
+2025-08-13 01:29:48 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/49071e62/orig.jpg (attempt 1/3)
+2025-08-13 01:29:50 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_16_1755059388322.jpg
+2025-08-13 01:29:50 [INFO]: Progress: 188/0 (Infinity%) - eredivisie
+2025-08-13 01:29:50 [INFO]: Downloaded: psv_kid_kit_photo_img_16_1755059388322.jpg
+2025-08-13 01:29:53 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/46b41726/orig.jpg (attempt 1/3)
+2025-08-13 01:29:53 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_17_1755059393144.jpg
+2025-08-13 01:29:53 [INFO]: Progress: 189/0 (Infinity%) - eredivisie
+2025-08-13 01:29:53 [INFO]: Downloaded: psv_kid_kit_photo_img_17_1755059393144.jpg
+2025-08-13 01:29:55 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/6c2a2957/orig.jpg (attempt 1/3)
+2025-08-13 01:29:57 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_18_1755059395656.jpg
+2025-08-13 01:29:57 [INFO]: Progress: 190/0 (Infinity%) - eredivisie
+2025-08-13 01:29:57 [INFO]: Downloaded: psv_kid_kit_photo_img_18_1755059395656.jpg
+2025-08-13 01:29:58 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/a4d9cb7f/orig.jpg (attempt 1/3)
+2025-08-13 01:29:59 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_19_1755059398549.jpg
+2025-08-13 01:29:59 [INFO]: Progress: 191/0 (Infinity%) - eredivisie
+2025-08-13 01:29:59 [INFO]: Downloaded: psv_kid_kit_photo_img_19_1755059398549.jpg
+2025-08-13 01:30:02 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/c989558c/orig.jpg (attempt 1/3)
+2025-08-13 01:30:03 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_20_1755059402013.jpg
+2025-08-13 01:30:03 [INFO]: Progress: 192/0 (Infinity%) - eredivisie
+2025-08-13 01:30:03 [INFO]: Downloaded: psv_kid_kit_photo_img_20_1755059402013.jpg
+2025-08-13 01:30:06 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/34dadc32/orig.jpg (attempt 1/3)
+2025-08-13 01:30:06 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_21_1755059406404.jpg
+2025-08-13 01:30:06 [INFO]: Progress: 193/0 (Infinity%) - eredivisie
+2025-08-13 01:30:06 [INFO]: Downloaded: psv_kid_kit_photo_img_21_1755059406404.jpg
+2025-08-13 01:30:08 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/a36377a3/orig.jpg (attempt 1/3)
+2025-08-13 01:30:09 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_22_1755059408099.jpg
+2025-08-13 01:30:09 [INFO]: Progress: 194/0 (Infinity%) - eredivisie
+2025-08-13 01:30:09 [INFO]: Downloaded: psv_kid_kit_photo_img_22_1755059408099.jpg
+2025-08-13 01:30:10 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/f32c6e30/orig.jpg (attempt 1/3)
+2025-08-13 01:30:11 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_23_1755059410706.jpg
+2025-08-13 01:30:11 [INFO]: Progress: 195/0 (Infinity%) - eredivisie
+2025-08-13 01:30:11 [INFO]: Downloaded: psv_kid_kit_photo_img_23_1755059410706.jpg
+2025-08-13 01:30:13 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/1cf35883/orig.jpg (attempt 1/3)
+2025-08-13 01:30:15 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_24_1755059413420.jpg
+2025-08-13 01:30:15 [INFO]: Progress: 196/0 (Infinity%) - eredivisie
+2025-08-13 01:30:15 [INFO]: Downloaded: psv_kid_kit_photo_img_24_1755059413420.jpg
+2025-08-13 01:30:17 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/c9bb8a51/orig.jpg (attempt 1/3)
+2025-08-13 01:30:18 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_25_1755059417932.jpg
+2025-08-13 01:30:18 [INFO]: Progress: 197/0 (Infinity%) - eredivisie
+2025-08-13 01:30:18 [INFO]: Downloaded: psv_kid_kit_photo_img_25_1755059417932.jpg
+2025-08-13 01:30:21 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7c7057dd/orig.jpg (attempt 1/3)
+2025-08-13 01:30:22 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_26_1755059421291.jpg
+2025-08-13 01:30:22 [INFO]: Progress: 198/0 (Infinity%) - eredivisie
+2025-08-13 01:30:22 [INFO]: Downloaded: psv_kid_kit_photo_img_26_1755059421291.jpg
+2025-08-13 01:30:25 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4ee9d364/orig.jpg (attempt 1/3)
+2025-08-13 01:30:25 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_27_1755059425028.jpg
+2025-08-13 01:30:25 [INFO]: Progress: 199/0 (Infinity%) - eredivisie
+2025-08-13 01:30:25 [INFO]: Downloaded: psv_kid_kit_photo_img_27_1755059425028.jpg
+2025-08-13 01:30:26 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/2b8b9128/orig.jpg (attempt 1/3)
+2025-08-13 01:30:27 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_28_1755059426738.jpg
+2025-08-13 01:30:27 [INFO]: Progress: 200/0 (Infinity%) - eredivisie
+2025-08-13 01:30:27 [INFO]: Downloaded: psv_kid_kit_photo_img_28_1755059426738.jpg
+2025-08-13 01:30:30 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/1641d08a/orig.jpg (attempt 1/3)
+2025-08-13 01:30:30 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_29_1755059430021.jpg
+2025-08-13 01:30:30 [INFO]: Progress: 201/0 (Infinity%) - eredivisie
+2025-08-13 01:30:30 [INFO]: Downloaded: psv_kid_kit_photo_img_29_1755059430021.jpg
+2025-08-13 01:30:32 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/e3fd2f3b/orig.jpg (attempt 1/3)
+2025-08-13 01:30:32 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_30_1755059432213.jpg
+2025-08-13 01:30:32 [INFO]: Progress: 202/0 (Infinity%) - eredivisie
+2025-08-13 01:30:32 [INFO]: Downloaded: psv_kid_kit_photo_img_30_1755059432213.jpg
+2025-08-13 01:30:34 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/585b5a7f/orig.jpg (attempt 1/3)
+2025-08-13 01:30:35 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_31_1755059434325.jpg
+2025-08-13 01:30:35 [INFO]: Progress: 203/0 (Infinity%) - eredivisie
+2025-08-13 01:30:35 [INFO]: Downloaded: psv_kid_kit_photo_img_31_1755059434325.jpg
+2025-08-13 01:30:37 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/8f456925/orig.jpg (attempt 1/3)
+2025-08-13 01:30:37 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_32_1755059437311.jpg
+2025-08-13 01:30:37 [INFO]: Progress: 204/0 (Infinity%) - eredivisie
+2025-08-13 01:30:37 [INFO]: Downloaded: psv_kid_kit_photo_img_32_1755059437311.jpg
+2025-08-13 01:30:39 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/69e3ebf6/orig.jpg (attempt 1/3)
+2025-08-13 01:30:41 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_33_1755059439807.jpg
+2025-08-13 01:30:41 [INFO]: Progress: 205/0 (Infinity%) - eredivisie
+2025-08-13 01:30:41 [INFO]: Downloaded: psv_kid_kit_photo_img_33_1755059439807.jpg
+2025-08-13 01:30:44 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/187cf56a/orig.jpg (attempt 1/3)
+2025-08-13 01:30:44 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_34_1755059444245.jpg
+2025-08-13 01:30:44 [INFO]: Progress: 206/0 (Infinity%) - eredivisie
+2025-08-13 01:30:44 [INFO]: Downloaded: psv_kid_kit_photo_img_34_1755059444245.jpg
+2025-08-13 01:30:47 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/19e125b0/orig.jpg (attempt 1/3)
+2025-08-13 01:30:49 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_35_1755059447500.jpg
+2025-08-13 01:30:49 [INFO]: Progress: 207/0 (Infinity%) - eredivisie
+2025-08-13 01:30:49 [INFO]: Downloaded: psv_kid_kit_photo_img_35_1755059447500.jpg
+2025-08-13 01:30:50 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ef3c2856/orig.jpg (attempt 1/3)
+2025-08-13 01:30:51 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_36_1755059450407.jpg
+2025-08-13 01:30:51 [INFO]: Progress: 208/0 (Infinity%) - eredivisie
+2025-08-13 01:30:51 [INFO]: Downloaded: psv_kid_kit_photo_img_36_1755059450407.jpg
+2025-08-13 01:30:52 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/403ef636/orig.jpg (attempt 1/3)
+2025-08-13 01:30:54 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_37_1755059452643.jpg
+2025-08-13 01:30:54 [INFO]: Progress: 209/0 (Infinity%) - eredivisie
+2025-08-13 01:30:54 [INFO]: Downloaded: psv_kid_kit_photo_img_37_1755059452643.jpg
+2025-08-13 01:30:56 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7ba80581/orig.jpg (attempt 1/3)
+2025-08-13 01:30:57 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_38_1755059456982.jpg
+2025-08-13 01:30:57 [INFO]: Progress: 210/0 (Infinity%) - eredivisie
+2025-08-13 01:30:57 [INFO]: Downloaded: psv_kid_kit_photo_img_38_1755059456982.jpg
+2025-08-13 01:31:00 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/cb651d7e/orig.jpg (attempt 1/3)
+2025-08-13 01:31:02 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_39_1755059460166.jpg
+2025-08-13 01:31:02 [INFO]: Progress: 211/0 (Infinity%) - eredivisie
+2025-08-13 01:31:02 [INFO]: Downloaded: psv_kid_kit_photo_img_39_1755059460166.jpg
+2025-08-13 01:31:05 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d43980fc/orig.jpg (attempt 1/3)
+2025-08-13 01:31:06 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_40_1755059465210.jpg
+2025-08-13 01:31:06 [INFO]: Progress: 212/0 (Infinity%) - eredivisie
+2025-08-13 01:31:06 [INFO]: Downloaded: psv_kid_kit_photo_img_40_1755059465210.jpg
+2025-08-13 01:31:08 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/2c14c621/orig.jpg (attempt 1/3)
+2025-08-13 01:31:09 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_41_1755059468414.jpg
+2025-08-13 01:31:09 [INFO]: Progress: 213/0 (Infinity%) - eredivisie
+2025-08-13 01:31:09 [INFO]: Downloaded: psv_kid_kit_photo_img_41_1755059468414.jpg
+2025-08-13 01:31:12 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/69baf598/orig.jpg (attempt 1/3)
+2025-08-13 01:31:13 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_42_1755059472396.jpg
+2025-08-13 01:31:13 [INFO]: Progress: 214/0 (Infinity%) - eredivisie
+2025-08-13 01:31:13 [INFO]: Downloaded: psv_kid_kit_photo_img_42_1755059472396.jpg
+2025-08-13 01:31:14 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4b41a719/orig.jpg (attempt 1/3)
+2025-08-13 01:31:17 [INFO]: Successfully downloaded: psv_kid_kit_photo_img_43_1755059474947.jpg
+2025-08-13 01:31:17 [INFO]: Progress: 215/0 (Infinity%) - eredivisie
+2025-08-13 01:31:17 [INFO]: Downloaded: psv_kid_kit_photo_img_43_1755059474947.jpg
+2025-08-13 01:31:19 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:31:20 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:31:20 [INFO]: Progress: 216/0 (Infinity%) - eredivisie
+2025-08-13 01:31:20 [ERROR]: Download failed: psv_kid_kit_img44
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:31:22 [INFO]: Completed album "PSV KID KIT": 44/45 images
+2025-08-13 01:31:27 [INFO]: Processing album 13: "AJAX SHORTS"
+2025-08-13 01:31:27 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/165823938?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:31:27 [INFO]: Created album folder: ajax_shorts
+2025-08-13 01:31:27 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/165823938?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:31:27 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:31:27 [INFO]: Extracting images directly from page content
+2025-08-13 01:31:44 [INFO]: Found 13 potential images from https://wavesoccer.x.yupoo.com/albums/165823938?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:31:44 [INFO]: Found 13 images in album: "AJAX SHORTS"
+2025-08-13 01:31:44 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/1419e890/orig.jpg (attempt 1/3)
+2025-08-13 01:31:45 [INFO]: Successfully downloaded: ajax_shorts_photo_img_0_1755059504410.jpg
+2025-08-13 01:31:45 [INFO]: Progress: 217/0 (Infinity%) - eredivisie
+2025-08-13 01:31:45 [INFO]: Downloaded: ajax_shorts_photo_img_0_1755059504410.jpg
+2025-08-13 01:31:48 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/cc310717/orig.jpg (attempt 1/3)
+2025-08-13 01:31:53 [INFO]: Successfully downloaded: ajax_shorts_photo_img_1_1755059508552.jpg
+2025-08-13 01:31:53 [INFO]: Progress: 218/0 (Infinity%) - eredivisie
+2025-08-13 01:31:53 [INFO]: Downloaded: ajax_shorts_photo_img_1_1755059508552.jpg
+2025-08-13 01:31:56 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4f98e637/orig.jpg (attempt 1/3)
+2025-08-13 01:31:57 [INFO]: Successfully downloaded: ajax_shorts_photo_img_2_1755059516015.jpg
+2025-08-13 01:31:57 [INFO]: Progress: 219/0 (Infinity%) - eredivisie
+2025-08-13 01:31:57 [INFO]: Downloaded: ajax_shorts_photo_img_2_1755059516015.jpg
+2025-08-13 01:31:58 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/f2071e62/orig.jpg (attempt 1/3)
+2025-08-13 01:32:00 [INFO]: Successfully downloaded: ajax_shorts_photo_img_3_1755059518934.jpg
+2025-08-13 01:32:00 [INFO]: Progress: 220/0 (Infinity%) - eredivisie
+2025-08-13 01:32:00 [INFO]: Downloaded: ajax_shorts_photo_img_3_1755059518934.jpg
+2025-08-13 01:32:02 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4657a153/orig.jpg (attempt 1/3)
+2025-08-13 01:32:05 [INFO]: Successfully downloaded: ajax_shorts_photo_img_4_1755059522715.jpg
+2025-08-13 01:32:05 [INFO]: Progress: 221/0 (Infinity%) - eredivisie
+2025-08-13 01:32:05 [INFO]: Downloaded: ajax_shorts_photo_img_4_1755059522715.jpg
+2025-08-13 01:32:06 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/52bec8ce/orig.jpg (attempt 1/3)
+2025-08-13 01:32:08 [INFO]: Successfully downloaded: ajax_shorts_photo_img_5_1755059526162.jpg
+2025-08-13 01:32:08 [INFO]: Progress: 222/0 (Infinity%) - eredivisie
+2025-08-13 01:32:08 [INFO]: Downloaded: ajax_shorts_photo_img_5_1755059526162.jpg
+2025-08-13 01:32:09 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/e33c276f/orig.jpg (attempt 1/3)
+2025-08-13 01:32:10 [INFO]: Successfully downloaded: ajax_shorts_photo_img_6_1755059529816.jpg
+2025-08-13 01:32:10 [INFO]: Progress: 223/0 (Infinity%) - eredivisie
+2025-08-13 01:32:10 [INFO]: Downloaded: ajax_shorts_photo_img_6_1755059529816.jpg
+2025-08-13 01:32:11 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/240d9995/orig.jpg (attempt 1/3)
+2025-08-13 01:32:12 [INFO]: Successfully downloaded: ajax_shorts_photo_img_7_1755059531772.jpg
+2025-08-13 01:32:12 [INFO]: Progress: 224/0 (Infinity%) - eredivisie
+2025-08-13 01:32:12 [INFO]: Downloaded: ajax_shorts_photo_img_7_1755059531772.jpg
+2025-08-13 01:32:13 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/84b9cbb3/orig.jpg (attempt 1/3)
+2025-08-13 01:32:14 [INFO]: Successfully downloaded: ajax_shorts_photo_img_8_1755059533659.jpg
+2025-08-13 01:32:14 [INFO]: Progress: 225/0 (Infinity%) - eredivisie
+2025-08-13 01:32:14 [INFO]: Downloaded: ajax_shorts_photo_img_8_1755059533659.jpg
+2025-08-13 01:32:16 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/3291ebef/orig.jpg (attempt 1/3)
+2025-08-13 01:32:18 [INFO]: Successfully downloaded: ajax_shorts_photo_img_9_1755059536532.jpg
+2025-08-13 01:32:18 [INFO]: Progress: 226/0 (Infinity%) - eredivisie
+2025-08-13 01:32:18 [INFO]: Downloaded: ajax_shorts_photo_img_9_1755059536532.jpg
+2025-08-13 01:32:20 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ad51117f/orig.jpg (attempt 1/3)
+2025-08-13 01:32:21 [INFO]: Successfully downloaded: ajax_shorts_photo_img_10_1755059540651.jpg
+2025-08-13 01:32:21 [INFO]: Progress: 227/0 (Infinity%) - eredivisie
+2025-08-13 01:32:21 [INFO]: Downloaded: ajax_shorts_photo_img_10_1755059540651.jpg
+2025-08-13 01:32:22 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ab7cdd65/orig.jpg (attempt 1/3)
+2025-08-13 01:32:24 [INFO]: Successfully downloaded: ajax_shorts_photo_img_11_1755059542664.jpg
+2025-08-13 01:32:24 [INFO]: Progress: 228/0 (Infinity%) - eredivisie
+2025-08-13 01:32:24 [INFO]: Downloaded: ajax_shorts_photo_img_11_1755059542664.jpg
+2025-08-13 01:32:25 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:32:26 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:32:26 [INFO]: Progress: 229/0 (Infinity%) - eredivisie
+2025-08-13 01:32:26 [ERROR]: Download failed: ajax_shorts_img12
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:32:28 [INFO]: Completed album "AJAX SHORTS": 12/13 images
+2025-08-13 01:32:33 [INFO]: Processing album 14: "AZ ALKMAAR"
+2025-08-13 01:32:33 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/170113168?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:32:33 [INFO]: Created album folder: az_alkmaar
+2025-08-13 01:32:33 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/170113168?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:32:33 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:32:33 [INFO]: Extracting images directly from page content
+2025-08-13 01:32:42 [INFO]: Found 11 potential images from https://wavesoccer.x.yupoo.com/albums/170113168?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:32:42 [INFO]: Found 11 images in album: "AZ ALKMAAR"
+2025-08-13 01:32:42 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/5156c01b/orig.jpg (attempt 1/3)
+2025-08-13 01:32:43 [INFO]: Successfully downloaded: az_alkmaar_photo_img_0_1755059562342.jpg
+2025-08-13 01:32:43 [INFO]: Progress: 230/0 (Infinity%) - eredivisie
+2025-08-13 01:32:43 [INFO]: Downloaded: az_alkmaar_photo_img_0_1755059562342.jpg
+2025-08-13 01:32:46 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/301b803c/orig.jpg (attempt 1/3)
+2025-08-13 01:32:47 [INFO]: Successfully downloaded: az_alkmaar_photo_img_1_1755059566328.jpg
+2025-08-13 01:32:47 [INFO]: Progress: 231/0 (Infinity%) - eredivisie
+2025-08-13 01:32:47 [INFO]: Downloaded: az_alkmaar_photo_img_1_1755059566328.jpg
+2025-08-13 01:32:49 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/c6645b42/orig.jpg (attempt 1/3)
+2025-08-13 01:32:49 [INFO]: Successfully downloaded: az_alkmaar_photo_img_2_1755059569465.jpg
+2025-08-13 01:32:49 [INFO]: Progress: 232/0 (Infinity%) - eredivisie
+2025-08-13 01:32:49 [INFO]: Downloaded: az_alkmaar_photo_img_2_1755059569465.jpg
+2025-08-13 01:32:51 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/aa336be2/orig.jpg (attempt 1/3)
+2025-08-13 01:32:52 [INFO]: Successfully downloaded: az_alkmaar_photo_img_3_1755059571746.jpg
+2025-08-13 01:32:52 [INFO]: Progress: 233/0 (Infinity%) - eredivisie
+2025-08-13 01:32:52 [INFO]: Downloaded: az_alkmaar_photo_img_3_1755059571746.jpg
+2025-08-13 01:32:54 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/8a452383/orig.jpg (attempt 1/3)
+2025-08-13 01:32:55 [INFO]: Successfully downloaded: az_alkmaar_photo_img_4_1755059574629.jpg
+2025-08-13 01:32:55 [INFO]: Progress: 234/0 (Infinity%) - eredivisie
+2025-08-13 01:32:55 [INFO]: Downloaded: az_alkmaar_photo_img_4_1755059574629.jpg
+2025-08-13 01:32:57 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/9593b158/orig.jpg (attempt 1/3)
+2025-08-13 01:32:57 [INFO]: Successfully downloaded: az_alkmaar_photo_img_5_1755059577375.jpg
+2025-08-13 01:32:57 [INFO]: Progress: 235/0 (Infinity%) - eredivisie
+2025-08-13 01:32:57 [INFO]: Downloaded: az_alkmaar_photo_img_5_1755059577375.jpg
+2025-08-13 01:32:59 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ba45eeaa/orig.jpg (attempt 1/3)
+2025-08-13 01:33:00 [INFO]: Successfully downloaded: az_alkmaar_photo_img_6_1755059579974.jpg
+2025-08-13 01:33:00 [INFO]: Progress: 236/0 (Infinity%) - eredivisie
+2025-08-13 01:33:00 [INFO]: Downloaded: az_alkmaar_photo_img_6_1755059579974.jpg
+2025-08-13 01:33:02 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/6329192f/orig.jpg (attempt 1/3)
+2025-08-13 01:33:02 [INFO]: Successfully downloaded: az_alkmaar_photo_img_7_1755059582129.jpg
+2025-08-13 01:33:02 [INFO]: Progress: 237/0 (Infinity%) - eredivisie
+2025-08-13 01:33:02 [INFO]: Downloaded: az_alkmaar_photo_img_7_1755059582129.jpg
+2025-08-13 01:33:03 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/70bc8770/orig.jpg (attempt 1/3)
+2025-08-13 01:33:04 [INFO]: Successfully downloaded: az_alkmaar_photo_img_8_1755059583856.jpg
+2025-08-13 01:33:04 [INFO]: Progress: 238/0 (Infinity%) - eredivisie
+2025-08-13 01:33:04 [INFO]: Downloaded: az_alkmaar_photo_img_8_1755059583856.jpg
+2025-08-13 01:33:06 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/35144a46/orig.jpg (attempt 1/3)
+2025-08-13 01:33:06 [INFO]: Successfully downloaded: az_alkmaar_photo_img_9_1755059586351.jpg
+2025-08-13 01:33:06 [INFO]: Progress: 239/0 (Infinity%) - eredivisie
+2025-08-13 01:33:06 [INFO]: Downloaded: az_alkmaar_photo_img_9_1755059586351.jpg
+2025-08-13 01:33:08 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:33:08 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:33:08 [INFO]: Progress: 240/0 (Infinity%) - eredivisie
+2025-08-13 01:33:08 [ERROR]: Download failed: az_alkmaar_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:33:09 [INFO]: Completed album "AZ ALKMAAR": 10/11 images
+2025-08-13 01:33:15 [INFO]: Processing album 15: "PSV SHORT"
+2025-08-13 01:33:15 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/176326128?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:33:15 [INFO]: Created album folder: psv_short
+2025-08-13 01:33:15 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/176326128?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:33:15 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:33:15 [INFO]: Extracting images directly from page content
+2025-08-13 01:33:24 [INFO]: Found 3 potential images from https://wavesoccer.x.yupoo.com/albums/176326128?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:33:24 [INFO]: Found 3 images in album: "PSV SHORT"
+2025-08-13 01:33:24 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/be81241b/medium.png (attempt 1/3)
+2025-08-13 01:33:24 [INFO]: Successfully downloaded: psv_short_photo_img_0_1755059604171.png
+2025-08-13 01:33:24 [INFO]: Progress: 241/0 (Infinity%) - eredivisie
+2025-08-13 01:33:24 [INFO]: Downloaded: psv_short_photo_img_0_1755059604171.png
+2025-08-13 01:33:27 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:33:28 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:33:28 [INFO]: Progress: 242/0 (Infinity%) - eredivisie
+2025-08-13 01:33:28 [ERROR]: Download failed: psv_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:33:30 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/2aec2e3e/small.png (attempt 1/3)
+2025-08-13 01:33:31 [INFO]: Successfully downloaded: psv_short_photo_img_2_1755059610938.png
+2025-08-13 01:33:31 [INFO]: Progress: 243/0 (Infinity%) - eredivisie
+2025-08-13 01:33:31 [INFO]: Downloaded: psv_short_photo_img_2_1755059610938.png
+2025-08-13 01:33:33 [INFO]: Completed album "PSV SHORT": 2/3 images
+2025-08-13 01:33:38 [INFO]: Processing album 16: "FEYENOORD"
+2025-08-13 01:33:38 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/163081333?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:33:38 [INFO]: Created album folder: feyenoord
+2025-08-13 01:33:38 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/163081333?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:33:38 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:33:38 [INFO]: Extracting images directly from page content
+2025-08-13 01:33:42 [INFO]: Found 33 potential images from https://wavesoccer.x.yupoo.com/albums/163081333?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:33:42 [INFO]: Found 33 images in album: "FEYENOORD"
+2025-08-13 01:33:42 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/3483b462/orig.jpg (attempt 1/3)
+2025-08-13 01:33:43 [INFO]: Successfully downloaded: feyenoord_photo_img_0_1755059622557.jpg
+2025-08-13 01:33:43 [INFO]: Progress: 244/0 (Infinity%) - eredivisie
+2025-08-13 01:33:43 [INFO]: Downloaded: feyenoord_photo_img_0_1755059622557.jpg
+2025-08-13 01:33:44 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d7349fa4/orig.jpg (attempt 1/3)
+2025-08-13 01:33:45 [INFO]: Successfully downloaded: feyenoord_photo_img_1_1755059624825.jpg
+2025-08-13 01:33:45 [INFO]: Progress: 245/0 (Infinity%) - eredivisie
+2025-08-13 01:33:45 [INFO]: Downloaded: feyenoord_photo_img_1_1755059624825.jpg
+2025-08-13 01:33:48 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/8925e557/orig.jpg (attempt 1/3)
+2025-08-13 01:33:49 [INFO]: Successfully downloaded: feyenoord_photo_img_2_1755059628583.jpg
+2025-08-13 01:33:49 [INFO]: Progress: 246/0 (Infinity%) - eredivisie
+2025-08-13 01:33:49 [INFO]: Downloaded: feyenoord_photo_img_2_1755059628583.jpg
+2025-08-13 01:33:52 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/f92917da/orig.jpg (attempt 1/3)
+2025-08-13 01:33:52 [INFO]: Successfully downloaded: feyenoord_photo_img_3_1755059632049.jpg
+2025-08-13 01:33:52 [INFO]: Progress: 247/0 (Infinity%) - eredivisie
+2025-08-13 01:33:52 [INFO]: Downloaded: feyenoord_photo_img_3_1755059632049.jpg
+2025-08-13 01:33:54 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/92691851/orig.jpg (attempt 1/3)
+2025-08-13 01:33:55 [INFO]: Successfully downloaded: feyenoord_photo_img_4_1755059634615.jpg
+2025-08-13 01:33:55 [INFO]: Progress: 248/0 (Infinity%) - eredivisie
+2025-08-13 01:33:55 [INFO]: Downloaded: feyenoord_photo_img_4_1755059634615.jpg
+2025-08-13 01:33:58 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/b42354a9/orig.jpg (attempt 1/3)
+2025-08-13 01:33:58 [INFO]: Successfully downloaded: feyenoord_photo_img_5_1755059638085.jpg
+2025-08-13 01:33:58 [INFO]: Progress: 249/0 (Infinity%) - eredivisie
+2025-08-13 01:33:58 [INFO]: Downloaded: feyenoord_photo_img_5_1755059638085.jpg
+2025-08-13 01:33:59 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/0bf0a8eb/orig.jpg (attempt 1/3)
+2025-08-13 01:34:00 [INFO]: Successfully downloaded: feyenoord_photo_img_6_1755059639967.jpg
+2025-08-13 01:34:00 [INFO]: Progress: 250/0 (Infinity%) - eredivisie
+2025-08-13 01:34:00 [INFO]: Downloaded: feyenoord_photo_img_6_1755059639967.jpg
+2025-08-13 01:34:02 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d661a545/orig.jpg (attempt 1/3)
+2025-08-13 01:34:03 [INFO]: Successfully downloaded: feyenoord_photo_img_7_1755059642249.jpg
+2025-08-13 01:34:03 [INFO]: Progress: 251/0 (Infinity%) - eredivisie
+2025-08-13 01:34:03 [INFO]: Downloaded: feyenoord_photo_img_7_1755059642249.jpg
+2025-08-13 01:34:05 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/5172e8ad/orig.jpg (attempt 1/3)
+2025-08-13 01:34:06 [INFO]: Successfully downloaded: feyenoord_photo_img_8_1755059645841.jpg
+2025-08-13 01:34:06 [INFO]: Progress: 252/0 (Infinity%) - eredivisie
+2025-08-13 01:34:06 [INFO]: Downloaded: feyenoord_photo_img_8_1755059645841.jpg
+2025-08-13 01:34:08 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d404362b/orig.jpg (attempt 1/3)
+2025-08-13 01:34:09 [INFO]: Successfully downloaded: feyenoord_photo_img_9_1755059648760.jpg
+2025-08-13 01:34:09 [INFO]: Progress: 253/0 (Infinity%) - eredivisie
+2025-08-13 01:34:09 [INFO]: Downloaded: feyenoord_photo_img_9_1755059648760.jpg
+2025-08-13 01:34:11 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/74442454/orig.jpg (attempt 1/3)
+2025-08-13 01:34:12 [INFO]: Successfully downloaded: feyenoord_photo_img_10_1755059651807.jpg
+2025-08-13 01:34:12 [INFO]: Progress: 254/0 (Infinity%) - eredivisie
+2025-08-13 01:34:12 [INFO]: Downloaded: feyenoord_photo_img_10_1755059651807.jpg
+2025-08-13 01:34:14 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/5501ced2/orig.jpg (attempt 1/3)
+2025-08-13 01:34:14 [INFO]: Successfully downloaded: feyenoord_photo_img_11_1755059654203.jpg
+2025-08-13 01:34:14 [INFO]: Progress: 255/0 (Infinity%) - eredivisie
+2025-08-13 01:34:14 [INFO]: Downloaded: feyenoord_photo_img_11_1755059654203.jpg
+2025-08-13 01:34:16 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7a5713ec/orig.jpg (attempt 1/3)
+2025-08-13 01:34:17 [INFO]: Successfully downloaded: feyenoord_photo_img_12_1755059656551.jpg
+2025-08-13 01:34:17 [INFO]: Progress: 256/0 (Infinity%) - eredivisie
+2025-08-13 01:34:17 [INFO]: Downloaded: feyenoord_photo_img_12_1755059656551.jpg
+2025-08-13 01:34:18 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/29f214cf/orig.jpg (attempt 1/3)
+2025-08-13 01:34:19 [INFO]: Successfully downloaded: feyenoord_photo_img_13_1755059658448.jpg
+2025-08-13 01:34:19 [INFO]: Progress: 257/0 (Infinity%) - eredivisie
+2025-08-13 01:34:19 [INFO]: Downloaded: feyenoord_photo_img_13_1755059658448.jpg
+2025-08-13 01:34:20 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/10c5496c/orig.jpg (attempt 1/3)
+2025-08-13 01:34:20 [INFO]: Successfully downloaded: feyenoord_photo_img_14_1755059660123.jpg
+2025-08-13 01:34:20 [INFO]: Progress: 258/0 (Infinity%) - eredivisie
+2025-08-13 01:34:20 [INFO]: Downloaded: feyenoord_photo_img_14_1755059660123.jpg
+2025-08-13 01:34:23 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/5b32832f/orig.jpg (attempt 1/3)
+2025-08-13 01:34:23 [INFO]: Successfully downloaded: feyenoord_photo_img_15_1755059663183.jpg
+2025-08-13 01:34:23 [INFO]: Progress: 259/0 (Infinity%) - eredivisie
+2025-08-13 01:34:23 [INFO]: Downloaded: feyenoord_photo_img_15_1755059663183.jpg
+2025-08-13 01:34:26 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/5ce10889/orig.jpg (attempt 1/3)
+2025-08-13 01:34:26 [INFO]: Successfully downloaded: feyenoord_photo_img_16_1755059666120.jpg
+2025-08-13 01:34:26 [INFO]: Progress: 260/0 (Infinity%) - eredivisie
+2025-08-13 01:34:26 [INFO]: Downloaded: feyenoord_photo_img_16_1755059666120.jpg
+2025-08-13 01:34:27 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/dcf13b40/orig.jpg (attempt 1/3)
+2025-08-13 01:34:28 [INFO]: Successfully downloaded: feyenoord_photo_img_17_1755059667781.jpg
+2025-08-13 01:34:28 [INFO]: Progress: 261/0 (Infinity%) - eredivisie
+2025-08-13 01:34:28 [INFO]: Downloaded: feyenoord_photo_img_17_1755059667781.jpg
+2025-08-13 01:34:31 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/bbf9a83b/orig.jpg (attempt 1/3)
+2025-08-13 01:34:31 [INFO]: Successfully downloaded: feyenoord_photo_img_18_1755059671027.jpg
+2025-08-13 01:34:31 [INFO]: Progress: 262/0 (Infinity%) - eredivisie
+2025-08-13 01:34:31 [INFO]: Downloaded: feyenoord_photo_img_18_1755059671027.jpg
+2025-08-13 01:34:33 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7b08d7a8/orig.jpg (attempt 1/3)
+2025-08-13 01:34:33 [INFO]: Successfully downloaded: feyenoord_photo_img_19_1755059673385.jpg
+2025-08-13 01:34:33 [INFO]: Progress: 263/0 (Infinity%) - eredivisie
+2025-08-13 01:34:33 [INFO]: Downloaded: feyenoord_photo_img_19_1755059673385.jpg
+2025-08-13 01:34:36 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/919bfbbc/orig.jpg (attempt 1/3)
+2025-08-13 01:34:36 [INFO]: Successfully downloaded: feyenoord_photo_img_20_1755059676309.jpg
+2025-08-13 01:34:36 [INFO]: Progress: 264/0 (Infinity%) - eredivisie
+2025-08-13 01:34:36 [INFO]: Downloaded: feyenoord_photo_img_20_1755059676309.jpg
+2025-08-13 01:34:38 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7c7b97fa/orig.jpg (attempt 1/3)
+2025-08-13 01:34:38 [INFO]: Successfully downloaded: feyenoord_photo_img_21_1755059678294.jpg
+2025-08-13 01:34:38 [INFO]: Progress: 265/0 (Infinity%) - eredivisie
+2025-08-13 01:34:38 [INFO]: Downloaded: feyenoord_photo_img_21_1755059678294.jpg
+2025-08-13 01:34:41 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/29dd2adb/orig.jpg (attempt 1/3)
+2025-08-13 01:34:42 [INFO]: Successfully downloaded: feyenoord_photo_img_22_1755059681485.jpg
+2025-08-13 01:34:42 [INFO]: Progress: 266/0 (Infinity%) - eredivisie
+2025-08-13 01:34:42 [INFO]: Downloaded: feyenoord_photo_img_22_1755059681485.jpg
+2025-08-13 01:34:44 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/b18ea550/orig.jpg (attempt 1/3)
+2025-08-13 01:34:44 [INFO]: Successfully downloaded: feyenoord_photo_img_23_1755059684190.jpg
+2025-08-13 01:34:44 [INFO]: Progress: 267/0 (Infinity%) - eredivisie
+2025-08-13 01:34:44 [INFO]: Downloaded: feyenoord_photo_img_23_1755059684190.jpg
+2025-08-13 01:34:46 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d33776a8/orig.jpg (attempt 1/3)
+2025-08-13 01:34:47 [INFO]: Successfully downloaded: feyenoord_photo_img_24_1755059686495.jpg
+2025-08-13 01:34:47 [INFO]: Progress: 268/0 (Infinity%) - eredivisie
+2025-08-13 01:34:47 [INFO]: Downloaded: feyenoord_photo_img_24_1755059686495.jpg
+2025-08-13 01:34:49 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ef2ffe81/orig.jpg (attempt 1/3)
+2025-08-13 01:34:50 [INFO]: Successfully downloaded: feyenoord_photo_img_25_1755059689798.jpg
+2025-08-13 01:34:50 [INFO]: Progress: 269/0 (Infinity%) - eredivisie
+2025-08-13 01:34:50 [INFO]: Downloaded: feyenoord_photo_img_25_1755059689798.jpg
+2025-08-13 01:34:52 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/b4ba3156/orig.jpg (attempt 1/3)
+2025-08-13 01:34:53 [INFO]: Successfully downloaded: feyenoord_photo_img_26_1755059692718.jpg
+2025-08-13 01:34:53 [INFO]: Progress: 270/0 (Infinity%) - eredivisie
+2025-08-13 01:34:53 [INFO]: Downloaded: feyenoord_photo_img_26_1755059692718.jpg
+2025-08-13 01:34:54 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/27adc9ca/orig.jpg (attempt 1/3)
+2025-08-13 01:34:55 [INFO]: Successfully downloaded: feyenoord_photo_img_27_1755059694908.jpg
+2025-08-13 01:34:55 [INFO]: Progress: 271/0 (Infinity%) - eredivisie
+2025-08-13 01:34:55 [INFO]: Downloaded: feyenoord_photo_img_27_1755059694908.jpg
+2025-08-13 01:34:57 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/edf00a9a/orig.jpg (attempt 1/3)
+2025-08-13 01:34:57 [INFO]: Successfully downloaded: feyenoord_photo_img_28_1755059697061.jpg
+2025-08-13 01:34:57 [INFO]: Progress: 272/0 (Infinity%) - eredivisie
+2025-08-13 01:34:57 [INFO]: Downloaded: feyenoord_photo_img_28_1755059697061.jpg
+2025-08-13 01:35:00 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/3419b75b/orig.jpg (attempt 1/3)
+2025-08-13 01:35:01 [INFO]: Successfully downloaded: feyenoord_photo_img_29_1755059700342.jpg
+2025-08-13 01:35:01 [INFO]: Progress: 273/0 (Infinity%) - eredivisie
+2025-08-13 01:35:01 [INFO]: Downloaded: feyenoord_photo_img_29_1755059700342.jpg
+2025-08-13 01:35:03 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/54dda772/orig.jpg (attempt 1/3)
+2025-08-13 01:35:04 [INFO]: Successfully downloaded: feyenoord_photo_img_30_1755059703994.jpg
+2025-08-13 01:35:04 [INFO]: Progress: 274/0 (Infinity%) - eredivisie
+2025-08-13 01:35:04 [INFO]: Downloaded: feyenoord_photo_img_30_1755059703994.jpg
+2025-08-13 01:35:07 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/e9589a04/orig.jpg (attempt 1/3)
+2025-08-13 01:35:08 [INFO]: Successfully downloaded: feyenoord_photo_img_31_1755059707560.jpg
+2025-08-13 01:35:08 [INFO]: Progress: 275/0 (Infinity%) - eredivisie
+2025-08-13 01:35:08 [INFO]: Downloaded: feyenoord_photo_img_31_1755059707560.jpg
+2025-08-13 01:35:09 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:35:10 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:35:10 [INFO]: Progress: 276/0 (Infinity%) - eredivisie
+2025-08-13 01:35:10 [ERROR]: Download failed: feyenoord_img32
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:35:12 [INFO]: Completed album "FEYENOORD": 32/33 images
+2025-08-13 01:35:17 [INFO]: Processing album 17: "AJAX GK"
+2025-08-13 01:35:17 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/175524918?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:35:17 [INFO]: Created album folder: ajax_gk
+2025-08-13 01:35:17 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/175524918?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:35:17 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:35:17 [INFO]: Extracting images directly from page content
+2025-08-13 01:35:37 [INFO]: Found 5 potential images from https://wavesoccer.x.yupoo.com/albums/175524918?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:35:37 [INFO]: Found 5 images in album: "AJAX GK"
+2025-08-13 01:35:37 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/df77e18b/orig.jpg (attempt 1/3)
+2025-08-13 01:35:39 [INFO]: Successfully downloaded: ajax_gk_photo_img_0_1755059737518.jpg
+2025-08-13 01:35:39 [INFO]: Progress: 277/0 (Infinity%) - eredivisie
+2025-08-13 01:35:39 [INFO]: Downloaded: ajax_gk_photo_img_0_1755059737518.jpg
+2025-08-13 01:35:42 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/bb15084e/orig.jpg (attempt 1/3)
+2025-08-13 01:35:42 [INFO]: Successfully downloaded: ajax_gk_photo_img_1_1755059742263.jpg
+2025-08-13 01:35:42 [INFO]: Progress: 278/0 (Infinity%) - eredivisie
+2025-08-13 01:35:42 [INFO]: Downloaded: ajax_gk_photo_img_1_1755059742263.jpg
+2025-08-13 01:35:44 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/c0b1e1a5/orig.jpg (attempt 1/3)
+2025-08-13 01:35:45 [INFO]: Successfully downloaded: ajax_gk_photo_img_2_1755059744389.jpg
+2025-08-13 01:35:45 [INFO]: Progress: 279/0 (Infinity%) - eredivisie
+2025-08-13 01:35:45 [INFO]: Downloaded: ajax_gk_photo_img_2_1755059744389.jpg
+2025-08-13 01:35:46 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ee4ce716/orig.jpg (attempt 1/3)
+2025-08-13 01:35:47 [INFO]: Successfully downloaded: ajax_gk_photo_img_3_1755059746752.jpg
+2025-08-13 01:35:47 [INFO]: Progress: 280/0 (Infinity%) - eredivisie
+2025-08-13 01:35:47 [INFO]: Downloaded: ajax_gk_photo_img_3_1755059746752.jpg
+2025-08-13 01:35:50 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:35:51 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:35:51 [INFO]: Progress: 281/0 (Infinity%) - eredivisie
+2025-08-13 01:35:51 [ERROR]: Download failed: ajax_gk_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:35:52 [INFO]: Completed album "AJAX GK": 4/5 images
+2025-08-13 01:35:57 [INFO]: Processing album 18: "PSV GK"
+2025-08-13 01:35:57 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/179069434?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:35:57 [INFO]: Created album folder: psv_gk
+2025-08-13 01:35:57 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/179069434?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:35:57 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:35:57 [INFO]: Extracting images directly from page content
+2025-08-13 01:36:04 [INFO]: Found 5 potential images from https://wavesoccer.x.yupoo.com/albums/179069434?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:36:04 [INFO]: Found 5 images in album: "PSV GK"
+2025-08-13 01:36:04 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4bcd1319/medium.png (attempt 1/3)
+2025-08-13 01:36:04 [INFO]: Successfully downloaded: psv_gk_photo_img_0_1755059764546.png
+2025-08-13 01:36:04 [INFO]: Progress: 282/0 (Infinity%) - eredivisie
+2025-08-13 01:36:04 [INFO]: Downloaded: psv_gk_photo_img_0_1755059764546.png
+2025-08-13 01:36:07 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:36:08 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:36:08 [INFO]: Progress: 283/0 (Infinity%) - eredivisie
+2025-08-13 01:36:08 [ERROR]: Download failed: psv_gk_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:36:10 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/6c16393c/small.png (attempt 1/3)
+2025-08-13 01:36:11 [INFO]: Successfully downloaded: psv_gk_photo_img_2_1755059770597.png
+2025-08-13 01:36:11 [INFO]: Progress: 284/0 (Infinity%) - eredivisie
+2025-08-13 01:36:11 [INFO]: Downloaded: psv_gk_photo_img_2_1755059770597.png
+2025-08-13 01:36:13 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/78d75be2/small.png (attempt 1/3)
+2025-08-13 01:36:14 [INFO]: Successfully downloaded: psv_gk_photo_img_3_1755059773091.png
+2025-08-13 01:36:14 [INFO]: Progress: 285/0 (Infinity%) - eredivisie
+2025-08-13 01:36:14 [INFO]: Downloaded: psv_gk_photo_img_3_1755059773091.png
+2025-08-13 01:36:15 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/7c8570fe/small.png (attempt 1/3)
+2025-08-13 01:36:16 [INFO]: Successfully downloaded: psv_gk_photo_img_4_1755059775628.png
+2025-08-13 01:36:16 [INFO]: Progress: 286/0 (Infinity%) - eredivisie
+2025-08-13 01:36:16 [INFO]: Downloaded: psv_gk_photo_img_4_1755059775628.png
+2025-08-13 01:36:19 [INFO]: Completed album "PSV GK": 4/5 images
+2025-08-13 01:36:23 [INFO]: Processing album 19: "TWENTE"
+2025-08-13 01:36:23 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/167467196?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:36:23 [INFO]: Created album folder: twente
+2025-08-13 01:36:23 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/167467196?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:36:23 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:36:23 [INFO]: Extracting images directly from page content
+2025-08-13 01:36:31 [INFO]: Found 11 potential images from https://wavesoccer.x.yupoo.com/albums/167467196?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:36:31 [INFO]: Found 11 images in album: "TWENTE"
+2025-08-13 01:36:31 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/bc84e5a2/orig.jpg (attempt 1/3)
+2025-08-13 01:36:33 [INFO]: Successfully downloaded: twente_photo_img_0_1755059791371.jpg
+2025-08-13 01:36:33 [INFO]: Progress: 287/0 (Infinity%) - eredivisie
+2025-08-13 01:36:33 [INFO]: Downloaded: twente_photo_img_0_1755059791371.jpg
+2025-08-13 01:36:36 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/0e1c0ce3/orig.jpg (attempt 1/3)
+2025-08-13 01:36:38 [INFO]: Successfully downloaded: twente_photo_img_1_1755059796229.jpg
+2025-08-13 01:36:38 [INFO]: Progress: 288/0 (Infinity%) - eredivisie
+2025-08-13 01:36:38 [INFO]: Downloaded: twente_photo_img_1_1755059796229.jpg
+2025-08-13 01:36:40 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/428e73d6/orig.jpg (attempt 1/3)
+2025-08-13 01:36:41 [INFO]: Successfully downloaded: twente_photo_img_2_1755059800502.jpg
+2025-08-13 01:36:41 [INFO]: Progress: 289/0 (Infinity%) - eredivisie
+2025-08-13 01:36:41 [INFO]: Downloaded: twente_photo_img_2_1755059800502.jpg
+2025-08-13 01:36:44 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/3d557dcd/orig.jpg (attempt 1/3)
+2025-08-13 01:36:46 [INFO]: Successfully downloaded: twente_photo_img_3_1755059804865.jpg
+2025-08-13 01:36:46 [INFO]: Progress: 290/0 (Infinity%) - eredivisie
+2025-08-13 01:36:46 [INFO]: Downloaded: twente_photo_img_3_1755059804865.jpg
+2025-08-13 01:36:47 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/51e5be0d/orig.jpg (attempt 1/3)
+2025-08-13 01:36:49 [INFO]: Successfully downloaded: twente_photo_img_4_1755059807968.jpg
+2025-08-13 01:36:49 [INFO]: Progress: 291/0 (Infinity%) - eredivisie
+2025-08-13 01:36:49 [INFO]: Downloaded: twente_photo_img_4_1755059807968.jpg
+2025-08-13 01:36:51 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/52991a3b/orig.jpg (attempt 1/3)
+2025-08-13 01:36:53 [INFO]: Successfully downloaded: twente_photo_img_5_1755059811208.jpg
+2025-08-13 01:36:53 [INFO]: Progress: 292/0 (Infinity%) - eredivisie
+2025-08-13 01:36:53 [INFO]: Downloaded: twente_photo_img_5_1755059811208.jpg
+2025-08-13 01:36:56 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/4032c348/orig.jpg (attempt 1/3)
+2025-08-13 01:36:58 [INFO]: Successfully downloaded: twente_photo_img_6_1755059816441.jpg
+2025-08-13 01:36:58 [INFO]: Progress: 293/0 (Infinity%) - eredivisie
+2025-08-13 01:36:58 [INFO]: Downloaded: twente_photo_img_6_1755059816441.jpg
+2025-08-13 01:36:59 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/0fc64987/orig.jpg (attempt 1/3)
+2025-08-13 01:37:01 [INFO]: Successfully downloaded: twente_photo_img_7_1755059819839.jpg
+2025-08-13 01:37:01 [INFO]: Progress: 294/0 (Infinity%) - eredivisie
+2025-08-13 01:37:01 [INFO]: Downloaded: twente_photo_img_7_1755059819839.jpg
+2025-08-13 01:37:04 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/bdcef53a/orig.jpg (attempt 1/3)
+2025-08-13 01:37:06 [INFO]: Successfully downloaded: twente_photo_img_8_1755059824185.jpg
+2025-08-13 01:37:06 [INFO]: Progress: 295/0 (Infinity%) - eredivisie
+2025-08-13 01:37:06 [INFO]: Downloaded: twente_photo_img_8_1755059824185.jpg
+2025-08-13 01:37:08 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/eae0d68a/orig.jpg (attempt 1/3)
+2025-08-13 01:37:10 [INFO]: Successfully downloaded: twente_photo_img_9_1755059828008.jpg
+2025-08-13 01:37:10 [INFO]: Progress: 296/0 (Infinity%) - eredivisie
+2025-08-13 01:37:10 [INFO]: Downloaded: twente_photo_img_9_1755059828008.jpg
+2025-08-13 01:37:12 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:37:12 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:37:12 [INFO]: Progress: 297/0 (Infinity%) - eredivisie
+2025-08-13 01:37:12 [ERROR]: Download failed: twente_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:37:15 [INFO]: Completed album "TWENTE": 10/11 images
+2025-08-13 01:37:19 [INFO]: Processing album 20: "AJAX"
+2025-08-13 01:37:19 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/165823951?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:37:19 [INFO]: Created album folder: ajax
+2025-08-13 01:37:19 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/165823951?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:37:19 [INFO]: Yupoo album detected, using direct image extraction method
+2025-08-13 01:37:19 [INFO]: Extracting images directly from page content
+2025-08-13 01:37:52 [INFO]: Found 37 potential images from https://wavesoccer.x.yupoo.com/albums/165823951?uid=1&isSubCate=false&referrercate=334344
+2025-08-13 01:37:52 [INFO]: Found 37 images in album: "AJAX"
+2025-08-13 01:37:52 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/2927047b/orig.jpg (attempt 1/3)
+2025-08-13 01:37:53 [INFO]: Successfully downloaded: ajax_photo_img_0_1755059872377.jpg
+2025-08-13 01:37:53 [INFO]: Progress: 298/0 (Infinity%) - eredivisie
+2025-08-13 01:37:53 [INFO]: Downloaded: ajax_photo_img_0_1755059872377.jpg
+2025-08-13 01:37:55 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/1bd8aada/orig.jpg (attempt 1/3)
+2025-08-13 01:37:56 [INFO]: Successfully downloaded: ajax_photo_img_1_1755059875040.jpg
+2025-08-13 01:37:56 [INFO]: Progress: 299/0 (Infinity%) - eredivisie
+2025-08-13 01:37:56 [INFO]: Downloaded: ajax_photo_img_1_1755059875040.jpg
+2025-08-13 01:37:58 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/5e85d861/orig.jpg (attempt 1/3)
+2025-08-13 01:37:59 [INFO]: Successfully downloaded: ajax_photo_img_2_1755059878176.jpg
+2025-08-13 01:37:59 [INFO]: Progress: 300/0 (Infinity%) - eredivisie
+2025-08-13 01:37:59 [INFO]: Downloaded: ajax_photo_img_2_1755059878176.jpg
+2025-08-13 01:38:01 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/653cb266/orig.jpg (attempt 1/3)
+2025-08-13 01:38:02 [INFO]: Successfully downloaded: ajax_photo_img_3_1755059881292.jpg
+2025-08-13 01:38:02 [INFO]: Progress: 301/0 (Infinity%) - eredivisie
+2025-08-13 01:38:02 [INFO]: Downloaded: ajax_photo_img_3_1755059881292.jpg
+2025-08-13 01:38:04 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/39630333/orig.jpg (attempt 1/3)
+2025-08-13 01:38:05 [INFO]: Successfully downloaded: ajax_photo_img_4_1755059884993.jpg
+2025-08-13 01:38:05 [INFO]: Progress: 302/0 (Infinity%) - eredivisie
+2025-08-13 01:38:05 [INFO]: Downloaded: ajax_photo_img_4_1755059884993.jpg
+2025-08-13 01:38:07 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/fde3242e/orig.jpg (attempt 1/3)
+2025-08-13 01:38:08 [INFO]: Successfully downloaded: ajax_photo_img_5_1755059887106.jpg
+2025-08-13 01:38:08 [INFO]: Progress: 303/0 (Infinity%) - eredivisie
+2025-08-13 01:38:08 [INFO]: Downloaded: ajax_photo_img_5_1755059887106.jpg
+2025-08-13 01:38:10 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/9b06264a/orig.jpg (attempt 1/3)
+2025-08-13 01:38:11 [INFO]: Successfully downloaded: ajax_photo_img_6_1755059890993.jpg
+2025-08-13 01:38:11 [INFO]: Progress: 304/0 (Infinity%) - eredivisie
+2025-08-13 01:38:11 [INFO]: Downloaded: ajax_photo_img_6_1755059890993.jpg
+2025-08-13 01:38:12 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ef794d26/orig.jpg (attempt 1/3)
+2025-08-13 01:38:15 [INFO]: Successfully downloaded: ajax_photo_img_7_1755059892837.jpg
+2025-08-13 01:38:15 [INFO]: Progress: 305/0 (Infinity%) - eredivisie
+2025-08-13 01:38:15 [INFO]: Downloaded: ajax_photo_img_7_1755059892837.jpg
+2025-08-13 01:38:18 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/18597077/orig.jpg (attempt 1/3)
+2025-08-13 01:38:18 [INFO]: Successfully downloaded: ajax_photo_img_8_1755059898378.jpg
+2025-08-13 01:38:18 [INFO]: Progress: 306/0 (Infinity%) - eredivisie
+2025-08-13 01:38:18 [INFO]: Downloaded: ajax_photo_img_8_1755059898378.jpg
+2025-08-13 01:38:20 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/8dab4181/orig.jpg (attempt 1/3)
+2025-08-13 01:38:22 [INFO]: Successfully downloaded: ajax_photo_img_9_1755059900720.jpg
+2025-08-13 01:38:22 [INFO]: Progress: 307/0 (Infinity%) - eredivisie
+2025-08-13 01:38:22 [INFO]: Downloaded: ajax_photo_img_9_1755059900720.jpg
+2025-08-13 01:38:24 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/a421894e/orig.jpg (attempt 1/3)
+2025-08-13 01:38:24 [INFO]: Successfully downloaded: ajax_photo_img_10_1755059904041.jpg
+2025-08-13 01:38:24 [INFO]: Progress: 308/0 (Infinity%) - eredivisie
+2025-08-13 01:38:24 [INFO]: Downloaded: ajax_photo_img_10_1755059904041.jpg
+2025-08-13 01:38:27 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d712e247/orig.jpg (attempt 1/3)
+2025-08-13 01:38:28 [INFO]: Successfully downloaded: ajax_photo_img_11_1755059907566.jpg
+2025-08-13 01:38:28 [INFO]: Progress: 309/0 (Infinity%) - eredivisie
+2025-08-13 01:38:28 [INFO]: Downloaded: ajax_photo_img_11_1755059907566.jpg
+2025-08-13 01:38:29 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/bc296676/orig.jpg (attempt 1/3)
+2025-08-13 01:38:30 [INFO]: Successfully downloaded: ajax_photo_img_12_1755059909854.jpg
+2025-08-13 01:38:30 [INFO]: Progress: 310/0 (Infinity%) - eredivisie
+2025-08-13 01:38:30 [INFO]: Downloaded: ajax_photo_img_12_1755059909854.jpg
+2025-08-13 01:38:31 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/6f9d9335/orig.jpg (attempt 1/3)
+2025-08-13 01:38:32 [INFO]: Successfully downloaded: ajax_photo_img_13_1755059911558.jpg
+2025-08-13 01:38:32 [INFO]: Progress: 311/0 (Infinity%) - eredivisie
+2025-08-13 01:38:32 [INFO]: Downloaded: ajax_photo_img_13_1755059911558.jpg
+2025-08-13 01:38:33 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/088a5bf2/orig.jpg (attempt 1/3)
+2025-08-13 01:38:33 [INFO]: Successfully downloaded: ajax_photo_img_14_1755059913409.jpg
+2025-08-13 01:38:33 [INFO]: Progress: 312/0 (Infinity%) - eredivisie
+2025-08-13 01:38:33 [INFO]: Downloaded: ajax_photo_img_14_1755059913409.jpg
+2025-08-13 01:38:36 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/21ffe518/orig.jpg (attempt 1/3)
+2025-08-13 01:38:38 [INFO]: Successfully downloaded: ajax_photo_img_15_1755059916029.jpg
+2025-08-13 01:38:38 [INFO]: Progress: 313/0 (Infinity%) - eredivisie
+2025-08-13 01:38:38 [INFO]: Downloaded: ajax_photo_img_15_1755059916029.jpg
+2025-08-13 01:38:39 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/e3e18bb4/orig.jpg (attempt 1/3)
+2025-08-13 01:38:40 [INFO]: Successfully downloaded: ajax_photo_img_16_1755059919727.jpg
+2025-08-13 01:38:40 [INFO]: Progress: 314/0 (Infinity%) - eredivisie
+2025-08-13 01:38:40 [INFO]: Downloaded: ajax_photo_img_16_1755059919727.jpg
+2025-08-13 01:38:41 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/5269c49c/orig.jpg (attempt 1/3)
+2025-08-13 01:38:43 [INFO]: Successfully downloaded: ajax_photo_img_17_1755059921964.jpg
+2025-08-13 01:38:43 [INFO]: Progress: 315/0 (Infinity%) - eredivisie
+2025-08-13 01:38:43 [INFO]: Downloaded: ajax_photo_img_17_1755059921964.jpg
+2025-08-13 01:38:46 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ce43ebf8/orig.jpg (attempt 1/3)
+2025-08-13 01:38:47 [INFO]: Successfully downloaded: ajax_photo_img_18_1755059926866.jpg
+2025-08-13 01:38:47 [INFO]: Progress: 316/0 (Infinity%) - eredivisie
+2025-08-13 01:38:47 [INFO]: Downloaded: ajax_photo_img_18_1755059926866.jpg
+2025-08-13 01:38:50 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ee002497/orig.jpg (attempt 1/3)
+2025-08-13 01:38:52 [INFO]: Successfully downloaded: ajax_photo_img_19_1755059930341.jpg
+2025-08-13 01:38:52 [INFO]: Progress: 317/0 (Infinity%) - eredivisie
+2025-08-13 01:38:52 [INFO]: Downloaded: ajax_photo_img_19_1755059930341.jpg
+2025-08-13 01:38:53 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/562c28d2/orig.jpg (attempt 1/3)
+2025-08-13 01:38:54 [INFO]: Successfully downloaded: ajax_photo_img_20_1755059933782.jpg
+2025-08-13 01:38:54 [INFO]: Progress: 318/0 (Infinity%) - eredivisie
+2025-08-13 01:38:54 [INFO]: Downloaded: ajax_photo_img_20_1755059933782.jpg
+2025-08-13 01:38:55 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/d70f8605/orig.jpg (attempt 1/3)
+2025-08-13 01:38:57 [INFO]: Successfully downloaded: ajax_photo_img_21_1755059935905.jpg
+2025-08-13 01:38:57 [INFO]: Progress: 319/0 (Infinity%) - eredivisie
+2025-08-13 01:38:57 [INFO]: Downloaded: ajax_photo_img_21_1755059935905.jpg
+2025-08-13 01:38:59 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/55a8e276/orig.jpg (attempt 1/3)
+2025-08-13 01:39:01 [INFO]: Successfully downloaded: ajax_photo_img_22_1755059939272.jpg
+2025-08-13 01:39:01 [INFO]: Progress: 320/0 (Infinity%) - eredivisie
+2025-08-13 01:39:01 [INFO]: Downloaded: ajax_photo_img_22_1755059939272.jpg
+2025-08-13 01:39:04 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/e71ad9fe/orig.jpg (attempt 1/3)
+2025-08-13 01:39:05 [INFO]: Successfully downloaded: ajax_photo_img_23_1755059944318.jpg
+2025-08-13 01:39:05 [INFO]: Progress: 321/0 (Infinity%) - eredivisie
+2025-08-13 01:39:05 [INFO]: Downloaded: ajax_photo_img_23_1755059944318.jpg
+2025-08-13 01:39:07 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/6ffb4dfb/orig.jpg (attempt 1/3)
+2025-08-13 01:39:08 [INFO]: Successfully downloaded: ajax_photo_img_24_1755059947243.jpg
+2025-08-13 01:39:08 [INFO]: Progress: 322/0 (Infinity%) - eredivisie
+2025-08-13 01:39:08 [INFO]: Downloaded: ajax_photo_img_24_1755059947243.jpg
+2025-08-13 01:39:11 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/563438b4/orig.jpg (attempt 1/3)
+2025-08-13 01:39:11 [INFO]: Successfully downloaded: ajax_photo_img_25_1755059951340.jpg
+2025-08-13 01:39:11 [INFO]: Progress: 323/0 (Infinity%) - eredivisie
+2025-08-13 01:39:11 [INFO]: Downloaded: ajax_photo_img_25_1755059951340.jpg
+2025-08-13 01:39:13 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/a93aa096/orig.jpg (attempt 1/3)
+2025-08-13 01:39:15 [INFO]: Successfully downloaded: ajax_photo_img_26_1755059953322.jpg
+2025-08-13 01:39:15 [INFO]: Progress: 324/0 (Infinity%) - eredivisie
+2025-08-13 01:39:15 [INFO]: Downloaded: ajax_photo_img_26_1755059953322.jpg
+2025-08-13 01:39:17 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/61340482/orig.jpg (attempt 1/3)
+2025-08-13 01:39:17 [INFO]: Successfully downloaded: ajax_photo_img_27_1755059957157.jpg
+2025-08-13 01:39:17 [INFO]: Progress: 325/0 (Infinity%) - eredivisie
+2025-08-13 01:39:17 [INFO]: Downloaded: ajax_photo_img_27_1755059957157.jpg
+2025-08-13 01:39:20 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/f894d8fa/orig.jpg (attempt 1/3)
+2025-08-13 01:39:21 [INFO]: Successfully downloaded: ajax_photo_img_28_1755059960026.jpg
+2025-08-13 01:39:21 [INFO]: Progress: 326/0 (Infinity%) - eredivisie
+2025-08-13 01:39:21 [INFO]: Downloaded: ajax_photo_img_28_1755059960026.jpg
+2025-08-13 01:39:24 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/ee19dc9c/orig.jpg (attempt 1/3)
+2025-08-13 01:39:25 [INFO]: Successfully downloaded: ajax_photo_img_29_1755059964812.jpg
+2025-08-13 01:39:25 [INFO]: Progress: 327/0 (Infinity%) - eredivisie
+2025-08-13 01:39:25 [INFO]: Downloaded: ajax_photo_img_29_1755059964812.jpg
+2025-08-13 01:39:27 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/e0d7eded/orig.jpg (attempt 1/3)
+2025-08-13 01:39:29 [INFO]: Successfully downloaded: ajax_photo_img_30_1755059967819.jpg
+2025-08-13 01:39:29 [INFO]: Progress: 328/0 (Infinity%) - eredivisie
+2025-08-13 01:39:29 [INFO]: Downloaded: ajax_photo_img_30_1755059967819.jpg
+2025-08-13 01:39:30 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/6c74cac4/orig.jpg (attempt 1/3)
+2025-08-13 01:39:31 [INFO]: Successfully downloaded: ajax_photo_img_31_1755059970805.jpg
+2025-08-13 01:39:31 [INFO]: Progress: 329/0 (Infinity%) - eredivisie
+2025-08-13 01:39:31 [INFO]: Downloaded: ajax_photo_img_31_1755059970805.jpg
+2025-08-13 01:39:32 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/e5574523/orig.jpg (attempt 1/3)
+2025-08-13 01:39:34 [INFO]: Successfully downloaded: ajax_photo_img_32_1755059972660.jpg
+2025-08-13 01:39:34 [INFO]: Progress: 330/0 (Infinity%) - eredivisie
+2025-08-13 01:39:34 [INFO]: Downloaded: ajax_photo_img_32_1755059972660.jpg
+2025-08-13 01:39:36 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/a514ec75/orig.jpg (attempt 1/3)
+2025-08-13 01:39:37 [INFO]: Successfully downloaded: ajax_photo_img_33_1755059976909.jpg
+2025-08-13 01:39:37 [INFO]: Progress: 331/0 (Infinity%) - eredivisie
+2025-08-13 01:39:37 [INFO]: Downloaded: ajax_photo_img_33_1755059976909.jpg
+2025-08-13 01:39:38 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/27ed4d10/orig.jpg (attempt 1/3)
+2025-08-13 01:39:40 [INFO]: Successfully downloaded: ajax_photo_img_34_1755059978679.jpg
+2025-08-13 01:39:40 [INFO]: Progress: 332/0 (Infinity%) - eredivisie
+2025-08-13 01:39:40 [INFO]: Downloaded: ajax_photo_img_34_1755059978679.jpg
+2025-08-13 01:39:42 [INFO]: Downloading image: https://photo.yupoo.com/wavesoccer/82ac52a3/orig.jpg (attempt 1/3)
+2025-08-13 01:39:43 [INFO]: Successfully downloaded: ajax_photo_img_35_1755059982993.jpg
+2025-08-13 01:39:43 [INFO]: Progress: 333/0 (Infinity%) - eredivisie
+2025-08-13 01:39:43 [INFO]: Downloaded: ajax_photo_img_35_1755059982993.jpg
+2025-08-13 01:39:46 [INFO]: Downloading image: https://s.yupoo.com/website/4.28.1/imgs/policeIcon.png (attempt 1/3)
+2025-08-13 01:39:47 [WARN]: Image dimensions invalid: 20x20
+2025-08-13 01:39:47 [INFO]: Progress: 334/0 (Infinity%) - eredivisie
+2025-08-13 01:39:47 [ERROR]: Download failed: ajax_img36
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-13 01:39:49 [INFO]: Completed album "AJAX": 36/37 images
+2025-08-13 01:39:49 [INFO]: Completed category: eredivisie
+2025-08-13 01:39:49 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1755058587663_n80vv1.json
+2025-08-13 01:39:49 [INFO]: === SCRAPING SESSION COMPLETED ===

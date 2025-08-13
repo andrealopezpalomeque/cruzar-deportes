@@ -1,3 +1,5 @@
+export type CategoryType = 'afc' | 'caf' | 'eredivisie'
+
 export interface Product {
   id: string
   name: string
@@ -5,7 +7,7 @@ export interface Product {
   description?: string
   price: number
   originalPrice?: number
-  category: string
+  category: CategoryType
   subcategory?: string
   images: string[]
   sizes: string[]
