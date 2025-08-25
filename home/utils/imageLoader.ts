@@ -359,10 +359,9 @@ export async function getTeamImages(teamKey: string, category: CategoryType): Pr
 
     const files = imageFiles[teamKey] || []
     
-    // If no images are explicitly defined, return placeholder
+    // If no images are explicitly defined, return empty array
     if (files.length === 0) {
-      // Return a placeholder that can be handled by the frontend
-      return [`${basePath}/placeholder.jpg`]
+      return []
     }
     
     return files.map(filename => `${basePath}/${filename}`)
