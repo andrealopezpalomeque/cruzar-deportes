@@ -961,3 +961,84 @@ Error: Downloaded file is not a valid image
 2025-08-14 18:32:33 [ERROR]: Download failed: coventry_city_short_img1
 Error: Downloaded file is not a valid image
     at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:19:34 [ERROR]: Download failed: ajax_short_player_version_img11
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:19:46 [ERROR]: Download failed: ajax_shorts_authentic_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:20:17 [ERROR]: Download failed: feyenoord_gk_kid_kit_img5
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:20:33 [ERROR]: Download failed: feyenoord_gk_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:21:15 [ERROR]: Download failed: feyenoord_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:21:36 [ERROR]: Download failed: ajax_gk_kid_kit_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:21:48 [ERROR]: Download failed: feyenoord_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:22:22 [ERROR]: Download failed: psv_gk_kid_kit_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:22:35 [ERROR]: Download failed: ajax_authentic_img32
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:22:48 [ERROR]: Download failed: ajax_gk_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:23:05 [ERROR]: Download failed: sc_heerenveen_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:23:20 [ERROR]: Download failed: feyenoord_gk_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:23:51 [ERROR]: Download failed: psv_gk_short_img7
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:24:09 [ERROR]: Download failed: ajax_kid_kit_img38
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:24:46 [ERROR]: Download failed: psv_kid_kit_img44
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:24:59 [ERROR]: Download failed: ajax_shorts_img12
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:25:50 [ERROR]: Download failed: ajax_short_img11
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:27:22 [ERROR]: Download failed: psv_short_img17
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:30:15 [ERROR]: Download failed: 197081703_img37
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:32:38 [ERROR]: Download failed: 164829969_img42
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:32:58 [ERROR]: Download failed: feyenoord_img32
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:33:17 [ERROR]: Download failed: ajax_gk_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:33:28 [ERROR]: Download failed: psv_gk_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:33:39 [ERROR]: Download failed: psv_gk_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:33:54 [ERROR]: Download failed: twente_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:34:05 [ERROR]: Download failed: ajax_img36
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-08-25 16:34:20 [ERROR]: Download failed: ajax_img36
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
