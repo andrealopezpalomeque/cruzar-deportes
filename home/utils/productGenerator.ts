@@ -217,6 +217,60 @@ const teamData: Record<string, {
     price: 70,
     description: 'Official FC Twente jersey from Eredivisie'
   },
+  '164829969': {
+    name: 'Eredivisie Special Collection 164829969',
+    category: 'eredivisie',
+    price: 75,
+    description: 'Special collection jersey from Eredivisie'
+  },
+  '197081703': {
+    name: 'Eredivisie Special Collection 197081703',
+    category: 'eredivisie',
+    price: 75,
+    description: 'Special collection jersey from Eredivisie'
+  },
+  'ajax_gk_kid_kit': {
+    name: 'AFC Ajax GK Kids Kit',
+    category: 'eredivisie',
+    price: 45,
+    description: 'AFC Ajax goalkeeper kids jersey from Eredivisie'
+  },
+  'ajax_gk_short': {
+    name: 'AFC Ajax GK Shorts',
+    category: 'eredivisie',
+    price: 30,
+    description: 'AFC Ajax goalkeeper shorts from Eredivisie'
+  },
+  'ajax_short': {
+    name: 'AFC Ajax Shorts',
+    category: 'eredivisie',
+    price: 35,
+    description: 'AFC Ajax shorts from Eredivisie'
+  },
+  'ajax_short_player_version': {
+    name: 'AFC Ajax Shorts Player Version',
+    category: 'eredivisie',
+    price: 45,
+    description: 'AFC Ajax player version shorts from Eredivisie'
+  },
+  'feyenoord_gk': {
+    name: 'Feyenoord Goalkeeper',
+    category: 'eredivisie',
+    price: 75,
+    description: 'Feyenoord Rotterdam goalkeeper jersey from Eredivisie'
+  },
+  'feyenoord_gk_kid_kit': {
+    name: 'Feyenoord GK Kids Kit',
+    category: 'eredivisie',
+    price: 45,
+    description: 'Feyenoord Rotterdam goalkeeper kids jersey from Eredivisie'
+  },
+  'feyenoord_gk_short': {
+    name: 'Feyenoord GK Shorts',
+    category: 'eredivisie',
+    price: 30,
+    description: 'Feyenoord Rotterdam goalkeeper shorts from Eredivisie'
+  },
 
   // Serie A Enilive Teams
   'atalanta': {
@@ -644,34 +698,106 @@ export function getActualImages(teamKey: string, category: CategoryType): string
 function getImageCountForTeam(teamKey: string): number {
   // Based on the actual scraped data we saw
   const imageCounts: Record<string, number> = {
+    // AFC Teams
     'johor': 15,
     'johor_kid_kit': 2,
     'seoul_fc': 7,
     'suwon_fc': 5,
     'suwon_samsung': 2,
     'ulsan_hd': 8,
+    // CAF Teams
     'al_ahly': 4,
     'cs_constantine_player_version': 7,
     'kaizer_chiefs': 14,
     'mamelodi_player_version': 18,
     'orlando_pirates': 12,
     'young_africans': 6,
+    // Eredivisie teams
+    'ajax': 36,
+    'ajax_authentic': 32,
+    'ajax_gk': 4,
+    'ajax_kid_kit': 38,
+    'ajax_shorts': 6,
+    'ajax_shorts_authentic': 5,
+    'az_alkmaar': 6,
+    'az_alkmaar_kid_kit': 2,
+    'az_alkmaar_shorts': 5,
+    'feyenoord': 6,
+    'feyenoord_kid_kit': 10,
+    'feyenoord_short': 3,
+    'psv': 10,
+    'psv_gk': 4,
+    'psv_gk_kid_kit': 4,
+    'psv_gk_short': 7,
+    'psv_kid_kit': 6,
+    'psv_short': 18,
+    'sc_heerenveen': 10,
+    'twente': 10,
+    '164829969': 21,
+    '197081703': 21,
+    'ajax_gk_kid_kit': 2,
+    'ajax_gk_short': 2,
+    'ajax_short': 11,
+    'ajax_short_player_version': 11,
+    'feyenoord_gk': 5,
+    'feyenoord_gk_kid_kit': 5,
+    'feyenoord_gk_short': 4,
     // Serie A Enilive teams
     'atalanta': 52,
     'atalanta_kit_kit': 21,
-    'atalanta_short': 11,
-    'cagliari': 39,
+    'atalanta_short': 6,
+    'cagliari': 6,
     'cagliari_kid_kit': 6,
-    'cagliari_short': 6,
-    'fiorentina': 30,
+    'cagliari_short': 5,
+    'fiorentina': 29,
     'fiorentina_kid_kit': 24,
-    'fiorentina_short': 12,
+    'fiorentina_short': 6,
     'inter_authentic': 55,
-    'inter_kid_kit': 44,
-    'inter_kid_kit_authentic': 18,
-    'bologna_kid_kit': 22,
-    'bologna_short': 8,
-    'bari_long_sleeve': 14
+    'inter_kid_kit': 6,
+    'inter_kid_kit_authentic': 6,
+    'bologna_kid_kit': 6,
+    'bologna_short': 6,
+    'bari_long_sleeve': 6,
+    '161842622uid1issubcatefalsereferrercate334382': 6,
+    'frosinone': 4,
+    'inter_girl_size': 4,
+    'inter_long_sleeve_kid_kit': 6,
+    'inter_long_sleeve_player_version': 6,
+    'inter_short': 6,
+    'inter_short_player_version': 19,
+    'jv_authentic': 33,
+    'jv_gk_kid_kit': 4,
+    'jv_gk_short': 9,
+    'jv_kid_kit': 54,
+    'jv_long_sleeve_authentic': 21,
+    'jv_long_sleeve_kid_kit': 17,
+    'jv_short_authentic': 12,
+    'lazio_authentic': 6,
+    'lazio_kid_kit': 6,
+    'lazio_short': 6,
+    'milan_authentic': 6,
+    'milan_gk_kid_kit': 6,
+    'milan_gk_short': 6,
+    'milan_kid_kit': 6,
+    'milan_kid_kit_long_sleeve': 6,
+    'milan_long_sleeve': 6,
+    'milan_long_sleeve_authentic': 6,
+    'milan_short': 6,
+    'milan_short_authentic': 6,
+    'napoles_authentic': 6,
+    'napoles_kid_kit': 6,
+    'napoles_short': 6,
+    'roma_authentic': 6,
+    'roma_kid_kit': 6,
+    'roma_short': 6,
+    'salernitana': 6,
+    'sampdoria': 6,
+    'torino_kid_kit': 6,
+    'torino_short': 2,
+    'venezia_gk': 6,
+    'venezia_kid_kit': 6,
+    'venezia_long_sleeve': 6,
+    'venezia_short': 6
   }
   
   return imageCounts[teamKey] || 5

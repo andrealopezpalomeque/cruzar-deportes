@@ -7,7 +7,8 @@
       "Bash(rm:*)",
       "Bash(true)",
       "Bash(npm run dev:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []
