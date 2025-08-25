@@ -312,10 +312,27 @@ class SportsScraper {
     }
     
     // 7. Extract from URL as last resort
-    const urlParts = $link.attr('href').split('/');
-    const lastPart = urlParts[urlParts.length - 1];
-    if (lastPart && lastPart.length > 3) {
-      return lastPart.replace(/[_-]/g, ' ').replace(/\.(html?|php|asp)$/i, '').trim();
+    const href = $link.attr('href');
+    if (href) {
+      // For Yupoo URLs, extract album ID and clean up query params
+      if (href.includes('yupoo.com/albums/')) {
+        const albumIdMatch = href.match(/\/albums\/(\d+)/);
+        if (albumIdMatch) {
+          const albumId = albumIdMatch[1];
+          // Try to get team name from the domain or use generic fallback
+          const domainMatch = href.match(/https?:\/\/([^.]+)\./);
+          const domain = domainMatch ? domainMatch[1] : 'team';
+          return `${domain}_album_${albumId}`;
+        }
+      }
+      
+      // For other URLs, use original logic but clean query params first
+      const urlWithoutQuery = href.split('?')[0];
+      const urlParts = urlWithoutQuery.split('/');
+      const lastPart = urlParts[urlParts.length - 1];
+      if (lastPart && lastPart.length > 3) {
+        return lastPart.replace(/[_-]/g, ' ').replace(/\.(html?|php|asp)$/i, '').trim();
+      }
     }
     
     // 8. Generic fallback
@@ -324,6 +341,11 @@ class SportsScraper {
 
   sanitizeAlbumTitle(title) {
     if (!title) return 'unknown_album';
+    
+    // Check if title contains URL parameters (malformed extraction)
+    if (/\d+uid\d+issubcate/.test(title.toLowerCase())) {
+      return `malformed_${Date.now()}`;
+    }
     
     return title
       .toLowerCase()
@@ -528,9 +550,11 @@ class SportsScraper {
           url.includes('/download') ||
           url.includes('tab=') ||
           url.includes('beian.gov.cn') ||
-          url.includes('x.yupoo.com') && !url.includes('/albums/') ||
+          (url.includes('x.yupoo.com') && !url.includes('/albums/')) ||
           url.endsWith('/albums/') ||
-          url.endsWith('/albums/?uid=1')
+          url.endsWith('/albums/?uid=1') ||
+          // Filter out malformed URLs with query params as filenames
+          /\d+uid\d+issubcate/.test(url)
         );
         return !isInvalid;
       });
@@ -1254,6 +1278,7 @@ class SportsScraper {
       // Filter out non-album URLs (navigation links, etc.)
       const validAlbums = albumLinks.filter(album => {
         const url = album.url;
+        const title = album.title || '';
         const isValid = url.includes('/albums/') && 
                        url.includes('uid=1') && 
                        url.includes('isSubCate=false') &&
@@ -1261,7 +1286,9 @@ class SportsScraper {
                        !url.includes('undefined.x.yupoo.com') &&
                        !url.startsWith('https://x.yupoo.com') &&
                        !url.includes('gallery') &&
-                       !url.includes('?tab=');
+                       !url.includes('?tab=') &&
+                       // Filter out malformed titles that contain URL parameters
+                       !(/\d+uid\d+issubcate/.test(title.toLowerCase()));
         
         return isValid;
       });
