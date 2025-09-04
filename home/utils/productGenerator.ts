@@ -280,7 +280,7 @@ const teamData: Record<string, {
     originalPrice: 95,
     description: 'Official Atalanta BC jersey from Serie A Enilive'
   },
-  'atalanta_kit_kit': {
+  'atalanta_kid_kit': {
     name: 'Atalanta BC Kids Kit',
     category: 'serie_a_enilive',
     price: 55,
@@ -614,6 +614,180 @@ const teamData: Record<string, {
     price: 95,
     originalPrice: 110,
     description: 'Special edition Serie A Enilive jersey'
+  },
+
+  // Additional Serie A Teams
+  'bari': {
+    name: 'FC Bari',
+    category: 'serie_a_enilive',
+    price: 75,
+    description: 'Official FC Bari jersey from Serie A Enilive'
+  },
+  'bologna': {
+    name: 'Bologna FC',
+    category: 'serie_a_enilive',
+    price: 75,
+    description: 'Official Bologna FC jersey from Serie A Enilive'
+  },
+  'como': {
+    name: 'Como 1907',
+    category: 'serie_a_enilive',
+    price: 70,
+    description: 'Official Como 1907 jersey from Serie A Enilive'
+  },
+  'como_gk': {
+    name: 'Como 1907 Goalkeeper',
+    category: 'serie_a_enilive',
+    price: 70,
+    description: 'Official Como 1907 goalkeeper jersey from Serie A Enilive'
+  },
+  'empoli': {
+    name: 'Empoli FC',
+    category: 'serie_a_enilive',
+    price: 70,
+    description: 'Official Empoli FC jersey from Serie A Enilive'
+  },
+  'genoa': {
+    name: 'Genoa CFC',
+    category: 'serie_a_enilive',
+    price: 75,
+    description: 'Official Genoa CFC jersey from Serie A Enilive'
+  },
+  'inter': {
+    name: 'Inter Milan',
+    category: 'serie_a_enilive',
+    price: 95,
+    originalPrice: 105,
+    description: 'Official Inter Milan jersey from Serie A Enilive'
+  },
+  'jv_gk': {
+    name: 'Juventus Goalkeeper',
+    category: 'serie_a_enilive',
+    price: 80,
+    description: 'Official Juventus goalkeeper jersey from Serie A Enilive'
+  },
+  'jv_short': {
+    name: 'Juventus Shorts',
+    category: 'serie_a_enilive',
+    price: 40,
+    description: 'Official Juventus shorts from Serie A Enilive'
+  },
+  'lazio': {
+    name: 'SS Lazio',
+    category: 'serie_a_enilive',
+    price: 85,
+    description: 'Official SS Lazio jersey from Serie A Enilive'
+  },
+  'lecce': {
+    name: 'US Lecce',
+    category: 'serie_a_enilive',
+    price: 70,
+    description: 'Official US Lecce jersey from Serie A Enilive'
+  },
+  'milan': {
+    name: 'AC Milan',
+    category: 'serie_a_enilive',
+    price: 95,
+    originalPrice: 105,
+    description: 'Official AC Milan jersey from Serie A Enilive'
+  },
+  'monza': {
+    name: 'AC Monza',
+    category: 'serie_a_enilive',
+    price: 75,
+    description: 'Official AC Monza jersey from Serie A Enilive'
+  },
+  'napoles': {
+    name: 'SSC Napoli',
+    category: 'serie_a_enilive',
+    price: 90,
+    originalPrice: 100,
+    description: 'Official SSC Napoli jersey from Serie A Enilive'
+  },
+  'napoles_gk': {
+    name: 'SSC Napoli Goalkeeper',
+    category: 'serie_a_enilive',
+    price: 80,
+    description: 'Official SSC Napoli goalkeeper jersey from Serie A Enilive'
+  },
+  'palermo': {
+    name: 'Palermo FC',
+    category: 'serie_a_enilive',
+    price: 70,
+    description: 'Official Palermo FC jersey from Serie A Enilive'
+  },
+  'parma': {
+    name: 'Parma Calcio',
+    category: 'serie_a_enilive',
+    price: 75,
+    description: 'Official Parma Calcio jersey from Serie A Enilive'
+  },
+  'parma_kid_kit': {
+    name: 'Parma Kids Kit',
+    category: 'serie_a_enilive',
+    price: 50,
+    description: 'Official Parma Calcio kids jersey from Serie A Enilive'
+  },
+  'parma_short': {
+    name: 'Parma Shorts',
+    category: 'serie_a_enilive',
+    price: 30,
+    description: 'Official Parma Calcio shorts from Serie A Enilive'
+  },
+  'roma': {
+    name: 'AS Roma',
+    category: 'serie_a_enilive',
+    price: 90,
+    originalPrice: 100,
+    description: 'Official AS Roma jersey from Serie A Enilive'
+  },
+  'roma_gk': {
+    name: 'AS Roma Goalkeeper',
+    category: 'serie_a_enilive',
+    price: 80,
+    description: 'Official AS Roma goalkeeper jersey from Serie A Enilive'
+  },
+  'roma_short_authentic': {
+    name: 'AS Roma Shorts Authentic',
+    category: 'serie_a_enilive',
+    price: 45,
+    description: 'Authentic AS Roma shorts from Serie A Enilive'
+  },
+  'sassuolo': {
+    name: 'US Sassuolo',
+    category: 'serie_a_enilive',
+    price: 70,
+    description: 'Official US Sassuolo jersey from Serie A Enilive'
+  },
+  'sorrento': {
+    name: 'Sorrento Calcio',
+    category: 'serie_a_enilive',
+    price: 65,
+    description: 'Official Sorrento Calcio jersey from Serie A Enilive'
+  },
+  'torino': {
+    name: 'Torino FC',
+    category: 'serie_a_enilive',
+    price: 75,
+    description: 'Official Torino FC jersey from Serie A Enilive'
+  },
+  'udinese': {
+    name: 'Udinese Calcio',
+    category: 'serie_a_enilive',
+    price: 75,
+    description: 'Official Udinese Calcio jersey from Serie A Enilive'
+  },
+  'venezia': {
+    name: 'Venezia FC',
+    category: 'serie_a_enilive',
+    price: 70,
+    description: 'Official Venezia FC jersey from Serie A Enilive'
+  },
+  'verona': {
+    name: 'Hellas Verona',
+    category: 'serie_a_enilive',
+    price: 70,
+    description: 'Official Hellas Verona jersey from Serie A Enilive'
   }
 }
 

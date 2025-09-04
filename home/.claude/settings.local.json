@@ -10,7 +10,8 @@
       "Bash(npm run build:*)",
       "Bash(grep:*)",
       "Bash(node:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Read(//Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/**)"
     ],
     "deny": [],
     "ask": []

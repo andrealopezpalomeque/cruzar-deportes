@@ -1,7 +1,7 @@
 <template>
   <div class="image-gallery">
     <!-- Main Image Display - Simplified -->
-    <div class="relative bg-white rounded-lg overflow-hidden mb-4" style="aspect-ratio: 1 / 1;">
+    <div class="relative bg-white rounded-lg overflow-hidden mb-4 shadow-sm" style="aspect-ratio: 1 / 1;">
       <!-- Simple Image -->
       <img
         v-if="currentImage"
@@ -76,9 +76,9 @@
           v-for="(image, index) in images"
           :key="index"
           @click="setCurrentImage(index)"
-          class="flex-shrink-0 w-16 h-16 rounded-md overflow-hidden border-2 transition-all focus:outline-none focus:ring-2 focus:ring-primary-500"
+          class="flex-shrink-0 w-16 h-16 rounded-md overflow-hidden border-2 transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 shadow-sm hover:shadow-md"
           :class="{
-            'border-primary-600': currentIndex === index,
+            'border-primary-600 shadow-md': currentIndex === index,
             'border-gray-200 hover:border-gray-300': currentIndex !== index
           }"
         >

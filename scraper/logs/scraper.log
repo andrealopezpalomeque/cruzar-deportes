@@ -32457,3 +32457,354 @@ Error: Downloaded file is not a valid image
 2025-09-04 15:24:06 [INFO]: Completed category: serie_a_enilive
 2025-09-04 15:24:06 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1757007384415_t6y05t.json
 2025-09-04 15:24:06 [INFO]: === SCRAPING SESSION COMPLETED ===
+2025-09-04 15:36:21 [INFO]: Logger initialized successfully
+2025-09-04 15:36:21 [INFO]: Resumed from previous session: 1757007384415_t6y05t
+2025-09-04 15:36:21 [INFO]: Loaded 497 failed items from previous session
+2025-09-04 15:36:21 [INFO]: Progress tracker initialized - Session ID: 1757010981689_bwmhpl
+2025-09-04 15:36:21 [INFO]: Loaded 53 categories
+2025-09-04 15:36:21 [INFO]: Temporary files cleaned up
+2025-09-04 15:36:21 [INFO]: Sports Scraper initialized successfully
+2025-09-04 15:36:21 [INFO]: Extracting album links from: https://wavesoccer.x.yupoo.com/categories/334382?page=2
+2025-09-04 15:36:27 [INFO]: Found 28 valid albums from https://wavesoccer.x.yupoo.com/categories/334382?page=2 (filtered out 0 from 28 total)
+2025-09-04 15:36:27 [INFO]: Album 1: "MILAN KID KIT LONG SLEEVE" -> milan_kid_kit_long_sleeve
+2025-09-04 15:36:27 [INFO]: Album 2: "MILAN SHORT AUTHENTIC" -> milan_short_authentic
+2025-09-04 15:36:27 [INFO]: Album 3: "MILAN SHORT AUTHENTIC" -> milan_short_authentic
+2025-09-04 15:36:27 [INFO]: Album 4: "FIORENTINA KID KIT" -> fiorentina_kid_kit
+2025-09-04 15:36:27 [INFO]: Album 5: "NAPOLES AUTHENTIC" -> napoles_authentic
+2025-09-04 15:36:27 [INFO]: Album 6: "MILAN GK KID KIT" -> milan_gk_kid_kit
+2025-09-04 15:36:27 [INFO]: Album 7: "FIORENTINA SHORT" -> fiorentina_short
+2025-09-04 15:36:27 [INFO]: Album 8: "BARI LONG SLEEVE" -> bari_long_sleeve
+2025-09-04 15:36:27 [INFO]: Album 9: "NAPOLES KID KIT" -> napoles_kid_kit
+2025-09-04 15:36:27 [INFO]: Album 10: "BOLOGNA KID KIT" -> bologna_kid_kit
+2025-09-04 15:36:27 [INFO]: Album 11: "LAZIO AUTHENTIC" -> lazio_authentic
+2025-09-04 15:36:27 [INFO]: Album 12: "MILAN GK SHORT" -> milan_gk_short
+2025-09-04 15:36:27 [INFO]: Album 13: "MILAN KID KIT" -> milan_kid_kit
+2025-09-04 15:36:27 [INFO]: Album 14: "NAPOLES SHORT" -> napoles_short
+2025-09-04 15:36:27 [INFO]: Album 15: "BOLOGNA SHORT" -> bologna_short
+2025-09-04 15:36:27 [INFO]: Album 16: "LAZIO KID KIT" -> lazio_kid_kit
+2025-09-04 15:36:27 [INFO]: Album 17: "MILAN SHORT" -> milan_short
+2025-09-04 15:36:27 [INFO]: Album 18: "LAZIO SHORT" -> lazio_short
+2025-09-04 15:36:27 [INFO]: Album 19: "FIORENTINA" -> fiorentina
+2025-09-04 15:36:27 [INFO]: Album 20: "NAPOLES" -> napoles
+2025-09-04 15:36:27 [INFO]: Album 21: "BOLOGNA" -> bologna
+2025-09-04 15:36:27 [INFO]: Album 22: "LAZIO" -> lazio
+2025-09-04 15:36:27 [INFO]: Album 23: "YUPOO" -> yupoo
+2025-09-04 15:36:27 [INFO]: Album 24: "BARI" -> bari
+2025-09-04 15:36:27 [INFO]: Album 25: "HOME PAGE" -> home_page
+2025-09-04 15:36:27 [INFO]: Album 26: "MY ALBUM" -> my_album
+2025-09-04 15:36:27 [INFO]: Album 27: "ALBUM" -> album
+2025-09-04 15:36:27 [INFO]: Album 28: "HOME" -> home
+2025-09-04 15:36:27 [INFO]: Starting category: serie_a_enilive
+2025-09-04 15:36:27 [INFO]: Processing album 1: "MILAN KID KIT LONG SLEEVE"
+2025-09-04 15:36:27 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/177763306?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:36:27 [INFO]: Created album folder: milan_kid_kit_long_sleeve
+2025-09-04 15:36:27 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/177763306?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:36:27 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:36:27 [INFO]: Extracting images directly from page content
+2025-09-04 15:36:29 [INFO]: Found 3 potential images from https://wavesoccer.x.yupoo.com/albums/177763306?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:36:29 [INFO]: Found 3 images in album: "MILAN KID KIT LONG SLEEVE"
+2025-09-04 15:36:29 [INFO]: Downloading image: https://s.yupoo.com/website/4.29.1/imgs/policeIcon.png (attempt 1/3)
+2025-09-04 15:36:30 [WARN]: Image dimensions invalid: 20x20
+2025-09-04 15:36:30 [INFO]: Progress: 2415/307 (786.6%) - serie_a_enilive
+2025-09-04 15:36:30 [ERROR]: Download failed: milan_kid_kit_long_sleeve_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:36:33 [INFO]: Completed album "MILAN KID KIT LONG SLEEVE": 0/1 images
+2025-09-04 15:36:38 [INFO]: Processing album 2: "MILAN SHORT AUTHENTIC"
+2025-09-04 15:36:38 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/169214529?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:36:38 [INFO]: Created album folder: milan_short_authentic
+2025-09-04 15:36:38 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/169214529?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:36:38 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:36:38 [INFO]: Extracting images directly from page content
+2025-09-04 15:36:43 [INFO]: Found 21 potential images from https://wavesoccer.x.yupoo.com/albums/169214529?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:36:43 [INFO]: Found 21 images in album: "MILAN SHORT AUTHENTIC"
+2025-09-04 15:36:43 [INFO]: Downloading image: https://s.yupoo.com/website/4.29.1/imgs/policeIcon.png (attempt 1/3)
+2025-09-04 15:36:43 [WARN]: Image dimensions invalid: 20x20
+2025-09-04 15:36:43 [INFO]: Progress: 2416/307 (787.0%) - serie_a_enilive
+2025-09-04 15:36:43 [ERROR]: Download failed: milan_short_authentic_img20
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:36:46 [INFO]: Completed album "MILAN SHORT AUTHENTIC": 0/1 images
+2025-09-04 15:36:52 [INFO]: Processing album 3: "MILAN SHORT AUTHENTIC"
+2025-09-04 15:36:52 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/168586455?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:36:52 [INFO]: Created album folder: milan_short_authentic
+2025-09-04 15:36:52 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/168586455?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:36:52 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:36:52 [INFO]: Extracting images directly from page content
+2025-09-04 15:36:57 [INFO]: Found 19 potential images from https://wavesoccer.x.yupoo.com/albums/168586455?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:36:57 [INFO]: Found 19 images in album: "MILAN SHORT AUTHENTIC"
+2025-09-04 15:36:57 [INFO]: Completed album "MILAN SHORT AUTHENTIC": 0/0 images
+2025-09-04 15:36:57 [ERROR]: Attempt 1 failed for album "MILAN SHORT AUTHENTIC": No images found or processed
+2025-09-04 15:37:07 [INFO]: Processing album 4: "FIORENTINA KID KIT"
+2025-09-04 15:37:07 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/167275339?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:37:07 [INFO]: Created album folder: fiorentina_kid_kit
+2025-09-04 15:37:07 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/167275339?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:37:07 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:37:07 [INFO]: Extracting images directly from page content
+2025-09-04 15:37:12 [INFO]: Found 25 potential images from https://wavesoccer.x.yupoo.com/albums/167275339?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:37:12 [INFO]: Found 25 images in album: "FIORENTINA KID KIT"
+2025-09-04 15:37:12 [INFO]: Downloading image: https://s.yupoo.com/website/4.29.1/imgs/policeIcon.png (attempt 1/3)
+2025-09-04 15:37:12 [WARN]: Image dimensions invalid: 20x20
+2025-09-04 15:37:12 [INFO]: Progress: 2417/307 (787.3%) - serie_a_enilive
+2025-09-04 15:37:12 [ERROR]: Download failed: fiorentina_kid_kit_img24
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:37:14 [INFO]: Completed album "FIORENTINA KID KIT": 0/1 images
+2025-09-04 15:37:19 [INFO]: Processing album 5: "NAPOLES AUTHENTIC"
+2025-09-04 15:37:19 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/170369676?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:37:19 [INFO]: Created album folder: napoles_authentic
+2025-09-04 15:37:19 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/170369676?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:37:19 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:37:19 [INFO]: Extracting images directly from page content
+2025-09-04 15:37:24 [INFO]: Found 32 potential images from https://wavesoccer.x.yupoo.com/albums/170369676?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:37:24 [INFO]: Found 32 images in album: "NAPOLES AUTHENTIC"
+2025-09-04 15:37:24 [INFO]: Completed album "NAPOLES AUTHENTIC": 0/0 images
+2025-09-04 15:37:24 [ERROR]: Attempt 1 failed for album "NAPOLES AUTHENTIC": No images found or processed
+2025-09-04 15:37:33 [INFO]: Processing album 6: "MILAN GK KID KIT"
+2025-09-04 15:37:33 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/168139647?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:37:33 [INFO]: Created album folder: milan_gk_kid_kit
+2025-09-04 15:37:33 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/168139647?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:37:33 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:37:33 [INFO]: Extracting images directly from page content
+2025-09-04 15:37:38 [INFO]: Found 7 potential images from https://wavesoccer.x.yupoo.com/albums/168139647?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:37:38 [INFO]: Found 7 images in album: "MILAN GK KID KIT"
+2025-09-04 15:37:38 [INFO]: Completed album "MILAN GK KID KIT": 0/0 images
+2025-09-04 15:37:38 [ERROR]: Attempt 1 failed for album "MILAN GK KID KIT": No images found or processed
+2025-09-04 15:37:48 [INFO]: Processing album 7: "FIORENTINA SHORT"
+2025-09-04 15:37:48 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/167275330?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:37:48 [INFO]: Created album folder: fiorentina_short
+2025-09-04 15:37:48 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/167275330?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:37:48 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:37:48 [INFO]: Extracting images directly from page content
+2025-09-04 15:37:53 [INFO]: Found 12 potential images from https://wavesoccer.x.yupoo.com/albums/167275330?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:37:53 [INFO]: Found 12 images in album: "FIORENTINA SHORT"
+2025-09-04 15:37:53 [INFO]: Downloading image: https://s.yupoo.com/website/4.29.1/imgs/policeIcon.png (attempt 1/3)
+2025-09-04 15:37:53 [WARN]: Image dimensions invalid: 20x20
+2025-09-04 15:37:53 [INFO]: Progress: 2418/307 (787.6%) - serie_a_enilive
+2025-09-04 15:37:53 [ERROR]: Download failed: fiorentina_short_img7
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:37:56 [INFO]: Completed album "FIORENTINA SHORT": 0/1 images
+2025-09-04 15:38:01 [INFO]: Processing album 8: "BARI LONG SLEEVE"
+2025-09-04 15:38:01 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/164503983?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:38:01 [INFO]: Created album folder: bari_long_sleeve
+2025-09-04 15:38:01 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/164503983?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:38:01 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:38:01 [INFO]: Extracting images directly from page content
+2025-09-04 15:38:05 [INFO]: Found 15 potential images from https://wavesoccer.x.yupoo.com/albums/164503983?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:38:05 [INFO]: Found 15 images in album: "BARI LONG SLEEVE"
+2025-09-04 15:38:05 [INFO]: Downloading image: https://s.yupoo.com/website/4.29.1/imgs/policeIcon.png (attempt 1/3)
+2025-09-04 15:38:06 [WARN]: Image dimensions invalid: 20x20
+2025-09-04 15:38:06 [INFO]: Progress: 2419/307 (787.9%) - serie_a_enilive
+2025-09-04 15:38:06 [ERROR]: Download failed: bari_long_sleeve_img14
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:38:07 [INFO]: Completed album "BARI LONG SLEEVE": 0/1 images
+2025-09-04 15:38:12 [INFO]: Processing album 9: "NAPOLES KID KIT"
+2025-09-04 15:38:12 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/170019391?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:38:12 [INFO]: Created album folder: napoles_kid_kit
+2025-09-04 15:38:12 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/170019391?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:38:12 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:38:12 [INFO]: Extracting images directly from page content
+2025-09-04 15:38:17 [INFO]: Found 40 potential images from https://wavesoccer.x.yupoo.com/albums/170019391?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:38:17 [INFO]: Found 40 images in album: "NAPOLES KID KIT"
+2025-09-04 15:38:17 [INFO]: Downloading image: https://s.yupoo.com/website/4.29.1/imgs/policeIcon.png (attempt 1/3)
+2025-09-04 15:38:17 [WARN]: Image dimensions invalid: 20x20
+2025-09-04 15:38:17 [INFO]: Progress: 2420/307 (788.3%) - serie_a_enilive
+2025-09-04 15:38:17 [ERROR]: Download failed: napoles_kid_kit_img39
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:38:19 [INFO]: Completed album "NAPOLES KID KIT": 0/1 images
+2025-09-04 15:38:24 [INFO]: Processing album 10: "BOLOGNA KID KIT"
+2025-09-04 15:38:24 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/176161824?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:38:24 [INFO]: Created album folder: bologna_kid_kit
+2025-09-04 15:38:24 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/176161824?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:38:24 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:38:24 [INFO]: Extracting images directly from page content
+2025-09-04 15:38:29 [INFO]: Found 23 potential images from https://wavesoccer.x.yupoo.com/albums/176161824?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:38:29 [INFO]: Found 23 images in album: "BOLOGNA KID KIT"
+2025-09-04 15:38:29 [INFO]: Downloading image: https://s.yupoo.com/website/4.29.1/imgs/policeIcon.png (attempt 1/3)
+2025-09-04 15:38:30 [WARN]: Image dimensions invalid: 20x20
+2025-09-04 15:38:30 [INFO]: Progress: 2421/307 (788.6%) - serie_a_enilive
+2025-09-04 15:38:30 [ERROR]: Download failed: bologna_kid_kit_img22
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:38:33 [INFO]: Completed album "BOLOGNA KID KIT": 0/1 images
+2025-09-04 15:38:38 [INFO]: Processing album 11: "LAZIO AUTHENTIC"
+2025-09-04 15:38:38 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/178228842?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:38:38 [INFO]: Created album folder: lazio_authentic
+2025-09-04 15:38:38 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/178228842?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:38:38 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:38:38 [INFO]: Extracting images directly from page content
+2025-09-04 15:38:43 [INFO]: Found 11 potential images from https://wavesoccer.x.yupoo.com/albums/178228842?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:38:43 [INFO]: Found 11 images in album: "LAZIO AUTHENTIC"
+2025-09-04 15:38:43 [INFO]: Downloading image: https://s.yupoo.com/website/4.29.1/imgs/policeIcon.png (attempt 1/3)
+2025-09-04 15:38:44 [WARN]: Image dimensions invalid: 20x20
+2025-09-04 15:38:44 [INFO]: Progress: 2422/307 (788.9%) - serie_a_enilive
+2025-09-04 15:38:44 [ERROR]: Download failed: lazio_authentic_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:38:45 [INFO]: Completed album "LAZIO AUTHENTIC": 0/1 images
+2025-09-04 15:38:49 [INFO]: Processing album 12: "MILAN GK SHORT"
+2025-09-04 15:38:49 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/168139651?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:38:49 [INFO]: Created album folder: milan_gk_short
+2025-09-04 15:38:49 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/168139651?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:38:49 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:38:49 [INFO]: Extracting images directly from page content
+2025-09-04 15:38:53 [INFO]: Found 13 potential images from https://wavesoccer.x.yupoo.com/albums/168139651?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:38:53 [INFO]: Found 13 images in album: "MILAN GK SHORT"
+2025-09-04 15:38:53 [INFO]: Completed album "MILAN GK SHORT": 0/0 images
+2025-09-04 15:38:53 [ERROR]: Attempt 1 failed for album "MILAN GK SHORT": No images found or processed
+2025-09-04 15:39:04 [INFO]: Processing album 13: "MILAN KID KIT"
+2025-09-04 15:39:04 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/165705493?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:39:04 [INFO]: Created album folder: milan_kid_kit
+2025-09-04 15:39:04 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/165705493?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:39:04 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:39:04 [INFO]: Extracting images directly from page content
+2025-09-04 15:39:09 [INFO]: Found 27 potential images from https://wavesoccer.x.yupoo.com/albums/165705493?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:39:09 [INFO]: Found 27 images in album: "MILAN KID KIT"
+2025-09-04 15:39:09 [INFO]: Completed album "MILAN KID KIT": 0/0 images
+2025-09-04 15:39:09 [ERROR]: Attempt 1 failed for album "MILAN KID KIT": No images found or processed
+2025-09-04 15:39:18 [INFO]: Processing album 14: "NAPOLES SHORT"
+2025-09-04 15:39:18 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/173818253?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:39:18 [INFO]: Created album folder: napoles_short
+2025-09-04 15:39:18 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/173818253?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:39:18 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:39:18 [INFO]: Extracting images directly from page content
+2025-09-04 15:39:23 [INFO]: Found 28 potential images from https://wavesoccer.x.yupoo.com/albums/173818253?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:39:23 [INFO]: Found 28 images in album: "NAPOLES SHORT"
+2025-09-04 15:39:23 [INFO]: Downloading image: https://s.yupoo.com/website/4.29.1/imgs/policeIcon.png (attempt 1/3)
+2025-09-04 15:39:23 [WARN]: Image dimensions invalid: 20x20
+2025-09-04 15:39:23 [INFO]: Progress: 2423/307 (789.3%) - serie_a_enilive
+2025-09-04 15:39:23 [ERROR]: Download failed: napoles_short_img27
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:39:26 [INFO]: Completed album "NAPOLES SHORT": 0/1 images
+2025-09-04 15:39:31 [INFO]: Processing album 15: "BOLOGNA SHORT"
+2025-09-04 15:39:31 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/176161809?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:39:31 [INFO]: Created album folder: bologna_short
+2025-09-04 15:39:31 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/176161809?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:39:31 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:39:31 [INFO]: Extracting images directly from page content
+2025-09-04 15:39:36 [INFO]: Found 9 potential images from https://wavesoccer.x.yupoo.com/albums/176161809?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:39:36 [INFO]: Found 9 images in album: "BOLOGNA SHORT"
+2025-09-04 15:39:36 [INFO]: Downloading image: https://s.yupoo.com/website/4.29.1/imgs/policeIcon.png (attempt 1/3)
+2025-09-04 15:39:37 [WARN]: Image dimensions invalid: 20x20
+2025-09-04 15:39:37 [INFO]: Progress: 2424/307 (789.6%) - serie_a_enilive
+2025-09-04 15:39:37 [ERROR]: Download failed: bologna_short_img8
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:39:39 [INFO]: Completed album "BOLOGNA SHORT": 0/1 images
+2025-09-04 15:39:43 [INFO]: Processing album 16: "LAZIO KID KIT"
+2025-09-04 15:39:43 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/169220666?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:39:43 [INFO]: Created album folder: lazio_kid_kit
+2025-09-04 15:39:43 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/169220666?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:39:43 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:39:43 [INFO]: Extracting images directly from page content
+2025-09-04 15:39:49 [INFO]: Found 40 potential images from https://wavesoccer.x.yupoo.com/albums/169220666?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:39:49 [INFO]: Found 40 images in album: "LAZIO KID KIT"
+2025-09-04 15:39:49 [INFO]: Downloading image: https://s.yupoo.com/website/4.29.1/imgs/policeIcon.png (attempt 1/3)
+2025-09-04 15:39:49 [WARN]: Image dimensions invalid: 20x20
+2025-09-04 15:39:49 [INFO]: Progress: 2425/307 (789.9%) - serie_a_enilive
+2025-09-04 15:39:49 [ERROR]: Download failed: lazio_kid_kit_img39
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:39:52 [INFO]: Completed album "LAZIO KID KIT": 0/1 images
+2025-09-04 15:39:57 [INFO]: Processing album 17: "MILAN SHORT"
+2025-09-04 15:39:57 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/167461479?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:39:57 [INFO]: Created album folder: milan_short
+2025-09-04 15:39:57 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/167461479?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:39:57 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:39:57 [INFO]: Extracting images directly from page content
+2025-09-04 15:40:02 [INFO]: Found 30 potential images from https://wavesoccer.x.yupoo.com/albums/167461479?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:40:02 [INFO]: Found 30 images in album: "MILAN SHORT"
+2025-09-04 15:40:02 [INFO]: Downloading image: https://s.yupoo.com/website/4.29.1/imgs/policeIcon.png (attempt 1/3)
+2025-09-04 15:40:03 [WARN]: Image dimensions invalid: 20x20
+2025-09-04 15:40:03 [INFO]: Progress: 2426/307 (790.2%) - serie_a_enilive
+2025-09-04 15:40:03 [ERROR]: Download failed: milan_short_img29
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:40:05 [INFO]: Completed album "MILAN SHORT": 0/1 images
+2025-09-04 15:40:10 [INFO]: Processing album 18: "LAZIO SHORT"
+2025-09-04 15:40:10 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/175023287?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:40:10 [INFO]: Created album folder: lazio_short
+2025-09-04 15:40:10 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/175023287?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:40:10 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:40:10 [INFO]: Extracting images directly from page content
+2025-09-04 15:40:15 [INFO]: Found 10 potential images from https://wavesoccer.x.yupoo.com/albums/175023287?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:40:15 [INFO]: Found 10 images in album: "LAZIO SHORT"
+2025-09-04 15:40:15 [INFO]: Downloading image: https://s.yupoo.com/website/4.29.1/imgs/policeIcon.png (attempt 1/3)
+2025-09-04 15:40:16 [WARN]: Image dimensions invalid: 20x20
+2025-09-04 15:40:16 [INFO]: Progress: 2427/307 (790.6%) - serie_a_enilive
+2025-09-04 15:40:16 [ERROR]: Download failed: lazio_short_img7
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:40:17 [INFO]: Completed album "LAZIO SHORT": 0/1 images
+2025-09-04 15:40:22 [INFO]: Processing album 19: "FIORENTINA"
+2025-09-04 15:40:22 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/165704283?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:40:22 [INFO]: Created album folder: fiorentina
+2025-09-04 15:40:22 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/165704283?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:40:22 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:40:22 [INFO]: Extracting images directly from page content
+2025-09-04 15:40:28 [INFO]: Found 30 potential images from https://wavesoccer.x.yupoo.com/albums/165704283?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:40:28 [INFO]: Found 30 images in album: "FIORENTINA"
+2025-09-04 15:40:28 [INFO]: Downloading image: https://s.yupoo.com/website/4.29.1/imgs/policeIcon.png (attempt 1/3)
+2025-09-04 15:40:28 [WARN]: Image dimensions invalid: 20x20
+2025-09-04 15:40:28 [INFO]: Progress: 2428/307 (790.9%) - serie_a_enilive
+2025-09-04 15:40:28 [ERROR]: Download failed: fiorentina_img27
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:40:31 [INFO]: Completed album "FIORENTINA": 0/1 images
+2025-09-04 15:40:36 [INFO]: Processing album 20: "NAPOLES"
+2025-09-04 15:40:36 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/169220889?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:40:36 [INFO]: Created album folder: napoles
+2025-09-04 15:40:36 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/169220889?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:40:36 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:40:36 [INFO]: Extracting images directly from page content
+2025-09-04 15:40:41 [INFO]: Found 39 potential images from https://wavesoccer.x.yupoo.com/albums/169220889?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:40:41 [INFO]: Found 39 images in album: "NAPOLES"
+2025-09-04 15:40:41 [INFO]: Completed album "NAPOLES": 0/0 images
+2025-09-04 15:40:41 [ERROR]: Attempt 1 failed for album "NAPOLES": No images found or processed
+2025-09-04 15:40:52 [INFO]: Processing album 21: "BOLOGNA"
+2025-09-04 15:40:52 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/165703877?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:40:52 [INFO]: Created album folder: bologna
+2025-09-04 15:40:52 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/165703877?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:40:52 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:40:52 [INFO]: Extracting images directly from page content
+2025-09-04 15:40:57 [INFO]: Found 53 potential images from https://wavesoccer.x.yupoo.com/albums/165703877?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:40:57 [INFO]: Found 53 images in album: "BOLOGNA"
+2025-09-04 15:40:57 [INFO]: Downloading image: https://s.yupoo.com/website/4.29.1/imgs/policeIcon.png (attempt 1/3)
+2025-09-04 15:40:58 [WARN]: Image dimensions invalid: 20x20
+2025-09-04 15:40:58 [INFO]: Progress: 2429/307 (791.2%) - serie_a_enilive
+2025-09-04 15:40:58 [ERROR]: Download failed: bologna_img52
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:41:01 [INFO]: Completed album "BOLOGNA": 0/1 images
+2025-09-04 15:41:06 [INFO]: Processing album 22: "LAZIO"
+2025-09-04 15:41:06 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/162761402?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:41:06 [INFO]: Created album folder: lazio
+2025-09-04 15:41:06 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/162761402?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:41:06 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:41:06 [INFO]: Extracting images directly from page content
+2025-09-04 15:41:12 [INFO]: Found 28 potential images from https://wavesoccer.x.yupoo.com/albums/162761402?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:41:12 [INFO]: Found 28 images in album: "LAZIO"
+2025-09-04 15:41:12 [INFO]: Downloading image: https://s.yupoo.com/website/4.29.1/imgs/policeIcon.png (attempt 1/3)
+2025-09-04 15:41:12 [WARN]: Image dimensions invalid: 20x20
+2025-09-04 15:41:12 [INFO]: Progress: 2430/307 (791.5%) - serie_a_enilive
+2025-09-04 15:41:12 [ERROR]: Download failed: lazio_img25
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:41:14 [INFO]: Completed album "LAZIO": 0/1 images
+2025-09-04 15:41:19 [INFO]: Processing album 23: "BARI"
+2025-09-04 15:41:19 [INFO]: Album URL: https://wavesoccer.x.yupoo.com/albums/164503975?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:41:19 [INFO]: Created album folder: bari
+2025-09-04 15:41:19 [INFO]: Extracting images from: https://wavesoccer.x.yupoo.com/albums/164503975?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:41:19 [INFO]: Yupoo album detected, using direct image extraction method
+2025-09-04 15:41:19 [INFO]: Extracting images directly from page content
+2025-09-04 15:41:23 [INFO]: Found 5 potential images from https://wavesoccer.x.yupoo.com/albums/164503975?uid=1&isSubCate=false&referrercate=334382
+2025-09-04 15:41:23 [INFO]: Found 5 images in album: "BARI"
+2025-09-04 15:41:23 [INFO]: Completed album "BARI": 0/0 images
+2025-09-04 15:41:23 [ERROR]: Attempt 1 failed for album "BARI": No images found or processed
+2025-09-04 15:41:28 [INFO]: Completed category: serie_a_enilive
+2025-09-04 15:41:28 [INFO]: Progress report saved: /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/logs/report-1757010981689_bwmhpl.json
+2025-09-04 15:41:28 [INFO]: === SCRAPING SESSION COMPLETED ===

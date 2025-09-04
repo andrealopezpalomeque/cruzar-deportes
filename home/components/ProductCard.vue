@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white rounded-lg shadow-sm border hover:shadow-md transition-all duration-200 group">
+  <div class="bg-white rounded-lg shadow-sm border hover:shadow-lg transition-all duration-200 group">
     <!-- Product Link Wrapper -->
     <NuxtLink 
       :to="`/products/${product.slug}`"
@@ -19,10 +19,40 @@
           <Icon name="mdi:tshirt-crew" class="h-16 w-16 text-gray-400" />
         </div>
         
-        <!-- Remove all badges - user doesn't want them -->
-        <!-- Image count indicator - hidden -->
-        <!-- Discount badge - hidden -->
-        <!-- Featured badge - hidden -->
+        <!-- Badges Container with better positioning -->
+        <div class="absolute inset-0 pointer-events-none z-10">
+          <!-- Featured Badge - Top left corner -->
+          <div 
+            v-if="product.featured"
+            class="absolute top-2 left-2"
+          >
+            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-semibold bg-yellow-100 text-yellow-800 shadow-sm pointer-events-auto">
+              <Icon name="mdi:star" class="h-3 w-3 mr-1" />
+              Destacado
+            </span>
+          </div>
+
+          <!-- Discount Badge - Top right corner or below featured if both exist -->
+          <div 
+            v-if="product.originalPrice && product.originalPrice > product.price"
+            :class="product.featured ? 'absolute top-12 left-2' : 'absolute top-2 right-2'"
+          >
+            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-semibold bg-red-100 text-red-800 shadow-sm pointer-events-auto">
+              -{{ Math.round((1 - product.price / product.originalPrice) * 100) }}%
+            </span>
+          </div>
+
+          <!-- Image count indicator - Bottom right corner -->
+          <div 
+            v-if="product.images?.length > 1"
+            class="absolute bottom-2 right-2"
+          >
+            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-black bg-opacity-70 text-white shadow-sm pointer-events-auto">
+              <Icon name="mdi:image-multiple" class="h-3 w-3 mr-1" />
+              {{ product.images.length }}
+            </span>
+          </div>
+        </div>
       </div>
     </NuxtLink>
     
