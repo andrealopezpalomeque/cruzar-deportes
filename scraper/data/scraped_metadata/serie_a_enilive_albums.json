@@ -72,15 +72,6 @@
     "folderName": "jv_long_sleeve_kid_kit"
   },
   {
-    "url": "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010502006611",
-    "title": "浙公网安备 33010502006611 号",
-    "originalTitle": "浙公网安备 33010502006611 号",
-    "alt": "",
-    "selector": "a:has(img)",
-    "hasImage": true,
-    "folderName": "33010502006611"
-  },
-  {
     "url": "https://wavesoccer.x.yupoo.com/albums/169214529?uid=1&isSubCate=false&referrercate=334382",
     "title": "MILAN SHORT AUTHENTIC",
     "originalTitle": "MILAN SHORT AUTHENTIC",
@@ -484,15 +475,6 @@
     "selector": "a[href*=\"album\"]",
     "hasImage": true,
     "folderName": "sampdoria"
-  },
-  {
-    "url": "https://wavesoccer.x.yupoo.com/albums/161842622?uid=1&isSubCate=false&referrercate=334382",
-    "title": "161842622",
-    "originalTitle": "JV",
-    "alt": "",
-    "selector": "a[href*=\"album\"]",
-    "hasImage": true,
-    "folderName": "161842622"
   },
   {
     "url": "https://wavesoccer.x.yupoo.com/albums/173751301?uid=1&isSubCate=false&referrercate=334382",

@@ -6,11 +6,10 @@
         <div class="flex-shrink-0">
           <NuxtLink to="/" class="flex items-center space-x-2">
             <img 
-              src="/images/cruzar-logo-1.png" 
+              src="/images/cruzar-logo-no-bg.png" 
               alt="Cruzar Deportes Logo" 
-              class="h-12 w-auto"
+              class="h-20 w-auto"
             />
-            <span class="hidden md:block text-xl font-bold text-gray-900">Cruzar Deportes</span>
           </NuxtLink>
         </div>
 

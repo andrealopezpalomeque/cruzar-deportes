@@ -8,9 +8,8 @@
             <img 
               src="/images/cruzar-logo-no-bg.png" 
               alt="Cruzar Deportes Logo" 
-              class="h-12 w-auto brightness-0 invert"
+              class="h-20 w-auto brightness-0 invert"
             />
-            <span class="text-xl font-bold">Cruzar Deportes</span>
           </div>
           <p class="text-gray-300 mb-4">
             Porque cada hincha merece vestir los colores de su pasión. Camisetas deportivas del mundo entero.
