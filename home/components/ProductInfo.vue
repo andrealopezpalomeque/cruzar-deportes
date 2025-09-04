@@ -3,10 +3,10 @@
     <!-- Product Header -->
     <div>
       <div class="flex items-center space-x-2 text-sm text-gray-600 mb-2">
-        <span class="px-2 py-1 bg-primary-100 text-primary-800 rounded-md font-medium">
+        <span class="px-2 py-1 bg-primary-100 text-primary-800 rounded-md font-medium shadow-sm">
           {{ categoryName }}
         </span>
-        <span v-if="product.featured" class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-md font-medium">
+        <span v-if="product.featured" class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-md font-medium shadow-sm">
           <Icon name="mdi:star" class="h-3 w-3 inline mr-1" />
           Destacado
         </span>
@@ -24,7 +24,7 @@
         </span>
         <span 
           v-if="product.originalPrice && product.originalPrice > product.price"
-          class="text-sm font-medium text-green-600 bg-green-100 px-2 py-1 rounded-md"
+          class="text-sm font-medium text-green-600 bg-green-100 px-2 py-1 rounded-md shadow-sm"
         >
           {{ Math.round((1 - product.price / product.originalPrice) * 100) }}% OFF
         </span>
