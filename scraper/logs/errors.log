@@ -1042,3 +1042,553 @@ Error: Downloaded file is not a valid image
 2025-08-25 16:34:20 [ERROR]: Download failed: ajax_img36
 Error: Downloaded file is not a valid image
     at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:08:23 [ERROR]: Download failed: ajax_short_player_version_img11
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:08:37 [ERROR]: Download failed: feyenoord_gk_kid_kit_img5
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:08:52 [ERROR]: Download failed: feyenoord_gk_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:09:17 [ERROR]: Download failed: feyenoord_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:09:30 [ERROR]: Download failed: ajax_gk_kid_kit_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:09:40 [ERROR]: Attempt 1 failed for album "AJAX AUTHENTIC": No images found or processed
+2025-09-04 12:09:59 [ERROR]: Attempt 1 failed for album "PSV GK KID KIT": No images found or processed
+2025-09-04 12:10:15 [ERROR]: Download failed: psv_gk_kid_kit_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:10:27 [ERROR]: Download failed: ajax_gk_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:10:42 [ERROR]: Download failed: sc_heerenveen_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:10:57 [ERROR]: Download failed: feyenoord_gk_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:11:12 [ERROR]: Download failed: psv_gk_short_img7
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:11:24 [ERROR]: Attempt 1 failed for album "AJAX KID KIT": No images found or processed
+2025-09-04 12:11:40 [ERROR]: Attempt 1 failed for album "PSV GK SHORT": No images found or processed
+2025-09-04 12:11:55 [ERROR]: Attempt 1 failed for album "AJAX KID KIT": No images found or processed
+2025-09-04 12:12:11 [ERROR]: Attempt 1 failed for album "PSV KID KIT": No images found or processed
+2025-09-04 12:12:27 [ERROR]: Download failed: psv_kid_kit_img44
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:12:39 [ERROR]: Download failed: ajax_short_img11
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:12:51 [ERROR]: Attempt 1 failed for album "AZ ALKMAAR": No images found or processed
+2025-09-04 12:13:08 [ERROR]: Attempt 1 failed for album "FEYENOORD": No images found or processed
+2025-09-04 12:13:24 [ERROR]: Download failed: psv_short_img17
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:13:35 [ERROR]: Attempt 1 failed for album "PSV SHORT": No images found or processed
+2025-09-04 12:13:52 [ERROR]: Attempt 1 failed for album "AJAX GK": No images found or processed
+2025-09-04 12:14:07 [ERROR]: Download failed: ajax_gk_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:14:22 [ERROR]: Download failed: psv_gk_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:14:34 [ERROR]: Download failed: psv_gk_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:14:49 [ERROR]: Download failed: twente_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:15:11 [ERROR]: Download failed: ajax_img38
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:18:23 [ERROR]: Download failed: psv_img37
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:18:55 [ERROR]: Download failed: psv_img42
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:39:45 [ERROR]: Download failed: ajax_short_player_version_img11
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:40:01 [ERROR]: Download failed: feyenoord_gk_kid_kit_img5
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:40:13 [ERROR]: Download failed: feyenoord_gk_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:40:24 [ERROR]: Attempt 1 failed for album "FEYENOORD KID KIT": No images found or processed
+2025-09-04 12:40:41 [ERROR]: Download failed: feyenoord_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:40:57 [ERROR]: Download failed: ajax_gk_kid_kit_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:41:09 [ERROR]: Attempt 1 failed for album "AJAX AUTHENTIC": No images found or processed
+2025-09-04 12:41:24 [ERROR]: Attempt 1 failed for album "PSV GK KID KIT": No images found or processed
+2025-09-04 12:41:41 [ERROR]: Download failed: psv_gk_kid_kit_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:41:55 [ERROR]: Download failed: ajax_gk_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:42:08 [ERROR]: Download failed: sc_heerenveen_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:42:20 [ERROR]: Download failed: feyenoord_gk_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:42:34 [ERROR]: Download failed: psv_gk_short_img7
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:42:45 [ERROR]: Attempt 1 failed for album "AJAX KID KIT": No images found or processed
+2025-09-04 12:43:01 [ERROR]: Attempt 1 failed for album "PSV GK SHORT": No images found or processed
+2025-09-04 12:43:15 [ERROR]: Attempt 1 failed for album "AJAX KID KIT": No images found or processed
+2025-09-04 12:43:30 [ERROR]: Attempt 1 failed for album "PSV KID KIT": No images found or processed
+2025-09-04 12:43:48 [ERROR]: Download failed: psv_kid_kit_img44
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:44:01 [ERROR]: Download failed: ajax_short_img11
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:44:11 [ERROR]: Attempt 1 failed for album "AZ ALKMAAR": No images found or processed
+2025-09-04 12:44:27 [ERROR]: Attempt 1 failed for album "FEYENOORD": No images found or processed
+2025-09-04 12:44:45 [ERROR]: Download failed: psv_short_img17
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:44:58 [ERROR]: Attempt 1 failed for album "PSV SHORT": No images found or processed
+2025-09-04 12:45:13 [ERROR]: Attempt 1 failed for album "AJAX GK": No images found or processed
+2025-09-04 12:45:29 [ERROR]: Download failed: ajax_gk_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:45:41 [ERROR]: Download failed: psv_gk_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:45:53 [ERROR]: Download failed: psv_gk_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:46:06 [ERROR]: Download failed: twente_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:46:18 [ERROR]: Download failed: ajax_img38
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 12:46:33 [ERROR]: Attempt 1 failed for album "PSV": No images found or processed
+2025-09-04 12:46:50 [ERROR]: Download failed: psv_img42
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:05:34 [ERROR]: Download failed: ajax_short_player_version_img11
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:05:46 [ERROR]: Download failed: feyenoord_gk_kid_kit_img5
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:05:58 [ERROR]: Download failed: feyenoord_gk_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:06:09 [ERROR]: Attempt 1 failed for album "FEYENOORD KID KIT": No images found or processed
+2025-09-04 13:06:23 [ERROR]: Download failed: feyenoord_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:06:35 [ERROR]: Download failed: ajax_gk_kid_kit_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:06:47 [ERROR]: Attempt 1 failed for album "AJAX AUTHENTIC": No images found or processed
+2025-09-04 13:07:00 [ERROR]: Attempt 1 failed for album "PSV GK KID KIT": No images found or processed
+2025-09-04 13:07:14 [ERROR]: Download failed: psv_gk_kid_kit_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:07:26 [ERROR]: Download failed: ajax_gk_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:07:38 [ERROR]: Download failed: sc_heerenveen_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:07:51 [ERROR]: Download failed: feyenoord_gk_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:08:01 [ERROR]: Download failed: psv_gk_short_img7
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:08:14 [ERROR]: Attempt 1 failed for album "AJAX KID KIT": No images found or processed
+2025-09-04 13:08:30 [ERROR]: Attempt 1 failed for album "PSV GK SHORT": No images found or processed
+2025-09-04 13:08:45 [ERROR]: Attempt 1 failed for album "AJAX KID KIT": No images found or processed
+2025-09-04 13:09:01 [ERROR]: Attempt 1 failed for album "PSV KID KIT": No images found or processed
+2025-09-04 13:09:16 [ERROR]: Download failed: psv_kid_kit_img44
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:09:27 [ERROR]: Download failed: ajax_short_img11
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:09:37 [ERROR]: Attempt 1 failed for album "AZ ALKMAAR": No images found or processed
+2025-09-04 13:09:52 [ERROR]: Attempt 1 failed for album "FEYENOORD": No images found or processed
+2025-09-04 13:10:08 [ERROR]: Download failed: psv_short_img17
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:10:20 [ERROR]: Attempt 1 failed for album "PSV SHORT": No images found or processed
+2025-09-04 13:10:33 [ERROR]: Attempt 1 failed for album "AJAX GK": No images found or processed
+2025-09-04 13:10:48 [ERROR]: Download failed: ajax_gk_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:11:00 [ERROR]: Download failed: psv_gk_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:11:11 [ERROR]: Download failed: psv_gk_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:11:25 [ERROR]: Download failed: twente_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:11:36 [ERROR]: Download failed: ajax_img38
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:11:50 [ERROR]: Attempt 1 failed for album "PSV": No images found or processed
+2025-09-04 13:12:10 [ERROR]: Download failed: psv_img42
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:25:15 [ERROR]: Download failed: ajax_short_player_version_img11
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:25:28 [ERROR]: Download failed: feyenoord_gk_kid_kit_img5
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:25:40 [ERROR]: Download failed: feyenoord_gk_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:25:52 [ERROR]: Attempt 1 failed for album "FEYENOORD KID KIT": No images found or processed
+2025-09-04 13:26:07 [ERROR]: Download failed: feyenoord_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:26:20 [ERROR]: Download failed: ajax_gk_kid_kit_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:26:34 [ERROR]: Attempt 1 failed for album "AJAX AUTHENTIC": No images found or processed
+2025-09-04 13:26:48 [ERROR]: Attempt 1 failed for album "PSV GK KID KIT": No images found or processed
+2025-09-04 13:27:03 [ERROR]: Download failed: psv_gk_kid_kit_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:27:17 [ERROR]: Download failed: ajax_gk_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:27:30 [ERROR]: Download failed: sc_heerenveen_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:27:41 [ERROR]: Download failed: feyenoord_gk_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:27:52 [ERROR]: Download failed: psv_gk_short_img7
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:28:04 [ERROR]: Attempt 1 failed for album "AJAX KID KIT": No images found or processed
+2025-09-04 13:28:17 [ERROR]: Attempt 1 failed for album "PSV GK SHORT": No images found or processed
+2025-09-04 13:28:33 [ERROR]: Attempt 1 failed for album "AJAX KID KIT": No images found or processed
+2025-09-04 13:28:47 [ERROR]: Attempt 1 failed for album "PSV KID KIT": No images found or processed
+2025-09-04 13:29:05 [ERROR]: Download failed: psv_kid_kit_img44
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:29:17 [ERROR]: Download failed: ajax_short_img11
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:29:29 [ERROR]: Attempt 1 failed for album "AZ ALKMAAR": No images found or processed
+2025-09-04 13:29:43 [ERROR]: Attempt 1 failed for album "FEYENOORD": No images found or processed
+2025-09-04 13:29:59 [ERROR]: Download failed: psv_short_img17
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:30:09 [ERROR]: Attempt 1 failed for album "PSV SHORT": No images found or processed
+2025-09-04 13:30:23 [ERROR]: Attempt 1 failed for album "AJAX GK": No images found or processed
+2025-09-04 13:30:40 [ERROR]: Download failed: ajax_gk_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:30:54 [ERROR]: Download failed: psv_gk_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:31:07 [ERROR]: Download failed: psv_gk_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:31:22 [ERROR]: Download failed: twente_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:31:34 [ERROR]: Download failed: ajax_img38
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 13:31:44 [ERROR]: Attempt 1 failed for album "PSV": No images found or processed
+2025-09-04 13:31:59 [ERROR]: Download failed: psv_img42
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:36:32 [ERROR]: Attempt 1 failed for album "INTER LONG SLEEVE PLAYER VERSION": No images found or processed
+2025-09-04 14:36:51 [ERROR]: Download failed: inter_long_sleeve_player_version_img27
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:37:23 [ERROR]: Download failed: milan_long_sleeve_authentic_img29
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:37:38 [ERROR]: Attempt 1 failed for album "MILAN LONG SLEEVE AUTHENTIC": No images found or processed
+2025-09-04 14:37:51 [ERROR]: Attempt 1 failed for album "INTER SHORT PLAYER VERSION": No images found or processed
+2025-09-04 14:38:05 [ERROR]: Download failed: inter_short_player_version_img19
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:39:51 [ERROR]: Download failed: jv_kid_kit_player_version_img19
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:40:07 [ERROR]: Download failed: inter_long_sleeve_kid_kit_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:40:19 [ERROR]: Attempt 1 failed for album "JV LONG SLEEVE AUTHENTIC": No images found or processed
+2025-09-04 14:40:33 [ERROR]: Download failed: jv_long_sleeve_authentic_img21
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:43:00 [ERROR]: Download failed: inter_authentic_kid_kit_img22
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:45:10 [ERROR]: Download failed: jv_short_player_version_img27
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:45:24 [ERROR]: Download failed: inter_kid_kit_authentic_img18
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:45:37 [ERROR]: Download failed: jv_long_sleeve_kid_kit_img17
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:45:50 [ERROR]: Attempt 1 failed for album "MILAN SHORT AUTHENTIC": No images found or processed
+2025-09-04 14:47:01 [ERROR]: Download failed: roma_short_authentic_img9
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:47:14 [ERROR]: Download failed: venezia_long_sleeve_img9
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:47:26 [ERROR]: Attempt 1 failed for album "FIORENTINA KID KIT": No images found or processed
+2025-09-04 14:47:42 [ERROR]: Download failed: jv_short_authentic_img12
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:48:34 [ERROR]: Download failed: milan_long_sleeve_img13
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:49:07 [ERROR]: Download failed: napoles_authentic_img35
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:49:20 [ERROR]: Attempt 1 failed for album "MILAN LONG SLEEVE": No images found or processed
+2025-09-04 14:49:51 [ERROR]: Download failed: inter_gk_kid_kit_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:50:04 [ERROR]: Attempt 1 failed for album "FIORENTINA SHORT": No images found or processed
+2025-09-04 14:50:27 [ERROR]: Download failed: atalanta_kid_kit_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:55:16 [ERROR]: Download failed: milan_gk_kid_kit_img61
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:55:25 [ERROR]: Attempt 1 failed for album "CAGLIARI KID KIT": No images found or processed
+2025-09-04 14:55:41 [ERROR]: Download failed: cagliari_kid_kit_img6
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:55:55 [ERROR]: Download failed: atalanta_kit_kit_img21
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:56:08 [ERROR]: Attempt 1 failed for album "INTER AUTHENTIC": No images found or processed
+2025-09-04 14:56:24 [ERROR]: Attempt 1 failed for album "INTER GIRL SIZE": No images found or processed
+2025-09-04 14:56:43 [ERROR]: Attempt 1 failed for album "MILAN AUTHENTIC": No images found or processed
+2025-09-04 14:56:57 [ERROR]: Attempt 1 failed for album "NAPOLES KID KIT": No images found or processed
+2025-09-04 14:57:13 [ERROR]: Download failed: venezia_kid_kit_img6
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:57:25 [ERROR]: Download failed: inter_authentic_img55
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:57:37 [ERROR]: Download failed: inter_girl_size_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:57:50 [ERROR]: Download failed: milan_authentic_img54
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:58:03 [ERROR]: Download failed: inter_gk_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:58:21 [ERROR]: Attempt 1 failed for album "ATALANTA SHORT": No images found or processed
+2025-09-04 14:58:48 [ERROR]: Download failed: milan_gk_short_img15
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:59:05 [ERROR]: Download failed: cagliari_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:59:18 [ERROR]: Download failed: roma_authentic_img30
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:59:30 [ERROR]: Download failed: torino_kid_kit_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:59:45 [ERROR]: Download failed: cagliari_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 14:59:58 [ERROR]: Download failed: atalanta_short_img8
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:00:09 [ERROR]: Download failed: roma_authentic_img30
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:00:23 [ERROR]: Attempt 1 failed for album "INTER KID KIT": No images found or processed
+2025-09-04 15:00:53 [ERROR]: Download failed: jv_gk_kid_kit_img8
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:01:12 [ERROR]: Download failed: parma_kid_kit_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:02:43 [ERROR]: Download failed: milan_kid_kit_img42
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:02:57 [ERROR]: Attempt 1 failed for album "NAPOLES SHORT": No images found or processed
+2025-09-04 15:03:12 [ERROR]: Download failed: venezia_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:03:23 [ERROR]: Attempt 1 failed for album "JV GK KID KIT": No images found or processed
+2025-09-04 15:03:39 [ERROR]: Download failed: inter_kid_kit_img44
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:04:51 [ERROR]: Download failed: jv_girl_size_img13
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:05:22 [ERROR]: Download failed: jv_authentic_img38
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:05:32 [ERROR]: Attempt 1 failed for album "ROMA KID KIT": No images found or processed
+2025-09-04 15:05:46 [ERROR]: Download failed: torino_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:05:57 [ERROR]: Download failed: roma_kid_kit_img52
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:06:09 [ERROR]: Attempt 1 failed for album "JV AUTHENTIC": No images found or processed
+2025-09-04 15:06:24 [ERROR]: Attempt 1 failed for album "INTER SHORT": No images found or processed
+2025-09-04 15:06:41 [ERROR]: Download failed: jv_gk_short_img8
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:07:13 [ERROR]: Download failed: parma_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:07:27 [ERROR]: Attempt 1 failed for album "MILAN SHORT": No images found or processed
+2025-09-04 15:08:49 [ERROR]: Download failed: lazio_25_26_img16
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:09:02 [ERROR]: Download failed: salernitana_img14
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:09:15 [ERROR]: Download failed: jv_gk_short_img8
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:09:29 [ERROR]: Download failed: inter_short_img16
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:09:51 [ERROR]: Download failed: napoles_gk_img3
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:11:42 [ERROR]: Download failed: jv_kid_kit_img77
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:11:53 [ERROR]: Attempt 1 failed for album "FIORENTINA": No images found or processed
+2025-09-04 15:12:07 [ERROR]: Attempt 1 failed for album "ROMA SHORT": No images found or processed
+2025-09-04 15:12:21 [ERROR]: Download failed: venezia_gk_img18
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:12:34 [ERROR]: Download failed: roma_short_img28
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:12:45 [ERROR]: Attempt 1 failed for album "JV KID KIT": No images found or processed
+2025-09-04 15:12:59 [ERROR]: Attempt 1 failed for album "SAMPDORIA": No images found or processed
+2025-09-04 15:13:16 [ERROR]: Download failed: frosinone_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:13:29 [ERROR]: Download failed: sampdoria_img28
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:13:44 [ERROR]: Download failed: sassuolo_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:14:07 [ERROR]: Download failed: inter_gk_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:14:26 [ERROR]: Attempt 1 failed for album "JV SHORT": No images found or processed
+2025-09-04 15:14:41 [ERROR]: Attempt 1 failed for album "ATALANTA": No images found or processed
+2025-09-04 15:15:12 [ERROR]: Attempt 1 failed for album "CAGLIARI": No images found or processed
+2025-09-04 15:16:15 [ERROR]: Download failed: sorrento_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:16:28 [ERROR]: Download failed: cagliari_img39
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:16:41 [ERROR]: Download failed: atalanta_img68
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:16:53 [ERROR]: Download failed: jv_short_img19
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:17:15 [ERROR]: Attempt 1 failed for album "MILAN GK": No images found or processed
+2025-09-04 15:17:29 [ERROR]: Attempt 1 failed for album "VENEZIA": No images found or processed
+2025-09-04 15:18:08 [ERROR]: Download failed: napoles_img44
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:18:19 [ERROR]: Attempt 1 failed for album "BOLOGNA": No images found or processed
+2025-09-04 15:18:35 [ERROR]: Attempt 1 failed for album "PALERMO": No images found or processed
+2025-09-04 15:18:51 [ERROR]: Download failed: venezia_img38
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:19:02 [ERROR]: Download failed: como_gk_img2
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:19:16 [ERROR]: Download failed: palermo_img39
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:19:29 [ERROR]: Download failed: udinese_img35
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:19:41 [ERROR]: Download failed: roma_gk_img8
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:19:52 [ERROR]: Download failed: empoli_img13
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:20:05 [ERROR]: Download failed: torino_img46
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:20:18 [ERROR]: Download failed: verona_img16
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:20:28 [ERROR]: Attempt 1 failed for album "INTER": No images found or processed
+2025-09-04 15:20:43 [ERROR]: Attempt 1 failed for album "JV GK": No images found or processed
+2025-09-04 15:20:59 [ERROR]: Attempt 1 failed for album "MILAN": No images found or processed
+2025-09-04 15:21:14 [ERROR]: Attempt 1 failed for album "PARMA": No images found or processed
+2025-09-04 15:21:28 [ERROR]: Attempt 1 failed for album "GENOA": No images found or processed
+2025-09-04 15:21:43 [ERROR]: Download failed: lecce_img22
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:21:55 [ERROR]: Download failed: monza_img17
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:22:08 [ERROR]: Download failed: parma_img24
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:22:19 [ERROR]: Download failed: genoa_img49
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:22:31 [ERROR]: Download failed: jv_gk_img24
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:22:42 [ERROR]: Download failed: inter_img41
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:22:55 [ERROR]: Download failed: milan_img75
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:23:06 [ERROR]: Attempt 1 failed for album "COMO": No images found or processed
+2025-09-04 15:23:22 [ERROR]: Attempt 1 failed for album "ROMA": No images found or processed
+2025-09-04 15:23:38 [ERROR]: Download failed: como_img35
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:23:51 [ERROR]: Download failed: bari_img6
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-04 15:24:05 [ERROR]: Download failed: roma_img40
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)

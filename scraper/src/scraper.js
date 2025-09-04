@@ -228,8 +228,18 @@ class SportsScraper {
                 return;
               }
 
+              // Enhanced filtering for regulatory/legal pages
+              if (this.isInvalidAlbumUrl(href)) {
+                return;
+              }
+
               // Enhanced title extraction
               let albumTitle = this.extractAlbumTitle($link, $);
+              
+              // Validate album title
+              if (this.isInvalidAlbumTitle(albumTitle, href)) {
+                return;
+              }
               
               foundLinks.add(href);
               albumLinks.push({
@@ -249,8 +259,17 @@ class SportsScraper {
       // Remove duplicates and sort by priority
       const uniqueAlbums = this.deduplicateAlbums(albumLinks);
       
+      // Final validation to ensure all albums are valid
+      const validAlbums = uniqueAlbums.filter(album => {
+        if (this.isInvalidAlbumUrl(album.url) || this.isInvalidAlbumTitle(album.title, album.url)) {
+          this.logger.debug(`Filtered out invalid album: "${album.title}" -> ${album.url}`);
+          return false;
+        }
+        return true;
+      });
+      
       // Sort by priority (links with images first, then by title quality)
-      uniqueAlbums.sort((a, b) => {
+      validAlbums.sort((a, b) => {
         if (a.hasImage && !b.hasImage) return -1;
         if (!a.hasImage && b.hasImage) return 1;
         if (a.title && !b.title) return -1;
@@ -258,12 +277,27 @@ class SportsScraper {
         return b.title.length - a.title.length; // Prefer longer, more descriptive titles
       });
 
-      this.logger.info(`Found ${uniqueAlbums.length} unique albums from ${url}`);
-      uniqueAlbums.forEach((album, index) => {
+      const filteredCount = uniqueAlbums.length - validAlbums.length;
+      this.logger.info(`Found ${validAlbums.length} valid albums from ${url} (filtered out ${filteredCount} from ${uniqueAlbums.length} total)`);
+      
+      if (filteredCount > 0) {
+        this.logger.info(`Filtered albums breakdown:`);
+        uniqueAlbums.forEach((album, index) => {
+          const isValid = !this.isInvalidAlbumUrl(album.url) && !this.isInvalidAlbumTitle(album.title, album.url);
+          if (!isValid) {
+            const urlReason = this.isInvalidAlbumUrl(album.url) ? 'invalid URL' : '';
+            const titleReason = this.isInvalidAlbumTitle(album.title, album.url) ? 'invalid title' : '';
+            const reason = [urlReason, titleReason].filter(r => r).join(', ');
+            this.logger.info(`  Filtered: "${album.title}" -> ${album.url} (${reason})`);
+          }
+        });
+      }
+      
+      validAlbums.forEach((album, index) => {
         this.logger.info(`Album ${index + 1}: "${album.title}" -> ${album.folderName}`);
       });
       
-      return uniqueAlbums;
+      return validAlbums;
 
     } catch (error) {
       this.logger.error(`Failed to extract album links from ${url}: ${error.message}`);
@@ -273,70 +307,144 @@ class SportsScraper {
 
   extractAlbumTitle($link, $) {
     // Try multiple strategies to get the best album title
+    let title = '';
     
-    // 1. Try title attribute
-    let title = $link.attr('title');
-    if (title && title.trim().length > 3) {
-      return title.trim();
+    // 1. Try title attribute (most reliable)
+    title = $link.attr('title');
+    if (title && this.isValidTitleExtraction(title)) {
+      return this.cleanAndNormalizeTitle(title);
     }
     
     // 2. Try link text content
     title = $link.text().trim();
-    if (title && title.length > 3 && title.length < 100) {
-      return title;
+    if (title && this.isValidTitleExtraction(title)) {
+      return this.cleanAndNormalizeTitle(title);
     }
     
     // 3. Try image alt text
     const imgAlt = $link.find('img').attr('alt');
-    if (imgAlt && imgAlt.trim().length > 3) {
-      return imgAlt.trim();
+    if (imgAlt && this.isValidTitleExtraction(imgAlt)) {
+      return this.cleanAndNormalizeTitle(imgAlt);
     }
     
-    // 4. Try parent element text/title
+    // 4. Try nested spans or divs with jersey-related content
+    const nestedText = $link.find('span, div').filter((i, el) => {
+      const text = $(el).text().trim();
+      return text.length > 3 && this.looksLikeSportsTitle(text);
+    }).first().text().trim();
+    
+    if (nestedText && this.isValidTitleExtraction(nestedText)) {
+      return this.cleanAndNormalizeTitle(nestedText);
+    }
+    
+    // 5. Try parent element text/title
     const $parent = $link.parent();
     const parentTitle = $parent.attr('title') || $parent.find('.title, .name, .caption, h1, h2, h3, h4').first().text().trim();
-    if (parentTitle && parentTitle.length > 3 && parentTitle.length < 100) {
-      return parentTitle;
+    if (parentTitle && this.isValidTitleExtraction(parentTitle)) {
+      return this.cleanAndNormalizeTitle(parentTitle);
     }
     
-    // 5. Try sibling elements for title
+    // 6. Try sibling elements for title
     const siblingTitle = $link.siblings('.title, .name, .caption, h1, h2, h3, h4').first().text().trim();
-    if (siblingTitle && siblingTitle.length > 3) {
-      return siblingTitle;
+    if (siblingTitle && this.isValidTitleExtraction(siblingTitle)) {
+      return this.cleanAndNormalizeTitle(siblingTitle);
     }
     
-    // 6. Try data attributes
+    // 7. Try data attributes
     const dataTitle = $link.attr('data-title') || $link.attr('data-name') || $link.attr('data-caption');
-    if (dataTitle && dataTitle.trim().length > 3) {
-      return dataTitle.trim();
+    if (dataTitle && this.isValidTitleExtraction(dataTitle)) {
+      return this.cleanAndNormalizeTitle(dataTitle);
     }
     
-    // 7. Extract from URL as last resort
+    // 8. Extract from URL as last resort
     const href = $link.attr('href');
     if (href) {
-      // For Yupoo URLs, extract album ID and clean up query params
-      if (href.includes('yupoo.com/albums/')) {
-        const albumIdMatch = href.match(/\/albums\/(\d+)/);
-        if (albumIdMatch) {
-          const albumId = albumIdMatch[1];
-          // Try to get team name from the domain or use generic fallback
-          const domainMatch = href.match(/https?:\/\/([^.]+)\./);
-          const domain = domainMatch ? domainMatch[1] : 'team';
-          return `${domain}_album_${albumId}`;
-        }
-      }
-      
-      // For other URLs, use original logic but clean query params first
-      const urlWithoutQuery = href.split('?')[0];
-      const urlParts = urlWithoutQuery.split('/');
-      const lastPart = urlParts[urlParts.length - 1];
-      if (lastPart && lastPart.length > 3) {
-        return lastPart.replace(/[_-]/g, ' ').replace(/\.(html?|php|asp)$/i, '').trim();
+      return this.extractTitleFromUrl(href);
+    }
+    
+    // 9. Generic fallback
+    return `Album_${Date.now()}`;
+  }
+
+  isValidTitleExtraction(title) {
+    if (!title || typeof title !== 'string') return false;
+    
+    const cleaned = title.trim();
+    
+    // Check minimum length
+    if (cleaned.length < 3) return false;
+    
+    // Check maximum length (avoid very long descriptions)
+    if (cleaned.length > 100) return false;
+    
+    // Skip titles that are just URLs or have URL fragments
+    if (cleaned.includes('http') || cleaned.includes('www.') || 
+        cleaned.includes('uid=') || cleaned.includes('referrer')) {
+      return false;
+    }
+    
+    // Skip generic texts
+    const genericTexts = ['click here', 'view more', 'see all', 'more info', 'details'];
+    const lowerTitle = cleaned.toLowerCase();
+    for (const generic of genericTexts) {
+      if (lowerTitle.includes(generic)) return false;
+    }
+    
+    return true;
+  }
+
+  looksLikeSportsTitle(text) {
+    const sportsKeywords = [
+      'jersey', 'kit', 'shirt', 'shorts', 'authentic', 'player',
+      'home', 'away', 'third', 'gk', 'goalkeeper', 'training',
+      'jacket', 'tracksuit', 'hoodie', 'polo'
+    ];
+    
+    const lowerText = text.toLowerCase();
+    return sportsKeywords.some(keyword => lowerText.includes(keyword));
+  }
+
+  cleanAndNormalizeTitle(title) {
+    return title
+      .trim()
+      .replace(/\s+/g, ' ') // Replace multiple spaces with single space
+      .replace(/[^\w\s-]/g, '') // Remove special characters except hyphens
+      .replace(/^\W+|\W+$/g, '') // Remove leading/trailing non-word characters
+      .toUpperCase(); // Standardize to uppercase for sports jerseys
+  }
+
+  extractTitleFromUrl(href) {
+    // For Yupoo URLs, extract album ID and create meaningful name
+    if (href.includes('yupoo.com/albums/')) {
+      const albumIdMatch = href.match(/\/albums\/(\d+)/);
+      if (albumIdMatch) {
+        const albumId = albumIdMatch[1];
+        // Try to get store name from subdomain
+        const domainMatch = href.match(/https?:\/\/([^.]+)\./);
+        const storeName = domainMatch ? domainMatch[1] : 'store';
+        
+        // Check for category hints in URL params
+        const categoryMatch = href.match(/referrercate=(\d+)/);
+        const categoryHint = categoryMatch ? `cat${categoryMatch[1]}` : 'album';
+        
+        return `${storeName.toUpperCase()}_${categoryHint}_${albumId}`;
       }
     }
     
-    // 8. Generic fallback
-    return `Album_${Date.now()}`;
+    // For other URLs, clean and extract meaningful parts
+    const urlWithoutQuery = href.split('?')[0];
+    const urlParts = urlWithoutQuery.split('/');
+    const lastPart = urlParts[urlParts.length - 1];
+    
+    if (lastPart && lastPart.length > 3) {
+      return lastPart
+        .replace(/[_-]/g, ' ')
+        .replace(/\.(html?|php|asp)$/i, '')
+        .trim()
+        .toUpperCase();
+    }
+    
+    return `UNKNOWN_ALBUM_${Date.now()}`;
   }
 
   sanitizeAlbumTitle(title) {
@@ -347,6 +455,8 @@ class SportsScraper {
       return `malformed_${Date.now()}`;
     }
     
+    // Since cleanAndNormalizeTitle already handles most cleanup, 
+    // we just need to convert to filesystem-safe format
     return title
       .toLowerCase()
       .replace(/[^a-zA-Z0-9\s-]/g, '') // Remove special chars except spaces and hyphens
@@ -354,7 +464,7 @@ class SportsScraper {
       .replace(/-+/g, '_') // Replace hyphens with underscores
       .replace(/_+/g, '_') // Replace multiple underscores with single
       .replace(/^_|_$/g, '') // Remove leading/trailing underscores
-      .substring(0, 50); // Limit length
+      .substring(0, 60); // Slightly longer limit for better readability
   }
 
   deduplicateAlbums(albumLinks) {
@@ -370,6 +480,196 @@ class SportsScraper {
     }
     
     return unique;
+  }
+
+  isInvalidAlbumUrl(url) {
+    const urlLower = url.toLowerCase();
+    
+    // Chinese regulatory and legal sites
+    if (urlLower.includes('beian.gov.cn') || 
+        urlLower.includes('miit.gov.cn') ||
+        urlLower.includes('mps.gov.cn')) {
+      return true;
+    }
+    
+    // Common legal/privacy/regulatory pages
+    const invalidPages = [
+      'privacy', 'policy', 'terms', 'legal', 'disclaimer',
+      'copyright', 'dmca', 'contact', 'about', 'help',
+      'support', 'faq', 'register', 'login', 'signup',
+      'admin', 'account', 'profile', 'settings'
+    ];
+    
+    for (const invalidPage of invalidPages) {
+      if (urlLower.includes(`/${invalidPage}`) || urlLower.includes(`${invalidPage}.`)) {
+        return true;
+      }
+    }
+    
+    return false;
+  }
+
+  isInvalidAlbumTitle(title, url = '') {
+    if (!title || typeof title !== 'string') return true;
+    
+    const titleLower = title.toLowerCase().trim();
+    const urlLower = url.toLowerCase();
+    
+    // Chinese regulatory text patterns
+    const chineseRegulatory = [
+      '浙公网安备', '33010502006611', 'icp', '备案号',
+      '网安备', '公网安备', '互联网', '信息服务'
+    ];
+    
+    for (const pattern of chineseRegulatory) {
+      if (titleLower.includes(pattern)) {
+        return true;
+      }
+    }
+    
+    // Generic invalid titles
+    const invalidTitles = [
+      'privacy policy', 'terms of service', 'copyright',
+      'legal notice', 'disclaimer', 'contact us',
+      'about us', 'help', 'faq', 'support'
+    ];
+    
+    for (const invalid of invalidTitles) {
+      if (titleLower.includes(invalid)) {
+        return true;
+      }
+    }
+    
+    // Check for pure numeric titles (likely IDs)
+    if (/^\d+$/.test(titleLower)) {
+      return true;
+    }
+    
+    // Check if title is too short or generic
+    if (titleLower.length < 3 || 
+        titleLower === 'image' || titleLower === 'photo' ||
+        titleLower === 'picture' || titleLower === 'img') {
+      return true;
+    }
+    
+    return false;
+  }
+
+  async validateProductGallery(images, albumData) {
+    try {
+      // Quick validation checks
+      if (!images || images.length === 0) {
+        return { isValid: false, reason: 'No images found' };
+      }
+
+      // Check if we have too few images for a product gallery
+      if (images.length < 2) {
+        return { isValid: false, reason: 'Too few images (likely not a product gallery)' };
+      }
+
+      // Check for sports-related patterns in album title
+      const title = (albumData.title || '').toLowerCase();
+      const sportsPatterns = [
+        'jersey', 'kit', 'shirt', 'shorts', 'authentic', 'player',
+        'home', 'away', 'third', 'gk', 'goalkeeper', 'training',
+        'jacket', 'tracksuit', 'hoodie', 'polo', 'real madrid',
+        'barcelona', 'manchester', 'liverpool', 'juventus', 'milan',
+        'inter', 'ajax', 'psv', 'feyenoord', 'arsenal', 'chelsea'
+      ];
+
+      const titleHasSportsTerms = sportsPatterns.some(pattern => title.includes(pattern));
+      
+      // Check image characteristics
+      let highQualityImages = 0;
+      let suspiciousImages = 0;
+      const imageUrls = images.map(img => img.src.toLowerCase());
+
+      for (const image of images) {
+        const imageUrl = (image.src || '').toLowerCase();
+        
+        // Count high-quality images (likely product photos)
+        if (this.isHighQualityProductImage(image, imageUrl)) {
+          highQualityImages++;
+        }
+        
+        // Count suspicious images (icons, backgrounds, etc.)
+        if (this.isSuspiciousImage(imageUrl)) {
+          suspiciousImages++;
+        }
+      }
+
+      // Calculate quality ratios
+      const highQualityRatio = highQualityImages / images.length;
+      const suspiciousRatio = suspiciousImages / images.length;
+
+      // Validation logic
+      if (suspiciousRatio > 0.5) {
+        return { isValid: false, reason: `Too many suspicious images (${suspiciousRatio * 100}%)` };
+      }
+
+      if (!titleHasSportsTerms && highQualityRatio < 0.3) {
+        return { isValid: false, reason: 'Does not appear to be sports product gallery' };
+      }
+
+      if (highQualityRatio < 0.1) {
+        return { isValid: false, reason: 'Very few high-quality product images found' };
+      }
+
+      // Check for duplicate URLs (sometimes galleries repeat images)
+      const uniqueUrls = new Set(imageUrls);
+      const duplicateRatio = 1 - (uniqueUrls.size / images.length);
+      if (duplicateRatio > 0.7) {
+        return { isValid: false, reason: 'Too many duplicate images' };
+      }
+
+      return { 
+        isValid: true, 
+        reason: `Valid product gallery: ${highQualityImages}/${images.length} quality images`,
+        stats: {
+          totalImages: images.length,
+          highQualityImages,
+          suspiciousImages,
+          uniqueImages: uniqueUrls.size,
+          hasSportsTerms: titleHasSportsTerms
+        }
+      };
+
+    } catch (error) {
+      this.logger.error(`Error validating product gallery: ${error.message}`);
+      return { isValid: true, reason: 'Validation error - allowing through' }; // Fail open
+    }
+  }
+
+  isHighQualityProductImage(image, imageUrl) {
+    // Check for high-resolution indicators
+    const hasQualityIndicators = imageUrl.includes('_o') || // Yupoo original size
+                               imageUrl.includes('large') ||
+                               imageUrl.includes('high') ||
+                               imageUrl.includes('master');
+    
+    // Check dimensions if available
+    const width = parseInt(image.width) || 0;
+    const height = parseInt(image.height) || 0;
+    const hasGoodDimensions = (width > 200 && height > 200);
+
+    // Check for product photo patterns
+    const hasProductPatterns = imageUrl.includes('photo') ||
+                              imageUrl.includes('product') ||
+                              imageUrl.includes('item');
+
+    return hasQualityIndicators || hasGoodDimensions || hasProductPatterns;
+  }
+
+  isSuspiciousImage(imageUrl) {
+    const suspiciousPatterns = [
+      'icon', 'logo', 'button', 'arrow', 'bg', 'background',
+      'header', 'footer', 'nav', 'menu', 'placeholder',
+      'spinner', 'loading', 'error', 'blank', 'empty',
+      'policeicon', 'beian', 'gov.cn', // Chinese regulatory icons
+      'website/4.', 'imgs/', 'static/' // Common Yupoo UI elements
+    ];
+
+    return suspiciousPatterns.some(pattern => imageUrl.includes(pattern));
   }
 
   getHighQualityImageUrl(src) {
@@ -936,6 +1236,13 @@ class SportsScraper {
         return { processed: 0, successful: 0 };
       }
 
+      // Validate that this looks like a product gallery
+      const validationResult = await this.validateProductGallery(images, albumData);
+      if (!validationResult.isValid) {
+        this.logger.warn(`Album "${albumData.title}" failed content validation: ${validationResult.reason}`);
+        return { processed: 0, successful: 0 };
+      }
+
       this.logger.info(`Found ${images.length} images in album: "${albumData.title}"`);
 
       let processedCount = 0;
@@ -1275,25 +1582,54 @@ class SportsScraper {
         return { processed: 0, successful: 0 };
       }
 
-      // Filter out non-album URLs (navigation links, etc.)
-      const validAlbums = albumLinks.filter(album => {
+      // Filter out non-album URLs (navigation links, etc.) with detailed logging
+      const validAlbums = [];
+      const filteredAlbums = [];
+      
+      for (const album of albumLinks) {
         const url = album.url;
         const title = album.title || '';
-        const isValid = url.includes('/albums/') && 
-                       url.includes('uid=1') && 
-                       url.includes('isSubCate=false') &&
-                       !url.includes('beian.gov.cn') &&
-                       !url.includes('undefined.x.yupoo.com') &&
-                       !url.startsWith('https://x.yupoo.com') &&
-                       !url.includes('gallery') &&
-                       !url.includes('?tab=') &&
-                       // Filter out malformed titles that contain URL parameters
-                       !(/\d+uid\d+issubcate/.test(title.toLowerCase()));
         
-        return isValid;
-      });
+        // Detailed validation with logging
+        const validationChecks = {
+          hasAlbumsPath: url.includes('/albums/'),
+          hasUidParam: url.includes('uid=1'),
+          hasSubCateParam: url.includes('isSubCate=false'),
+          notBeianGov: !url.includes('beian.gov.cn'),
+          notUndefinedDomain: !url.includes('undefined.x.yupoo.com'),
+          notRootYupoo: !url.startsWith('https://x.yupoo.com'),
+          notGallery: !url.includes('gallery'),
+          notTab: !url.includes('?tab='),
+          notMalformedTitle: !(/\d+uid\d+issubcate/.test(title.toLowerCase()))
+        };
+        
+        const isValid = Object.values(validationChecks).every(check => check);
+        
+        if (isValid) {
+          validAlbums.push(album);
+        } else {
+          const failedChecks = Object.entries(validationChecks)
+            .filter(([key, passed]) => !passed)
+            .map(([key, passed]) => key);
+          
+          filteredAlbums.push({
+            title: album.title,
+            url: album.url,
+            failedChecks: failedChecks
+          });
+        }
+      }
 
-      console.log(`✅ Found ${validAlbums.length} valid albums to process (filtered from ${albumLinks.length} total):\n`);
+      console.log(`✅ Found ${validAlbums.length} valid albums to process (filtered from ${albumLinks.length} total)`);
+      
+      if (filteredAlbums.length > 0) {
+        console.log(`\n⚠️  Filtered out ${filteredAlbums.length} albums:`);
+        filteredAlbums.forEach((filtered, idx) => {
+          console.log(`${idx + 1}. "${filtered.title}" - Failed: ${filtered.failedChecks.join(', ')}`);
+          if (idx < 3) console.log(`   URL: ${filtered.url}`); // Show URL for first few
+        });
+        console.log('');
+      }
       
       // Display valid albums
       validAlbums.forEach((album, index) => {
@@ -1307,28 +1643,111 @@ class SportsScraper {
       let totalProcessed = 0;
       let totalSuccessful = 0;
 
-      // Process each valid album
+      // Process each valid album with enhanced error recovery
+      let failedAlbums = [];
+      let consecutiveFailures = 0;
+      const maxConsecutiveFailures = 5;
+      
       for (const [albumIndex, albumData] of validAlbums.entries()) {
-        try {
-          console.log(`\n📸 Processing album ${albumIndex + 1}/${validAlbums.length}: "${albumData.title}"`);
-          console.log(`🔗 URL: ${albumData.url}`);
+        let albumResult = null;
+        let attempts = 0;
+        const maxAttempts = 3;
+        
+        console.log(`\n📸 Processing album ${albumIndex + 1}/${validAlbums.length}: "${albumData.title}"`);
+        console.log(`🔗 URL: ${albumData.url}`);
+        
+        while (attempts < maxAttempts && !albumResult) {
+          attempts++;
           
-          const result = await this.processAlbumImages(albumData, albumIndex, categorySlug, categoryUrl);
-          totalProcessed += result.processed;
-          totalSuccessful += result.successful;
+          try {
+            if (attempts > 1) {
+              console.log(`🔄 Retry attempt ${attempts}/${maxAttempts} for "${albumData.title}"`);
+            }
+            
+            albumResult = await this.processAlbumImages(albumData, albumIndex, categorySlug, categoryUrl);
+            
+            if (albumResult.successful > 0) {
+              consecutiveFailures = 0;
+              totalProcessed += albumResult.processed;
+              totalSuccessful += albumResult.successful;
+              console.log(`✅ Album complete: ${albumResult.successful}/${albumResult.processed} images`);
+            } else if (albumResult.processed === 0) {
+              throw new Error('No images found or processed');
+            }
 
-          console.log(`✅ Album complete: ${result.successful}/${result.processed} images`);
-
-          // Add delay between albums
-          if (albumIndex < validAlbums.length - 1) {
-            const delay = this.getRandomDelay(CONFIG.scraping.delays.betweenCategories);
-            console.log(`⏳ Waiting ${Math.round(delay/1000)}s before next album...`);
-            await this.sleep(delay);
+          } catch (error) {
+            this.logger.error(`Attempt ${attempts} failed for album "${albumData.title}": ${error.message}`);
+            
+            if (attempts < maxAttempts) {
+              const retryDelay = Math.min(5000 * attempts, 15000); // Exponential backoff: 5s, 10s, 15s
+              console.log(`⏳ Waiting ${retryDelay/1000}s before retry...`);
+              await this.sleep(retryDelay);
+            } else {
+              consecutiveFailures++;
+              failedAlbums.push({
+                index: albumIndex,
+                title: albumData.title,
+                url: albumData.url,
+                error: error.message
+              });
+              
+              console.log(`❌ Failed to process album "${albumData.title}" after ${maxAttempts} attempts: ${error.message}`);
+              
+              // If we have too many consecutive failures, it might be a systemic issue
+              if (consecutiveFailures >= maxConsecutiveFailures) {
+                console.log(`\n⚠️  ${consecutiveFailures} consecutive failures detected. This might indicate a systemic issue.`);
+                console.log('🤔 Suggestions:');
+                console.log('   - Check your internet connection');
+                console.log('   - Verify the website is accessible');
+                console.log('   - Check if your IP has been rate-limited');
+                console.log('   - Wait a few minutes and try resuming');
+                
+                // Ask if user wants to continue or abort
+                console.log('\n📊 Current progress:');
+                console.log(`   Processed: ${albumIndex + 1}/${validAlbums.length} albums`);
+                console.log(`   Success rate: ${totalSuccessful > 0 ? Math.round((totalSuccessful / totalProcessed) * 100) : 0}%`);
+                console.log('\nContinuing with remaining albums...\n');
+                
+                // Add extra delay before continuing
+                await this.sleep(30000); // 30 second pause
+                consecutiveFailures = 0; // Reset counter
+              }
+            }
           }
+        }
 
-        } catch (error) {
-          console.log(`❌ Failed to process album "${albumData.title}": ${error.message}`);
-          this.logger.error(`Failed to process album "${albumData.title}": ${error.message}`);
+        // Progress update and delay between albums
+        if (albumIndex < validAlbums.length - 1) {
+          const delay = this.getRandomDelay(CONFIG.scraping.delays.betweenCategories);
+          console.log(`⏳ Waiting ${Math.round(delay/1000)}s before next album...`);
+          await this.sleep(delay);
+        }
+
+        // Periodic progress report
+        if ((albumIndex + 1) % 10 === 0) {
+          const processed = albumIndex + 1;
+          const remaining = validAlbums.length - processed;
+          const successRate = totalProcessed > 0 ? Math.round((totalSuccessful / totalProcessed) * 100) : 0;
+          
+          console.log(`\n📊 Progress checkpoint: ${processed}/${validAlbums.length} albums processed`);
+          console.log(`   Success rate: ${successRate}% (${totalSuccessful}/${totalProcessed} images)`);
+          console.log(`   Failed albums: ${failedAlbums.length}`);
+          console.log(`   Remaining: ${remaining} albums\n`);
+        }
+      }
+      
+      // Final report on failed albums
+      if (failedAlbums.length > 0) {
+        console.log(`\n⚠️  ${failedAlbums.length} albums failed to process:`);
+        failedAlbums.forEach((failed, idx) => {
+          console.log(`${idx + 1}. "${failed.title}" - ${failed.error}`);
+        });
+        console.log('\n💡 You can retry failed albums individually using:');
+        failedAlbums.slice(0, 3).forEach(failed => {
+          console.log(`   node src/scraper.js ${categorySlug} --album "${failed.url}"`);
+        });
+        if (failedAlbums.length > 3) {
+          console.log(`   ... and ${failedAlbums.length - 3} more`);
         }
       }
 

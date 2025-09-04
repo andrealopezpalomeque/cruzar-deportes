@@ -9,15 +9,6 @@
     "folderName": "ajax_short_player_version"
   },
   {
-    "url": "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010502006611",
-    "title": "浙公网安备 33010502006611 号",
-    "originalTitle": "浙公网安备 33010502006611 号",
-    "alt": "",
-    "selector": "a:has(img)",
-    "hasImage": true,
-    "folderName": "33010502006611"
-  },
-  {
     "url": "https://wavesoccer.x.yupoo.com/albums/170942453?uid=1&isSubCate=false&referrercate=334344",
     "title": "AJAX SHORTS AUTHENTIC",
     "originalTitle": "AJAX SHORTS AUTHENTIC",
@@ -250,24 +241,6 @@
     "selector": "a[href*=\"album\"]",
     "hasImage": true,
     "folderName": "psv_short"
-  },
-  {
-    "url": "https://wavesoccer.x.yupoo.com/albums/197081703?uid=1&isSubCate=false&referrercate=334344",
-    "title": "197081703",
-    "originalTitle": "PSV",
-    "alt": "",
-    "selector": "a[href*=\"album\"]",
-    "hasImage": true,
-    "folderName": "197081703"
-  },
-  {
-    "url": "https://wavesoccer.x.yupoo.com/albums/164829969?uid=1&isSubCate=false&referrercate=334344",
-    "title": "164829969",
-    "originalTitle": "PSV",
-    "alt": "",
-    "selector": "a[href*=\"album\"]",
-    "hasImage": true,
-    "folderName": "164829969"
   },
   {
     "url": "https://wavesoccer.x.yupoo.com/albums/176326128?uid=1&isSubCate=false&referrercate=334344",
