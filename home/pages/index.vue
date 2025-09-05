@@ -71,34 +71,39 @@
     <section class="py-20">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Comprar por Liga</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Comprar por Categoría</h2>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Explorá nuestra colección organizada por las mejores ligas del mundo
+            Explorá nuestra colección organizada por confederaciones de fútbol
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div 
-            v-for="(category, index) in categories" 
+            v-for="category in categories" 
             :key="category.id"
-            class="group cursor-pointer hover:shadow-lg transition-all duration-300 overflow-hidden bg-white rounded-lg border border-gray-200"
+            class="group cursor-pointer hover:shadow-md transition-all duration-300 bg-white rounded-lg shadow-sm border"
             @click="navigateToCategory(category.slug)"
           >
-            <div class="p-0">
-              <div 
-                :class="getCategoryGradient(index)"
-                class="aspect-[4/3] relative overflow-hidden"
-              >
-                <div class="absolute inset-0 bg-black/20"></div>
-                <div class="absolute bottom-4 left-4 text-white">
-                  <h3 class="text-xl font-bold mb-1">{{ category.name }}</h3>
-                  <p class="text-sm opacity-90">{{ category.description }}</p>
-                </div>
-                <div class="absolute top-4 right-4">
-                  <div class="bg-white/20 text-white border-white/30 border px-2 py-1 rounded-md text-xs">
-                    +{{ getTeamCount(index) }} equipos
-                  </div>
-                </div>
+            <div class="bg-gradient-to-br from-primary-500 to-primary-700 rounded-t-lg relative overflow-hidden aspect-[4/3]">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <img 
+                  src="/images/cruzar-logo-no-bg.png" 
+                  alt="Cruzar Deportes" 
+                  class="h-20 w-auto brightness-0 invert opacity-90"
+                />
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+                {{ category.name }}
+              </h3>
+              <p class="text-gray-600">{{ category.description }}</p>
+              
+              <div class="mt-4 flex items-center text-primary-600 group-hover:text-primary-700 transition-colors">
+                <span class="text-sm font-medium">Comprar ahora</span>
+                <Icon name="mdi:arrow-right" class="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
           </div>
@@ -178,25 +183,6 @@ function navigateToCategory(slug) {
   navigateTo(`/categories/${slug}`)
 }
 
-// Category gradient backgrounds
-const categoryGradients = [
-  'bg-gradient-to-br from-blue-500 to-blue-600',
-  'bg-gradient-to-br from-red-500 to-red-600', 
-  'bg-gradient-to-br from-green-500 to-green-600',
-  'bg-gradient-to-br from-yellow-500 to-orange-500',
-  'bg-gradient-to-br from-purple-500 to-pink-500',
-  'bg-gradient-to-br from-cyan-500 to-blue-500'
-]
-
-const teamCounts = [50, 40, 35, 30, 25, 60]
-
-function getCategoryGradient(index) {
-  return categoryGradients[index % categoryGradients.length]
-}
-
-function getTeamCount(index) {
-  return teamCounts[index % teamCounts.length]
-}
 
 onMounted(() => {
   productsStore.fetchCategories()
