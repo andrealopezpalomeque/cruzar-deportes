@@ -136,8 +136,8 @@ function previousImage() {
   }
 }
 
-function handleImageError(event: Event) {
-  const img = event.target as HTMLImageElement
+function handleImageError(event) {
+  const img = event.target
   img.src = '/images/cruzar-logo-1.png' // Fallback image
   imageLoading.value = false
 }
@@ -153,7 +153,7 @@ function scrollThumbnails(direction) {
 }
 
 // Keyboard navigation
-function handleKeydown(event: KeyboardEvent) {
+function handleKeydown(event) {
   switch (event.key) {
     case 'ArrowRight':
       event.preventDefault()
