@@ -152,7 +152,7 @@
             <div class="relative">
               <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Listo para vestir tu pasión?</h2>
               <p class="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-                Únete a miles de fanáticos que ya visten con orgullo los colores de sus equipos favoritos
+                Unite a miles de fanáticos que ya visten con orgullo los colores de sus equipos favoritos
               </p>
               <NuxtLink 
                 to="/products"
