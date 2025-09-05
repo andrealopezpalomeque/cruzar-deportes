@@ -45,7 +45,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const productsStore = useProductsStore()
 
 const categories = computed(() => productsStore.categories)

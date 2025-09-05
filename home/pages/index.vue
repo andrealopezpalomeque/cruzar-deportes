@@ -168,13 +168,13 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const productsStore = useProductsStore()
 
 const categories = computed(() => productsStore.categories)
 const featuredProducts = computed(() => productsStore.getFeaturedProducts)
 
-function navigateToCategory(slug: string) {
+function navigateToCategory(slug) {
   navigateTo(`/categories/${slug}`)
 }
 
@@ -190,11 +190,11 @@ const categoryGradients = [
 
 const teamCounts = [50, 40, 35, 30, 25, 60]
 
-function getCategoryGradient(index: number) {
+function getCategoryGradient(index) {
   return categoryGradients[index % categoryGradients.length]
 }
 
-function getTeamCount(index: number) {
+function getTeamCount(index) {
   return teamCounts[index % teamCounts.length]
 }
 

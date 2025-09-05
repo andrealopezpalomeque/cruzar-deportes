@@ -36,11 +36,11 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const route = useRoute()
 const productsStore = useProductsStore()
 
-const categorySlug = computed(() => route.params.slug as string)
+const categorySlug = computed(() => route.params.slug)
 
 const categoryProducts = computed(() => 
   productsStore.getProductsByCategory(categorySlug.value)

@@ -55,8 +55,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import type { Product } from '~/types'
+<script setup>
 
 const route = useRoute()
 const productsStore = useProductsStore()
@@ -66,7 +65,7 @@ const loading = ref(true)
 const productImages = ref<string[]>([])
 
 // Get product slug from route
-const productSlug = computed(() => route.params.slug as string)
+const productSlug = computed(() => route.params.slug)
 
 // Find the product by slug
 const product = computed(() => 
