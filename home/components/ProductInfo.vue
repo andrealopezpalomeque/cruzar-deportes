@@ -205,9 +205,9 @@ const cartStore = useCartStore()
 const productsStore = useProductsStore()
 
 // Reactive state
-const selectedSize = ref<string>('')
-const selectedColor = ref<string>('')
-const quantity = ref<number>(1)
+const selectedSize = ref('')
+const selectedColor = ref('')
+const quantity = ref(1)
 const isAddingToCart = ref(false)
 const showSuccessMessage = ref(false)
 

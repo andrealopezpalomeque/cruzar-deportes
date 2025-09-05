@@ -100,7 +100,7 @@ const props = defineProps(['images', 'productName'])
 // Reactive state
 const currentIndex = ref(0)
 const imageLoading = ref(false)
-const thumbnailContainer = ref<HTMLElement | null>(null)
+const thumbnailContainer = ref(null)
 const thumbnailScrollPosition = ref(0)
 
 // Computed properties
@@ -138,7 +138,9 @@ function previousImage() {
 
 function handleImageError(event) {
   const img = event.target
-  img.src = '/images/cruzar-logo-1.png' // Fallback image
+  if (img) {
+    img.src = '/images/cruzar-logo-1.png' // Fallback image
+  }
   imageLoading.value = false
 }
 
@@ -154,6 +156,8 @@ function scrollThumbnails(direction) {
 
 // Keyboard navigation
 function handleKeydown(event) {
+  if (!event) return
+  
   switch (event.key) {
     case 'ArrowRight':
       event.preventDefault()
@@ -175,9 +179,9 @@ onMounted(() => {
   
   // Auto-scroll thumbnails to center current image
   nextTick(() => {
-    if (thumbnailContainer.value && currentIndex.value > 3) {
+    if (thumbnailContainer.value && currentIndex.value > 3 && props.images?.length > currentIndex.value) {
       const thumbnail = thumbnailContainer.value.children[currentIndex.value]
-      if (thumbnail) {
+      if (thumbnail && thumbnail.scrollIntoView) {
         thumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
       }
     }
@@ -189,22 +193,25 @@ onUnmounted(() => {
 })
 
 // Watch for prop changes
-watch(() => props.images, () => {
-  currentIndex.value = 0
-  imageLoading.value = false
+watch(() => props.images, (newImages) => {
+  if (newImages && newImages.length > 0) {
+    currentIndex.value = 0
+    imageLoading.value = false
+  }
 }, { immediate: true })
 
 // Auto-scroll thumbnails when current image changes
 watch(currentIndex, (newIndex) => {
   nextTick(() => {
-    if (thumbnailContainer.value && newIndex >= 0) {
+    if (thumbnailContainer.value && newIndex >= 0 && props.images?.length > newIndex) {
       const thumbnail = thumbnailContainer.value.children[newIndex]
-      if (thumbnail) {
+      if (thumbnail && thumbnail.getBoundingClientRect) {
         // Check if thumbnail is visible, if not scroll to it
         const containerRect = thumbnailContainer.value.getBoundingClientRect()
         const thumbnailRect = thumbnail.getBoundingClientRect()
         
-        if (thumbnailRect.left < containerRect.left || thumbnailRect.right > containerRect.right) {
+        if (containerRect && thumbnailRect && 
+            (thumbnailRect.left < containerRect.left || thumbnailRect.right > containerRect.right)) {
           thumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
         }
       }
