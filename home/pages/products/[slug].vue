@@ -55,14 +55,16 @@
   </div>
 </template>
 
+
 <script setup>
+import { ref, computed, onMounted, watch } from 'vue'
 
 const route = useRoute()
 const productsStore = useProductsStore()
 
 // Reactive state
 const loading = ref(true)
-const productImages = ref<string[]>([])
+const productImages = ref([])
 
 // Get product slug from route
 const productSlug = computed(() => route.params.slug)
