@@ -94,13 +94,8 @@
   </div>
 </template>
 
-<script setup lang="ts">
-interface Props {
-  images: string[]
-  productName: string
-}
-
-const props = defineProps<Props>()
+<script setup>
+const props = defineProps(['images', 'productName'])
 
 // Reactive state
 const currentIndex = ref(0)
@@ -122,7 +117,7 @@ const maxThumbnailScroll = computed(() => {
 })
 
 // Methods
-function setCurrentImage(index: number) {
+function setCurrentImage(index) {
   if (index >= 0 && index < props.images.length) {
     imageLoading.value = true
     currentIndex.value = index
@@ -147,7 +142,7 @@ function handleImageError(event: Event) {
   imageLoading.value = false
 }
 
-function scrollThumbnails(direction: number) {
+function scrollThumbnails(direction) {
   if (!thumbnailContainer.value) return
   
   const scrollAmount = 200 // pixels to scroll
@@ -181,7 +176,7 @@ onMounted(() => {
   // Auto-scroll thumbnails to center current image
   nextTick(() => {
     if (thumbnailContainer.value && currentIndex.value > 3) {
-      const thumbnail = thumbnailContainer.value.children[currentIndex.value] as HTMLElement
+      const thumbnail = thumbnailContainer.value.children[currentIndex.value]
       if (thumbnail) {
         thumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
       }
@@ -203,7 +198,7 @@ watch(() => props.images, () => {
 watch(currentIndex, (newIndex) => {
   nextTick(() => {
     if (thumbnailContainer.value && newIndex >= 0) {
-      const thumbnail = thumbnailContainer.value.children[newIndex] as HTMLElement
+      const thumbnail = thumbnailContainer.value.children[newIndex]
       if (thumbnail) {
         // Check if thumbnail is visible, if not scroll to it
         const containerRect = thumbnailContainer.value.getBoundingClientRect()

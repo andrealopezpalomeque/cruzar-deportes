@@ -8,6 +8,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 // Layout for the main ecommerce site
 </script>

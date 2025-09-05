@@ -120,14 +120,8 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import type { Product } from '~/types'
-
-interface Props {
-  product: Product
-}
-
-const props = defineProps<Props>()
+<script setup>
+const props = defineProps(['product'])
 const cartStore = useCartStore()
 const productsStore = useProductsStore()
 

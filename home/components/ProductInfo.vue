@@ -198,14 +198,8 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import type { Product } from '~/types'
-
-interface Props {
-  product: Product
-}
-
-const props = defineProps<Props>()
+<script setup>
+const props = defineProps(['product'])
 
 const cartStore = useCartStore()
 const productsStore = useProductsStore()
@@ -236,7 +230,7 @@ const canAddToCart = computed(() => {
 })
 
 const validationMessages = computed(() => {
-  const messages: string[] = []
+  const messages = []
   
   if (!props.product.inStock) {
     messages.push('Este producto está agotado')

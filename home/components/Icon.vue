@@ -6,15 +6,10 @@
   />
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { Icon as IconifyIcon } from '@iconify/vue'
 
-interface Props {
-  name: string
-  class?: string
-}
-
-const props = defineProps<Props>()
+const props = defineProps(['name', 'class'])
 
 const customClass = computed(() => props.class || '')
 
