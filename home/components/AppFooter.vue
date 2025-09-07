@@ -14,17 +14,11 @@
           <p class="text-gray-300 mb-4">
             Porque cada hincha merece vestir los colores de su pasión. Camisetas deportivas del mundo entero.
           </p>
-          <div class="flex space-x-4">
-            <a href="#" class="text-gray-400 hover:text-white">
-              <Icon name="mdi:facebook" class="h-6 w-6" />
-            </a>
-            <a href="#" class="text-gray-400 hover:text-white">
-              <Icon name="mdi:twitter" class="h-6 w-6" />
-            </a>
+            <div class="flex">
             <a href="https://www.instagram.com/cruzardeportes/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white">
               <Icon name="mdi:instagram" class="h-6 w-6" />
             </a>
-          </div>
+            </div>
         </div>
 
         <!-- Quick Links -->
