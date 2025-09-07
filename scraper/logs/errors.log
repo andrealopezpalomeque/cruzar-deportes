@@ -1647,3 +1647,84 @@ Error: Downloaded file is not a valid image
 Error: Downloaded file is not a valid image
     at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
 2025-09-04 15:41:23 [ERROR]: Attempt 1 failed for album "BARI": No images found or processed
+2025-09-06 19:53:58 [ERROR]: Download failed: river_long_sleeve_authentic_img23
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 19:54:10 [ERROR]: Download failed: boca_long_sleeve_authentic_img10
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 19:54:21 [ERROR]: Download failed: atletico_independiente_img30
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 19:54:34 [ERROR]: Download failed: racing_player_version_img37
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 19:54:45 [ERROR]: Attempt 1 failed for album "RIVER PLATE AUTHENTIC": No images found or processed
+2025-09-06 19:55:00 [ERROR]: Download failed: argentina_juniors_img15
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 19:55:13 [ERROR]: Download failed: river_long_sleeve_img13
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 19:55:26 [ERROR]: Download failed: newells_old_boys_img27
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 19:55:39 [ERROR]: Download failed: atletico_huracan_img27
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 19:55:50 [ERROR]: Download failed: river_gk_kid_kit_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 19:56:00 [ERROR]: Download failed: rosario_central_img19
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 19:56:19 [ERROR]: Download failed: boca_gk_kid_kit_img6
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 19:56:31 [ERROR]: Download failed: atletico_tigre_img13
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 19:56:42 [ERROR]: Attempt 1 failed for album "BOCA AUTHENTIC": No images found or processed
+2025-09-06 19:57:20 [ERROR]: Download failed: river_gk_short_img9
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 19:57:35 [ERROR]: Attempt 1 failed for album "BOCA KID KITS": No images found or processed
+2025-09-06 19:57:52 [ERROR]: Download failed: boca_gk_short_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 20:01:15 [ERROR]: Download failed: river_kid_kit_img41
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 20:02:48 [ERROR]: Download failed: river_shorts_img19
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 20:04:47 [ERROR]: Download failed: san_lorenzo_img30
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 20:06:09 [ERROR]: Download failed: boca_shorts_img16
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 20:09:29 [ERROR]: Download failed: river_plate_img46
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 20:11:14 [ERROR]: Download failed: sarsfield_img32
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 20:12:18 [ERROR]: Download failed: la_plata_img18
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 20:13:21 [ERROR]: Download failed: river_gk_img13
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 20:13:36 [ERROR]: Download failed: boca_gk_img1
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 20:16:28 [ERROR]: Download failed: racing_img45
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 20:16:51 [ERROR]: Download failed: lunus_img4
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)
+2025-09-06 20:23:00 [ERROR]: Download failed: boca_img49
+Error: Downloaded file is not a valid image
+    at WriteStream.<anonymous> (file:///Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/scraper/src/imageProcessor.js:67:24)

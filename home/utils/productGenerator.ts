@@ -788,6 +788,225 @@ const teamData: Record<string, {
     category: 'serie_a_enilive',
     price: 70,
     description: 'Official Hellas Verona jersey from Serie A Enilive'
+  },
+
+  // LPF AFA Teams
+  'boca': {
+    name: 'Boca Juniors',
+    category: 'lpf_afa',
+    price: 85,
+    originalPrice: 95,
+    description: 'Official Boca Juniors jersey from Liga Profesional de Fútbol'
+  },
+  'boca_authentic': {
+    name: 'Boca Juniors Authentic',
+    category: 'lpf_afa',
+    price: 110,
+    originalPrice: 130,
+    description: 'Authentic Boca Juniors match jersey from Liga Profesional de Fútbol'
+  },
+  'boca_kid_kits': {
+    name: 'Boca Juniors Kids Kit',
+    category: 'lpf_afa',
+    price: 55,
+    description: 'Official Boca Juniors kids jersey from Liga Profesional de Fútbol'
+  },
+  'boca_shorts': {
+    name: 'Boca Juniors Shorts',
+    category: 'lpf_afa',
+    price: 35,
+    description: 'Official Boca Juniors shorts from Liga Profesional de Fútbol'
+  },
+  'river_plate': {
+    name: 'River Plate',
+    category: 'lpf_afa',
+    price: 85,
+    originalPrice: 95,
+    description: 'Official River Plate jersey from Liga Profesional de Fútbol'
+  },
+  'river_plate_authentic': {
+    name: 'River Plate Authentic',
+    category: 'lpf_afa',
+    price: 110,
+    originalPrice: 130,
+    description: 'Authentic River Plate match jersey from Liga Profesional de Fútbol'
+  },
+  'river_kid_kit': {
+    name: 'River Plate Kids Kit',
+    category: 'lpf_afa',
+    price: 55,
+    description: 'Official River Plate kids jersey from Liga Profesional de Fútbol'
+  },
+  'river_shorts': {
+    name: 'River Plate Shorts',
+    category: 'lpf_afa',
+    price: 35,
+    description: 'Official River Plate shorts from Liga Profesional de Fútbol'
+  },
+  'racing': {
+    name: 'Racing Club',
+    category: 'lpf_afa',
+    price: 80,
+    description: 'Official Racing Club jersey from Liga Profesional de Fútbol'
+  },
+  'racing_player_version': {
+    name: 'Racing Club Player Version',
+    category: 'lpf_afa',
+    price: 95,
+    originalPrice: 110,
+    description: 'Racing Club player version jersey from Liga Profesional de Fútbol'
+  },
+  'atletico_independiente': {
+    name: 'Independiente',
+    category: 'lpf_afa',
+    price: 75,
+    description: 'Official Independiente jersey from Liga Profesional de Fútbol'
+  },
+  'san_lorenzo': {
+    name: 'San Lorenzo',
+    category: 'lpf_afa',
+    price: 75,
+    description: 'Official San Lorenzo jersey from Liga Profesional de Fútbol'
+  },
+  'newells_old_boys': {
+    name: 'Newell\'s Old Boys',
+    category: 'lpf_afa',
+    price: 70,
+    description: 'Official Newell\'s Old Boys jersey from Liga Profesional de Fútbol'
+  },
+  'rosario_central': {
+    name: 'Rosario Central',
+    category: 'lpf_afa',
+    price: 70,
+    description: 'Official Rosario Central jersey from Liga Profesional de Fútbol'
+  },
+  'argentina_juniors': {
+    name: 'Argentinos Juniors',
+    category: 'lpf_afa',
+    price: 65,
+    description: 'Official Argentinos Juniors jersey from Liga Profesional de Fútbol'
+  },
+  'atletico_huracan': {
+    name: 'Huracán',
+    category: 'lpf_afa',
+    price: 65,
+    description: 'Official Huracán jersey from Liga Profesional de Fútbol'
+  },
+  'la_plata': {
+    name: 'Estudiantes de La Plata',
+    category: 'lpf_afa',
+    price: 70,
+    description: 'Official Estudiantes de La Plata jersey from Liga Profesional de Fútbol'
+  },
+  'atletico_tigre': {
+    name: 'Atlético Tigre',
+    category: 'lpf_afa',
+    price: 65,
+    description: 'Official Atlético Tigre jersey from Liga Profesional de Fútbol'
+  },
+  'atletico_tucuman': {
+    name: 'Atlético Tucumán',
+    category: 'lpf_afa',
+    price: 65,
+    description: 'Official Atlético Tucumán jersey from Liga Profesional de Fútbol'
+  },
+  'barracas_central': {
+    name: 'Barracas Central',
+    category: 'lpf_afa',
+    price: 60,
+    description: 'Official Barracas Central jersey from Liga Profesional de Fútbol'
+  },
+  'boca_gk': {
+    name: 'Boca Juniors Goalkeeper',
+    category: 'lpf_afa',
+    price: 75,
+    description: 'Official Boca Juniors goalkeeper jersey from Liga Profesional de Fútbol'
+  },
+  'boca_gk_kid_kit': {
+    name: 'Boca Juniors GK Kids Kit',
+    category: 'lpf_afa',
+    price: 45,
+    description: 'Official Boca Juniors goalkeeper kids kit from Liga Profesional de Fútbol'
+  },
+  'boca_gk_short': {
+    name: 'Boca Juniors GK Shorts',
+    category: 'lpf_afa',
+    price: 30,
+    description: 'Official Boca Juniors goalkeeper shorts from Liga Profesional de Fútbol'
+  },
+  'boca_long_sleeve_authentic': {
+    name: 'Boca Juniors Long Sleeve Authentic',
+    category: 'lpf_afa',
+    price: 115,
+    originalPrice: 135,
+    description: 'Authentic Boca Juniors long sleeve jersey from Liga Profesional de Fútbol'
+  },
+  'lunus': {
+    name: 'Lanús',
+    category: 'lpf_afa',
+    price: 65,
+    description: 'Official Lanús jersey from Liga Profesional de Fútbol'
+  },
+  'racing_kid_kit': {
+    name: 'Racing Club Kids Kit',
+    category: 'lpf_afa',
+    price: 50,
+    description: 'Official Racing Club kids kit from Liga Profesional de Fútbol'
+  },
+  'river_gk': {
+    name: 'River Plate Goalkeeper',
+    category: 'lpf_afa',
+    price: 75,
+    description: 'Official River Plate goalkeeper jersey from Liga Profesional de Fútbol'
+  },
+  'river_gk_kid_kit': {
+    name: 'River Plate GK Kids Kit',
+    category: 'lpf_afa',
+    price: 45,
+    description: 'Official River Plate goalkeeper kids kit from Liga Profesional de Fútbol'
+  },
+  'river_gk_short': {
+    name: 'River Plate GK Shorts',
+    category: 'lpf_afa',
+    price: 30,
+    description: 'Official River Plate goalkeeper shorts from Liga Profesional de Fútbol'
+  },
+  'river_long_sleeve': {
+    name: 'River Plate Long Sleeve',
+    category: 'lpf_afa',
+    price: 90,
+    description: 'Official River Plate long sleeve jersey from Liga Profesional de Fútbol'
+  },
+  'river_long_sleeve_authentic': {
+    name: 'River Plate Long Sleeve Authentic',
+    category: 'lpf_afa',
+    price: 115,
+    originalPrice: 135,
+    description: 'Authentic River Plate long sleeve jersey from Liga Profesional de Fútbol'
+  },
+  'san_diego_kid_kit': {
+    name: 'San Diego Kids Kit',
+    category: 'lpf_afa',
+    price: 45,
+    description: 'Official San Diego kids kit from Liga Profesional de Fútbol'
+  },
+  'san_diego_short': {
+    name: 'San Diego Shorts',
+    category: 'lpf_afa',
+    price: 30,
+    description: 'Official San Diego shorts from Liga Profesional de Fútbol'
+  },
+  'sarsfield': {
+    name: 'Vélez Sarsfield',
+    category: 'lpf_afa',
+    price: 70,
+    description: 'Official Vélez Sarsfield jersey from Liga Profesional de Fútbol'
+  },
+  'union_santa_fe': {
+    name: 'Unión de Santa Fe',
+    category: 'lpf_afa',
+    price: 65,
+    description: 'Official Unión de Santa Fe jersey from Liga Profesional de Fútbol'
   }
 }
 
@@ -848,6 +1067,12 @@ export function generateCategories(): Category[] {
       name: 'Serie A Enilive',
       slug: 'serie_a_enilive',
       description: 'Camisetas y mercadería de equipos de la Serie A Enilive italiana'
+    },
+    {
+      id: 'lpf_afa',
+      name: 'Liga Profesional Argentina',
+      slug: 'lpf_afa',
+      description: 'Camisetas y mercadería de equipos de la Liga Profesional de Fútbol Argentina'
     }
   ]
 }
