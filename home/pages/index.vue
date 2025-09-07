@@ -18,6 +18,22 @@
             diseños auténticos.
           </p>
 
+          <!-- Category Pills -->
+          <div class="mb-8">
+            <div class="flex items-center justify-center">
+              <div class="flex flex-wrap gap-2 sm:gap-3 justify-center max-w-3xl">
+                <NuxtLink
+                  v-for="category in categories"
+                  :key="category.id"
+                  :to="`/categories/${category.slug}`"
+                  class="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm border border-primary-200 text-primary-700 text-sm font-medium rounded-full hover:bg-primary-50 hover:border-primary-300 transition-all duration-200 shadow-sm hover:shadow-md"
+                >
+                  {{ category.name }}
+                </NuxtLink>
+              </div>
+            </div>
+          </div>
+
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <NuxtLink 
               to="/products" 
@@ -67,49 +83,6 @@
       </div>
     </section>
 
-    <!-- Categories Section -->
-    <section class="py-20">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Comprar por Categoría</h2>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Explorá nuestra colección organizada por confederaciones de fútbol
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div 
-            v-for="category in categories" 
-            :key="category.id"
-            class="group cursor-pointer hover:shadow-md transition-all duration-300 bg-white rounded-lg shadow-sm border"
-            @click="navigateToCategory(category.slug)"
-          >
-            <div class="bg-gradient-to-br from-primary-500 to-primary-700 rounded-t-lg relative overflow-hidden aspect-[4/3]">
-              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-              <div class="absolute inset-0 flex items-center justify-center">
-                <img 
-                  src="/images/cruzar-logo-no-bg.png" 
-                  alt="Cruzar Deportes" 
-                  class="h-20 w-auto brightness-0 invert opacity-90"
-                />
-              </div>
-            </div>
-            
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
-                {{ category.name }}
-              </h3>
-              <p class="text-gray-600">{{ category.description }}</p>
-              
-              <div class="mt-4 flex items-center text-primary-600 group-hover:text-primary-700 transition-colors">
-                <span class="text-sm font-medium">Comprar ahora</span>
-                <Icon name="mdi:arrow-right" class="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Featured Products -->
     <section class="py-20 bg-gray-50">
