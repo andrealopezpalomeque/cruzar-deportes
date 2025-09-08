@@ -10,9 +10,32 @@ export const useProductsStore = defineStore('products', () => {
     products.value.filter(product => product.category === categorySlug)
   )
 
-  const getFeaturedProducts = computed(() =>
-    products.value.filter(product => product.featured)
-  )
+  const getFeaturedProducts = computed(() => {
+    // Filter and prioritize products
+    const availableProducts = products.value
+      .filter(product => product.inStock) // Only show in-stock products
+    
+    // Sort by priority: discounted items first, then featured items
+    const sortedProducts = availableProducts.sort((a, b) => {
+      // First priority: products with originalPrice (discounted)
+      const aHasDiscount = !!a.originalPrice
+      const bHasDiscount = !!b.originalPrice
+      if (aHasDiscount && !bHasDiscount) return -1
+      if (!aHasDiscount && bHasDiscount) return 1
+      
+      // Second priority: featured products
+      const aIsFeatured = !!a.featured
+      const bIsFeatured = !!b.featured
+      if (aIsFeatured && !bIsFeatured) return -1
+      if (!aIsFeatured && bIsFeatured) return 1
+      
+      // Third priority: by price (higher price products first for quality perception)
+      return b.price - a.price
+    })
+    
+    // Limit to maximum 8 products
+    return sortedProducts.slice(0, 8)
+  })
 
   const getProductBySlug = computed(() => (slug: string) =>
     products.value.find(product => product.slug === slug)
