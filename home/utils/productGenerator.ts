@@ -658,6 +658,764 @@ const teamData: Record<string, {
     category: 'lpf_afa',
     price: 65,
     description: 'Official Unión de Santa Fe jersey from Liga Profesional de Fútbol'
+  },
+
+  // National Retro Teams
+  'belgium_00': {
+    name: 'Belgium Retro 2000',
+    category: 'national_retro',
+    price: 95,
+    originalPrice: 110,
+    description: 'Vintage Belgium national team jersey from 2000'
+  },
+  'bulgaria_1994': {
+    name: 'Bulgaria Retro 1994',
+    category: 'national_retro',
+    price: 90,
+    originalPrice: 105,
+    description: 'Classic Bulgaria national team jersey from 1994 World Cup'
+  },
+  'china_01': {
+    name: 'China Retro 2001',
+    category: 'national_retro',
+    price: 85,
+    description: 'Vintage China national team jersey from 2001'
+  },
+  'china_01_long_sleeve': {
+    name: 'China Retro 2001 Long Sleeve',
+    category: 'national_retro',
+    price: 95,
+    description: 'Vintage China national team long sleeve jersey from 2001'
+  },
+  'china_02_long_sleeve': {
+    name: 'China Retro 2002 Long Sleeve',
+    category: 'national_retro',
+    price: 95,
+    description: 'Vintage China national team long sleeve jersey from 2002 World Cup'
+  },
+  'china_1998': {
+    name: 'China Retro 1998',
+    category: 'national_retro',
+    price: 85,
+    description: 'Classic China national team jersey from 1998'
+  },
+  'china_2002': {
+    name: 'China Retro 2002',
+    category: 'national_retro',
+    price: 90,
+    originalPrice: 105,
+    description: 'Historic China national team jersey from 2002 World Cup'
+  },
+  'china_2002_short': {
+    name: 'China Retro 2002 Shorts',
+    category: 'national_retro',
+    price: 40,
+    description: 'China national team shorts from 2002 World Cup'
+  },
+  'czech_1996': {
+    name: 'Czech Republic Retro 1996',
+    category: 'national_retro',
+    price: 90,
+    originalPrice: 105,
+    description: 'Classic Czech Republic national team jersey from Euro 1996'
+  },
+  'denmark_1986': {
+    name: 'Denmark Retro 1986',
+    category: 'national_retro',
+    price: 95,
+    originalPrice: 110,
+    description: 'Vintage Denmark national team jersey from 1986 World Cup'
+  },
+  'denmark_1992': {
+    name: 'Denmark Retro 1992',
+    category: 'national_retro',
+    price: 100,
+    originalPrice: 120,
+    description: 'Legendary Denmark Euro 1992 Champions jersey'
+  },
+  'denmark_1998': {
+    name: 'Denmark Retro 1998',
+    category: 'national_retro',
+    price: 90,
+    description: 'Classic Denmark national team jersey from 1998 World Cup'
+  },
+  'denmark_88': {
+    name: 'Denmark Retro 1988',
+    category: 'national_retro',
+    price: 95,
+    description: 'Vintage Denmark national team jersey from Euro 1988'
+  },
+  'england_02_kid_kit': {
+    name: 'England Retro 2002 Kids Kit',
+    category: 'national_retro',
+    price: 60,
+    description: 'England national team kids kit from 2002 World Cup'
+  },
+  'england_02_long_sleeve': {
+    name: 'England Retro 2002 Long Sleeve',
+    category: 'national_retro',
+    price: 105,
+    description: 'England national team long sleeve jersey from 2002 World Cup'
+  },
+  'england_06_long_sleeve': {
+    name: 'England Retro 2006 Long Sleeve',
+    category: 'national_retro',
+    price: 105,
+    description: 'England national team long sleeve jersey from 2006 World Cup'
+  },
+  'england_06_shorts': {
+    name: 'England Retro 2006 Shorts',
+    category: 'national_retro',
+    price: 45,
+    description: 'England national team shorts from 2006 World Cup'
+  },
+  'england_1966': {
+    name: 'England Retro 1966',
+    category: 'national_retro',
+    price: 120,
+    originalPrice: 150,
+    description: 'Iconic England World Cup Winners 1966 jersey'
+  },
+  'england_1980': {
+    name: 'England Retro 1980',
+    category: 'national_retro',
+    price: 95,
+    description: 'Vintage England national team jersey from 1980'
+  },
+  'england_1982': {
+    name: 'England Retro 1982',
+    category: 'national_retro',
+    price: 95,
+    description: 'Classic England national team jersey from 1982 World Cup'
+  },
+  'england_1989': {
+    name: 'England Retro 1989',
+    category: 'national_retro',
+    price: 90,
+    description: 'Vintage England national team jersey from 1989'
+  },
+  'england_1990': {
+    name: 'England Retro 1990',
+    category: 'national_retro',
+    price: 100,
+    originalPrice: 120,
+    description: 'Classic England national team jersey from 1990 World Cup'
+  },
+  'england_1992': {
+    name: 'England Retro 1992',
+    category: 'national_retro',
+    price: 90,
+    description: 'England national team jersey from Euro 1992'
+  },
+  'england_1994': {
+    name: 'England Retro 1994',
+    category: 'national_retro',
+    price: 90,
+    description: 'Classic England national team jersey from 1994'
+  },
+  'england_1996': {
+    name: 'England Retro 1996',
+    category: 'national_retro',
+    price: 100,
+    originalPrice: 120,
+    description: 'Legendary England Euro 1996 home tournament jersey'
+  },
+  'england_1998': {
+    name: 'England Retro 1998',
+    category: 'national_retro',
+    price: 95,
+    originalPrice: 110,
+    description: 'Classic England national team jersey from 1998 World Cup'
+  },
+  'england_1998_long_sleeve': {
+    name: 'England Retro 1998 Long Sleeve',
+    category: 'national_retro',
+    price: 105,
+    description: 'England national team long sleeve jersey from 1998 World Cup'
+  },
+  'england_1998_shorts': {
+    name: 'England Retro 1998 Shorts',
+    category: 'national_retro',
+    price: 45,
+    description: 'England national team shorts from 1998 World Cup'
+  },
+  'england_2000': {
+    name: 'England Retro 2000',
+    category: 'national_retro',
+    price: 95,
+    description: 'England national team jersey from Euro 2000'
+  },
+  'england_2002': {
+    name: 'England Retro 2002',
+    category: 'national_retro',
+    price: 95,
+    description: 'England national team jersey from 2002 World Cup'
+  },
+  'england_2004': {
+    name: 'England Retro 2004',
+    category: 'national_retro',
+    price: 90,
+    description: 'England national team jersey from Euro 2004'
+  },
+  'england_2006': {
+    name: 'England Retro 2006',
+    category: 'national_retro',
+    price: 95,
+    description: 'England national team jersey from 2006 World Cup'
+  },
+  'england_2010': {
+    name: 'England Retro 2010',
+    category: 'national_retro',
+    price: 90,
+    description: 'England national team jersey from 2010 World Cup'
+  },
+  'england_2012': {
+    name: 'England Retro 2012',
+    category: 'national_retro',
+    price: 85,
+    description: 'England national team jersey from Euro 2012'
+  },
+  'england_2013': {
+    name: 'England Retro 2013',
+    category: 'national_retro',
+    price: 85,
+    description: 'England national team jersey from 2013'
+  },
+  'england_2018': {
+    name: 'England Retro 2018',
+    category: 'national_retro',
+    price: 90,
+    originalPrice: 105,
+    description: 'England national team jersey from 2018 World Cup'
+  },
+  'england_82_kid_kit': {
+    name: 'England Retro 1982 Kids Kit',
+    category: 'national_retro',
+    price: 55,
+    description: 'England national team kids kit from 1982 World Cup'
+  },
+  'england_86': {
+    name: 'England Retro 1986',
+    category: 'national_retro',
+    price: 95,
+    description: 'England national team jersey from 1986 World Cup'
+  },
+  'england_90s_kid_kit': {
+    name: 'England Retro 1990s Kids Kit',
+    category: 'national_retro',
+    price: 60,
+    description: 'England national team kids kit from the 1990s'
+  },
+  'england_92': {
+    name: 'England Retro 1992',
+    category: 'national_retro',
+    price: 90,
+    description: 'England national team jersey from Euro 1992'
+  },
+  'england_96_gk_long_sleeve': {
+    name: 'England 1996 GK Long Sleeve',
+    category: 'national_retro',
+    price: 100,
+    description: 'England goalkeeper long sleeve jersey from Euro 1996'
+  },
+  'england_96_kid_kit': {
+    name: 'England Retro 1996 Kids Kit',
+    category: 'national_retro',
+    price: 65,
+    description: 'England national team kids kit from Euro 1996'
+  },
+  'england_96_long_sleeve': {
+    name: 'England Retro 1996 Long Sleeve',
+    category: 'national_retro',
+    price: 110,
+    originalPrice: 130,
+    description: 'England national team long sleeve jersey from Euro 1996'
+  },
+  'england_98_kid_kit': {
+    name: 'England Retro 1998 Kids Kit',
+    category: 'national_retro',
+    price: 60,
+    description: 'England national team kids kit from 1998 World Cup'
+  },
+  'finland_1982': {
+    name: 'Finland Retro 1982',
+    category: 'national_retro',
+    price: 85,
+    description: 'Vintage Finland national team jersey from 1982'
+  },
+  'greece_04': {
+    name: 'Greece Retro 2004',
+    category: 'national_retro',
+    price: 100,
+    originalPrice: 120,
+    description: 'Legendary Greece Euro 2004 Champions jersey'
+  },
+  'iceland_16_17': {
+    name: 'Iceland Retro 2016-17',
+    category: 'national_retro',
+    price: 85,
+    description: 'Iceland national team jersey from Euro 2016'
+  },
+  'italy_1982': {
+    name: 'Italy Retro 1982',
+    category: 'national_retro',
+    price: 110,
+    originalPrice: 130,
+    description: 'Legendary Italy 1982 World Cup Winners jersey'
+  },
+  'italy_1986': {
+    name: 'Italy Retro 1986',
+    category: 'national_retro',
+    price: 100,
+    description: 'Classic Italy national team jersey from 1986 World Cup'
+  },
+  'italy_1990': {
+    name: 'Italy Retro 1990',
+    category: 'national_retro',
+    price: 105,
+    originalPrice: 125,
+    description: 'Historic Italy national team jersey from 1990 World Cup'
+  },
+  'italy_1994': {
+    name: 'Italy Retro 1994',
+    category: 'national_retro',
+    price: 100,
+    originalPrice: 115,
+    description: 'Classic Italy national team jersey from 1994 World Cup'
+  },
+  'italy_70': {
+    name: 'Italy Retro 1970',
+    category: 'national_retro',
+    price: 115,
+    originalPrice: 140,
+    description: 'Vintage Italy national team jersey from 1970 World Cup'
+  },
+  'italy_82_long_sleeve': {
+    name: 'Italy Retro 1982 Long Sleeve',
+    category: 'national_retro',
+    price: 120,
+    originalPrice: 140,
+    description: 'Italy 1982 World Cup Winners long sleeve jersey'
+  },
+  'italy_94_kid_kit': {
+    name: 'Italy Retro 1994 Kids Kit',
+    category: 'national_retro',
+    price: 65,
+    description: 'Italy national team kids kit from 1994 World Cup'
+  },
+  'italy_94_long_sleeve': {
+    name: 'Italy Retro 1994 Long Sleeve',
+    category: 'national_retro',
+    price: 110,
+    description: 'Italy national team long sleeve jersey from 1994 World Cup'
+  },
+  'italy_94_prematch': {
+    name: 'Italy Retro 1994 Pre-Match',
+    category: 'national_retro',
+    price: 95,
+    description: 'Italy national team pre-match jersey from 1994 World Cup'
+  },
+  'italy_95': {
+    name: 'Italy Retro 1995',
+    category: 'national_retro',
+    price: 95,
+    description: 'Italy national team jersey from 1995'
+  },
+  'italy_96': {
+    name: 'Italy Retro 1996',
+    category: 'national_retro',
+    price: 100,
+    description: 'Italy national team jersey from Euro 1996'
+  },
+  'japan_00': {
+    name: 'Japan Retro 2000',
+    category: 'national_retro',
+    price: 90,
+    description: 'Japan national team jersey from 2000'
+  },
+  'japan_00_long_sleeve': {
+    name: 'Japan Retro 2000 Long Sleeve',
+    category: 'national_retro',
+    price: 100,
+    description: 'Japan national team long sleeve jersey from 2000'
+  },
+  'japan_06_long_sleeve': {
+    name: 'Japan Retro 2006 Long Sleeve',
+    category: 'national_retro',
+    price: 100,
+    description: 'Japan national team long sleeve jersey from 2006 World Cup'
+  },
+  'japan_10': {
+    name: 'Japan Retro 2010',
+    category: 'national_retro',
+    price: 90,
+    description: 'Japan national team jersey from 2010 World Cup'
+  },
+  'japan_14': {
+    name: 'Japan Retro 2014',
+    category: 'national_retro',
+    price: 85,
+    description: 'Japan national team jersey from 2014 World Cup'
+  },
+  'japan_16_17': {
+    name: 'Japan Retro 2016-17',
+    category: 'national_retro',
+    price: 85,
+    description: 'Japan national team jersey from 2016-17'
+  },
+  'japan_16_17_kid_kit': {
+    name: 'Japan Retro 2016-17 Kids Kit',
+    category: 'national_retro',
+    price: 55,
+    description: 'Japan national team kids kit from 2016-17'
+  },
+  'japan_18_kid_kit': {
+    name: 'Japan Retro 2018 Kids Kit',
+    category: 'national_retro',
+    price: 55,
+    description: 'Japan national team kids kit from 2018 World Cup'
+  },
+  'japan_1998': {
+    name: 'Japan Retro 1998',
+    category: 'national_retro',
+    price: 95,
+    originalPrice: 110,
+    description: 'Historic Japan national team jersey from 1998 World Cup'
+  },
+  'japan_20': {
+    name: 'Japan Retro 2020',
+    category: 'national_retro',
+    price: 80,
+    description: 'Japan national team jersey from 2020'
+  },
+  'japan_2006': {
+    name: 'Japan Retro 2006',
+    category: 'national_retro',
+    price: 90,
+    description: 'Japan national team jersey from 2006 World Cup'
+  },
+  'japan_94': {
+    name: 'Japan Retro 1994',
+    category: 'national_retro',
+    price: 95,
+    description: 'Japan national team jersey from 1994'
+  },
+  'japan_94_long_sleeve': {
+    name: 'Japan Retro 1994 Long Sleeve',
+    category: 'national_retro',
+    price: 105,
+    description: 'Japan national team long sleeve jersey from 1994'
+  },
+  'japan_96': {
+    name: 'Japan Retro 1996',
+    category: 'national_retro',
+    price: 90,
+    description: 'Japan national team jersey from 1996'
+  },
+  'japan_98_gk_long_sleeve': {
+    name: 'Japan 1998 GK Long Sleeve',
+    category: 'national_retro',
+    price: 100,
+    description: 'Japan goalkeeper long sleeve jersey from 1998 World Cup'
+  },
+  'japan_98_kid_kit': {
+    name: 'Japan Retro 1998 Kids Kit',
+    category: 'national_retro',
+    price: 60,
+    description: 'Japan national team kids kit from 1998 World Cup'
+  },
+  'japan_98_long_sleeve': {
+    name: 'Japan Retro 1998 Long Sleeve',
+    category: 'national_retro',
+    price: 105,
+    description: 'Japan national team long sleeve jersey from 1998 World Cup'
+  },
+  'japan_99': {
+    name: 'Japan Retro 1999',
+    category: 'national_retro',
+    price: 90,
+    description: 'Japan national team jersey from 1999'
+  },
+  'japan_captain_tsubasa': {
+    name: 'Japan Captain Tsubasa Edition',
+    category: 'national_retro',
+    price: 125,
+    originalPrice: 150,
+    description: 'Special Japan Captain Tsubasa collaboration jersey'
+  },
+  'korea_20': {
+    name: 'South Korea Retro 2020',
+    category: 'national_retro',
+    price: 80,
+    description: 'South Korea national team jersey from 2020'
+  },
+  'korea_2002': {
+    name: 'South Korea Retro 2002',
+    category: 'national_retro',
+    price: 100,
+    originalPrice: 120,
+    description: 'Historic South Korea national team jersey from 2002 World Cup'
+  },
+  'netherland_04': {
+    name: 'Netherlands Retro 2004',
+    category: 'national_retro',
+    price: 95,
+    description: 'Netherlands national team jersey from Euro 2004'
+  },
+  'netherland_04_long_sleeve': {
+    name: 'Netherlands Retro 2004 Long Sleeve',
+    category: 'national_retro',
+    price: 105,
+    description: 'Netherlands national team long sleeve jersey from Euro 2004'
+  },
+  'netherland_08': {
+    name: 'Netherlands Retro 2008',
+    category: 'national_retro',
+    price: 90,
+    description: 'Netherlands national team jersey from Euro 2008'
+  },
+  'netherland_1988_training': {
+    name: 'Netherlands 1988 Training',
+    category: 'national_retro',
+    price: 85,
+    description: 'Netherlands training jersey from Euro 1988'
+  },
+  'netherland_2002': {
+    name: 'Netherlands Retro 2002',
+    category: 'national_retro',
+    price: 95,
+    description: 'Netherlands national team jersey from 2002 World Cup'
+  },
+  'netherland_2010': {
+    name: 'Netherlands Retro 2010',
+    category: 'national_retro',
+    price: 100,
+    originalPrice: 115,
+    description: 'Netherlands national team jersey from 2010 World Cup'
+  },
+  'netherland_88_centennial_edition': {
+    name: 'Netherlands 1988 Centennial Edition',
+    category: 'national_retro',
+    price: 115,
+    originalPrice: 135,
+    description: 'Netherlands Euro 1988 Champions centennial edition jersey'
+  },
+  'netherland_98_long_sleeve': {
+    name: 'Netherlands Retro 1998 Long Sleeve',
+    category: 'national_retro',
+    price: 105,
+    description: 'Netherlands national team long sleeve jersey from 1998 World Cup'
+  },
+  'netherlands_1988': {
+    name: 'Netherlands Retro 1988',
+    category: 'national_retro',
+    price: 110,
+    originalPrice: 130,
+    description: 'Legendary Netherlands Euro 1988 Champions jersey'
+  },
+  'netherlands_1988_kid_kit': {
+    name: 'Netherlands Retro 1988 Kids Kit',
+    category: 'national_retro',
+    price: 65,
+    description: 'Netherlands national team kids kit from Euro 1988'
+  },
+  'netherlands_1988_long_sleeve': {
+    name: 'Netherlands Retro 1988 Long Sleeve',
+    category: 'national_retro',
+    price: 120,
+    originalPrice: 140,
+    description: 'Netherlands Euro 1988 Champions long sleeve jersey'
+  },
+  'netherlands_1991': {
+    name: 'Netherlands Retro 1991',
+    category: 'national_retro',
+    price: 100,
+    description: 'Netherlands national team jersey from 1991'
+  },
+  'netherlands_1995': {
+    name: 'Netherlands Retro 1995',
+    category: 'national_retro',
+    price: 95,
+    description: 'Netherlands national team jersey from 1995'
+  },
+  'netherlands_1996': {
+    name: 'Netherlands Retro 1996',
+    category: 'national_retro',
+    price: 100,
+    description: 'Netherlands national team jersey from Euro 1996'
+  },
+  'netherlands_1998': {
+    name: 'Netherlands Retro 1998',
+    category: 'national_retro',
+    price: 100,
+    originalPrice: 115,
+    description: 'Classic Netherlands national team jersey from 1998 World Cup'
+  },
+  'netherlands_2014': {
+    name: 'Netherlands Retro 2014',
+    category: 'national_retro',
+    price: 85,
+    description: 'Netherlands national team jersey from 2014 World Cup'
+  },
+  'netherlands_84': {
+    name: 'Netherlands Retro 1984',
+    category: 'national_retro',
+    price: 100,
+    description: 'Vintage Netherlands national team jersey from Euro 1984'
+  },
+  'north_ireland_1992': {
+    name: 'Northern Ireland Retro 1992',
+    category: 'national_retro',
+    price: 85,
+    description: 'Northern Ireland national team jersey from 1992'
+  },
+  'north_ireland_79': {
+    name: 'Northern Ireland Retro 1979',
+    category: 'national_retro',
+    price: 90,
+    description: 'Vintage Northern Ireland national team jersey from 1979'
+  },
+  'north_ireland_88': {
+    name: 'Northern Ireland Retro 1988',
+    category: 'national_retro',
+    price: 85,
+    description: 'Northern Ireland national team jersey from Euro 1988'
+  },
+  'north_ireland_90_92': {
+    name: 'Northern Ireland Retro 1990-92',
+    category: 'national_retro',
+    price: 85,
+    description: 'Northern Ireland national team jersey from 1990-92'
+  },
+  'north_ireland_90_93_away': {
+    name: 'Northern Ireland Retro 1990-93 Away',
+    category: 'national_retro',
+    price: 85,
+    description: 'Northern Ireland away jersey from 1990-93'
+  },
+  'north_ireland_92_94': {
+    name: 'Northern Ireland Retro 1992-94',
+    category: 'national_retro',
+    price: 85,
+    description: 'Northern Ireland national team jersey from 1992-94'
+  },
+  'norway_1984': {
+    name: 'Norway Retro 1984',
+    category: 'national_retro',
+    price: 85,
+    description: 'Vintage Norway national team jersey from 1984'
+  },
+  'norway_98_99': {
+    name: 'Norway Retro 1998-99',
+    category: 'national_retro',
+    price: 90,
+    description: 'Norway national team jersey from 1998 World Cup'
+  },
+  'poland_12': {
+    name: 'Poland Retro 2012',
+    category: 'national_retro',
+    price: 80,
+    description: 'Poland national team jersey from Euro 2012'
+  },
+  'poland_1982': {
+    name: 'Poland Retro 1982',
+    category: 'national_retro',
+    price: 95,
+    originalPrice: 110,
+    description: 'Classic Poland national team jersey from 1982 World Cup'
+  },
+  'romania': {
+    name: 'Romania Retro',
+    category: 'national_retro',
+    price: 90,
+    description: 'Vintage Romania national team jersey'
+  },
+  'romania_1994': {
+    name: 'Romania Retro 1994',
+    category: 'national_retro',
+    price: 95,
+    originalPrice: 110,
+    description: 'Classic Romania national team jersey from 1994 World Cup'
+  },
+  'serbia_2010': {
+    name: 'Serbia Retro 2010',
+    category: 'national_retro',
+    price: 85,
+    description: 'Serbia national team jersey from 2010 World Cup'
+  },
+  'swiss_1994': {
+    name: 'Switzerland Retro 1994',
+    category: 'national_retro',
+    price: 85,
+    description: 'Switzerland national team jersey from 1994 World Cup'
+  },
+  'swiss_1995': {
+    name: 'Switzerland Retro 1995',
+    category: 'national_retro',
+    price: 85,
+    description: 'Switzerland national team jersey from 1995'
+  },
+  'turkey_08': {
+    name: 'Turkey Retro 2008',
+    category: 'national_retro',
+    price: 85,
+    description: 'Turkey national team jersey from Euro 2008'
+  },
+  'turkey_1996': {
+    name: 'Turkey Retro 1996',
+    category: 'national_retro',
+    price: 85,
+    description: 'Turkey national team jersey from Euro 1996'
+  },
+  'ukraine_98': {
+    name: 'Ukraine Retro 1998',
+    category: 'national_retro',
+    price: 85,
+    description: 'Ukraine national team jersey from 1998'
+  },
+  'wales_94_95': {
+    name: 'Wales Retro 1994-95',
+    category: 'national_retro',
+    price: 85,
+    description: 'Wales national team jersey from 1994-95'
+  },
+  'wales_94_96': {
+    name: 'Wales Retro 1994-96',
+    category: 'national_retro',
+    price: 85,
+    description: 'Wales national team jersey from 1994-96'
+  },
+  'walevs_96_98': {
+    name: 'Wales Retro 1996-98',
+    category: 'national_retro',
+    price: 85,
+    description: 'Wales national team jersey from 1996-98'
+  },
+  'yugoslavia_1990': {
+    name: 'Yugoslavia Retro 1990',
+    category: 'national_retro',
+    price: 100,
+    originalPrice: 120,
+    description: 'Historic Yugoslavia national team jersey from 1990 World Cup'
+  },
+  'yugoslavia_2000': {
+    name: 'Yugoslavia Retro 2000',
+    category: 'national_retro',
+    price: 95,
+    description: 'Yugoslavia national team jersey from Euro 2000'
+  },
+  'yugoslavia_98': {
+    name: 'Yugoslavia Retro 1998',
+    category: 'national_retro',
+    price: 95,
+    originalPrice: 110,
+    description: 'Yugoslavia national team jersey from 1998 World Cup'
+  },
+  'yugoslavia_99': {
+    name: 'Yugoslavia Retro 1999',
+    category: 'national_retro',
+    price: 95,
+    description: 'Yugoslavia national team jersey from 1999'
   }
 }
 
@@ -724,6 +1482,12 @@ export function generateCategories(): Category[] {
       name: 'Liga Profesional Argentina',
       slug: 'lpf_afa',
       description: 'Camisetas y mercadería de equipos de la Liga Profesional de Fútbol Argentina'
+    },
+    {
+      id: 'national_retro',
+      name: 'Camisetas Retro Selecciones',
+      slug: 'national_retro',
+      description: 'Camisetas retro y vintage de selecciones nacionales de fútbol'
     }
   ]
 }

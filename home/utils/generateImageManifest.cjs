@@ -7,7 +7,7 @@ function generateImageManifest() {
   const manifest = {}
   
   // Categories to scan
-  const categories = ['afc', 'caf', 'eredivisie', 'lpf_afa', 'serie_a_enilive']
+  const categories = ['afc', 'caf', 'eredivisie', 'lpf_afa', 'serie_a_enilive', 'national_retro']
   
   categories.forEach(category => {
     const categoryPath = path.join(publicDir, category)

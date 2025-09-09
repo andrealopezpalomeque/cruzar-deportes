@@ -1,4 +1,4 @@
-export type CategoryType = 'afc' | 'caf' | 'eredivisie' | 'lpf_afa' | 'serie_a_enilive'
+export type CategoryType = 'afc' | 'caf' | 'eredivisie' | 'lpf_afa' | 'serie_a_enilive' | 'national_retro'
 
 export interface Product {
   id: string
