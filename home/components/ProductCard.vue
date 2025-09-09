@@ -16,7 +16,7 @@
           />
         </div>
         <div v-else class="aspect-content flex items-center justify-center">
-          <Icon name="mdi:tshirt-crew" class="h-16 w-16 text-gray-400" />
+          <IconTshirtCrew class="h-16 w-16 text-gray-400" />
         </div>
         
         <!-- Badges Container with better positioning -->
@@ -27,7 +27,7 @@
             class="absolute top-2 left-2"
           >
             <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-semibold bg-yellow-100 text-yellow-800 shadow-sm pointer-events-auto">
-              <Icon name="mdi:star" class="h-3 w-3 mr-1" />
+              <IconStar class="h-3 w-3 mr-1" />
               Destacado
             </span>
           </div>
@@ -48,7 +48,7 @@
             class="absolute bottom-2 right-2"
           >
             <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-black bg-opacity-70 text-white shadow-sm pointer-events-auto">
-              <Icon name="mdi:image-multiple" class="h-3 w-3 mr-1" />
+              <IconImageMultiple class="h-3 w-3 mr-1" />
               {{ product.images.length }}
             </span>
           </div>
@@ -87,18 +87,21 @@
           class="px-3 py-2 bg-primary-600 text-white text-sm font-medium rounded-md hover:bg-primary-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
           :title="product.inStock ? 'Agregar al carrito' : 'Agotado'"
         >
-          <Icon v-if="!product.inStock" name="mdi:close" class="h-4 w-4" />
-          <Icon v-else name="mdi:plus" class="h-4 w-4" />
+          <IconClose v-if="!product.inStock" class="h-4 w-4" />
+          <IconPlus v-else class="h-4 w-4" />
         </button>
       </div>
       
       <!-- Stock Status -->
       <div class="mt-2 flex items-center justify-between">
         <div class="flex items-center space-x-2">
-          <Icon 
-            :name="product.inStock ? 'mdi:check-circle' : 'mdi:alert-circle'" 
-            :class="product.inStock ? 'text-green-600' : 'text-red-600'"
-            class="h-4 w-4"
+          <IconCheckCircle 
+            v-if="product.inStock"
+            class="h-4 w-4 text-green-600"
+          />
+          <IconAlertCircle 
+            v-else
+            class="h-4 w-4 text-red-600"
           />
           <span 
             :class="product.inStock ? 'text-green-600' : 'text-red-600'"
@@ -121,6 +124,14 @@
 </template>
 
 <script setup>
+import IconTshirtCrew from '~icons/mdi/tshirt-crew'
+import IconStar from '~icons/mdi/star'
+import IconImageMultiple from '~icons/mdi/image-multiple'
+import IconClose from '~icons/mdi/close'
+import IconPlus from '~icons/mdi/plus'
+import IconCheckCircle from '~icons/mdi/check-circle'
+import IconAlertCircle from '~icons/mdi/alert-circle'
+
 const props = defineProps(['product'])
 const cartStore = useCartStore()
 const productsStore = useProductsStore()

@@ -41,7 +41,7 @@
             type="button"
             class="p-2 text-gray-400 hover:text-gray-500"
           >
-            <Icon name="mdi:magnify" class="h-6 w-6" />
+            <IconMagnify class="h-6 w-6" />
           </button>
           
           <button 
@@ -49,7 +49,7 @@
             @click="openCart"
             class="relative p-2 text-gray-400 hover:text-gray-500"
           >
-            <Icon name="mdi:shopping" class="h-6 w-6" />
+            <IconShopping class="h-6 w-6" />
             <span 
               v-if="cartStore.totalItems > 0"
               class="absolute -top-1 -right-1 bg-primary-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
@@ -64,7 +64,7 @@
             @click="mobileMenuOpen = !mobileMenuOpen"
             class="md:hidden p-2 text-gray-400 hover:text-gray-500"
           >
-            <Icon name="mdi:menu" class="h-6 w-6" />
+            <IconMenu class="h-6 w-6" />
           </button>
         </div>
       </div>
@@ -102,6 +102,9 @@
 <script setup>
 import { ref } from 'vue'
 import { useCartStore } from '../stores/cart'
+import IconMagnify from '~icons/mdi/magnify'
+import IconShopping from '~icons/mdi/shopping'
+import IconMenu from '~icons/mdi/menu'
 
 const cartStore = useCartStore()
 const mobileMenuOpen = ref(false)

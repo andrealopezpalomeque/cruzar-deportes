@@ -16,7 +16,7 @@
           </p>
             <div class="flex">
             <a href="https://www.instagram.com/cruzardeportes/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white">
-              <Icon name="mdi:instagram" class="h-6 w-6" />
+              <IconInstagram class="h-6 w-6" />
             </a>
             </div>
         </div>
@@ -39,7 +39,8 @@
             <li><NuxtLink to="/contact" class="text-gray-300 hover:text-white">Contáctanos</NuxtLink></li>
             <li><NuxtLink to="/shipping" class="text-gray-300 hover:text-white">Información de Envío</NuxtLink></li>
             <li><NuxtLink to="/returns" class="text-gray-300 hover:text-white">Devoluciones</NuxtLink></li>
-            <li><NuxtLink to="/faq" class="text-gray-300 hover:text-white">FAQ</NuxtLink></li>
+            <li><NuxtLink to="/cuidado-camisetas" class="text-gray-300 hover:text-white">Cuidado de Camisetas</NuxtLink></li>
+            <li><NuxtLink to="/faq" class="text-gray-300 hover:text-white">Preguntas Frecuentes</NuxtLink></li>
           </ul>
         </div>
       </div>
@@ -54,5 +55,7 @@
 </template>
 
 <script setup>
+import IconInstagram from '~icons/mdi/instagram'
+
 const currentYear = new Date().getFullYear()
 </script>

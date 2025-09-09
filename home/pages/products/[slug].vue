@@ -3,9 +3,9 @@
     <!-- Breadcrumb Navigation -->
     <nav class="flex items-center space-x-2 text-sm text-gray-600 mb-6">
       <NuxtLink to="/" class="hover:text-primary-600 transition-colors">Inicio</NuxtLink>
-      <Icon name="mdi:chevron-right" class="h-4 w-4" />
+      <IconChevronRight class="h-4 w-4" />
       <NuxtLink to="/products" class="hover:text-primary-600 transition-colors">Productos</NuxtLink>
-      <Icon name="mdi:chevron-right" class="h-4 w-4" />
+      <IconChevronRight class="h-4 w-4" />
       <span class="text-gray-900 font-medium">{{ product?.name || 'Producto' }}</span>
     </nav>
 
@@ -16,14 +16,14 @@
 
     <!-- Product Not Found -->
     <div v-else-if="!product" class="text-center py-20">
-      <Icon name="mdi:alert-circle" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
+      <IconAlertCircle class="h-16 w-16 text-gray-400 mx-auto mb-4" />
       <h2 class="text-2xl font-bold text-gray-900 mb-2">Producto no encontrado</h2>
       <p class="text-gray-600 mb-6">El producto que buscas no existe o ha sido eliminado.</p>
       <NuxtLink 
         to="/products" 
         class="inline-flex items-center px-4 py-2 bg-primary-600 text-white font-medium rounded-md hover:bg-primary-700 transition-colors"
       >
-        <Icon name="mdi:arrow-left" class="mr-2 h-4 w-4" />
+        <IconArrowLeft class="mr-2 h-4 w-4" />
         Volver a Productos
       </NuxtLink>
     </div>
@@ -58,6 +58,9 @@
 
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
+import IconChevronRight from '~icons/mdi/chevron-right'
+import IconAlertCircle from '~icons/mdi/alert-circle'
+import IconArrowLeft from '~icons/mdi/arrow-left'
 
 const route = useRoute()
 const productsStore = useProductsStore()
