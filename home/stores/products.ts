@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import type { Product, Category } from '~/types'
+import type { SearchResult } from './search'
 
 export const useProductsStore = defineStore('products', () => {
   const products = ref<Product[]>([])
@@ -41,6 +42,44 @@ export const useProductsStore = defineStore('products', () => {
     products.value.find(product => product.slug === slug)
   )
 
+  const getPopularProducts = computed(() => {
+    return products.value
+      .filter(product => product.inStock)
+      .sort((a, b) => {
+        // Prioritize featured products
+        if (a.featured && !b.featured) return -1
+        if (!a.featured && b.featured) return 1
+        
+        // Then by price (higher first for quality perception)
+        return b.price - a.price
+      })
+      .slice(0, 20)
+  })
+
+  async function searchProducts(query: string): Promise<SearchResult[]> {
+    if (!query.trim()) return []
+    
+    try {
+      const { searchInProducts } = await import('~/utils/search')
+      return searchInProducts(query, products.value)
+    } catch (error) {
+      console.error('Error searching products:', error)
+      return []
+    }
+  }
+
+  async function getSearchSuggestions(query: string): Promise<string[]> {
+    if (!query.trim() || query.length < 2) return []
+    
+    try {
+      const { getSearchSuggestions } = await import('~/utils/search')
+      return getSearchSuggestions(query, products.value)
+    } catch (error) {
+      console.error('Error getting search suggestions:', error)
+      return []
+    }
+  }
+
   async function fetchProducts() {
     loading.value = true
     try {
@@ -74,7 +113,10 @@ export const useProductsStore = defineStore('products', () => {
     getProductsByCategory,
     getFeaturedProducts,
     getProductBySlug,
+    getPopularProducts,
     fetchProducts,
-    fetchCategories
+    fetchCategories,
+    searchProducts,
+    getSearchSuggestions
   }
 })
