@@ -39,7 +39,9 @@
         <div class="flex items-center space-x-4">
           <button 
             type="button"
-            class="p-2 text-gray-400 hover:text-gray-500"
+            @click="openSearch"
+            class="p-2 text-gray-400 hover:text-gray-500 transition-colors"
+            title="Buscar (Ctrl+K)"
           >
             <IconMagnify class="h-6 w-6" />
           </button>
@@ -96,21 +98,31 @@
         </div>
       </div>
     </div>
+    
+    <!-- Search Modal -->
+    <SearchModal />
   </header>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { useCartStore } from '../stores/cart'
+import { useSearchStore } from '../stores/search'
+import SearchModal from './SearchModal.vue'
 import IconMagnify from '~icons/mdi/magnify'
 import IconShopping from '~icons/mdi/shopping'
 import IconMenu from '~icons/mdi/menu'
 
 const cartStore = useCartStore()
+const searchStore = useSearchStore()
 const mobileMenuOpen = ref(false)
 
 function openCart() {
   // TODO: Implement cart sidebar/modal
   console.log('Open cart')
+}
+
+function openSearch() {
+  searchStore.openSearch()
 }
 </script>
