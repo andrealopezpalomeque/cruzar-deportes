@@ -56,198 +56,189 @@
       </div>
 
       <!-- FAQ Section -->
-      <UiCard class="border-0 shadow-xl bg-white/90 backdrop-blur-sm">
-        <div class="p-8">
-          <div class="text-center mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-3">Preguntas Más Frecuentes</h2>
-            <p class="text-gray-600">Resolvé todas tus dudas sobre nuestro servicio</p>
-          </div>
-
-          <div class="space-y-4">
-            <!-- FAQ Item 1: Shipping -->
-            <UiAccordionItem value="item-1" class="border border-gray-200 rounded-lg px-6 bg-white shadow-sm">
-              <template #trigger>
-                <div class="flex items-center gap-4">
-                  <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <IconCube class="w-5 h-5 text-blue-600" />
-                  </div>
-                  <span class="font-semibold text-gray-900">¿Cuáles son los tiempos y costos de envío?</span>
-                </div>
-              </template>
-              <template #content>
-                <div class="pb-6 pt-2">
-                  <div class="ml-14">
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                      Realizamos envíos a todo el país. El envío es gratuito en compras superiores a $50.000. Para
-                      montos menores, el costo varía según la ubicación. Los tiempos de entrega son de 3 a 7 días
-                      hábiles para CABA y GBA, y de 5 a 10 días hábiles para el interior del país.
-                    </p>
-                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
-                      <div class="flex items-start gap-3">
-                        <IconInformationCircle class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                        <div>
-                          <p class="font-medium text-blue-900 mb-1">Seguimiento:</p>
-                          <p class="text-blue-800 text-sm">
-                            Recibirás un código de seguimiento por email una vez que tu pedido sea despachado.
-                          </p>
-                        </div>
-                      </div>
+      <div class="space-y-4">
+        <!-- FAQ Item 1: Shipping -->
+        <UiAccordionItem value="item-1" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+          <template #trigger>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconCube class="w-5 h-5 text-blue-600" />
+              </div>
+              <span class="font-semibold text-gray-900">¿Cuáles son los tiempos y costos de envío?</span>
+            </div>
+          </template>
+          <template #content>
+            <div class="pb-6 pt-2">
+              <div class="ml-14">
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  Realizamos envíos a todo el país. El envío es gratuito en compras superiores a $50.000. Para
+                  montos menores, el costo varía según la ubicación. Los tiempos de entrega son de 3 a 7 días
+                  hábiles para CABA y GBA, y de 5 a 10 días hábiles para el interior del país.
+                </p>
+                <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
+                  <div class="flex items-start gap-3">
+                    <IconInformationCircle class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p class="font-medium text-blue-900 mb-1">Seguimiento:</p>
+                      <p class="text-blue-800 text-sm">
+                        Recibirás un código de seguimiento por email una vez que tu pedido sea despachado.
+                      </p>
                     </div>
                   </div>
                 </div>
-              </template>
-            </UiAccordionItem>
+              </div>
+            </div>
+          </template>
+        </UiAccordionItem>
 
-            <!-- FAQ Item 2: Payment -->
-            <UiAccordionItem value="item-2" class="border border-gray-200 rounded-lg px-6 bg-white shadow-sm">
-              <template #trigger>
-                <div class="flex items-center gap-4">
-                  <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <IconCreditCard class="w-5 h-5 text-green-600" />
-                  </div>
-                  <span class="font-semibold text-gray-900">¿Qué métodos de pago aceptan?</span>
-                </div>
-              </template>
-              <template #content>
-                <div class="pb-6 pt-2">
-                  <div class="ml-14">
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                      Aceptamos todas las tarjetas de débito y crédito (Visa, Mastercard, American Express),
-                      transferencias bancarias, y MercadoPago. También ofrecemos la posibilidad de pagar en cuotas sin
-                      interés con tarjetas de crédito seleccionadas.
-                    </p>
-                    <div class="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
-                      <div class="flex items-start gap-3">
-                        <IconLockClosed class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                        <div>
-                          <p class="font-medium text-green-900 mb-1">Seguridad:</p>
-                          <p class="text-green-800 text-sm">
-                            Todos los pagos están protegidos con encriptación SSL de 256 bits.
-                          </p>
-                        </div>
-                      </div>
+        <!-- FAQ Item 2: Payment -->
+        <UiAccordionItem value="item-2" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+          <template #trigger>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconCreditCard class="w-5 h-5 text-green-600" />
+              </div>
+              <span class="font-semibold text-gray-900">¿Qué métodos de pago aceptan?</span>
+            </div>
+          </template>
+          <template #content>
+            <div class="pb-6 pt-2">
+              <div class="ml-14">
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  Aceptamos todas las tarjetas de débito y crédito (Visa, Mastercard, American Express),
+                  transferencias bancarias, y MercadoPago. También ofrecemos la posibilidad de pagar en cuotas sin
+                  interés con tarjetas de crédito seleccionadas.
+                </p>
+                <div class="bg-green-50/80 border-l-4 border-green-400 p-4 rounded-r-lg backdrop-blur-sm">
+                  <div class="flex items-start gap-3">
+                    <IconLockClosed class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p class="font-medium text-green-900 mb-1">Seguridad:</p>
+                      <p class="text-green-800 text-sm">
+                        Todos los pagos están protegidos con encriptación SSL de 256 bits.
+                      </p>
                     </div>
                   </div>
                 </div>
-              </template>
-            </UiAccordionItem>
+              </div>
+            </div>
+          </template>
+        </UiAccordionItem>
 
-            <!-- FAQ Item 3: Returns -->
-            <UiAccordionItem value="item-3" class="border border-gray-200 rounded-lg px-6 bg-white shadow-sm">
-              <template #trigger>
-                <div class="flex items-center gap-4">
-                  <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <IconArrowLeft class="w-5 h-5 text-purple-600" />
-                  </div>
-                  <span class="font-semibold text-gray-900">¿Puedo devolver o cambiar un producto?</span>
-                </div>
-              </template>
-              <template #content>
-                <div class="pb-6 pt-2">
-                  <div class="ml-14">
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                      Sí, tenés 30 días desde la recepción del producto para devolverlo o cambiarlo. El artículo debe
-                      estar sin usar, con las etiquetas originales y en su empaque original. Los gastos de envío para
-                      devoluciones corren por cuenta del cliente, excepto en casos de productos defectuosos.
-                    </p>
-                    <div class="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-lg">
-                      <div class="flex items-start gap-3">
-                        <IconInformationCircle class="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
-                        <div>
-                          <p class="font-medium text-purple-900 mb-1">Proceso simple:</p>
-                          <p class="text-purple-800 text-sm">
-                            Contactanos por email o WhatsApp para iniciar el proceso de devolución.
-                          </p>
-                        </div>
-                      </div>
+        <!-- FAQ Item 3: Returns -->
+        <UiAccordionItem value="item-3" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+          <template #trigger>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconArrowLeft class="w-5 h-5 text-purple-600" />
+              </div>
+              <span class="font-semibold text-gray-900">¿Puedo devolver o cambiar un producto?</span>
+            </div>
+          </template>
+          <template #content>
+            <div class="pb-6 pt-2">
+              <div class="ml-14">
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  Sí, tenés 30 días desde la recepción del producto para devolverlo o cambiarlo. El artículo debe
+                  estar sin usar, con las etiquetas originales y en su empaque original. Los gastos de envío para
+                  devoluciones corren por cuenta del cliente, excepto en casos de productos defectuosos.
+                </p>
+                <div class="bg-purple-50/80 border-l-4 border-purple-400 p-4 rounded-r-lg backdrop-blur-sm">
+                  <div class="flex items-start gap-3">
+                    <IconInformationCircle class="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p class="font-medium text-purple-900 mb-1">Proceso simple:</p>
+                      <p class="text-purple-800 text-sm">
+                        Contactanos por email o WhatsApp para iniciar el proceso de devolución.
+                      </p>
                     </div>
                   </div>
                 </div>
-              </template>
-            </UiAccordionItem>
+              </div>
+            </div>
+          </template>
+        </UiAccordionItem>
 
-            <!-- FAQ Item 4: Authenticity -->
-            <UiAccordionItem value="item-4" class="border border-gray-200 rounded-lg px-6 bg-white shadow-sm">
-              <template #trigger>
-                <div class="flex items-center gap-4">
-                  <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <IconShieldCheck class="w-5 h-5 text-amber-600" />
-                  </div>
-                  <span class="font-semibold text-gray-900">¿Los productos son originales y oficiales?</span>
-                </div>
-              </template>
-              <template #content>
-                <div class="pb-6 pt-2">
-                  <div class="ml-14">
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                      Absolutamente. Todos nuestros productos son 100% originales y oficiales. Trabajamos directamente
-                      con las marcas y distribuidores autorizados. Cada producto viene con su etiqueta de autenticidad y
-                      garantía oficial del fabricante.
-                    </p>
-                    <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
-                      <div class="flex items-start gap-3">
-                        <IconCheckBadge class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
-                        <div>
-                          <p class="font-medium text-amber-900 mb-1">Garantía:</p>
-                          <p class="text-amber-800 text-sm">
-                            Somos distribuidores oficiales con certificación de autenticidad.
-                          </p>
-                        </div>
-                      </div>
+        <!-- FAQ Item 4: Authenticity -->
+        <UiAccordionItem value="item-4" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+          <template #trigger>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconShieldCheck class="w-5 h-5 text-amber-600" />
+              </div>
+              <span class="font-semibold text-gray-900">¿Los productos son originales y oficiales?</span>
+            </div>
+          </template>
+          <template #content>
+            <div class="pb-6 pt-2">
+              <div class="ml-14">
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  Absolutamente. Todos nuestros productos son 100% originales y oficiales. Trabajamos directamente
+                  con las marcas y distribuidores autorizados. Cada producto viene con su etiqueta de autenticidad y
+                  garantía oficial del fabricante.
+                </p>
+                <div class="bg-amber-50/80 border-l-4 border-amber-400 p-4 rounded-r-lg backdrop-blur-sm">
+                  <div class="flex items-start gap-3">
+                    <IconCheckBadge class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p class="font-medium text-amber-900 mb-1">Garantía:</p>
+                      <p class="text-amber-800 text-sm">
+                        Somos distribuidores oficiales con certificación de autenticidad.
+                      </p>
                     </div>
                   </div>
                 </div>
-              </template>
-            </UiAccordionItem>
+              </div>
+            </div>
+          </template>
+        </UiAccordionItem>
 
-            <!-- FAQ Item 5: Tracking -->
-            <UiAccordionItem value="item-5" class="border border-gray-200 rounded-lg px-6 bg-white shadow-sm">
-              <template #trigger>
-                <div class="flex items-center gap-4">
-                  <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <IconQuestionMarkCircle class="w-5 h-5 text-cyan-600" />
-                  </div>
-                  <span class="font-semibold text-gray-900">¿Cómo puedo rastrear mi pedido?</span>
-                </div>
-              </template>
-              <template #content>
-                <div class="pb-6 pt-2">
-                  <div class="ml-14">
-                    <p class="text-gray-700 leading-relaxed">
-                      Una vez que tu pedido sea despachado, recibirás un email con el número de seguimiento y un enlace
-                      para rastrear tu envío en tiempo real. También podés consultar el estado de tu pedido en tu cuenta
-                      de usuario en nuestro sitio web.
-                    </p>
-                  </div>
-                </div>
-              </template>
-            </UiAccordionItem>
+        <!-- FAQ Item 5: Tracking -->
+        <UiAccordionItem value="item-5" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+          <template #trigger>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconQuestionMarkCircle class="w-5 h-5 text-cyan-600" />
+              </div>
+              <span class="font-semibold text-gray-900">¿Cómo puedo rastrear mi pedido?</span>
+            </div>
+          </template>
+          <template #content>
+            <div class="pb-6 pt-2">
+              <div class="ml-14">
+                <p class="text-gray-700 leading-relaxed">
+                  Una vez que tu pedido sea despachado, recibirás un email con el número de seguimiento y un enlace
+                  para rastrear tu envío en tiempo real. También podés consultar el estado de tu pedido en tu cuenta
+                  de usuario en nuestro sitio web.
+                </p>
+              </div>
+            </div>
+          </template>
+        </UiAccordionItem>
 
-            <!-- FAQ Item 6: Loyalty -->
-            <UiAccordionItem value="item-6" class="border border-gray-200 rounded-lg px-6 bg-white shadow-sm">
-              <template #trigger>
-                <div class="flex items-center gap-4">
-                  <div class="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <IconHeart class="w-5 h-5 text-rose-600" />
-                  </div>
-                  <span class="font-semibold text-gray-900">¿Tienen programa de fidelidad o descuentos?</span>
-                </div>
-              </template>
-              <template #content>
-                <div class="pb-6 pt-2">
-                  <div class="ml-14">
-                    <p class="text-gray-700 leading-relaxed">
-                      Sí, tenemos un programa de puntos para clientes frecuentes y enviamos ofertas exclusivas por
-                      email. También ofrecemos descuentos especiales en fechas importantes y para compras en cantidad.
-                      Suscribite a nuestro newsletter para no perderte ninguna promoción.
-                    </p>
-                  </div>
-                </div>
-              </template>
-            </UiAccordionItem>
-          </div>
-        </div>
-      </UiCard>
+        <!-- FAQ Item 6: Loyalty -->
+        <UiAccordionItem value="item-6" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+          <template #trigger>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconHeart class="w-5 h-5 text-rose-600" />
+              </div>
+              <span class="font-semibold text-gray-900">¿Tienen programa de fidelidad o descuentos?</span>
+            </div>
+          </template>
+          <template #content>
+            <div class="pb-6 pt-2">
+              <div class="ml-14">
+                <p class="text-gray-700 leading-relaxed">
+                  Sí, tenemos un programa de puntos para clientes frecuentes y enviamos ofertas exclusivas por
+                  email. También ofrecemos descuentos especiales en fechas importantes y para compras en cantidad.
+                  Suscribite a nuestro newsletter para no perderte ninguna promoción.
+                </p>
+              </div>
+            </div>
+          </template>
+        </UiAccordionItem>
+      </div>
 
       <!-- Help Section -->
       <UiCard variant="gradientPrimary" class="mt-12">
