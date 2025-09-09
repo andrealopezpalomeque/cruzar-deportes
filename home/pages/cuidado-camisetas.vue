@@ -208,7 +208,7 @@
               dudes en contactarnos.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <UiButton size="lg" variant="white">
+              <UiButton size="lg" variant="white" @click="openWhatsApp">
                 <IconChatBubble class="w-5 h-5 mr-2" />
                 Contactar Soporte
               </UiButton>
@@ -245,4 +245,10 @@ useHead({
     { name: 'description', content: 'Aprendé cómo cuidar adecuadamente tus camisetas deportivas para mantener su calidad y extender su vida útil.' }
   ]
 })
+
+const openWhatsApp = () => {
+  const phoneNumber = '5493794000783'
+  const message = encodeURIComponent('Hola, necesito ayuda con el cuidado de mi camiseta.')
+  window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank')
+}
 </script>
