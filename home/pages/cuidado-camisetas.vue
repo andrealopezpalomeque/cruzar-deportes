@@ -64,7 +64,7 @@
               <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
                 <IconRefresh class="w-5 h-5 text-blue-600" />
               </div>
-              <span class="font-semibold text-gray-900">¿Debo dar vuelta mi camiseta antes de lavarla?</span>
+              <span class="font-medium text-gray-900">¿Debo dar vuelta mi camiseta antes de lavarla?</span>
             </div>
           </template>
           <template #content>
@@ -97,7 +97,7 @@
               <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
                 <IconLightBulb class="w-5 h-5 text-cyan-600" />
               </div>
-              <span class="font-semibold text-gray-900">¿Qué temperatura de agua debo usar?</span>
+              <span class="font-medium text-gray-900">¿Qué temperatura de agua debo usar?</span>
             </div>
           </template>
           <template #content>
@@ -130,7 +130,7 @@
               <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
                 <IconXMark class="w-5 h-5 text-red-600" />
               </div>
-              <span class="font-semibold text-gray-900">¿Puedo usar suavizante en mi camiseta?</span>
+              <span class="font-medium text-gray-900">¿Puedo usar suavizante en mi camiseta?</span>
             </div>
           </template>
           <template #content>
@@ -162,7 +162,7 @@
               <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
                 <IconCog class="w-5 h-5 text-indigo-600" />
               </div>
-              <span class="font-semibold text-gray-900">¿Qué ciclo de lavarropas debo usar?</span>
+              <span class="font-medium text-gray-900">¿Qué ciclo de lavarropas debo usar?</span>
             </div>
           </template>
           <template #content>
@@ -183,7 +183,7 @@
               <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
                 <IconSun class="w-5 h-5 text-amber-600" />
               </div>
-              <span class="font-semibold text-gray-900">¿Cómo debo secar mi camiseta?</span>
+              <span class="font-medium text-gray-900">¿Cómo debo secar mi camiseta?</span>
             </div>
           </template>
           <template #content>

@@ -64,7 +64,7 @@
               <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
                 <IconCube class="w-5 h-5 text-blue-600" />
               </div>
-              <span class="font-semibold text-gray-900">¿Cuáles son los tiempos y costos de envío?</span>
+              <span class="font-medium text-gray-900">¿Cuáles son los tiempos y costos de envío?</span>
             </div>
           </template>
           <template #content>
@@ -98,7 +98,7 @@
               <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
                 <IconCreditCard class="w-5 h-5 text-green-600" />
               </div>
-              <span class="font-semibold text-gray-900">¿Qué métodos de pago aceptan?</span>
+              <span class="font-medium text-gray-900">¿Qué métodos de pago aceptan?</span>
             </div>
           </template>
           <template #content>
@@ -132,7 +132,7 @@
               <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
                 <IconArrowLeft class="w-5 h-5 text-purple-600" />
               </div>
-              <span class="font-semibold text-gray-900">¿Puedo devolver o cambiar un producto?</span>
+              <span class="font-medium text-gray-900">¿Puedo devolver o cambiar un producto?</span>
             </div>
           </template>
           <template #content>
@@ -166,7 +166,7 @@
               <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
                 <IconShieldCheck class="w-5 h-5 text-amber-600" />
               </div>
-              <span class="font-semibold text-gray-900">¿Los productos son originales y oficiales?</span>
+              <span class="font-medium text-gray-900">¿Los productos son originales y oficiales?</span>
             </div>
           </template>
           <template #content>
@@ -200,7 +200,7 @@
               <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
                 <IconQuestionMarkCircle class="w-5 h-5 text-cyan-600" />
               </div>
-              <span class="font-semibold text-gray-900">¿Cómo puedo rastrear mi pedido?</span>
+              <span class="font-medium text-gray-900">¿Cómo puedo rastrear mi pedido?</span>
             </div>
           </template>
           <template #content>
@@ -223,7 +223,7 @@
               <div class="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center flex-shrink-0">
                 <IconHeart class="w-5 h-5 text-rose-600" />
               </div>
-              <span class="font-semibold text-gray-900">¿Tienen programa de fidelidad o descuentos?</span>
+              <span class="font-medium text-gray-900">¿Tienen programa de fidelidad o descuentos?</span>
             </div>
           </template>
           <template #content>
