@@ -36,9 +36,9 @@
         <div>
           <h3 class="text-lg font-semibold mb-4">Atención al Cliente</h3>
           <ul class="space-y-2">
-            <li><NuxtLink to="/contact" class="text-gray-300 hover:text-white">Contáctanos</NuxtLink></li>
+           <!--  <li><NuxtLink to="/contact" class="text-gray-300 hover:text-white">Contáctanos</NuxtLink></li>
             <li><NuxtLink to="/shipping" class="text-gray-300 hover:text-white">Información de Envío</NuxtLink></li>
-            <li><NuxtLink to="/returns" class="text-gray-300 hover:text-white">Devoluciones</NuxtLink></li>
+            <li><NuxtLink to="/returns" class="text-gray-300 hover:text-white">Devoluciones</NuxtLink></li> -->
             <li><NuxtLink to="/cuidado-camisetas" class="text-gray-300 hover:text-white">Cuidado de Camisetas</NuxtLink></li>
             <li><NuxtLink to="/faq" class="text-gray-300 hover:text-white">Preguntas Frecuentes</NuxtLink></li>
           </ul>
