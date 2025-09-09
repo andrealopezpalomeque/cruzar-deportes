@@ -93,7 +93,7 @@
 
     <!-- Empty State -->
     <div v-else class="text-center py-12">
-      <Icon name="mdi:tshirt-crew" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
+      <IconTshirtCrew class="h-16 w-16 text-gray-400 mx-auto mb-4" />
       <h3 class="text-lg font-medium text-gray-900 mb-2">No se encontraron productos</h3>
       <p class="text-gray-600 mb-6">
         {{ selectedCategory ? 'No se encontraron productos en esta categoría.' : 'No hay productos disponibles en este momento.' }}
@@ -103,7 +103,7 @@
         @click="selectedCategory = ''"
         class="inline-flex items-center px-4 py-2 bg-primary-600 text-white font-medium rounded-md hover:bg-primary-700 transition-colors"
       >
-        <Icon name="mdi:refresh" class="mr-2 h-4 w-4" />
+        <IconRefresh class="mr-2 h-4 w-4" />
         Mostrar Todos los Productos
       </button>
     </div>
@@ -111,6 +111,9 @@
 </template>
 
 <script setup>
+import IconTshirtCrew from '~icons/mdi/tshirt-crew'
+import IconRefresh from '~icons/mdi/refresh'
+
 const productsStore = useProductsStore()
 
 const selectedCategory = ref('')

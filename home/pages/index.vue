@@ -6,7 +6,8 @@
       <div class="container mx-auto px-4 relative">
         <div class="max-w-4xl mx-auto text-center">
           <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 mb-6">
-            ⚽ Nueva Colección 2025
+            <IconSoccer class="w-4 h-4 mr-2" />
+            Nueva Colección 2025
           </div>
 
           <h1 class="text-4xl md:text-6xl font-bold mb-6 text-balance">
@@ -58,7 +59,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="text-center">
             <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <Icon name="mdi:truck-fast" class="w-6 h-6 text-primary-600" />
+              <IconTruckFast class="w-6 h-6 text-primary-600" />
             </div>
             <h3 class="font-semibold mb-2">Envío Gratis</h3>
             <p class="text-sm text-gray-600">En compras superiores a $50.000</p>
@@ -66,7 +67,7 @@
 
           <div class="text-center">
             <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <Icon name="mdi:shield-check" class="w-6 h-6 text-primary-600" />
+              <IconShieldCheck class="w-6 h-6 text-primary-600" />
             </div>
             <h3 class="font-semibold mb-2">Calidad Garantizada</h3>
             <p class="text-sm text-gray-600">Productos oficiales y auténticos</p>
@@ -74,7 +75,7 @@
 
           <div class="text-center">
             <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <Icon name="mdi:account-group" class="w-6 h-6 text-primary-600" />
+              <IconAccountGroup class="w-6 h-6 text-primary-600" />
             </div>
             <h3 class="font-semibold mb-2">Atención 24/7</h3>
             <p class="text-sm text-gray-600">Soporte personalizado siempre</p>
@@ -105,7 +106,7 @@
         </div>
 
         <div v-if="featuredProducts.length === 0 && !productsStore.loading" class="text-center py-12">
-          <Icon name="mdi:tshirt-crew" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
+          <IconTshirtCrew class="h-16 w-16 text-gray-400 mx-auto mb-4" />
           <h3 class="text-lg font-medium text-gray-900 mb-2">Aún no hay productos</h3>
           <p class="text-gray-600">¡Estamos trabajando en agregar productos. Vuelve pronto!</p>
         </div>
@@ -147,6 +148,12 @@
 </template>
 
 <script setup>
+import IconSoccer from '~icons/mdi/soccer'
+import IconTruckFast from '~icons/mdi/truck-fast'
+import IconShieldCheck from '~icons/mdi/shield-check'
+import IconAccountGroup from '~icons/mdi/account-group'
+import IconTshirtCrew from '~icons/mdi/tshirt-crew'
+
 const productsStore = useProductsStore()
 
 const categories = computed(() => productsStore.categories)

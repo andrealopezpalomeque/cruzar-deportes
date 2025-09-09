@@ -36,7 +36,7 @@
             
             <div class="mt-4 flex items-center text-primary-600 group-hover:text-primary-700 transition-colors">
               <span class="text-sm font-medium">Comprar ahora</span>
-              <Icon name="mdi:arrow-right" class="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              <IconArrowRight class="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
         </div>
@@ -46,6 +46,8 @@
 </template>
 
 <script setup>
+import IconArrowRight from '~icons/mdi/arrow-right'
+
 const productsStore = useProductsStore()
 
 const categories = computed(() => productsStore.categories)

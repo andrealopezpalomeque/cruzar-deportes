@@ -7,7 +7,7 @@
           {{ categoryName }}
         </span>
         <span v-if="product.featured" class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-md font-medium shadow-sm">
-          <Icon name="mdi:star" class="h-3 w-3 inline mr-1" />
+          <IconStar class="h-3 w-3 inline mr-1" />
           Destacado
         </span>
       </div>
@@ -92,7 +92,7 @@
             :disabled="quantity <= 1"
             class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <Icon name="mdi:minus" class="h-4 w-4" />
+            <IconMinus class="h-4 w-4" />
           </button>
           
           <input
@@ -108,7 +108,7 @@
             :disabled="quantity >= 99"
             class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <Icon name="mdi:plus" class="h-4 w-4" />
+            <IconPlus class="h-4 w-4" />
           </button>
         </div>
       </div>
@@ -116,10 +116,13 @@
 
     <!-- Stock Status -->
     <div class="flex items-center space-x-2">
-      <Icon 
-        :name="product.inStock ? 'mdi:check-circle' : 'mdi:alert-circle'" 
-        :class="product.inStock ? 'text-green-600' : 'text-red-600'"
-        class="h-5 w-5"
+      <IconCheckCircle 
+        v-if="product.inStock"
+        class="h-5 w-5 text-green-600"
+      />
+      <IconAlertCircle 
+        v-else
+        class="h-5 w-5 text-red-600"
       />
       <span 
         :class="product.inStock ? 'text-green-600' : 'text-red-600'"
@@ -139,9 +142,9 @@
           'animate-pulse': isAddingToCart
         }"
       >
-        <Icon v-if="isAddingToCart" name="mdi:loading" class="h-5 w-5 inline mr-2 animate-spin" />
-        <Icon v-else-if="!product.inStock" name="mdi:alert-circle" class="h-5 w-5 inline mr-2" />
-        <Icon v-else name="mdi:cart-plus" class="h-5 w-5 inline mr-2" />
+        <IconLoading v-if="isAddingToCart" class="h-5 w-5 inline mr-2 animate-spin" />
+        <IconAlertCircle v-else-if="!product.inStock" class="h-5 w-5 inline mr-2" />
+        <IconCartPlus v-else class="h-5 w-5 inline mr-2" />
         
         <span v-if="isAddingToCart">Agregando...</span>
         <span v-else-if="!product.inStock">Agotado</span>
@@ -155,7 +158,7 @@
           :key="message"
           class="flex items-center space-x-2 text-sm text-red-600"
         >
-          <Icon name="mdi:alert-circle" class="h-4 w-4 flex-shrink-0" />
+          <IconAlertCircle class="h-4 w-4 flex-shrink-0" />
           <span>{{ message }}</span>
         </div>
       </div>
@@ -166,7 +169,7 @@
       v-if="showSuccessMessage" 
       class="bg-green-50 border border-green-200 rounded-md p-4 flex items-center space-x-3"
     >
-      <Icon name="mdi:check-circle" class="h-5 w-5 text-green-600 flex-shrink-0" />
+      <IconCheckCircle class="h-5 w-5 text-green-600 flex-shrink-0" />
       <div>
         <p class="text-sm font-medium text-green-800">¡Producto agregado al carrito!</p>
         <p class="text-sm text-green-600">{{ product.name }} ({{ selectedSize }}, {{ selectedColor }})</p>
@@ -178,19 +181,19 @@
       <h3 class="text-lg font-semibold text-gray-900">Características del producto</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
         <div class="flex items-center space-x-2">
-          <Icon name="mdi:shield-check" class="h-4 w-4 text-green-600" />
+          <IconShieldCheck class="h-4 w-4 text-green-600" />
           <span class="text-gray-600">Producto auténtico</span>
         </div>
         <div class="flex items-center space-x-2">
-          <Icon name="mdi:truck" class="h-4 w-4 text-blue-600" />
+          <IconTruck class="h-4 w-4 text-blue-600" />
           <span class="text-gray-600">Envío gratuito</span>
         </div>
         <div class="flex items-center space-x-2">
-          <Icon name="mdi:refresh" class="h-4 w-4 text-purple-600" />
+          <IconRefresh class="h-4 w-4 text-purple-600" />
           <span class="text-gray-600">30 días de devolución</span>
         </div>
         <div class="flex items-center space-x-2">
-          <Icon name="mdi:medal" class="h-4 w-4 text-yellow-600" />
+          <IconMedal class="h-4 w-4 text-yellow-600" />
           <span class="text-gray-600">Calidad premium</span>
         </div>
       </div>
@@ -199,6 +202,18 @@
 </template>
 
 <script setup>
+import IconStar from '~icons/mdi/star'
+import IconMinus from '~icons/mdi/minus'
+import IconPlus from '~icons/mdi/plus'
+import IconCheckCircle from '~icons/mdi/check-circle'
+import IconAlertCircle from '~icons/mdi/alert-circle'
+import IconLoading from '~icons/mdi/loading'
+import IconCartPlus from '~icons/mdi/cart-plus'
+import IconShieldCheck from '~icons/mdi/shield-check'
+import IconTruck from '~icons/mdi/truck'
+import IconRefresh from '~icons/mdi/refresh'
+import IconMedal from '~icons/mdi/medal'
+
 const props = defineProps(['product'])
 
 const cartStore = useCartStore()

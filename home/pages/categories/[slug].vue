@@ -22,14 +22,14 @@
 
     <!-- Empty State -->
     <div v-else class="text-center py-12">
-      <Icon name="mdi:tshirt-crew" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
+      <IconTshirtCrew class="h-16 w-16 text-gray-400 mx-auto mb-4" />
       <h3 class="text-lg font-medium text-gray-900 mb-2">No products found</h3>
       <p class="text-gray-600 mb-6">We couldn't find any products in this category.</p>
       <NuxtLink 
         to="/categories" 
         class="inline-flex items-center px-4 py-2 bg-primary-600 text-white font-medium rounded-md hover:bg-primary-700 transition-colors"
       >
-        <Icon name="mdi:arrow-left" class="mr-2 h-4 w-4" />
+        <IconArrowLeft class="mr-2 h-4 w-4" />
         Back to Categories
       </NuxtLink>
     </div>
@@ -37,6 +37,9 @@
 </template>
 
 <script setup>
+import IconTshirtCrew from '~icons/mdi/tshirt-crew'
+import IconArrowLeft from '~icons/mdi/arrow-left'
+
 const route = useRoute()
 const productsStore = useProductsStore()
 

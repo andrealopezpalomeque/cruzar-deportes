@@ -14,7 +14,7 @@
       
       <!-- Simple Placeholder -->
       <div v-else class="w-full h-full flex items-center justify-center">
-        <Icon name="mdi:image" class="h-24 w-24 text-gray-400" />
+        <IconImage class="h-24 w-24 text-gray-400" />
       </div>
       
       <!-- Simple Navigation - only if multiple images -->
@@ -23,7 +23,7 @@
         @click="previousImage"
         class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white shadow-lg text-gray-800 rounded-full p-2 hover:bg-gray-50"
       >
-        <Icon name="mdi:chevron-left" class="h-5 w-5" />
+        <IconChevronLeft class="h-5 w-5" />
       </button>
       
       <button
@@ -31,7 +31,7 @@
         @click="nextImage"
         class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white shadow-lg text-gray-800 rounded-full p-2 hover:bg-gray-50"
       >
-        <Icon name="mdi:chevron-right" class="h-5 w-5" />
+        <IconChevronRight class="h-5 w-5" />
       </button>
       
       <!-- Simple counter -->
@@ -53,7 +53,7 @@
         :disabled="thumbnailScrollPosition <= 0"
         :class="{ 'opacity-50 cursor-not-allowed': thumbnailScrollPosition <= 0 }"
       >
-        <Icon name="mdi:chevron-left" class="h-4 w-4" />
+        <IconChevronLeft class="h-4 w-4" />
       </button>
       
       <button
@@ -63,7 +63,7 @@
         :disabled="thumbnailScrollPosition >= maxThumbnailScroll"
         :class="{ 'opacity-50 cursor-not-allowed': thumbnailScrollPosition >= maxThumbnailScroll }"
       >
-        <Icon name="mdi:chevron-right" class="h-4 w-4" />
+        <IconChevronRight class="h-4 w-4" />
       </button>
       
       <!-- Thumbnail container -->
@@ -95,6 +95,10 @@
 </template>
 
 <script setup>
+import IconImage from '~icons/mdi/image'
+import IconChevronLeft from '~icons/mdi/chevron-left'
+import IconChevronRight from '~icons/mdi/chevron-right'
+
 const props = defineProps(['images', 'productName'])
 
 // Reactive state
