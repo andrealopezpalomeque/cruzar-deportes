@@ -4,13 +4,14 @@
     <div class="relative overflow-hidden bg-white">
       <div class="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-indigo-600/5" />
       <div class="relative max-w-4xl mx-auto px-6 py-16 text-center">
-        <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-          <IconInformationCircle class="w-4 h-4" />
+        <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 mb-6">
+          <IconInformationCircle class="w-4 h-4 mr-2" />
           Centro de Ayuda
         </div>
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-            Preguntas Frecuentes
+          Preguntas
+          <span class="text-primary-600">
+            Frecuentes
           </span>
         </h1>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -249,15 +250,15 @@
       </UiCard>
 
       <!-- Help Section -->
-      <UiCard class="border-0 shadow-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white mt-12">
+      <UiCard variant="gradientPrimary" class="mt-12">
         <div class="p-8 text-center">
           <div class="max-w-2xl mx-auto">
-            <h3 class="text-2xl font-bold mb-4">¿Necesitás más ayuda?</h3>
+            <h3 class="text-2xl font-semibold mb-4">¿Necesitás más ayuda?</h3>
             <p class="text-blue-100 mb-8 leading-relaxed">
-              Si tenés dudas específicas sobre el cuidado de tu camiseta o necesitás asistencia personalizada, no
+              Si tenés dudas específicas sobre tu compra o necesitás asistencia personalizada, no
               dudes en contactarnos.
             </p>
-           <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <UiButton size="lg" variant="white" @click="openWhatsApp">
                 <IconChatBubble class="w-5 h-5 mr-2" />
                 Contactar Soporte
