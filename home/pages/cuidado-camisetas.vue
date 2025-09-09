@@ -57,146 +57,147 @@
       </div>
 
       <!-- FAQ Section -->
-      <UiCard variant="modernCard">
-        <div class="p-8">
-          <div class="text-center mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-3">Preguntas Frecuentes</h2>
-            <p class="text-gray-600">Todo lo que necesitás saber para el cuidado perfecto</p>
-          </div>
-
-          <div class="space-y-4">
-            <UiAccordionItem value="item-1">
-              <template #trigger>
-                <div class="flex items-center gap-4">
-                  <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <IconRefresh class="w-5 h-5 text-blue-600" />
-                  </div>
-                  <span class="font-semibold text-gray-900">¿Debo dar vuelta mi camiseta antes de lavarla?</span>
-                </div>
-              </template>
-              <template #content>
-                <div class="ml-14">
-                  <p class="text-gray-700 leading-relaxed mb-4">
-                    Sí, siempre dale vuelta a tu camiseta antes de lavarla. Esto ayuda a proteger las estampas, logos
-                    y escudos del daño durante el ciclo de lavado, manteniéndolos vibrantes e intactos por más tiempo.
-                  </p>
-                  <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
-                    <div class="flex items-start gap-3">
-                      <IconInformationCircle class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p class="font-medium text-blue-900 mb-1">Consejo Pro:</p>
-                        <p class="text-blue-800 text-sm">
-                          Este simple paso puede extender significativamente la vida útil de los gráficos de tu
-                          camiseta.
-                        </p>
-                      </div>
+      <div class="space-y-4">
+        <UiAccordionItem value="item-1" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+          <template #trigger>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconRefresh class="w-5 h-5 text-blue-600" />
+              </div>
+              <span class="font-semibold text-gray-900">¿Debo dar vuelta mi camiseta antes de lavarla?</span>
+            </div>
+          </template>
+          <template #content>
+            <div class="pb-6 pt-2">
+              <div class="ml-14">
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  Sí, siempre dale vuelta a tu camiseta antes de lavarla. Esto ayuda a proteger las estampas, logos
+                  y escudos del daño durante el ciclo de lavado, manteniéndolos vibrantes e intactos por más tiempo.
+                </p>
+                <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
+                  <div class="flex items-start gap-3">
+                    <IconInformationCircle class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p class="font-medium text-blue-900 mb-1">Consejo Pro:</p>
+                      <p class="text-blue-800 text-sm">
+                        Este simple paso puede extender significativamente la vida útil de los gráficos de tu
+                        camiseta.
+                      </p>
                     </div>
                   </div>
                 </div>
-              </template>
-            </UiAccordionItem>
+              </div>
+            </div>
+          </template>
+        </UiAccordionItem>
 
-            <UiAccordionItem value="item-2">
-              <template #trigger>
-                <div class="flex items-center gap-4">
-                  <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <IconLightBulb class="w-5 h-5 text-cyan-600" />
-                  </div>
-                  <span class="font-semibold text-gray-900">¿Qué temperatura de agua debo usar?</span>
-                </div>
-              </template>
-              <template #content>
-                <div class="ml-14">
-                  <p class="text-gray-700 leading-relaxed mb-4">
-                    Siempre lavá tus camisetas con agua fría. El agua fría previene que los colores se destiñan,
-                    reduce el encogimiento de la tela y ayuda a mantener el calce y apariencia original de la
-                    camiseta.
-                  </p>
-                  <div class="bg-cyan-50 border-l-4 border-cyan-400 p-4 rounded-r-lg">
-                    <div class="flex items-start gap-3">
-                      <IconInformationCircle class="w-5 h-5 text-cyan-600 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p class="font-medium text-cyan-900 mb-1">Consejo Pro:</p>
-                        <p class="text-cyan-800 text-sm">
-                          El agua fría es más suave con las telas técnicas y también ahorra energía.
-                        </p>
-                      </div>
+        <UiAccordionItem value="item-2" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+          <template #trigger>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconLightBulb class="w-5 h-5 text-cyan-600" />
+              </div>
+              <span class="font-semibold text-gray-900">¿Qué temperatura de agua debo usar?</span>
+            </div>
+          </template>
+          <template #content>
+            <div class="pb-6 pt-2">
+              <div class="ml-14">
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  Siempre lavá tus camisetas con agua fría. El agua fría previene que los colores se destiñan,
+                  reduce el encogimiento de la tela y ayuda a mantener el calce y apariencia original de la
+                  camiseta.
+                </p>
+                <div class="bg-cyan-50/80 border-l-4 border-cyan-400 p-4 rounded-r-lg backdrop-blur-sm">
+                  <div class="flex items-start gap-3">
+                    <IconInformationCircle class="w-5 h-5 text-cyan-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p class="font-medium text-cyan-900 mb-1">Consejo Pro:</p>
+                      <p class="text-cyan-800 text-sm">
+                        El agua fría es más suave con las telas técnicas y también ahorra energía.
+                      </p>
                     </div>
                   </div>
                 </div>
-              </template>
-            </UiAccordionItem>
+              </div>
+            </div>
+          </template>
+        </UiAccordionItem>
 
-            <UiAccordionItem value="item-3">
-              <template #trigger>
-                <div class="flex items-center gap-4">
-                  <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <IconXMark class="w-5 h-5 text-red-600" />
-                  </div>
-                  <span class="font-semibold text-gray-900">¿Puedo usar suavizante en mi camiseta?</span>
-                </div>
-              </template>
-              <template #content>
-                <div class="ml-14">
-                  <p class="text-gray-700 leading-relaxed mb-4">
-                    No recomendamos usar suavizante en camisetas deportivas. El suavizante puede obstruir las fibras y
-                    reducir las propiedades de absorción de humedad de las telas técnicas.
-                  </p>
-                  <div class="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
-                    <div class="flex items-start gap-3">
-                      <IconExclamationTriangle class="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p class="font-medium text-red-900 mb-1">Importante:</p>
-                        <p class="text-red-800 text-sm">
-                          Evitá el suavizante para mantener el rendimiento técnico de tu camiseta.
-                        </p>
-                      </div>
+        <UiAccordionItem value="item-3" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+          <template #trigger>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconXMark class="w-5 h-5 text-red-600" />
+              </div>
+              <span class="font-semibold text-gray-900">¿Puedo usar suavizante en mi camiseta?</span>
+            </div>
+          </template>
+          <template #content>
+            <div class="pb-6 pt-2">
+              <div class="ml-14">
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  No recomendamos usar suavizante en camisetas deportivas. El suavizante puede obstruir las fibras y
+                  reducir las propiedades de absorción de humedad de las telas técnicas.
+                </p>
+                <div class="bg-red-50/80 border-l-4 border-red-400 p-4 rounded-r-lg backdrop-blur-sm">
+                  <div class="flex items-start gap-3">
+                    <IconExclamationTriangle class="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p class="font-medium text-red-900 mb-1">Importante:</p>
+                      <p class="text-red-800 text-sm">
+                        Evitá el suavizante para mantener el rendimiento técnico de tu camiseta.
+                      </p>
                     </div>
                   </div>
                 </div>
-              </template>
-            </UiAccordionItem>
+              </div>
+            </div>
+          </template>
+        </UiAccordionItem>
 
-            <UiAccordionItem value="item-4">
-              <template #trigger>
-                <div class="flex items-center gap-4">
-                  <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <IconCog class="w-5 h-5 text-indigo-600" />
-                  </div>
-                  <span class="font-semibold text-gray-900">¿Qué ciclo de lavarropas debo usar?</span>
-                </div>
-              </template>
-              <template #content>
-                <div class="ml-14">
-                  <p class="text-gray-700 leading-relaxed">
-                    Usá el ciclo delicado o para ropa deportiva si tu lavarropas lo tiene. Estos ciclos son más suaves
-                    y ayudan a preservar la forma y las propiedades técnicas de la tela.
-                  </p>
-                </div>
-              </template>
-            </UiAccordionItem>
+        <UiAccordionItem value="item-4" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+          <template #trigger>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconCog class="w-5 h-5 text-indigo-600" />
+              </div>
+              <span class="font-semibold text-gray-900">¿Qué ciclo de lavarropas debo usar?</span>
+            </div>
+          </template>
+          <template #content>
+            <div class="pb-6 pt-2">
+              <div class="ml-14">
+                <p class="text-gray-700 leading-relaxed">
+                  Usá el ciclo delicado o para ropa deportiva si tu lavarropas lo tiene. Estos ciclos son más suaves
+                  y ayudan a preservar la forma y las propiedades técnicas de la tela.
+                </p>
+              </div>
+            </div>
+          </template>
+        </UiAccordionItem>
 
-            <UiAccordionItem value="item-5">
-              <template #trigger>
-                <div class="flex items-center gap-4">
-                  <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <IconSun class="w-5 h-5 text-amber-600" />
-                  </div>
-                  <span class="font-semibold text-gray-900">¿Cómo debo secar mi camiseta?</span>
-                </div>
-              </template>
-              <template #content>
-                <div class="ml-14">
-                  <p class="text-gray-700 leading-relaxed">
-                    Lo ideal es secar al aire libre, colgada en un lugar con sombra. Evitá la exposición directa al
-                    sol y el uso de secarropas cuando sea posible, ya que el calor excesivo puede dañar las fibras.
-                  </p>
-                </div>
-              </template>
-            </UiAccordionItem>
-          </div>
-        </div>
-      </UiCard>
+        <UiAccordionItem value="item-5" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+          <template #trigger>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconSun class="w-5 h-5 text-amber-600" />
+              </div>
+              <span class="font-semibold text-gray-900">¿Cómo debo secar mi camiseta?</span>
+            </div>
+          </template>
+          <template #content>
+            <div class="pb-6 pt-2">
+              <div class="ml-14">
+                <p class="text-gray-700 leading-relaxed">
+                  Lo ideal es secar al aire libre, colgada en un lugar con sombra. Evitá la exposición directa al
+                  sol y el uso de secarropas cuando sea posible, ya que el calor excesivo puede dañar las fibras.
+                </p>
+              </div>
+            </div>
+          </template>
+        </UiAccordionItem>
+      </div>
 
       <!-- Help Section -->
       <UiCard variant="gradientPrimary" class="mt-12">
