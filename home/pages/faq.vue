@@ -23,7 +23,7 @@
     <!-- Main Content -->
     <div class="max-w-4xl mx-auto px-6 py-12">
       <!-- Key Features Grid -->
-      <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
         <UiCard class="border-0 shadow-lg bg-white/80 backdrop-blur-sm">
           <div class="p-6 text-center">
             <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
