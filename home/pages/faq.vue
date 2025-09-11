@@ -210,29 +210,6 @@
             </div>
           </template>
         </UiAccordionItem>
-
-        <!-- FAQ Item 6: Loyalty -->
-        <UiAccordionItem value="item-6" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
-          <template #trigger>
-            <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <IconHeart class="w-5 h-5 text-rose-600" />
-              </div>
-              <span class="font-medium text-gray-900">¿Tienen programa de fidelidad o descuentos?</span>
-            </div>
-          </template>
-          <template #content>
-            <div class="pb-6 pt-2">
-              <div class="ml-4 sm:ml-8 md:ml-14">
-                <p class="text-gray-700 leading-relaxed">
-                  Sí, tenemos un programa de puntos para clientes frecuentes y enviamos ofertas exclusivas por
-                  email. También ofrecemos descuentos especiales en fechas importantes y para compras en cantidad.
-                  Suscribite a nuestro newsletter para no perderte ninguna promoción.
-                </p>
-              </div>
-            </div>
-          </template>
-        </UiAccordionItem>
       </div>
 
       <!-- Help Section -->
@@ -262,10 +239,7 @@ import IconInformationCircle from '~icons/heroicons/information-circle'
 import IconCube from '~icons/heroicons/cube'
 import IconCreditCard from '~icons/heroicons/credit-card'
 import IconHeart from '~icons/heroicons/heart'
-import IconLockClosed from '~icons/heroicons/lock-closed'
 import IconArrowLeft from '~icons/heroicons/arrow-left'
-import IconShieldCheck from '~icons/heroicons/shield-check'
-import IconCheckBadge from '~icons/heroicons/check-badge'
 import IconQuestionMarkCircle from '~icons/heroicons/question-mark-circle'
 import IconWhatsapp from '~icons/mdi/whatsapp'
 
