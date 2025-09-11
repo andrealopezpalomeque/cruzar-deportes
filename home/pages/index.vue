@@ -16,7 +16,7 @@
 
           <p class="text-lg md:text-xl text-gray-600 mb-8 text-pretty max-w-2xl mx-auto">
             Descubrí la colección más completa de camisetas deportivas de equipos de todo el mundo. Calidad premium,
-            diseños de calidad premium.
+            diseños auténticos.
           </p>
 
           <!-- Category Pills -->
