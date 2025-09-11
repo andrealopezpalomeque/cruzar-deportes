@@ -4,24 +4,24 @@
     class="fixed inset-0 z-50 overflow-y-auto"
     @click="cartStore.closeCart"
   >
-    <div class="flex min-h-screen items-start justify-center p-4 pt-8">
+    <div class="flex min-h-screen items-start justify-center p-2 sm:p-4 pt-4 sm:pt-8">
       <!-- Backdrop -->
       <div class="fixed inset-0 bg-black bg-opacity-25 transition-opacity"></div>
       
       <!-- Modal -->
       <div
-        class="relative w-full max-w-4xl transform rounded-lg bg-white shadow-xl transition-all"
+        class="relative w-full max-w-6xl transform rounded-lg bg-white shadow-xl transition-all"
         @click.stop
       >
         <!-- Header -->
-        <div class="border-b border-gray-200 px-6 py-4">
+        <div class="border-b border-gray-200 px-4 sm:px-6 py-4">
           <div class="flex items-center justify-between">
             <div class="flex items-center">
               <IconShopping class="h-6 w-6 text-primary-600 mr-2" />
-              <h2 class="text-xl font-semibold text-gray-900">Carrito de Compras</h2>
+              <h2 class="text-lg sm:text-xl font-semibold text-gray-900">Carrito de Compras</h2>
               <span 
                 v-if="cartStore.totalItems > 0"
-                class="ml-3 bg-primary-100 text-primary-800 text-sm font-medium px-2.5 py-0.5 rounded-full"
+                class="ml-2 sm:ml-3 bg-primary-100 text-primary-800 text-xs sm:text-sm font-medium px-2 sm:px-2.5 py-0.5 rounded-full"
               >
                 {{ cartStore.totalItems }} {{ cartStore.totalItems === 1 ? 'producto' : 'productos' }}
               </span>
@@ -29,7 +29,7 @@
             <button
               type="button"
               @click="cartStore.closeCart"
-              class="text-gray-400 hover:text-gray-600 transition-colors"
+              class="text-gray-400 hover:text-gray-600 transition-colors p-1"
             >
               <IconClose class="h-6 w-6" />
             </button>
@@ -53,61 +53,117 @@
           </div>
 
           <!-- Cart Items and Checkout Form -->
-          <div v-else class="grid grid-cols-1 lg:grid-cols-2 gap-6 p-6">
+          <div v-else class="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-6 p-4 sm:p-6">
             <!-- Cart Items -->
-            <div class="space-y-4">
+            <div class="space-y-4 order-1 xl:order-1">
               <h3 class="text-lg font-medium text-gray-900 mb-4">Productos en tu carrito</h3>
               
               <div class="space-y-3">
                 <div
                   v-for="item in cartItems"
                   :key="`${item.productId}-${item.size}-${item.color}`"
-                  class="bg-gray-50 rounded-lg p-4 flex items-center space-x-4"
+                  class="bg-gray-50 rounded-lg p-4"
                 >
-                  <!-- Product Image -->
-                  <img
-                    :src="item.product.images[0]"
-                    :alt="item.product.name"
-                    class="h-16 w-16 object-cover rounded-md flex-shrink-0"
-                  />
-                  
-                  <!-- Product Info -->
-                  <div class="flex-1 min-w-0">
-                    <h4 class="font-medium text-gray-900 truncate">{{ item.product.name }}</h4>
-                    <p class="text-sm text-gray-500">Talla: {{ item.size }}</p>
-                    <p class="text-sm text-gray-500">Color: {{ item.color }}</p>
-                    <p class="text-sm font-medium text-primary-600">${{ item.product.price }} c/u</p>
-                  </div>
-                  
-                  <!-- Quantity Controls -->
-                  <div class="flex items-center space-x-2">
-                    <button
-                      @click="updateQuantity(item, item.quantity - 1)"
-                      :disabled="item.quantity <= 1"
-                      class="w-8 h-8 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      <IconMinus class="h-3 w-3" />
-                    </button>
+                  <!-- Mobile Layout (default) -->
+                  <div class="block sm:hidden">
+                    <!-- Top row: Image and Remove button -->
+                    <div class="flex items-start justify-between mb-3">
+                      <img
+                        :src="item.product.images[0]"
+                        :alt="item.product.name"
+                        class="h-20 w-20 object-cover rounded-md"
+                      />
+                      <button
+                        @click="removeItem(item)"
+                        class="text-red-500 hover:text-red-700 transition-colors p-2 -m-2"
+                        title="Eliminar producto"
+                      >
+                        <IconTrash class="h-5 w-5" />
+                      </button>
+                    </div>
                     
-                    <span class="w-8 text-center text-sm font-medium">{{ item.quantity }}</span>
+                    <!-- Product Info -->
+                    <div class="mb-3">
+                      <h4 class="font-medium text-gray-900 mb-1">{{ item.product.name }}</h4>
+                      <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-500">
+                        <span>Talla: {{ item.size }}</span>
+                        <span>Color: {{ item.color }}</span>
+                      </div>
+                      <p class="text-lg font-semibold text-primary-600 mt-1">${{ item.product.price }} c/u</p>
+                    </div>
                     
+                    <!-- Quantity Controls -->
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm font-medium text-gray-700">Cantidad:</span>
+                      <div class="flex items-center space-x-3">
+                        <button
+                          @click="updateQuantity(item, item.quantity - 1)"
+                          :disabled="item.quantity <= 1"
+                          class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          <IconMinus class="h-4 w-4" />
+                        </button>
+                        
+                        <span class="w-8 text-center font-medium">{{ item.quantity }}</span>
+                        
+                        <button
+                          @click="updateQuantity(item, item.quantity + 1)"
+                          :disabled="item.quantity >= 99"
+                          class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          <IconPlus class="h-4 w-4" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Desktop Layout (sm and up) -->
+                  <div class="hidden sm:flex items-center space-x-4">
+                    <!-- Product Image -->
+                    <img
+                      :src="item.product.images[0]"
+                      :alt="item.product.name"
+                      class="h-16 w-16 object-cover rounded-md flex-shrink-0"
+                    />
+                    
+                    <!-- Product Info -->
+                    <div class="flex-1 min-w-0">
+                      <h4 class="font-medium text-gray-900 truncate">{{ item.product.name }}</h4>
+                      <p class="text-sm text-gray-500">Talla: {{ item.size }}</p>
+                      <p class="text-sm text-gray-500">Color: {{ item.color }}</p>
+                      <p class="text-sm font-medium text-primary-600">${{ item.product.price }} c/u</p>
+                    </div>
+                    
+                    <!-- Quantity Controls -->
+                    <div class="flex items-center space-x-2">
+                      <button
+                        @click="updateQuantity(item, item.quantity - 1)"
+                        :disabled="item.quantity <= 1"
+                        class="w-8 h-8 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <IconMinus class="h-3 w-3" />
+                      </button>
+                      
+                      <span class="w-8 text-center text-sm font-medium">{{ item.quantity }}</span>
+                      
+                      <button
+                        @click="updateQuantity(item, item.quantity + 1)"
+                        :disabled="item.quantity >= 99"
+                        class="w-8 h-8 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <IconPlus class="h-3 w-3" />
+                      </button>
+                    </div>
+                    
+                    <!-- Remove Button -->
                     <button
-                      @click="updateQuantity(item, item.quantity + 1)"
-                      :disabled="item.quantity >= 99"
-                      class="w-8 h-8 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                      @click="removeItem(item)"
+                      class="text-red-500 hover:text-red-700 transition-colors"
+                      title="Eliminar producto"
                     >
-                      <IconPlus class="h-3 w-3" />
+                      <IconTrash class="h-4 w-4" />
                     </button>
                   </div>
-                  
-                  <!-- Remove Button -->
-                  <button
-                    @click="removeItem(item)"
-                    class="text-red-500 hover:text-red-700 transition-colors"
-                    title="Eliminar producto"
-                  >
-                    <IconTrash class="h-4 w-4" />
-                  </button>
                 </div>
               </div>
 
@@ -121,7 +177,7 @@
             </div>
 
             <!-- Customer Form -->
-            <div class="bg-gray-50 rounded-lg p-6">
+            <div class="bg-gray-50 rounded-lg p-4 sm:p-6 order-2 xl:order-2">
               <h3 class="text-lg font-medium text-gray-900 mb-4">Información de contacto</h3>
               
               <form @submit.prevent="handleCheckout" class="space-y-4">
