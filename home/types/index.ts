@@ -10,6 +10,7 @@ export interface Product {
   category: CategoryType
   subcategory?: string
   images: string[]
+  totalImages?: number
   sizes: string[]
   colors: string[]
   inStock: boolean

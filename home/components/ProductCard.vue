@@ -44,12 +44,12 @@
 
           <!-- Image count indicator - Bottom right corner -->
           <div 
-            v-if="product.images?.length > 1"
+            v-if="(product.totalImages || product.images?.length || 0) > 1"
             class="absolute bottom-2 right-2"
           >
             <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-black bg-opacity-70 text-white shadow-sm pointer-events-auto">
               <IconImageMultiple class="h-3 w-3 mr-1" />
-              {{ product.images.length }}
+              {{ product.totalImages || product.images?.length || 0 }}
             </span>
           </div>
         </div>
