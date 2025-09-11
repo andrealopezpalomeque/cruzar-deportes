@@ -182,7 +182,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
         <div class="flex items-center space-x-2">
           <IconShieldCheck class="h-4 w-4 text-green-600" />
-          <span class="text-gray-600">Producto auténtico</span>
+          <span class="text-gray-600">Producto de calidad premium</span>
         </div>
         <div class="flex items-center space-x-2">
           <IconTruck class="h-4 w-4 text-blue-600" />

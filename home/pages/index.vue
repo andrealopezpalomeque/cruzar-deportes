@@ -16,7 +16,7 @@
 
           <p class="text-lg md:text-xl text-gray-600 mb-8 text-pretty max-w-2xl mx-auto">
             Descubrí la colección más completa de camisetas deportivas de equipos de todo el mundo. Calidad premium,
-            diseños auténticos.
+            diseños de calidad premium.
           </p>
 
           <!-- Category Pills -->
@@ -70,7 +70,7 @@
               <IconShieldCheck class="w-6 h-6 text-primary-600" />
             </div>
             <h3 class="font-semibold mb-2">Calidad Garantizada</h3>
-            <p class="text-sm text-gray-600">Productos oficiales y auténticos</p>
+            <p class="text-sm text-gray-600">Productos de calidad premium</p>
           </div>
 
           <div class="text-center">
@@ -175,7 +175,7 @@ onMounted(() => {
 useHead({
   title: 'Cruzar Deportes - Camisetas Deportivas',
   meta: [
-    { name: 'description', content: 'Compra camisetas deportivas de equipos de todo el mundo. Encuentra la mercadería oficial de tu equipo favorito.' }
+    { name: 'description', content: 'Compra camisetas deportivas de equipos de todo el mundo. Encuentra la mercadería de calidad premium de tu equipo favorito.' }
   ]
 })
 </script>
