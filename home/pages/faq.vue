@@ -69,7 +69,7 @@
           </template>
           <template #content>
             <div class="pb-6 pt-2">
-              <div class="ml-14">
+              <div class="ml-4 sm:ml-8 md:ml-14">
                 <p class="text-gray-700 leading-relaxed mb-4">
                   Realizamos envíos a todo el país. El envío es gratuito en compras superiores a $50.000. Para
                   montos menores, el costo varía según la ubicación. Los tiempos de entrega son de 3 a 7 días
@@ -103,7 +103,7 @@
           </template>
           <template #content>
             <div class="pb-6 pt-2">
-              <div class="ml-14">
+              <div class="ml-4 sm:ml-8 md:ml-14">
                 <div class="space-y-4">
                   <!-- Banco de Corrientes Promotion -->
                   <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
@@ -165,7 +165,7 @@
           </template>
           <template #content>
             <div class="pb-6 pt-2">
-              <div class="ml-14">
+              <div class="ml-4 sm:ml-8 md:ml-14">
                 <p class="text-gray-700 leading-relaxed mb-4">
                   Sí, tenés 30 días desde la recepción del producto para devolverlo o cambiarlo. El artículo debe
                   estar sin usar, con las etiquetas intactas y en su empaque inicial. Los gastos de envío para
@@ -200,7 +200,7 @@
           </template>
           <template #content>
             <div class="pb-6 pt-2">
-              <div class="ml-14">
+              <div class="ml-4 sm:ml-8 md:ml-14">
                 <p class="text-gray-700 leading-relaxed">
                   Una vez que tu pedido sea despachado, recibirás un email con el número de seguimiento y un enlace
                   para rastrear tu envío en tiempo real. También podés consultar el estado de tu pedido en tu cuenta
@@ -223,7 +223,7 @@
           </template>
           <template #content>
             <div class="pb-6 pt-2">
-              <div class="ml-14">
+              <div class="ml-4 sm:ml-8 md:ml-14">
                 <p class="text-gray-700 leading-relaxed">
                   Sí, tenemos un programa de puntos para clientes frecuentes y enviamos ofertas exclusivas por
                   email. También ofrecemos descuentos especiales en fechas importantes y para compras en cantidad.
