@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-white">
     <!-- Hero Section -->
-    <section class="relative py-20 md:py-32 overflow-hidden">
+    <section class="relative py-12 md:py-16 overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-br from-primary-50 to-blue-50"></div>
       <div class="container mx-auto px-4 relative">
         <div class="max-w-4xl mx-auto text-center">
@@ -86,7 +86,7 @@
 
 
     <!-- Featured Products -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">Productos Destacados</h2>
@@ -126,7 +126,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20">
+    <section class="py-12">
       <div class="container mx-auto px-4">
         <div class="bg-gradient-to-r from-primary-600 to-blue-600 text-white overflow-hidden rounded-lg">
           <div class="p-8 md:p-12 text-center relative">
