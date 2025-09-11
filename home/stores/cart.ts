@@ -19,6 +19,46 @@ export const useCartStore = defineStore('cart', () => {
     address: '',
     paymentMethod: 'transfer'
   })
+
+  // Load cart from localStorage on initialization
+  if (process.client) {
+    const savedCart = localStorage.getItem('cruzar-deportes-cart')
+    const savedCustomerInfo = localStorage.getItem('cruzar-deportes-customer-info')
+    
+    if (savedCart) {
+      try {
+        const parsedCart = JSON.parse(savedCart)
+        if (Array.isArray(parsedCart)) {
+          items.value = parsedCart
+        }
+      } catch (error) {
+        console.warn('Error loading cart from localStorage:', error)
+      }
+    }
+
+    if (savedCustomerInfo) {
+      try {
+        const parsedCustomerInfo = JSON.parse(savedCustomerInfo)
+        customerInfo.value = { ...customerInfo.value, ...parsedCustomerInfo }
+      } catch (error) {
+        console.warn('Error loading customer info from localStorage:', error)
+      }
+    }
+  }
+
+  // Save cart to localStorage whenever items change
+  watch(items, (newItems) => {
+    if (process.client) {
+      localStorage.setItem('cruzar-deportes-cart', JSON.stringify(newItems))
+    }
+  }, { deep: true })
+
+  // Save customer info to localStorage whenever it changes
+  watch(customerInfo, (newCustomerInfo) => {
+    if (process.client) {
+      localStorage.setItem('cruzar-deportes-customer-info', JSON.stringify(newCustomerInfo))
+    }
+  }, { deep: true })
   
   const totalItems = computed(() =>
     items.value.reduce((total, item) => total + item.quantity, 0)
@@ -86,6 +126,10 @@ export const useCartStore = defineStore('cart', () => {
 
   function clearCart() {
     items.value = []
+    if (process.client) {
+      localStorage.removeItem('cruzar-deportes-cart')
+      localStorage.removeItem('cruzar-deportes-customer-info')
+    }
   }
 
   function openCart() {
