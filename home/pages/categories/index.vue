@@ -5,9 +5,12 @@
       <p class="text-lg text-gray-600">Explora nuestra colección organizada por confederaciones de fútbol</p>
     </div>
 
-    <div v-if="productsStore.loading" class="flex justify-center">
-      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
-    </div>
+    <GridSkeleton 
+      v-if="productsStore.loading" 
+      type="category" 
+      :count="6" 
+      :cols="3" 
+    />
 
     <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <NuxtLink 

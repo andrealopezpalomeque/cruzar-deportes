@@ -93,9 +93,12 @@
           <p class="text-lg text-gray-600">Las camisetas más populares de la temporada</p>
         </div>
 
-        <div v-if="productsStore.loading" class="flex justify-center">
-          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
-        </div>
+        <GridSkeleton 
+          v-if="productsStore.loading" 
+          type="product" 
+          :count="8" 
+          :cols="4" 
+        />
 
         <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <ProductCard 

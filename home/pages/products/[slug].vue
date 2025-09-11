@@ -42,9 +42,9 @@
     </div>
 
     <!-- Related Products -->
-    <div v-if="relatedProducts.length > 0" class="mt-16">
+    <div v-if="!loading" class="mt-16">
       <h2 class="text-2xl font-bold text-gray-900 mb-8">Productos Relacionados</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div v-if="relatedProducts.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <ProductCard 
           v-for="relatedProduct in relatedProducts.slice(0, 4)" 
           :key="relatedProduct.id"
