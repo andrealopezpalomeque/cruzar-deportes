@@ -62,7 +62,7 @@
               <IconTruckFast class="w-6 h-6 text-primary-600" />
             </div>
             <h3 class="font-semibold mb-2">Envío Gratis</h3>
-            <p class="text-sm text-gray-600">En compras superiores a $50.000</p>
+            <p class="text-sm text-gray-600">En compras superiores a $99.000</p>
           </div>
 
           <div class="text-center">
