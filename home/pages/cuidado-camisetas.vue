@@ -69,7 +69,7 @@
           </template>
           <template #content>
             <div class="pb-6 pt-2">
-              <div class="ml-14">
+              <div class="ml-4 sm:ml-8 md:ml-14">
                 <p class="text-gray-700 leading-relaxed mb-4">
                   Sí, siempre dale vuelta a tu camiseta antes de lavarla. Esto ayuda a proteger las estampas, logos
                   y escudos del daño durante el ciclo de lavado, manteniéndolos vibrantes e intactos por más tiempo.
@@ -102,7 +102,7 @@
           </template>
           <template #content>
             <div class="pb-6 pt-2">
-              <div class="ml-14">
+              <div class="ml-4 sm:ml-8 md:ml-14">
                 <p class="text-gray-700 leading-relaxed mb-4">
                   Siempre lavá tus camisetas con agua fría. El agua fría previene que los colores se destiñan,
                   reduce el encogimiento de la tela y ayuda a mantener el calce y apariencia original de la
@@ -135,7 +135,7 @@
           </template>
           <template #content>
             <div class="pb-6 pt-2">
-              <div class="ml-14">
+              <div class="ml-4 sm:ml-8 md:ml-14">
                 <p class="text-gray-700 leading-relaxed mb-4">
                   No recomendamos usar suavizante en camisetas deportivas. El suavizante puede obstruir las fibras y
                   reducir las propiedades de absorción de humedad de las telas técnicas.
@@ -167,7 +167,7 @@
           </template>
           <template #content>
             <div class="pb-6 pt-2">
-              <div class="ml-14">
+              <div class="ml-4 sm:ml-8 md:ml-14">
                 <p class="text-gray-700 leading-relaxed">
                   Usá el ciclo delicado o para ropa deportiva si tu lavarropas lo tiene. Estos ciclos son más suaves
                   y ayudan a preservar la forma y las propiedades técnicas de la tela.
@@ -188,7 +188,7 @@
           </template>
           <template #content>
             <div class="pb-6 pt-2">
-              <div class="ml-14">
+              <div class="ml-4 sm:ml-8 md:ml-14">
                 <p class="text-gray-700 leading-relaxed">
                   Lo ideal es secar al aire libre, colgada en un lugar con sombra. Evitá la exposición directa al
                   sol y el uso de secarropas cuando sea posible, ya que el calor excesivo puede dañar las fibras.
