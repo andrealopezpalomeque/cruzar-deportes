@@ -30,7 +30,7 @@
               <IconCube class="w-6 h-6 text-green-600" />
             </div>
             <h3 class="font-semibold text-gray-900 mb-2">Envío Gratis</h3>
-            <p class="text-sm text-gray-600">En compras superiores a $99.000</p>
+            <p class="text-sm text-gray-600">En compras superiores a $99.999</p>
           </div>
         </UiCard>
 
@@ -71,7 +71,7 @@
             <div class="pb-6 pt-2">
               <div class="ml-4 sm:ml-8 md:ml-14">
                 <p class="text-gray-700 leading-relaxed mb-4">
-                  Realizamos envíos a todo el país. El envío es gratuito en compras superiores a $99.000. Para
+                  Realizamos envíos a todo el país. El envío es gratuito en compras superiores a $99.999. Para
                   montos menores, el costo varía según la ubicación. Los tiempos de entrega son de 3 a 7 días
                   hábiles para CABA y GBA, y de 5 a 10 días hábiles para el interior del país.
                 </p>
