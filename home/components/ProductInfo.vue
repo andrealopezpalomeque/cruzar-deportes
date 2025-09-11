@@ -38,47 +38,37 @@
     <!-- Product Options -->
     <div class="space-y-6">
       <!-- Size Selection -->
-      <div v-if="product.sizes?.length > 0">
+      <div>
         <label class="block text-sm font-medium text-gray-900 mb-3">
           Talla
           <span class="text-red-500">*</span>
         </label>
-        <div class="grid grid-cols-5 gap-2">
-          <button
-            v-for="size in product.sizes"
-            :key="size"
-            @click="selectedSize = size"
-            class="px-3 py-2 text-sm font-medium border rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-primary-500"
-            :class="{
-              'border-primary-600 bg-primary-50 text-primary-900': selectedSize === size,
-              'border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50': selectedSize !== size
-            }"
-          >
-            {{ size }}
-          </button>
-        </div>
+        <input
+          v-model="selectedSize"
+          type="text"
+          placeholder="Ej: L, XL, 42, etc."
+          class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+        />
+        <p class="text-sm text-gray-500 mt-2">
+          Especifica la talla que necesitas (letras o números)
+        </p>
       </div>
 
       <!-- Color Selection -->
-      <div v-if="product.colors?.length > 1">
+      <div>
         <label class="block text-sm font-medium text-gray-900 mb-3">
-          Color
+          Color/Modelo
           <span class="text-red-500">*</span>
         </label>
-        <div class="flex flex-wrap gap-2">
-          <button
-            v-for="color in product.colors"
-            :key="color"
-            @click="selectedColor = color"
-            class="px-4 py-2 text-sm font-medium border rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-primary-500"
-            :class="{
-              'border-primary-600 bg-primary-50 text-primary-900': selectedColor === color,
-              'border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50': selectedColor !== color
-            }"
-          >
-            {{ color }}
-          </button>
-        </div>
+        <input
+          v-model="selectedColor"
+          type="text"
+          placeholder="Ej: Azul local como en foto #1, Rojo visitante como en foto #3"
+          class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+        />
+        <p class="text-sm text-gray-500 mt-2">
+          Describe el color/modelo que deseas y referencia el número de foto donde lo ves
+        </p>
       </div>
 
       <!-- Quantity Selection -->
@@ -172,7 +162,7 @@
       <IconCheckCircle class="h-5 w-5 text-green-600 flex-shrink-0" />
       <div>
         <p class="text-sm font-medium text-green-800">¡Producto agregado al carrito!</p>
-        <p class="text-sm text-green-600">{{ product.name }} ({{ selectedSize }}, {{ selectedColor }})</p>
+        <p class="text-sm text-green-600">{{ product.name }} - Talla: {{ selectedSize }}, Color/Modelo: {{ selectedColor }}</p>
       </div>
     </div>
 
@@ -238,8 +228,8 @@ const totalPrice = computed(() => {
 
 const canAddToCart = computed(() => {
   return props.product.inStock && 
-         selectedSize.value && 
-         selectedColor.value && 
+         selectedSize.value && selectedSize.value.trim() !== '' &&
+         selectedColor.value && selectedColor.value.trim() !== '' &&
          quantity.value > 0 &&
          !isAddingToCart.value
 })
@@ -251,12 +241,12 @@ const validationMessages = computed(() => {
     messages.push('Este producto está agotado')
   }
   
-  if (props.product.sizes?.length > 0 && !selectedSize.value) {
-    messages.push('Por favor selecciona una talla')
+  if (!selectedSize.value || selectedSize.value.trim() === '') {
+    messages.push('Por favor especifica una talla')
   }
   
-  if (props.product.colors?.length > 1 && !selectedColor.value) {
-    messages.push('Por favor selecciona un color')
+  if (!selectedColor.value || selectedColor.value.trim() === '') {
+    messages.push('Por favor especifica el color/modelo')
   }
   
   if (quantity.value < 1) {
@@ -310,24 +300,11 @@ async function addToCart() {
   }
 }
 
-// Initialize default selections
-onMounted(() => {
-  // Set default size
-  if (props.product.sizes?.length > 0) {
-    selectedSize.value = props.product.sizes[0]
-  }
-  
-  // Set default color
-  if (props.product.colors?.length > 0) {
-    selectedColor.value = props.product.colors[0]
-  }
-})
-
 // Watch for product changes (if user navigates to different product)
 watch(() => props.product, () => {
-  // Reset selections
-  selectedSize.value = props.product.sizes?.[0] || ''
-  selectedColor.value = props.product.colors?.[0] || ''
+  // Reset selections to empty state
+  selectedSize.value = ''
+  selectedColor.value = ''
   quantity.value = 1
   showSuccessMessage.value = false
 }, { immediate: true })
