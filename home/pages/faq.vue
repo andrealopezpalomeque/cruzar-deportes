@@ -246,7 +246,7 @@
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <UiButton size="lg" variant="white" @click="openWhatsApp">
-                <IconChatBubble class="w-5 h-5 mr-2" />
+                <IconWhatsapp class="w-5 h-5 mr-2" />
                 Contactar Soporte
               </UiButton>
             </div>
@@ -267,7 +267,7 @@ import IconArrowLeft from '~icons/heroicons/arrow-left'
 import IconShieldCheck from '~icons/heroicons/shield-check'
 import IconCheckBadge from '~icons/heroicons/check-badge'
 import IconQuestionMarkCircle from '~icons/heroicons/question-mark-circle'
-import IconChatBubble from '~icons/heroicons/chat-bubble-left-right'
+import IconWhatsapp from '~icons/mdi/whatsapp'
 
 useHead({
   title: 'Preguntas Frecuentes | Cruzar Deportes',

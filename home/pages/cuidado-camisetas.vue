@@ -210,7 +210,7 @@
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <UiButton size="lg" variant="white" @click="openWhatsApp">
-                <IconChatBubble class="w-5 h-5 mr-2" />
+                <IconWhatsapp class="w-5 h-5 mr-2" />
                 Contactar Soporte
               </UiButton>
               <UiButton size="lg" variant="whiteOutline" @click="navigateTo('/faq')">
@@ -237,7 +237,7 @@ import IconXMark from '~icons/heroicons/x-mark'
 import IconExclamationTriangle from '~icons/heroicons/exclamation-triangle'
 import IconCog from '~icons/heroicons/cog-6-tooth'
 import IconSun from '~icons/heroicons/sun'
-import IconChatBubble from '~icons/heroicons/chat-bubble-left-right'
+import IconWhatsapp from '~icons/mdi/whatsapp'
 import IconQuestionMark from '~icons/heroicons/question-mark-circle'
 
 useHead({
