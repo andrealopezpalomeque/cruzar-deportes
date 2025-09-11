@@ -50,10 +50,10 @@
     <!-- Features Section -->
     <section class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div class="text-center">
             <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <IconTruckFast class="w-6 h-6 text-primary-600" />
+              <IconTruck class="w-6 h-6 text-primary-600" />
             </div>
             <h3 class="font-semibold mb-2">Envío Gratis</h3>
             <p class="text-sm text-gray-600">En compras superiores a $99.999</p>
@@ -69,10 +69,18 @@
 
           <div class="text-center">
             <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <IconAccountGroup class="w-6 h-6 text-primary-600" />
+              <IconUserGroup class="w-6 h-6 text-primary-600" />
             </div>
             <h3 class="font-semibold mb-2">Atención 24/7</h3>
             <p class="text-sm text-gray-600">Soporte personalizado siempre</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <IconMagnifyingGlass class="w-6 h-6 text-primary-600" />
+            </div>
+            <h3 class="font-semibold mb-2">Camisetas a Pedido</h3>
+            <p class="text-sm text-gray-600">Conseguimos cualquier camiseta que necesites</p>
           </div>
         </div>
       </div>
@@ -119,26 +127,33 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-12">
+    <!-- Custom Jersey Request Section -->
+    <section class="py-16">
       <div class="container mx-auto px-4">
-        <div class="bg-gradient-to-r from-primary-600 to-blue-600 text-white overflow-hidden rounded-lg">
-          <div class="p-8 md:p-12 text-center relative">
-            <div class="absolute inset-0 bg-black/10"></div>
-            <div class="relative">
-              <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Listo para vestir tu pasión?</h2>
-              <p class="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-                Unite a miles de fanáticos que ya visten con orgullo los colores de sus equipos favoritos
+        <UiCard variant="gradientPrimary" class="max-w-4xl mx-auto">
+          <div class="p-8 md:p-12 text-center">
+            <div class="max-w-3xl mx-auto">
+              <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <IconMagnifyingGlass class="w-8 h-8 text-white" />
+              </div>
+              <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                ¿No encontrás la camiseta que buscás?
+              </h2>
+              <p class="text-lg text-blue-100 mb-8 leading-relaxed max-w-2xl mx-auto">
+                Envianos las especificaciones de la camiseta que necesitás y nosotros la conseguimos para vos.
               </p>
-              <NuxtLink 
-                to="/products"
-                class="inline-flex items-center px-8 py-3 bg-white text-primary-600 text-base font-semibold rounded-lg hover:bg-gray-100 transition-colors"
-              >
-                Comenzar a Comprar
-              </NuxtLink>
+              
+              <UiButton size="lg" variant="white" @click="openCustomJerseyWhatsApp">
+                <IconWhatsapp class="w-5 h-5 mr-2" />
+                Solicitar Camiseta Personalizada
+              </UiButton>
+              
+              <p class="text-sm text-blue-200 mt-4">
+                Respuesta en menos de 24 horas
+              </p>
             </div>
           </div>
-        </div>
+        </UiCard>
       </div>
     </section>
   </div>
@@ -146,10 +161,12 @@
 
 <script setup>
 import IconSoccer from '~icons/mdi/soccer'
-import IconTruckFast from '~icons/mdi/truck-fast'
-import IconShieldCheck from '~icons/mdi/shield-check'
-import IconAccountGroup from '~icons/mdi/account-group'
+import IconTruck from '~icons/heroicons/truck'
+import IconShieldCheck from '~icons/heroicons/shield-check'
+import IconUserGroup from '~icons/heroicons/user-group'
 import IconTshirtCrew from '~icons/mdi/tshirt-crew'
+import IconMagnifyingGlass from '~icons/heroicons/magnifying-glass'
+import IconWhatsapp from '~icons/mdi/whatsapp'
 
 const productsStore = useProductsStore()
 
@@ -158,6 +175,12 @@ const featuredProducts = computed(() => productsStore.getFeaturedProducts)
 
 function navigateToCategory(slug) {
   navigateTo(`/categories/${slug}`)
+}
+
+const openCustomJerseyWhatsApp = () => {
+  const phoneNumber = '5493794000783'
+  const message = encodeURIComponent('Hola, estoy buscando una camiseta específica y me gustaría consultar si pueden conseguirla.')
+  window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank')
 }
 
 
