@@ -28,7 +28,6 @@
             <li><NuxtLink to="/" class="text-gray-300 hover:text-white">Inicio</NuxtLink></li>
             <li><NuxtLink to="/categories" class="text-gray-300 hover:text-white">Categorías</NuxtLink></li>
             <li><NuxtLink to="/products" class="text-gray-300 hover:text-white">Todos los Productos</NuxtLink></li>
-            <li><NuxtLink to="/about" class="text-gray-300 hover:text-white">Acerca de</NuxtLink></li>
           </ul>
         </div>
 
