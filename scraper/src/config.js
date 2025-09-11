@@ -22,13 +22,27 @@ export const CONFIG = {
     delays: {
       betweenRequests: 2000,      // 2 seconds minimum
       betweenCategories: 5000,    // 5 seconds between categories
+      betweenPages: 3000,         // 3 seconds between pagination requests
       onError: 10000,             // 10 seconds on error
       randomVariation: 1000       // ±1 second random variation
     },
     maxRetries: 3,
     concurrency: 1,               // One request at a time
     timeout: 30000,               // 30 seconds timeout
-    respectRobotsTxt: true
+    respectRobotsTxt: true,
+    pagination: {
+      enabled: true,              // Enable multi-page category scraping
+      maxPagesPerCategory: 50,    // Maximum pages to scrape per category
+      pageDetectionTimeout: 5000, // Timeout for detecting next page
+      autoDetectPages: true,      // Auto-detect page count vs manual iteration
+      pagePatterns: [             // URL patterns for detecting pages
+        '?page=',
+        '&page=',
+        '/page/',
+        '?p=',
+        '&p='
+      ]
+    }
   },
 
   // Request headers and anti-detection

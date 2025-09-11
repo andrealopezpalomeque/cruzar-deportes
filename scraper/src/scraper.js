@@ -305,6 +305,138 @@ class SportsScraper {
     }
   }
 
+  async extractAlbumLinksFromMultiPageCategory(baseUrl, options = {}) {
+    try {
+      this.logger.info(`Starting multi-page album extraction from: ${baseUrl}`);
+      
+      if (!CONFIG.scraping.pagination.enabled) {
+        this.logger.info('Pagination disabled, falling back to single page extraction');
+        return await this.extractAlbumLinksFromPage(baseUrl, options);
+      }
+
+      const allAlbumLinks = [];
+      let currentPage = 1;
+      let hasNextPage = true;
+      const maxPages = CONFIG.scraping.pagination.maxPagesPerCategory;
+
+      // First, try to detect if the URL already has pagination parameters
+      const urlObj = new URL(baseUrl);
+      const existingPage = urlObj.searchParams.get('page') || urlObj.searchParams.get('p');
+      if (existingPage) {
+        currentPage = parseInt(existingPage) || 1;
+        this.logger.info(`Detected existing page parameter: ${currentPage}`);
+      }
+
+      while (hasNextPage && currentPage <= maxPages) {
+        try {
+          // Construct the URL for the current page
+          const pageUrl = this.buildPageUrl(baseUrl, currentPage);
+          
+          this.logger.info(`Processing page ${currentPage}: ${pageUrl}`);
+
+          // Extract albums from current page
+          const pageAlbums = await this.extractAlbumLinksFromPage(pageUrl, {
+            ...options,
+            referrer: baseUrl
+          });
+
+          if (pageAlbums.length === 0) {
+            this.logger.info(`No albums found on page ${currentPage}, stopping pagination`);
+            break;
+          }
+
+          // Add page albums to collection
+          allAlbumLinks.push(...pageAlbums);
+          this.logger.info(`Found ${pageAlbums.length} albums on page ${currentPage} (total: ${allAlbumLinks.length})`);
+
+          // Check if there's a next page by trying to detect pagination elements
+          hasNextPage = await this.hasNextPage(pageUrl, currentPage);
+          
+          if (hasNextPage) {
+            currentPage++;
+            // Add delay between page requests
+            const delay = this.getRandomDelay(CONFIG.scraping.delays.betweenPages);
+            this.logger.info(`Waiting ${delay}ms before next page...`);
+            await this.sleep(delay);
+          } else {
+            this.logger.info(`No more pages detected after page ${currentPage - 1}`);
+          }
+
+        } catch (error) {
+          this.logger.error(`Failed to process page ${currentPage}: ${error.message}`);
+          // Continue to next page on error, but limit consecutive failures
+          currentPage++;
+          if (currentPage > 3 && allAlbumLinks.length === 0) {
+            // If we've tried 3+ pages and found nothing, stop
+            this.logger.warn('Multiple page failures with no albums found, stopping pagination');
+            break;
+          }
+        }
+      }
+
+      // Remove duplicates based on URL
+      const uniqueAlbums = this.deduplicateAlbums(allAlbumLinks);
+      
+      this.logger.info(`Multi-page extraction complete: ${uniqueAlbums.length} unique albums from ${currentPage - 1} pages`);
+      return uniqueAlbums;
+
+    } catch (error) {
+      this.logger.error(`Failed to extract albums from multi-page category ${baseUrl}: ${error.message}`);
+      // Fallback to single page extraction
+      this.logger.info('Falling back to single page extraction');
+      return await this.extractAlbumLinksFromPage(baseUrl, options);
+    }
+  }
+
+  buildPageUrl(baseUrl, pageNumber) {
+    try {
+      const urlObj = new URL(baseUrl);
+      
+      // Remove existing page parameters
+      urlObj.searchParams.delete('page');
+      urlObj.searchParams.delete('p');
+      
+      // Add page parameter
+      urlObj.searchParams.set('page', pageNumber.toString());
+      
+      return urlObj.toString();
+    } catch (error) {
+      this.logger.error(`Failed to build page URL: ${error.message}`);
+      return `${baseUrl}${baseUrl.includes('?') ? '&' : '?'}page=${pageNumber}`;
+    }
+  }
+
+  async hasNextPage(currentPageUrl, currentPageNumber) {
+    try {
+      // For Yupoo-style pagination, we can try to access the next page directly
+      // and see if it returns content
+      const nextPageUrl = this.buildPageUrl(currentPageUrl, currentPageNumber + 1);
+      
+      this.logger.debug(`Checking if next page exists: ${nextPageUrl}`);
+      
+      // Make a quick request to see if the next page has content
+      const response = await this.makeRequest(nextPageUrl);
+      const $ = cheerio.load(response.data);
+      
+      // Look for album links on the page
+      const albumCount = $('a[href*="/albums/"]').length;
+      const hasAlbumContent = albumCount > 0;
+      
+      // Also check for explicit pagination indicators
+      const hasNextButton = $('.next, .pagination-next, a[href*="page=' + (currentPageNumber + 1) + '"]').length > 0;
+      const hasPageNumbers = $('.pagination, .page-numbers, .pager').length > 0;
+      
+      this.logger.debug(`Next page check - Albums: ${albumCount}, Next button: ${hasNextButton}, Pagination: ${hasPageNumbers}`);
+      
+      return hasAlbumContent || hasNextButton;
+      
+    } catch (error) {
+      this.logger.debug(`Error checking next page: ${error.message}`);
+      // If we can't check, assume there might be more pages (up to max limit)
+      return currentPageNumber < 5; // Conservative fallback
+    }
+  }
+
   extractAlbumTitle($link, $) {
     // Try multiple strategies to get the best album title
     let title = '';
@@ -555,33 +687,113 @@ class SportsScraper {
     return false;
   }
 
+  async findEmptyAlbumFolders(categorySlug) {
+    try {
+      const categoryDir = path.join(CONFIG.paths.downloads, categorySlug);
+      
+      // Check if category directory exists
+      if (!(await fs.pathExists(categoryDir))) {
+        this.logger.info(`Category directory does not exist: ${categoryDir}`);
+        return [];
+      }
+
+      const emptyFolders = [];
+      const entries = await fs.readdir(categoryDir, { withFileTypes: true });
+
+      for (const entry of entries) {
+        if (entry.isDirectory()) {
+          const albumPath = path.join(categoryDir, entry.name);
+          
+          try {
+            // Check if folder is empty or contains only non-image files
+            const albumContents = await fs.readdir(albumPath);
+            const imageFiles = albumContents.filter(file => {
+              const ext = path.extname(file).toLowerCase();
+              return ['.jpg', '.jpeg', '.png', '.webp', '.gif'].includes(ext);
+            });
+
+            if (imageFiles.length === 0) {
+              emptyFolders.push({
+                folderName: entry.name,
+                path: albumPath,
+                hasFiles: albumContents.length > 0,
+                files: albumContents
+              });
+            }
+          } catch (error) {
+            this.logger.warn(`Error reading album folder ${entry.name}: ${error.message}`);
+          }
+        }
+      }
+
+      return emptyFolders;
+    } catch (error) {
+      this.logger.error(`Error finding empty album folders: ${error.message}`);
+      return [];
+    }
+  }
+
+  async cleanupEmptyFolders(categorySlug) {
+    try {
+      const emptyFolders = await this.findEmptyAlbumFolders(categorySlug);
+      
+      if (emptyFolders.length === 0) {
+        this.logger.info('No empty folders found to cleanup');
+        return 0;
+      }
+
+      let cleanedCount = 0;
+      for (const folder of emptyFolders) {
+        try {
+          await fs.remove(folder.path);
+          this.logger.info(`Cleaned up empty folder: ${folder.folderName}`);
+          cleanedCount++;
+        } catch (error) {
+          this.logger.error(`Failed to cleanup folder ${folder.folderName}: ${error.message}`);
+        }
+      }
+
+      return cleanedCount;
+    } catch (error) {
+      this.logger.error(`Error during cleanup: ${error.message}`);
+      return 0;
+    }
+  }
+
   async validateProductGallery(images, albumData) {
     try {
+      this.logger.debug(`Starting validation for album "${albumData.title}" with ${images.length} images`);
+      
       // Quick validation checks
       if (!images || images.length === 0) {
+        this.logger.debug('Validation failed: No images found');
         return { isValid: false, reason: 'No images found' };
       }
 
-      // Check if we have too few images for a product gallery
-      if (images.length < 2) {
-        return { isValid: false, reason: 'Too few images (likely not a product gallery)' };
+      // Relax minimum image requirement - even single images can be valid products
+      if (images.length < 1) {
+        this.logger.debug('Validation failed: No images provided');
+        return { isValid: false, reason: 'No images provided' };
       }
 
-      // Check for sports-related patterns in album title
+      // Check for sports-related patterns in album title - be more lenient
       const title = (albumData.title || '').toLowerCase();
       const sportsPatterns = [
-        'jersey', 'kit', 'shirt', 'shorts', 'authentic', 'player',
-        'home', 'away', 'third', 'gk', 'goalkeeper', 'training',
-        'jacket', 'tracksuit', 'hoodie', 'polo', 'real madrid',
-        'barcelona', 'manchester', 'liverpool', 'juventus', 'milan',
-        'inter', 'ajax', 'psv', 'feyenoord', 'arsenal', 'chelsea'
+        'jersey', 'kit', 'shirt', 'shorts', 'authentic', 'player', 'football', 'soccer',
+        'home', 'away', 'third', 'gk', 'goalkeeper', 'training', 'retro', 'vintage',
+        'jacket', 'tracksuit', 'hoodie', 'polo', 'real madrid', 'barcelona', 
+        'manchester', 'liverpool', 'juventus', 'milan', 'inter', 'ajax', 'psv', 
+        'feyenoord', 'arsenal', 'chelsea', 'national', 'brasil', 'argentina', 
+        'england', 'spain', 'italy', 'germany', 'france', 'nike', 'adidas', 'puma'
       ];
 
       const titleHasSportsTerms = sportsPatterns.some(pattern => title.includes(pattern));
+      this.logger.debug(`Title "${title}" has sports terms: ${titleHasSportsTerms}`);
       
       // Check image characteristics
       let highQualityImages = 0;
       let suspiciousImages = 0;
+      let validProductImages = 0;
       const imageUrls = images.map(img => img.src.toLowerCase());
 
       for (const image of images) {
@@ -595,47 +807,86 @@ class SportsScraper {
         // Count suspicious images (icons, backgrounds, etc.)
         if (this.isSuspiciousImage(imageUrl)) {
           suspiciousImages++;
+          this.logger.debug(`Found suspicious image: ${imageUrl}`);
+        } else {
+          validProductImages++;
         }
       }
 
       // Calculate quality ratios
       const highQualityRatio = highQualityImages / images.length;
       const suspiciousRatio = suspiciousImages / images.length;
+      const validProductRatio = validProductImages / images.length;
 
-      // Validation logic
-      if (suspiciousRatio > 0.5) {
-        return { isValid: false, reason: `Too many suspicious images (${suspiciousRatio * 100}%)` };
+      this.logger.debug(`Image analysis - Total: ${images.length}, High quality: ${highQualityImages} (${Math.round(highQualityRatio * 100)}%), Suspicious: ${suspiciousImages} (${Math.round(suspiciousRatio * 100)}%), Valid: ${validProductImages}`);
+
+      // More lenient validation logic
+      
+      // Only reject if almost all images are suspicious
+      if (suspiciousRatio > 0.8) {
+        this.logger.debug(`Validation failed: Too many suspicious images (${Math.round(suspiciousRatio * 100)}%)`);
+        return { isValid: false, reason: `Too many suspicious images (${Math.round(suspiciousRatio * 100)}%)` };
       }
 
-      if (!titleHasSportsTerms && highQualityRatio < 0.3) {
-        return { isValid: false, reason: 'Does not appear to be sports product gallery' };
+      // If album has sports terms in title, be more lenient with image quality
+      if (titleHasSportsTerms) {
+        this.logger.debug('Album has sports terms - applying lenient validation');
+        if (validProductImages > 0) {
+          this.logger.debug('Validation passed: Has sports terms and at least one valid image');
+          return { 
+            isValid: true, 
+            reason: `Valid sports album: ${validProductImages} valid images, title contains sports terms`,
+            stats: {
+              totalImages: images.length,
+              highQualityImages,
+              suspiciousImages,
+              validProductImages,
+              uniqueImages: new Set(imageUrls).size,
+              hasSportsTerms: titleHasSportsTerms,
+              validationMode: 'lenient (sports terms)'
+            }
+          };
+        }
       }
 
-      if (highQualityRatio < 0.1) {
-        return { isValid: false, reason: 'Very few high-quality product images found' };
+      // For albums without obvious sports terms, require better image quality
+      if (!titleHasSportsTerms && highQualityRatio < 0.2 && validProductRatio < 0.5) {
+        this.logger.debug(`Validation failed: No sports terms and low quality ratio (HQ: ${Math.round(highQualityRatio * 100)}%, Valid: ${Math.round(validProductRatio * 100)}%)`);
+        return { isValid: false, reason: `Low quality non-sports content (HQ: ${Math.round(highQualityRatio * 100)}%, Valid: ${Math.round(validProductRatio * 100)}%)` };
       }
 
-      // Check for duplicate URLs (sometimes galleries repeat images)
+      // Check for duplicate URLs but be more lenient
       const uniqueUrls = new Set(imageUrls);
       const duplicateRatio = 1 - (uniqueUrls.size / images.length);
-      if (duplicateRatio > 0.7) {
-        return { isValid: false, reason: 'Too many duplicate images' };
+      if (duplicateRatio > 0.9) {  // Only reject if extremely high duplicate ratio
+        this.logger.debug(`Validation failed: Too many duplicate images (${Math.round(duplicateRatio * 100)}%)`);
+        return { isValid: false, reason: `Too many duplicate images (${Math.round(duplicateRatio * 100)}%)` };
       }
 
+      // Default to valid if we reach here
+      const reason = titleHasSportsTerms 
+        ? `Valid sports gallery: ${highQualityImages} HQ, ${validProductImages} valid of ${images.length} total`
+        : `Valid gallery: ${highQualityImages} HQ, ${validProductImages} valid of ${images.length} total`;
+      
+      this.logger.debug(`Validation passed: ${reason}`);
+      
       return { 
         isValid: true, 
-        reason: `Valid product gallery: ${highQualityImages}/${images.length} quality images`,
+        reason: reason,
         stats: {
           totalImages: images.length,
           highQualityImages,
           suspiciousImages,
+          validProductImages,
           uniqueImages: uniqueUrls.size,
-          hasSportsTerms: titleHasSportsTerms
+          hasSportsTerms: titleHasSportsTerms,
+          validationMode: titleHasSportsTerms ? 'lenient (sports)' : 'standard'
         }
       };
 
     } catch (error) {
       this.logger.error(`Error validating product gallery: ${error.message}`);
+      this.logger.debug(`Validation error details: ${error.stack}`);
       return { isValid: true, reason: 'Validation error - allowing through' }; // Fail open
     }
   }
@@ -672,47 +923,145 @@ class SportsScraper {
     return suspiciousPatterns.some(pattern => imageUrl.includes(pattern));
   }
 
+  isInvalidProductImage(src, $img) {
+    const srcLower = src.toLowerCase();
+    
+    // Check dimensions - skip very small images (likely UI elements)
+    const width = parseInt($img.attr('width')) || 0;
+    const height = parseInt($img.attr('height')) || 0;
+    
+    // Be more lenient with size restrictions - only skip really tiny images
+    if (width > 0 && height > 0 && (width < 50 || height < 50)) {
+      this.logger.debug(`Skipping tiny image: ${width}x${height} - ${src}`);
+      return true;
+    }
+
+    // Enhanced list of UI/system images to skip
+    const invalidPatterns = [
+      // UI icons and elements
+      'icon', 'logo', 'button', 'arrow', 'bg', 'background',
+      'header', 'footer', 'nav', 'menu', 'placeholder',
+      'spinner', 'loading', 'error', 'blank', 'empty',
+      'avatar', 'profile', 'user', 'account',
+      
+      // Chinese regulatory and system icons
+      'policeicon', 'beian', 'gov.cn', 'miit.gov.cn', 'mps.gov.cn',
+      'icp', '备案', '公网安备', '网安备',
+      
+      // Common Yupoo/website UI elements
+      'website/', 'imgs/', 'static/', 'assets/', 'ui/',
+      'sprite', 'toolbar', 'controls', 'play', 'pause',
+      'share', 'social', 'facebook', 'twitter', 'wechat',
+      
+      // File system patterns that indicate UI
+      '/4.29.1/', '/website/', '/common/', '/shared/',
+      'policeIcon.png', 'icon.png', 'logo.png',
+      
+      // Very specific known UI files
+      's.yupoo.com/website/', 'yupoo.com/website/',
+      
+      // Generic UI indicators
+      'close', 'next', 'prev', 'zoom', 'fullscreen',
+      'download', 'save', 'print', 'email',
+      
+      // Ad and tracking images
+      'ad', 'ads', 'banner', 'promo', 'tracking',
+      'analytics', 'pixel', 'beacon',
+      
+      // Thumbnail indicators that might not be full images
+      'thumb_', '_thumb', 'thumbnail_', '_thumbnail',
+      'preview_', '_preview', 'small_', '_small'
+    ];
+
+    // Check if URL contains any invalid patterns
+    for (const pattern of invalidPatterns) {
+      if (srcLower.includes(pattern.toLowerCase())) {
+        this.logger.debug(`Skipping invalid image (${pattern}): ${src}`);
+        return true;
+      }
+    }
+
+    // Check file extension for non-image files
+    const invalidExtensions = ['.gif', '.svg', '.ico', '.bmp'];
+    for (const ext of invalidExtensions) {
+      if (srcLower.endsWith(ext)) {
+        this.logger.debug(`Skipping non-photo format (${ext}): ${src}`);
+        return true;
+      }
+    }
+
+    // Check for very specific filename patterns that indicate UI
+    const filenamePatterns = [
+      /icon\d*\.png$/i,
+      /logo\d*\.(png|jpg)$/i,
+      /button\d*\.png$/i,
+      /\d+x\d+\.(png|jpg)$/i, // Likely dimension-named UI files
+      /^(bg|background)\d*\./i,
+      /police.*icon/i,
+      /website.*icon/i
+    ];
+
+    for (const pattern of filenamePatterns) {
+      if (pattern.test(srcLower)) {
+        this.logger.debug(`Skipping UI file pattern: ${src}`);
+        return true;
+      }
+    }
+
+    // Check image class names for UI indicators
+    const imgClass = ($img.attr('class') || '').toLowerCase();
+    const uiClasses = ['icon', 'logo', 'button', 'ui', 'system', 'nav', 'header', 'footer'];
+    for (const uiClass of uiClasses) {
+      if (imgClass.includes(uiClass)) {
+        this.logger.debug(`Skipping UI class image (${uiClass}): ${src}`);
+        return true;
+      }
+    }
+
+    // Check alt text for UI indicators
+    const altText = ($img.attr('alt') || '').toLowerCase();
+    const uiAltTexts = ['icon', 'logo', 'button', 'menu', 'nav', 'police', 'beian'];
+    for (const uiAlt of uiAltTexts) {
+      if (altText.includes(uiAlt)) {
+        this.logger.debug(`Skipping UI alt text image (${uiAlt}): ${src}`);
+        return true;
+      }
+    }
+
+    return false; // Image appears to be valid
+  }
+
   getHighQualityImageUrl(src) {
     // Convert Yupoo URLs to highest quality versions
     if (src.includes('photo.yupoo.com')) {
-      // Replace size indicators with largest available - try orig first (highest quality)
+      // Handle multiple image formats and sizes
       let highQualitySrc = src
-        .replace('/small.jpg', '/orig.jpg')      // Try orig first (highest quality)
-        .replace('/medium.jpg', '/orig.jpg')
-        .replace('/square.jpg', '/orig.jpg')
-        .replace('/thumbnail.jpg', '/orig.jpg')
-        .replace('/thumb.jpg', '/orig.jpg');
+        // Try orig first (highest quality)
+        .replace(/(\/small|\/medium|\/square|\/thumbnail|\/thumb)\.(jpg|jpeg|png|webp)$/i, '/orig.$2')
+        .replace(/(\/mwebp)\.(jpg|jpeg|png|webp)$/i, '/orig.$2');
       
-      // If no change, try raw (second highest)
+      // If no change, try raw (second highest)  
       if (highQualitySrc === src) {
         highQualitySrc = src
-          .replace('/small.jpg', '/raw.jpg')
-          .replace('/medium.jpg', '/raw.jpg')
-          .replace('/square.jpg', '/raw.jpg')
-          .replace('/thumbnail.jpg', '/raw.jpg')
-          .replace('/thumb.jpg', '/raw.jpg');
+          .replace(/(\/small|\/medium|\/square|\/thumbnail|\/thumb)\.(jpg|jpeg|png|webp)$/i, '/raw.$2')
+          .replace(/(\/mwebp)\.(jpg|jpeg|png|webp)$/i, '/raw.$2');
       }
       
       // If still no change, try max
       if (highQualitySrc === src) {
         highQualitySrc = src
-          .replace('/small.jpg', '/max.jpg')
-          .replace('/medium.jpg', '/max.jpg')
-          .replace('/square.jpg', '/max.jpg')
-          .replace('/thumbnail.jpg', '/max.jpg')
-          .replace('/thumb.jpg', '/max.jpg');
+          .replace(/(\/small|\/medium|\/square|\/thumbnail|\/thumb)\.(jpg|jpeg|png|webp)$/i, '/max.$2')
+          .replace(/(\/mwebp)\.(jpg|jpeg|png|webp)$/i, '/max.$2');
       }
       
       // If still no change, try large
       if (highQualitySrc === src) {
         highQualitySrc = src
-          .replace('/small.jpg', '/large.jpg')
-          .replace('/medium.jpg', '/large.jpg')
-          .replace('/square.jpg', '/large.jpg')
-          .replace('/thumbnail.jpg', '/large.jpg')
-          .replace('/thumb.jpg', '/large.jpg');
+          .replace(/(\/small|\/medium|\/square|\/thumbnail|\/thumb)\.(jpg|jpeg|png|webp)$/i, '/large.$2')
+          .replace(/(\/mwebp)\.(jpg|jpeg|png|webp)$/i, '/large.$2');
       }
       
+      this.logger.debug(`Quality conversion: ${src} -> ${highQualitySrc}`);
       return highQualitySrc;
     }
     
@@ -1006,11 +1355,18 @@ class SportsScraper {
     try {
       this.logger.info(`Extracting images from: ${url}`);
 
-      // For Yupoo albums, skip image viewer URLs and go directly to image extraction
-      // as the constructed viewer URLs often return 404
+      // For Yupoo albums, try direct image extraction first, then fallback to viewer approach
       if (url.includes('yupoo.com/albums/')) {
-        this.logger.info('Yupoo album detected, using direct image extraction method');
-        return await this.extractDirectImages(url, options);
+        this.logger.info('Yupoo album detected, trying direct image extraction first');
+        const directImages = await this.extractDirectImages(url, options);
+        
+        if (directImages.length > 0) {
+          this.logger.info(`Direct extraction successful: found ${directImages.length} images`);
+          return directImages;
+        } else {
+          this.logger.warn('Direct extraction found no images, trying viewer approach as fallback');
+          // Continue to viewer approach below
+        }
       }
 
       // First, try to extract image viewer URLs (for other album pages)
@@ -1073,6 +1429,15 @@ class SportsScraper {
 
       // Define various image selectors for different types of galleries
       const imageSelectors = [
+        // Yupoo-specific selectors (prioritized first)
+        '.showalbum__children img',
+        '.album__children img', 
+        '.image__children img',
+        '.showalbum__children .image__wrap img',
+        '.viewer__imgwrap img',
+        '#album img',
+        '.photo img',
+        
         // General image selectors
         'img[src*="jpg"], img[src*="jpeg"], img[src*="png"], img[src*="webp"]',
         'img[data-src*="jpg"], img[data-src*="jpeg"], img[data-src*="png"], img[data-src*="webp"]',
@@ -1111,56 +1476,85 @@ class SportsScraper {
 
       // Extract images using multiple selectors
       const foundImages = new Map(); // Use Map to track different sizes of same image
+      let totalChecked = 0;
+      let totalFiltered = 0;
+      
+      this.logger.info(`Starting direct image extraction with ${imageSelectors.length} selectors`);
       
       for (const selector of imageSelectors) {
+        const matchedElements = $(selector);
+        this.logger.debug(`Selector "${selector}" matched ${matchedElements.length} elements`);
+        
+        if (matchedElements.length === 0) continue;
         $(selector).each((index, element) => {
           const $img = $(element);
           let src = $img.attr('src') || $img.attr('data-src') || $img.attr('data-original') || $img.attr('data-lazy');
           
-          if (src) {
-            // Convert relative URLs to absolute
-            if (src.startsWith('//')) {
-              src = 'https:' + src;
-            } else if (src.startsWith('/')) {
+          totalChecked++;
+          
+          if (!src) {
+            this.logger.debug(`No src found for image element in selector "${selector}"`);
+            return;
+          }
+          
+          // Convert relative URLs to absolute
+          if (src.startsWith('//')) {
+            src = 'https:' + src;
+          } else if (src.startsWith('/')) {
+            try {
               const urlObj = new URL(url);
               src = urlObj.origin + src;
+            } catch (error) {
+              this.logger.debug(`Failed to build absolute URL for: ${src}`);
+              return;
+            }
+          } else if (!src.startsWith('http')) {
+            // Try to handle relative URLs without leading slash
+            try {
+              const absoluteUrl = new URL(src, url);
+              src = absoluteUrl.href;
+            } catch (error) {
+              this.logger.debug(`Skipping invalid URL: ${src}`);
+              return;
+            }
+          }
+
+          // Enhanced validation and filtering
+          if (src.startsWith('http')) {
+            // Skip invalid images using comprehensive filtering
+            if (this.isInvalidProductImage(src, $img)) {
+              totalFiltered++;
+              this.logger.debug(`Filtered out invalid image: ${src}`);
+              return;
             }
 
-            // Basic validation and filtering
-            if (src.startsWith('http')) {
-              // Skip very small images (likely icons/buttons)
-              const width = parseInt($img.attr('width')) || 0;
-              const height = parseInt($img.attr('height')) || 0;
+            // Convert to highest quality version (works with proper referrer)
+            const finalSrc = this.getHighQualityImageUrl(src);
+            
+            const imageKey = this.getImageBaseKey(finalSrc);
+            
+            // Extract dimensions from image attributes
+            const width = parseInt($img.attr('width')) || null;
+            const height = parseInt($img.attr('height')) || null;
+            
+            // Only add if we haven't seen this image or if this is a higher quality version
+            if (!foundImages.has(imageKey) || (!url.includes('yupoo.com') && this.isHigherQuality(finalSrc, foundImages.get(imageKey).src))) {
+              const imageInfo = {
+                src: finalSrc,
+                originalSrc: src,
+                alt: $img.attr('alt') || '',
+                title: $img.attr('title') || '',
+                class: $img.attr('class') || '',
+                width: width,
+                height: height,
+                selector: selector,
+                quality: this.getImageQuality(finalSrc)
+              };
               
-              if (width > 0 && height > 0 && (width < 100 || height < 100)) {
-                return; // Skip small images
-              }
-
-              // Skip common non-content images
-              if (src.includes('icon') || src.includes('logo') || src.includes('button') || 
-                  src.includes('arrow') || src.includes('bg') || src.includes('background')) {
-                return;
-              }
-
-              // Convert to highest quality version (works with proper referrer)
-              const finalSrc = this.getHighQualityImageUrl(src);
-              
-              const imageKey = this.getImageBaseKey(finalSrc);
-              
-              // Only add if we haven't seen this image or if this is a higher quality version
-              if (!foundImages.has(imageKey) || (!url.includes('yupoo.com') && this.isHigherQuality(finalSrc, foundImages.get(imageKey).src))) {
-                foundImages.set(imageKey, {
-                  src: finalSrc,
-                  originalSrc: src,
-                  alt: $img.attr('alt') || '',
-                  title: $img.attr('title') || '',
-                  class: $img.attr('class') || '',
-                  width: width || null,
-                  height: height || null,
-                  selector: selector,
-                  quality: this.getImageQuality(finalSrc)
-                });
-              }
+              foundImages.set(imageKey, imageInfo);
+              this.logger.debug(`Added image: ${finalSrc} (${width}x${height}) from selector "${selector}"`);
+            } else {
+              this.logger.debug(`Duplicate or lower quality image skipped: ${finalSrc}`);
             }
           }
         });
@@ -1168,6 +1562,21 @@ class SportsScraper {
 
       // Convert Map to Array
       images.push(...Array.from(foundImages.values()));
+      
+      this.logger.info(`Image extraction summary: ${images.length} unique images found from ${totalChecked} total checked (${totalFiltered} filtered out)`);
+      
+      // Log details of found images for debugging
+      if (images.length > 0) {
+        this.logger.info(`First 3 images found:`);
+        images.slice(0, 3).forEach((img, i) => {
+          this.logger.info(`  ${i + 1}. ${img.src} (${img.width}x${img.height}, quality: ${img.quality}, selector: ${img.selector})`);
+        });
+      } else {
+        this.logger.warn(`No images found despite checking ${totalChecked} elements. This might indicate:`)
+        this.logger.warn(`  - Page structure has changed`)
+        this.logger.warn(`  - Images are loaded dynamically with JavaScript`)
+        this.logger.warn(`  - All images were filtered out as invalid`)
+      }
 
       // Also check for images in links
       $('a[href*="jpg"], a[href*="jpeg"], a[href*="png"], a[href*="webp"]').each((index, element) => {
@@ -1206,7 +1615,7 @@ class SportsScraper {
         return bSize - aSize;
       });
 
-      this.logger.info(`Found ${images.length} potential images from ${url}`);
+      this.logger.info(`Direct extraction complete: ${images.length} potential images from ${url}`);
       return images;
 
     } catch (error) {
@@ -1215,18 +1624,16 @@ class SportsScraper {
     }
   }
 
-  async processAlbumImages(albumData, albumIndex, categorySlug, targetUrl) {
+  async processAlbumImages(albumData, albumIndex, categorySlug, targetUrl, options = {}) {
+    let albumDir = null;
+    let folderCreated = false;
+    const { isRetry = false } = options;
+    
     try {
       this.logger.info(`Processing album ${albumIndex + 1}: "${albumData.title}"`);
       this.logger.info(`Album URL: ${albumData.url}`);
 
-      // Create album-specific folder
-      const albumDir = path.join(CONFIG.paths.downloads, categorySlug, albumData.folderName);
-      await fs.ensureDir(albumDir);
-      
-      this.logger.info(`Created album folder: ${albumData.folderName}`);
-
-      // Extract images from this specific album
+      // Extract images from this specific album BEFORE creating folder
       const images = await this.extractImagesFromPage(albumData.url, {
         referrer: targetUrl
       });
@@ -1236,25 +1643,51 @@ class SportsScraper {
         return { processed: 0, successful: 0 };
       }
 
-      // Validate that this looks like a product gallery
+      // Validate that this looks like a product gallery BEFORE creating folder
       const validationResult = await this.validateProductGallery(images, albumData);
       if (!validationResult.isValid) {
         this.logger.warn(`Album "${albumData.title}" failed content validation: ${validationResult.reason}`);
+        this.logger.debug(`Validation details: ${JSON.stringify(validationResult.stats || {})}`);
         return { processed: 0, successful: 0 };
       }
 
-      this.logger.info(`Found ${images.length} images in album: "${albumData.title}"`);
+      this.logger.info(`Found ${images.length} valid images in album: "${albumData.title}"`);
+      this.logger.info(`Validation passed: ${validationResult.reason}`);
+      
+      // Debug: Log first few image URLs
+      if (images.length > 0) {
+        this.logger.info(`First 3 images to download:`);
+        images.slice(0, 3).forEach((img, i) => {
+          this.logger.info(`  ${i + 1}. ${img.src}`);
+        });
+      }
+      
+      // Only NOW create the album folder since we know we have valid content
+      albumDir = path.join(CONFIG.paths.downloads, categorySlug, albumData.folderName);
+      await fs.ensureDir(albumDir);
+      folderCreated = true;
+      
+      this.logger.info(`Created album folder: ${albumData.folderName}`);
 
       let processedCount = 0;
       let successCount = 0;
 
+      this.logger.info(`Starting download loop for ${images.length} images...`);
+
       for (const [imageIndex, imageData] of images.entries()) {
         const itemId = `${categorySlug}_${albumData.folderName}_img${imageIndex}`;
         
-        // Skip if already processed
-        if (this.progressTracker.isItemProcessed(categorySlug, itemId)) {
+        // Skip if already processed (but not during retry operations)
+        if (!isRetry && this.progressTracker.isItemProcessed(categorySlug, itemId)) {
           this.logger.debug(`Skipping already processed item: ${itemId}`);
           continue;
+        }
+        
+        // During retry, log that we're reprocessing this item
+        if (isRetry) {
+          this.logger.debug(`Retrying item: ${itemId}`);
+          // Clear any previous failed status for this item during retry
+          this.progressTracker.clearItemStatus(categorySlug, itemId);
         }
 
         try {
@@ -1320,6 +1753,26 @@ class SportsScraper {
 
     } catch (error) {
       this.logger.error(`Failed to process album "${albumData.title}": ${error.message}`);
+      
+      // Clean up empty folder if it was created but no images were successfully downloaded
+      if (folderCreated && albumDir) {
+        try {
+          // Check if the folder is empty or contains only non-image files
+          const contents = await fs.readdir(albumDir);
+          const imageFiles = contents.filter(file => {
+            const ext = path.extname(file).toLowerCase();
+            return ['.jpg', '.jpeg', '.png', '.webp', '.gif'].includes(ext);
+          });
+          
+          if (imageFiles.length === 0) {
+            await fs.remove(albumDir);
+            this.logger.info(`Cleaned up empty folder after error: ${albumData.folderName}`);
+          }
+        } catch (cleanupError) {
+          this.logger.warn(`Failed to cleanup empty folder: ${cleanupError.message}`);
+        }
+      }
+      
       return { processed: 0, successful: 0 };
     }
   }
@@ -1520,8 +1973,8 @@ class SportsScraper {
       console.log(`📂 Category URL: ${categoryUrl}`);
       console.log('');
 
-      // Extract album links from the category page
-      const albumLinks = await this.extractAlbumLinksFromPage(categoryUrl, {
+      // Extract album links from all category pages (multi-page support)
+      const albumLinks = await this.extractAlbumLinksFromMultiPageCategory(categoryUrl, {
         referrer: categoryUrl
       });
 
@@ -1572,8 +2025,9 @@ class SportsScraper {
       console.log(`📂 Category URL: ${categoryUrl}`);
       console.log('');
 
-      // Extract album links from the category page
-      const albumLinks = await this.extractAlbumLinksFromPage(categoryUrl, {
+      // Extract album links from all category pages (multi-page support)
+      console.log('🔍 Discovering albums across all pages...');
+      const albumLinks = await this.extractAlbumLinksFromMultiPageCategory(categoryUrl, {
         referrer: categoryUrl
       });
 
@@ -1779,6 +2233,137 @@ class SportsScraper {
     }
   }
 
+  async retryEmptyAlbums(categorySlug, categoryUrl) {
+    try {
+      console.log(`\n🔄 Retrying empty albums for category: ${categorySlug}`);
+      console.log(`📂 Category URL: ${categoryUrl}`);
+      console.log('');
+
+      // Find empty album folders
+      const emptyFolders = await this.findEmptyAlbumFolders(categorySlug);
+      
+      if (emptyFolders.length === 0) {
+        console.log('✅ No empty album folders found. All albums appear to have been processed successfully!');
+        return { processed: 0, successful: 0, retried: 0 };
+      }
+
+      console.log(`🔍 Found ${emptyFolders.length} empty album folders to retry:`);
+      emptyFolders.forEach((folder, index) => {
+        console.log(`${(index + 1).toString().padStart(2, '0')}. ${folder.folderName}${folder.hasFiles ? ' (has non-image files)' : ' (completely empty)'}`);
+      });
+      console.log('');
+
+      // Try to load the original album list to get URLs
+      const albumListPath = path.join(CONFIG.paths.metadata, `${categorySlug}_albums.json`);
+      let savedAlbums = [];
+      
+      try {
+        savedAlbums = await fs.readJson(albumListPath);
+        console.log(`📋 Loaded ${savedAlbums.length} albums from saved list`);
+      } catch (error) {
+        console.log(`⚠️  No saved album list found. Will need to rediscover albums from category URL.`);
+        
+        // If no saved list, discover albums from the category URL
+        const albumLinks = await this.extractAlbumLinksFromMultiPageCategory(categoryUrl, {
+          referrer: categoryUrl
+        });
+        
+        savedAlbums = albumLinks;
+        console.log(`🔍 Discovered ${savedAlbums.length} albums from category`);
+      }
+
+      // Match empty folders with album data
+      const albumsToRetry = [];
+      for (const emptyFolder of emptyFolders) {
+        const matchedAlbum = savedAlbums.find(album => 
+          album.folderName === emptyFolder.folderName ||
+          this.sanitizeAlbumTitle(album.title) === emptyFolder.folderName
+        );
+        
+        if (matchedAlbum) {
+          albumsToRetry.push({
+            ...matchedAlbum,
+            emptyFolderPath: emptyFolder.path,
+            hadFiles: emptyFolder.hasFiles
+          });
+        } else {
+          console.log(`⚠️  Could not find matching album data for folder: ${emptyFolder.folderName}`);
+        }
+      }
+
+      if (albumsToRetry.length === 0) {
+        console.log('❌ No matching album data found for empty folders. Cannot retry.');
+        return { processed: 0, successful: 0, retried: 0 };
+      }
+
+      console.log(`🚀 Retrying ${albumsToRetry.length} empty albums...`);
+      console.log('');
+
+      // Clean up empty folders first
+      console.log('🧹 Cleaning up empty folders...');
+      const cleanedCount = await this.cleanupEmptyFolders(categorySlug);
+      console.log(`✅ Cleaned up ${cleanedCount} empty folders`);
+      console.log('');
+
+      // Initialize progress tracking
+      this.progressTracker.startCategory(`${categorySlug}_retry`, 0);
+
+      let totalProcessed = 0;
+      let totalSuccessful = 0;
+      let retriedCount = 0;
+
+      // Process each empty album
+      for (const [albumIndex, albumData] of albumsToRetry.entries()) {
+        console.log(`\n📸 Retrying album ${albumIndex + 1}/${albumsToRetry.length}: "${albumData.title}"`);
+        console.log(`🔗 URL: ${albumData.url}`);
+        console.log(`📁 Folder: ${albumData.folderName}`);
+        
+        try {
+          const result = await this.processAlbumImages(albumData, albumIndex, categorySlug, categoryUrl, { isRetry: true });
+          
+          totalProcessed += result.processed;
+          totalSuccessful += result.successful;
+          retriedCount++;
+          
+          if (result.successful > 0) {
+            console.log(`✅ Retry successful: ${result.successful}/${result.processed} images`);
+          } else {
+            console.log(`⚠️  Retry resulted in no images: ${result.processed} attempted`);
+          }
+
+        } catch (error) {
+          this.logger.error(`Failed to retry album "${albumData.title}": ${error.message}`);
+          console.log(`❌ Retry failed: ${error.message}`);
+        }
+
+        // Add delay between retries
+        if (albumIndex < albumsToRetry.length - 1) {
+          const delay = this.getRandomDelay(CONFIG.scraping.delays.betweenCategories);
+          console.log(`⏳ Waiting ${Math.round(delay/1000)}s before next retry...`);
+          await this.sleep(delay);
+        }
+      }
+
+      // Mark as complete and finalize
+      this.progressTracker.completeCategory(`${categorySlug}_retry`);
+      const summary = await this.progressTracker.finalize();
+      
+      console.log('\n🎉 Empty Album Retry Complete!');
+      console.log(`📂 Category: ${categorySlug}`);
+      console.log(`🔄 Albums retried: ${retriedCount}`);
+      console.log(`📸 Total images processed: ${totalProcessed}`);
+      console.log(`✅ Successful: ${totalSuccessful}`);
+      console.log(`📊 Success Rate: ${summary.successRate}`);
+      console.log(`💾 Files saved to: scraper/downloads/${categorySlug}/`);
+
+      return { processed: totalProcessed, successful: totalSuccessful, retried: retriedCount };
+
+    } catch (error) {
+      this.logger.error(`Failed to retry empty albums: ${error.message}`);
+      throw error;
+    }
+  }
+
   async scrapeIndividualAlbum(categorySlug, albumUrl) {
     try {
       console.log(`\n🎯 Scraping individual album...`);
@@ -1963,11 +2548,12 @@ async function main() {
 🏈 Sports Scraper - Multiple Workflows
 
 📋 Commands:
-  node scraper.js --list                             List all categories
-  node scraper.js --progress                         Show current progress
-  node scraper.js [category] [category_url]          Discover albums (Step 1)
-  node scraper.js [category] --album [album_url]     Scrape individual album (Step 2)
-  node scraper.js [category] --bulk [category_url]   Bulk process all albums (One-Step)
+  node scraper.js --list                                List all categories
+  node scraper.js --progress                            Show current progress
+  node scraper.js [category] [category_url]             Discover albums (Step 1)
+  node scraper.js [category] --album [album_url]        Scrape individual album (Step 2)
+  node scraper.js [category] --bulk [category_url]      Bulk process all albums (One-Step)
+  node scraper.js [category] --retry-empty [category_url] Retry only empty album folders
 
 💡 Workflows:
 
@@ -1977,10 +2563,14 @@ async function main() {
   
   One-Step Workflow (Bulk):
   node scraper.js afc --bulk "https://wavesoccer.x.yupoo.com/categories/334305"
+  
+  Retry Failed Albums:
+  node scraper.js national_retro --retry-empty "https://wavesoccer.x.yupoo.com/categories/334393"
 
 🎯 Benefits:
   - Two-Step: Respectful to servers, manual control
   - Bulk: Efficient processing of entire categories
+  - Retry: Only processes albums that resulted in empty folders
   - Organized folder structure by album titles
   - High-quality image downloads
 
@@ -1998,6 +2588,10 @@ async function main() {
           // Handle bulk processing mode
           await scraper.initialize();
           await scraper.processBulkCategory(command, thirdArg);
+        } else if (secondArg === '--retry-empty' && thirdArg) {
+          // Handle retry empty albums mode
+          await scraper.initialize();
+          await scraper.retryEmptyAlbums(command, thirdArg);
         } else {
           // Handle normal discovery mode
           await scraper.run(command, secondArg);
