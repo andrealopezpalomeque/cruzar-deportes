@@ -17,14 +17,14 @@
         class="border-t border-primary-500 py-6 transition-all duration-300"
       >
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <div class="text-center md:text-left">
+          <div class="text-center">
             <h3 class="font-semibold mb-2">Lunes y Martes</h3>
             <p class="text-sm text-primary-100 mb-1">Banco de Corrientes</p>
             <p class="text-sm">30% de reintegro (sin tope)</p>
             <p class="text-sm">Hasta 6 cuotas sin interés</p>
           </div>
 
-          <div class="text-center md:text-left">
+          <div class="text-center">
             <h3 class="font-semibold mb-2">Miércoles y Sábados</h3>
             <p class="text-sm text-primary-100 mb-1">Todas las tarjetas</p>
             <p class="text-sm">3 cuotas sin interés</p>
