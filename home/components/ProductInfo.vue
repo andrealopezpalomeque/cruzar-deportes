@@ -186,7 +186,7 @@
         </div>
         <div class="flex items-center space-x-2">
           <IconTruck class="h-4 w-4 text-blue-600" />
-          <span class="text-gray-600">Envío gratuito</span>
+          <span class="text-gray-600">Envío gratuito en compras +$99.999</span>
         </div>
         <div class="flex items-center space-x-2">
           <IconRefresh class="h-4 w-4 text-purple-600" />
@@ -194,7 +194,7 @@
         </div>
         <div class="flex items-center space-x-2">
           <IconMedal class="h-4 w-4 text-yellow-600" />
-          <span class="text-gray-600">Calidad premium</span>
+          <span class="text-gray-600">Materiales certificados</span>
         </div>
       </div>
     </div>
