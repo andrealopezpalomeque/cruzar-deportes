@@ -1439,6 +1439,7 @@ export async function generateProducts(): Promise<Product[]> {
       originalPrice: teamInfo.originalPrice,
       category: teamInfo.category,
       images: images.slice(0, 5), // Use first 5 images for product display
+      totalImages: images.length, // Store the actual total count
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       colors: ['Home', 'Away'],
       inStock: true,
