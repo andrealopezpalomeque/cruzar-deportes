@@ -6,6 +6,8 @@ export const useProductsStore = defineStore('products', () => {
   const products = ref<Product[]>([])
   const categories = ref<Category[]>([])
   const loading = ref(false)
+  const productsLoading = ref(false)
+  const categoriesLoading = ref(false)
 
   const getProductsByCategory = computed(() => (categorySlug: string) =>
     products.value.filter(product => product.category === categorySlug)
@@ -81,7 +83,12 @@ export const useProductsStore = defineStore('products', () => {
   }
 
   async function fetchProducts() {
-    loading.value = true
+    productsLoading.value = true
+    loading.value = productsLoading.value || categoriesLoading.value
+    
+    const startTime = Date.now()
+    const minLoadingTime = 800 // Minimum 800ms loading time
+    
     try {
       // Generate products from scraped data
       const { generateProducts } = await import('~/utils/productGenerator')
@@ -89,12 +96,26 @@ export const useProductsStore = defineStore('products', () => {
     } catch (error) {
       console.error('Error fetching products:', error)
     } finally {
-      loading.value = false
+      // Ensure minimum loading time for better UX
+      const elapsedTime = Date.now() - startTime
+      const remainingTime = Math.max(0, minLoadingTime - elapsedTime)
+      
+      if (remainingTime > 0) {
+        await new Promise(resolve => setTimeout(resolve, remainingTime))
+      }
+      
+      productsLoading.value = false
+      loading.value = productsLoading.value || categoriesLoading.value
     }
   }
 
   async function fetchCategories() {
-    loading.value = true
+    categoriesLoading.value = true
+    loading.value = productsLoading.value || categoriesLoading.value
+    
+    const startTime = Date.now()
+    const minLoadingTime = 600 // Minimum 600ms loading time (shorter for categories)
+    
     try {
       // Generate categories from scraped data
       const { generateCategories } = await import('~/utils/productGenerator')
@@ -102,7 +123,16 @@ export const useProductsStore = defineStore('products', () => {
     } catch (error) {
       console.error('Error fetching categories:', error)
     } finally {
-      loading.value = false
+      // Ensure minimum loading time for better UX
+      const elapsedTime = Date.now() - startTime
+      const remainingTime = Math.max(0, minLoadingTime - elapsedTime)
+      
+      if (remainingTime > 0) {
+        await new Promise(resolve => setTimeout(resolve, remainingTime))
+      }
+      
+      categoriesLoading.value = false
+      loading.value = productsLoading.value || categoriesLoading.value
     }
   }
 
@@ -110,6 +140,8 @@ export const useProductsStore = defineStore('products', () => {
     products: readonly(products),
     categories: readonly(categories),
     loading: readonly(loading),
+    productsLoading: readonly(productsLoading),
+    categoriesLoading: readonly(categoriesLoading),
     getProductsByCategory,
     getFeaturedProducts,
     getProductBySlug,

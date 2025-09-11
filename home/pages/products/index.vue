@@ -41,9 +41,12 @@
     </div>
 
     <!-- Loading State -->
-    <div v-if="productsStore.loading" class="flex justify-center">
-      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
-    </div>
+    <GridSkeleton 
+      v-if="productsStore.loading" 
+      type="product" 
+      :count="20" 
+      :cols="4" 
+    />
 
     <!-- Products Grid -->
     <div v-else-if="paginatedProducts.length > 0">
