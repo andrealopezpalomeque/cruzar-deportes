@@ -101,6 +101,9 @@
     
     <!-- Search Modal -->
     <SearchModal />
+    
+    <!-- Cart Modal -->
+    <CartModal />
   </header>
 </template>
 
@@ -109,6 +112,7 @@ import { ref } from 'vue'
 import { useCartStore } from '../stores/cart'
 import { useSearchStore } from '../stores/search'
 import SearchModal from './SearchModal.vue'
+import CartModal from './CartModal.vue'
 import IconMagnify from '~icons/mdi/magnify'
 import IconShopping from '~icons/mdi/shopping'
 import IconMenu from '~icons/mdi/menu'
@@ -118,8 +122,7 @@ const searchStore = useSearchStore()
 const mobileMenuOpen = ref(false)
 
 function openCart() {
-  // TODO: Implement cart sidebar/modal
-  console.log('Open cart')
+  cartStore.openCart()
 }
 
 function openSearch() {
