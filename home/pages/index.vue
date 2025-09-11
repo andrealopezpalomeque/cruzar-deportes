@@ -35,18 +35,12 @@
             </div>
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <div class="flex justify-center">
             <NuxtLink 
               to="/products" 
               class="inline-flex items-center px-8 py-3 bg-primary-600 text-white text-base font-semibold rounded-lg hover:bg-primary-700 transition-colors"
             >
               Explorar Colección
-            </NuxtLink>
-            <NuxtLink 
-              to="/products" 
-              class="inline-flex items-center px-8 py-3 bg-transparent border border-gray-300 text-gray-700 text-base font-semibold rounded-lg hover:bg-gray-50 transition-colors"
-            >
-              Ver Ofertas
             </NuxtLink>
           </div>
         </div>
