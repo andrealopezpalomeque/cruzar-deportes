@@ -104,20 +104,48 @@
           <template #content>
             <div class="pb-6 pt-2">
               <div class="ml-14">
-                <p class="text-gray-700 leading-relaxed mb-4">
-                  Aceptamos todas las tarjetas de débito y crédito (Visa, Mastercard, American Express),
-                  transferencias bancarias, y MercadoPago. También ofrecemos la posibilidad de pagar en cuotas sin
-                  interés con tarjetas de crédito seleccionadas.
-                </p>
-                <div class="bg-green-50/80 border-l-4 border-green-400 p-4 rounded-r-lg backdrop-blur-sm">
-                  <div class="flex items-start gap-3">
-                    <IconLockClosed class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p class="font-medium text-green-900 mb-1">Seguridad:</p>
-                      <p class="text-green-800 text-sm">
-                        Todos los pagos están protegidos con encriptación SSL de 256 bits.
-                      </p>
+                <div class="space-y-4">
+                  <!-- Banco de Corrientes Promotion -->
+                  <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
+                    <div class="flex items-start gap-3">
+                      <IconCreditCard class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p class="font-semibold text-blue-900 mb-2">Banco de Corrientes - Lunes y Martes</p>
+                        <p class="text-blue-800 text-sm mb-2">
+                          Con tu tarjeta de crédito VISA del BanCo tenés todos los lunes y martes un 
+                          <span class="font-semibold">30% de reintegro</span> y hasta 
+                          <span class="font-semibold">6 cuotas sin interés</span>.
+                        </p>
+                        <p class="text-blue-700 text-xs italic">
+                          Promo exclusiva con la app Más Banco.
+                        </p>
+                      </div>
                     </div>
+                  </div>
+
+                  <!-- All Cards Promotion -->
+                  <div class="bg-green-50/80 border-l-4 border-green-400 p-4 rounded-r-lg backdrop-blur-sm">
+                    <div class="flex items-start gap-3">
+                      <IconCreditCard class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p class="font-semibold text-green-900 mb-2">Todas las Tarjetas - Miércoles y Sábados</p>
+                        <p class="text-green-800 text-sm mb-2">
+                          Los miércoles y sábados de agosto y septiembre podés aprovechar para comprar en 
+                          <span class="font-semibold">3 cuotas sin interés</span>.
+                        </p>
+                        <p class="text-green-700 text-xs italic">
+                          ¡Cualquier tarjeta es válida!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- General Payment Methods -->
+                  <div class="mt-4 pt-4 border-t border-gray-200">
+                    <p class="text-gray-700 leading-relaxed text-sm">
+                      También aceptamos todas las tarjetas de débito y crédito (Visa, Mastercard, American Express),
+                      transferencias bancarias, y MercadoPago.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -140,7 +168,7 @@
               <div class="ml-14">
                 <p class="text-gray-700 leading-relaxed mb-4">
                   Sí, tenés 30 días desde la recepción del producto para devolverlo o cambiarlo. El artículo debe
-                  estar sin usar, con las etiquetas originales y en su empaque original. Los gastos de envío para
+                  estar sin usar, con las etiquetas intactas y en su empaque inicial. Los gastos de envío para
                   devoluciones corren por cuenta del cliente, excepto en casos de productos defectuosos.
                 </p>
                 <div class="bg-purple-50/80 border-l-4 border-purple-400 p-4 rounded-r-lg backdrop-blur-sm">
@@ -159,39 +187,6 @@
           </template>
         </UiAccordionItem>
 
-        <!-- FAQ Item 4: Authenticity -->
-        <UiAccordionItem value="item-4" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
-          <template #trigger>
-            <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <IconShieldCheck class="w-5 h-5 text-amber-600" />
-              </div>
-              <span class="font-medium text-gray-900">¿Los productos son originales y oficiales?</span>
-            </div>
-          </template>
-          <template #content>
-            <div class="pb-6 pt-2">
-              <div class="ml-14">
-                <p class="text-gray-700 leading-relaxed mb-4">
-                  Absolutamente. Todos nuestros productos son 100% originales y oficiales. Trabajamos directamente
-                  con las marcas y distribuidores autorizados. Cada producto viene con su etiqueta de autenticidad y
-                  garantía oficial del fabricante.
-                </p>
-                <div class="bg-amber-50/80 border-l-4 border-amber-400 p-4 rounded-r-lg backdrop-blur-sm">
-                  <div class="flex items-start gap-3">
-                    <IconCheckBadge class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p class="font-medium text-amber-900 mb-1">Garantía:</p>
-                      <p class="text-amber-800 text-sm">
-                        Somos distribuidores oficiales con certificación de autenticidad.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </template>
-        </UiAccordionItem>
 
         <!-- FAQ Item 5: Tracking -->
         <UiAccordionItem value="item-5" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">

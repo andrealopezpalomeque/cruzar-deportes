@@ -132,7 +132,7 @@ useHead({
   meta: [
     { 
       name: 'description', 
-      content: () => product.value?.description || `Compra ${product.value?.name || 'productos'} en Cruzar Deportes. ${categoryName.value} auténticos y de calidad.`
+      content: () => product.value?.description || `Compra ${product.value?.name || 'productos'} en Cruzar Deportes. ${categoryName.value} de calidad premium.`
     },
     { 
       property: 'og:title', 
@@ -140,7 +140,7 @@ useHead({
     },
     { 
       property: 'og:description', 
-      content: () => product.value?.description || `Compra ${product.value?.name || 'productos'} en Cruzar Deportes. ${categoryName.value} auténticos y de calidad.`
+      content: () => product.value?.description || `Compra ${product.value?.name || 'productos'} en Cruzar Deportes. ${categoryName.value} de calidad premium.`
     },
     { 
       property: 'og:image', 
@@ -160,7 +160,7 @@ useHead({
     },
     { 
       name: 'twitter:description', 
-      content: () => product.value?.description || `Compra ${product.value?.name || 'productos'} en Cruzar Deportes. ${categoryName.value} auténticos y de calidad.`
+      content: () => product.value?.description || `Compra ${product.value?.name || 'productos'} en Cruzar Deportes. ${categoryName.value} de calidad premium.`
     },
     { 
       name: 'twitter:image', 
