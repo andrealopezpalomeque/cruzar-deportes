@@ -1,16 +1,16 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+  <div class="min-h-screen bg-white">
     <!-- Hero Section -->
     <div class="relative overflow-hidden bg-white">
-      <div class="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-indigo-600/5" />
+      <div class="absolute inset-0 bg-gray-50" />
       <div class="relative max-w-4xl mx-auto px-6 py-16 text-center">
-        <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 mb-6">
+        <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700 mb-6">
           <IconCheckCircleFilled class="w-4 h-4 mr-2" />
           Guía Profesional
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <h1 class="text-4xl md:text-5xl font-light text-gray-900 mb-6">
           Guía de Cuidado de
-          <span class="text-primary-600">
+          <span class="text-black">
             Camisetas
           </span>
         </h1>
@@ -27,30 +27,30 @@
       <div class="grid md:grid-cols-3 gap-6 mb-8">
         <UiCard variant="modern">
           <div class="p-6 text-center">
-            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <IconCheckCircle class="w-6 h-6 text-blue-600" />
+            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <IconCheckCircle class="w-6 h-6 text-gray-600" />
             </div>
-            <h3 class="font-semibold text-gray-900 mb-2">Protección Total</h3>
+            <h3 class="font-medium text-gray-900 mb-2">Protección Total</h3>
             <p class="text-sm text-gray-600">Preserva colores y estampados por más tiempo</p>
           </div>
         </UiCard>
 
         <UiCard variant="modern">
           <div class="p-6 text-center">
-            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <IconBolt class="w-6 h-6 text-green-600" />
+            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <IconBolt class="w-6 h-6 text-gray-600" />
             </div>
-            <h3 class="font-semibold text-gray-900 mb-2">Rendimiento</h3>
+            <h3 class="font-medium text-gray-900 mb-2">Rendimiento</h3>
             <p class="text-sm text-gray-600">Mantiene las propiedades técnicas de la tela</p>
           </div>
         </UiCard>
 
         <UiCard variant="modern">
           <div class="p-6 text-center">
-            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <IconClock class="w-6 h-6 text-purple-600" />
+            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <IconClock class="w-6 h-6 text-gray-600" />
             </div>
-            <h3 class="font-semibold text-gray-900 mb-2">Durabilidad</h3>
+            <h3 class="font-medium text-gray-900 mb-2">Durabilidad</h3>
             <p class="text-sm text-gray-600">Extiende significativamente la vida útil</p>
           </div>
         </UiCard>
@@ -61,8 +61,8 @@
         <UiAccordionItem value="item-1" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <IconRefresh class="w-5 h-5 text-blue-600" />
+              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconRefresh class="w-5 h-5 text-gray-600" />
               </div>
               <span class="font-medium text-gray-900">¿Debo dar vuelta mi camiseta antes de lavarla?</span>
             </div>
@@ -76,7 +76,7 @@
                 </p>
                 <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
                   <div class="flex items-start gap-3">
-                    <IconInformationCircle class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <IconInformationCircle class="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                     <div>
                       <p class="font-medium text-blue-900 mb-1">Consejo Pro:</p>
                       <p class="text-blue-800 text-sm">
@@ -203,7 +203,7 @@
       <UiCard variant="gradientPrimary" class="mt-12">
         <div class="p-8 text-center">
           <div class="max-w-2xl mx-auto">
-            <h3 class="text-2xl font-semibold mb-4">¿Necesitás más ayuda?</h3>
+            <h3 class="text-2xl font-medium mb-4">¿Necesitás más ayuda?</h3>
             <p class="text-blue-100 mb-8 leading-relaxed">
               Si tenés dudas específicas sobre el cuidado de tu camiseta o necesitás asistencia personalizada, no
               dudes en contactarnos.

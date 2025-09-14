@@ -26,7 +26,7 @@
             v-if="product.featured"
             class="absolute top-2 left-2"
           >
-            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-semibold bg-yellow-100 text-yellow-800 shadow-sm pointer-events-auto">
+            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-700 shadow-sm pointer-events-auto">
               <IconStar class="h-3 w-3 mr-1" />
               Destacado
             </span>
@@ -37,7 +37,7 @@
             v-if="product.originalPrice && product.originalPrice > product.price"
             :class="product.featured ? 'absolute top-12 left-2' : 'absolute top-2 right-2'"
           >
-            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-semibold bg-red-100 text-red-800 shadow-sm pointer-events-auto">
+            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-black text-white shadow-sm pointer-events-auto">
               -{{ Math.round((1 - product.price / product.originalPrice) * 100) }}%
             </span>
           </div>
@@ -61,9 +61,9 @@
       <!-- Product Title and Category -->
       <NuxtLink 
         :to="`/products/${product.slug}`"
-        class="block hover:text-primary-600 transition-colors"
+        class="block hover:text-black transition-colors"
       >
-        <h3 class="text-lg font-medium text-gray-900 mb-1 line-clamp-2">{{ product.name }}</h3>
+        <h3 class="text-lg font-normal text-gray-900 mb-1 line-clamp-2">{{ product.name }}</h3>
       </NuxtLink>
       
       <p class="text-sm text-gray-600 mb-3 capitalize">{{ categoryName }}</p>
@@ -71,7 +71,7 @@
       <!-- Price and Action -->
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-2">
-          <span class="text-lg font-bold text-gray-900">${{ product.price }}</span>
+          <span class="text-lg font-medium text-gray-900">${{ product.price }}</span>
           <span 
             v-if="product.originalPrice && product.originalPrice > product.price"
             class="text-sm text-gray-500 line-through"
@@ -84,7 +84,7 @@
         <button
           @click.stop="addToCart"
           :disabled="!product.inStock"
-          class="px-3 py-2 bg-primary-600 text-white text-sm font-medium rounded-md hover:bg-primary-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
+          class="px-3 py-2 bg-black text-white text-sm font-medium rounded-md hover:bg-gray-900 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500"
           :title="product.inStock ? 'Agregar al carrito' : 'Agotado'"
         >
           <IconClose v-if="!product.inStock" class="h-4 w-4" />
@@ -114,7 +114,7 @@
         <!-- View Details Link -->
         <NuxtLink 
           :to="`/products/${product.slug}`"
-          class="text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors"
+          class="text-sm text-gray-600 hover:text-black font-medium transition-colors"
         >
           Ver detalles
         </NuxtLink>

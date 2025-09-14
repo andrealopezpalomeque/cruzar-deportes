@@ -2,26 +2,26 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <!-- Breadcrumb Navigation -->
     <nav class="flex items-center space-x-2 text-sm text-gray-600 mb-6">
-      <NuxtLink to="/" class="hover:text-primary-600 transition-colors">Inicio</NuxtLink>
+      <NuxtLink to="/" class="hover:text-black transition-colors">Inicio</NuxtLink>
       <IconChevronRight class="h-4 w-4" />
-      <NuxtLink to="/products" class="hover:text-primary-600 transition-colors">Productos</NuxtLink>
+      <NuxtLink to="/products" class="hover:text-black transition-colors">Productos</NuxtLink>
       <IconChevronRight class="h-4 w-4" />
       <span class="text-gray-900 font-medium">{{ product?.name || 'Producto' }}</span>
     </nav>
 
     <!-- Loading State -->
     <div v-if="loading" class="flex justify-center py-20">
-      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-black"></div>
     </div>
 
     <!-- Product Not Found -->
     <div v-else-if="!product" class="text-center py-20">
       <IconAlertCircle class="h-16 w-16 text-gray-400 mx-auto mb-4" />
-      <h2 class="text-2xl font-bold text-gray-900 mb-2">Producto no encontrado</h2>
+      <h2 class="text-2xl font-medium text-gray-900 mb-2">Producto no encontrado</h2>
       <p class="text-gray-600 mb-6">El producto que buscas no existe o ha sido eliminado.</p>
       <NuxtLink 
         to="/products" 
-        class="inline-flex items-center px-4 py-2 bg-primary-600 text-white font-medium rounded-md hover:bg-primary-700 transition-colors"
+        class="inline-flex items-center px-4 py-2 bg-black text-white font-medium rounded-md hover:bg-gray-900 transition-colors"
       >
         <IconArrowLeft class="mr-2 h-4 w-4" />
         Volver a Productos
@@ -43,7 +43,7 @@
 
     <!-- Related Products -->
     <div v-if="!loading" class="mt-16">
-      <h2 class="text-2xl font-bold text-gray-900 mb-8">Productos Relacionados</h2>
+      <h2 class="text-2xl font-light text-gray-900 mb-8">Productos Relacionados</h2>
       <div v-if="relatedProducts.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <ProductCard 
           v-for="relatedProduct in relatedProducts.slice(0, 4)" 

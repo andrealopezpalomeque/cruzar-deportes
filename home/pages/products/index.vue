@@ -2,7 +2,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <!-- Header -->
     <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">Todos los Productos</h1>
+      <h1 class="text-4xl font-light text-gray-900 mb-4">Todos los Productos</h1>
       <p class="text-lg text-gray-600">Navega nuestra colección completa de camisetas deportivas</p>
     </div>
 
@@ -13,8 +13,8 @@
           @click="selectedCategory = ''"
           :class="[
             'px-4 py-2 text-sm font-medium rounded-md transition-colors',
-            selectedCategory === '' 
-              ? 'bg-primary-600 text-white' 
+            selectedCategory === ''
+              ? 'bg-black text-white'
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
           ]"
         >
@@ -26,8 +26,8 @@
           @click="selectedCategory = category.slug"
           :class="[
             'px-4 py-2 text-sm font-medium rounded-md transition-colors',
-            selectedCategory === category.slug 
-              ? 'bg-primary-600 text-white' 
+            selectedCategory === category.slug
+              ? 'bg-black text-white'
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
           ]"
         >
@@ -76,7 +76,7 @@
             :class="[
               'px-3 py-2 text-sm font-medium rounded-md',
               currentPage === page
-                ? 'bg-primary-600 text-white'
+                ? 'bg-black text-white'
                 : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'
             ]"
           >
@@ -104,7 +104,7 @@
       <button
         v-if="selectedCategory"
         @click="selectedCategory = ''"
-        class="inline-flex items-center px-4 py-2 bg-primary-600 text-white font-medium rounded-md hover:bg-primary-700 transition-colors"
+        class="inline-flex items-center px-4 py-2 bg-black text-white font-medium rounded-md hover:bg-gray-900 transition-colors"
       >
         <IconRefresh class="mr-2 h-4 w-4" />
         Mostrar Todos los Productos

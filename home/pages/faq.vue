@@ -1,16 +1,16 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+  <div class="min-h-screen bg-white">
     <!-- Hero Section -->
     <div class="relative overflow-hidden bg-white">
-      <div class="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-indigo-600/5" />
+      <div class="absolute inset-0 bg-gray-50" />
       <div class="relative max-w-4xl mx-auto px-6 py-16 text-center">
-        <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 mb-6">
+        <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700 mb-6">
           <IconInformationCircle class="w-4 h-4 mr-2" />
           Centro de Ayuda
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <h1 class="text-4xl md:text-5xl font-light text-gray-900 mb-6">
           Preguntas
-          <span class="text-primary-600">
+          <span class="text-black">
             Frecuentes
           </span>
         </h1>
@@ -26,30 +26,30 @@
       <div class="grid md:grid-cols-3 gap-6 mb-8">
         <UiCard class="border-0 shadow-lg bg-white/80 backdrop-blur-sm">
           <div class="p-6 text-center">
-            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <IconCube class="w-6 h-6 text-green-600" />
+            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <IconCube class="w-6 h-6 text-gray-600" />
             </div>
-            <h3 class="font-semibold text-gray-900 mb-2">Envío Gratis</h3>
+            <h3 class="font-medium text-gray-900 mb-2">Envío Gratis</h3>
             <p class="text-sm text-gray-600">En compras superiores a $99.999</p>
           </div>
         </UiCard>
 
         <UiCard class="border-0 shadow-lg bg-white/80 backdrop-blur-sm">
           <div class="p-6 text-center">
-            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <IconCreditCard class="w-6 h-6 text-blue-600" />
+            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <IconCreditCard class="w-6 h-6 text-gray-600" />
             </div>
-            <h3 class="font-semibold text-gray-900 mb-2">Pago Seguro</h3>
+            <h3 class="font-medium text-gray-900 mb-2">Pago Seguro</h3>
             <p class="text-sm text-gray-600">Múltiples métodos de pago disponibles</p>
           </div>
         </UiCard>
 
         <UiCard class="border-0 shadow-lg bg-white/80 backdrop-blur-sm">
           <div class="p-6 text-center">
-            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <IconHeart class="w-6 h-6 text-purple-600" />
+            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <IconHeart class="w-6 h-6 text-gray-600" />
             </div>
-            <h3 class="font-semibold text-gray-900 mb-2">30 Días</h3>
+            <h3 class="font-medium text-gray-900 mb-2">30 Días</h3>
             <p class="text-sm text-gray-600">Garantía de devolución sin preguntas</p>
           </div>
         </UiCard>
@@ -61,8 +61,8 @@
         <UiAccordionItem value="item-1" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <IconCube class="w-5 h-5 text-blue-600" />
+              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconCube class="w-5 h-5 text-gray-600" />
               </div>
               <span class="font-medium text-gray-900">¿Cuáles son los tiempos y costos de envío?</span>
             </div>
@@ -75,12 +75,12 @@
                   montos menores, el costo varía según la ubicación. Los tiempos de entrega son de 3 a 7 días
                   hábiles para CABA y GBA, y de 5 a 10 días hábiles para el interior del país.
                 </p>
-                <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
+                <div class="bg-gray-50 border-l-4 border-gray-400 p-4 rounded-r-lg backdrop-blur-sm">
                   <div class="flex items-start gap-3">
-                    <IconInformationCircle class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <IconInformationCircle class="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <p class="font-medium text-blue-900 mb-1">Seguimiento:</p>
-                      <p class="text-blue-800 text-sm">
+                      <p class="font-medium text-gray-900 mb-1">Seguimiento:</p>
+                      <p class="text-gray-700 text-sm">
                         Recibirás un código de seguimiento por email una vez que tu pedido sea despachado.
                       </p>
                     </div>
@@ -95,8 +95,8 @@
         <UiAccordionItem value="item-2" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <IconCreditCard class="w-5 h-5 text-green-600" />
+              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconCreditCard class="w-5 h-5 text-gray-600" />
               </div>
               <span class="font-medium text-gray-900">¿Qué métodos de pago aceptan?</span>
             </div>
@@ -106,12 +106,12 @@
               <div class="ml-4 sm:ml-8 md:ml-14">
                 <div class="space-y-4">
                   <!-- Banco de Corrientes Promotion -->
-                  <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
+                  <div class="bg-gray-50 border-l-4 border-gray-400 p-4 rounded-r-lg backdrop-blur-sm">
                     <div class="flex items-start gap-3">
-                      <IconCreditCard class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <IconCreditCard class="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                       <div>
-                        <p class="font-semibold text-blue-900 mb-2">Banco de Corrientes - Lunes y Martes</p>
-                        <p class="text-blue-800 text-sm mb-2">
+                        <p class="font-semibold text-gray-900 mb-2">Banco de Corrientes - Lunes y Martes</p>
+                        <p class="text-gray-700 text-sm mb-2">
                           Con tu tarjeta de crédito VISA del BanCo tenés todos los lunes y martes un 
                           <span class="font-semibold">30% de reintegro</span> y hasta 
                           <span class="font-semibold">6 cuotas sin interés</span>.
@@ -126,7 +126,7 @@
                   <!-- All Cards Promotion -->
                   <div class="bg-green-50/80 border-l-4 border-green-400 p-4 rounded-r-lg backdrop-blur-sm">
                     <div class="flex items-start gap-3">
-                      <IconCreditCard class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <IconCreditCard class="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                       <div>
                         <p class="font-semibold text-green-900 mb-2">Todas las Tarjetas - Miércoles y Sábados</p>
                         <p class="text-green-800 text-sm mb-2">

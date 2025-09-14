@@ -3,19 +3,19 @@
     <!-- Product Header -->
     <div>
       <div class="flex items-center space-x-2 text-sm text-gray-600 mb-2">
-        <span class="px-2 py-1 bg-primary-100 text-primary-800 rounded-md font-medium shadow-sm">
+        <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md font-medium shadow-sm">
           {{ categoryName }}
         </span>
-        <span v-if="product.featured" class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-md font-medium shadow-sm">
+        <span v-if="product.featured" class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md font-medium shadow-sm">
           <IconStar class="h-3 w-3 inline mr-1" />
           Destacado
         </span>
       </div>
       
-      <h1 class="text-3xl font-bold text-gray-900 mb-4">{{ product.name }}</h1>
+      <h1 class="text-3xl font-light text-gray-900 mb-4">{{ product.name }}</h1>
       
       <div class="flex items-baseline space-x-3 mb-4">
-        <span class="text-3xl font-bold text-gray-900">${{ product.price }}</span>
+        <span class="text-3xl font-medium text-gray-900">${{ product.price }}</span>
         <span 
           v-if="product.originalPrice && product.originalPrice > product.price"
           class="text-xl text-gray-500 line-through"
@@ -24,7 +24,7 @@
         </span>
         <span 
           v-if="product.originalPrice && product.originalPrice > product.price"
-          class="text-sm font-medium text-green-600 bg-green-100 px-2 py-1 rounded-md shadow-sm"
+          class="text-sm font-medium text-white bg-black px-2 py-1 rounded-md shadow-sm"
         >
           {{ Math.round((1 - product.price / product.originalPrice) * 100) }}% OFF
         </span>
@@ -47,7 +47,7 @@
           v-model="selectedSize"
           type="text"
           placeholder="Ej: L, XL, 42, etc."
-          class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+          class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
         />
         <p class="text-sm text-gray-500 mt-2">
           Especifica la talla que necesitas (letras o números)
@@ -64,7 +64,7 @@
           v-model="selectedColor"
           type="text"
           placeholder="Ej: Azul local como en foto #1, Rojo visitante como en foto #3"
-          class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+          class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
         />
         <p class="text-sm text-gray-500 mt-2">
           Describe el color/modelo que deseas y referencia el número de foto donde lo ves
@@ -80,7 +80,7 @@
           <button
             @click="decreaseQuantity"
             :disabled="quantity <= 1"
-            class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
+            class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <IconMinus class="h-4 w-4" />
           </button>
@@ -90,13 +90,13 @@
             type="number"
             min="1"
             max="99"
-            class="w-16 h-10 text-center border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            class="w-16 h-10 text-center border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
           />
           
           <button
             @click="increaseQuantity"
             :disabled="quantity >= 99"
-            class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
+            class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <IconPlus class="h-4 w-4" />
           </button>
@@ -127,7 +127,7 @@
       <button
         @click="addToCart"
         :disabled="!canAddToCart"
-        class="w-full bg-primary-600 text-white py-4 px-6 rounded-lg font-medium text-lg hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+        class="w-full bg-black text-white py-4 px-6 rounded-lg font-medium text-lg hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         :class="{
           'animate-pulse': isAddingToCart
         }"
@@ -168,22 +168,22 @@
 
     <!-- Product Features -->
     <div class="border-t pt-6 space-y-4">
-      <h3 class="text-lg font-semibold text-gray-900">Características del producto</h3>
+      <h3 class="text-lg font-medium text-gray-900">Características del producto</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
         <div class="flex items-center space-x-2">
-          <IconShieldCheck class="h-4 w-4 text-green-600" />
+          <IconShieldCheck class="h-4 w-4 text-gray-600" />
           <span class="text-gray-600">Producto de calidad premium</span>
         </div>
         <div class="flex items-center space-x-2">
-          <IconTruck class="h-4 w-4 text-blue-600" />
+          <IconTruck class="h-4 w-4 text-gray-600" />
           <span class="text-gray-600">Envío gratuito en compras +$99.999</span>
         </div>
         <div class="flex items-center space-x-2">
-          <IconRefresh class="h-4 w-4 text-purple-600" />
+          <IconRefresh class="h-4 w-4 text-gray-600" />
           <span class="text-gray-600">30 días de devolución</span>
         </div>
         <div class="flex items-center space-x-2">
-          <IconMedal class="h-4 w-4 text-yellow-600" />
+          <IconMedal class="h-4 w-4 text-gray-600" />
           <span class="text-gray-600">Materiales certificados</span>
         </div>
       </div>

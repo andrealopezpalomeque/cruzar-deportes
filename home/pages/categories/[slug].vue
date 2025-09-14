@@ -2,7 +2,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <!-- Category Header -->
     <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">{{ categoryName }}</h1>
+      <h1 class="text-4xl font-light text-gray-900 mb-4">{{ categoryName }}</h1>
       <p class="text-lg text-gray-600">{{ categoryDescription }}</p>
     </div>
 
@@ -30,7 +30,7 @@
       <p class="text-gray-600 mb-6">We couldn't find any products in this category.</p>
       <NuxtLink 
         to="/categories" 
-        class="inline-flex items-center px-4 py-2 bg-primary-600 text-white font-medium rounded-md hover:bg-primary-700 transition-colors"
+        class="inline-flex items-center px-4 py-2 bg-black text-white font-medium rounded-md hover:bg-gray-900 transition-colors"
       >
         <IconArrowLeft class="mr-2 h-4 w-4" />
         Back to Categories
