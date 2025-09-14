@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">Comprar por Categoría</h1>
+      <h1 class="text-4xl font-light text-gray-900 mb-4">Comprar por Categoría</h1>
       <p class="text-lg text-gray-600">Explora nuestra colección organizada por confederaciones de fútbol</p>
     </div>
 
@@ -20,7 +20,7 @@
         class="group"
       >
         <div class="bg-white rounded-lg shadow-sm border hover:shadow-md transition-all duration-300">
-          <div class="aspect-w-16 aspect-h-9 bg-gradient-to-br from-primary-500 to-primary-700 rounded-t-lg relative overflow-hidden">
+          <div class="aspect-w-16 aspect-h-9 bg-gradient-to-br from-gray-800 to-black rounded-t-lg relative overflow-hidden">
             <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
             <div class="absolute inset-0 flex items-center justify-center">
               <img 
@@ -32,12 +32,12 @@
           </div>
           
           <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+            <h3 class="text-xl font-medium text-gray-900 mb-2 group-hover:text-black transition-colors">
               {{ category.name }}
             </h3>
             <p class="text-gray-600">{{ category.description }}</p>
             
-            <div class="mt-4 flex items-center text-primary-600 group-hover:text-primary-700 transition-colors">
+            <div class="mt-4 flex items-center text-gray-600 group-hover:text-black transition-colors">
               <span class="text-sm font-medium">Comprar ahora</span>
               <IconArrowRight class="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </div>

@@ -17,19 +17,19 @@
         <nav class="hidden md:flex space-x-8">
           <NuxtLink 
             to="/" 
-            class="text-gray-700 hover:text-primary-600 transition-colors"
+            class="text-gray-700 hover:text-black transition-colors"
           >
             Inicio
           </NuxtLink>
           <NuxtLink 
             to="/categories" 
-            class="text-gray-700 hover:text-primary-600 transition-colors"
+            class="text-gray-700 hover:text-black transition-colors"
           >
             Categorías
           </NuxtLink>
           <NuxtLink 
             to="/products" 
-            class="text-gray-700 hover:text-primary-600 transition-colors"
+            class="text-gray-700 hover:text-black transition-colors"
           >
             Todos los Productos
           </NuxtLink>
@@ -54,7 +54,7 @@
             <IconShopping class="h-6 w-6" />
             <span 
               v-if="cartStore.totalItems > 0"
-              class="absolute -top-1 -right-1 bg-primary-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+              class="absolute -top-1 -right-1 bg-black text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
             >
               {{ cartStore.totalItems }}
             </span>
@@ -76,21 +76,21 @@
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <NuxtLink 
             to="/" 
-            class="block px-3 py-2 text-gray-700 hover:text-primary-600"
+            class="block px-3 py-2 text-gray-700 hover:text-black"
             @click="mobileMenuOpen = false"
           >
             Inicio
           </NuxtLink>
           <NuxtLink 
             to="/categories" 
-            class="block px-3 py-2 text-gray-700 hover:text-primary-600"
+            class="block px-3 py-2 text-gray-700 hover:text-black"
             @click="mobileMenuOpen = false"
           >
             Categorías
           </NuxtLink>
           <NuxtLink 
             to="/products" 
-            class="block px-3 py-2 text-gray-700 hover:text-primary-600"
+            class="block px-3 py-2 text-gray-700 hover:text-black"
             @click="mobileMenuOpen = false"
           >
             Todos los Productos

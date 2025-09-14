@@ -2,16 +2,16 @@
   <div class="min-h-screen bg-white">
     <!-- Hero Section -->
     <section class="relative py-12 md:py-16 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-primary-50 to-blue-50"></div>
+      <div class="absolute inset-0 bg-white"></div>
       <div class="container mx-auto px-4 relative">
         <div class="max-w-4xl mx-auto text-center">
-          <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800 mb-6">
+          <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-normal bg-white border border-gray-200 text-gray-700 mb-6">
             <IconSoccer class="w-4 h-4 mr-2" />
             Nueva Colección 2025
           </div>
 
-          <h1 class="text-4xl md:text-6xl font-bold mb-6 text-balance">
-            Vestí tu Pasión por el <span class="text-primary-600">Deporte</span>
+          <h1 class="text-4xl md:text-6xl font-light mb-6 text-balance">
+            Vestí tu Pasión por el <span class="text-black">Deporte</span>
           </h1>
 
           <p class="text-lg md:text-xl text-gray-600 mb-8 text-pretty max-w-2xl mx-auto">
@@ -27,7 +27,7 @@
                   v-for="category in categories"
                   :key="category.id"
                   :to="`/categories/${category.slug}`"
-                  class="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm border border-primary-200 text-primary-700 text-sm font-medium rounded-full hover:bg-primary-50 hover:border-primary-300 transition-all duration-200 shadow-sm hover:shadow-md"
+                  class="inline-flex items-center px-4 py-2 bg-white border border-gray-200 text-gray-700 text-sm font-normal rounded-full hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 shadow-sm hover:shadow-md"
                 >
                   {{ category.name }}
                 </NuxtLink>
@@ -36,9 +36,9 @@
           </div>
 
           <div class="flex justify-center">
-            <NuxtLink 
-              to="/products" 
-              class="inline-flex items-center px-8 py-3 bg-primary-600 text-white text-base font-semibold rounded-lg hover:bg-primary-700 transition-colors"
+            <NuxtLink
+              to="/products"
+              class="inline-flex items-center px-8 py-3 bg-black text-white text-base font-medium rounded-lg hover:bg-gray-900 transition-colors"
             >
               Explorar Colección
             </NuxtLink>
@@ -52,34 +52,34 @@
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div class="text-center">
-            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <IconTruck class="w-6 h-6 text-primary-600" />
+            <div class="w-12 h-12 bg-white border border-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <IconTruck class="w-6 h-6 text-gray-600" />
             </div>
-            <h3 class="font-semibold mb-2">Envío Gratis</h3>
+            <h3 class="font-medium mb-2">Envío Gratis</h3>
             <p class="text-sm text-gray-600">En compras superiores a $99.999</p>
           </div>
 
           <div class="text-center">
-            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <IconShieldCheck class="w-6 h-6 text-primary-600" />
+            <div class="w-12 h-12 bg-white border border-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <IconShieldCheck class="w-6 h-6 text-gray-600" />
             </div>
-            <h3 class="font-semibold mb-2">Calidad Garantizada</h3>
+            <h3 class="font-medium mb-2">Calidad Garantizada</h3>
             <p class="text-sm text-gray-600">Productos de calidad premium</p>
           </div>
 
           <div class="text-center">
-            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <IconUserGroup class="w-6 h-6 text-primary-600" />
+            <div class="w-12 h-12 bg-white border border-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <IconUserGroup class="w-6 h-6 text-gray-600" />
             </div>
-            <h3 class="font-semibold mb-2">Atención 24/7</h3>
+            <h3 class="font-medium mb-2">Atención 24/7</h3>
             <p class="text-sm text-gray-600">Soporte personalizado siempre</p>
           </div>
 
           <div class="text-center">
-            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <IconMagnifyingGlass class="w-6 h-6 text-primary-600" />
+            <div class="w-12 h-12 bg-white border border-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <IconMagnifyingGlass class="w-6 h-6 text-gray-600" />
             </div>
-            <h3 class="font-semibold mb-2">Camisetas a Pedido</h3>
+            <h3 class="font-medium mb-2">Camisetas a Pedido</h3>
             <p class="text-sm text-gray-600">Conseguimos cualquier camiseta que necesites</p>
           </div>
         </div>
@@ -91,7 +91,7 @@
     <section class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Productos Destacados</h2>
+          <h2 class="text-3xl md:text-4xl font-light mb-4">Productos Destacados</h2>
           <p class="text-lg text-gray-600">Las camisetas más populares de la temporada</p>
         </div>
 
@@ -119,7 +119,7 @@
         <div v-if="featuredProducts.length > 0" class="text-center mt-12">
           <NuxtLink 
             to="/products"
-            class="inline-flex items-center px-8 py-3 bg-transparent border border-gray-300 text-gray-700 text-base font-semibold rounded-lg hover:bg-gray-50 transition-colors"
+            class="inline-flex items-center px-8 py-3 bg-transparent border border-gray-300 text-gray-700 text-base font-medium rounded-lg hover:bg-gray-50 transition-colors"
           >
             Ver Todos los Productos
           </NuxtLink>
@@ -130,30 +130,33 @@
     <!-- Custom Jersey Request Section -->
     <section class="py-16">
       <div class="container mx-auto px-4">
-        <UiCard variant="gradientPrimary" class="max-w-4xl mx-auto">
+        <div class="bg-black rounded-lg max-w-4xl mx-auto">
           <div class="p-8 md:p-12 text-center">
             <div class="max-w-3xl mx-auto">
-              <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <IconMagnifyingGlass class="w-8 h-8 text-white" />
               </div>
-              <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h2 class="text-3xl md:text-4xl font-light text-white mb-6">
                 ¿No encontrás la camiseta que buscás?
               </h2>
-              <p class="text-lg text-blue-100 mb-8 leading-relaxed max-w-2xl mx-auto">
+              <p class="text-lg text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
                 Envianos las especificaciones de la camiseta que necesitás y nosotros la conseguimos para vos.
               </p>
-              
-              <UiButton size="lg" variant="white" @click="openCustomJerseyWhatsApp">
+
+              <button
+                @click="openCustomJerseyWhatsApp"
+                class="inline-flex items-center px-8 py-3 bg-white text-black text-base font-medium rounded-lg hover:bg-gray-100 transition-colors"
+              >
                 <IconWhatsapp class="w-5 h-5 mr-2" />
                 Solicitar Camiseta Personalizada
-              </UiButton>
-              
-              <p class="text-sm text-blue-200 mt-4">
+              </button>
+
+              <p class="text-sm text-gray-400 mt-4">
                 Respuesta en menos de 24 horas
               </p>
             </div>
           </div>
-        </UiCard>
+        </div>
       </div>
     </section>
   </div>

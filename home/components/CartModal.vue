@@ -17,11 +17,11 @@
         <div class="border-b border-gray-200 px-4 sm:px-6 py-4">
           <div class="flex items-center justify-between">
             <div class="flex items-center">
-              <IconShopping class="h-6 w-6 text-primary-600 mr-2" />
-              <h2 class="text-lg sm:text-xl font-semibold text-gray-900">Carrito de Compras</h2>
+              <IconShopping class="h-6 w-6 text-black mr-2" />
+              <h2 class="text-lg sm:text-xl font-medium text-gray-900">Carrito de Compras</h2>
               <span 
                 v-if="cartStore.totalItems > 0"
-                class="ml-2 sm:ml-3 bg-primary-100 text-primary-800 text-xs sm:text-sm font-medium px-2 sm:px-2.5 py-0.5 rounded-full"
+                class="ml-2 sm:ml-3 bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium px-2 sm:px-2.5 py-0.5 rounded-full"
               >
                 {{ cartStore.totalItems }} {{ cartStore.totalItems === 1 ? 'producto' : 'productos' }}
               </span>
@@ -45,7 +45,7 @@
             <p class="text-gray-500 mb-6">Agrega algunos productos para comenzar tu compra</p>
             <button
               @click="goToProducts"
-              class="inline-flex items-center px-4 py-2 bg-primary-600 text-white font-medium rounded-md hover:bg-primary-700 transition-colors"
+              class="inline-flex items-center px-4 py-2 bg-black text-white font-medium rounded-md hover:bg-gray-900 transition-colors"
             >
               <IconArrowRight class="mr-2 h-4 w-4" />
               Ver Productos
@@ -89,7 +89,7 @@
                         <span>Talla: {{ item.size }}</span>
                         <span>Color: {{ item.color }}</span>
                       </div>
-                      <p class="text-lg font-semibold text-primary-600 mt-1">${{ item.product.price }} c/u</p>
+                      <p class="text-lg font-medium text-black mt-1">${{ item.product.price }} c/u</p>
                     </div>
                     
                     <!-- Quantity Controls -->
@@ -99,7 +99,7 @@
                         <button
                           @click="updateQuantity(item, item.quantity - 1)"
                           :disabled="item.quantity <= 1"
-                          class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                          class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           <IconMinus class="h-4 w-4" />
                         </button>
@@ -109,7 +109,7 @@
                         <button
                           @click="updateQuantity(item, item.quantity + 1)"
                           :disabled="item.quantity >= 99"
-                          class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                          class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           <IconPlus class="h-4 w-4" />
                         </button>
@@ -131,7 +131,7 @@
                       <h4 class="font-medium text-gray-900 truncate">{{ item.product.name }}</h4>
                       <p class="text-sm text-gray-500">Talla: {{ item.size }}</p>
                       <p class="text-sm text-gray-500">Color: {{ item.color }}</p>
-                      <p class="text-sm font-medium text-primary-600">${{ item.product.price }} c/u</p>
+                      <p class="text-sm font-medium text-black">${{ item.product.price }} c/u</p>
                     </div>
                     
                     <!-- Quantity Controls -->
@@ -139,7 +139,7 @@
                       <button
                         @click="updateQuantity(item, item.quantity - 1)"
                         :disabled="item.quantity <= 1"
-                        class="w-8 h-8 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                        class="w-8 h-8 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         <IconMinus class="h-3 w-3" />
                       </button>
@@ -149,7 +149,7 @@
                       <button
                         @click="updateQuantity(item, item.quantity + 1)"
                         :disabled="item.quantity >= 99"
-                        class="w-8 h-8 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                        class="w-8 h-8 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         <IconPlus class="h-3 w-3" />
                       </button>
@@ -169,9 +169,9 @@
 
               <!-- Cart Summary -->
               <div class="border-t pt-4 mt-6">
-                <div class="flex justify-between text-lg font-semibold text-gray-900">
+                <div class="flex justify-between text-lg font-medium text-gray-900">
                   <span>Total:</span>
-                  <span class="text-primary-600">{{ cartStore.formattedTotalPrice }}</span>
+                  <span class="text-black">{{ cartStore.formattedTotalPrice }}</span>
                 </div>
               </div>
             </div>
@@ -191,7 +191,7 @@
                     v-model="localCustomerInfo.name"
                     type="text"
                     placeholder="Tu nombre completo"
-                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
                     :class="{ 'border-red-300': validationErrors.includes('El nombre es requerido') }"
                   />
                 </div>
@@ -206,7 +206,7 @@
                     v-model="localCustomerInfo.phone"
                     type="tel"
                     placeholder="+54 9 11 1234-5678"
-                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
                     :class="{ 'border-red-300': validationErrors.some(error => error.includes('teléfono')) }"
                   />
                 </div>
@@ -221,7 +221,7 @@
                     v-model="localCustomerInfo.email"
                     type="email"
                     placeholder="tu@email.com"
-                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
                     :class="{ 'border-red-300': validationErrors.some(error => error.includes('email')) }"
                   />
                 </div>
@@ -236,7 +236,7 @@
                     v-model="localCustomerInfo.address"
                     rows="3"
                     placeholder="Calle, número, ciudad, provincia"
-                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
                     :class="{ 'border-red-300': validationErrors.includes('La dirección es requerida') }"
                   ></textarea>
                 </div>
@@ -253,7 +253,7 @@
                         v-model="localCustomerInfo.paymentMethod"
                         type="radio"
                         value="transfer"
-                        class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300"
+                        class="h-4 w-4 text-black focus:ring-gray-500 border-gray-300"
                       />
                       <label for="transfer" class="ml-3 text-sm text-gray-700">
                         Transferencia bancaria (recomendado)
@@ -265,7 +265,7 @@
                         v-model="localCustomerInfo.paymentMethod"
                         type="radio"
                         value="cash"
-                        class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300"
+                        class="h-4 w-4 text-black focus:ring-gray-500 border-gray-300"
                       />
                       <label for="cash" class="ml-3 text-sm text-gray-700">
                         Efectivo (contra entrega)
@@ -277,7 +277,7 @@
                         v-model="localCustomerInfo.paymentMethod"
                         type="radio"
                         value="card"
-                        class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300"
+                        class="h-4 w-4 text-black focus:ring-gray-500 border-gray-300"
                       />
                       <label for="card" class="ml-3 text-sm text-gray-700">
                         Tarjeta de crédito/débito
