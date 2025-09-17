@@ -94,8 +94,8 @@
         <UiAccordionItem value="item-2" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <IconLightBulb class="w-5 h-5 text-cyan-600" />
+              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconLightBulb class="w-5 h-5 text-gray-600" />
               </div>
               <span class="font-medium text-gray-900">¿Qué temperatura de agua debo usar?</span>
             </div>
@@ -108,12 +108,12 @@
                   reduce el encogimiento de la tela y ayuda a mantener el calce y apariencia original de la
                   camiseta.
                 </p>
-                <div class="bg-cyan-50/80 border-l-4 border-cyan-400 p-4 rounded-r-lg backdrop-blur-sm">
+                <div class="bg-gray-50/80 border-l-4 border-gray-400 p-4 rounded-r-lg backdrop-blur-sm">
                   <div class="flex items-start gap-3">
-                    <IconInformationCircle class="w-5 h-5 text-cyan-600 mt-0.5 flex-shrink-0" />
+                    <IconInformationCircle class="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <p class="font-medium text-cyan-900 mb-1">Consejo Pro:</p>
-                      <p class="text-cyan-800 text-sm">
+                      <p class="font-medium text-gray-900 mb-1">Consejo Pro:</p>
+                      <p class="text-gray-800 text-sm">
                         El agua fría es más suave con las telas técnicas y también ahorra energía.
                       </p>
                     </div>
@@ -127,8 +127,8 @@
         <UiAccordionItem value="item-3" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <IconXMark class="w-5 h-5 text-red-600" />
+              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconXMark class="w-5 h-5 text-gray-600" />
               </div>
               <span class="font-medium text-gray-900">¿Puedo usar suavizante en mi camiseta?</span>
             </div>
@@ -140,12 +140,12 @@
                   No recomendamos usar suavizante en camisetas deportivas. El suavizante puede obstruir las fibras y
                   reducir las propiedades de absorción de humedad de las telas técnicas.
                 </p>
-                <div class="bg-red-50/80 border-l-4 border-red-400 p-4 rounded-r-lg backdrop-blur-sm">
+                <div class="bg-gray-50/80 border-l-4 border-gray-400 p-4 rounded-r-lg backdrop-blur-sm">
                   <div class="flex items-start gap-3">
-                    <IconExclamationTriangle class="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                    <IconExclamationTriangle class="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <p class="font-medium text-red-900 mb-1">Importante:</p>
-                      <p class="text-red-800 text-sm">
+                      <p class="font-medium text-gray-900 mb-1">Importante:</p>
+                      <p class="text-gray-800 text-sm">
                         Evitá el suavizante para mantener el rendimiento técnico de tu camiseta.
                       </p>
                     </div>
@@ -159,8 +159,8 @@
         <UiAccordionItem value="item-4" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <IconCog class="w-5 h-5 text-indigo-600" />
+              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconCog class="w-5 h-5 text-gray-600" />
               </div>
               <span class="font-medium text-gray-900">¿Qué ciclo de lavarropas debo usar?</span>
             </div>
@@ -180,8 +180,8 @@
         <UiAccordionItem value="item-5" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <IconSun class="w-5 h-5 text-amber-600" />
+              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconSun class="w-5 h-5 text-gray-600" />
               </div>
               <span class="font-medium text-gray-900">¿Cómo debo secar mi camiseta?</span>
             </div>
@@ -200,27 +200,41 @@
       </div>
 
       <!-- Help Section -->
-      <UiCard variant="gradientPrimary" class="mt-12">
-        <div class="p-8 text-center">
-          <div class="max-w-2xl mx-auto">
-            <h3 class="text-2xl font-medium mb-4">¿Necesitás más ayuda?</h3>
-            <p class="text-blue-100 mb-8 leading-relaxed">
+      <div class="bg-black rounded-lg max-w-4xl mx-auto mt-12">
+        <div class="p-8 md:p-12 text-center">
+          <div class="max-w-3xl mx-auto">
+            <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <IconWhatsapp class="w-8 h-8 text-white" />
+            </div>
+            <h3 class="text-3xl md:text-4xl font-light text-white mb-6">¿Necesitás más ayuda?</h3>
+            <p class="text-lg text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
               Si tenés dudas específicas sobre el cuidado de tu camiseta o necesitás asistencia personalizada, no
               dudes en contactarnos.
             </p>
+
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <UiButton size="lg" variant="white" @click="openWhatsApp">
+              <button
+                @click="openWhatsApp"
+                class="inline-flex items-center px-8 py-3 bg-white text-black text-base font-medium rounded-lg hover:bg-gray-100 transition-colors"
+              >
                 <IconWhatsapp class="w-5 h-5 mr-2" />
                 Contactar Soporte
-              </UiButton>
-              <UiButton size="lg" variant="whiteOutline" @click="navigateTo('/faq')">
+              </button>
+              <button
+                @click="navigateTo('/faq')"
+                class="inline-flex items-center px-8 py-3 bg-transparent border border-white/20 text-white text-base font-medium rounded-lg hover:bg-white/10 transition-colors"
+              >
                 <IconQuestionMark class="w-5 h-5 mr-2" />
                 Preguntas Frecuentes
-              </UiButton>
+              </button>
             </div>
+
+            <p class="text-sm text-gray-400 mt-4">
+              Respuesta en menos de 24 horas
+            </p>
           </div>
         </div>
-      </UiCard>
+      </div>
     </div>
   </div>
 </template>
