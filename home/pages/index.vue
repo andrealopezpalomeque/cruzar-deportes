@@ -80,7 +80,7 @@
               <IconMagnifyingGlass class="w-6 h-6 text-gray-600" />
             </div>
             <h3 class="font-medium mb-2">Camisetas a Pedido</h3>
-            <p class="text-sm text-gray-600">Conseguimos cualquier camiseta que necesites</p>
+            <p class="text-sm text-gray-600">Conseguimos la camiseta que necesites</p>
           </div>
         </div>
       </div>

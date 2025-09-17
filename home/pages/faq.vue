@@ -157,8 +157,8 @@
         <UiAccordionItem value="item-3" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <IconArrowLeft class="w-5 h-5 text-purple-600" />
+              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconArrowLeft class="w-5 h-5 text-gray-600" />
               </div>
               <span class="font-medium text-gray-900">¿Puedo devolver o cambiar un producto?</span>
             </div>
@@ -171,12 +171,12 @@
                   estar sin usar, con las etiquetas intactas y en su empaque inicial. Los gastos de envío para
                   devoluciones corren por cuenta del cliente, excepto en casos de productos defectuosos.
                 </p>
-                <div class="bg-purple-50/80 border-l-4 border-purple-400 p-4 rounded-r-lg backdrop-blur-sm">
+                <div class="bg-gray-50/80 border-l-4 border-gray-400 p-4 rounded-r-lg backdrop-blur-sm">
                   <div class="flex items-start gap-3">
-                    <IconInformationCircle class="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <IconInformationCircle class="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <p class="font-medium text-purple-900 mb-1">Proceso simple:</p>
-                      <p class="text-purple-800 text-sm">
+                      <p class="font-medium text-gray-900 mb-1">Proceso simple:</p>
+                      <p class="text-gray-800 text-sm">
                         Contactanos por email o WhatsApp para iniciar el proceso de devolución.
                       </p>
                     </div>
@@ -192,8 +192,8 @@
         <UiAccordionItem value="item-5" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <IconQuestionMarkCircle class="w-5 h-5 text-cyan-600" />
+              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <IconQuestionMarkCircle class="w-5 h-5 text-gray-600" />
               </div>
               <span class="font-medium text-gray-900">¿Cómo puedo rastrear mi pedido?</span>
             </div>
@@ -213,23 +213,32 @@
       </div>
 
       <!-- Help Section -->
-      <UiCard variant="gradientPrimary" class="mt-12">
-        <div class="p-8 text-center">
-          <div class="max-w-2xl mx-auto">
-            <h3 class="text-2xl font-semibold mb-4">¿Necesitás más ayuda?</h3>
-            <p class="text-blue-100 mb-8 leading-relaxed">
+      <div class="bg-black rounded-lg max-w-4xl mx-auto mt-12">
+        <div class="p-8 md:p-12 text-center">
+          <div class="max-w-3xl mx-auto">
+            <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <IconWhatsapp class="w-8 h-8 text-white" />
+            </div>
+            <h3 class="text-3xl md:text-4xl font-light text-white mb-6">¿Necesitás más ayuda?</h3>
+            <p class="text-lg text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
               Si tenés dudas específicas sobre tu compra o necesitás asistencia personalizada, no
               dudes en contactarnos.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <UiButton size="lg" variant="white" @click="openWhatsApp">
-                <IconWhatsapp class="w-5 h-5 mr-2" />
-                Contactar Soporte
-              </UiButton>
-            </div>
+
+            <button
+              @click="openWhatsApp"
+              class="inline-flex items-center px-8 py-3 bg-white text-black text-base font-medium rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              <IconWhatsapp class="w-5 h-5 mr-2" />
+              Contactar Soporte
+            </button>
+
+            <p class="text-sm text-gray-400 mt-4">
+              Respuesta en menos de 24 horas
+            </p>
           </div>
         </div>
-      </UiCard>
+      </div>
     </div>
   </div>
 </template>
