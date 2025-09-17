@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { ref, computed, onMounted } from 'vue'
 import type { Product } from '~/types'
 
 export interface SearchResult extends Product {
@@ -115,13 +116,13 @@ export const useSearchStore = defineStore('search', () => {
 
   return {
     // State
-    query: readonly(query),
-    results: readonly(results),
-    loading: readonly(loading),
-    isOpen: readonly(isOpen),
-    recentSearches: readonly(recentSearches),
-    suggestions: readonly(suggestions),
-    
+    query,
+    results,
+    loading,
+    isOpen,
+    recentSearches,
+    suggestions,
+
     // Actions
     searchProducts,
     generateSuggestions,

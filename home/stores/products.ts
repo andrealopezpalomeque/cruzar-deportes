@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { ref, computed } from 'vue'
 import type { Product, Category } from '~/types'
 import type { SearchResult } from './search'
 
@@ -137,11 +138,11 @@ export const useProductsStore = defineStore('products', () => {
   }
 
   return {
-    products: readonly(products),
-    categories: readonly(categories),
-    loading: readonly(loading),
-    productsLoading: readonly(productsLoading),
-    categoriesLoading: readonly(categoriesLoading),
+    products,
+    categories,
+    loading,
+    productsLoading,
+    categoriesLoading,
     getProductsByCategory,
     getFeaturedProducts,
     getProductBySlug,

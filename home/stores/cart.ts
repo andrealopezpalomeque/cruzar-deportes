@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { ref, computed, watch } from 'vue'
 import type { CartItem, Product } from '~/types'
 
 export interface CustomerInfo {
@@ -20,30 +21,37 @@ export const useCartStore = defineStore('cart', () => {
     paymentMethod: 'transfer'
   })
 
-  // Load cart from localStorage on initialization
-  if (process.client) {
-    const savedCart = localStorage.getItem('cruzar-deportes-cart')
-    const savedCustomerInfo = localStorage.getItem('cruzar-deportes-customer-info')
-    
-    if (savedCart) {
-      try {
-        const parsedCart = JSON.parse(savedCart)
-        if (Array.isArray(parsedCart)) {
-          items.value = parsedCart
-        }
-      } catch (error) {
-        console.warn('Error loading cart from localStorage:', error)
-      }
-    }
+  // Initialize cart from localStorage
+  function initializeFromStorage() {
+    if (process.client) {
+      const savedCart = localStorage.getItem('cruzar-deportes-cart')
+      const savedCustomerInfo = localStorage.getItem('cruzar-deportes-customer-info')
 
-    if (savedCustomerInfo) {
-      try {
-        const parsedCustomerInfo = JSON.parse(savedCustomerInfo)
-        customerInfo.value = { ...customerInfo.value, ...parsedCustomerInfo }
-      } catch (error) {
-        console.warn('Error loading customer info from localStorage:', error)
+      if (savedCart) {
+        try {
+          const parsedCart = JSON.parse(savedCart)
+          if (Array.isArray(parsedCart)) {
+            items.value = parsedCart
+          }
+        } catch (error) {
+          console.warn('Error loading cart from localStorage:', error)
+        }
+      }
+
+      if (savedCustomerInfo) {
+        try {
+          const parsedCustomerInfo = JSON.parse(savedCustomerInfo)
+          customerInfo.value = { ...customerInfo.value, ...parsedCustomerInfo }
+        } catch (error) {
+          console.warn('Error loading customer info from localStorage:', error)
+        }
       }
     }
+  }
+
+  // Initialize on client side
+  if (process.client) {
+    initializeFromStorage()
   }
 
   // Save cart to localStorage whenever items change
@@ -228,9 +236,9 @@ export const useCartStore = defineStore('cart', () => {
   }
 
   return {
-    items: readonly(items),
-    isOpen: readonly(isOpen),
-    customerInfo: readonly(customerInfo),
+    items,
+    isOpen,
+    customerInfo,
     totalItems,
     totalPrice,
     formattedTotalPrice,
