@@ -5,16 +5,16 @@
       <div class="absolute inset-0 bg-white"></div>
       <div class="container mx-auto px-4 relative">
         <div class="max-w-4xl mx-auto text-center">
-          <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-normal bg-white border border-gray-200 text-gray-700 mb-6">
+          <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-normal bg-white border border-gray-200 text-gray-700 mb-6 cursor-default">
             <IconSoccer class="w-4 h-4 mr-2" />
             Nueva Colección 2025
           </div>
 
-          <h1 class="text-4xl md:text-6xl font-light mb-6 text-balance">
+          <h1 class="text-4xl md:text-6xl font-light mb-6 text-balance cursor-default">
             Vestí tu Pasión por el <span class="text-black">Deporte</span>
           </h1>
 
-          <p class="text-lg md:text-xl text-gray-600 mb-8 text-pretty max-w-2xl mx-auto">
+          <p class="text-lg md:text-xl text-gray-600 mb-8 text-pretty max-w-2xl mx-auto cursor-default">
             Descubrí la colección más completa de camisetas deportivas de equipos de todo el mundo. Calidad premium,
             diseños auténticos.
           </p>
@@ -51,7 +51,7 @@
     <section class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="text-center">
+          <div class="text-center cursor-default">
             <div class="w-12 h-12 bg-white border border-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
               <IconTruck class="w-6 h-6 text-gray-600" />
             </div>
@@ -59,7 +59,7 @@
             <p class="text-sm text-gray-600">En compras superiores a $99.999</p>
           </div>
 
-          <div class="text-center">
+          <div class="text-center cursor-default">
             <div class="w-12 h-12 bg-white border border-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
               <IconShieldCheck class="w-6 h-6 text-gray-600" />
             </div>
@@ -67,7 +67,7 @@
             <p class="text-sm text-gray-600">Productos de calidad premium</p>
           </div>
 
-          <div class="text-center">
+          <div class="text-center cursor-default">
             <div class="w-12 h-12 bg-white border border-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
               <IconUserGroup class="w-6 h-6 text-gray-600" />
             </div>
@@ -75,7 +75,7 @@
             <p class="text-sm text-gray-600">Soporte personalizado siempre</p>
           </div>
 
-          <div class="text-center">
+          <div class="text-center cursor-default">
             <div class="w-12 h-12 bg-white border border-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
               <IconMagnifyingGlass class="w-6 h-6 text-gray-600" />
             </div>
@@ -90,7 +90,7 @@
     <!-- Featured Products -->
     <section class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
+        <div class="text-center mb-12 cursor-default">
           <h2 class="text-3xl md:text-4xl font-light mb-4">Productos Destacados</h2>
           <p class="text-lg text-gray-600">Las camisetas más populares de la temporada</p>
         </div>
@@ -110,7 +110,7 @@
           />
         </div>
 
-        <div v-if="featuredProducts.length === 0 && !productsStore.loading" class="text-center py-12">
+        <div v-if="featuredProducts.length === 0 && !productsStore.loading" class="text-center py-12 cursor-default">
           <IconTshirtCrew class="h-16 w-16 text-gray-400 mx-auto mb-4" />
           <h3 class="text-lg font-medium text-gray-900 mb-2">Aún no hay productos</h3>
           <p class="text-gray-600">¡Estamos trabajando en agregar productos. Vuelve pronto!</p>
@@ -136,10 +136,10 @@
               <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <IconMagnifyingGlass class="w-8 h-8 text-white" />
               </div>
-              <h2 class="text-3xl md:text-4xl font-light text-white mb-6">
+              <h2 class="text-3xl md:text-4xl font-light text-white mb-6 cursor-default">
                 ¿No encontrás la camiseta que buscás?
               </h2>
-              <p class="text-lg text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
+              <p class="text-lg text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto cursor-default">
                 Envianos las especificaciones de la camiseta que necesitás y nosotros la conseguimos para vos.
               </p>
 
@@ -151,7 +151,7 @@
                 Solicitar Camiseta Personalizada
               </button>
 
-              <p class="text-sm text-gray-400 mt-4">
+              <p class="text-sm text-gray-400 mt-4 cursor-default">
                 Respuesta en menos de 24 horas
               </p>
             </div>
