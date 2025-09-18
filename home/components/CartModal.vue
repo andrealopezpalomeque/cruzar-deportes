@@ -341,7 +341,7 @@
 import { ref, computed, watch } from 'vue'
 import { useCartStore } from '~/stores/cart'
 import { toast } from 'vue3-toastify'
-import IconShopping from '~icons/mdi/shopping'
+import IconShopping from '~icons/mdi/shopping-outline'
 import IconClose from '~icons/mdi/close'
 import IconCartOff from '~icons/mdi/cart-off'
 import IconArrowRight from '~icons/mdi/arrow-right'
