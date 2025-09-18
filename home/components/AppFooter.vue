@@ -11,7 +11,7 @@
               class="h-20 w-auto"
             />
           </div>
-          <p class="text-gray-600 mb-4">
+          <p class="text-gray-600 mb-4 cursor-default">
             Porque cada hincha merece vestir los colores de su pasión. Camisetas deportivas del mundo entero.
           </p>
             <div class="flex">
@@ -23,7 +23,7 @@
 
         <!-- Quick Links -->
         <div>
-          <h3 class="text-lg font-medium mb-4 text-gray-900">Enlaces Rápidos</h3>
+          <h3 class="text-lg font-medium mb-4 text-gray-900 cursor-default">Enlaces Rápidos</h3>
           <ul class="space-y-2">
             <li><NuxtLink to="/" class="text-gray-600 hover:text-black transition-colors">Inicio</NuxtLink></li>
             <li><NuxtLink to="/categories" class="text-gray-600 hover:text-black transition-colors">Categorías</NuxtLink></li>
@@ -33,7 +33,7 @@
 
         <!-- Customer Service -->
         <div>
-          <h3 class="text-lg font-medium mb-4 text-gray-900">Atención al Cliente</h3>
+          <h3 class="text-lg font-medium mb-4 text-gray-900 cursor-default">Atención al Cliente</h3>
           <ul class="space-y-2">
            <!--  <li><NuxtLink to="/contact" class="text-gray-600 hover:text-black transition-colors">Contáctanos</NuxtLink></li>
             <li><NuxtLink to="/shipping" class="text-gray-600 hover:text-black transition-colors">Información de Envío</NuxtLink></li>
@@ -45,7 +45,7 @@
       </div>
 
       <div class="border-t border-gray-200 mt-8 pt-8 text-center">
-        <p class="text-gray-500">
+        <p class="text-gray-500 cursor-default">
           © {{ currentYear }} Cruzar Deportes. Todos los derechos reservados.
         </p>
       </div>

@@ -66,10 +66,10 @@
         <h3 class="text-lg font-normal text-gray-900 mb-1 line-clamp-2">{{ product.name }}</h3>
       </NuxtLink>
       
-      <p class="text-sm text-gray-600 mb-3 capitalize">{{ categoryName }}</p>
+      <p class="text-sm text-gray-600 mb-3 capitalize cursor-default">{{ categoryName }}</p>
       
       <!-- Price and Action -->
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between cursor-default">
         <div class="flex items-center space-x-2">
           <span class="text-lg font-medium text-gray-900">${{ product.price }}</span>
           <span 
@@ -93,7 +93,7 @@
       </div>
       
       <!-- Stock Status -->
-      <div class="mt-2 flex items-center justify-between">
+      <div class="mt-2 flex items-center justify-between cursor-default">
         <div class="flex items-center space-x-2">
           <IconCheckCircle 
             v-if="product.inStock"

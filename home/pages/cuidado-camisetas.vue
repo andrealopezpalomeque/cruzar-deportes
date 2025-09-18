@@ -8,13 +8,13 @@
           <IconCheckCircleFilled class="w-4 h-4 mr-2" />
           Guía Profesional
         </div>
-        <h1 class="text-4xl md:text-5xl font-light text-gray-900 mb-6">
+        <h1 class="text-4xl md:text-5xl font-light text-gray-900 mb-6 cursor-default">
           Guía de Cuidado de
           <span class="text-black">
             Camisetas
           </span>
         </h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed cursor-default">
           Mantené tus camisetas deportivas como nuevas y en perfecto estado con nuestra guía completa de cuidado
           profesional.
         </p>
@@ -26,7 +26,7 @@
       <!-- Care Tips Grid -->
       <div class="grid md:grid-cols-3 gap-6 mb-8">
         <UiCard variant="modern">
-          <div class="p-6 text-center">
+          <div class="p-6 text-center cursor-default">
             <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
               <IconCheckCircle class="w-6 h-6 text-gray-600" />
             </div>
@@ -36,7 +36,7 @@
         </UiCard>
 
         <UiCard variant="modern">
-          <div class="p-6 text-center">
+          <div class="p-6 text-center cursor-default">
             <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
               <IconBolt class="w-6 h-6 text-gray-600" />
             </div>
@@ -46,7 +46,7 @@
         </UiCard>
 
         <UiCard variant="modern">
-          <div class="p-6 text-center">
+          <div class="p-6 text-center cursor-default">
             <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
               <IconClock class="w-6 h-6 text-gray-600" />
             </div>
@@ -206,8 +206,8 @@
             <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
               <IconWhatsapp class="w-8 h-8 text-white" />
             </div>
-            <h3 class="text-3xl md:text-4xl font-light text-white mb-6">¿Necesitás más ayuda?</h3>
-            <p class="text-lg text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
+            <h3 class="text-3xl md:text-4xl font-light text-white mb-6 cursor-default">¿Necesitás más ayuda?</h3>
+            <p class="text-lg text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto cursor-default">
               Si tenés dudas específicas sobre el cuidado de tu camiseta o necesitás asistencia personalizada, no
               dudes en contactarnos.
             </p>
@@ -229,7 +229,7 @@
               </button>
             </div>
 
-            <p class="text-sm text-gray-400 mt-4">
+            <p class="text-sm text-gray-400 mt-4 cursor-default">
               Respuesta en menos de 24 horas
             </p>
           </div>

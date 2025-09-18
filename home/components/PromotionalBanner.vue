@@ -14,7 +14,7 @@
 
       <div 
         v-if="isExpanded" 
-        class="border-t border-gray-600 py-6 transition-all duration-300"
+        class="border-t border-gray-600 py-6 transition-all duration-300 cursor-default"
       >
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           <div class="text-center">
