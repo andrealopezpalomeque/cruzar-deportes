@@ -7,8 +7,20 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@pinia/nuxt',
     'unplugin-icons/nuxt',
-    'dayjs-nuxt'
+    'dayjs-nuxt',
+    '@nuxtjs/cloudinary'
   ],
+  runtimeConfig: {
+    public: {
+      firebaseProjectId: process.env.FIREBASE_PROJECT_ID
+    },
+    cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
+    cloudinaryApiKey: process.env.CLOUDINARY_API_KEY,
+    cloudinaryApiSecret: process.env.CLOUDINARY_API_SECRET
+  },
+  cloudinary: {
+    cloudName: process.env.CLOUDINARY_CLOUD_NAME
+  },
   css: [
     'vue3-toastify/dist/index.css'
   ],

@@ -86,10 +86,10 @@ export const useProductsStore = defineStore('products', () => {
   async function fetchProducts() {
     productsLoading.value = true
     loading.value = productsLoading.value || categoriesLoading.value
-    
+
     const startTime = Date.now()
     const minLoadingTime = 800 // Minimum 800ms loading time
-    
+
     try {
       // Generate products from scraped data
       const { generateProducts } = await import('~/utils/productGenerator')
@@ -100,14 +100,36 @@ export const useProductsStore = defineStore('products', () => {
       // Ensure minimum loading time for better UX
       const elapsedTime = Date.now() - startTime
       const remainingTime = Math.max(0, minLoadingTime - elapsedTime)
-      
+
       if (remainingTime > 0) {
         await new Promise(resolve => setTimeout(resolve, remainingTime))
       }
-      
+
       productsLoading.value = false
       loading.value = productsLoading.value || categoriesLoading.value
     }
+  }
+
+  const addProduct = (product: Product) => {
+    products.value.push(product)
+  }
+
+  const updateProduct = (productId: string, updates: Partial<Product>) => {
+    const index = products.value.findIndex(p => p.id === productId)
+    if (index !== -1) {
+      products.value[index] = { ...products.value[index], ...updates }
+    }
+  }
+
+  const deleteProduct = (productId: string) => {
+    const index = products.value.findIndex(p => p.id === productId)
+    if (index !== -1) {
+      products.value.splice(index, 1)
+    }
+  }
+
+  const updateProductImages = (productId: string, imageUrls: string[]) => {
+    updateProduct(productId, { images: imageUrls })
   }
 
   async function fetchCategories() {
@@ -150,6 +172,10 @@ export const useProductsStore = defineStore('products', () => {
     fetchProducts,
     fetchCategories,
     searchProducts,
-    getSearchSuggestions
+    getSearchSuggestions,
+    addProduct,
+    updateProduct,
+    deleteProduct,
+    updateProductImages
   }
 })
