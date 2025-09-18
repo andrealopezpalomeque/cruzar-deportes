@@ -37,19 +37,19 @@
 
         <!-- Actions -->
         <div class="flex items-center space-x-4">
-          <button 
+          <button
             type="button"
             @click="openSearch"
-            class="p-2 text-gray-400 hover:text-gray-500 transition-colors"
+            class="p-2 text-black hover:text-gray-600 transition-colors"
             title="Buscar (Ctrl+K)"
           >
             <IconMagnify class="h-6 w-6" />
           </button>
           
-          <button 
+          <button
             type="button"
             @click="openCart"
-            class="relative p-2 text-gray-400 hover:text-gray-500"
+            class="relative p-2 text-black hover:text-gray-600 transition-colors"
           >
             <IconShopping class="h-6 w-6" />
             <span 
@@ -61,10 +61,10 @@
           </button>
 
           <!-- Mobile menu button -->
-          <button 
+          <button
             type="button"
             @click="mobileMenuOpen = !mobileMenuOpen"
-            class="md:hidden p-2 text-gray-400 hover:text-gray-500"
+            class="md:hidden p-2 text-black hover:text-gray-600 transition-colors"
           >
             <IconMenu class="h-6 w-6" />
           </button>
@@ -114,7 +114,7 @@ import { useSearchStore } from '../stores/search'
 import SearchModal from './SearchModal.vue'
 import CartModal from './CartModal.vue'
 import IconMagnify from '~icons/mdi/magnify'
-import IconShopping from '~icons/mdi/shopping'
+import IconShopping from '~icons/mdi/shopping-outline'
 import IconMenu from '~icons/mdi/menu'
 
 const cartStore = useCartStore()
