@@ -1420,7 +1420,7 @@ const teamData: Record<string, {
 }
 
 async function getImagesForTeam(teamKey: string, category: CategoryType): Promise<string[]> {
-  const { getTeamImages } = await import('~/utils/imageLoader')
+  const { getTeamImages } = await import('~/utils/cloudinaryImageLoader')
   return getTeamImages(teamKey, category)
 }
 
@@ -1493,5 +1493,6 @@ export function generateCategories(): Category[] {
   ]
 }
 
-// Note: Image loading is now handled by imageLoader.ts using a generated manifest
-// This eliminates the need for hardcoded image counts and paths
+// Note: Image loading is now handled by cloudinaryImageLoader.ts with environment-aware loading
+// Development: Uses local images via imageManifest.ts
+// Production: Uses optimized Cloudinary URLs with automatic transformations

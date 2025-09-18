@@ -90,7 +90,7 @@ async function loadProductImages() {
   if (!product.value) return
 
   try {
-    const { getTeamImages } = await import('~/utils/imageLoader')
+    const { getTeamImages } = await import('~/utils/cloudinaryImageLoader')
     const teamKey = product.value.slug.replace(/-/g, '_') // Convert slug back to team key
     const images = await getTeamImages(teamKey, product.value.category)
     productImages.value = images

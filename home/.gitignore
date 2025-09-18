@@ -25,3 +25,9 @@ logs
 
 # Claude Code settings
 .claude/
+
+# Firebase
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+.firebaserc
