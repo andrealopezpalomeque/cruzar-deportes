@@ -1,5 +1,5 @@
 import type { CategoryType } from '~/types'
-import { getTeamCloudinaryUrls, hasCloudinaryUrls } from './cloudinaryUrlMapping'
+import { getTeamCloudinaryUrls, hasCloudinaryUrls, getMigratedImageCount } from './cloudinaryUrlMapping'
 
 // Environment-aware image loader for Cloudinary integration
 export class CloudinaryImageLoader {
@@ -7,10 +7,18 @@ export class CloudinaryImageLoader {
   private useCloudinary: boolean
 
   constructor() {
-    const config = useRuntimeConfig()
-    this.cloudName = config.cloudinaryCloudName || ''
+    try {
+      const config = useRuntimeConfig()
+      this.cloudName = config.cloudinaryCloudName || process.env.CLOUDINARY_CLOUD_NAME || 'dmb1vyveg'
+    } catch (error) {
+      // Fallback when useRuntimeConfig is not available (e.g., in server context)
+      this.cloudName = process.env.CLOUDINARY_CLOUD_NAME || 'dmb1vyveg'
+    }
+
     // Use Cloudinary if we have the cloud name AND migrated URLs are available
     this.useCloudinary = !!this.cloudName && hasCloudinaryUrls()
+
+    // CloudinaryImageLoader initialized successfully
   }
 
   /**
