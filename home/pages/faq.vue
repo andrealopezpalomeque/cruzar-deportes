@@ -72,8 +72,7 @@
               <div class="ml-4 sm:ml-8 md:ml-14">
                 <p class="text-gray-700 leading-relaxed mb-4">
                   Realizamos envíos a todo el país. El envío es gratuito en compras superiores a $99.999. Para
-                  montos menores, el costo varía según la ubicación. Los tiempos de entrega son de 3 a 7 días
-                  hábiles para CABA y GBA, y de 5 a 10 días hábiles para el interior del país.
+                  montos menores, el costo varía según la ubicación.
                 </p>
                 <div class="bg-gray-50 border-l-4 border-gray-400 p-4 rounded-r-lg backdrop-blur-sm">
                   <div class="flex items-start gap-3">
@@ -81,7 +80,7 @@
                     <div>
                       <p class="font-medium text-gray-900 mb-1">Seguimiento:</p>
                       <p class="text-gray-700 text-sm">
-                        Recibirás un código de seguimiento por email una vez que tu pedido sea despachado.
+                        Recibirás un código de seguimiento por WhatsApp una vez que tu pedido sea despachado.
                       </p>
                     </div>
                   </div>
@@ -177,7 +176,7 @@
                     <div>
                       <p class="font-medium text-gray-900 mb-1">Proceso simple:</p>
                       <p class="text-gray-800 text-sm">
-                        Contactanos por email o WhatsApp para iniciar el proceso de devolución.
+                        Contactanos por WhatsApp para iniciar el proceso de devolución.
                       </p>
                     </div>
                   </div>
@@ -202,9 +201,8 @@
             <div class="pb-6 pt-2">
               <div class="ml-4 sm:ml-8 md:ml-14">
                 <p class="text-gray-700 leading-relaxed">
-                  Una vez que tu pedido sea despachado, recibirás un email con el número de seguimiento y un enlace
-                  para rastrear tu envío en tiempo real. También podés consultar el estado de tu pedido en tu cuenta
-                  de usuario en nuestro sitio web.
+                  Una vez que tu pedido sea despachado, recibirás un mensaje de WhatsApp con el número de seguimiento y un enlace
+                  para rastrear tu envío en tiempo real.
                 </p>
               </div>
             </div>
