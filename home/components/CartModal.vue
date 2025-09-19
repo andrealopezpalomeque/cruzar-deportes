@@ -352,6 +352,7 @@ import IconAlertCircle from '~icons/mdi/alert-circle'
 import IconWhatsapp from '~icons/mdi/whatsapp'
 import IconLoading from '~icons/mdi/loading'
 import IconInformationCircle from '~icons/mdi/information'
+import { openURLMobileOptimized, isMobileDevice } from '~/utils/device'
 
 const router = useRouter()
 const cartStore = useCartStore()
@@ -419,13 +420,17 @@ async function handleCheckout() {
     
     // Generate WhatsApp URL and redirect
     const whatsappURL = cartStore.generateWhatsAppURL('5493794000783')
-    
-    // Try to open WhatsApp
-    const whatsappWindow = window.open(whatsappURL, '_blank')
-    
-    // Check if popup was blocked
-    if (!whatsappWindow || whatsappWindow.closed || typeof whatsappWindow.closed === 'undefined') {
-      toast.error('Por favor permite ventanas emergentes para abrir WhatsApp')
+
+    // Use mobile-optimized URL opening
+    const openSuccess = openURLMobileOptimized(whatsappURL)
+
+    // Handle opening failure
+    if (!openSuccess) {
+      const errorMessage = isMobileDevice()
+        ? 'No se pudo abrir WhatsApp. Por favor instala WhatsApp o copia el enlace manualmente.'
+        : 'Por favor permite ventanas emergentes para abrir WhatsApp'
+
+      toast.error(errorMessage)
       isProcessing.value = false
       return
     }
