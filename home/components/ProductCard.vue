@@ -80,12 +80,12 @@
           </span>
         </div>
         
-        <!-- Quick Add Button -->
+        <!-- Quick View Button -->
         <button
-          @click.stop="addToCart"
+          @click.stop="viewProduct"
           :disabled="!product.inStock"
           class="px-3 py-2 bg-black text-white text-sm font-medium rounded-md hover:bg-gray-900 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500"
-          :title="product.inStock ? 'Agregar al carrito' : 'Agotado'"
+          :title="product.inStock ? 'Ver producto' : 'Agotado'"
         >
           <IconClose v-if="!product.inStock" class="h-4 w-4" />
           <IconPlus v-else class="h-4 w-4" />
@@ -142,16 +142,10 @@ const categoryName = computed(() => {
   return category?.name || props.product.category
 })
 
-function addToCart() {
+function viewProduct() {
   if (!props.product.inStock) return
-  
-  // For now, add with default size and color
-  const defaultSize = props.product.sizes?.[0] || 'M'
-  const defaultColor = props.product.colors?.[0] || 'Default'
-  
-  cartStore.addItem(props.product.id, defaultSize, defaultColor, 1)
-  
-  // TODO: Show success toast
-  console.log('Added to cart:', props.product.name)
+
+  // Navigate to product detail page
+  navigateTo(`/products/${props.product.slug}`)
 }
 </script>
