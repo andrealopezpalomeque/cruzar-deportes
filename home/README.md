@@ -28,11 +28,43 @@ Cruzar Deportes is a specialized e-commerce platform for sports jerseys and appa
 - **Pinia** - State management for Vue applications
 
 ### Libraries & Tools
-- **@iconify/vue** + **unplugin-icons** - Icon system with extensive icon sets
-- **@vueuse/nuxt** - Collection of Vue composition utilities
-- **vue3-toastify** - Toast notifications for user feedback
-- **dayjs-nuxt** - Date manipulation and formatting
-- **@nuxtjs/cloudinary** - Image optimization and management
+- **@iconify/vue** - Icon management with Iconify
+- **vue3-toastify** - User notifications and feedback
+- **dayjs-nuxt** - Date handling and formatting
+- **@vueuse/nuxt** - Vue composition utilities
+
+### Image Management System
+- **Cloudinary Integration** - Cloud-based image optimization and delivery
+- **Auto-generated Image Manifest** - Automated image cataloging system
+- **Optimized Loading** - Efficient image loading with fallback handling
+
+## Image System
+
+### How it works
+1. **Image Manifest**: All images are cataloged in `utils/imageManifest.ts` which is auto-generated
+2. **Simple Loading**: `utils/cloudinaryImageLoader.ts` uses the manifest to load images efficiently
+3. **Clean Product Generator**: `utils/productGenerator.ts` leverages the manifest for product generation
+
+### Regenerating the Image Manifest
+
+When you add new images or teams, run:
+
+```bash
+node utils/generateImageManifest.cjs
+```
+
+This will:
+- Scan all directories in `public/images/`
+- Find all image files (jpg, jpeg, png, webp)
+- Generate a new manifest with proper paths
+- Sort images by their numeric index
+
+### Benefits
+- ✅ **No hardcoded file lists** - images are discovered automatically
+- ✅ **Easy maintenance** - just run the script when images change
+- ✅ **Proper sorting** - images are ordered by their index number
+- ✅ **Fallback handling** - graceful degradation for missing images
+- ✅ **Performance** - no need to check if files exist at runtime
 
 ### Infrastructure
 - **Cloudinary** - Image hosting and optimization
