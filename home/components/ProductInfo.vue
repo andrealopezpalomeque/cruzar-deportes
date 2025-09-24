@@ -2,7 +2,7 @@
   <div class="product-info space-y-6">
     <!-- Product Header -->
     <div>
-      <div class="flex items-center space-x-2 text-sm text-gray-600 mb-2">
+      <div class="flex items-center space-x-2 text-sm text-gray-800 mb-2">
         <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md font-medium shadow-sm">
           {{ categoryName }}
         </span>
@@ -18,7 +18,7 @@
         <span class="text-3xl font-medium text-gray-900">${{ product.price }}</span>
         <span 
           v-if="product.originalPrice && product.originalPrice > product.price"
-          class="text-xl text-gray-500 line-through"
+          class="text-xl text-gray-700 line-through"
         >
           ${{ product.originalPrice }}
         </span>
@@ -30,7 +30,7 @@
         </span>
       </div>
       
-      <p v-if="product.description" class="text-gray-600 text-lg leading-relaxed mb-6">
+      <p v-if="product.description" class="text-gray-800 text-lg leading-relaxed mb-6">
         {{ product.description }}
       </p>
     </div>
@@ -41,7 +41,7 @@
       <div>
         <label class="block text-sm font-medium text-gray-900 mb-3">
           Talla
-          <span class="text-red-500">*</span>
+          <span class="text-red-700">*</span>
         </label>
         <input
           v-model="selectedSize"
@@ -49,7 +49,7 @@
           placeholder="Ej: L, XL, 42, etc."
           class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
         />
-        <p class="text-sm text-gray-500 mt-2">
+        <p class="text-sm text-gray-700 mt-2">
           Especifica la talla que necesitas (letras o números)
         </p>
       </div>
@@ -58,7 +58,7 @@
       <div>
         <label class="block text-sm font-medium text-gray-900 mb-3">
           Color/Modelo
-          <span class="text-red-500">*</span>
+          <span class="text-red-700">*</span>
         </label>
         <input
           v-model="selectedColor"
@@ -66,7 +66,7 @@
           placeholder="Ej: Azul local como en foto #1, Rojo visitante como en foto #3"
           class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
         />
-        <p class="text-sm text-gray-500 mt-2">
+        <p class="text-sm text-gray-700 mt-2">
           Describe el color/modelo que deseas y referencia el número de foto donde lo ves
         </p>
       </div>
@@ -108,14 +108,14 @@
     <div class="flex items-center space-x-2">
       <IconCheckCircle 
         v-if="product.inStock"
-        class="h-5 w-5 text-green-600"
+        class="h-5 w-5 text-green-700"
       />
       <IconAlertCircle 
         v-else
-        class="h-5 w-5 text-red-600"
+        class="h-5 w-5 text-red-700"
       />
       <span 
-        :class="product.inStock ? 'text-green-600' : 'text-red-600'"
+        :class="product.inStock ? 'text-green-700' : 'text-red-700'"
         class="text-sm font-medium"
       >
         {{ product.inStock ? 'En stock' : 'Agotado' }}
@@ -146,7 +146,7 @@
         <div 
           v-for="message in validationMessages"
           :key="message"
-          class="flex items-center space-x-2 text-sm text-red-600"
+          class="flex items-center space-x-2 text-sm text-red-700"
         >
           <IconAlertCircle class="h-4 w-4 flex-shrink-0" />
           <span>{{ message }}</span>
@@ -159,10 +159,10 @@
       v-if="showSuccessMessage" 
       class="bg-green-50 border border-green-200 rounded-md p-4 flex items-center space-x-3"
     >
-      <IconCheckCircle class="h-5 w-5 text-green-600 flex-shrink-0" />
+      <IconCheckCircle class="h-5 w-5 text-green-700 flex-shrink-0" />
       <div>
         <p class="text-sm font-medium text-green-800">¡Producto agregado al carrito!</p>
-        <p class="text-sm text-green-600">{{ product.name }} - Talla: {{ selectedSize }}, Color/Modelo: {{ selectedColor }}</p>
+        <p class="text-sm text-green-700">{{ product.name }} - Talla: {{ selectedSize }}, Color/Modelo: {{ selectedColor }}</p>
       </div>
     </div>
 
@@ -171,20 +171,20 @@
       <h3 class="text-lg font-medium text-gray-900">Características del producto</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
         <div class="flex items-center space-x-2">
-          <IconShieldCheck class="h-4 w-4 text-gray-600" />
-          <span class="text-gray-600">Producto de calidad premium</span>
+          <IconShieldCheck class="h-4 w-4 text-gray-800" />
+          <span class="text-gray-800">Producto de calidad premium</span>
         </div>
         <div class="flex items-center space-x-2">
-          <IconTruck class="h-4 w-4 text-gray-600" />
-          <span class="text-gray-600">Envío gratuito en compras +$99.999</span>
+          <IconTruck class="h-4 w-4 text-gray-800" />
+          <span class="text-gray-800">Envío gratuito en compras +$99.999</span>
         </div>
         <div class="flex items-center space-x-2">
-          <IconRefresh class="h-4 w-4 text-gray-600" />
-          <span class="text-gray-600">30 días de devolución</span>
+          <IconRefresh class="h-4 w-4 text-gray-800" />
+          <span class="text-gray-800">30 días de devolución</span>
         </div>
         <div class="flex items-center space-x-2">
-          <IconMedal class="h-4 w-4 text-gray-600" />
-          <span class="text-gray-600">Materiales certificados</span>
+          <IconMedal class="h-4 w-4 text-gray-800" />
+          <span class="text-gray-800">Materiales certificados</span>
         </div>
       </div>
     </div>

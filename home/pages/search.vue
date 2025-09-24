@@ -8,7 +8,7 @@
             <h1 class="text-2xl font-bold text-gray-900">
               Resultados de búsqueda
             </h1>
-            <p v-if="searchQuery" class="text-gray-600 mt-1">
+            <p v-if="searchQuery" class="text-gray-800 mt-1">
               Mostrando resultados para: <span class="font-medium">"{{ searchQuery }}"</span>
             </p>
           </div>
@@ -26,7 +26,7 @@
             <button
               v-if="localQuery"
               @click="clearLocalQuery"
-              class="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600"
+              class="absolute right-3 top-2.5 text-gray-400 hover:text-gray-800"
             >
               <IconClose class="h-5 w-5" />
             </button>
@@ -132,7 +132,7 @@
         <div class="flex-1">
           <!-- Results Count and Sort -->
           <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
-            <p class="text-gray-600">
+            <p class="text-gray-800">
               {{ filteredResults.length }} producto{{ filteredResults.length !== 1 ? 's' : '' }} encontrado{{ filteredResults.length !== 1 ? 's' : '' }}
             </p>
             
@@ -175,7 +175,7 @@
             <h3 class="text-xl font-medium text-gray-900 mb-2">
               No encontramos productos
             </h3>
-            <p class="text-gray-500 mb-6">
+            <p class="text-gray-700 mb-6">
               Tu búsqueda "{{ searchQuery }}" no arrojó resultados. 
               Intenta con términos diferentes o explora nuestras categorías.
             </p>
@@ -201,7 +201,7 @@
             <h3 class="text-xl font-medium text-gray-900 mb-2">
               Busca tu camiseta favorita
             </h3>
-            <p class="text-gray-500 mb-6">
+            <p class="text-gray-700 mb-6">
               Encuentra camisetas de tus equipos favoritos de diferentes ligas
             </p>
             <NuxtLink

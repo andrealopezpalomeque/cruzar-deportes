@@ -20,19 +20,19 @@
         <nav class="hidden md:flex space-x-8">
           <NuxtLink 
             to="/" 
-            class="text-gray-700 hover:text-black transition-colors"
+            class="text-gray-800 hover:text-black transition-colors"
           >
             Inicio
           </NuxtLink>
           <NuxtLink 
             to="/categories" 
-            class="text-gray-700 hover:text-black transition-colors"
+            class="text-gray-800 hover:text-black transition-colors"
           >
             Categorías
           </NuxtLink>
           <NuxtLink 
             to="/products" 
-            class="text-gray-700 hover:text-black transition-colors"
+            class="text-gray-800 hover:text-black transition-colors"
           >
             Todos los Productos
           </NuxtLink>
@@ -45,19 +45,26 @@
             @click="openSearch"
             class="p-2 text-black hover:text-gray-600 transition-colors"
             title="Buscar (Ctrl+K)"
+            aria-label="Abrir búsqueda de productos"
           >
             <IconMagnify class="h-6 w-6" />
+            <span class="sr-only">Buscar productos</span>
           </button>
           
           <button
             type="button"
             @click="openCart"
             class="relative p-2 text-black hover:text-gray-600 transition-colors"
+            :aria-label="cartStore.totalItems > 0 ? `Abrir carrito (${cartStore.totalItems} productos)` : 'Abrir carrito'"
           >
             <IconShopping class="h-6 w-6" />
-            <span 
+            <span class="sr-only">
+              {{ cartStore.totalItems > 0 ? `Carrito con ${cartStore.totalItems} productos` : 'Carrito vacío' }}
+            </span>
+            <span
               v-if="cartStore.totalItems > 0"
               class="absolute -top-1 -right-1 bg-black text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+              aria-hidden="true"
             >
               {{ cartStore.totalItems }}
             </span>
@@ -68,8 +75,11 @@
             type="button"
             @click="mobileMenuOpen = !mobileMenuOpen"
             class="md:hidden p-2 text-black hover:text-gray-600 transition-colors"
+            :aria-label="mobileMenuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'"
+            :aria-expanded="mobileMenuOpen"
           >
             <IconMenu class="h-6 w-6" />
+            <span class="sr-only">{{ mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú' }}</span>
           </button>
         </div>
       </div>
@@ -79,21 +89,21 @@
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <NuxtLink 
             to="/" 
-            class="block px-3 py-2 text-gray-700 hover:text-black"
+            class="block px-3 py-2 text-gray-800 hover:text-black"
             @click="mobileMenuOpen = false"
           >
             Inicio
           </NuxtLink>
           <NuxtLink 
             to="/categories" 
-            class="block px-3 py-2 text-gray-700 hover:text-black"
+            class="block px-3 py-2 text-gray-800 hover:text-black"
             @click="mobileMenuOpen = false"
           >
             Categorías
           </NuxtLink>
           <NuxtLink 
             to="/products" 
-            class="block px-3 py-2 text-gray-700 hover:text-black"
+            class="block px-3 py-2 text-gray-800 hover:text-black"
             @click="mobileMenuOpen = false"
           >
             Todos los Productos

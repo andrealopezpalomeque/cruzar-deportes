@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <!-- Breadcrumb Navigation -->
-    <nav class="flex items-center space-x-2 text-sm text-gray-600 mb-6">
+    <nav class="flex items-center space-x-2 text-sm text-gray-800 mb-6">
       <NuxtLink to="/" class="hover:text-black transition-colors">Inicio</NuxtLink>
       <IconChevronRight class="h-4 w-4" />
       <NuxtLink to="/products" class="hover:text-black transition-colors">Productos</NuxtLink>
@@ -18,7 +18,7 @@
     <div v-else-if="!product" class="text-center py-20">
       <IconAlertCircle class="h-16 w-16 text-gray-400 mx-auto mb-4" />
       <h2 class="text-2xl font-medium text-gray-900 mb-2">Producto no encontrado</h2>
-      <p class="text-gray-600 mb-6">El producto que buscas no existe o ha sido eliminado.</p>
+      <p class="text-gray-800 mb-6">El producto que buscas no existe o ha sido eliminado.</p>
       <NuxtLink 
         to="/products" 
         class="inline-flex items-center px-4 py-2 bg-black text-white font-medium rounded-md hover:bg-gray-900 transition-colors"
