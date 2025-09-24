@@ -661,6 +661,97 @@ const teamData: Record<string, {
   },
 
   // National Retro Teams
+  'argentina_1978': {
+    name: 'Argentina Retro 1978',
+    category: 'national_retro',
+    price: 120,
+    originalPrice: 150,
+    description: 'Historic Argentina national team jersey from 1978 World Cup'
+  },
+  'argentina_1986': {
+    name: 'Argentina Retro 1986',
+    category: 'national_retro',
+    price: 130,
+    originalPrice: 160,
+    description: 'Legendary Argentina national team jersey from 1986 World Cup with Maradona'
+  },
+  'argentina_1986_long_sleeve': {
+    name: 'Argentina Retro 1986 Long Sleeve',
+    category: 'national_retro',
+    price: 140,
+    originalPrice: 170,
+    description: 'Argentina 1986 World Cup long sleeve jersey'
+  },
+  'argentina_1994': {
+    name: 'Argentina Retro 1994',
+    category: 'national_retro',
+    price: 115,
+    originalPrice: 140,
+    description: 'Classic Argentina national team jersey from 1994 World Cup'
+  },
+  'argentina_1998': {
+    name: 'Argentina Retro 1998',
+    category: 'national_retro',
+    price: 110,
+    originalPrice: 135,
+    description: 'Argentina national team jersey from 1998 World Cup'
+  },
+  'argentina_2001_maradona_version': {
+    name: 'Argentina 2001 Maradona Version',
+    category: 'national_retro',
+    price: 135,
+    originalPrice: 165,
+    description: 'Special Argentina jersey from 2001 Maradona tribute version'
+  },
+  'argentina_2006': {
+    name: 'Argentina Retro 2006',
+    category: 'national_retro',
+    price: 105,
+    originalPrice: 125,
+    description: 'Argentina national team jersey from 2006 World Cup'
+  },
+  'argentina_2010': {
+    name: 'Argentina Retro 2010',
+    category: 'national_retro',
+    price: 100,
+    originalPrice: 120,
+    description: 'Argentina national team jersey from 2010 World Cup'
+  },
+  'argentina_2014': {
+    name: 'Argentina Retro 2014',
+    category: 'national_retro',
+    price: 95,
+    originalPrice: 115,
+    description: 'Argentina national team jersey from 2014 World Cup Final'
+  },
+  'argentina_2014_adizero': {
+    name: 'Argentina 2014 Adizero',
+    category: 'national_retro',
+    price: 110,
+    originalPrice: 130,
+    description: 'Argentina 2014 World Cup Adizero player version jersey'
+  },
+  'argentina_2014_long_sleeve': {
+    name: 'Argentina 2014 Long Sleeve',
+    category: 'national_retro',
+    price: 105,
+    originalPrice: 125,
+    description: 'Argentina 2014 World Cup long sleeve jersey'
+  },
+  'argentina_2014_long_sleeve_player_version': {
+    name: 'Argentina 2014 Long Sleeve Player Version',
+    category: 'national_retro',
+    price: 120,
+    originalPrice: 145,
+    description: 'Argentina 2014 World Cup long sleeve player version jersey'
+  },
+  'argentina_2014_world_final': {
+    name: 'Argentina 2014 World Cup Final',
+    category: 'national_retro',
+    price: 125,
+    originalPrice: 155,
+    description: 'Special Argentina jersey from 2014 World Cup Final'
+  },
   'belgium_00': {
     name: 'Belgium Retro 2000',
     category: 'national_retro',
