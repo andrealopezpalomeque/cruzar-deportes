@@ -30,16 +30,20 @@
               v-if="localQuery"
               type="button"
               @click="clearSearch"
-              class="ml-2 p-1 text-gray-400 hover:text-gray-600"
+              class="ml-2 p-1 text-gray-400 hover:text-gray-800"
+              aria-label="Limpiar búsqueda"
             >
               <IconClose class="h-5 w-5" />
+              <span class="sr-only">Limpiar búsqueda</span>
             </button>
             <button
               type="button"
               @click="searchStore.closeSearch"
-              class="ml-2 p-1 text-gray-400 hover:text-gray-600"
+              class="ml-2 p-1 text-gray-400 hover:text-gray-800"
+              aria-label="Cerrar búsqueda"
             >
               <IconClose class="h-6 w-6" />
+              <span class="sr-only">Cerrar búsqueda</span>
             </button>
           </div>
         </div>
@@ -50,13 +54,13 @@
           <div v-if="searchStore.loading" class="p-4">
             <div class="flex items-center justify-center py-8">
               <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
-              <span class="ml-3 text-gray-600">Buscando...</span>
+              <span class="ml-3 text-gray-800">Buscando...</span>
             </div>
           </div>
           
           <!-- Search Results -->
           <div v-else-if="searchStore.results.length > 0" class="p-2">
-            <div class="mb-2 px-2 py-1 text-sm text-gray-500">
+            <div class="mb-2 px-2 py-1 text-sm text-gray-700">
               {{ searchStore.results.length }} resultado{{ searchStore.results.length > 1 ? 's' : '' }}
             </div>
             <div class="space-y-1">
@@ -69,6 +73,11 @@
                 ]"
                 @click="goToProduct(product)"
                 @mouseenter="selectedIndex = index"
+                role="button"
+                tabindex="0"
+                :aria-label="`Ver ${product.name} de ${getCategoryName(product.category)} - Precio: ${formatPrice(product.price)}`"
+                @keydown.enter="goToProduct(product)"
+                @keydown.space.prevent="goToProduct(product)"
               >
                 <img
                   :src="product.images[0]"
@@ -77,12 +86,12 @@
                 />
                 <div class="flex-1 min-w-0">
                   <h3 class="font-medium text-gray-900 truncate" v-html="highlightText(product.name, localQuery)"></h3>
-                  <p class="text-sm text-gray-500 capitalize">{{ getCategoryName(product.category) }}</p>
+                  <p class="text-sm text-gray-700 capitalize">{{ getCategoryName(product.category) }}</p>
                   <div class="flex items-center space-x-2 mt-1">
                     <span class="font-bold text-primary-600">{{ formatPrice(product.price) }}</span>
                     <span
                       v-if="product.originalPrice"
-                      class="text-sm text-gray-500 line-through"
+                      class="text-sm text-gray-700 line-through"
                     >
                       {{ formatPrice(product.originalPrice) }}
                     </span>
@@ -104,6 +113,7 @@
                 :to="`/search?q=${encodeURIComponent(localQuery)}`"
                 class="block text-center text-primary-600 hover:text-primary-700 font-medium"
                 @click="searchStore.closeSearch"
+                :aria-label="`Ver todos los ${searchStore.results.length} resultados de búsqueda para '${localQuery}'`"
               >
                 Ver todos los {{ searchStore.results.length }} resultados
               </NuxtLink>
@@ -116,7 +126,7 @@
             <h3 class="text-lg font-medium text-gray-900 mb-2">
               No encontramos resultados
             </h3>
-            <p class="text-gray-500 mb-4">
+            <p class="text-gray-700 mb-4">
               Intenta con otros términos de búsqueda o explora nuestras categorías
             </p>
             <div class="space-y-2">
@@ -139,7 +149,8 @@
                 <button
                   type="button"
                   @click="searchStore.clearRecentSearches"
-                  class="text-xs text-gray-500 hover:text-gray-700"
+                  class="text-xs text-gray-700 hover:text-gray-700"
+                  aria-label="Limpiar historial de búsquedas recientes"
                 >
                   Limpiar
                 </button>
@@ -151,6 +162,7 @@
                   type="button"
                   @click="setSearchQuery(search)"
                   class="flex items-center w-full p-2 text-left rounded-lg hover:bg-gray-50 transition-colors"
+                  :aria-label="`Buscar '${search}' nuevamente`"
                 >
                   <IconHistory class="h-4 w-4 text-gray-400 mr-3" />
                   <span class="text-gray-700">{{ search }}</span>

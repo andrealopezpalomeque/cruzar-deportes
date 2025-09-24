@@ -3,7 +3,7 @@
     <!-- Header -->
     <div class="text-center mb-12">
       <h1 class="text-4xl font-light text-gray-900 mb-4">Todos los Productos</h1>
-      <p class="text-lg text-gray-600">Navega nuestra colección completa de camisetas deportivas</p>
+      <p class="text-lg text-gray-800">Navega nuestra colección completa de camisetas deportivas</p>
     </div>
 
     <!-- Filters -->
@@ -15,7 +15,7 @@
             'px-4 py-2 text-sm font-medium rounded-md transition-colors',
             selectedCategory === ''
               ? 'bg-black text-white'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
           ]"
         >
           Todas las Categorías
@@ -28,14 +28,14 @@
             'px-4 py-2 text-sm font-medium rounded-md transition-colors',
             selectedCategory === category.slug
               ? 'bg-black text-white'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
           ]"
         >
           {{ category.name }}
         </button>
       </div>
 
-      <div class="text-sm text-gray-600">
+      <div class="text-sm text-gray-800">
         {{ filteredProducts.length }} {{ filteredProducts.length === 1 ? 'producto' : 'productos' }}
       </div>
     </div>
@@ -63,7 +63,7 @@
         <button
           @click="currentPage = Math.max(1, currentPage - 1)"
           :disabled="currentPage === 1"
-          class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+          class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
         >
           Anterior
         </button>
@@ -77,7 +77,7 @@
               'px-3 py-2 text-sm font-medium rounded-md',
               currentPage === page
                 ? 'bg-black text-white'
-                : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'
+                : 'text-gray-800 bg-white border border-gray-300 hover:bg-gray-50'
             ]"
           >
             {{ page }}
@@ -87,7 +87,7 @@
         <button
           @click="currentPage = Math.min(totalPages, currentPage + 1)"
           :disabled="currentPage === totalPages"
-          class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+          class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
         >
           Siguiente
         </button>
@@ -98,7 +98,7 @@
     <div v-else class="text-center py-12">
       <IconTshirtCrew class="h-16 w-16 text-gray-400 mx-auto mb-4" />
       <h3 class="text-lg font-medium text-gray-900 mb-2">No se encontraron productos</h3>
-      <p class="text-gray-600 mb-6">
+      <p class="text-gray-800 mb-6">
         {{ selectedCategory ? 'No se encontraron productos en esta categoría.' : 'No hay productos disponibles en este momento.' }}
       </p>
       <button

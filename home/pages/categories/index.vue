@@ -2,7 +2,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div class="text-center mb-12">
       <h1 class="text-4xl font-light text-gray-900 mb-4">Comprar por Categoría</h1>
-      <p class="text-lg text-gray-600">Explora nuestra colección organizada por confederaciones de fútbol</p>
+      <p class="text-lg text-gray-800">Explora nuestra colección organizada por confederaciones de fútbol</p>
     </div>
 
     <GridSkeleton 
@@ -37,9 +37,9 @@
             <h3 class="text-xl font-medium text-gray-900 mb-2 group-hover:text-black transition-colors">
               {{ category.name }}
             </h3>
-            <p class="text-gray-600">{{ category.description }}</p>
+            <p class="text-gray-800">{{ category.description }}</p>
             
-            <div class="mt-4 flex items-center text-gray-600 group-hover:text-black transition-colors">
+            <div class="mt-4 flex items-center text-gray-800 group-hover:text-black transition-colors">
               <span class="text-sm font-medium">Comprar ahora</span>
               <IconArrowRight class="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </div>

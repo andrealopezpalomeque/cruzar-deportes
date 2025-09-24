@@ -29,9 +29,11 @@
             <button
               type="button"
               @click="cartStore.closeCart"
-              class="text-gray-400 hover:text-gray-600 transition-colors p-1"
+              class="text-gray-400 hover:text-gray-800 transition-colors p-1"
+              aria-label="Cerrar carrito de compras"
             >
               <IconClose class="h-6 w-6" />
+              <span class="sr-only">Cerrar carrito</span>
             </button>
           </div>
         </div>
@@ -42,7 +44,7 @@
           <div v-if="cartItems.length === 0" class="text-center py-16 px-6">
             <IconCartOff class="h-16 w-16 text-gray-300 mx-auto mb-4" />
             <h3 class="text-lg font-medium text-gray-900 mb-2">Tu carrito está vacío</h3>
-            <p class="text-gray-500 mb-6">Agrega algunos productos para comenzar tu compra</p>
+            <p class="text-gray-700 mb-6">Agrega algunos productos para comenzar tu compra</p>
             <button
               @click="goToProducts"
               class="inline-flex items-center px-4 py-2 bg-black text-white font-medium rounded-md hover:bg-gray-900 transition-colors"
@@ -75,17 +77,19 @@
                       />
                       <button
                         @click="removeItem(item)"
-                        class="text-red-500 hover:text-red-700 transition-colors p-2 -m-2"
+                        class="text-red-700 hover:text-red-700 transition-colors p-2 -m-2"
+                        :aria-label="`Eliminar ${item.product.name} del carrito`"
                         title="Eliminar producto"
                       >
                         <IconTrash class="h-5 w-5" />
+                        <span class="sr-only">Eliminar producto</span>
                       </button>
                     </div>
                     
                     <!-- Product Info -->
                     <div class="mb-3">
                       <h4 class="font-medium text-gray-900 mb-1">{{ item.product.name }}</h4>
-                      <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-500">
+                      <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-700">
                         <span>Talla: {{ item.size }}</span>
                         <span>Color: {{ item.color }}</span>
                       </div>
@@ -100,8 +104,10 @@
                           @click="updateQuantity(item, item.quantity - 1)"
                           :disabled="item.quantity <= 1"
                           class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                          :aria-label="`Disminuir cantidad de ${item.product.name}`"
                         >
                           <IconMinus class="h-4 w-4" />
+                          <span class="sr-only">Disminuir cantidad</span>
                         </button>
                         
                         <span class="w-8 text-center font-medium">{{ item.quantity }}</span>
@@ -110,8 +116,10 @@
                           @click="updateQuantity(item, item.quantity + 1)"
                           :disabled="item.quantity >= 99"
                           class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                          :aria-label="`Aumentar cantidad de ${item.product.name}`"
                         >
                           <IconPlus class="h-4 w-4" />
+                          <span class="sr-only">Aumentar cantidad</span>
                         </button>
                       </div>
                     </div>
@@ -129,8 +137,8 @@
                     <!-- Product Info -->
                     <div class="flex-1 min-w-0">
                       <h4 class="font-medium text-gray-900 truncate">{{ item.product.name }}</h4>
-                      <p class="text-sm text-gray-500">Talla: {{ item.size }}</p>
-                      <p class="text-sm text-gray-500">Color: {{ item.color }}</p>
+                      <p class="text-sm text-gray-700">Talla: {{ item.size }}</p>
+                      <p class="text-sm text-gray-700">Color: {{ item.color }}</p>
                       <p class="text-sm font-medium text-black">${{ item.product.price }} c/u</p>
                     </div>
                     
@@ -140,8 +148,10 @@
                         @click="updateQuantity(item, item.quantity - 1)"
                         :disabled="item.quantity <= 1"
                         class="w-8 h-8 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                        :aria-label="`Disminuir cantidad de ${item.product.name}`"
                       >
                         <IconMinus class="h-3 w-3" />
+                        <span class="sr-only">Disminuir cantidad</span>
                       </button>
                       
                       <span class="w-8 text-center text-sm font-medium">{{ item.quantity }}</span>
@@ -150,18 +160,22 @@
                         @click="updateQuantity(item, item.quantity + 1)"
                         :disabled="item.quantity >= 99"
                         class="w-8 h-8 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                        :aria-label="`Aumentar cantidad de ${item.product.name}`"
                       >
                         <IconPlus class="h-3 w-3" />
+                        <span class="sr-only">Aumentar cantidad</span>
                       </button>
                     </div>
                     
                     <!-- Remove Button -->
                     <button
                       @click="removeItem(item)"
-                      class="text-red-500 hover:text-red-700 transition-colors"
+                      class="text-red-700 hover:text-red-700 transition-colors"
+                      :aria-label="`Eliminar ${item.product.name} del carrito`"
                       title="Eliminar producto"
                     >
                       <IconTrash class="h-4 w-4" />
+                      <span class="sr-only">Eliminar producto</span>
                     </button>
                   </div>
                 </div>
@@ -184,7 +198,7 @@
                 <!-- Name -->
                 <div>
                   <label for="name" class="block text-sm font-medium text-gray-700 mb-1">
-                    Nombre completo <span class="text-red-500">*</span>
+                    Nombre completo <span class="text-red-700">*</span>
                   </label>
                   <input
                     id="name"
@@ -199,7 +213,7 @@
                 <!-- Phone -->
                 <div>
                   <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
-                    Teléfono <span class="text-red-500">*</span>
+                    Teléfono <span class="text-red-700">*</span>
                   </label>
                   <input
                     id="phone"
@@ -214,7 +228,7 @@
                 <!-- Email -->
                 <div>
                   <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
-                    Email <span class="text-red-500">*</span>
+                    Email <span class="text-red-700">*</span>
                   </label>
                   <input
                     id="email"
@@ -229,7 +243,7 @@
                 <!-- Address -->
                 <div>
                   <label for="address" class="block text-sm font-medium text-gray-700 mb-1">
-                    Dirección de envío <span class="text-red-500">*</span>
+                    Dirección de envío <span class="text-red-700">*</span>
                   </label>
                   <textarea
                     id="address"
@@ -244,7 +258,7 @@
                 <!-- Payment Method -->
                 <div>
                   <label class="block text-sm font-medium text-gray-700 mb-3">
-                    Método de pago preferido <span class="text-red-500">*</span>
+                    Método de pago preferido <span class="text-red-700">*</span>
                   </label>
                   <div class="space-y-2">
                     <div class="flex items-center">
@@ -291,7 +305,7 @@
                   <div 
                     v-for="error in validationErrors"
                     :key="error"
-                    class="flex items-center space-x-2 text-sm text-red-600"
+                    class="flex items-center space-x-2 text-sm text-red-700"
                   >
                     <IconAlertCircle class="h-4 w-4 flex-shrink-0" />
                     <span>{{ error }}</span>
@@ -301,14 +315,14 @@
                 <!-- WhatsApp Notice -->
                 <div class="bg-green-50 border border-green-200 rounded-md p-4">
                   <div class="flex items-start space-x-3">
-                    <IconWhatsapp class="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <IconWhatsapp class="h-5 w-5 text-green-700 flex-shrink-0 mt-0.5" />
                     <div>
                       <p class="text-sm font-medium text-green-800">Finalización via WhatsApp</p>
                       <p class="text-sm text-green-700 mt-1">
                         Al continuar, serás redirigido a WhatsApp con todos los detalles de tu pedido pre-escritos. 
                         <span class="font-medium">Solo presiona "Enviar" o Enter</span> para completar tu pedido.
                       </p>
-                      <div class="mt-2 flex items-center text-xs text-green-600">
+                      <div class="mt-2 flex items-center text-xs text-green-700">
                         <IconInformationCircle class="h-3 w-3 mr-1" />
                         <span>El mensaje estará listo - solo necesitas enviarlo</span>
                       </div>

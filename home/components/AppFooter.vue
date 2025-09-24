@@ -13,11 +13,11 @@
               img-class="h-20 w-auto"
             />
           </div>
-          <p class="text-gray-600 mb-4 cursor-default">
+          <p class="text-gray-800 mb-4 cursor-default">
             Porque cada hincha merece vestir los colores de su pasión. Camisetas deportivas del mundo entero.
           </p>
             <div class="flex">
-            <a href="https://www.instagram.com/cruzardeportes/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-black transition-colors">
+            <a href="https://www.instagram.com/cruzardeportes/" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-black transition-colors">
               <IconInstagram class="h-6 w-6" />
             </a>
             </div>
@@ -27,9 +27,9 @@
         <div>
           <h3 class="text-lg font-medium mb-4 text-gray-900 cursor-default">Enlaces Rápidos</h3>
           <ul class="space-y-2">
-            <li><NuxtLink to="/" class="text-gray-600 hover:text-black transition-colors">Inicio</NuxtLink></li>
-            <li><NuxtLink to="/categories" class="text-gray-600 hover:text-black transition-colors">Categorías</NuxtLink></li>
-            <li><NuxtLink to="/products" class="text-gray-600 hover:text-black transition-colors">Todos los Productos</NuxtLink></li>
+            <li><NuxtLink to="/" class="text-gray-800 hover:text-black transition-colors">Inicio</NuxtLink></li>
+            <li><NuxtLink to="/categories" class="text-gray-800 hover:text-black transition-colors">Categorías</NuxtLink></li>
+            <li><NuxtLink to="/products" class="text-gray-800 hover:text-black transition-colors">Todos los Productos</NuxtLink></li>
           </ul>
         </div>
 
@@ -37,17 +37,17 @@
         <div>
           <h3 class="text-lg font-medium mb-4 text-gray-900 cursor-default">Atención al Cliente</h3>
           <ul class="space-y-2">
-           <!--  <li><NuxtLink to="/contact" class="text-gray-600 hover:text-black transition-colors">Contáctanos</NuxtLink></li>
-            <li><NuxtLink to="/shipping" class="text-gray-600 hover:text-black transition-colors">Información de Envío</NuxtLink></li>
-            <li><NuxtLink to="/returns" class="text-gray-600 hover:text-black transition-colors">Devoluciones</NuxtLink></li> -->
-            <li><NuxtLink to="/cuidado-camisetas" class="text-gray-600 hover:text-black transition-colors">Cuidado de Camisetas</NuxtLink></li>
-            <li><NuxtLink to="/faq" class="text-gray-600 hover:text-black transition-colors">Preguntas Frecuentes</NuxtLink></li>
+           <!--  <li><NuxtLink to="/contact" class="text-gray-800 hover:text-black transition-colors">Contáctanos</NuxtLink></li>
+            <li><NuxtLink to="/shipping" class="text-gray-800 hover:text-black transition-colors">Información de Envío</NuxtLink></li>
+            <li><NuxtLink to="/returns" class="text-gray-800 hover:text-black transition-colors">Devoluciones</NuxtLink></li> -->
+            <li><NuxtLink to="/cuidado-camisetas" class="text-gray-800 hover:text-black transition-colors">Cuidado de Camisetas</NuxtLink></li>
+            <li><NuxtLink to="/faq" class="text-gray-800 hover:text-black transition-colors">Preguntas Frecuentes</NuxtLink></li>
           </ul>
         </div>
       </div>
 
       <div class="border-t border-gray-200 mt-8 pt-8 text-center">
-        <p class="text-gray-500 cursor-default">
+        <p class="text-gray-700 cursor-default">
           © {{ currentYear }} Cruzar Deportes. Todos los derechos reservados.
         </p>
       </div>

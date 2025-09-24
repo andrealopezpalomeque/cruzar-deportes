@@ -14,7 +14,7 @@
             Vestí tu Pasión por el <span class="text-black">Deporte</span>
           </h1>
 
-          <p class="text-lg md:text-xl text-gray-600 mb-8 text-pretty max-w-2xl mx-auto cursor-default">
+          <p class="text-lg md:text-xl text-gray-800 mb-8 text-pretty max-w-2xl mx-auto cursor-default">
             Descubrí la colección más completa de camisetas deportivas de equipos de todo el mundo. Calidad premium,
             diseños auténticos.
           </p>
@@ -53,34 +53,34 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div class="text-center cursor-default">
             <div class="w-12 h-12 bg-white border border-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <IconTruck class="w-6 h-6 text-gray-600" />
+              <IconTruck class="w-6 h-6 text-gray-800" />
             </div>
             <h3 class="font-medium mb-2">Envío Gratis</h3>
-            <p class="text-sm text-gray-600">En compras superiores a $99.999</p>
+            <p class="text-sm text-gray-800">En compras superiores a $99.999</p>
           </div>
 
           <div class="text-center cursor-default">
             <div class="w-12 h-12 bg-white border border-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <IconShieldCheck class="w-6 h-6 text-gray-600" />
+              <IconShieldCheck class="w-6 h-6 text-gray-800" />
             </div>
             <h3 class="font-medium mb-2">Calidad Garantizada</h3>
-            <p class="text-sm text-gray-600">Productos de calidad premium</p>
+            <p class="text-sm text-gray-800">Productos de calidad premium</p>
           </div>
 
           <div class="text-center cursor-default">
             <div class="w-12 h-12 bg-white border border-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <IconUserGroup class="w-6 h-6 text-gray-600" />
+              <IconUserGroup class="w-6 h-6 text-gray-800" />
             </div>
             <h3 class="font-medium mb-2">Atención 24/7</h3>
-            <p class="text-sm text-gray-600">Soporte personalizado siempre</p>
+            <p class="text-sm text-gray-800">Soporte personalizado siempre</p>
           </div>
 
           <div class="text-center cursor-default">
             <div class="w-12 h-12 bg-white border border-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <IconMagnifyingGlass class="w-6 h-6 text-gray-600" />
+              <IconMagnifyingGlass class="w-6 h-6 text-gray-800" />
             </div>
             <h3 class="font-medium mb-2">Camisetas a Pedido</h3>
-            <p class="text-sm text-gray-600">Conseguimos la camiseta que necesites</p>
+            <p class="text-sm text-gray-800">Conseguimos la camiseta que necesites</p>
           </div>
         </div>
       </div>
@@ -92,7 +92,7 @@
       <div class="container mx-auto px-4">
         <div class="text-center mb-12 cursor-default">
           <h2 class="text-3xl md:text-4xl font-light mb-4">Productos Destacados</h2>
-          <p class="text-lg text-gray-600">Las camisetas más populares de la temporada</p>
+          <p class="text-lg text-gray-800">Las camisetas más populares de la temporada</p>
         </div>
 
         <GridSkeleton 
@@ -113,7 +113,7 @@
         <div v-if="featuredProducts.length === 0 && !productsStore.loading" class="text-center py-12 cursor-default">
           <IconTshirtCrew class="h-16 w-16 text-gray-400 mx-auto mb-4" />
           <h3 class="text-lg font-medium text-gray-900 mb-2">Aún no hay productos</h3>
-          <p class="text-gray-600">¡Estamos trabajando en agregar productos. Vuelve pronto!</p>
+          <p class="text-gray-800">¡Estamos trabajando en agregar productos. Vuelve pronto!</p>
         </div>
 
         <div v-if="featuredProducts.length > 0" class="text-center mt-12">

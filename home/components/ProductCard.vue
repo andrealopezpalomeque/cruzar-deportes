@@ -1,9 +1,10 @@
 <template>
   <div class="bg-white rounded-lg shadow-sm border hover:shadow-lg transition-all duration-200 group">
     <!-- Product Link Wrapper -->
-    <NuxtLink 
+    <NuxtLink
       :to="`/products/${product.slug}`"
       class="block"
+      :aria-label="`Ver detalles de ${product.name}`"
     >
       <!-- Product Image -->
       <div class="aspect-w-1 aspect-h-1 bg-gray-200 rounded-t-lg overflow-hidden relative">
@@ -62,14 +63,15 @@
     <!-- Product Info -->
     <div class="p-4">
       <!-- Product Title and Category -->
-      <NuxtLink 
+      <NuxtLink
         :to="`/products/${product.slug}`"
         class="block hover:text-black transition-colors"
+        :aria-label="`Ver ${product.name} - ${categoryName}`"
       >
         <h3 class="text-lg font-normal text-gray-900 mb-1 line-clamp-2">{{ product.name }}</h3>
       </NuxtLink>
       
-      <p class="text-sm text-gray-600 mb-3 capitalize cursor-default">{{ categoryName }}</p>
+      <p class="text-sm text-gray-800 mb-3 capitalize cursor-default">{{ categoryName }}</p>
       
       <!-- Price and Action -->
       <div class="flex items-center justify-between cursor-default">
@@ -77,7 +79,7 @@
           <span class="text-lg font-medium text-gray-900">${{ product.price }}</span>
           <span 
             v-if="product.originalPrice && product.originalPrice > product.price"
-            class="text-sm text-gray-500 line-through"
+            class="text-sm text-gray-700 line-through"
           >
             ${{ product.originalPrice }}
           </span>
@@ -89,25 +91,27 @@
           :disabled="!product.inStock"
           class="px-3 py-2 bg-black text-white text-sm font-medium rounded-md hover:bg-gray-900 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500"
           :title="product.inStock ? 'Ver producto' : 'Agotado'"
+          :aria-label="product.inStock ? `Ver detalles de ${product.name}` : `${product.name} - Agotado`"
         >
-          <IconClose v-if="!product.inStock" class="h-4 w-4" />
-          <IconPlus v-else class="h-4 w-4" />
+          <IconClose v-if="!product.inStock" class="h-4 w-4" aria-hidden="true" />
+          <IconPlus v-else class="h-4 w-4" aria-hidden="true" />
+          <span class="sr-only">{{ product.inStock ? 'Ver producto' : 'Producto agotado' }}</span>
         </button>
       </div>
       
       <!-- Stock Status -->
       <div class="mt-2 flex items-center justify-between cursor-default">
         <div class="flex items-center space-x-2">
-          <IconCheckCircle 
+          <IconCheckCircle
             v-if="product.inStock"
-            class="h-4 w-4 text-green-600"
+            class="h-4 w-4 text-green-700"
           />
-          <IconAlertCircle 
+          <IconAlertCircle
             v-else
-            class="h-4 w-4 text-red-600"
+            class="h-4 w-4 text-red-700"
           />
           <span 
-            :class="product.inStock ? 'text-green-600' : 'text-red-600'"
+            :class="product.inStock ? 'text-green-700' : 'text-red-700'"
             class="text-sm font-medium"
           >
             {{ product.inStock ? 'En stock' : 'Agotado' }}
@@ -115,9 +119,10 @@
         </div>
         
         <!-- View Details Link -->
-        <NuxtLink 
+        <NuxtLink
           :to="`/products/${product.slug}`"
-          class="text-sm text-gray-600 hover:text-black font-medium transition-colors"
+          class="text-sm text-gray-800 hover:text-black font-medium transition-colors"
+          :aria-label="`Ver detalles completos de ${product.name}`"
         >
           Ver detalles
         </NuxtLink>
