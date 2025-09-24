@@ -8,19 +8,24 @@ let isLoaded = false
 async function loadUrlMapping(): Promise<Record<string, string>> {
   if (!isLoaded) {
     try {
-      // Use dynamic import with JSON assertion for Node.js compatibility
-      const { readFile } = await import('fs/promises')
-      const { resolve } = await import('path')
-
-      // In browser/Nuxt context, use fetch or import
-      if (typeof window !== 'undefined') {
+      // Always use fetch in browser/Nuxt context for better compatibility
+      if (typeof window !== 'undefined' || typeof fetch !== 'undefined') {
         const response = await fetch('/scripts/url-mapping.json')
         urlMapping = await response.json()
       } else {
-        // In Node.js context, read file directly
-        const filePath = resolve(process.cwd(), 'scripts/url-mapping.json')
-        const fileContent = await readFile(filePath, 'utf-8')
-        urlMapping = JSON.parse(fileContent)
+        // SSR context - try to load from file system
+        try {
+          // Dynamic import to avoid bundling fs/path in client
+          const fs = await import('fs')
+          const path = await import('path')
+          const filePath = path.resolve(process.cwd(), 'scripts/url-mapping.json')
+          const fileContent = fs.readFileSync(filePath, 'utf-8')
+          urlMapping = JSON.parse(fileContent)
+        } catch (fsError) {
+          // Fallback: Use empty mapping for SSR builds
+          console.warn('SSR: Could not load URL mapping, using fallback')
+          urlMapping = {}
+        }
       }
       isLoaded = true
     } catch (error) {
