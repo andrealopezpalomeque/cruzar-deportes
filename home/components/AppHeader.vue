@@ -5,10 +5,13 @@
         <!-- Logo -->
         <div class="flex-shrink-0">
           <NuxtLink to="/" class="flex items-center space-x-2">
-            <img 
-              src="/images/cruzar-logo-no-bg.png" 
-              alt="Cruzar Deportes Logo" 
-              class="h-20 w-auto"
+            <OptimizedImage
+              src="/images/cruzar-logo-no-bg.png"
+              alt="Cruzar Deportes Logo"
+              type="logo"
+              loading="eager"
+              fetchpriority="high"
+              img-class="h-20 w-auto"
             />
           </NuxtLink>
         </div>

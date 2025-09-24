@@ -5,10 +5,12 @@
         <!-- Company Info -->
         <div class="col-span-1 md:col-span-2">
           <div class="flex items-center space-x-2 mb-4">
-            <img
+            <OptimizedImage
               src="/images/cruzar-logo-no-bg.png"
               alt="Cruzar Deportes Logo"
-              class="h-20 w-auto"
+              type="logo"
+              loading="lazy"
+              img-class="h-20 w-auto"
             />
           </div>
           <p class="text-gray-600 mb-4 cursor-default">

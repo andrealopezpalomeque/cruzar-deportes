@@ -9,10 +9,13 @@
       <div class="aspect-w-1 aspect-h-1 bg-gray-200 rounded-t-lg overflow-hidden relative">
         <!-- Image Content Wrapper -->
         <div v-if="product.images?.length > 0" class="aspect-content">
-          <img 
-            :src="product.images[0]" 
+          <OptimizedImage
+            :src="product.images[0]"
             :alt="product.name"
-            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+            type="productCard"
+            loading="lazy"
+            fetchpriority="auto"
+            img-class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
           />
         </div>
         <div v-else class="aspect-content flex items-center justify-center">
