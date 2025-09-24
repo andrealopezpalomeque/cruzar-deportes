@@ -173,6 +173,108 @@ export class CloudinaryImageLoader {
 
     return optimizedUrl
   }
+
+  /**
+   * Generate responsive srcset for different screen densities and breakpoints
+   */
+  generateSrcSet(url: string, sizes: number[], options: {
+    format?: 'webp' | 'avif' | 'auto'
+    quality?: 'auto' | number
+    crop?: 'fill' | 'fit' | 'limit' | 'thumb'
+  } = {}): string {
+    if (!this.useCloudinary || !url.includes('cloudinary.com')) {
+      return url // Return original if not Cloudinary
+    }
+
+    const {
+      format = 'auto',
+      quality = 'auto',
+      crop = 'limit'
+    } = options
+
+    return sizes.map(width => {
+      const optimizedUrl = this.getOptimizedUrl(url, {
+        width,
+        format,
+        quality,
+        crop,
+        addCacheBuster: true
+      })
+      return `${optimizedUrl} ${width}w`
+    }).join(', ')
+  }
+
+  /**
+   * Generate responsive image data for picture element
+   */
+  generateResponsiveImageData(url: string, breakpoints: {
+    mobile: number[]
+    desktop: number[]
+  }, options: {
+    quality?: 'auto' | number
+    crop?: 'fill' | 'fit' | 'limit' | 'thumb'
+    formats?: ('webp' | 'avif' | 'jpeg')[]
+  } = {}) {
+    if (!this.useCloudinary || !url.includes('cloudinary.com')) {
+      return {
+        webp: { mobile: url, desktop: url },
+        avif: { mobile: url, desktop: url },
+        jpeg: { mobile: url, desktop: url },
+        fallback: url
+      }
+    }
+
+    const {
+      quality = 'auto',
+      crop = 'limit',
+      formats = ['webp', 'avif', 'jpeg']
+    } = options
+
+    const result: any = {}
+
+    // Generate sources for each format
+    formats.forEach(format => {
+      result[format] = {
+        mobile: this.generateSrcSet(url, breakpoints.mobile, { format, quality, crop }),
+        desktop: this.generateSrcSet(url, breakpoints.desktop, { format, quality, crop })
+      }
+    })
+
+    // Fallback image (usually the smallest desktop size)
+    result.fallback = this.getOptimizedUrl(url, {
+      width: Math.min(...breakpoints.desktop),
+      format: 'auto',
+      quality,
+      crop,
+      addCacheBuster: true
+    })
+
+    return result
+  }
+
+  /**
+   * Get breakpoints for different use cases
+   */
+  getBreakpoints() {
+    return {
+      productCard: {
+        mobile: [350, 525, 700],    // 1x, 1.5x, 2x for ~350px container
+        desktop: [400, 600, 800]    // 1x, 1.5x, 2x for ~400px container
+      },
+      gallery: {
+        mobile: [375, 563, 750],    // 1x, 1.5x, 2x for ~375px container
+        desktop: [600, 900, 1200]   // 1x, 1.5x, 2x for ~600px container
+      },
+      thumbnail: {
+        mobile: [64, 96, 128],      // 1x, 1.5x, 2x for 64px thumbnails
+        desktop: [64, 96, 128]      // Same sizes for thumbnails
+      },
+      logo: {
+        mobile: [80, 120, 160],     // 1x, 1.5x, 2x for ~80px logos
+        desktop: [100, 150, 200]    // 1x, 1.5x, 2x for ~100px logos
+      }
+    }
+  }
 }
 
 // Create singleton instance

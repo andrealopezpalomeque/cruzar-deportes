@@ -2,12 +2,15 @@
   <div class="image-gallery">
     <!-- Main Image Display - Simplified -->
     <div class="relative bg-white rounded-lg overflow-hidden mb-4 shadow-sm" style="aspect-ratio: 1 / 1;">
-      <!-- Simple Image -->
-      <img
+      <!-- Optimized Main Image -->
+      <OptimizedImage
         v-if="currentImage"
         :src="currentImage"
         :alt="`${productName} - Imagen ${currentIndex + 1}`"
-        class="w-full h-full object-cover"
+        type="gallery"
+        loading="eager"
+        fetchpriority="high"
+        img-class="w-full h-full object-cover"
         @load="imageLoading = false"
         @error="handleImageError"
       />
@@ -82,11 +85,12 @@
             'border-gray-200 hover:border-gray-300': currentIndex !== index
           }"
         >
-          <img
+          <OptimizedImage
             :src="image"
             :alt="`${productName} thumbnail ${index + 1}`"
-            class="w-full h-full object-cover"
+            type="thumbnail"
             loading="lazy"
+            img-class="w-full h-full object-cover"
           />
         </button>
       </div>
