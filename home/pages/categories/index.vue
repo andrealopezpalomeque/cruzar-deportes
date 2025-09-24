@@ -23,10 +23,12 @@
           <div class="aspect-w-16 aspect-h-9 bg-gradient-to-br from-gray-800 to-black rounded-t-lg relative overflow-hidden">
             <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
             <div class="absolute inset-0 flex items-center justify-center">
-              <img 
-                src="/images/cruzar-logo-short-1.png" 
-                alt="Cruzar Deportes" 
-                class="h-24 w-auto brightness-0 invert opacity-90"
+              <OptimizedImage
+                src="/images/cruzar-logo-short-1.png"
+                alt="Cruzar Deportes"
+                type="logo"
+                loading="lazy"
+                img-class="h-24 w-auto brightness-0 invert opacity-90"
               />
             </div>
           </div>
