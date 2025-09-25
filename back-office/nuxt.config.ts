@@ -20,8 +20,8 @@ export default defineNuxtConfig({
   // Runtime config
   runtimeConfig: {
     // Private keys (only available on the server-side)
-    cloudinaryApiKey: '499874935327997',
-    cloudinaryApiSecret: 'PUkSz06yMtWWmdizPZqnR0wcT3E',
+    cloudinaryApiKey: process.env.CLOUDINARY_API_KEY,
+    cloudinaryApiSecret: process.env.CLOUDINARY_API_SECRET,
     backofficeUsername: process.env.BACKOFFICE_USERNAME || 'admin',
     backofficePassword: process.env.BACKOFFICE_PASSWORD || 'cruzar2024',
 
