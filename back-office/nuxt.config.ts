@@ -27,7 +27,7 @@ export default defineNuxtConfig({
 
     // Public keys (exposed to the client-side code)
     public: {
-      cloudinaryCloudName: 'dmb1vyveg',
+      cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
       appName: 'Cruzar Deportes - Back Office'
     }
   },
