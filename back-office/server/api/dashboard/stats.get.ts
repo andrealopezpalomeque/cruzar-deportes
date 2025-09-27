@@ -1,4 +1,5 @@
 import type { ApiResponse, DashboardStats } from '~/types'
+import { readProductsDatabase } from '~/shared/utils/productSync'
 
 export default defineEventHandler(async (event): Promise<ApiResponse<DashboardStats>> => {
   try {
@@ -11,16 +12,23 @@ export default defineEventHandler(async (event): Promise<ApiResponse<DashboardSt
       })
     }
 
-    // For now, return mock data
-    // In a real implementation, this would fetch from your database
+    const database = await readProductsDatabase()
+
+    const products = Object.values(database.products)
+    const now = Date.now()
+    const sevenDaysInMs = 7 * 24 * 60 * 60 * 1000
+
     const stats: DashboardStats = {
-      totalProducts: 125,
-      totalCategories: 6,
-      featuredProducts: 18,
-      inStockProducts: 98,
-      availableOnOrderProducts: 27,
-      totalImages: 450,
-      recentlyModified: 3
+      totalProducts: products.length,
+      totalCategories: Object.keys(database.categories).length,
+      featuredProducts: products.filter(product => product.featured).length,
+      inStockProducts: products.filter(product => product.inStock).length,
+      availableOnOrderProducts: products.filter(product => product.stockStatus === 'available_on_order').length,
+      recentlyModified: products.filter(product => {
+        if (!product.lastModified) return false
+        const modifiedAt = new Date(product.lastModified).getTime()
+        return (now - modifiedAt) <= sevenDaysInMs
+      }).length
     }
 
     return {

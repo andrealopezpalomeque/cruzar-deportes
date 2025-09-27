@@ -9,7 +9,6 @@ export const useProductsStore = defineStore('products', () => {
   const loading = ref(false)
   const productsLoading = ref(false)
   const categoriesLoading = ref(false)
-
   const getProductsByCategory = computed(() => (categorySlug: string) =>
     products.value.filter(product => product.category === categorySlug)
   )
@@ -91,7 +90,6 @@ export const useProductsStore = defineStore('products', () => {
     const minLoadingTime = 800 // Minimum 800ms loading time
 
     try {
-      // Generate products from scraped data
       const { generateProducts } = await import('~/utils/productGenerator')
       products.value = await generateProducts()
     } catch (error) {
@@ -140,7 +138,6 @@ export const useProductsStore = defineStore('products', () => {
     const minLoadingTime = 600 // Minimum 600ms loading time (shorter for categories)
     
     try {
-      // Generate categories from scraped data
       const { generateCategories } = await import('~/utils/productGenerator')
       categories.value = generateCategories()
     } catch (error) {

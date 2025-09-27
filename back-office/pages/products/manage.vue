@@ -20,6 +20,16 @@
           <option value="lpf_afa">LPF AFA</option>
           <option value="serie_a_enilive">Serie A Enilive</option>
           <option value="national_retro">Retro Nacional</option>
+          <option value="misc">Miscellaneous</option>
+        </select>
+
+        <select
+          v-model="selectedProcessedFilter"
+          class="px-4 py-2 border border-gray-300 rounded-lg bg-white text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        >
+          <option value="">Todos los productos</option>
+          <option value="processed">Solo productos gestionados</option>
+          <option value="unprocessed">Solo productos sin gestionar</option>
         </select>
 
         <input
@@ -28,6 +38,32 @@
           placeholder="Buscar productos..."
           class="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
+      </div>
+
+      <!-- Product Stats and Bulk Actions -->
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+          <span>Total: {{ filteredProducts.length }} productos</span>
+          <span>Gestionados: {{ filteredProducts.filter(p => p.isProcessed).length }}</span>
+          <span>Sin gestionar: {{ filteredProducts.filter(p => !p.isProcessed).length }}</span>
+        </div>
+
+        <!-- Bulk Actions -->
+        <div v-if="selectedProducts.length > 0" class="flex gap-2">
+          <span class="text-sm text-gray-600">{{ selectedProducts.length }} seleccionados:</span>
+          <button
+            @click="bulkProcessProducts"
+            class="px-3 py-1 bg-green-600 text-white rounded text-sm hover:bg-green-700 transition-colors"
+          >
+            Marcar como Gestionados
+          </button>
+          <button
+            @click="clearSelection"
+            class="px-3 py-1 bg-gray-500 text-white rounded text-sm hover:bg-gray-600 transition-colors"
+          >
+            Limpiar
+          </button>
+        </div>
       </div>
     </div>
 
@@ -54,13 +90,31 @@
         <!-- Product Header -->
         <div class="p-6 border-b border-gray-100">
           <div class="flex items-start justify-between">
-            <div>
-              <h3 class="text-xl font-semibold text-gray-900">{{ product.name }}</h3>
-              <p class="text-sm text-gray-500 mt-1">{{ getCategoryName(product.category) }}</p>
+            <div class="flex items-start gap-3">
+              <!-- Checkbox for bulk selection -->
+              <input
+                v-if="!product.isProcessed"
+                type="checkbox"
+                :checked="selectedProducts.includes(product.id)"
+                @change="toggleProductSelection(product.id)"
+                class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              />
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">{{ product.name }}</h3>
+                <p class="text-sm text-gray-500 mt-1">{{ getCategoryName(product.category) }}</p>
+              </div>
             </div>
 
             <!-- Status Badges -->
             <div class="flex flex-col gap-2">
+              <span
+                :class="[
+                  'px-2 py-1 text-xs font-medium rounded-full',
+                  product.isProcessed ? 'bg-blue-100 text-blue-800' : 'bg-orange-100 text-orange-800'
+                ]"
+              >
+                {{ product.isProcessed ? 'Gestionado' : 'Sin Gestionar' }}
+              </span>
               <span
                 :class="[
                   'px-2 py-1 text-xs font-medium rounded-full',
@@ -122,29 +176,39 @@
               <Icon name="mdi:image-multiple" class="inline mr-2" />
               Seleccionar Imágenes
             </button>
+
+            <!-- Process Product Button (for unmanaged products) -->
+            <button
+              v-if="!product.isProcessed"
+              @click="processProduct(product)"
+              class="w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium mt-2"
+            >
+              <Icon name="mdi:check-circle" class="inline mr-2" />
+              Marcar como Gestionado
+            </button>
           </div>
 
           <!-- Pricing Management -->
           <div class="grid grid-cols-2 gap-4">
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Precio (USD)</label>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Precio (ARS)</label>
               <input
                 v-model.number="product.price"
                 @blur="updateProductPricing(product)"
                 type="number"
-                step="0.01"
+                step="100"
                 min="0"
                 class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Precio Original</label>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Precio Original (ARS)</label>
               <input
                 v-model.number="product.originalPrice"
                 @blur="updateProductPricing(product)"
                 type="number"
-                step="0.01"
+                step="100"
                 min="0"
                 class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
@@ -297,16 +361,33 @@ definePageMeta({
 })
 
 // Composables
-const { loadProducts, updateProductImages, updateProductPricing: updateProductPricingAPI, updateProductStatus } = useSharedProducts()
-const { getFolderImages, optimizeUrl } = useCloudinary()
+const {
+  loadProducts,
+  saveProduct,
+  updateProductImages,
+  updateProductPricing: updateProductPricingAPI,
+  updateProductStatus
+} = useSharedProducts()
+// Removed useCloudinary - now using efficient manifest approach
 const toast = useToast()
+
+// Helper to optimize URLs using cloudinaryImageLoader
+const optimizeUrl = (url: string, size: number = 300) => {
+  if (!url.includes('cloudinary.com')) {
+    return url
+  }
+  // Use same optimization logic as home project
+  return url.replace('/upload/', `/upload/c_thumb,w_${size},h_${size},g_face/`)
+}
 
 // Reactive state
 const loading = ref(false)
 const error = ref<string | null>(null)
 const products = ref<SharedProduct[]>([])
 const selectedCategory = ref('')
+const selectedProcessedFilter = ref('')
 const searchTerm = ref('')
+const selectedProducts = ref<string[]>([])
 
 // Image browser state
 const showImageBrowser = ref(false)
@@ -321,6 +402,14 @@ const filteredProducts = computed(() => {
 
   if (selectedCategory.value) {
     filtered = filtered.filter(p => p.category === selectedCategory.value)
+  }
+
+  if (selectedProcessedFilter.value) {
+    if (selectedProcessedFilter.value === 'processed') {
+      filtered = filtered.filter(p => p.isProcessed === true)
+    } else if (selectedProcessedFilter.value === 'unprocessed') {
+      filtered = filtered.filter(p => p.isProcessed === false)
+    }
   }
 
   if (searchTerm.value) {
@@ -355,7 +444,8 @@ const getCategoryName = (category: string): string => {
     eredivisie: 'Eredivisie',
     lpf_afa: 'LPF AFA',
     serie_a_enilive: 'Serie A Enilive',
-    national_retro: 'Retro Nacional'
+    national_retro: 'Retro Nacional',
+    misc: 'Miscellaneous'
   }
   return categoryNames[category] || category
 }
@@ -394,13 +484,22 @@ const openImageBrowser = async (product: SharedProduct) => {
   tempSelectedImages.value = [...product.selectedImages]
   showImageBrowser.value = true
 
-  // Load available images from Cloudinary
+  // Load available images using smart manifest approach (same as home project)
   try {
     loadingImages.value = true
-    const folderPath = product.cloudinaryFolderPath || `cruzar-deportes/${product.category}/${product.slug}`
-    const images = await getFolderImages(folderPath)
-    availableImages.value = images.map(img => img.secure_url)
+
+    // Extract team key from product slug/id
+    const teamKey = product.slug.replace(/-/g, '_') // Convert slug back to team key
+
+    // Use the efficient image loader from home project
+    const { getTeamImages } = await import('~/utils/cloudinaryImageLoader')
+    const images = await getTeamImages(teamKey, product.category)
+
+    availableImages.value = images
+
+    console.log(`Found ${availableImages.value.length} images in folder`)
   } catch (err) {
+    console.error('Error loading images:', err)
     toast.error('Error al cargar imágenes disponibles')
     availableImages.value = []
   } finally {
@@ -473,6 +572,57 @@ const toggleProductStatus = async (product: SharedProduct, field: 'featured' | '
     toast.success(`Estado ${statusName} actualizado`)
   } catch (err: any) {
     toast.error(`Error al actualizar estado ${field}`)
+  }
+}
+
+const processProduct = async (product: SharedProduct) => {
+  try {
+    // Create a managed version by saving the product
+    await saveProduct(product)
+
+    // Update local state
+    product.isProcessed = true
+    product.lastModified = new Date().toISOString()
+
+    toast.success(`Producto "${product.name}" marcado como gestionado`)
+  } catch (err: any) {
+    toast.error('Error al procesar producto')
+  }
+}
+
+const toggleProductSelection = (productId: string) => {
+  const index = selectedProducts.value.indexOf(productId)
+  if (index > -1) {
+    selectedProducts.value.splice(index, 1)
+  } else {
+    selectedProducts.value.push(productId)
+  }
+}
+
+const clearSelection = () => {
+  selectedProducts.value = []
+}
+
+const bulkProcessProducts = async () => {
+  if (selectedProducts.value.length === 0) return
+
+  try {
+    loading.value = true
+    const productsToProcess = products.value.filter(p => selectedProducts.value.includes(p.id))
+
+    // Process each product
+    for (const product of productsToProcess) {
+      await saveProduct(product)
+      product.isProcessed = true
+      product.lastModified = new Date().toISOString()
+    }
+
+    clearSelection()
+    toast.success(`${productsToProcess.length} productos marcados como gestionados`)
+  } catch (err: any) {
+    toast.error('Error al procesar productos en lote')
+  } finally {
+    loading.value = false
   }
 }
 

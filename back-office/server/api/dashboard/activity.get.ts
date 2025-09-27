@@ -1,4 +1,7 @@
 import type { ApiResponse } from '~/types'
+import { readProductsDatabase } from '~/shared/utils/productSync'
+
+const MAX_ACTIVITY_ITEMS = 10
 
 interface ActivityItem {
   id: string
@@ -18,40 +21,30 @@ export default defineEventHandler(async (event): Promise<ApiResponse<ActivityIte
       })
     }
 
-    // Mock activity data
-    // In a real implementation, this would fetch from your activity log
-    const activity: ActivityItem[] = [
-      {
-        id: '1',
-        type: 'update',
-        description: 'Actualizó el precio de "Boca Juniors Jersey"',
-        timestamp: new Date(Date.now() - 15 * 60 * 1000).toISOString() // 15 minutes ago
-      },
-      {
-        id: '2',
-        type: 'create',
-        description: 'Añadió nuevo producto "Inter Milan Kids Kit"',
-        timestamp: new Date(Date.now() - 45 * 60 * 1000).toISOString() // 45 minutes ago
-      },
-      {
-        id: '3',
-        type: 'update',
-        description: 'Marcó como destacado "Argentina Retro 1986"',
-        timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString() // 2 hours ago
-      },
-      {
-        id: '4',
-        type: 'update',
-        description: 'Actualizó imágenes de "Ajax Amsterdam"',
-        timestamp: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString() // 4 hours ago
-      },
-      {
-        id: '5',
-        type: 'create',
-        description: 'Creó nueva categoría de productos',
-        timestamp: new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString() // 6 hours ago
+    const database = await readProductsDatabase()
+
+    const sortedProducts = Object.values(database.products)
+      .filter(product => product.lastModified)
+      .sort((a, b) => new Date(b.lastModified).getTime() - new Date(a.lastModified).getTime())
+
+    const activity: ActivityItem[] = sortedProducts.slice(0, MAX_ACTIVITY_ITEMS).map(product => {
+      const createdAt = product.createdAt ? new Date(product.createdAt).getTime() : 0
+      const lastModifiedAt = product.lastModified ? new Date(product.lastModified).getTime() : createdAt
+      const timeDiff = Math.abs(lastModifiedAt - createdAt)
+
+      const type: ActivityItem['type'] = timeDiff <= 5 * 60 * 1000 ? 'create' : 'update'
+
+      const description = type === 'create'
+        ? `Añadió el producto "${product.name}"`
+        : `Actualizó "${product.name}"`
+
+      return {
+        id: product.id,
+        type,
+        description,
+        timestamp: product.lastModified || new Date().toISOString()
       }
-    ]
+    })
 
     return {
       success: true,

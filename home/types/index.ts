@@ -1,4 +1,6 @@
-export type CategoryType = 'afc' | 'caf' | 'eredivisie' | 'lpf_afa' | 'serie_a_enilive' | 'national_retro'
+import type { CategoryType } from '~/shared/types'
+
+export type { CategoryType } from '~/shared/types'
 
 export interface Product {
   id: string
