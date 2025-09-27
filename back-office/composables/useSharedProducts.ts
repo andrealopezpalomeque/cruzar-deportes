@@ -27,7 +27,32 @@ export const useSharedProducts = () => {
       })
 
       if (response.success && response.data) {
-        return response.data
+        // Post-process products to ensure they have allAvailableImages populated
+        const processedProducts = await Promise.all(
+          response.data.map(async (product) => {
+            // If product doesn't have allAvailableImages populated, try to load them from Cloudinary
+            if (!product.allAvailableImages || product.allAvailableImages.length === 0) {
+              try {
+                const { getFolderImages } = useCloudinary()
+                const folderPath = product.cloudinaryFolderPath
+                if (folderPath) {
+                  const images = await getFolderImages(folderPath)
+                  product.allAvailableImages = images.map(img => img.secure_url)
+
+                  // If selectedImages is empty, use first 5 images as default selection
+                  if (!product.selectedImages || product.selectedImages.length === 0) {
+                    product.selectedImages = product.allAvailableImages.slice(0, 5)
+                  }
+                }
+              } catch (error) {
+                console.warn(`Failed to load images for product ${product.id}:`, error)
+              }
+            }
+            return product
+          })
+        )
+
+        return processedProducts
       } else {
         throw new Error(response.error || 'Failed to load products')
       }

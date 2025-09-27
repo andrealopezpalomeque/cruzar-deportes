@@ -30,23 +30,47 @@ export default defineEventHandler(async (event): Promise<ApiResponse<CloudinaryF
 
     const folders: CloudinaryFolder[] = []
 
-    // Process main category folders
+    // Process main folders (should include both 'products' and direct category folders)
     if (result.folders) {
-      for (const categoryFolder of result.folders) {
+      for (const mainFolder of result.folders) {
         try {
-          // Get subfolders (team folders) within each category
-          const subResult = await cloudinary.api.sub_folders(`cruzar-deportes/${categoryFolder.name}`)
+          if (mainFolder.name === 'products') {
+            // Handle products structure: cruzar-deportes/products/category/team
+            const categoriesResult = await cloudinary.api.sub_folders(`cruzar-deportes/products`)
 
-          if (subResult.folders) {
-            for (const teamFolder of subResult.folders) {
-              folders.push({
-                name: teamFolder.name,
-                path: `cruzar-deportes/${categoryFolder.name}/${teamFolder.name}`
-              })
+            if (categoriesResult.folders) {
+              for (const categoryFolder of categoriesResult.folders) {
+                try {
+                  const teamsResult = await cloudinary.api.sub_folders(`cruzar-deportes/products/${categoryFolder.name}`)
+
+                  if (teamsResult.folders) {
+                    for (const teamFolder of teamsResult.folders) {
+                      folders.push({
+                        name: teamFolder.name,
+                        path: `cruzar-deportes/products/${categoryFolder.name}/${teamFolder.name}`
+                      })
+                    }
+                  }
+                } catch (teamError) {
+                  console.warn(`Error getting team folders for products/${categoryFolder.name}:`, teamError)
+                }
+              }
+            }
+          } else {
+            // Handle direct category structure: cruzar-deportes/category/team (legacy)
+            const subResult = await cloudinary.api.sub_folders(`cruzar-deportes/${mainFolder.name}`)
+
+            if (subResult.folders) {
+              for (const teamFolder of subResult.folders) {
+                folders.push({
+                  name: teamFolder.name,
+                  path: `cruzar-deportes/${mainFolder.name}/${teamFolder.name}`
+                })
+              }
             }
           }
         } catch (subError) {
-          console.warn(`Error getting subfolders for ${categoryFolder.name}:`, subError)
+          console.warn(`Error getting subfolders for ${mainFolder.name}:`, subError)
         }
       }
     }

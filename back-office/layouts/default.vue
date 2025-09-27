@@ -68,16 +68,6 @@
               <Icon name="mdi:tshirt-crew" size="20" />
               <span>Gestión de Productos</span>
             </NuxtLink>
-
-            <NuxtLink
-              to="/images"
-              class="nav-link"
-              :class="{ active: $route.path.startsWith('/images') }"
-              @click="closeSidebarOnMobile"
-            >
-              <Icon name="images" size="20" />
-              <span>Gestión de Imágenes</span>
-            </NuxtLink>
           </div>
 
           <div class="border-t border-gray-200/60 pt-6 mt-6">
@@ -209,7 +199,6 @@ const pageTitle = computed(() => {
   const titleMap: Record<string, string> = {
     '/': 'Dashboard',
     '/products': 'Gestión de Productos',
-    '/images': 'Gestión de Imágenes',
     '/bulk-operations': 'Operaciones en Lote',
     '/settings': 'Configuración'
   }
@@ -228,7 +217,6 @@ const pageDescription = computed(() => {
   const descriptionMap: Record<string, string> = {
     '/': 'Resumen general de tu tienda de camisetas deportivas',
     '/products': 'Administra imágenes, precios y estado de productos',
-    '/images': 'Administra y organiza las imágenes de tus productos',
     '/bulk-operations': 'Realiza cambios masivos en múltiples productos',
     '/settings': 'Configuración del sistema'
   }

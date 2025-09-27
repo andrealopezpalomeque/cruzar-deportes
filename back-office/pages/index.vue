@@ -22,7 +22,7 @@
     </div>
 
     <!-- Stats Overview -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="card">
         <div class="card-body">
           <div class="flex items-center">
@@ -63,25 +63,6 @@
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-body">
-          <div class="flex items-center">
-            <div class="flex-shrink-0">
-              <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                <Icon name="images" size="20" class="text-purple-600" />
-              </div>
-            </div>
-            <div class="ml-4">
-              <p class="text-sm font-medium text-gray-600">
-                Total Imágenes
-              </p>
-              <p class="text-2xl font-bold text-gray-900">
-                {{ stats.totalImages }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div class="card">
         <div class="card-body">
@@ -112,9 +93,9 @@
         </h3>
       </div>
       <div class="card-body">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <NuxtLink
-            to="/products"
+            to="/products/manage"
             class="p-6 border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all duration-200 group"
           >
             <div class="flex items-center">
@@ -134,26 +115,6 @@
             </div>
           </NuxtLink>
 
-          <NuxtLink
-            to="/images"
-            class="p-6 border border-gray-200 rounded-lg hover:border-purple-300 hover:shadow-md transition-all duration-200 group"
-          >
-            <div class="flex items-center">
-              <div class="flex-shrink-0">
-                <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
-                  <Icon name="images" size="20" class="text-purple-600" />
-                </div>
-              </div>
-              <div class="ml-4">
-                <p class="text-base font-medium text-gray-900 group-hover:text-purple-600 transition-colors">
-                  Gestionar Imágenes
-                </p>
-                <p class="text-sm text-gray-500">
-                  Organiza albums y fotos
-                </p>
-              </div>
-            </div>
-          </NuxtLink>
 
           <NuxtLink
             to="/bulk-operations"
@@ -244,7 +205,6 @@ const stats = ref<DashboardStats>({
   featuredProducts: 0,
   inStockProducts: 0,
   availableOnOrderProducts: 0,
-  totalImages: 0,
   recentlyModified: 0
 })
 
@@ -284,7 +244,6 @@ const loadDashboardData = async () => {
       featuredProducts: 18,
       inStockProducts: 98,
       availableOnOrderProducts: 27,
-      totalImages: 450,
       recentlyModified: 3
     }
   } finally {
