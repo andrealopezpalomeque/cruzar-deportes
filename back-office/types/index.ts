@@ -1,5 +1,7 @@
+import type { CategoryType } from '~/shared/types'
+
 // Re-export types from the main project
-export type CategoryType = 'afc' | 'caf' | 'eredivisie' | 'lpf_afa' | 'serie_a_enilive' | 'national_retro'
+export type { CategoryType } from '~/shared/types'
 
 // Base interfaces from main project
 export interface Product {
@@ -46,42 +48,6 @@ export interface BackofficeProduct extends Product {
   isModified: boolean
 }
 
-export interface CloudinaryAsset {
-  public_id: string
-  secure_url: string
-  format: string
-  width: number
-  height: number
-  bytes: number
-  created_at: string
-  folder: string
-  filename: string
-  resource_type: string
-}
-
-export interface Album {
-  name: string
-  path: string
-  category: CategoryType
-  images: CloudinaryAsset[]
-  totalImages: number
-  lastModified: string
-  isProcessed: boolean
-}
-
-export interface ImageSelection {
-  albumName: string
-  selectedImages: string[]
-  productVariants: ProductVariant[]
-}
-
-export interface ProductVariant {
-  name: string
-  slug: string
-  selectedImages: string[]
-  price?: number
-  originalPrice?: number
-}
 
 export interface BulkOperation {
   type: 'price' | 'discount' | 'featured' | 'stock' | 'category'
@@ -134,7 +100,6 @@ export interface DashboardStats {
   featuredProducts: number
   inStockProducts: number
   availableOnOrderProducts: number
-  totalImages: number
   recentlyModified: number
 }
 

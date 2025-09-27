@@ -1,8 +1,9 @@
 import { promises as fs } from 'fs'
 import { join } from 'path'
+import { fileURLToPath } from 'url'
 import type { ProductDatabase, SharedProduct, CategoryType } from '../types'
 
-const SHARED_DIR = '/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/shared'
+const SHARED_DIR = fileURLToPath(new URL('..', import.meta.url))
 const PRODUCTS_FILE = join(SHARED_DIR, 'products.json')
 
 // Initialize empty database structure
