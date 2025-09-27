@@ -2,6 +2,7 @@ import { readFile } from 'fs/promises'
 import { join } from 'path'
 import type { ApiResponse, CategoryType } from '~/types'
 import type { SharedProduct, ProductDatabase } from '../../../shared/types'
+import { generateAllProducts } from '~/utils/productGenerator'
 
 export default defineEventHandler(async (event): Promise<ApiResponse<SharedProduct[]>> => {
   try {
@@ -22,14 +23,44 @@ export default defineEventHandler(async (event): Promise<ApiResponse<SharedProdu
     const inStock = query.inStock ? query.inStock === 'true' : undefined
     const isProcessed = query.isProcessed ? query.isProcessed === 'true' : undefined
 
-    // Read shared products database
-    const sharedDir = '/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/shared'
-    const productsFile = join(sharedDir, 'products.json')
+    // Generate all products from static data
+    const allProducts = generateAllProducts()
 
-    const data = await readFile(productsFile, 'utf-8')
-    const database: ProductDatabase = JSON.parse(data)
+    // Read managed products database for overrides
+    let managedProducts: Record<string, SharedProduct> = {}
+    try {
+      const productsFile = join(process.cwd(), '../shared/products.json')
+      const data = await readFile(productsFile, 'utf-8')
+      const database: ProductDatabase = JSON.parse(data)
+      managedProducts = database.products || {}
+    } catch (error) {
+      console.warn('No shared products file found, using only generated products')
+    }
 
-    let products = Object.values(database.products)
+    // Merge generated products with managed overrides
+    let products = allProducts.map(product => {
+      const managedProduct = managedProducts[product.id]
+      if (managedProduct) {
+        // Extract the correct folder path from the URLs in allAvailableImages
+        let correctFolderPath = product.cloudinaryFolderPath
+        if (managedProduct.allAvailableImages && managedProduct.allAvailableImages.length > 0) {
+          const firstUrl = managedProduct.allAvailableImages[0]
+          const match = firstUrl.match(/cruzar-deportes\/[^\/]+\/[^\/]+\/[^\/]+/)
+          if (match) {
+            correctFolderPath = match[0]
+          }
+        }
+
+        // Merge managed data with generated data, prioritizing managed fields
+        return {
+          ...product,
+          ...managedProduct,
+          isProcessed: true, // Mark as processed since it exists in managed database
+          cloudinaryFolderPath: correctFolderPath
+        }
+      }
+      return product
+    })
 
     // Apply filters
     if (category) {

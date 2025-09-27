@@ -1,7 +1,37 @@
-import { readFile, writeFile } from 'fs/promises'
+import { readFile, writeFile, access } from 'fs/promises'
 import { join } from 'path'
 import type { ApiResponse } from '~/types'
-import type { ProductDatabase } from '../../../../../shared/types'
+import type { ProductDatabase, SharedProduct } from '../../../../../shared/types'
+import { generateAllProducts } from '~/utils/productGenerator'
+
+async function ensureProductsDatabase(productsFile: string): Promise<ProductDatabase> {
+  try {
+    await access(productsFile)
+    const data = await readFile(productsFile, 'utf-8')
+    return JSON.parse(data)
+  } catch (error) {
+    // Create default database structure if file doesn't exist
+    const now = new Date().toISOString()
+    return {
+      version: '1.0.0',
+      lastUpdated: now,
+      products: {},
+      categories: {
+        afc: { id: 'afc', name: 'Equipos AFC', slug: 'afc', productCount: 0, lastModified: now },
+        caf: { id: 'caf', name: 'Equipos CAF', slug: 'caf', productCount: 0, lastModified: now },
+        eredivisie: { id: 'eredivisie', name: 'Equipos Eredivisie', slug: 'eredivisie', productCount: 0, lastModified: now },
+        serie_a_enilive: { id: 'serie_a_enilive', name: 'Serie A Enilive', slug: 'serie_a_enilive', productCount: 0, lastModified: now },
+        lpf_afa: { id: 'lpf_afa', name: 'Liga Profesional Argentina', slug: 'lpf_afa', productCount: 0, lastModified: now },
+        national_retro: { id: 'national_retro', name: 'Camisetas Retro Selecciones', slug: 'national_retro', productCount: 0, lastModified: now }
+      },
+      metadata: {
+        totalProducts: 0,
+        totalImages: 0,
+        lastSync: now
+      }
+    }
+  }
+}
 
 export default defineEventHandler(async (event): Promise<ApiResponse<null>> => {
   try {
@@ -35,19 +65,28 @@ export default defineEventHandler(async (event): Promise<ApiResponse<null>> => {
       })
     }
 
-    // Read current database
-    const sharedDir = '/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/shared'
-    const productsFile = join(sharedDir, 'products.json')
+    // Ensure database exists and get current state
+    const productsFile = join(process.cwd(), '../shared/products.json')
+    const database = await ensureProductsDatabase(productsFile)
 
-    const data = await readFile(productsFile, 'utf-8')
-    const database: ProductDatabase = JSON.parse(data)
-
-    // Check if product exists
+    // If product doesn't exist in database, find it from generated products and add it
     if (!database.products[productId]) {
-      throw createError({
-        statusCode: 404,
-        statusMessage: 'Product not found'
-      })
+      const allProducts = generateAllProducts()
+      const sourceProduct = allProducts.find(p => p.id === productId)
+
+      if (!sourceProduct) {
+        throw createError({
+          statusCode: 404,
+          statusMessage: 'Product not found'
+        })
+      }
+
+      // Add the product to the database
+      database.products[productId] = {
+        ...sourceProduct,
+        isProcessed: true,
+        lastModified: new Date().toISOString()
+      }
     }
 
     // Update product images

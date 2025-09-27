@@ -23,8 +23,7 @@ export default defineEventHandler(async (event): Promise<ApiResponse<SharedProdu
     }
 
     // Read shared products database
-    const sharedDir = '/Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes/shared'
-    const productsFile = join(sharedDir, 'products.json')
+    const productsFile = join(process.cwd(), '../shared/products.json')
 
     const data = await readFile(productsFile, 'utf-8')
     const database: ProductDatabase = JSON.parse(data)
