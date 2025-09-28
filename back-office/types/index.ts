@@ -86,6 +86,7 @@ export interface AuthUser {
   username: string
   isAuthenticated: boolean
   loginTime: string
+  sessionToken?: string
 }
 
 export interface LoginCredentials {

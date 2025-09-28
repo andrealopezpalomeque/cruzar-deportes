@@ -28,14 +28,16 @@ export const useAuthStore = defineStore('auth', () => {
         user.value = {
           username: credentials.username,
           isAuthenticated: true,
-          loginTime: new Date().toISOString()
+          loginTime: response.data.loginTime || new Date().toISOString(),
+          sessionToken: response.data.sessionToken
         }
 
         // Store auth state in localStorage for persistence
         const authData = {
           username: credentials.username,
           isAuthenticated: true,
-          loginTime: user.value.loginTime
+          loginTime: user.value.loginTime,
+          sessionToken: response.data.sessionToken
         }
 
         if (process.client) {
@@ -141,6 +143,7 @@ export const useAuthStore = defineStore('auth', () => {
     // Getters
     isAuthenticated,
     currentUser,
+    sessionToken: computed(() => user.value?.sessionToken || null),
 
     // Actions
     login,

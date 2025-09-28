@@ -2,6 +2,7 @@ import { readFile } from 'fs/promises'
 import { join } from 'path'
 import type { ApiResponse, CategoryType } from '~/types'
 import type { ProductDatabase } from '../../../shared/types'
+import { requireSession } from '../../utils/session'
 
 export default defineEventHandler(async (event): Promise<ApiResponse<{
   totalProducts: number
@@ -14,13 +15,7 @@ export default defineEventHandler(async (event): Promise<ApiResponse<{
 }>> => {
   try {
     // Validate session
-    const sessionToken = getCookie(event, 'backoffice_session')
-    if (!sessionToken) {
-      throw createError({
-        statusCode: 401,
-        statusMessage: 'Unauthorized'
-      })
-    }
+    requireSession(event)
 
     // Read shared products database
     const productsFile = join(process.cwd(), '../shared/products.json')

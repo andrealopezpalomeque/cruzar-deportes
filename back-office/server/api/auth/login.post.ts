@@ -1,4 +1,5 @@
 import type { LoginCredentials, ApiResponse, AuthUser } from '~/types'
+import { setSessionCookieOptions } from '../../utils/session'
 
 export default defineEventHandler(async (event): Promise<ApiResponse<AuthUser>> => {
   try {
@@ -22,19 +23,20 @@ export default defineEventHandler(async (event): Promise<ApiResponse<AuthUser>> 
       const sessionToken = Buffer.from(`${body.username}:${Date.now()}`).toString('base64')
 
       // Set HTTP-only cookie for session
-      setCookie(event, 'backoffice_session', sessionToken, {
+      setCookie(event, 'backoffice_session', sessionToken, setSessionCookieOptions({
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
+        sameSite: 'lax',
         maxAge: 60 * 60 * 24 // 24 hours
-      })
+      }))
 
       return {
         success: true,
         data: {
           username: body.username,
           isAuthenticated: true,
-          loginTime: new Date().toISOString()
+          loginTime: new Date().toISOString(),
+          sessionToken
         },
         message: 'Login successful'
       }

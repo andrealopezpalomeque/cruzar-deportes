@@ -1,16 +1,11 @@
 import type { ApiResponse, DashboardStats } from '~/types'
 import { readProductsDatabase } from '~/shared/utils/productSync'
+import { requireSession } from '../../utils/session'
 
 export default defineEventHandler(async (event): Promise<ApiResponse<DashboardStats>> => {
   try {
     // Validate session (simple implementation)
-    const sessionToken = getCookie(event, 'backoffice_session')
-    if (!sessionToken) {
-      throw createError({
-        statusCode: 401,
-        statusMessage: 'Unauthorized'
-      })
-    }
+    requireSession(event)
 
     const database = await readProductsDatabase()
 

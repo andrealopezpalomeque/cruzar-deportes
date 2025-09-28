@@ -1,4 +1,5 @@
 import type { ApiResponse } from '~/types'
+import { requireSession } from '../../utils/session'
 import { readProductsDatabase } from '~/shared/utils/productSync'
 
 const MAX_ACTIVITY_ITEMS = 10
@@ -13,13 +14,7 @@ interface ActivityItem {
 export default defineEventHandler(async (event): Promise<ApiResponse<ActivityItem[]>> => {
   try {
     // Validate session (simple implementation)
-    const sessionToken = getCookie(event, 'backoffice_session')
-    if (!sessionToken) {
-      throw createError({
-        statusCode: 401,
-        statusMessage: 'Unauthorized'
-      })
-    }
+    requireSession(event)
 
     const database = await readProductsDatabase()
 

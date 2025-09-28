@@ -1,16 +1,11 @@
 import { v2 as cloudinary } from 'cloudinary'
 import type { ApiResponse, CloudinaryAsset } from '~/types'
+import { requireSession } from '../../utils/session'
 
 export default defineEventHandler(async (event): Promise<ApiResponse<CloudinaryAsset[]>> => {
   try {
     // Validate session
-    const sessionToken = getCookie(event, 'backoffice_session')
-    if (!sessionToken) {
-      throw createError({
-        statusCode: 401,
-        statusMessage: 'Unauthorized'
-      })
-    }
+    requireSession(event)
 
     // Get folder from query parameters
     const query = getQuery(event)

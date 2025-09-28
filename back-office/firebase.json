@@ -4,7 +4,7 @@
   },
   "hosting": [
     {
-      "site": "<your_project_id>",
+      "site": "cruzar-back-office",
       "public": ".output/public",
       "cleanUrls": true,
       "rewrites": [
