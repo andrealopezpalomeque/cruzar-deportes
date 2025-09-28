@@ -59,7 +59,11 @@ export default defineNuxtConfig({
 
   // Build configuration
   nitro: {
-    preset: 'firebase'
+    preset: 'firebase',
+    firebase: {
+      gen: 2,
+      region: 'us-central1'
+    }
   },
 
   // TypeScript configuration

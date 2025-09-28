@@ -1,5 +1,6 @@
 import { readFile } from 'fs/promises'
 import { join } from 'path'
+import { requireSession } from '../../utils/session'
 import type { ApiResponse, CategoryType } from '~/types'
 import type { SharedProduct, ProductDatabase } from '../../../shared/types'
 import { generateAllProducts } from '~/utils/productGenerator'
@@ -7,13 +8,7 @@ import { generateAllProducts } from '~/utils/productGenerator'
 export default defineEventHandler(async (event): Promise<ApiResponse<SharedProduct[]>> => {
   try {
     // Validate session
-    const sessionToken = getCookie(event, 'backoffice_session')
-    if (!sessionToken) {
-      throw createError({
-        statusCode: 401,
-        statusMessage: 'Unauthorized'
-      })
-    }
+    requireSession(event)
 
     // Get query parameters for filtering
     const query = getQuery(event)

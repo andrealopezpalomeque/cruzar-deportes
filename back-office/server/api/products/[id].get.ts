@@ -2,17 +2,12 @@ import { readFile } from 'fs/promises'
 import { join } from 'path'
 import type { ApiResponse } from '~/types'
 import type { SharedProduct, ProductDatabase } from '../../../../shared/types'
+import { requireSession } from '../../utils/session'
 
 export default defineEventHandler(async (event): Promise<ApiResponse<SharedProduct | null>> => {
   try {
     // Validate session
-    const sessionToken = getCookie(event, 'backoffice_session')
-    if (!sessionToken) {
-      throw createError({
-        statusCode: 401,
-        statusMessage: 'Unauthorized'
-      })
-    }
+    requireSession(event)
 
     const productId = getRouterParam(event, 'id')
     if (!productId) {

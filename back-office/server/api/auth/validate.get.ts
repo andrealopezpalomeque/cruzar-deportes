@@ -1,8 +1,9 @@
 import type { ApiResponse } from '~/types'
+import { clearSession, getSessionToken } from '../../utils/session'
 
 export default defineEventHandler(async (event): Promise<ApiResponse<{ valid: boolean }>> => {
   try {
-    const sessionToken = getCookie(event, 'backoffice_session')
+    const sessionToken = getSessionToken(event)
 
     if (!sessionToken) {
       return {
@@ -27,7 +28,7 @@ export default defineEventHandler(async (event): Promise<ApiResponse<{ valid: bo
 
       if (hoursDiff > 24) {
         // Session expired
-        deleteCookie(event, 'backoffice_session')
+        clearSession(event)
         return {
           success: false,
           error: 'Session expired'
@@ -47,7 +48,7 @@ export default defineEventHandler(async (event): Promise<ApiResponse<{ valid: bo
       }
     } catch (tokenError) {
       // Invalid token, clear it
-      deleteCookie(event, 'backoffice_session')
+      clearSession(event)
       return {
         success: false,
         error: 'Invalid session'

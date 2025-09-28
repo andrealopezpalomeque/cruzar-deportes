@@ -2,6 +2,7 @@ import type { ApiResponse, ProductVariant } from '~/types'
 import type { SharedProduct, ProductDatabase } from '../../../shared/types'
 import { promises as fs } from 'fs'
 import { join } from 'path'
+import { requireSession } from '../../utils/session'
 
 interface SyncRequest {
   albumPath: string
@@ -11,13 +12,7 @@ interface SyncRequest {
 export default defineEventHandler(async (event): Promise<ApiResponse<boolean>> => {
   try {
     // Validate session
-    const sessionToken = getCookie(event, 'backoffice_session')
-    if (!sessionToken) {
-      throw createError({
-        statusCode: 401,
-        statusMessage: 'Unauthorized'
-      })
-    }
+    requireSession(event)
 
     // Get request body
     const body = await readBody(event) as SyncRequest

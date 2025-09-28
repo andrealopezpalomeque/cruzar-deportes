@@ -3,6 +3,7 @@ import { join } from 'path'
 import type { ApiResponse } from '~/types'
 import type { ProductDatabase, SharedProduct } from '../../../../../shared/types'
 import { generateAllProducts } from '~/utils/productGenerator'
+import { requireSession } from '../../../utils/session'
 
 async function ensureProductsDatabase(productsFile: string): Promise<ProductDatabase> {
   try {
@@ -36,13 +37,7 @@ async function ensureProductsDatabase(productsFile: string): Promise<ProductData
 export default defineEventHandler(async (event): Promise<ApiResponse<null>> => {
   try {
     // Validate session
-    const sessionToken = getCookie(event, 'backoffice_session')
-    if (!sessionToken) {
-      throw createError({
-        statusCode: 401,
-        statusMessage: 'Unauthorized'
-      })
-    }
+    requireSession(event)
 
     const productId = getRouterParam(event, 'id')
     if (!productId) {

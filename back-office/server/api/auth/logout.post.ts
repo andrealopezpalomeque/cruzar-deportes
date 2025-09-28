@@ -1,9 +1,10 @@
 import type { ApiResponse } from '~/types'
+import { clearSession } from '../../utils/session'
 
 export default defineEventHandler(async (event): Promise<ApiResponse<null>> => {
   try {
     // Clear the session cookie
-    deleteCookie(event, 'backoffice_session')
+    clearSession(event)
 
     return {
       success: true,

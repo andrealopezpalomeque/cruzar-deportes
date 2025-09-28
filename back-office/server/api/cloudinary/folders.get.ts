@@ -1,5 +1,6 @@
 import { v2 as cloudinary } from 'cloudinary'
 import type { ApiResponse } from '~/types'
+import { requireSession } from '../../utils/session'
 
 interface CloudinaryFolder {
   name: string
@@ -9,13 +10,7 @@ interface CloudinaryFolder {
 export default defineEventHandler(async (event): Promise<ApiResponse<CloudinaryFolder[]>> => {
   try {
     // Validate session
-    const sessionToken = getCookie(event, 'backoffice_session')
-    if (!sessionToken) {
-      throw createError({
-        statusCode: 401,
-        statusMessage: 'Unauthorized'
-      })
-    }
+    requireSession(event)
 
     // Configure Cloudinary
     const config = useRuntimeConfig()
