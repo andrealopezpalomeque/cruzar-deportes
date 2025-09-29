@@ -172,7 +172,7 @@ export async function writeProductsDatabase(database: ProductDatabase): Promise<
         contentType: 'application/json',
         resumable: false
       })
-      await fs.mkdir(SHARED_DIR, { recursive: true })
+  await fs.mkdir(LOCAL_FALLBACK_DIR, { recursive: true })
       await fs.writeFile(LOCAL_PRODUCTS_FILE, data, 'utf-8')
       return
     } catch (error: any) {
