@@ -1,9 +1,8 @@
-import { readFile } from 'fs/promises'
-import { join } from 'path'
 import { requireSession } from '../../utils/session'
 import type { ApiResponse, CategoryType } from '~/types'
 import type { SharedProduct, ProductDatabase } from '../../../shared/types'
 import { generateAllProducts } from '~/utils/productGenerator'
+import { readProductsDatabase } from '~/shared/utils/productSync'
 
 export default defineEventHandler(async (event): Promise<ApiResponse<SharedProduct[]>> => {
   try {
@@ -24,12 +23,10 @@ export default defineEventHandler(async (event): Promise<ApiResponse<SharedProdu
     // Read managed products database for overrides
     let managedProducts: Record<string, SharedProduct> = {}
     try {
-      const productsFile = join(process.cwd(), '../shared/products.json')
-      const data = await readFile(productsFile, 'utf-8')
-      const database: ProductDatabase = JSON.parse(data)
+      const database: ProductDatabase = await readProductsDatabase()
       managedProducts = database.products || {}
     } catch (error) {
-      console.warn('No shared products file found, using only generated products')
+      console.warn('No shared products found, using generated products only', error)
     }
 
     // Merge generated products with managed overrides
