@@ -1,13 +1,18 @@
 import { promises as fs } from 'fs'
 import { join } from 'path'
 import { fileURLToPath } from 'url'
+import os from 'os'
 import type { ProductDatabase, SharedProduct, CategoryType } from '../types'
 
 let admin: typeof import('firebase-admin') | null = null
 let adminInitialized = false
 
-const SHARED_DIR = fileURLToPath(new URL('..', import.meta.url))
-const LOCAL_PRODUCTS_FILE = join(SHARED_DIR, 'products.json')
+const REPO_SHARED_DIR = fileURLToPath(new URL('..', import.meta.url))
+const isServerEnv = !!process.env.K_SERVICE || !!process.env.GCLOUD_PROJECT
+const LOCAL_FALLBACK_DIR = isServerEnv
+  ? join(os.tmpdir(), 'cruzar-deportes')
+  : REPO_SHARED_DIR
+const LOCAL_PRODUCTS_FILE = join(LOCAL_FALLBACK_DIR, 'products.json')
 const STORAGE_OBJECT_PATH = 'shared/products.json'
 
 const resolveFirebaseConfig = () => {
@@ -116,7 +121,7 @@ export async function readProductsDatabase(): Promise<ProductDatabase> {
     try {
       const [contents] = await storageFile.download()
       const json = contents.toString('utf-8')
-      await fs.mkdir(SHARED_DIR, { recursive: true })
+      await fs.mkdir(LOCAL_FALLBACK_DIR, { recursive: true })
       await fs.writeFile(LOCAL_PRODUCTS_FILE, json, 'utf-8')
       return JSON.parse(json) as ProductDatabase
     } catch (error: any) {
@@ -179,7 +184,7 @@ export async function writeProductsDatabase(database: ProductDatabase): Promise<
     }
   }
 
-  await fs.mkdir(SHARED_DIR, { recursive: true })
+  await fs.mkdir(LOCAL_FALLBACK_DIR, { recursive: true })
   await fs.writeFile(LOCAL_PRODUCTS_FILE, data, 'utf-8')
 }
 
