@@ -11,7 +11,7 @@
         <!-- Image Content Wrapper -->
         <OptimizedImage
           v-if="product.images?.length > 0"
-          class="aspect-content block"
+          wrapper-class="aspect-content block"
           :src="product.images[0]"
           :alt="product.name"
           type="productCard"

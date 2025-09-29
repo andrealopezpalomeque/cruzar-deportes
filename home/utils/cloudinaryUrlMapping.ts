@@ -4,6 +4,27 @@ import urlMapping from '../scripts/url-mapping.json' with { type: 'json' }
 // Type the mapping
 const cloudinaryUrlMapping: Record<string, string> = urlMapping
 
+// Pre-compute team level lookups to avoid scanning the full mapping repeatedly
+const teamUrlCache: Record<string, string[]> = {}
+
+for (const [localPath, cloudinaryUrl] of Object.entries(cloudinaryUrlMapping)) {
+  const match = localPath.match(/^\/images\/([^/]+)\/([^/]+)\//)
+  if (!match) continue
+
+  const [, category, teamKey] = match
+  const cacheKey = `${category}/${teamKey}`
+
+  if (!teamUrlCache[cacheKey]) {
+    teamUrlCache[cacheKey] = []
+  }
+
+  teamUrlCache[cacheKey].push(cloudinaryUrl)
+}
+
+for (const cacheKey of Object.keys(teamUrlCache)) {
+  teamUrlCache[cacheKey].sort()
+}
+
 /**
  * Get Cloudinary URL for a local image path
  */
@@ -18,19 +39,22 @@ export function getCloudinaryUrl(localPath: string): string | null {
  * Get all Cloudinary URLs for a team
  */
 export function getTeamCloudinaryUrls(teamKey: string, category: string): string[] {
-  const teamUrls: string[] = []
+  const cacheKey = `${category}/${teamKey}`
 
-  // Search for all images matching the team pattern
-  const teamPattern = `/images/${category}/${teamKey}/`
-
-  for (const [localPath, cloudinaryUrl] of Object.entries(cloudinaryUrlMapping)) {
-    if (localPath.startsWith(teamPattern)) {
-      teamUrls.push(cloudinaryUrl)
-    }
+  if (teamUrlCache[cacheKey]) {
+    return teamUrlCache[cacheKey]
   }
 
-  // Sort URLs to maintain consistent order
-  return teamUrls.sort()
+  // Support team keys that may still use hyphen delimiters
+  const normalizedKey = teamKey.replace(/-/g, '_')
+  const fallbackKey = `${category}/${normalizedKey}`
+
+  if (teamUrlCache[fallbackKey]) {
+    teamUrlCache[cacheKey] = teamUrlCache[fallbackKey]
+    return teamUrlCache[fallbackKey]
+  }
+
+  return []
 }
 
 /**
