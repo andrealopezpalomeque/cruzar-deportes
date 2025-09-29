@@ -23,9 +23,10 @@ export function generateAllProducts(): SharedProduct[] {
       if (categoryImages && categoryImages[teamKey]) {
         // Convert local paths to Cloudinary URLs
         allAvailableImages = categoryImages[teamKey].map(localPath => {
-          // Convert local path to Cloudinary URL
-          const publicId = localPath.replace('/images/', '').replace(/\.(jpg|jpeg|png|webp)$/i, '')
-          return `https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/${publicId}`
+          const publicId = localPath
+            .replace(/^\/?images\//, '')
+            .replace(/\.(jpg|jpeg|png|webp)$/i, '')
+          return `https://res.cloudinary.com/dmb1vyveg/image/upload/cruzar-deportes/products/${publicId}`
         })
       }
     } catch (error) {

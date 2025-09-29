@@ -14,8 +14,8 @@ const buildCloudinaryFolderPath = (teamKey: string, category: CategoryType): str
 }
 
 const buildCloudinaryUrl = (localPath: string): string => {
-  const publicId = localPath.replace('/images/', '').replace(/\.(jpg|jpeg|png|webp)$/i, '')
-  return `https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/${publicId}`
+  const publicId = localPath.replace(/^\/?images\//, '').replace(/\.(jpg|jpeg|png|webp)$/i, '')
+  return `https://res.cloudinary.com/dmb1vyveg/image/upload/cruzar-deportes/products/${publicId}`
 }
 
 const fromTeamCatalog = (teamKey: string, teamInfo: typeof teamCatalog[string]): SharedProduct => {
