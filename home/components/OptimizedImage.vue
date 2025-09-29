@@ -1,5 +1,5 @@
 <template>
-  <picture>
+  <picture :class="['optimized-image', 'block', wrapperClass]">
     <!-- WebP format sources -->
     <source
       v-if="imageData.webp"
@@ -117,6 +117,10 @@ const props = defineProps({
     type: Array,
     default: () => ['webp', 'jpeg'],
     validator: (value) => value.every(format => ['webp', 'avif', 'jpeg'].includes(format))
+  },
+  wrapperClass: {
+    type: [String, Array, Object],
+    default: ''
   }
 })
 
@@ -129,6 +133,11 @@ const imageLoader = getImageLoader()
 const mappedSrc = ref('')
 const isLoading = ref(true)
 
+// Basic heuristic for detecting if a Cloudinary URL already points to a transformed asset
+function hasFileExtension(url) {
+  return /\.(jpg|jpeg|png|webp|avif|gif|bmp|tiff)(\?|$)/i.test(url)
+}
+
 // Generate responsive image data
 const imageData = computed(() => {
   if (!mappedSrc.value) {
@@ -140,7 +149,7 @@ const imageData = computed(() => {
   const typeBreakpoints = breakpoints[props.type] || breakpoints.productCard
 
   // Only apply Cloudinary optimizations if it's a Cloudinary URL
-  if (isCloudinaryUrl(mappedSrc.value)) {
+  if (isCloudinaryUrl(mappedSrc.value) && hasFileExtension(mappedSrc.value)) {
     return imageLoader.generateResponsiveImageData(mappedSrc.value, typeBreakpoints, {
       quality: props.quality,
       crop: props.crop,

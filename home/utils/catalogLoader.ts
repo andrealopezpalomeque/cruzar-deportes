@@ -1,5 +1,6 @@
 import type { Product, Category } from '~/types'
 import type { ProductDatabase, SharedProduct } from '~/shared/types'
+import { getTeamCloudinaryUrls } from '~/utils/cloudinaryUrlMapping'
 
 interface CatalogPayload {
   products: Product[]
@@ -11,9 +12,22 @@ let cachedCatalog: CatalogPayload | null = null
 const FALLBACK_IMAGE = '/images/cruzar-logo-1.png'
 
 const toProduct = (shared: SharedProduct): Product => {
-  const images = shared.selectedImages.length > 0
-    ? shared.selectedImages
-    : shared.allAvailableImages.slice(0, 5)
+  const teamKey = shared.slug.replace(/-/g, '_')
+  const cloudinaryImages = getTeamCloudinaryUrls(teamKey, shared.category) || []
+
+  const candidateImages = [cloudinaryImages, shared.selectedImages, shared.allAvailableImages]
+  const uniqueImages = candidateImages
+    .flatMap(images => images || [])
+    .filter(Boolean)
+    .reduce<string[]>((acc, imageUrl) => {
+      if (!acc.includes(imageUrl)) {
+        acc.push(imageUrl)
+      }
+      return acc
+    }, [])
+
+  const images = uniqueImages.slice(0, 5)
+  const totalImages = cloudinaryImages.length || shared.allAvailableImages.length || uniqueImages.length
 
   return {
     id: shared.id,
@@ -25,7 +39,7 @@ const toProduct = (shared: SharedProduct): Product => {
     category: shared.category,
     subcategory: shared.subcategory,
     images: images.length > 0 ? images : [FALLBACK_IMAGE],
-    totalImages: shared.allAvailableImages.length || images.length,
+    totalImages: totalImages || (images.length > 0 ? images.length : 1),
     sizes: shared.sizes,
     colors: shared.colors,
     inStock: shared.inStock,
