@@ -44,7 +44,9 @@ export class CloudinaryImageLoader {
       if (cloudinaryUrls.length > 0) {
         // Return up to 5 images for product display, optimized for performance
         return cloudinaryUrls.slice(0, 5).map(url => {
-          const optimizedUrl = this.getOptimizedUrl(url, { width: 800, quality: 'auto', format: 'auto' })
+          // Ensure URL has an extension for storefront validation
+          const urlWithExtension = this.ensureImageExtension(url)
+          const optimizedUrl = this.getOptimizedUrl(urlWithExtension, { width: 800, quality: 'auto', format: 'auto' })
           // Add cache-busting parameter to force browser refresh
           return this.addCacheBuster(optimizedUrl)
         })
@@ -106,6 +108,28 @@ export class CloudinaryImageLoader {
     }
 
     return firstImage
+  }
+
+  /**
+   * Ensure URL has an image extension for storefront validation
+   */
+  private ensureImageExtension(url: string): string {
+    if (!url.includes('cloudinary.com')) {
+      return url
+    }
+
+    // Check if URL already has an image extension
+    const extensionRegex = /\.(jpe?g|png|webp|avif|gif|bmp|tiff)(\?|$)/i
+    if (extensionRegex.test(url)) {
+      return url
+    }
+
+    // Add .jpg extension before query params or at the end
+    const queryIndex = url.indexOf('?')
+    if (queryIndex !== -1) {
+      return url.slice(0, queryIndex) + '.jpg' + url.slice(queryIndex)
+    }
+    return url + '.jpg'
   }
 
   /**
@@ -220,7 +244,7 @@ export class CloudinaryImageLoader {
    * Generate responsive srcset for different screen densities and breakpoints
    */
   generateSrcSet(url: string, sizes: number[], options: {
-    format?: 'webp' | 'avif' | 'auto'
+    format?: 'webp' | 'avif' | 'auto' | 'jpeg'
     quality?: 'auto' | number
     crop?: 'fill' | 'fit' | 'limit' | 'thumb'
   } = {}): string {
