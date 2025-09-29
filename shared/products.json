@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-09-29T04:17:40.470Z",
+  "lastUpdated": "2025-09-29T18:55:16.863Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -13127,54 +13127,54 @@
       "name": "Equipos AFC",
       "slug": "afc",
       "productCount": 6,
-      "lastModified": "2025-09-29T04:17:40.470Z"
+      "lastModified": "2025-09-29T18:55:16.863Z"
     },
     "caf": {
       "id": "caf",
       "name": "Equipos CAF",
       "slug": "caf",
       "productCount": 6,
-      "lastModified": "2025-09-29T04:17:40.470Z"
+      "lastModified": "2025-09-29T18:55:16.863Z"
     },
     "eredivisie": {
       "id": "eredivisie",
       "name": "Equipos Eredivisie",
       "slug": "eredivisie",
       "productCount": 29,
-      "lastModified": "2025-09-29T04:17:40.470Z"
+      "lastModified": "2025-09-29T18:55:16.863Z"
     },
     "lpf_afa": {
       "id": "lpf_afa",
       "name": "Liga Profesional Argentina",
       "slug": "lpf_afa",
       "productCount": 35,
-      "lastModified": "2025-09-29T04:17:40.470Z"
+      "lastModified": "2025-09-29T18:55:16.863Z"
     },
     "serie_a_enilive": {
       "id": "serie_a_enilive",
       "name": "Serie A Enilive",
       "slug": "serie_a_enilive",
       "productCount": 27,
-      "lastModified": "2025-09-29T04:17:40.470Z"
+      "lastModified": "2025-09-29T18:55:16.863Z"
     },
     "national_retro": {
       "id": "national_retro",
       "name": "Camisetas Retro Selecciones",
       "slug": "national_retro",
       "productCount": 134,
-      "lastModified": "2025-09-29T04:17:40.470Z"
+      "lastModified": "2025-09-29T18:55:16.863Z"
     },
     "misc": {
       "id": "misc",
       "name": "Miscellaneous",
       "slug": "misc",
       "productCount": 0,
-      "lastModified": "2025-09-29T04:17:40.470Z"
+      "lastModified": "2025-09-29T18:55:16.863Z"
     }
   },
   "metadata": {
     "totalProducts": 237,
     "totalImages": 1120,
-    "lastSync": "2025-09-29T04:17:40.470Z"
+    "lastSync": "2025-09-29T18:55:16.863Z"
   }
 }

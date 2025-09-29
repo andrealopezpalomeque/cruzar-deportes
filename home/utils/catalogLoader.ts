@@ -1,3 +1,4 @@
+
 import type { Product, Category } from '~/types'
 import type { ProductDatabase, SharedProduct } from '~/shared/types'
 import { getTeamCloudinaryUrls } from '~/utils/cloudinaryUrlMapping'
@@ -11,23 +12,35 @@ let cachedCatalog: CatalogPayload | null = null
 
 const FALLBACK_IMAGE = '/images/cruzar-logo-1.png'
 
-const toProduct = (shared: SharedProduct): Product => {
-  const teamKey = shared.slug.replace(/-/g, '_')
-  const cloudinaryImages = getTeamCloudinaryUrls(teamKey, shared.category) || []
+const buildImageGallery = (shared: SharedProduct): { images: string[]; total: number } => {
+  const curatedImages = (shared.selectedImages ?? []).filter(Boolean)
+  const galleryImages = (shared.allAvailableImages ?? []).filter(Boolean)
 
-  const candidateImages = [cloudinaryImages, shared.selectedImages, shared.allAvailableImages]
-  const uniqueImages = candidateImages
-    .flatMap(images => images || [])
-    .filter(Boolean)
+  const teamKey = shared.slug.replace(/-/g, '_')
+  const mappedImages = getTeamCloudinaryUrls(teamKey, shared.category)
+
+  const uniqueImages = [...curatedImages, ...galleryImages, ...mappedImages]
     .reduce<string[]>((acc, imageUrl) => {
-      if (!acc.includes(imageUrl)) {
+      if (imageUrl && !acc.includes(imageUrl)) {
         acc.push(imageUrl)
       }
       return acc
     }, [])
 
   const images = uniqueImages.slice(0, 5)
-  const totalImages = cloudinaryImages.length || shared.allAvailableImages.length || uniqueImages.length
+  const total = shared.totalImages
+    || galleryImages.length
+    || mappedImages.length
+    || uniqueImages.length
+
+  return {
+    images: images.length > 0 ? images : [FALLBACK_IMAGE],
+    total: total || 1
+  }
+}
+
+const toProduct = (shared: SharedProduct): Product => {
+  const { images, total } = buildImageGallery(shared)
 
   return {
     id: shared.id,
@@ -38,8 +51,8 @@ const toProduct = (shared: SharedProduct): Product => {
     originalPrice: shared.originalPrice,
     category: shared.category,
     subcategory: shared.subcategory,
-    images: images.length > 0 ? images : [FALLBACK_IMAGE],
-    totalImages: totalImages || (images.length > 0 ? images.length : 1),
+    images,
+    totalImages: total,
     sizes: shared.sizes,
     colors: shared.colors,
     inStock: shared.inStock,
