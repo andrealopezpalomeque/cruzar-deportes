@@ -3,8 +3,42 @@ import { join } from 'path'
 import { fileURLToPath } from 'url'
 import type { ProductDatabase, SharedProduct, CategoryType } from '../types'
 
+let admin: typeof import('firebase-admin') | null = null
+let adminInitialized = false
+
 const SHARED_DIR = fileURLToPath(new URL('..', import.meta.url))
-const PRODUCTS_FILE = join(SHARED_DIR, 'products.json')
+const LOCAL_PRODUCTS_FILE = join(SHARED_DIR, 'products.json')
+const STORAGE_OBJECT_PATH = 'shared/products.json'
+
+const loadFirebaseAdmin = async (): Promise<typeof import('firebase-admin') | null> => {
+  if (adminInitialized) {
+    return admin
+  }
+
+  if (!process.env.K_SERVICE && !process.env.GCLOUD_PROJECT) {
+    adminInitialized = true
+    return null
+  }
+
+  const module = await import('firebase-admin')
+  admin = module.default ?? module
+
+  if (!admin.apps.length) {
+    admin.initializeApp()
+  }
+
+  adminInitialized = true
+  return admin
+}
+
+const getStorageFile = async () => {
+  const fbAdmin = await loadFirebaseAdmin()
+  if (!fbAdmin) return null
+
+  const bucketName = process.env.FIREBASE_STORAGE_BUCKET || `${process.env.GCLOUD_PROJECT}.appspot.com`
+  const bucket = fbAdmin.storage().bucket(bucketName)
+  return bucket.file(STORAGE_OBJECT_PATH)
+}
 
 // Initialize empty database structure
 const createEmptyDatabase = (): ProductDatabase => ({
@@ -28,12 +62,27 @@ const createEmptyDatabase = (): ProductDatabase => ({
 
 // Read products database
 export async function readProductsDatabase(): Promise<ProductDatabase> {
+  const storageFile = await getStorageFile()
+
+  if (storageFile) {
+    try {
+      const [contents] = await storageFile.download()
+      return JSON.parse(contents.toString('utf-8')) as ProductDatabase
+    } catch (error: any) {
+      if (error.code === 404) {
+        const emptyDb = createEmptyDatabase()
+        await writeProductsDatabase(emptyDb)
+        return emptyDb
+      }
+      throw error
+    }
+  }
+
   try {
-    const data = await fs.readFile(PRODUCTS_FILE, 'utf-8')
+    const data = await fs.readFile(LOCAL_PRODUCTS_FILE, 'utf-8')
     return JSON.parse(data)
-  } catch (error) {
-    // If file doesn't exist, create an empty database
-    if ((error as any)?.code === 'ENOENT') {
+  } catch (error: any) {
+    if (error.code === 'ENOENT') {
       const emptyDb = createEmptyDatabase()
       await writeProductsDatabase(emptyDb)
       return emptyDb
@@ -59,7 +108,19 @@ export async function writeProductsDatabase(database: ProductDatabase): Promise<
   }
 
   const data = JSON.stringify(database, null, 2)
-  await fs.writeFile(PRODUCTS_FILE, data, 'utf-8')
+
+  const storageFile = await getStorageFile()
+
+  if (storageFile) {
+    await storageFile.save(data, {
+      contentType: 'application/json',
+      resumable: false
+    })
+    return
+  }
+
+  await fs.mkdir(SHARED_DIR, { recursive: true })
+  await fs.writeFile(LOCAL_PRODUCTS_FILE, data, 'utf-8')
 }
 
 // Get all products
