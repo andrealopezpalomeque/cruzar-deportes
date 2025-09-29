@@ -10,6 +10,36 @@ const SHARED_DIR = fileURLToPath(new URL('..', import.meta.url))
 const LOCAL_PRODUCTS_FILE = join(SHARED_DIR, 'products.json')
 const STORAGE_OBJECT_PATH = 'shared/products.json'
 
+const resolveProjectId = (): string | undefined => {
+  if (process.env.GCLOUD_PROJECT) {
+    return process.env.GCLOUD_PROJECT
+  }
+
+  if (process.env.FIREBASE_CONFIG) {
+    try {
+      const config = JSON.parse(process.env.FIREBASE_CONFIG)
+      return config.projectId
+    } catch (error) {
+      console.warn('Unable to parse FIREBASE_CONFIG:', error)
+    }
+  }
+
+  return undefined
+}
+
+const resolveStorageBucket = (projectId?: string): string | undefined => {
+  if (process.env.FIREBASE_STORAGE_BUCKET) {
+    return process.env.FIREBASE_STORAGE_BUCKET
+  }
+
+  if (!projectId) {
+    return undefined
+  }
+
+  // Prefer modern firebasestorage.app bucket, fall back to legacy appspot
+  return `${projectId}.firebasestorage.app`
+}
+
 const loadFirebaseAdmin = async (): Promise<typeof import('firebase-admin') | null> => {
   if (adminInitialized) {
     return admin
@@ -24,7 +54,13 @@ const loadFirebaseAdmin = async (): Promise<typeof import('firebase-admin') | nu
   admin = module.default ?? module
 
   if (!admin.apps.length) {
-    admin.initializeApp()
+    const projectId = resolveProjectId()
+    const storageBucket = resolveStorageBucket(projectId)
+
+    admin.initializeApp({
+      projectId,
+      storageBucket
+    })
   }
 
   adminInitialized = true
@@ -35,8 +71,7 @@ const getStorageFile = async () => {
   const fbAdmin = await loadFirebaseAdmin()
   if (!fbAdmin) return null
 
-  const bucketName = process.env.FIREBASE_STORAGE_BUCKET || `${process.env.GCLOUD_PROJECT}.appspot.com`
-  const bucket = fbAdmin.storage().bucket(bucketName)
+  const bucket = fbAdmin.storage().bucket()
   return bucket.file(STORAGE_OBJECT_PATH)
 }
 
