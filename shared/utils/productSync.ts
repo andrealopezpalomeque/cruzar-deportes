@@ -10,18 +10,24 @@ const SHARED_DIR = fileURLToPath(new URL('..', import.meta.url))
 const LOCAL_PRODUCTS_FILE = join(SHARED_DIR, 'products.json')
 const STORAGE_OBJECT_PATH = 'shared/products.json'
 
+const resolveFirebaseConfig = () => {
+  if (!process.env.FIREBASE_CONFIG) return undefined
+  try {
+    return JSON.parse(process.env.FIREBASE_CONFIG)
+  } catch (error) {
+    console.warn('Unable to parse FIREBASE_CONFIG:', error)
+    return undefined
+  }
+}
+
 const resolveProjectId = (): string | undefined => {
   if (process.env.GCLOUD_PROJECT) {
     return process.env.GCLOUD_PROJECT
   }
 
-  if (process.env.FIREBASE_CONFIG) {
-    try {
-      const config = JSON.parse(process.env.FIREBASE_CONFIG)
-      return config.projectId
-    } catch (error) {
-      console.warn('Unable to parse FIREBASE_CONFIG:', error)
-    }
+  const firebaseConfig = resolveFirebaseConfig()
+  if (firebaseConfig?.projectId) {
+    return firebaseConfig.projectId
   }
 
   return undefined
@@ -32,12 +38,16 @@ const resolveStorageBucket = (projectId?: string): string | undefined => {
     return process.env.FIREBASE_STORAGE_BUCKET
   }
 
+  const firebaseConfig = resolveFirebaseConfig()
+  if (firebaseConfig?.storageBucket) {
+    return firebaseConfig.storageBucket
+  }
+
   if (!projectId) {
     return undefined
   }
 
-  // Prefer modern firebasestorage.app bucket, fall back to legacy appspot
-  return `${projectId}.firebasestorage.app`
+  return `${projectId}.appspot.com`
 }
 
 const loadFirebaseAdmin = async (): Promise<typeof import('firebase-admin') | null> => {
@@ -45,7 +55,8 @@ const loadFirebaseAdmin = async (): Promise<typeof import('firebase-admin') | nu
     return admin
   }
 
-  if (!process.env.K_SERVICE && !process.env.GCLOUD_PROJECT) {
+  const projectId = resolveProjectId()
+  if (!process.env.K_SERVICE && !projectId) {
     adminInitialized = true
     return null
   }
@@ -54,13 +65,13 @@ const loadFirebaseAdmin = async (): Promise<typeof import('firebase-admin') | nu
   admin = module.default ?? module
 
   if (!admin.apps.length) {
-    const projectId = resolveProjectId()
     const storageBucket = resolveStorageBucket(projectId)
+    const options: Record<string, any> = {}
 
-    admin.initializeApp({
-      projectId,
-      storageBucket
-    })
+    if (projectId) options.projectId = projectId
+    if (storageBucket) options.storageBucket = storageBucket
+
+    admin.initializeApp(options)
   }
 
   adminInitialized = true
@@ -71,7 +82,9 @@ const getStorageFile = async () => {
   const fbAdmin = await loadFirebaseAdmin()
   if (!fbAdmin) return null
 
-  const bucket = fbAdmin.storage().bucket()
+  const projectId = resolveProjectId()
+  const bucketName = resolveStorageBucket(projectId)
+  const bucket = bucketName ? fbAdmin.storage().bucket(bucketName) : fbAdmin.storage().bucket()
   return bucket.file(STORAGE_OBJECT_PATH)
 }
 
