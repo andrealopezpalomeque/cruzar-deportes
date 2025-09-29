@@ -96,9 +96,13 @@ export class CloudinaryImageLoader {
     const firstImage = images[0]
 
     if (this.useCloudinary && firstImage.includes('cloudinary.com')) {
-      // Apply thumbnail optimization
-      const thumbnailUrl = firstImage.replace('/upload/', '/upload/c_thumb,w_300,h_300,g_face/')
-      return this.addCacheBuster(thumbnailUrl)
+      return this.getOptimizedUrl(firstImage, {
+        width: 300,
+        height: 300,
+        crop: 'thumb',
+        gravity: 'face',
+        addCacheBuster: true
+      })
     }
 
     return firstImage
@@ -134,7 +138,8 @@ export class CloudinaryImageLoader {
     height?: number
     quality?: 'auto' | number
     format?: 'auto' | 'webp' | 'avif'
-    crop?: 'fill' | 'fit' | 'thumb'
+    crop?: 'fill' | 'fit' | 'limit' | 'thumb'
+    gravity?: string
     addCacheBuster?: boolean
   } = {}): string {
     if (!this.useCloudinary || !url.includes('cloudinary.com')) {
@@ -147,6 +152,7 @@ export class CloudinaryImageLoader {
       quality = 'auto',
       format = 'auto',
       crop = 'limit',
+      gravity,
       addCacheBuster = false
     } = options
 
@@ -157,14 +163,50 @@ export class CloudinaryImageLoader {
     if (height) transformations.push(`h_${height}`)
     if (quality) transformations.push(`q_${quality}`)
     if (format) transformations.push(`f_${format}`)
+    if (gravity) transformations.push(`g_${gravity}`)
 
     const transformString = transformations.join(',')
 
-    let optimizedUrl = url
-    // Replace existing transformations or add new ones
-    if (url.includes('/upload/')) {
-      optimizedUrl = url.replace('/upload/', `/upload/${transformString}/`)
+    const uploadSegment = '/upload/'
+    const uploadIndex = url.indexOf(uploadSegment)
+
+    if (uploadIndex === -1 || !transformString) {
+      return addCacheBuster ? this.addCacheBuster(url) : url
     }
+
+    const prefix = url.slice(0, uploadIndex + uploadSegment.length)
+    const suffix = url.slice(uploadIndex + uploadSegment.length)
+    const suffixParts = suffix.split('/')
+
+    const isTransformationSegment = (segment: string | undefined): boolean => {
+      if (!segment) return false
+      const tokens = segment.split(',')
+      if (tokens.length === 0) return false
+      return tokens.every(token => /^[a-zA-Z0-9-]+_[^/]+$/.test(token))
+    }
+
+    const isVersionSegment = (segment: string | undefined): boolean => {
+      return !!segment && /^v\d+$/.test(segment)
+    }
+
+    let index = 0
+    while (index < suffixParts.length && isTransformationSegment(suffixParts[index])) {
+      index++
+    }
+
+    const versionSegment = isVersionSegment(suffixParts[index]) ? suffixParts[index] : undefined
+    if (versionSegment) {
+      index++
+    }
+
+    const normalizedSuffix = suffixParts.slice(index).join('/')
+    const versionPrefix = versionSegment ? `${versionSegment}/` : ''
+
+    if (!normalizedSuffix) {
+      return addCacheBuster ? this.addCacheBuster(url) : url
+    }
+
+    let optimizedUrl = `${prefix}${transformString}/${versionPrefix}${normalizedSuffix}`
 
     // Add cache buster if requested
     if (addCacheBuster) {
