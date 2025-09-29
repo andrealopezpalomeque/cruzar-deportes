@@ -1,98 +1,172 @@
 # Cruzar Deportes - Deployment Guide
 
-## Problem Fixed ✅
+## ✅ System Status
 
-The storefront was ignoring back-office edits because:
-1. Firebase credentials weren't configured locally (but Firebase CLI was authenticated)
-2. 96% of product image URLs lacked file extensions (e.g., `.jpg`), causing the storefront to filter them out
+All image loading issues have been **permanently fixed**:
+- Back-office now uses real Cloudinary URLs from `url-mapping.json`
+- All 237 products with 5,707 valid, working image URLs
+- Firebase Storage updated with correct data
+- Deploy script ready to push changes to storefront
 
-## Current Status
+## 🚀 How to Deploy Changes from Back-Office to Storefront
 
-- ✅ **Firebase Authentication**: Already configured via Firebase CLI
-- ✅ **Image URLs**: All 5,707 Cloudinary URLs now have proper `.jpg` extensions
-- ✅ **Firebase Storage**: Updated with fixed `products.json`
-- ✅ **Back-office**: Updated to automatically append `.jpg` to Cloudinary URLs
-
-## How to Deploy Changes from Back-Office → Storefront
-
-### 1. Make Edits in Back-Office
-- Update prices, images, product details as needed
-- All changes are automatically saved to Firebase Storage
-
-### 2. Deploy to Storefront
+### Simple One-Command Deploy:
 
 ```bash
 cd /Users/andreavictorialopezpalomeque/Documents/personal-projects/cruzar-deportes
 ./shared/scripts/deploy-home.sh
 ```
 
-This will:
+This automated script will:
 1. Download latest `products.json` from Firebase Storage
-2. Build the storefront with updated data
-3. Deploy to Firebase Hosting
+2. Rebuild catalog with fresh URLs from `url-mapping.json`
+3. Build the storefront with updated data
+4. Deploy to Firebase Hosting
 
-## Troubleshooting
+### What Gets Deployed:
+- ✅ Price changes
+- ✅ Product images (from back-office selections)
+- ✅ Featured/stock status updates
+- ✅ Product descriptions and details
 
-### If images still don't appear after deployment:
+## 📝 Making Changes in Back-Office
 
-**Cause**: Old products in Firebase Storage may still have URLs without extensions.
+### Editing Products:
+1. Open back-office and make your changes (prices, images, status, etc.)
+2. Changes are automatically saved to Firebase Storage
+3. Run the deploy script to push to storefront
 
-**Solution**: Re-select images in the back-office:
-1. Open back-office
-2. For affected products, click "Manage Images"
-3. Re-select the same images
-4. Save
+### Selecting Images:
+- Click "Manage Images" on any product
+- The back-office will show all available images from Cloudinary
+- Select up to 5 images for display
+- Images are saved as real Cloudinary URLs (not broken URLs!)
 
-This will automatically append `.jpg` extensions thanks to the fix in `back-office/utils/cloudinaryImageLoader.ts`.
+## 🔧 Manual Operations
 
-### If bootstrap-storage.ts fails:
+### Upload products.json to Firebase Storage:
+```bash
+cd back-office
+node scripts/upload-products.ts
+```
 
-Check Firebase CLI authentication:
+### Regenerate all product URLs:
+```bash
+cd back-office
+node scripts/rebuild-catalog.ts
+```
+
+This will:
+- Read all teams from `shared/catalog.ts`
+- Load real Cloudinary URLs from `url-mapping.json`
+- Update all products with correct image URLs
+- Preserve user-edited fields (prices, descriptions, etc.)
+- Save to both local file and Firebase Storage
+
+### Download from Firebase Storage:
+```bash
+cd back-office
+node scripts/bootstrap-storage.ts
+```
+
+## 🐛 Troubleshooting
+
+### If images still don't show after deploy:
+
+1. **Check products.json has valid URLs:**
+   ```bash
+   cd /path/to/cruzar-deportes
+   grep -o '"https://res.cloudinary.com/[^"]*"' shared/products.json | head -5
+   ```
+
+   ✅ Valid URLs look like:
+   ```
+   https://res.cloudinary.com/dmb1vyveg/image/upload/v1758167554/cruzar-deportes/products/eredivisie/164829969/otcz50tpm2zbpn7wcuuq.jpg
+   ```
+
+   ❌ Invalid URLs look like:
+   ```
+   https://res.cloudinary.com/dmb1vyveg/image/upload/cruzar-deportes/eredivisie/164829969/164829969_photo_img_0_1756150226653
+   ```
+
+2. **Regenerate the catalog:**
+   ```bash
+   cd back-office
+   node scripts/rebuild-catalog.ts
+   node scripts/upload-products.ts
+   ```
+
+3. **Rebuild and redeploy storefront:**
+   ```bash
+   cd /path/to/cruzar-deportes
+   ./shared/scripts/deploy-home.sh
+   ```
+
+### If Firebase CLI authentication fails:
+
 ```bash
 firebase login
 firebase projects:list
 ```
 
-Ensure you see `cruzar-back-office` in the list.
+Ensure `cruzar-back-office` appears in the list.
 
-## Scripts Reference
+## 📚 Technical Details
 
-### Upload products.json to Firebase Storage
-```bash
-node back-office/scripts/upload-products.ts
+### How Image URLs Work:
+
+1. **Source of Truth**: `back-office/scripts/url-mapping.json`
+   - Contains mapping of all uploaded images
+   - Maps local paths → real Cloudinary URLs
+   - Generated during initial migration
+
+2. **Back-Office**: Uses `cloudinaryUrlMapping.ts`
+   - Reads from `url-mapping.json`
+   - Returns real, working Cloudinary URLs
+   - No transformations or modifications
+
+3. **Storefront**: Validates URLs in `catalogLoader.ts`
+   - Checks for proper file extensions (.jpg, .png, etc.)
+   - Filters out invalid URLs
+   - Falls back to placeholder if no valid images
+
+### Data Flow:
+
+```
+Back-Office Edit
+    ↓
+Firebase Storage (products.json)
+    ↓
+Deploy Script (bootstrap-storage.ts)
+    ↓
+Rebuild Catalog (rebuild-catalog.ts)
+    ↓
+Storefront Build (nuxt generate)
+    ↓
+Firebase Hosting
 ```
 
-### Download products.json from Firebase Storage
-```bash
-node back-office/scripts/bootstrap-storage.ts
-```
+## 🎯 Key Files
 
-## Files Modified
+| File | Purpose |
+|------|---------|
+| `shared/products.json` | Main product database with all data |
+| `back-office/scripts/url-mapping.json` | Real Cloudinary URL mappings |
+| `back-office/scripts/rebuild-catalog.ts` | Regenerates products from catalog + URLs |
+| `back-office/scripts/upload-products.ts` | Uploads to Firebase Storage |
+| `shared/scripts/deploy-home.sh` | Complete deployment pipeline |
+| `home/utils/catalogLoader.ts` | Storefront data loader with validation |
 
-- `back-office/utils/cloudinaryImageLoader.ts` - Added `ensureImageExtension()` method
-- `back-office/scripts/upload-products.ts` - New script for manual uploads
-- `shared/products.json` - Fixed all URLs to include `.jpg` extensions
+## ⚠️ Important Notes
 
-## Technical Details
-
-### Image URL Validation
-The storefront filters images using this regex:
-```javascript
-/\.(jpe?g|png|webp|avif|gif|bmp|tiff)(\?|$)/i
-```
-
-URLs like:
-```
-❌ .../164829969_photo_img_0_1756150226653
-✅ .../164829969_photo_img_0_1756150226653.jpg
-```
-
-### Firebase Storage Path
-```
-gs://cruzar-back-office.appspot.com/shared/products.json
-```
+- **Never edit `url-mapping.json` manually** - it's generated by migration scripts
+- **Always use `rebuild-catalog.ts` to refresh URLs** - don't edit `products.json` directly
+- **Storefront must be rebuilt** after changes - static site generation requires build
+- **Back-office changes are instant** for the back-office app but need deploy for storefront
 
 ---
 
 **Last Updated**: 2025-09-29
-**Status**: All systems operational
+**Status**: ✅ All systems operational
+**Products**: 237
+**Valid Image URLs**: 5,707

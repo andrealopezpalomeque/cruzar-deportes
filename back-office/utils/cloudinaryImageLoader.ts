@@ -38,18 +38,13 @@ export class CloudinaryImageLoader {
    */
   private async getCloudinaryImages(teamKey: string, category: CategoryType): Promise<string[]> {
     try {
-      // Get actual migrated URLs for this team
+      // Get actual migrated URLs for this team from the mapping
       const cloudinaryUrls = getTeamCloudinaryUrls(teamKey, category)
 
       if (cloudinaryUrls.length > 0) {
-        // Return up to 5 images for product display, optimized for performance
-        return cloudinaryUrls.slice(0, 5).map(url => {
-          // Ensure URL has an extension for storefront validation
-          const urlWithExtension = this.ensureImageExtension(url)
-          const optimizedUrl = this.getOptimizedUrl(urlWithExtension, { width: 800, quality: 'auto', format: 'auto' })
-          // Add cache-busting parameter to force browser refresh
-          return this.addCacheBuster(optimizedUrl)
-        })
+        // Return the raw Cloudinary URLs - these are already uploaded and valid
+        // DO NOT apply transformations or modifications - use URLs as-is from mapping
+        return cloudinaryUrls
       }
 
       return this.getFallbackImages()
