@@ -117,12 +117,11 @@ export async function readProductsDatabase(): Promise<ProductDatabase> {
       const [contents] = await storageFile.download()
       return JSON.parse(contents.toString('utf-8')) as ProductDatabase
     } catch (error: any) {
-      if (error.code === 404) {
-        const emptyDb = createEmptyDatabase()
-        await writeProductsDatabase(emptyDb)
-        return emptyDb
+      if (error.code === 404 || /bucket does not exist/i.test(error.message)) {
+        console.warn('Storage bucket unavailable, using local products.json fallback')
+      } else {
+        throw error
       }
-      throw error
     }
   }
 
@@ -160,11 +159,19 @@ export async function writeProductsDatabase(database: ProductDatabase): Promise<
   const storageFile = await getStorageFile()
 
   if (storageFile) {
-    await storageFile.save(data, {
-      contentType: 'application/json',
-      resumable: false
-    })
-    return
+    try {
+      await storageFile.save(data, {
+        contentType: 'application/json',
+        resumable: false
+      })
+      return
+    } catch (error: any) {
+      if (error.code === 404 || /bucket does not exist/i.test(error.message)) {
+        console.warn('Storage bucket unavailable, writing to local products.json')
+      } else {
+        throw error
+      }
+    }
   }
 
   await fs.mkdir(SHARED_DIR, { recursive: true })
