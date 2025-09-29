@@ -10,6 +10,7 @@
         type="gallery"
         loading="eager"
         fetchpriority="high"
+        wrapper-class="w-full h-full"
         img-class="w-full h-full object-cover"
         @load="imageLoading = false"
         @error="handleImageError"
@@ -90,6 +91,7 @@
             :alt="`${productName} thumbnail ${index + 1}`"
             type="thumbnail"
             loading="lazy"
+            wrapper-class="w-full h-full"
             img-class="w-full h-full object-cover"
           />
         </button>
