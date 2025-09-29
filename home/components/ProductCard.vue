@@ -9,16 +9,16 @@
       <!-- Product Image -->
       <div class="aspect-w-1 aspect-h-1 bg-gray-200 rounded-t-lg overflow-hidden relative">
         <!-- Image Content Wrapper -->
-        <div v-if="product.images?.length > 0" class="aspect-content">
-          <OptimizedImage
-            :src="product.images[0]"
-            :alt="product.name"
-            type="productCard"
-            loading="lazy"
-            fetchpriority="auto"
-            img-class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
-          />
-        </div>
+        <OptimizedImage
+          v-if="product.images?.length > 0"
+          class="aspect-content block"
+          :src="product.images[0]"
+          :alt="product.name"
+          type="productCard"
+          loading="lazy"
+          fetchpriority="auto"
+          img-class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+        />
         <div v-else class="aspect-content flex items-center justify-center">
           <IconTshirtCrew class="h-16 w-16 text-gray-400" />
         </div>
