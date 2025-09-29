@@ -13,7 +13,13 @@
       "Bash(yarn dev)",
       "Bash(yarn remove:*)",
       "Bash(convert:*)",
-      "Bash(magick:*)"
+      "Bash(magick:*)",
+      "Bash(printenv)",
+      "Bash(firebase projects:list:*)",
+      "Bash(gcloud config get-value:*)",
+      "Bash(firebase use:*)",
+      "Bash(test:*)",
+      "Bash(git restore:*)"
     ],
     "deny": []
   }
