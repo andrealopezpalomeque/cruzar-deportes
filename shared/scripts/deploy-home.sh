@@ -3,12 +3,25 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+BACKOFFICE_DIR="$ROOT_DIR/back-office"
 HOME_DIR="$ROOT_DIR/home"
 
 if [[ ! -d "$HOME_DIR" ]]; then
   echo "Unable to locate home directory at $HOME_DIR"
   exit 1
 fi
+
+if [[ ! -d "$BACKOFFICE_DIR" ]]; then
+  echo "Unable to locate back-office directory at $BACKOFFICE_DIR"
+  exit 1
+fi
+
+echo "Syncing shared catalog from Firebase Storage..."
+cd "$BACKOFFICE_DIR"
+node scripts/bootstrap-storage.ts
+
+echo "Ensuring catalog contains all team products..."
+node scripts/rebuild-catalog.ts
 
 cd "$HOME_DIR"
 
