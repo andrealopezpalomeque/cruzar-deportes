@@ -1,6 +1,6 @@
 import type { CategoryType, SharedProduct, SharedCategory } from '../../shared/types'
 import { teamCatalog } from '../../shared/catalog.ts'
-import { imageManifest } from '../utils/imageManifest.ts'
+import { getTeamCloudinaryUrls } from '../utils/cloudinaryUrlMapping.ts'
 
 const loadProductSync = async () => {
   const moduleUrl = new URL('../../shared/utils/productSync.ts', import.meta.url)
@@ -13,19 +13,11 @@ const buildCloudinaryFolderPath = (teamKey: string, category: CategoryType): str
   return `cruzar-deportes/products/${category}/${teamKey}`
 }
 
-const buildCloudinaryUrl = (localPath: string): string => {
-  const publicId = localPath.replace(/^\/?images\//, '').replace(/\.(jpg|jpeg|png|webp)$/i, '')
-  return `https://res.cloudinary.com/dmb1vyveg/image/upload/cruzar-deportes/products/${publicId}`
-}
-
 const fromTeamCatalog = (teamKey: string, teamInfo: typeof teamCatalog[string]): SharedProduct => {
   const now = new Date().toISOString()
-  let allAvailableImages: string[] = []
 
-  const categoryImages = (imageManifest as Record<string, Record<string, string[]>>)[teamInfo.category]
-  if (categoryImages && categoryImages[teamKey]) {
-    allAvailableImages = categoryImages[teamKey].map(buildCloudinaryUrl)
-  }
+  // Get real Cloudinary URLs from the url-mapping.json
+  const allAvailableImages = getTeamCloudinaryUrls(teamKey, teamInfo.category)
 
   const selectedImages = allAvailableImages.slice(0, 5)
 
@@ -101,6 +93,7 @@ async function rebuildCatalog() {
 
   for (const product of generatedProducts) {
     if (!database.products[product.id]) {
+      // New product - use generated data as-is
       database.products[product.id] = {
         ...product,
         isProcessed: false,
@@ -108,8 +101,17 @@ async function rebuildCatalog() {
         createdBy: product.createdBy ?? 'system'
       }
     } else {
-      // Make sure existing product always has at least one selected image
-      database.products[product.id] = ensureSelectedImages(database.products[product.id])
+      // Existing product - UPDATE image URLs with fresh ones from mapping
+      // but preserve user-edited fields like price, featured status, etc.
+      const existing = database.products[product.id]
+      database.products[product.id] = {
+        ...existing,
+        // Update image URLs to use real Cloudinary URLs from mapping
+        selectedImages: product.selectedImages,
+        allAvailableImages: product.allAvailableImages,
+        cloudinaryFolderPath: product.cloudinaryFolderPath,
+        lastModified: new Date().toISOString()
+      }
     }
   }
 
