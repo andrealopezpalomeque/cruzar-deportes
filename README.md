@@ -40,3 +40,13 @@ node src/scraper.js --list    # Available categories
 2. **Image Collection:** `cd scraper && node src/scraper.js --help`
 3. **Deploy:** `cd home && npm run firebase:build-deploy`
 
+
+## Deploying the Storefront After Back-Office Changes
+
+When you finish curating products in the back office, run the helper script to rebuild and deploy the customer-facing site:
+
+```bash
+shared/scripts/deploy-home.sh
+```
+
+This script installs dependencies for the `home/` app, runs `npm run firebase:build`, and then `npm run firebase:deploy`. Ensure you are authenticated with the Firebase CLI before running it.
