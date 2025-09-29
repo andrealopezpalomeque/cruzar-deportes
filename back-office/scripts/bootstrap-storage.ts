@@ -9,8 +9,8 @@ const SHARED_DIR = join(ROOT_DIR, 'shared')
 const LOCAL_FILE = join(SHARED_DIR, 'products.json')
 
 async function loadSharedUtils() {
-  const path = join(SHARED_DIR, 'utils', 'productSync.ts')
-  return await import(path)
+  const moduleUrl = new URL('../../shared/utils/productSync.ts', import.meta.url)
+  return await import(moduleUrl.href)
 }
 
 async function ensureLocalFile(): Promise<ProductDatabase> {
