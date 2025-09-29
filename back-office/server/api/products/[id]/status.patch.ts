@@ -1,42 +1,14 @@
-import { readFile, writeFile, access } from 'fs/promises'
-import { join } from 'path'
 import type { ApiResponse } from '~/types'
-import type { ProductDatabase } from '../../../../../shared/types'
 import { generateAllProducts } from '~/utils/productGenerator'
 import { requireSession } from '../../../utils/session'
-
-async function ensureProductsDatabase(productsFile: string): Promise<ProductDatabase> {
-  try {
-    await access(productsFile)
-    const data = await readFile(productsFile, 'utf-8')
-    return JSON.parse(data)
-  } catch (error) {
-    // Create default database structure if file doesn't exist
-    const now = new Date().toISOString()
-    return {
-      version: '1.0.0',
-      lastUpdated: now,
-      products: {},
-      categories: {
-        afc: { id: 'afc', name: 'Equipos AFC', slug: 'afc', productCount: 0, lastModified: now },
-        caf: { id: 'caf', name: 'Equipos CAF', slug: 'caf', productCount: 0, lastModified: now },
-        eredivisie: { id: 'eredivisie', name: 'Equipos Eredivisie', slug: 'eredivisie', productCount: 0, lastModified: now },
-        serie_a_enilive: { id: 'serie_a_enilive', name: 'Serie A Enilive', slug: 'serie_a_enilive', productCount: 0, lastModified: now },
-        lpf_afa: { id: 'lpf_afa', name: 'Liga Profesional Argentina', slug: 'lpf_afa', productCount: 0, lastModified: now },
-        national_retro: { id: 'national_retro', name: 'Camisetas Retro Selecciones', slug: 'national_retro', productCount: 0, lastModified: now }
-      },
-      metadata: {
-        totalProducts: 0,
-        totalImages: 0,
-        lastSync: now
-      }
-    }
-  }
-}
+import {
+  readProductsDatabase,
+  saveProduct,
+  updateProductStatus as updateProductStatusInDb
+} from '~/shared/utils/productSync'
 
 export default defineEventHandler(async (event): Promise<ApiResponse<null>> => {
   try {
-    // Validate session
     requireSession(event)
 
     const productId = getRouterParam(event, 'id')
@@ -47,7 +19,6 @@ export default defineEventHandler(async (event): Promise<ApiResponse<null>> => {
       })
     }
 
-    // Get status data from request body
     const updates = await readBody<{
       featured?: boolean
       inStock?: boolean
@@ -61,11 +32,8 @@ export default defineEventHandler(async (event): Promise<ApiResponse<null>> => {
       })
     }
 
-    // Ensure database exists and get current state
-    const productsFile = join(process.cwd(), '../shared/products.json')
-    const database = await ensureProductsDatabase(productsFile)
+    const database = await readProductsDatabase()
 
-    // If product doesn't exist in database, find it from generated products and add it
     if (!database.products[productId]) {
       const allProducts = generateAllProducts()
       const sourceProduct = allProducts.find(p => p.id === productId)
@@ -77,32 +45,14 @@ export default defineEventHandler(async (event): Promise<ApiResponse<null>> => {
         })
       }
 
-      // Add the product to the database
-      database.products[productId] = {
+      await saveProduct({
         ...sourceProduct,
         isProcessed: true,
         lastModified: new Date().toISOString()
-      }
+      })
     }
 
-    // Update product status fields
-    if (updates.featured !== undefined) {
-      database.products[productId].featured = updates.featured
-    }
-    if (updates.inStock !== undefined) {
-      database.products[productId].inStock = updates.inStock
-    }
-    if (updates.stockStatus !== undefined) {
-      database.products[productId].stockStatus = updates.stockStatus
-    }
-    database.products[productId].lastModified = new Date().toISOString()
-
-    // Update database metadata
-    database.lastUpdated = new Date().toISOString()
-    database.metadata.lastSync = new Date().toISOString()
-
-    // Write updated database
-    await writeFile(productsFile, JSON.stringify(database, null, 2), 'utf-8')
+    await updateProductStatusInDb(productId, updates)
 
     return {
       success: true,

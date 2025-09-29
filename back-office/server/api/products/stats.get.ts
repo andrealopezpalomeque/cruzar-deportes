@@ -1,8 +1,6 @@
-import { readFile } from 'fs/promises'
-import { join } from 'path'
 import type { ApiResponse, CategoryType } from '~/types'
-import type { ProductDatabase } from '../../../shared/types'
 import { requireSession } from '../../utils/session'
+import { readProductsDatabase } from '~/shared/utils/productSync'
 
 export default defineEventHandler(async (event): Promise<ApiResponse<{
   totalProducts: number
@@ -14,25 +12,19 @@ export default defineEventHandler(async (event): Promise<ApiResponse<{
   inStockProducts: number
 }>> => {
   try {
-    // Validate session
     requireSession(event)
 
-    // Read shared products database
-    const productsFile = join(process.cwd(), '../shared/products.json')
-
-    const data = await readFile(productsFile, 'utf-8')
-    const database: ProductDatabase = JSON.parse(data)
-
+    const database = await readProductsDatabase()
     const products = Object.values(database.products)
 
-    // Calculate category counts
     const categoryCounts: Record<CategoryType, number> = {
       afc: 0,
       caf: 0,
       eredivisie: 0,
       lpf_afa: 0,
       serie_a_enilive: 0,
-      national_retro: 0
+      national_retro: 0,
+      misc: 0
     }
 
     for (const product of products) {
@@ -41,7 +33,6 @@ export default defineEventHandler(async (event): Promise<ApiResponse<{
       }
     }
 
-    // Calculate other stats
     const processedProducts = products.filter(p => p.isProcessed).length
     const featuredProducts = products.filter(p => p.featured).length
     const inStockProducts = products.filter(p => p.inStock).length
