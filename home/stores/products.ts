@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import type { Product, Category } from '~/types'
 import type { SearchResult } from './search'
+import { loadCatalog } from '~/utils/catalogLoader'
 
 export const useProductsStore = defineStore('products', () => {
   const products = ref<Product[]>([])
@@ -90,8 +91,12 @@ export const useProductsStore = defineStore('products', () => {
     const minLoadingTime = 800 // Minimum 800ms loading time
 
     try {
-      const { generateProducts } = await import('~/utils/productGenerator')
-      products.value = await generateProducts()
+      const { products: catalogProducts, categories: catalogCategories } = await loadCatalog()
+      products.value = catalogProducts
+
+      if (catalogCategories.length > 0 && categories.value.length === 0) {
+        categories.value = catalogCategories
+      }
     } catch (error) {
       console.error('Error fetching products:', error)
     } finally {
@@ -138,8 +143,12 @@ export const useProductsStore = defineStore('products', () => {
     const minLoadingTime = 600 // Minimum 600ms loading time (shorter for categories)
     
     try {
-      const { generateCategories } = await import('~/utils/productGenerator')
-      categories.value = generateCategories()
+      const { categories: catalogCategories, products: catalogProducts } = await loadCatalog()
+      categories.value = catalogCategories
+
+      if (catalogProducts.length > 0 && products.value.length === 0) {
+        products.value = catalogProducts
+      }
     } catch (error) {
       console.error('Error fetching categories:', error)
     } finally {
