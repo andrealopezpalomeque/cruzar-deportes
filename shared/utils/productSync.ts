@@ -148,18 +148,92 @@ export async function readProductsDatabase(): Promise<ProductDatabase> {
 
 // Write products database
 export async function writeProductsDatabase(database: ProductDatabase): Promise<void> {
-  // Update metadata
-  database.lastUpdated = new Date().toISOString()
+  const nowIso = new Date().toISOString()
+
+  let previousDatabase: ProductDatabase | null = null
+  try {
+    const previousContent = await fs.readFile(LOCAL_PRODUCTS_FILE, 'utf-8')
+    previousDatabase = JSON.parse(previousContent) as ProductDatabase
+  } catch (error: any) {
+    if (error.code !== 'ENOENT') {
+      console.warn('Unable to read previous products database:', error)
+    }
+  }
+
+  let hasMeaningfulChanges = previousDatabase === null
+
+  // Preserve product lastModified when nothing changed for that product
+  const previousProducts = previousDatabase?.products || {}
+  const currentProducts = database.products
+
+  for (const [productId, product] of Object.entries(currentProducts)) {
+    const previousProduct = previousProducts[productId]
+
+    if (previousProduct) {
+      const { lastModified: _prevLastModified, ...prevRest } = previousProduct
+      const { lastModified: _currLastModified, ...currRest } = product
+
+      if (JSON.stringify(prevRest) === JSON.stringify(currRest)) {
+        product.lastModified = previousProduct.lastModified
+      } else {
+        product.lastModified = product.lastModified || nowIso
+        hasMeaningfulChanges = true
+      }
+    } else {
+      // New product added
+      product.lastModified = product.lastModified || nowIso
+      hasMeaningfulChanges = true
+    }
+  }
+
+  // Detect removed products
+  if (!hasMeaningfulChanges && previousDatabase) {
+    const prevIds = Object.keys(previousDatabase.products)
+    const currentIds = Object.keys(currentProducts)
+    if (prevIds.length !== currentIds.length || prevIds.some(id => !currentProducts[id])) {
+      hasMeaningfulChanges = true
+    }
+  }
+
+  // Update metadata totals
   database.metadata.totalProducts = Object.keys(database.products).length
   database.metadata.totalImages = Object.values(database.products)
     .reduce((total, product) => total + product.selectedImages.length, 0)
-  database.metadata.lastSync = new Date().toISOString()
 
-  // Update category counts
+  // Update category counts, but only bump lastModified if the count changed
   for (const categoryId of Object.keys(database.categories) as CategoryType[]) {
-    database.categories[categoryId].productCount = Object.values(database.products)
+    const category = database.categories[categoryId]
+    const previousCategory = previousDatabase?.categories?.[categoryId]
+
+    const productCount = Object.values(database.products)
       .filter(p => p.category === categoryId).length
-    database.categories[categoryId].lastModified = new Date().toISOString()
+
+    const previousCount = previousCategory?.productCount
+    category.productCount = productCount
+
+    if (previousCategory && previousCount === productCount) {
+      category.lastModified = previousCategory.lastModified
+    } else {
+      category.lastModified = category.lastModified || nowIso
+      hasMeaningfulChanges = true
+    }
+  }
+
+  // Carry over missing categories from previous state (if any) to detect removals
+  if (previousDatabase) {
+    for (const categoryId of Object.keys(previousDatabase.categories) as CategoryType[]) {
+      if (!database.categories[categoryId]) {
+        hasMeaningfulChanges = true
+      }
+    }
+  }
+
+  if (hasMeaningfulChanges) {
+    database.lastUpdated = nowIso
+    database.metadata.lastSync = nowIso
+  } else {
+    database.lastUpdated = previousDatabase?.lastUpdated || database.lastUpdated
+    database.metadata.lastSync = previousDatabase?.metadata?.lastSync || database.metadata.lastSync
   }
 
   const data = JSON.stringify(database, null, 2)

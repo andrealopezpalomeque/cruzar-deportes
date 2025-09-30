@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-09-30T18:53:42.692Z",
+  "lastUpdated": "2025-09-30T20:53:10.520Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -49,7 +49,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": true,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.488Z",
       "createdBy": "scraper"
@@ -92,7 +92,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": true,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.489Z",
       "createdBy": "scraper",
@@ -166,7 +166,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.490Z",
       "createdBy": "scraper"
@@ -235,7 +235,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": true,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.491Z",
       "createdBy": "scraper"
@@ -314,7 +314,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.492Z",
       "createdBy": "scraper"
@@ -400,7 +400,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.493Z",
       "createdBy": "scraper"
@@ -483,7 +483,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": true,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.494Z",
       "createdBy": "scraper"
@@ -557,7 +557,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": true,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.495Z",
       "createdBy": "scraper"
@@ -635,7 +635,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.497Z",
       "createdBy": "scraper"
@@ -645,7 +645,7 @@
       "name": "Eredivisie Special Collection 164829969",
       "slug": "164829969",
       "description": "Special collection jersey from Eredivisie",
-      "price": 75,
+      "price": 75000,
       "category": "eredivisie",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758167554/cruzar-deportes/products/eredivisie/164829969/otcz50tpm2zbpn7wcuuq.jpg",
@@ -712,8 +712,8 @@
       ],
       "inStock": true,
       "stockStatus": "in_stock",
-      "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "featured": true,
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -786,7 +786,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -821,7 +821,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -831,7 +831,7 @@
       "name": "Suwon FC",
       "slug": "suwon-fc",
       "description": "Official Suwon FC jersey from K League 1",
-      "price": 65,
+      "price": 65000,
       "category": "afc",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758167358/cruzar-deportes/products/afc/suwon_fc/sn63sdabf7fiuso4conc.jpg",
@@ -862,10 +862,11 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:52:28.684Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "originalPrice": 80000
     },
     "team-suwon_samsung": {
       "id": "team-suwon_samsung",
@@ -898,7 +899,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -942,7 +943,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -981,7 +982,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1025,7 +1026,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1075,7 +1076,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1130,7 +1131,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1140,7 +1141,7 @@
       "name": "Orlando Pirates",
       "slug": "orlando-pirates",
       "description": "Official Orlando Pirates jersey from DStv Premiership",
-      "price": 70,
+      "price": 70000,
       "category": "caf",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758167510/cruzar-deportes/products/caf/orlando_pirates/jm69scxmauuzaesnit93.jpg",
@@ -1177,18 +1178,19 @@
       ],
       "inStock": true,
       "stockStatus": "in_stock",
-      "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "featured": true,
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "originalPrice": 80000
     },
     "team-young_africans": {
       "id": "team-young_africans",
       "name": "Young Africans SC",
       "slug": "young-africans",
       "description": "Official Young Africans SC jersey from Tanzanian Premier League",
-      "price": 60,
+      "price": 60000,
       "category": "caf",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758167541/cruzar-deportes/products/caf/young_africans/cjw6n9wjpykerlebzeny.jpg",
@@ -1220,10 +1222,11 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "originalPrice": 80000
     },
     "team-ajax_authentic": {
       "id": "team-ajax_authentic",
@@ -1289,7 +1292,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1328,7 +1331,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1402,7 +1405,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1450,7 +1453,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1496,7 +1499,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1542,7 +1545,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1577,7 +1580,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1621,7 +1624,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1667,7 +1670,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1704,7 +1707,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1743,7 +1746,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1753,7 +1756,7 @@
       "name": "PSV GK Kids Kit",
       "slug": "psv-gk-kid-kit",
       "description": "Official PSV Eindhoven goalkeeper kids jersey from Eredivisie",
-      "price": 45,
+      "price": 50000,
       "category": "eredivisie",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168129/cruzar-deportes/products/eredivisie/psv_gk_kid_kit/pb5e2co69vzxox2cta1m.jpg",
@@ -1782,10 +1785,11 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "originalPrice": 80000
     },
     "team-psv_gk_short": {
       "id": "team-psv_gk_short",
@@ -1825,7 +1829,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1905,7 +1909,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -1959,7 +1963,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2005,7 +2009,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2051,7 +2055,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2086,7 +2090,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2121,7 +2125,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2168,7 +2172,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2215,7 +2219,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2256,7 +2260,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2297,7 +2301,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2336,7 +2340,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2371,7 +2375,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2429,7 +2433,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2468,7 +2472,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2507,7 +2511,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2546,7 +2550,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2588,7 +2592,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2637,7 +2641,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2676,7 +2680,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2717,7 +2721,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2776,7 +2780,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2831,7 +2835,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2894,7 +2898,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2947,7 +2951,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -2980,7 +2984,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -3071,7 +3075,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -3112,7 +3116,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -3164,7 +3168,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -3209,7 +3213,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -3252,7 +3256,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -3295,7 +3299,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -3335,7 +3339,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -3372,7 +3376,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -3407,7 +3411,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -3442,7 +3446,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -3487,7 +3491,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -3528,7 +3532,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -3574,7 +3578,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -3665,7 +3669,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -3757,7 +3761,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -3809,7 +3813,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -3932,7 +3936,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4009,7 +4013,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4064,7 +4068,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4145,7 +4149,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4219,7 +4223,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4285,7 +4289,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4351,7 +4355,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4414,7 +4418,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4469,7 +4473,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4520,7 +4524,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4583,7 +4587,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4637,7 +4641,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4686,7 +4690,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4735,7 +4739,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4770,7 +4774,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4812,7 +4816,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4854,7 +4858,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4896,7 +4900,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4943,7 +4947,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -4982,7 +4986,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5017,7 +5021,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5067,7 +5071,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5106,7 +5110,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5152,7 +5156,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5201,7 +5205,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5261,7 +5265,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5300,7 +5304,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5339,7 +5343,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5407,7 +5411,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5442,7 +5446,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5489,7 +5493,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5540,7 +5544,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5612,7 +5616,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5691,7 +5695,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5761,7 +5765,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5847,7 +5851,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5908,7 +5912,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -5975,7 +5979,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6032,7 +6036,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6081,7 +6085,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6091,15 +6095,12 @@
       "name": "Argentina 2014 Long Sleeve Player Version",
       "slug": "argentina-2014-long-sleeve-player-version",
       "description": "Argentina 2014 World Cup long sleeve player version jersey",
-      "price": 120,
+      "price": 80000,
       "originalPrice": 145,
       "category": "national_retro",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758172028/cruzar-deportes/products/national_retro/argentina_2014_long_sleeve_player_version/hmw0hmgfz8enfceppei8.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758172029/cruzar-deportes/products/national_retro/argentina_2014_long_sleeve_player_version/tepxw2auiba7b0cnz59y.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758172031/cruzar-deportes/products/national_retro/argentina_2014_long_sleeve_player_version/ozyi79rhbxz8uwy4r03i.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758172033/cruzar-deportes/products/national_retro/argentina_2014_long_sleeve_player_version/zonjefk5xzbdmpbstrv6.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758172037/cruzar-deportes/products/national_retro/argentina_2014_long_sleeve_player_version/jafrwjwz9uwhnbhek4da.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758172029/cruzar-deportes/products/national_retro/argentina_2014_long_sleeve_player_version/tepxw2auiba7b0cnz59y.jpg"
       ],
       "allAvailableImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758172028/cruzar-deportes/products/national_retro/argentina_2014_long_sleeve_player_version/hmw0hmgfz8enfceppei8.jpg",
@@ -6140,8 +6141,8 @@
       ],
       "inStock": true,
       "stockStatus": "in_stock",
-      "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "featured": true,
+      "lastModified": "2025-09-30T20:53:10.520Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6200,7 +6201,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6254,7 +6255,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6332,7 +6333,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6373,7 +6374,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6414,7 +6415,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6455,7 +6456,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6516,7 +6517,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6591,7 +6592,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6634,7 +6635,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6709,7 +6710,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6778,7 +6779,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6836,7 +6837,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6916,7 +6917,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6973,7 +6974,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -7006,7 +7007,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -7057,7 +7058,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -7116,7 +7117,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -7160,7 +7161,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -7216,7 +7217,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -7280,7 +7281,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -7343,7 +7344,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -7409,7 +7410,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -7496,7 +7497,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -7547,7 +7548,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -7626,7 +7627,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -7708,7 +7709,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -7802,7 +7803,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -7870,7 +7871,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -7914,7 +7915,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -7968,7 +7969,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8076,7 +8077,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8128,7 +8129,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8188,7 +8189,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8250,7 +8251,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8298,7 +8299,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8366,7 +8367,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8420,7 +8421,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8471,7 +8472,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8516,7 +8517,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8560,7 +8561,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8620,7 +8621,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8668,7 +8669,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8733,7 +8734,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8789,7 +8790,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8846,7 +8847,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8895,7 +8896,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -8958,7 +8959,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9012,7 +9013,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9061,7 +9062,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9113,7 +9114,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9169,7 +9170,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9265,7 +9266,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9312,7 +9313,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9357,7 +9358,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9402,7 +9403,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9443,7 +9444,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9486,7 +9487,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9550,7 +9551,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9630,7 +9631,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9684,7 +9685,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9735,7 +9736,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9780,7 +9781,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9831,7 +9832,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9882,7 +9883,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9928,7 +9929,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -9971,7 +9972,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10027,7 +10028,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10128,7 +10129,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10174,7 +10175,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10238,7 +10239,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10287,7 +10288,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10322,7 +10323,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10371,7 +10372,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10423,7 +10424,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10488,7 +10489,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10554,7 +10555,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10606,7 +10607,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10693,7 +10694,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10742,7 +10743,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10811,7 +10812,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10890,7 +10891,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10925,7 +10926,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -10977,7 +10978,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11023,7 +11024,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11075,7 +11076,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11145,7 +11146,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11196,7 +11197,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11242,7 +11243,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11310,7 +11311,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11358,7 +11359,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11428,7 +11429,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11503,7 +11504,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11557,7 +11558,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11649,7 +11650,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11713,7 +11714,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11762,7 +11763,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11808,7 +11809,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11859,7 +11860,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11908,7 +11909,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -11953,7 +11954,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12003,7 +12004,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12050,7 +12051,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12096,7 +12097,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12154,7 +12155,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12209,7 +12210,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12260,7 +12261,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12311,7 +12312,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12393,7 +12394,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12448,7 +12449,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12513,7 +12514,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12562,7 +12563,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12615,7 +12616,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12673,7 +12674,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12726,7 +12727,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12772,7 +12773,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12826,7 +12827,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12874,7 +12875,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -12939,7 +12940,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -13013,7 +13014,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -13067,7 +13068,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -13115,7 +13116,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T18:53:42.692Z",
+      "lastModified": "2025-09-30T20:50:30.265Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -13127,54 +13128,54 @@
       "name": "Equipos AFC",
       "slug": "afc",
       "productCount": 6,
-      "lastModified": "2025-09-30T18:53:42.692Z"
+      "lastModified": "2025-09-30T20:53:10.521Z"
     },
     "caf": {
       "id": "caf",
       "name": "Equipos CAF",
       "slug": "caf",
       "productCount": 6,
-      "lastModified": "2025-09-30T18:53:42.692Z"
+      "lastModified": "2025-09-30T20:53:10.521Z"
     },
     "eredivisie": {
       "id": "eredivisie",
       "name": "Equipos Eredivisie",
       "slug": "eredivisie",
       "productCount": 29,
-      "lastModified": "2025-09-30T18:53:42.693Z"
+      "lastModified": "2025-09-30T20:53:10.521Z"
     },
     "lpf_afa": {
       "id": "lpf_afa",
       "name": "Liga Profesional Argentina",
       "slug": "lpf_afa",
       "productCount": 35,
-      "lastModified": "2025-09-30T18:53:42.693Z"
+      "lastModified": "2025-09-30T20:53:10.521Z"
     },
     "serie_a_enilive": {
       "id": "serie_a_enilive",
       "name": "Serie A Enilive",
       "slug": "serie_a_enilive",
       "productCount": 27,
-      "lastModified": "2025-09-30T18:53:42.693Z"
+      "lastModified": "2025-09-30T20:53:10.521Z"
     },
     "national_retro": {
       "id": "national_retro",
       "name": "Camisetas Retro Selecciones",
       "slug": "national_retro",
       "productCount": 134,
-      "lastModified": "2025-09-30T18:53:42.693Z"
+      "lastModified": "2025-09-30T20:53:10.521Z"
     },
     "misc": {
       "id": "misc",
       "name": "Miscellaneous",
       "slug": "misc",
       "productCount": 0,
-      "lastModified": "2025-09-30T18:53:42.693Z"
+      "lastModified": "2025-09-30T20:53:10.521Z"
     }
   },
   "metadata": {
     "totalProducts": 237,
-    "totalImages": 1120,
-    "lastSync": "2025-09-30T18:53:42.692Z"
+    "totalImages": 1117,
+    "lastSync": "2025-09-30T20:53:10.520Z"
   }
 }
