@@ -42,6 +42,8 @@ BACKOFFICE_USERNAME=admin
 BACKOFFICE_PASSWORD=your_secure_password
 ```
 
+> **Firebase access:** Copy the repository level `.env.example` to `.env` (at the repo root) and fill in the Firebase service account credentials there. The back-office server and the shared deploy scripts read that file to connect to Cloud Storage and keep `shared/products.json` in sync.
+
 3. Run development server:
 ```bash
 npm run dev

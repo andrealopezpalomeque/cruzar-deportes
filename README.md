@@ -41,6 +41,17 @@ node src/scraper.js --list    # Available categories
 3. **Deploy:** `cd home && npm run firebase:build-deploy`
 
 
+## Environment Configuration
+
+Shared scripts and the back-office API read the Firebase credentials from a repository level `.env` file. To set this up:
+
+1. Copy `.env.example` to `.env` in the project root.
+2. Fill in the absolute path to your Firebase service-account JSON, the project ID, and the storage bucket name.
+3. Whenever you run `shared/scripts/deploy-home.sh` (or any node script that imports `shared/utils/productSync.ts`), the script automatically sources `.env` and `.env.local` if they exist.
+
+The service account must have permission to read and write `shared/products.json` in the configured Cloud Storage bucket; otherwise the sync will silently fall back to the local JSON copy.
+
+
 ## Deploying the Storefront After Back-Office Changes
 
 When you finish curating products in the back office, run the helper script to rebuild and deploy the customer-facing site:

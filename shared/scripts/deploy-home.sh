@@ -6,6 +6,16 @@ ROOT_DIR="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 BACKOFFICE_DIR="$ROOT_DIR/back-office"
 HOME_DIR="$ROOT_DIR/home"
 
+# Load shared environment configuration if present
+for env_file in "$ROOT_DIR/.env" "$ROOT_DIR/.env.local"; do
+  if [[ -f "$env_file" ]]; then
+    echo "Loading environment from $env_file"
+    set -a
+    source "$env_file"
+    set +a
+  fi
+done
+
 if [[ ! -d "$HOME_DIR" ]]; then
   echo "Unable to locate home directory at $HOME_DIR"
   exit 1
