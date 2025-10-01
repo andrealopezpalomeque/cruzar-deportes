@@ -43,22 +43,30 @@ const buildImageGallery = (shared: SharedProduct): { images: string[]; total: nu
   const teamKey = shared.slug.replace(/-/g, '_')
   const mappedImages = getTeamCloudinaryUrls(teamKey, shared.category).filter(isUsableImageUrl)
 
-  const uniqueImages = [...curatedImages, ...galleryImages, ...mappedImages]
-    .reduce<string[]>((acc, imageUrl) => {
-      if (imageUrl && !acc.includes(imageUrl)) {
-        acc.push(imageUrl)
-      }
-      return acc
-    }, [])
+  let orderedSources: string[] = []
 
-  const images = uniqueImages.slice(0, 5)
+  if (curatedImages.length > 0) {
+    orderedSources = [...curatedImages]
+  } else if (galleryImages.length > 0) {
+    orderedSources = [...galleryImages]
+  } else {
+    orderedSources = [...mappedImages]
+  }
+
+  const uniqueImages = orderedSources.reduce<string[]>((acc, imageUrl) => {
+    if (imageUrl && !acc.includes(imageUrl)) {
+      acc.push(imageUrl)
+    }
+    return acc
+  }, [])
+
+  const images = uniqueImages.length > 0 ? uniqueImages.slice(0, 5) : [FALLBACK_IMAGE]
   const total = shared.totalImages
-    || galleryImages.length
-    || mappedImages.length
+    || orderedSources.length
     || uniqueImages.length
 
   return {
-    images: images.length > 0 ? images : [FALLBACK_IMAGE],
+    images,
     total: total || 1
   }
 }

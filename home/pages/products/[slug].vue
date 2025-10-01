@@ -87,16 +87,26 @@ const relatedProducts = computed(() => {
 
 // Load product images
 async function loadProductImages() {
-  if (!product.value) return
+  if (!product.value) {
+    productImages.value = []
+    return
+  }
 
   try {
+    const curatedImages = Array.isArray(product.value.images) ? product.value.images.filter(Boolean) : []
+
+    if (curatedImages.length > 0) {
+      productImages.value = [...curatedImages]
+      return
+    }
+
     const { getTeamImages } = await import('~/utils/cloudinaryImageLoader')
     const teamKey = product.value.slug.replace(/-/g, '_') // Convert slug back to team key
     const images = await getTeamImages(teamKey, product.value.category)
     productImages.value = images
   } catch (error) {
     console.error('Error loading product images:', error)
-    productImages.value = product.value.images || []
+    productImages.value = Array.isArray(product.value.images) ? product.value.images : []
   }
 }
 
@@ -119,6 +129,12 @@ watch(() => route.params.slug, async () => {
   loading.value = true
   await loadProductImages()
   loading.value = false
+})
+
+watch(() => product.value?.images, (newImages) => {
+  if (newImages && newImages.length > 0) {
+    productImages.value = [...newImages]
+  }
 })
 
 // SEO and meta tags
