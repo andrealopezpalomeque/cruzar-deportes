@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-09-30T21:14:50.805Z",
+  "lastUpdated": "2025-10-01T04:05:38.620Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -5989,14 +5989,11 @@
       "name": "Argentina 2014 Adizero",
       "slug": "argentina-2014-adizero",
       "description": "Argentina 2014 World Cup Adizero player version jersey",
-      "price": 65000,
-      "originalPrice": 80000,
+      "price": 80000,
+      "originalPrice": 85000,
       "category": "national_retro",
       "selectedImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171813/cruzar-deportes/products/national_retro/argentina_2014_adizero/yalwkcexri8hmmlspmks.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171814/cruzar-deportes/products/national_retro/argentina_2014_adizero/cybz4odlwgnv0ujt4dkp.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171817/cruzar-deportes/products/national_retro/argentina_2014_adizero/ehowkuukqyjzfzrav3di.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171820/cruzar-deportes/products/national_retro/argentina_2014_adizero/iqwcuosynsrcxkv6ffpc.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171921/cruzar-deportes/products/national_retro/argentina_2014_adizero/e43ekoz8yy2cwf4kvc0z.jpg"
       ],
       "allAvailableImages": [
@@ -6036,7 +6033,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": true,
-      "lastModified": "2025-09-30T21:14:50.805Z",
+      "lastModified": "2025-10-01T04:05:38.620Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -13131,54 +13128,54 @@
       "name": "Equipos AFC",
       "slug": "afc",
       "productCount": 6,
-      "lastModified": "2025-09-30T21:14:50.806Z"
+      "lastModified": "2025-10-01T04:05:38.621Z"
     },
     "caf": {
       "id": "caf",
       "name": "Equipos CAF",
       "slug": "caf",
       "productCount": 6,
-      "lastModified": "2025-09-30T21:14:50.806Z"
+      "lastModified": "2025-10-01T04:05:38.621Z"
     },
     "eredivisie": {
       "id": "eredivisie",
       "name": "Equipos Eredivisie",
       "slug": "eredivisie",
       "productCount": 29,
-      "lastModified": "2025-09-30T21:14:50.806Z"
+      "lastModified": "2025-10-01T04:05:38.621Z"
     },
     "lpf_afa": {
       "id": "lpf_afa",
       "name": "Liga Profesional Argentina",
       "slug": "lpf_afa",
       "productCount": 35,
-      "lastModified": "2025-09-30T21:14:50.806Z"
+      "lastModified": "2025-10-01T04:05:38.621Z"
     },
     "serie_a_enilive": {
       "id": "serie_a_enilive",
       "name": "Serie A Enilive",
       "slug": "serie_a_enilive",
       "productCount": 27,
-      "lastModified": "2025-09-30T21:14:50.806Z"
+      "lastModified": "2025-10-01T04:05:38.621Z"
     },
     "national_retro": {
       "id": "national_retro",
       "name": "Camisetas Retro Selecciones",
       "slug": "national_retro",
       "productCount": 134,
-      "lastModified": "2025-09-30T21:14:50.806Z"
+      "lastModified": "2025-10-01T04:05:38.621Z"
     },
     "misc": {
       "id": "misc",
       "name": "Miscellaneous",
       "slug": "misc",
       "productCount": 0,
-      "lastModified": "2025-09-30T21:14:50.806Z"
+      "lastModified": "2025-10-01T04:05:38.621Z"
     }
   },
   "metadata": {
     "totalProducts": 237,
-    "totalImages": 1120,
-    "lastSync": "2025-09-30T21:14:50.805Z"
+    "totalImages": 1117,
+    "lastSync": "2025-10-01T04:05:38.621Z"
   }
 }

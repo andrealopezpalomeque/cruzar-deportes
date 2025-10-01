@@ -286,6 +286,50 @@
               </button>
             </div>
 
+            <!-- Selected Images (reorderable) -->
+            <div v-if="tempSelectedImages.length" class="px-6 pt-6">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="text-sm font-medium text-gray-900">Imágenes seleccionadas</h4>
+                <span class="text-xs text-gray-500">Arrastra para cambiar el orden</span>
+              </div>
+
+              <div
+                class="flex flex-wrap gap-3"
+                @dragover.prevent="allowSelectedDrop"
+                @drop.prevent="handleSelectedListDrop"
+              >
+                <div
+                  v-for="(image, index) in tempSelectedImages"
+                  :key="image"
+                  class="relative group w-24 h-24 rounded-lg overflow-hidden border border-gray-200 shadow-sm"
+                  draggable="true"
+                  :class="draggingSelectedIndex === index ? 'ring-2 ring-blue-400 ring-offset-2' : ''"
+                  @dragstart="handleSelectedDragStart(index, $event)"
+                  @dragover.prevent="allowSelectedDrop"
+                  @drop.prevent="handleSelectedItemDrop(index, $event)"
+                  @dragend="handleSelectedDragEnd"
+                >
+                  <img
+                    :src="optimizeUrl(image, 180)"
+                    :alt="`Selected image ${index + 1}`"
+                    class="w-full h-full object-cover pointer-events-none"
+                  />
+
+                  <span class="absolute bottom-1 left-1 bg-black bg-opacity-70 text-white text-xs px-2 py-0.5 rounded-full">
+                    {{ index + 1 }}
+                  </span>
+
+                  <button
+                    type="button"
+                    @click.stop="removeFromSelection(image)"
+                    class="absolute top-1 right-1 bg-white/90 text-gray-700 hover:text-red-600 hover:bg-white rounded-full p-1 shadow transition-colors"
+                  >
+                    <Icon name="mdi:close" class="text-xs" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
             <!-- Available Images -->
             <div class="p-6 overflow-y-auto max-h-[60vh]">
               <div v-if="loadingImages" class="flex justify-center py-8">
@@ -395,6 +439,66 @@ const selectedProduct = ref<SharedProduct | null>(null)
 const availableImages = ref<string[]>([])
 const tempSelectedImages = ref<string[]>([])
 const loadingImages = ref(false)
+const draggingSelectedIndex = ref<number | null>(null)
+
+const allowSelectedDrop = (event: DragEvent) => {
+  event.preventDefault()
+  if (event.dataTransfer) {
+    event.dataTransfer.dropEffect = 'move'
+  }
+}
+
+const moveSelectedImage = (from: number, to: number) => {
+  if (from === to) return
+
+  const updated = [...tempSelectedImages.value]
+
+  if (from < 0 || from >= updated.length) {
+    return
+  }
+
+  const [moved] = updated.splice(from, 1)
+  const targetIndex = Math.max(0, Math.min(to, updated.length))
+  updated.splice(targetIndex, 0, moved)
+
+  tempSelectedImages.value = updated
+}
+
+const handleSelectedDragStart = (index: number, event: DragEvent) => {
+  draggingSelectedIndex.value = index
+  if (event.dataTransfer) {
+    event.dataTransfer.effectAllowed = 'move'
+    event.dataTransfer.setData('text/plain', String(index))
+  }
+}
+
+const handleSelectedItemDrop = (index: number, event: DragEvent) => {
+  event.preventDefault()
+  if (draggingSelectedIndex.value === null) return
+
+  const from = draggingSelectedIndex.value
+  const target = from < index ? index - 1 : index
+
+  moveSelectedImage(from, target)
+  draggingSelectedIndex.value = null
+}
+
+const handleSelectedListDrop = (event: DragEvent) => {
+  event.preventDefault()
+  if (draggingSelectedIndex.value === null) return
+
+  const from = draggingSelectedIndex.value
+  moveSelectedImage(from, tempSelectedImages.value.length)
+  draggingSelectedIndex.value = null
+}
+
+const handleSelectedDragEnd = () => {
+  draggingSelectedIndex.value = null
+}
+
+const removeFromSelection = (imageUrl: string) => {
+  tempSelectedImages.value = tempSelectedImages.value.filter(image => image !== imageUrl)
+}
 
 // Computed
 const filteredProducts = computed(() => {
@@ -494,8 +598,9 @@ const openImageBrowser = async (product: SharedProduct) => {
     // Use the efficient image loader from home project
     const { getTeamImages } = await import('~/utils/cloudinaryImageLoader')
     const images = await getTeamImages(teamKey, product.category)
+    const uniqueImages = Array.from(new Set([...images, ...tempSelectedImages.value]))
 
-    availableImages.value = images
+    availableImages.value = uniqueImages
 
     console.log(`Found ${availableImages.value.length} images in folder`)
   } catch (err) {
@@ -512,6 +617,7 @@ const closeImageBrowser = () => {
   selectedProduct.value = null
   availableImages.value = []
   tempSelectedImages.value = []
+  draggingSelectedIndex.value = null
 }
 
 const isImageSelected = (imageUrl: string): boolean => {
