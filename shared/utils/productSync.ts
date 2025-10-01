@@ -15,6 +15,48 @@ const LOCAL_FALLBACK_DIR = isServerEnv
 const LOCAL_PRODUCTS_FILE = join(LOCAL_FALLBACK_DIR, 'products.json')
 const STORAGE_OBJECT_PATH = 'shared/products.json'
 
+const isPlainObject = (value: unknown): value is Record<string, unknown> => {
+  return typeof value === 'object' && value !== null && !Array.isArray(value)
+}
+
+const deepEqual = (a: unknown, b: unknown): boolean => {
+  if (a === b) {
+    return true
+  }
+
+  if (Array.isArray(a) && Array.isArray(b)) {
+    if (a.length !== b.length) {
+      return false
+    }
+
+    for (let index = 0; index < a.length; index += 1) {
+      if (!deepEqual(a[index], b[index])) {
+        return false
+      }
+    }
+
+    return true
+  }
+
+  if (isPlainObject(a) && isPlainObject(b)) {
+    const keys = new Set([...Object.keys(a), ...Object.keys(b)])
+
+    for (const key of keys) {
+      if (!deepEqual((a as Record<string, unknown>)[key], (b as Record<string, unknown>)[key])) {
+        return false
+      }
+    }
+
+    return true
+  }
+
+  if (typeof a === 'number' && typeof b === 'number') {
+    return Number.isNaN(a) && Number.isNaN(b)
+  }
+
+  return false
+}
+
 const resolveFirebaseConfig = () => {
   if (!process.env.FIREBASE_CONFIG) return undefined
   try {
@@ -173,7 +215,7 @@ export async function writeProductsDatabase(database: ProductDatabase): Promise<
       const { lastModified: _prevLastModified, ...prevRest } = previousProduct
       const { lastModified: _currLastModified, ...currRest } = product
 
-      if (JSON.stringify(prevRest) === JSON.stringify(currRest)) {
+      if (deepEqual(prevRest, currRest)) {
         product.lastModified = previousProduct.lastModified
       } else {
         product.lastModified = product.lastModified || nowIso
