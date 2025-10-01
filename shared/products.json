@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-10-01T04:30:51.417Z",
+  "lastUpdated": "2025-10-01T04:41:19.789Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -5989,15 +5989,14 @@
       "name": "Argentina 2014 Adizero",
       "slug": "argentina-2014-adizero",
       "description": "Argentina 2014 World Cup Adizero player version jersey",
-      "price": 75000,
-      "originalPrice": 80000,
+      "price": 70000,
+      "originalPrice": 75000,
       "category": "national_retro",
       "selectedImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171813/cruzar-deportes/products/national_retro/argentina_2014_adizero/yalwkcexri8hmmlspmks.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171814/cruzar-deportes/products/national_retro/argentina_2014_adizero/cybz4odlwgnv0ujt4dkp.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171921/cruzar-deportes/products/national_retro/argentina_2014_adizero/e43ekoz8yy2cwf4kvc0z.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171817/cruzar-deportes/products/national_retro/argentina_2014_adizero/ehowkuukqyjzfzrav3di.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171820/cruzar-deportes/products/national_retro/argentina_2014_adizero/iqwcuosynsrcxkv6ffpc.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171921/cruzar-deportes/products/national_retro/argentina_2014_adizero/e43ekoz8yy2cwf4kvc0z.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171937/cruzar-deportes/products/national_retro/argentina_2014_adizero/coppfxj8lh0biwbjzg4t.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171929/cruzar-deportes/products/national_retro/argentina_2014_adizero/lm6bjmhtugisy6vfdeep.jpg"
       ],
       "allAvailableImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171813/cruzar-deportes/products/national_retro/argentina_2014_adizero/yalwkcexri8hmmlspmks.jpg",
@@ -6036,7 +6035,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": true,
-      "lastModified": "2025-10-01T04:28:37.593Z",
+      "lastModified": "2025-10-01T04:41:09.029Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6095,8 +6094,8 @@
       "name": "Argentina 2014 Long Sleeve Player Version",
       "slug": "argentina-2014-long-sleeve-player-version",
       "description": "Argentina 2014 World Cup long sleeve player version jersey",
-      "price": 80000,
-      "originalPrice": 85000,
+      "price": 72000,
+      "originalPrice": 75000,
       "category": "national_retro",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758172125/cruzar-deportes/products/national_retro/argentina_2014_long_sleeve_player_version/sn5whaqrguji7rwnr2ns.jpg",
@@ -6141,8 +6140,8 @@
       ],
       "inStock": true,
       "stockStatus": "in_stock",
-      "featured": true,
-      "lastModified": "2025-10-01T04:30:51.417Z",
+      "featured": false,
+      "lastModified": "2025-10-01T04:41:19.789Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -13175,7 +13174,7 @@
   },
   "metadata": {
     "totalProducts": 237,
-    "totalImages": 1117,
-    "lastSync": "2025-10-01T04:30:51.417Z"
+    "totalImages": 1116,
+    "lastSync": "2025-10-01T04:41:19.789Z"
   }
 }
