@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-10-01T04:05:38.620Z",
+  "lastUpdated": "2025-10-01T04:30:51.417Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -5989,11 +5989,14 @@
       "name": "Argentina 2014 Adizero",
       "slug": "argentina-2014-adizero",
       "description": "Argentina 2014 World Cup Adizero player version jersey",
-      "price": 80000,
-      "originalPrice": 85000,
+      "price": 75000,
+      "originalPrice": 80000,
       "category": "national_retro",
       "selectedImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171813/cruzar-deportes/products/national_retro/argentina_2014_adizero/yalwkcexri8hmmlspmks.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171814/cruzar-deportes/products/national_retro/argentina_2014_adizero/cybz4odlwgnv0ujt4dkp.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171817/cruzar-deportes/products/national_retro/argentina_2014_adizero/ehowkuukqyjzfzrav3di.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171820/cruzar-deportes/products/national_retro/argentina_2014_adizero/iqwcuosynsrcxkv6ffpc.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758171921/cruzar-deportes/products/national_retro/argentina_2014_adizero/e43ekoz8yy2cwf4kvc0z.jpg"
       ],
       "allAvailableImages": [
@@ -6033,7 +6036,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": true,
-      "lastModified": "2025-10-01T04:05:38.620Z",
+      "lastModified": "2025-10-01T04:28:37.593Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -6093,14 +6096,11 @@
       "slug": "argentina-2014-long-sleeve-player-version",
       "description": "Argentina 2014 World Cup long sleeve player version jersey",
       "price": 80000,
-      "originalPrice": 120000,
+      "originalPrice": 85000,
       "category": "national_retro",
       "selectedImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758172028/cruzar-deportes/products/national_retro/argentina_2014_long_sleeve_player_version/hmw0hmgfz8enfceppei8.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758172029/cruzar-deportes/products/national_retro/argentina_2014_long_sleeve_player_version/tepxw2auiba7b0cnz59y.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758172031/cruzar-deportes/products/national_retro/argentina_2014_long_sleeve_player_version/ozyi79rhbxz8uwy4r03i.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758172033/cruzar-deportes/products/national_retro/argentina_2014_long_sleeve_player_version/zonjefk5xzbdmpbstrv6.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758172037/cruzar-deportes/products/national_retro/argentina_2014_long_sleeve_player_version/jafrwjwz9uwhnbhek4da.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758172125/cruzar-deportes/products/national_retro/argentina_2014_long_sleeve_player_version/sn5whaqrguji7rwnr2ns.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758172048/cruzar-deportes/products/national_retro/argentina_2014_long_sleeve_player_version/mbzurhxqggaqbqzdlkbr.jpg"
       ],
       "allAvailableImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758172028/cruzar-deportes/products/national_retro/argentina_2014_long_sleeve_player_version/hmw0hmgfz8enfceppei8.jpg",
@@ -6142,7 +6142,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": true,
-      "lastModified": "2025-09-30T21:02:58.515Z",
+      "lastModified": "2025-10-01T04:30:51.417Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -13176,6 +13176,6 @@
   "metadata": {
     "totalProducts": 237,
     "totalImages": 1117,
-    "lastSync": "2025-10-01T04:05:38.621Z"
+    "lastSync": "2025-10-01T04:30:51.417Z"
   }
 }

@@ -104,13 +104,27 @@ async function rebuildCatalog() {
       // Existing product - UPDATE image URLs with fresh ones from mapping
       // but preserve user-edited fields like price, featured status, etc.
       const existing = database.products[product.id]
+      const hasCuratedSelection = Array.isArray(existing.selectedImages) && existing.selectedImages.length > 0
+      const curatedSelection = hasCuratedSelection ? existing.selectedImages : product.selectedImages
+
+      const existingAll = Array.isArray(existing.allAvailableImages) ? existing.allAvailableImages : []
+      const generatedAll = Array.isArray(product.allAvailableImages) ? product.allAvailableImages : []
+      const isProcessed = existing.isProcessed === true
+
+      const baseAll = isProcessed && existingAll.length > 0
+        ? existingAll
+        : generatedAll
+
+      const mergedAll = Array.from(new Set([
+        ...curatedSelection,
+        ...baseAll
+      ]))
+
       database.products[product.id] = {
         ...existing,
-        // Update image URLs to use real Cloudinary URLs from mapping
-        selectedImages: product.selectedImages,
-        allAvailableImages: product.allAvailableImages,
-        cloudinaryFolderPath: product.cloudinaryFolderPath,
-        lastModified: new Date().toISOString()
+        selectedImages: curatedSelection,
+        allAvailableImages: mergedAll,
+        cloudinaryFolderPath: product.cloudinaryFolderPath || existing.cloudinaryFolderPath
       }
     }
   }
