@@ -15,7 +15,6 @@
     "firebase:build-deploy": "npm run firebase:build && npm run firebase:deploy"
   },
   "dependencies": {
-    "@iconify/vue": "^5.0.0",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@pinia/nuxt": "^0.11.2",
     "@tailwindcss/aspect-ratio": "^0.4.2",
