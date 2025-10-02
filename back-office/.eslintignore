@@ -1,0 +1,10 @@
+node_modules
+.nuxt
+dist
+.output
+.firebase
+types
+server
+utils
+composables/*.ts
+stores/*.ts

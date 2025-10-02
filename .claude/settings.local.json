@@ -19,7 +19,10 @@
       "Bash(gcloud config get-value:*)",
       "Bash(firebase use:*)",
       "Bash(test:*)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(chmod:*)",
+      "Bash(npm run check:no-ts:*)",
+      "Bash(find:*)"
     ],
     "deny": []
   }

@@ -12,25 +12,18 @@
   />
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { Icon } from '@iconify/vue'
 import { computed } from 'vue'
 
-interface Props {
-  name: string
-  size?: string | number
-  class?: string
-  style?: any
-}
-
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps(), {
   size: '24px',
   class: '',
   style: undefined
 })
 
 // Icon component aliases
-const iconAliases: Record<string, string> = {
+const iconAliases = {
   'user': 'mdi:account',
   'logout': 'mdi:logout',
   'dashboard': 'mdi:view-dashboard',
@@ -75,7 +68,7 @@ const iconSize = computed(() => {
 
 // Size class computation for Tailwind utilities
 const sizeClass = computed(() => {
-  const sizeMap: Record<string, string> = {
+  const sizeMap = {
     'xs': 'w-3 h-3',
     'sm': 'w-4 h-4',
     'md': 'w-5 h-5',
@@ -87,7 +80,7 @@ const sizeClass = computed(() => {
     '32': 'w-8 h-8'
   }
 
-  return sizeMap[props.size as string] || ''
+  return sizeMap[String(props.size)] || ''
 })
 </script>
 
