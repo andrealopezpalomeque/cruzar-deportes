@@ -69,13 +69,13 @@
 
     <!-- Loading State -->
     <div v-if="loading" class="flex justify-center items-center py-12">
-      <Icon name="eos-icons:loading" class="text-4xl text-blue-500 animate-spin" />
+      <IconLoading class="w-10 h-10 text-blue-500 animate-spin" />
     </div>
 
     <!-- Error State -->
     <div v-else-if="error" class="bg-red-50 border border-red-200 rounded-lg p-4">
       <div class="flex items-center gap-3">
-        <Icon name="mdi:alert-circle" class="text-red-500 text-xl" />
+        <IconAlertCircle class="w-6 h-6 text-red-500" />
         <p class="text-red-700">{{ error }}</p>
       </div>
     </div>
@@ -157,14 +157,14 @@
                   @click="removeSelectedImage(product.id, index)"
                   class="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
                 >
-                  <Icon name="mdi:close" class="text-xs" />
+                  <IconClose class="w-3 h-3" />
                 </button>
               </div>
             </div>
 
             <!-- No Images State -->
             <div v-else class="text-center py-8 bg-gray-50 rounded-lg">
-              <Icon name="mdi:image-off" class="text-4xl text-gray-400 mx-auto mb-2" />
+              <IconImageOff class="w-10 h-10 text-gray-400 mx-auto mb-2" />
               <p class="text-gray-500">No hay imágenes seleccionadas</p>
             </div>
 
@@ -173,7 +173,7 @@
               @click="openImageBrowser(product)"
               class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
             >
-              <Icon name="mdi:image-multiple" class="inline mr-2" />
+              <IconImageMultiple class="inline w-5 h-5 mr-2" />
               Seleccionar Imágenes
             </button>
 
@@ -183,7 +183,7 @@
               @click="processProduct(product)"
               class="w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium mt-2"
             >
-              <Icon name="mdi:check-circle" class="inline mr-2" />
+              <IconCheckCircle class="inline w-5 h-5 mr-2" />
               Marcar como Gestionado
             </button>
           </div>
@@ -282,7 +282,7 @@
                 @click="closeImageBrowser"
                 class="text-gray-400 hover:text-gray-600 transition-colors"
               >
-                <Icon name="mdi:close" class="text-xl" />
+                <IconClose class="w-6 h-6" />
               </button>
             </div>
 
@@ -324,7 +324,7 @@
                     @click.stop="removeFromSelection(image)"
                     class="absolute top-1 right-1 bg-white/90 text-gray-700 hover:text-red-600 hover:bg-white rounded-full p-1 shadow transition-colors"
                   >
-                    <Icon name="mdi:close" class="text-xs" />
+                    <IconClose class="w-3 h-3" />
                   </button>
                 </div>
               </div>
@@ -333,7 +333,7 @@
             <!-- Available Images -->
             <div class="p-6 overflow-y-auto max-h-[60vh]">
               <div v-if="loadingImages" class="flex justify-center py-8">
-                <Icon name="eos-icons:loading" class="text-2xl text-blue-500 animate-spin" />
+                <IconLoading class="w-8 h-8 text-blue-500 animate-spin" />
               </div>
 
               <div v-else-if="availableImages.length > 0" class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3">
@@ -357,13 +357,13 @@
                     v-if="isImageSelected(image)"
                     class="absolute top-1 right-1 bg-blue-500 text-white rounded-full p-1"
                   >
-                    <Icon name="mdi:check" class="text-xs" />
+                    <IconCheck class="w-3 h-3" />
                   </div>
                 </div>
               </div>
 
               <div v-else class="text-center py-8">
-                <Icon name="mdi:image-off" class="text-4xl text-gray-400 mx-auto mb-2" />
+                <IconImageOff class="w-10 h-10 text-gray-400 mx-auto mb-2" />
                 <p class="text-gray-500">No se encontraron imágenes disponibles</p>
               </div>
             </div>
@@ -397,6 +397,14 @@
 </template>
 
 <script setup>
+import IconLoading from '~icons/eos-icons/loading'
+import IconAlertCircle from '~icons/mdi/alert-circle'
+import IconClose from '~icons/mdi/close'
+import IconImageOff from '~icons/mdi/image-off'
+import IconImageMultiple from '~icons/mdi/image-multiple'
+import IconCheckCircle from '~icons/mdi/check-circle'
+import IconCheck from '~icons/mdi/check'
+
 // Page meta
 definePageMeta({
   middleware: 'auth'

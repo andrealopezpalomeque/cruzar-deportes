@@ -6,7 +6,7 @@
         <div class="flex items-center">
           <div class="flex-shrink-0">
             <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
-              <Icon name="dashboard" size="24" class="text-white" />
+              <IconViewDashboard class="w-6 h-6 text-white" />
             </div>
           </div>
           <div class="ml-4">
@@ -28,7 +28,7 @@
           <div class="flex items-center">
             <div class="flex-shrink-0">
               <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                <Icon name="products" size="20" class="text-green-600" />
+                <IconTshirtCrew class="w-5 h-5 text-green-600" />
               </div>
             </div>
             <div class="ml-4">
@@ -48,7 +48,7 @@
           <div class="flex items-center">
             <div class="flex-shrink-0">
               <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                <Icon name="mdi:star" size="20" class="text-blue-600" />
+                <IconStar class="w-5 h-5 text-blue-600" />
               </div>
             </div>
             <div class="ml-4">
@@ -69,7 +69,7 @@
           <div class="flex items-center">
             <div class="flex-shrink-0">
               <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">
-                <Icon name="mdi:package-variant-closed" size="20" class="text-yellow-600" />
+                <IconPackageVariantClosed class="w-5 h-5 text-yellow-600" />
               </div>
             </div>
             <div class="ml-4">
@@ -101,7 +101,7 @@
             <div class="flex items-center">
               <div class="flex-shrink-0">
                 <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                  <Icon name="products" size="20" class="text-blue-600" />
+                  <IconTshirtCrew class="w-5 h-5 text-blue-600" />
                 </div>
               </div>
               <div class="ml-4">
@@ -123,7 +123,7 @@
             <div class="flex items-center">
               <div class="flex-shrink-0">
                 <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-200 transition-colors">
-                  <Icon name="mdi:format-list-bulleted" size="20" class="text-green-600" />
+                  <IconFormatListBulleted class="w-5 h-5 text-green-600" />
                 </div>
               </div>
               <div class="ml-4">
@@ -154,7 +154,7 @@
       </div>
       <div class="card-body">
         <div v-if="recentActivity.length === 0" class="text-center py-8">
-          <Icon name="mdi:clock-outline" size="48" class="text-gray-300 mx-auto mb-4" />
+          <IconClockOutline class="w-12 h-12 text-gray-300 mx-auto mb-4" />
           <p class="text-gray-500">
             No hay actividad reciente
           </p>
@@ -169,7 +169,10 @@
               <div class="w-8 h-8 rounded-full flex items-center justify-center"
                    :class="getActivityIconClass(activity.type)"
               >
-                <Icon :name="getActivityIcon(activity.type)" size="16" class="text-white" />
+                <component
+                  :is="getActivityIcon(activity.type)"
+                  class="w-4 h-4 text-white"
+                />
               </div>
             </div>
             <div class="flex-1 min-w-0">
@@ -188,6 +191,17 @@
 </template>
 
 <script setup>
+import IconViewDashboard from '~icons/mdi/view-dashboard'
+import IconTshirtCrew from '~icons/mdi/tshirt-crew'
+import IconStar from '~icons/mdi/star'
+import IconPackageVariantClosed from '~icons/mdi/package-variant-closed'
+import IconFormatListBulleted from '~icons/mdi/format-list-bulleted'
+import IconClockOutline from '~icons/mdi/clock-outline'
+import IconPlus from '~icons/mdi/plus'
+import IconPencil from '~icons/mdi/pencil'
+import IconDelete from '~icons/mdi/delete'
+import IconInformation from '~icons/mdi/information'
+
 // Define page meta
 definePageMeta({
   middleware: 'auth'
@@ -244,13 +258,14 @@ const loadDashboardData = async () => {
   }
 }
 
+const activityIconMap = {
+  create: IconPlus,
+  update: IconPencil,
+  delete: IconDelete
+}
+
 const getActivityIcon = (type) => {
-  const iconMap = {
-    create: 'mdi:plus',
-    update: 'edit',
-    delete: 'delete'
-  }
-  return iconMap[type] || 'mdi:information'
+  return activityIconMap[type] || IconInformation
 }
 
 const getActivityIconClass = (type) => {

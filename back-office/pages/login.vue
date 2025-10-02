@@ -58,7 +58,7 @@
               :disabled="authStore.loading || !canSubmit"
             >
               <div v-if="authStore.loading" class="spinner mr-2"></div>
-              <Icon v-else name="mdi:login" class="mr-2" />
+              <IconLogin v-else class="mr-2 w-5 h-5" />
               {{ authStore.loading ? 'Iniciando sesión...' : 'Iniciar Sesión' }}
             </button>
           </form>
@@ -81,6 +81,8 @@
 </template>
 
 <script setup>
+import IconLogin from '~icons/mdi/login'
+
 // Define page meta
 definePageMeta({
   layout: false,
