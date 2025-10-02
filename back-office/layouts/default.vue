@@ -182,7 +182,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 
 // Composables
 const authStore = useAuthStore()
@@ -196,7 +196,7 @@ const globalLoading = ref(false)
 
 // Computed
 const pageTitle = computed(() => {
-  const titleMap: Record<string, string> = {
+  const titleMap = {
     '/': 'Dashboard',
     '/products': 'Gestión de Productos',
     '/bulk-operations': 'Operaciones en Lote',
@@ -214,7 +214,7 @@ const pageTitle = computed(() => {
 })
 
 const pageDescription = computed(() => {
-  const descriptionMap: Record<string, string> = {
+  const descriptionMap = {
     '/': 'Resumen general de tu tienda de camisetas deportivas',
     '/products': 'Administra imágenes, precios y estado de productos',
     '/bulk-operations': 'Realiza cambios masivos en múltiples productos',
@@ -284,7 +284,7 @@ onMounted(() => {
 // Provide global loading state
 provide('globalLoading', {
   loading: readonly(globalLoading),
-  setLoading: (state: boolean) => {
+  setLoading: (state) => {
     globalLoading.value = state
   }
 })

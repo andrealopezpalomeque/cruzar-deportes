@@ -396,9 +396,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import type { SharedProduct } from '~/shared/types'
-
+<script setup>
 // Page meta
 definePageMeta({
   middleware: 'auth'
@@ -416,7 +414,7 @@ const {
 const toast = useToast()
 
 // Helper to optimize URLs using cloudinaryImageLoader
-const optimizeUrl = (url: string, size: number = 300) => {
+const optimizeUrl = (url, size = 300) => {
   if (!url.includes('cloudinary.com')) {
     return url
   }
@@ -426,29 +424,29 @@ const optimizeUrl = (url: string, size: number = 300) => {
 
 // Reactive state
 const loading = ref(false)
-const error = ref<string | null>(null)
-const products = ref<SharedProduct[]>([])
+const error = ref(null)
+const products = ref([])
 const selectedCategory = ref('')
 const selectedProcessedFilter = ref('')
 const searchTerm = ref('')
-const selectedProducts = ref<string[]>([])
+const selectedProducts = ref([])
 
 // Image browser state
 const showImageBrowser = ref(false)
-const selectedProduct = ref<SharedProduct | null>(null)
-const availableImages = ref<string[]>([])
-const tempSelectedImages = ref<string[]>([])
+const selectedProduct = ref(null)
+const availableImages = ref([])
+const tempSelectedImages = ref([])
 const loadingImages = ref(false)
-const draggingSelectedIndex = ref<number | null>(null)
+const draggingSelectedIndex = ref(null)
 
-const allowSelectedDrop = (event: DragEvent) => {
+const allowSelectedDrop = (event) => {
   event.preventDefault()
   if (event.dataTransfer) {
     event.dataTransfer.dropEffect = 'move'
   }
 }
 
-const moveSelectedImage = (from: number, to: number) => {
+const moveSelectedImage = (from, to) => {
   if (from === to) return
 
   const updated = [...tempSelectedImages.value]
@@ -464,7 +462,7 @@ const moveSelectedImage = (from: number, to: number) => {
   tempSelectedImages.value = updated
 }
 
-const handleSelectedDragStart = (index: number, event: DragEvent) => {
+const handleSelectedDragStart = (index, event) => {
   draggingSelectedIndex.value = index
   if (event.dataTransfer) {
     event.dataTransfer.effectAllowed = 'move'
@@ -472,7 +470,7 @@ const handleSelectedDragStart = (index: number, event: DragEvent) => {
   }
 }
 
-const handleSelectedItemDrop = (index: number, event: DragEvent) => {
+const handleSelectedItemDrop = (index, event) => {
   event.preventDefault()
   if (draggingSelectedIndex.value === null) return
 
@@ -483,7 +481,7 @@ const handleSelectedItemDrop = (index: number, event: DragEvent) => {
   draggingSelectedIndex.value = null
 }
 
-const handleSelectedListDrop = (event: DragEvent) => {
+const handleSelectedListDrop = (event) => {
   event.preventDefault()
   if (draggingSelectedIndex.value === null) return
 
@@ -496,7 +494,7 @@ const handleSelectedDragEnd = () => {
   draggingSelectedIndex.value = null
 }
 
-const removeFromSelection = (imageUrl: string) => {
+const removeFromSelection = (imageUrl) => {
   tempSelectedImages.value = tempSelectedImages.value.filter(image => image !== imageUrl)
 }
 
@@ -533,7 +531,7 @@ const loadAllProducts = async () => {
     loading.value = true
     error.value = null
     products.value = await loadProducts()
-  } catch (err: any) {
+  } catch (err) {
     error.value = err.message
     toast.error('Error al cargar productos')
   } finally {
@@ -541,8 +539,8 @@ const loadAllProducts = async () => {
   }
 }
 
-const getCategoryName = (category: string): string => {
-  const categoryNames: Record<string, string> = {
+const getCategoryName = (category) => {
+  const categoryNames = {
     afc: 'AFC',
     caf: 'CAF',
     eredivisie: 'Eredivisie',
@@ -554,7 +552,7 @@ const getCategoryName = (category: string): string => {
   return categoryNames[category] || category
 }
 
-const formatDate = (dateString: string): string => {
+const formatDate = (dateString) => {
   return new Date(dateString).toLocaleDateString('es-AR', {
     year: 'numeric',
     month: 'short',
@@ -564,7 +562,7 @@ const formatDate = (dateString: string): string => {
   })
 }
 
-const removeSelectedImage = async (productId: string, imageIndex: number) => {
+const removeSelectedImage = async (productId, imageIndex) => {
   try {
     const product = products.value.find(p => p.id === productId)
     if (!product) return
@@ -578,12 +576,12 @@ const removeSelectedImage = async (productId: string, imageIndex: number) => {
     product.selectedImages = updatedImages
 
     toast.success('Imagen eliminada')
-  } catch (err: any) {
+  } catch (err) {
     toast.error('Error al eliminar imagen')
   }
 }
 
-const openImageBrowser = async (product: SharedProduct) => {
+const openImageBrowser = async (product) => {
   selectedProduct.value = product
   tempSelectedImages.value = [...product.selectedImages]
   showImageBrowser.value = true
@@ -620,11 +618,11 @@ const closeImageBrowser = () => {
   draggingSelectedIndex.value = null
 }
 
-const isImageSelected = (imageUrl: string): boolean => {
+const isImageSelected = (imageUrl) => {
   return tempSelectedImages.value.includes(imageUrl)
 }
 
-const toggleImageSelection = (imageUrl: string) => {
+const toggleImageSelection = (imageUrl) => {
   const index = tempSelectedImages.value.indexOf(imageUrl)
   if (index > -1) {
     tempSelectedImages.value.splice(index, 1)
@@ -649,21 +647,21 @@ const saveImageSelection = async () => {
 
     toast.success('Imágenes actualizadas correctamente')
     closeImageBrowser()
-  } catch (err: any) {
+  } catch (err) {
     toast.error('Error al guardar selección de imágenes')
   }
 }
 
-const updateProductPricing = async (product: SharedProduct) => {
+const updateProductPricing = async (product) => {
   try {
     await updateProductPricingAPI(product.id, product.price, product.originalPrice)
     toast.success('Precio actualizado')
-  } catch (err: any) {
+  } catch (err) {
     toast.error('Error al actualizar precio')
   }
 }
 
-const toggleProductStatus = async (product: SharedProduct, field: 'featured' | 'inStock') => {
+const toggleProductStatus = async (product, field) => {
   try {
     const updates = {
       [field]: !product[field]
@@ -676,12 +674,12 @@ const toggleProductStatus = async (product: SharedProduct, field: 'featured' | '
 
     const statusName = field === 'featured' ? 'destacado' : 'stock'
     toast.success(`Estado ${statusName} actualizado`)
-  } catch (err: any) {
+  } catch (err) {
     toast.error(`Error al actualizar estado ${field}`)
   }
 }
 
-const processProduct = async (product: SharedProduct) => {
+const processProduct = async (product) => {
   try {
     // Create a managed version by saving the product
     await saveProduct(product)
@@ -691,12 +689,12 @@ const processProduct = async (product: SharedProduct) => {
     product.lastModified = new Date().toISOString()
 
     toast.success(`Producto "${product.name}" marcado como gestionado`)
-  } catch (err: any) {
+  } catch (err) {
     toast.error('Error al procesar producto')
   }
 }
 
-const toggleProductSelection = (productId: string) => {
+const toggleProductSelection = (productId) => {
   const index = selectedProducts.value.indexOf(productId)
   if (index > -1) {
     selectedProducts.value.splice(index, 1)
@@ -725,7 +723,7 @@ const bulkProcessProducts = async () => {
 
     clearSelection()
     toast.success(`${productsToProcess.length} productos marcados como gestionados`)
-  } catch (err: any) {
+  } catch (err) {
     toast.error('Error al procesar productos en lote')
   } finally {
     loading.value = false

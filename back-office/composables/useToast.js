@@ -1,17 +1,11 @@
-import type { ToastNotification } from '~/types'
-
-interface ToastState {
-  toasts: (ToastNotification & { id: string; show: boolean })[]
-}
-
-const toastState = reactive<ToastState>({
+const toastState = reactive({
   toasts: []
 })
 
 export const useToast = () => {
   let toastId = 0
 
-  const showToast = (toast: ToastNotification) => {
+  const showToast = (toast) => {
     const id = `toast-${toastId++}`
     const toastItem = {
       ...toast,
@@ -28,7 +22,7 @@ export const useToast = () => {
     }, toastItem.duration)
   }
 
-  const removeToast = (id: string) => {
+  const removeToast = (id) => {
     const index = toastState.toasts.findIndex(t => t.id === id)
     if (index > -1) {
       const toast = toastState.toasts[index]
@@ -45,19 +39,19 @@ export const useToast = () => {
     }
   }
 
-  const success = (title: string, message?: string) => {
+  const success = (title, message) => {
     showToast({ type: 'success', title, message })
   }
 
-  const error = (title: string, message?: string) => {
+  const error = (title, message) => {
     showToast({ type: 'error', title, message })
   }
 
-  const warning = (title: string, message?: string) => {
+  const warning = (title, message) => {
     showToast({ type: 'warning', title, message })
   }
 
-  const info = (title: string, message?: string) => {
+  const info = (title, message) => {
     showToast({ type: 'info', title, message })
   }
 
@@ -73,19 +67,19 @@ export const useToast = () => {
 
 // Global toast helpers
 export const toast = {
-  success: (title: string, options?: { message?: string; duration?: number }) => {
+  success: (title, options) => {
     const { success } = useToast()
     success(title, options?.message)
   },
-  error: (title: string, options?: { message?: string; duration?: number }) => {
+  error: (title, options) => {
     const { error } = useToast()
     error(title, options?.message)
   },
-  warning: (title: string, options?: { message?: string; duration?: number }) => {
+  warning: (title, options) => {
     const { warning } = useToast()
     warning(title, options?.message)
   },
-  info: (title: string, options?: { message?: string; duration?: number }) => {
+  info: (title, options) => {
     const { info } = useToast()
     info(title, options?.message)
   }

@@ -1,28 +1,14 @@
-import type { SharedProduct, ProductDatabase, CategoryType } from '../shared/types'
-
-interface ProductFilters {
-  category?: CategoryType
-  search?: string
-  featured?: boolean
-  inStock?: boolean
-  isProcessed?: boolean
-}
-
 export const useSharedProducts = () => {
   const loading = ref(false)
-  const error = ref<string | null>(null)
+  const error = ref(null)
 
   // Load products from shared database
-  const loadProducts = async (filters?: ProductFilters): Promise<SharedProduct[]> => {
+  const loadProducts = async (filters) => {
     try {
       loading.value = true
       error.value = null
 
-      const response = await $fetch<{
-        success: boolean
-        data?: SharedProduct[]
-        error?: string
-      }>('/api/products', {
+      const response = await $fetch('/api/products', {
         query: filters
       })
 
@@ -56,7 +42,7 @@ export const useSharedProducts = () => {
       } else {
         throw new Error(response.error || 'Failed to load products')
       }
-    } catch (err: any) {
+    } catch (err) {
       error.value = err.message || 'Failed to load products'
       throw err
     } finally {
@@ -65,22 +51,18 @@ export const useSharedProducts = () => {
   }
 
   // Load single product
-  const loadProduct = async (productId: string): Promise<SharedProduct | null> => {
+  const loadProduct = async (productId) => {
     try {
       loading.value = true
       error.value = null
 
-      const response = await $fetch<{
-        success: boolean
-        data?: SharedProduct
-        error?: string
-      }>(`/api/products/${productId}`)
+      const response = await $fetch(`/api/products/${productId}`)
 
       if (response.success && response.data) {
         return response.data
       }
       return null
-    } catch (err: any) {
+    } catch (err) {
       error.value = err.message || 'Failed to load product'
       throw err
     } finally {
@@ -89,15 +71,12 @@ export const useSharedProducts = () => {
   }
 
   // Save product
-  const saveProduct = async (product: SharedProduct): Promise<void> => {
+  const saveProduct = async (product) => {
     try {
       loading.value = true
       error.value = null
 
-      const response = await $fetch<{
-        success: boolean
-        error?: string
-      }>('/api/products', {
+      const response = await $fetch('/api/products', {
         method: 'POST',
         body: product
       })
@@ -105,7 +84,7 @@ export const useSharedProducts = () => {
       if (!response.success) {
         throw new Error(response.error || 'Failed to save product')
       }
-    } catch (err: any) {
+    } catch (err) {
       error.value = err.message || 'Failed to save product'
       throw err
     } finally {
@@ -115,18 +94,15 @@ export const useSharedProducts = () => {
 
   // Update product images
   const updateProductImages = async (
-    productId: string,
-    selectedImages: string[],
-    allAvailableImages?: string[]
-  ): Promise<void> => {
+    productId,
+    selectedImages,
+    allAvailableImages
+  ) => {
     try {
       loading.value = true
       error.value = null
 
-      const response = await $fetch<{
-        success: boolean
-        error?: string
-      }>(`/api/products/${productId}/images`, {
+      const response = await $fetch(`/api/products/${productId}/images`, {
         method: 'PATCH',
         body: {
           selectedImages,
@@ -137,7 +113,7 @@ export const useSharedProducts = () => {
       if (!response.success) {
         throw new Error(response.error || 'Failed to update images')
       }
-    } catch (err: any) {
+    } catch (err) {
       error.value = err.message || 'Failed to update images'
       throw err
     } finally {
@@ -147,18 +123,15 @@ export const useSharedProducts = () => {
 
   // Update product pricing
   const updateProductPricing = async (
-    productId: string,
-    price: number,
-    originalPrice?: number
-  ): Promise<void> => {
+    productId,
+    price,
+    originalPrice
+  ) => {
     try {
       loading.value = true
       error.value = null
 
-      const response = await $fetch<{
-        success: boolean
-        error?: string
-      }>(`/api/products/${productId}/pricing`, {
+      const response = await $fetch(`/api/products/${productId}/pricing`, {
         method: 'PATCH',
         body: {
           price,
@@ -169,7 +142,7 @@ export const useSharedProducts = () => {
       if (!response.success) {
         throw new Error(response.error || 'Failed to update pricing')
       }
-    } catch (err: any) {
+    } catch (err) {
       error.value = err.message || 'Failed to update pricing'
       throw err
     } finally {
@@ -179,21 +152,14 @@ export const useSharedProducts = () => {
 
   // Update product status
   const updateProductStatus = async (
-    productId: string,
-    updates: {
-      featured?: boolean
-      inStock?: boolean
-      stockStatus?: 'in_stock' | 'available_on_order'
-    }
-  ): Promise<void> => {
+    productId,
+    updates
+  ) => {
     try {
       loading.value = true
       error.value = null
 
-      const response = await $fetch<{
-        success: boolean
-        error?: string
-      }>(`/api/products/${productId}/status`, {
+      const response = await $fetch(`/api/products/${productId}/status`, {
         method: 'PATCH',
         body: updates
       })
@@ -201,7 +167,7 @@ export const useSharedProducts = () => {
       if (!response.success) {
         throw new Error(response.error || 'Failed to update status')
       }
-    } catch (err: any) {
+    } catch (err) {
       error.value = err.message || 'Failed to update status'
       throw err
     } finally {
@@ -211,17 +177,14 @@ export const useSharedProducts = () => {
 
   // Bulk operations
   const bulkUpdateProducts = async (
-    productIds: string[],
-    updates: Partial<SharedProduct>
-  ): Promise<void> => {
+    productIds,
+    updates
+  ) => {
     try {
       loading.value = true
       error.value = null
 
-      const response = await $fetch<{
-        success: boolean
-        error?: string
-      }>('/api/products/bulk', {
+      const response = await $fetch('/api/products/bulk', {
         method: 'PATCH',
         body: {
           productIds,
@@ -232,7 +195,7 @@ export const useSharedProducts = () => {
       if (!response.success) {
         throw new Error(response.error || 'Failed to bulk update products')
       }
-    } catch (err: any) {
+    } catch (err) {
       error.value = err.message || 'Failed to bulk update products'
       throw err
     } finally {
@@ -241,22 +204,19 @@ export const useSharedProducts = () => {
   }
 
   // Delete product
-  const deleteProduct = async (productId: string): Promise<void> => {
+  const deleteProduct = async (productId) => {
     try {
       loading.value = true
       error.value = null
 
-      const response = await $fetch<{
-        success: boolean
-        error?: string
-      }>(`/api/products/${productId}`, {
+      const response = await $fetch(`/api/products/${productId}`, {
         method: 'DELETE'
       })
 
       if (!response.success) {
         throw new Error(response.error || 'Failed to delete product')
       }
-    } catch (err: any) {
+    } catch (err) {
       error.value = err.message || 'Failed to delete product'
       throw err
     } finally {
@@ -267,16 +227,7 @@ export const useSharedProducts = () => {
   // Get database stats
   const getDatabaseStats = async () => {
     try {
-      const response = await $fetch<{
-        success: boolean
-        data?: {
-          totalProducts: number
-          totalImages: number
-          categoryCounts: Record<CategoryType, number>
-          lastUpdated: string
-        }
-        error?: string
-      }>('/api/products/stats')
+      const response = await $fetch('/api/products/stats')
 
       if (response.success && response.data) {
         return response.data

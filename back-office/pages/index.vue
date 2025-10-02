@@ -187,9 +187,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import type { DashboardStats } from '~/types'
-
+<script setup>
 // Define page meta
 definePageMeta({
   middleware: 'auth'
@@ -199,7 +197,7 @@ definePageMeta({
 const authStore = useAuthStore()
 
 // State
-const stats = ref<DashboardStats>({
+const stats = ref({
   totalProducts: 0,
   totalCategories: 6, // Based on your categories
   featuredProducts: 0,
@@ -208,12 +206,7 @@ const stats = ref<DashboardStats>({
   recentlyModified: 0
 })
 
-const recentActivity = ref<Array<{
-  id: string
-  type: 'create' | 'update' | 'delete'
-  description: string
-  timestamp: string
-}>>([])
+const recentActivity = ref([])
 
 const loading = ref(true)
 
@@ -251,8 +244,8 @@ const loadDashboardData = async () => {
   }
 }
 
-const getActivityIcon = (type: string): string => {
-  const iconMap: Record<string, string> = {
+const getActivityIcon = (type) => {
+  const iconMap = {
     create: 'mdi:plus',
     update: 'edit',
     delete: 'delete'
@@ -260,8 +253,8 @@ const getActivityIcon = (type: string): string => {
   return iconMap[type] || 'mdi:information'
 }
 
-const getActivityIconClass = (type: string): string => {
-  const classMap: Record<string, string> = {
+const getActivityIconClass = (type) => {
+  const classMap = {
     create: 'bg-green-500',
     update: 'bg-blue-500',
     delete: 'bg-red-500'
@@ -269,7 +262,7 @@ const getActivityIconClass = (type: string): string => {
   return classMap[type] || 'bg-gray-500'
 }
 
-const formatDate = (dateString: string): string => {
+const formatDate = (dateString) => {
   try {
     const date = new Date(dateString)
     const now = new Date()

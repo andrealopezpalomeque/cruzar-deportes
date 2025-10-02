@@ -1,51 +1,30 @@
-import type { CloudinaryAsset, Album, CategoryType } from '~/types'
-
-interface CloudinaryResponse {
-  resources: CloudinaryAsset[]
-  next_cursor?: string
-  total_count: number
-}
-
-interface CloudinaryFolder {
-  name: string
-  path: string
-}
-
 export const useCloudinary = () => {
   const config = useRuntimeConfig()
 
   // Simple in-memory cache with TTL
-  const cache = new Map<string, { data: any, timestamp: number }>()
+  const cache = new Map()
   const CACHE_TTL = 5 * 60 * 1000 // 5 minutes
 
   // Get all folders (albums) from Cloudinary
-  const getFolders = async (): Promise<CloudinaryFolder[]> => {
+  const getFolders = async () => {
     try {
-      const response = await $fetch<{
-        success: boolean
-        data?: CloudinaryFolder[]
-        error?: string
-      }>('/api/cloudinary/folders')
+      const response = await $fetch('/api/cloudinary/folders')
 
       if (response.success && response.data) {
         return response.data
       } else {
         throw new Error(response.error || 'Failed to fetch folders')
       }
-    } catch (error: any) {
+    } catch (error) {
       console.error('Error fetching Cloudinary folders:', error)
       throw error
     }
   }
 
   // Get all images in a specific folder
-  const getFolderImages = async (folderPath: string): Promise<CloudinaryAsset[]> => {
+  const getFolderImages = async (folderPath) => {
     try {
-      const response = await $fetch<{
-        success: boolean
-        data?: CloudinaryAsset[]
-        error?: string
-      }>('/api/cloudinary/images', {
+      const response = await $fetch('/api/cloudinary/images', {
         query: { folder: folderPath }
       })
 
@@ -54,14 +33,14 @@ export const useCloudinary = () => {
       } else {
         throw new Error(response.error || 'Failed to fetch folder images')
       }
-    } catch (error: any) {
+    } catch (error) {
       console.error('Error fetching folder images:', error)
       throw error
     }
   }
 
   // Helper function to get cached data or fetch fresh
-  const getCachedOrFetch = async <T>(key: string, fetchFn: () => Promise<T>): Promise<T> => {
+  const getCachedOrFetch = async (key, fetchFn) => {
     const cached = cache.get(key)
     const now = Date.now()
 
@@ -80,22 +59,18 @@ export const useCloudinary = () => {
   }
 
   // Get albums organized by category (optimized - no image loading)
-  const getAlbumsByCategory = async (useCache: boolean = true): Promise<Record<CategoryType, Album[]>> => {
+  const getAlbumsByCategory = async (useCache = true) => {
     try {
       if (!useCache) {
         clearCache()
       }
 
       return await getCachedOrFetch('albums-summary', async () => {
-        const response = await $fetch<{
-          success: boolean
-          data?: Record<CategoryType, any[]>
-          error?: string
-        }>('/api/cloudinary/albums-summary')
+        const response = await $fetch('/api/cloudinary/albums-summary')
 
         if (response.success && response.data) {
           // Convert summary data to Album format (without images initially)
-          const albumsByCategory: Record<CategoryType, Album[]> = {
+          const albumsByCategory = {
             afc: [],
             caf: [],
             eredivisie: [],
@@ -106,7 +81,7 @@ export const useCloudinary = () => {
           }
 
           for (const [category, summaries] of Object.entries(response.data)) {
-            albumsByCategory[category as CategoryType] = summaries.map(summary => ({
+            albumsByCategory[category] = summaries.map(summary => ({
               name: summary.name,
               path: summary.path,
               category: summary.category,
@@ -123,18 +98,18 @@ export const useCloudinary = () => {
           throw new Error(response.error || 'Failed to fetch album summaries')
         }
       })
-    } catch (error: any) {
+    } catch (error) {
       console.error('Error getting albums by category:', error)
       throw error
     }
   }
 
   // Get albums organized by category (legacy - with full image loading)
-  const getAlbumsByCategoryWithImages = async (): Promise<Record<CategoryType, Album[]>> => {
+  const getAlbumsByCategoryWithImages = async () => {
     try {
       const folders = await getFolders()
 
-      const albumsByCategory: Record<CategoryType, Album[]> = {
+      const albumsByCategory = {
         afc: [],
         caf: [],
         eredivisie: [],
@@ -153,16 +128,16 @@ export const useCloudinary = () => {
       // Group folders by category
       for (const folder of categoryFolders) {
         const pathParts = folder.path.split('/')
-        let category: CategoryType
-        let teamName: string
+        let category
+        let teamName
 
         if (pathParts.length === 4 && pathParts[1] === 'products') {
           // New structure: cruzar-deportes/products/category/team
-          category = pathParts[2] as CategoryType
+          category = pathParts[2]
           teamName = pathParts[3]
         } else if (pathParts.length === 3) {
           // Legacy structure: cruzar-deportes/category/team
-          category = pathParts[1] as CategoryType
+          category = pathParts[1]
           teamName = pathParts[2]
         } else {
           continue // Skip invalid paths
@@ -172,7 +147,7 @@ export const useCloudinary = () => {
           // Get images for this folder
           const images = await getFolderImages(folder.path)
 
-          const album: Album = {
+          const album = {
             name: teamName,
             path: folder.path,
             category,
@@ -189,29 +164,29 @@ export const useCloudinary = () => {
       }
 
       return albumsByCategory
-    } catch (error: any) {
+    } catch (error) {
       console.error('Error getting albums by category:', error)
       throw error
     }
   }
 
   // Get a single album by path (with caching)
-  const getAlbum = async (folderPath: string, useCache: boolean = true): Promise<Album> => {
+  const getAlbum = async (folderPath, useCache = true) => {
     try {
       return await getCachedOrFetch(`album-${folderPath}`, async () => {
         const images = await getFolderImages(folderPath)
         const pathParts = folderPath.split('/')
 
-        let category: CategoryType
-        let teamName: string
+        let category
+        let teamName
 
         if (pathParts.length === 4 && pathParts[1] === 'products') {
           // New structure: cruzar-deportes/products/category/team
-          category = pathParts[2] as CategoryType
+          category = pathParts[2]
           teamName = pathParts[3]
         } else if (pathParts.length === 3) {
           // Legacy structure: cruzar-deportes/category/team
-          category = pathParts[1] as CategoryType
+          category = pathParts[1]
           teamName = pathParts[2]
         } else {
           throw new Error('Invalid folder path structure')
@@ -234,24 +209,20 @@ export const useCloudinary = () => {
           coverImage: images.length > 0 ? images[0].secure_url : undefined
         }
       })
-    } catch (error: any) {
+    } catch (error) {
       console.error('Error getting album:', error)
       throw error
     }
   }
 
   // Upload image to Cloudinary
-  const uploadImage = async (file: File, folder: string = 'general'): Promise<string> => {
+  const uploadImage = async (file, folder = 'general') => {
     try {
       const formData = new FormData()
       formData.append('file', file)
       formData.append('folder', folder)
 
-      const response = await $fetch<{
-        success: boolean
-        data?: { secure_url: string }
-        error?: string
-      }>('/api/cloudinary/upload', {
+      const response = await $fetch('/api/cloudinary/upload', {
         method: 'POST',
         body: formData
       })
@@ -261,41 +232,29 @@ export const useCloudinary = () => {
       } else {
         throw new Error(response.error || 'Upload failed')
       }
-    } catch (error: any) {
+    } catch (error) {
       console.error('Error uploading image:', error)
       throw error
     }
   }
 
   // Delete image from Cloudinary
-  const deleteImage = async (publicId: string): Promise<boolean> => {
+  const deleteImage = async (publicId) => {
     try {
-      const response = await $fetch<{
-        success: boolean
-        error?: string
-      }>('/api/cloudinary/delete', {
+      const response = await $fetch('/api/cloudinary/delete', {
         method: 'POST',
         body: { publicId }
       })
 
       return response.success
-    } catch (error: any) {
+    } catch (error) {
       console.error('Error deleting image:', error)
       return false
     }
   }
 
   // Get optimized image URL
-  const getOptimizedUrl = (
-    url: string,
-    options: {
-      width?: number
-      height?: number
-      quality?: 'auto' | number
-      format?: 'auto' | 'webp' | 'avif' | 'jpg' | 'png'
-      crop?: 'fill' | 'fit' | 'crop' | 'scale'
-    } = {}
-  ): string => {
+  const getOptimizedUrl = (url, options = {}) => {
     if (!url.includes('cloudinary.com')) {
       return url
     }
@@ -335,7 +294,7 @@ export const useCloudinary = () => {
   }
 
   // Get thumbnail URL
-  const getThumbnailUrl = (url: string, size: number = 300): string => {
+  const getThumbnailUrl = (url, size = 300) => {
     return getOptimizedUrl(url, {
       width: size,
       height: size,
@@ -346,12 +305,9 @@ export const useCloudinary = () => {
   }
 
   // Save image selection for an album
-  const saveImageSelection = async (albumPath: string, selectedImages: string[]): Promise<boolean> => {
+  const saveImageSelection = async (albumPath, selectedImages) => {
     try {
-      const response = await $fetch<{
-        success: boolean
-        error?: string
-      }>('/api/images/selection', {
+      const response = await $fetch('/api/images/selection', {
         method: 'POST',
         body: {
           albumPath,
@@ -360,25 +316,21 @@ export const useCloudinary = () => {
       })
 
       return response.success
-    } catch (error: any) {
+    } catch (error) {
       console.error('Error saving image selection:', error)
       return false
     }
   }
 
   // Load image selection for an album
-  const loadImageSelection = async (albumPath: string): Promise<string[]> => {
+  const loadImageSelection = async (albumPath) => {
     try {
-      const response = await $fetch<{
-        success: boolean
-        data?: string[]
-        error?: string
-      }>('/api/images/selection', {
+      const response = await $fetch('/api/images/selection', {
         query: { albumPath }
       })
 
       return response.success && response.data ? response.data : []
-    } catch (error: any) {
+    } catch (error) {
       console.error('Error loading image selection:', error)
       return []
     }
@@ -386,17 +338,13 @@ export const useCloudinary = () => {
 
   // Split album into multiple products
   const splitAlbum = async (
-    albumPath: string,
-    selectedImages: string[],
-    baseName: string,
-    imagesPerProduct: number
-  ): Promise<any[]> => {
+    albumPath,
+    selectedImages,
+    baseName,
+    imagesPerProduct
+  ) => {
     try {
-      const response = await $fetch<{
-        success: boolean
-        data?: any[]
-        error?: string
-      }>('/api/images/split', {
+      const response = await $fetch('/api/images/split', {
         method: 'POST',
         body: {
           albumPath,
@@ -411,7 +359,7 @@ export const useCloudinary = () => {
       } else {
         throw new Error(response.error || 'Split failed')
       }
-    } catch (error: any) {
+    } catch (error) {
       console.error('Error splitting album:', error)
       throw error
     }

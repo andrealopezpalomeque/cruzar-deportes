@@ -59,11 +59,11 @@
   </Teleport>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const { toasts, removeToast } = useToast()
 
-const getToastIcon = (type: string): string => {
-  const iconMap: Record<string, string> = {
+const getToastIcon = (type) => {
+  const iconMap = {
     success: 'mdi:check-circle',
     error: 'mdi:alert-circle',
     warning: 'mdi:alert',
@@ -72,8 +72,8 @@ const getToastIcon = (type: string): string => {
   return iconMap[type] || 'mdi:information'
 }
 
-const getToastClass = (type: string): string => {
-  const classMap: Record<string, string> = {
+const getToastClass = (type) => {
+  const classMap = {
     success: 'border-green-200',
     error: 'border-red-200',
     warning: 'border-yellow-200',
@@ -82,8 +82,8 @@ const getToastClass = (type: string): string => {
   return classMap[type] || 'border-gray-200'
 }
 
-const getIconClass = (type: string): string => {
-  const classMap: Record<string, string> = {
+const getIconClass = (type) => {
+  const classMap = {
     success: 'text-green-500',
     error: 'text-red-500',
     warning: 'text-yellow-500',
@@ -92,8 +92,8 @@ const getIconClass = (type: string): string => {
   return classMap[type] || 'text-gray-500'
 }
 
-const getProgressBarClass = (type: string): string => {
-  const classMap: Record<string, string> = {
+const getProgressBarClass = (type) => {
+  const classMap = {
     success: 'bg-green-100',
     error: 'bg-red-100',
     warning: 'bg-yellow-100',

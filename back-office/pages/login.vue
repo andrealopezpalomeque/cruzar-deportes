@@ -80,9 +80,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import type { LoginCredentials } from '~/types'
-
+<script setup>
 // Define page meta
 definePageMeta({
   layout: false,
@@ -94,7 +92,7 @@ const authStore = useAuthStore()
 const router = useRouter()
 
 // State
-const credentials = ref<LoginCredentials>({
+const credentials = ref({
   username: '',
   password: ''
 })
