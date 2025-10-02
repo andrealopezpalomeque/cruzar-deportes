@@ -1,7 +1,9 @@
-import type { LoginCredentials, ApiResponse, AuthUser } from '~/types'
+import { setCookie } from 'h3'
+import { randomUUID } from 'node:crypto'
+import type { LoginCredentials, ApiResponse } from '~/types'
 import { setSessionCookieOptions } from '../../utils/session'
 
-export default defineEventHandler(async (event): Promise<ApiResponse<AuthUser>> => {
+export default defineEventHandler(async (event): Promise<ApiResponse<{ username: string }>> => {
   try {
     const body = await readBody<LoginCredentials>(event)
     const config = useRuntimeConfig()
@@ -14,29 +16,23 @@ export default defineEventHandler(async (event): Promise<ApiResponse<AuthUser>> 
       })
     }
 
-    // Simple username/password validation
+    // Simple username/password validation against env variables
     const validUsername = config.backofficeUsername
     const validPassword = config.backofficePassword
 
     if (body.username === validUsername && body.password === validPassword) {
-      // Create session token (simple implementation)
-      const sessionToken = Buffer.from(`${body.username}:${Date.now()}`).toString('base64')
+      const sessionToken = randomUUID()
 
-      // Set HTTP-only cookie for session
       setCookie(event, 'backoffice_session', sessionToken, setSessionCookieOptions({
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'lax',
-        maxAge: 60 * 60 * 24 // 24 hours
+        maxAge: 60 * 60 * 24, // 24 hours
+        secure: process.env.NODE_ENV === 'production'
       }))
 
       return {
         success: true,
         data: {
-          username: body.username,
-          isAuthenticated: true,
-          loginTime: new Date().toISOString(),
-          sessionToken
+          username: body.username
         },
         message: 'Login successful'
       }

@@ -1,16 +1,15 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import type { AuthUser, LoginCredentials } from '~/types'
+import type { LoginCredentials } from '~/types'
 
 export const useAuthStore = defineStore('auth', () => {
   // State
-  const user = ref<AuthUser | null>(null)
+  const user = ref<{ username: string; loginTime: string } | null>(null)
   const loading = ref(false)
   const error = ref<string | null>(null)
 
   // Getters
-  const isAuthenticated = computed(() => !!user.value?.isAuthenticated)
-  const currentUser = computed(() => user.value)
+  const isAuthenticated = computed(() => !!user.value)
 
   // Actions
   const login = async (credentials: LoginCredentials): Promise<boolean> => {
@@ -24,24 +23,15 @@ export const useAuthStore = defineStore('auth', () => {
         body: credentials
       })
 
-      if (response.success && response.data) {
+      if (response.success) {
         user.value = {
           username: credentials.username,
-          isAuthenticated: true,
-          loginTime: response.data.loginTime || new Date().toISOString(),
-          sessionToken: response.data.sessionToken
+          loginTime: new Date().toISOString()
         }
 
-        // Store auth state in localStorage for persistence
-        const authData = {
-          username: credentials.username,
-          isAuthenticated: true,
-          loginTime: user.value.loginTime,
-          sessionToken: response.data.sessionToken
-        }
-
+        // Store auth state in localStorage for persistence (24 hours)
         if (process.client) {
-          localStorage.setItem('backoffice_auth', JSON.stringify(authData))
+          localStorage.setItem('backoffice_auth', JSON.stringify(user.value))
         }
 
         return true
@@ -57,26 +47,12 @@ export const useAuthStore = defineStore('auth', () => {
     }
   }
 
-  const logout = async (): Promise<void> => {
-    loading.value = true
+  const logout = (): void => {
+    user.value = null
+    error.value = null
 
-    try {
-      // Call logout API endpoint
-      await $fetch('/api/auth/logout', {
-        method: 'POST'
-      })
-    } catch (err) {
-      console.error('Logout error:', err)
-    } finally {
-      // Clear user state
-      user.value = null
-      error.value = null
-      loading.value = false
-
-      // Clear localStorage
-      if (process.client) {
-        localStorage.removeItem('backoffice_auth')
-      }
+    if (process.client) {
+      localStorage.removeItem('backoffice_auth')
     }
   }
 
@@ -94,7 +70,7 @@ export const useAuthStore = defineStore('auth', () => {
         const currentTime = new Date().getTime()
         const hoursDiff = (currentTime - loginTime) / (1000 * 60 * 60)
 
-        if (hoursDiff < 24 && authData.isAuthenticated) {
+        if (hoursDiff < 24) {
           user.value = authData
         } else {
           // Session expired, clear storage
@@ -103,35 +79,12 @@ export const useAuthStore = defineStore('auth', () => {
       }
     } catch (err) {
       console.error('Error initializing auth:', err)
-      // Clear corrupted auth data
       localStorage.removeItem('backoffice_auth')
     }
   }
 
   const clearError = (): void => {
     error.value = null
-  }
-
-  const validateSession = async (): Promise<boolean> => {
-    if (!user.value?.isAuthenticated) return false
-
-    try {
-      const response = await $fetch('/api/auth/validate', {
-        method: 'GET'
-      })
-
-      if (response.success) {
-        return true
-      } else {
-        // Session invalid, logout
-        await logout()
-        return false
-      }
-    } catch (err) {
-      // Session validation failed, logout
-      await logout()
-      return false
-    }
   }
 
   return {
@@ -142,14 +95,11 @@ export const useAuthStore = defineStore('auth', () => {
 
     // Getters
     isAuthenticated,
-    currentUser,
-    sessionToken: computed(() => user.value?.sessionToken || null),
 
     // Actions
     login,
     logout,
     initializeAuth,
-    clearError,
-    validateSession
+    clearError
   }
 })
