@@ -10,7 +10,7 @@
         <div class="flex items-center justify-between px-6 py-6 border-b border-gray-200/60 bg-gradient-to-r from-white to-gray-50/50">
           <div class="flex items-center">
             <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mr-3 shadow-lg">
-              <Icon name="mdi:tshirt-crew" size="22" class="text-white" />
+              <IconTshirtCrew class="text-white w-[22px] h-[22px]" />
             </div>
             <div>
               <h1 class="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
@@ -23,7 +23,7 @@
             @click="toggleSidebar"
             class="lg:hidden p-2 rounded-md text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
           >
-            <Icon name="mdi:close" size="20" />
+            <IconClose class="w-5 h-5" />
           </button>
         </div>
 
@@ -32,7 +32,7 @@
           <div class="flex items-center">
             <div class="flex-shrink-0">
               <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center shadow-md">
-                <Icon name="user" size="18" class="text-white" />
+                <IconAccount class="w-[18px] h-[18px] text-white" />
               </div>
             </div>
             <div class="ml-3">
@@ -55,7 +55,7 @@
               :class="{ active: $route.path === '/' }"
               @click="closeSidebarOnMobile"
             >
-              <Icon name="dashboard" size="20" />
+              <IconViewDashboard class="w-5 h-5" />
               <span>Dashboard</span>
             </NuxtLink>
 
@@ -65,7 +65,7 @@
               :class="{ active: $route.path.startsWith('/products') }"
               @click="closeSidebarOnMobile"
             >
-              <Icon name="mdi:tshirt-crew" size="20" />
+              <IconTshirtCrew class="w-5 h-5" />
               <span>Gestión de Productos</span>
             </NuxtLink>
           </div>
@@ -81,7 +81,7 @@
                 :class="{ active: $route.path.startsWith('/bulk') }"
                 @click="closeSidebarOnMobile"
               >
-                <Icon name="mdi:format-list-bulleted" size="20" />
+                <IconFormatListBulleted class="w-5 h-5" />
                 <span>Operaciones en Lote</span>
               </NuxtLink>
 
@@ -91,7 +91,7 @@
                 :class="{ active: $route.path.startsWith('/settings') }"
                 @click="closeSidebarOnMobile"
               >
-                <Icon name="settings" size="20" />
+                <IconCog class="w-5 h-5" />
                 <span>Configuración</span>
               </NuxtLink>
             </div>
@@ -105,7 +105,7 @@
             class="w-full flex items-center justify-center px-4 py-3 text-sm font-medium text-red-600 rounded-lg hover:bg-red-50 hover:text-red-700 transition-all duration-200 border border-red-200 hover:border-red-300"
             :disabled="authStore.loading"
           >
-            <Icon name="logout" size="18" class="mr-2" />
+            <IconLogout class="w-[18px] h-[18px] mr-2" />
             <span>Cerrar Sesión</span>
             <div v-if="authStore.loading" class="ml-2">
               <div class="spinner w-4 h-4"></div>
@@ -131,7 +131,7 @@
             @click="toggleSidebar"
             class="p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 transition-colors"
           >
-            <Icon name="mdi:menu" size="20" />
+            <IconMenu class="w-5 h-5" />
           </button>
           <h1 class="text-lg font-semibold text-gray-900">
             {{ pageTitle }}
@@ -183,6 +183,14 @@
 </template>
 
 <script setup>
+import IconTshirtCrew from '~icons/mdi/tshirt-crew'
+import IconClose from '~icons/mdi/close'
+import IconAccount from '~icons/mdi/account'
+import IconViewDashboard from '~icons/mdi/view-dashboard'
+import IconFormatListBulleted from '~icons/mdi/format-list-bulleted'
+import IconCog from '~icons/mdi/cog'
+import IconLogout from '~icons/mdi/logout'
+import IconMenu from '~icons/mdi/menu'
 
 // Composables
 const authStore = useAuthStore()

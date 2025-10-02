@@ -15,9 +15,9 @@
           <div class="p-4">
             <div class="flex items-start">
               <div class="flex-shrink-0">
-                <Icon
-                  :name="getToastIcon(toast.type)"
-                  size="20"
+                <component
+                  :is="getToastIcon(toast.type)"
+                  class="w-5 h-5"
                   :class="getIconClass(toast.type)"
                 />
               </div>
@@ -34,7 +34,7 @@
                   @click="removeToast(toast.id)"
                   class="inline-flex text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
-                  <Icon name="mdi:close" size="16" />
+                  <IconClose class="w-4 h-4" />
                 </button>
               </div>
             </div>
@@ -60,16 +60,23 @@
 </template>
 
 <script setup>
+import IconCheckCircle from '~icons/mdi/check-circle'
+import IconAlertCircle from '~icons/mdi/alert-circle'
+import IconAlert from '~icons/mdi/alert'
+import IconInformation from '~icons/mdi/information'
+import IconClose from '~icons/mdi/close'
+
 const { toasts, removeToast } = useToast()
 
+const toastIconMap = {
+  success: IconCheckCircle,
+  error: IconAlertCircle,
+  warning: IconAlert,
+  info: IconInformation
+}
+
 const getToastIcon = (type) => {
-  const iconMap = {
-    success: 'mdi:check-circle',
-    error: 'mdi:alert-circle',
-    warning: 'mdi:alert',
-    info: 'mdi:information'
-  }
-  return iconMap[type] || 'mdi:information'
+  return toastIconMap[type] || IconInformation
 }
 
 const getToastClass = (type) => {
