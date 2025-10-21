@@ -116,7 +116,6 @@ removeFromCart(id)     // Remove item from cart
 ├── ProductCard.vue         # Individual product display
 ├── ProductInfo.vue         # Detailed product information
 ├── ImageGallery.vue        # Product image carousel
-├── Icon.vue                # Iconify wrapper component
 ├── JerseyCareSection.vue   # Jersey care content
 ├── GeneralFAQSection.vue   # FAQ content section
 └── ui/
@@ -128,7 +127,7 @@ removeFromCart(id)     // Remove item from cart
 - **Single Responsibility**: Each component should have one clear purpose
 - **Props Over State**: Use props for component data, store access for global state
 - **Tailwind Only**: All styling through Tailwind utility classes
-- **Iconify Icons**: Use `<Icon name="mdi:icon-name" />` for all icons
+- **Iconify Icons**: Use direct imports via unplugin-icons: `import IconName from '~icons/mdi/icon-name'` then `<IconName />`
 
 ## Core System Features
 
@@ -288,7 +287,7 @@ export interface User {
 ### Library & Dependencies Guidelines
 
 **APPROVED LIBRARIES**:
-- **Iconify** (`@iconify/vue`, `unplugin-icons`) - All icons with `<Icon name="pack:icon" />`
+- **unplugin-icons** - Icon management via direct imports (`import IconName from '~icons/pack/name'`)
 - **Tailwind CSS** (`@nuxtjs/tailwindcss`) - All styling and responsive design
 - **Pinia** (`pinia`, `@pinia/nuxt`) - State management for products and cart
 - **VueUse** (`@vueuse/nuxt`) - Vue composition utilities and helpers
