@@ -28,7 +28,7 @@ Cruzar Deportes is a specialized e-commerce platform for sports jerseys and appa
 - **Pinia** - State management for Vue applications
 
 ### Libraries & Tools
-- **@iconify/vue** - Icon management with Iconify
+- **unplugin-icons** - Icon management with direct Iconify imports (`~icons/pack/name`)
 - **vue3-toastify** - User notifications and feedback
 - **dayjs-nuxt** - Date handling and formatting
 - **@vueuse/nuxt** - Vue composition utilities
