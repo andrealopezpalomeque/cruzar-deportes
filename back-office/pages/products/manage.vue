@@ -20,7 +20,6 @@
           <option value="lpf_afa">LPF AFA</option>
           <option value="serie_a_enilive">Serie A Enilive</option>
           <option value="national_retro">Retro Nacional</option>
-          <option value="misc">Miscellaneous</option>
         </select>
 
         <select
@@ -554,8 +553,7 @@ const getCategoryName = (category) => {
     eredivisie: 'Eredivisie',
     lpf_afa: 'LPF AFA',
     serie_a_enilive: 'Serie A Enilive',
-    national_retro: 'Retro Nacional',
-    misc: 'Miscellaneous'
+    national_retro: 'Retro Nacional'
   }
   return categoryNames[category] || category
 }

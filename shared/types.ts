@@ -6,7 +6,6 @@ export type CategoryType =
   | 'lpf_afa'
   | 'serie_a_enilive'
   | 'national_retro'
-  | 'misc'
 
 export interface SharedProduct {
   id: string

@@ -23,8 +23,7 @@ export default defineEventHandler(async (event): Promise<ApiResponse<{
       eredivisie: 0,
       lpf_afa: 0,
       serie_a_enilive: 0,
-      national_retro: 0,
-      misc: 0
+      national_retro: 0
     }
 
     for (const product of products) {
