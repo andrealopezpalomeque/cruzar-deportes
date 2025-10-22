@@ -10,6 +10,7 @@ export const useAuthStore = defineStore('auth', () => {
 
   // Getters
   const isAuthenticated = computed(() => !!user.value)
+  const currentUser = computed(() => user.value)
 
   // Actions
   const login = async (credentials: LoginCredentials): Promise<boolean> => {
@@ -90,6 +91,7 @@ export const useAuthStore = defineStore('auth', () => {
   return {
     // State
     user: readonly(user),
+    currentUser,
     loading: readonly(loading),
     error: readonly(error),
 
