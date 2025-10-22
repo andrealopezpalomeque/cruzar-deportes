@@ -50,8 +50,7 @@ const CATEGORY_LABELS: Record<CategoryType, SharedCategory> = {
   eredivisie: { id: 'eredivisie', name: 'Equipos Eredivisie', slug: 'eredivisie', productCount: 0, lastModified: new Date().toISOString() },
   lpf_afa: { id: 'lpf_afa', name: 'Liga Profesional Argentina', slug: 'lpf_afa', productCount: 0, lastModified: new Date().toISOString() },
   serie_a_enilive: { id: 'serie_a_enilive', name: 'Serie A Enilive', slug: 'serie_a_enilive', productCount: 0, lastModified: new Date().toISOString() },
-  national_retro: { id: 'national_retro', name: 'Camisetas Retro Selecciones', slug: 'national_retro', productCount: 0, lastModified: new Date().toISOString() },
-  misc: { id: 'misc', name: 'Miscellaneous', slug: 'misc', productCount: 0, lastModified: new Date().toISOString() }
+  national_retro: { id: 'national_retro', name: 'Camisetas Retro Selecciones', slug: 'national_retro', productCount: 0, lastModified: new Date().toISOString() }
 }
 
 const ensureSelectedImages = (product: SharedProduct): SharedProduct => {
