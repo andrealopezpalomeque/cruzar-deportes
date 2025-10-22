@@ -23,7 +23,7 @@ export default defineEventHandler(async (event): Promise<ApiResponse<{ username:
     if (body.username === validUsername && body.password === validPassword) {
       const sessionToken = randomUUID()
 
-      setCookie(event, 'backoffice_session', sessionToken, setSessionCookieOptions({
+      setCookie(event, '__session', sessionToken, setSessionCookieOptions({
         httpOnly: true,
         maxAge: 60 * 60 * 24, // 24 hours
         secure: process.env.NODE_ENV === 'production'
