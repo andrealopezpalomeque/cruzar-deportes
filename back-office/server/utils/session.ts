@@ -3,6 +3,7 @@ import { getCookie, deleteCookie, createError } from 'h3'
 
 const isProduction = process.env.NODE_ENV === 'production'
 const COOKIE_DOMAIN = process.env.BACKOFFICE_COOKIE_DOMAIN || (isProduction ? 'cruzar-back-office.web.app' : undefined)
+const SESSION_COOKIE_NAME = '__session'
 
 const COOKIE_OPTIONS = {
   path: '/',
@@ -13,7 +14,7 @@ const COOKIE_OPTIONS = {
 }
 
 export const getSessionToken = (event: H3Event): string | null => {
-  const cookieToken = getCookie(event, 'backoffice_session')
+  const cookieToken = getCookie(event, SESSION_COOKIE_NAME)
   if (cookieToken) {
     return cookieToken
   }
@@ -31,7 +32,7 @@ export const getSessionToken = (event: H3Event): string | null => {
 
 export const clearSession = (event: H3Event) => {
   try {
-    deleteCookie(event, 'backoffice_session', COOKIE_OPTIONS)
+    deleteCookie(event, SESSION_COOKIE_NAME, COOKIE_OPTIONS)
   } catch (error) {
     console.warn('Unable to clear session cookie:', error)
   }
