@@ -271,10 +271,10 @@
         <div class="flex min-h-screen items-center justify-center p-4">
           <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity"></div>
 
-          <div class="relative bg-white rounded-xl shadow-xl max-w-6xl w-full max-h-[90vh] overflow-hidden">
+          <div class="relative bg-white rounded-xl shadow-xl max-w-6xl w-full max-h-[90vh] flex flex-col">
             <!-- Modal Header -->
-            <div class="flex items-center justify-between p-6 border-b border-gray-200">
-              <h3 class="text-xl font-semibold text-gray-900">
+            <div class="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 flex-shrink-0">
+              <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
                 Seleccionar Imágenes - {{ selectedProduct?.name }}
               </h3>
               <button
@@ -285,104 +285,107 @@
               </button>
             </div>
 
-            <!-- Selected Images (reorderable) -->
-            <div v-if="tempSelectedImages.length" class="px-6 pt-6">
-              <div class="flex items-center justify-between mb-3">
-                <h4 class="text-sm font-medium text-gray-900">Imágenes seleccionadas</h4>
-                <span class="text-xs text-gray-500">Arrastra para cambiar el orden</span>
-              </div>
-
-              <div
-                class="flex flex-wrap gap-3"
-                @dragover.prevent="allowSelectedDrop"
-                @drop.prevent="handleSelectedListDrop"
-              >
-                <div
-                  v-for="(image, index) in tempSelectedImages"
-                  :key="image"
-                  class="relative group w-24 h-24 rounded-lg overflow-hidden border border-gray-200 shadow-sm"
-                  draggable="true"
-                  :class="draggingSelectedIndex === index ? 'ring-2 ring-blue-400 ring-offset-2' : ''"
-                  @dragstart="handleSelectedDragStart(index, $event)"
-                  @dragover.prevent="allowSelectedDrop"
-                  @drop.prevent="handleSelectedItemDrop(index, $event)"
-                  @dragend="handleSelectedDragEnd"
-                >
-                  <img
-                    :src="optimizeUrl(image, 180)"
-                    :alt="`Selected image ${index + 1}`"
-                    class="w-full h-full object-cover pointer-events-none"
-                  />
-
-                  <span class="absolute bottom-1 left-1 bg-black bg-opacity-70 text-white text-xs px-2 py-0.5 rounded-full">
-                    {{ index + 1 }}
-                  </span>
-
-                  <button
-                    type="button"
-                    @click.stop="removeFromSelection(image)"
-                    class="absolute top-1 right-1 bg-white/90 text-gray-700 hover:text-red-600 hover:bg-white rounded-full p-1 shadow transition-colors"
-                  >
-                    <IconClose class="w-3 h-3" />
-                  </button>
+            <!-- Scrollable Content -->
+            <div class="flex-1 overflow-y-auto">
+              <!-- Selected Images (reorderable) -->
+              <div v-if="tempSelectedImages.length" class="px-4 sm:px-6 pt-4 sm:pt-6">
+                <div class="flex items-center justify-between mb-3">
+                  <h4 class="text-sm font-medium text-gray-900">Imágenes seleccionadas</h4>
+                  <span class="text-xs text-gray-500 hidden sm:inline">Arrastra para cambiar el orden</span>
                 </div>
-              </div>
-            </div>
 
-            <!-- Available Images -->
-            <div class="p-6 overflow-y-auto max-h-[60vh]">
-              <div v-if="loadingImages" class="flex justify-center py-8">
-                <IconLoading class="w-8 h-8 text-blue-500 animate-spin" />
-              </div>
-
-              <div v-else-if="availableImages.length > 0" class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3">
                 <div
-                  v-for="(image, index) in availableImages"
-                  :key="index"
-                  class="relative group aspect-square"
+                  class="flex flex-wrap gap-2 sm:gap-3"
+                  @dragover.prevent="allowSelectedDrop"
+                  @drop.prevent="handleSelectedListDrop"
                 >
-                  <img
-                    :src="optimizeUrl(image, 150)"
-                    :alt="`Available image ${index + 1}`"
-                    class="w-full h-full object-cover rounded-lg border-2 cursor-pointer transition-all"
-                    :class="[
-                      isImageSelected(image) ? 'border-blue-500 ring-2 ring-blue-200' : 'border-gray-200 hover:border-gray-300'
-                    ]"
-                    @click="toggleImageSelection(image)"
-                  />
-
-                  <!-- Selection Indicator -->
                   <div
-                    v-if="isImageSelected(image)"
-                    class="absolute top-1 right-1 bg-blue-500 text-white rounded-full p-1"
+                    v-for="(image, index) in tempSelectedImages"
+                    :key="image"
+                    class="relative group w-20 h-20 sm:w-24 sm:h-24 rounded-lg overflow-hidden border border-gray-200 shadow-sm"
+                    draggable="true"
+                    :class="draggingSelectedIndex === index ? 'ring-2 ring-blue-400 ring-offset-2' : ''"
+                    @dragstart="handleSelectedDragStart(index, $event)"
+                    @dragover.prevent="allowSelectedDrop"
+                    @drop.prevent="handleSelectedItemDrop(index, $event)"
+                    @dragend="handleSelectedDragEnd"
                   >
-                    <IconCheck class="w-3 h-3" />
+                    <img
+                      :src="optimizeUrl(image, 180)"
+                      :alt="`Selected image ${index + 1}`"
+                      class="w-full h-full object-cover pointer-events-none"
+                    />
+
+                    <span class="absolute bottom-1 left-1 bg-black bg-opacity-70 text-white text-xs px-2 py-0.5 rounded-full">
+                      {{ index + 1 }}
+                    </span>
+
+                    <button
+                      type="button"
+                      @click.stop="removeFromSelection(image)"
+                      class="absolute top-1 right-1 bg-white/90 text-gray-700 hover:text-red-600 hover:bg-white rounded-full p-1 shadow transition-colors"
+                    >
+                      <IconClose class="w-3 h-3" />
+                    </button>
                   </div>
                 </div>
               </div>
 
-              <div v-else class="text-center py-8">
-                <IconImageOff class="w-10 h-10 text-gray-400 mx-auto mb-2" />
-                <p class="text-gray-500">No se encontraron imágenes disponibles</p>
+              <!-- Available Images -->
+              <div class="p-4 sm:p-6">
+                <div v-if="loadingImages" class="flex justify-center py-8">
+                  <IconLoading class="w-8 h-8 text-blue-500 animate-spin" />
+                </div>
+
+                <div v-else-if="availableImages.length > 0" class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2 sm:gap-3">
+                  <div
+                    v-for="(image, index) in availableImages"
+                    :key="index"
+                    class="relative group aspect-square"
+                  >
+                    <img
+                      :src="optimizeUrl(image, 150)"
+                      :alt="`Available image ${index + 1}`"
+                      class="w-full h-full object-cover rounded-lg border-2 cursor-pointer transition-all"
+                      :class="[
+                        isImageSelected(image) ? 'border-blue-500 ring-2 ring-blue-200' : 'border-gray-200 hover:border-gray-300'
+                      ]"
+                      @click="toggleImageSelection(image)"
+                    />
+
+                    <!-- Selection Indicator -->
+                    <div
+                      v-if="isImageSelected(image)"
+                      class="absolute top-1 right-1 bg-blue-500 text-white rounded-full p-1"
+                    >
+                      <IconCheck class="w-3 h-3" />
+                    </div>
+                  </div>
+                </div>
+
+                <div v-else class="text-center py-8">
+                  <IconImageOff class="w-10 h-10 text-gray-400 mx-auto mb-2" />
+                  <p class="text-gray-500">No se encontraron imágenes disponibles</p>
+                </div>
               </div>
             </div>
 
-            <!-- Modal Footer -->
-            <div class="flex justify-between items-center p-6 border-t border-gray-200 bg-gray-50">
-              <p class="text-sm text-gray-600">
+            <!-- Modal Footer - Fixed at bottom -->
+            <div class="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 sm:gap-0 p-4 sm:p-6 border-t border-gray-200 bg-gray-50 flex-shrink-0">
+              <p class="text-sm text-gray-600 text-center sm:text-left">
                 {{ tempSelectedImages.length }} imágenes seleccionadas
               </p>
 
               <div class="flex gap-3">
                 <button
                   @click="closeImageBrowser"
-                  class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+                  class="flex-1 sm:flex-none px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
                 >
                   Cancelar
                 </button>
                 <button
                   @click="saveImageSelection"
-                  class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  class="flex-1 sm:flex-none px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                 >
                   Guardar Selección
                 </button>
