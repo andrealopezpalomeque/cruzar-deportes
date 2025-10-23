@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-10-23T19:47:29.421Z",
+  "lastUpdated": "2025-10-23T20:59:43.602Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -3589,14 +3589,17 @@
       "slug": "boca-authentic",
       "description": "Authentic Boca Juniors match jersey from Liga Profesional de Fútbol",
       "price": 74000,
-      "originalPrice": 130,
+      "originalPrice": "",
       "category": "lpf_afa",
       "selectedImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168961/cruzar-deportes/products/lpf_afa/boca_authentic/x2kzaxzs3fffeepaf7c0.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168760/cruzar-deportes/products/lpf_afa/boca_authentic/pvh7phxsx4nosbtczhzz.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168762/cruzar-deportes/products/lpf_afa/boca_authentic/mgv6dscmhawsb0oemvpu.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168764/cruzar-deportes/products/lpf_afa/boca_authentic/rhg3lafqsdlf1tjrx58k.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168765/cruzar-deportes/products/lpf_afa/boca_authentic/fcybzhzsjr5tgnrm0l28.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168767/cruzar-deportes/products/lpf_afa/boca_authentic/kixckictwhndoee6ewi4.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168767/cruzar-deportes/products/lpf_afa/boca_authentic/kixckictwhndoee6ewi4.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168878/cruzar-deportes/products/lpf_afa/boca_authentic/nrpst5vdinxjyzfrbbkm.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168855/cruzar-deportes/products/lpf_afa/boca_authentic/bf46r51rg88m0ibtz9aq.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168839/cruzar-deportes/products/lpf_afa/boca_authentic/genaikpjgnblq3svv2vm.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168958/cruzar-deportes/products/lpf_afa/boca_authentic/ws1dnfz8jmk49py4rwym.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168864/cruzar-deportes/products/lpf_afa/boca_authentic/qjsvm3plwqggoo1xk2rq.jpg"
       ],
       "allAvailableImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168760/cruzar-deportes/products/lpf_afa/boca_authentic/pvh7phxsx4nosbtczhzz.jpg",
@@ -3669,7 +3672,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": true,
-      "lastModified": "2025-10-23T19:47:29.421Z",
+      "lastModified": "2025-10-23T20:59:43.602Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -13163,7 +13166,7 @@
   },
   "metadata": {
     "totalProducts": 237,
-    "totalImages": 1112,
-    "lastSync": "2025-10-23T19:47:29.421Z"
+    "totalImages": 1115,
+    "lastSync": "2025-10-23T20:59:43.602Z"
   }
 }
