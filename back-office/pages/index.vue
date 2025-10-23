@@ -117,7 +117,7 @@
 
 
           <NuxtLink
-            to="/bulk-operations"
+            to="/bulk-operations?from=dashboard"
             class="p-6 border border-gray-200 rounded-lg hover:border-green-300 hover:shadow-md transition-all duration-200 group"
           >
             <div class="flex items-center">
