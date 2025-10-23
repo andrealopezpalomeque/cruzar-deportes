@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-10-22T15:16:59.278Z",
+  "lastUpdated": "2025-10-23T19:47:29.421Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -324,8 +324,8 @@
       "name": "Boca Juniors",
       "slug": "boca",
       "description": "Official Boca Juniors jersey from Liga Profesional de Fútbol",
-      "price": 85,
-      "originalPrice": 95,
+      "price": 72000,
+      "originalPrice": 80000,
       "category": "lpf_afa",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168505/cruzar-deportes/products/lpf_afa/boca/o7vfdpd8fe8mrbndwb1d.jpg",
@@ -400,7 +400,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.588Z",
+      "lastModified": "2025-10-23T19:46:47.523Z",
       "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.493Z",
       "createdBy": "scraper"
@@ -3588,7 +3588,7 @@
       "name": "Boca Juniors Authentic",
       "slug": "boca-authentic",
       "description": "Authentic Boca Juniors match jersey from Liga Profesional de Fútbol",
-      "price": 110,
+      "price": 74000,
       "originalPrice": 130,
       "category": "lpf_afa",
       "selectedImages": [
@@ -3668,8 +3668,8 @@
       ],
       "inStock": true,
       "stockStatus": "in_stock",
-      "featured": false,
-      "lastModified": "2025-09-30T20:53:28.588Z",
+      "featured": true,
+      "lastModified": "2025-10-23T19:47:29.421Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -13164,6 +13164,6 @@
   "metadata": {
     "totalProducts": 237,
     "totalImages": 1112,
-    "lastSync": "2025-10-22T15:16:59.278Z"
+    "lastSync": "2025-10-23T19:47:29.421Z"
   }
 }
