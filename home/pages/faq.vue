@@ -74,12 +74,12 @@
                   Realizamos envíos a todo el país. El envío es gratuito en compras superiores a $99.999. Para
                   montos menores, el costo varía según la ubicación.
                 </p>
-                <div class="bg-gray-50 border-l-4 border-gray-400 p-4 rounded-r-lg backdrop-blur-sm">
+                <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
                   <div class="flex items-start gap-3">
-                    <IconInformationCircle class="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
+                    <IconInformationCircle class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <p class="font-medium text-gray-900 mb-1">Seguimiento:</p>
-                      <p class="text-gray-700 text-sm">
+                      <p class="font-medium text-blue-900 mb-1">Seguimiento:</p>
+                      <p class="text-blue-800 text-sm">
                         Recibirás un código de seguimiento por WhatsApp una vez que tu pedido sea despachado.
                       </p>
                     </div>
@@ -105,14 +105,14 @@
               <div class="ml-4 sm:ml-8 md:ml-14">
                 <div class="space-y-4">
                   <!-- Banco de Corrientes Promotion -->
-                  <div class="bg-gray-50 border-l-4 border-gray-400 p-4 rounded-r-lg backdrop-blur-sm">
+                  <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
                     <div class="flex items-start gap-3">
-                      <IconCreditCard class="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
+                      <IconCreditCard class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
                       <div>
-                        <p class="font-semibold text-gray-900 mb-2">Banco de Corrientes - Lunes y Martes</p>
-                        <p class="text-gray-700 text-sm mb-2">
-                          Con tu tarjeta de crédito VISA del BanCo tenés todos los lunes y martes un 
-                          <span class="font-semibold">30% de reintegro</span> y hasta 
+                        <p class="font-semibold text-blue-900 mb-2">Banco de Corrientes - Lunes y Martes</p>
+                        <p class="text-blue-800 text-sm mb-2">
+                          Con tu tarjeta de crédito VISA del BanCo tenés todos los lunes y martes un
+                          <span class="font-semibold">30% de reintegro</span> y hasta
                           <span class="font-semibold">6 cuotas sin interés</span>.
                         </p>
                         <p class="text-blue-700 text-xs italic">
@@ -125,11 +125,11 @@
                   <!-- All Cards Promotion -->
                   <div class="bg-green-50/80 border-l-4 border-green-400 p-4 rounded-r-lg backdrop-blur-sm">
                     <div class="flex items-start gap-3">
-                      <IconCreditCard class="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
+                      <IconCreditCard class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                       <div>
                         <p class="font-semibold text-green-900 mb-2">Todas las Tarjetas - Miércoles y Sábados</p>
                         <p class="text-green-800 text-sm mb-2">
-                          Los miércoles y sábados de agosto y septiembre podés aprovechar para comprar en 
+                          Los miércoles y sábados de agosto y septiembre podés aprovechar para comprar en
                           <span class="font-semibold">3 cuotas sin interés</span>.
                         </p>
                         <p class="text-green-700 text-xs italic">
@@ -170,12 +170,12 @@
                   estar sin usar, con las etiquetas intactas y en su empaque inicial. Los gastos de envío para
                   devoluciones corren por cuenta del cliente, excepto en casos de productos defectuosos.
                 </p>
-                <div class="bg-gray-50/80 border-l-4 border-gray-400 p-4 rounded-r-lg backdrop-blur-sm">
+                <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
                   <div class="flex items-start gap-3">
-                    <IconInformationCircle class="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
+                    <IconInformationCircle class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <p class="font-medium text-gray-900 mb-1">Proceso simple:</p>
-                      <p class="text-gray-800 text-sm">
+                      <p class="font-medium text-blue-900 mb-1">Proceso simple:</p>
+                      <p class="text-blue-800 text-sm">
                         Contactanos por WhatsApp para iniciar el proceso de devolución.
                       </p>
                     </div>
