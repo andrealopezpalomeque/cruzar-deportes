@@ -76,7 +76,7 @@
                 </p>
                 <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
                   <div class="flex items-start gap-3">
-                    <IconInformationCircle class="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
+                    <IconInformationCircle class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
                     <div>
                       <p class="font-medium text-blue-900 mb-1">Consejo Pro:</p>
                       <p class="text-blue-800 text-sm">
@@ -108,12 +108,12 @@
                   reduce el encogimiento de la tela y ayuda a mantener el calce y apariencia original de la
                   camiseta.
                 </p>
-                <div class="bg-gray-50/80 border-l-4 border-gray-400 p-4 rounded-r-lg backdrop-blur-sm">
+                <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
                   <div class="flex items-start gap-3">
-                    <IconInformationCircle class="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
+                    <IconInformationCircle class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <p class="font-medium text-gray-900 mb-1">Consejo Pro:</p>
-                      <p class="text-gray-800 text-sm">
+                      <p class="font-medium text-blue-900 mb-1">Consejo Pro:</p>
+                      <p class="text-blue-800 text-sm">
                         El agua fría es más suave con las telas técnicas y también ahorra energía.
                       </p>
                     </div>
@@ -140,12 +140,12 @@
                   No recomendamos usar suavizante en camisetas deportivas. El suavizante puede obstruir las fibras y
                   reducir las propiedades de absorción de humedad de las telas técnicas.
                 </p>
-                <div class="bg-gray-50/80 border-l-4 border-gray-400 p-4 rounded-r-lg backdrop-blur-sm">
+                <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
                   <div class="flex items-start gap-3">
-                    <IconExclamationTriangle class="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
+                    <IconExclamationTriangle class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <p class="font-medium text-gray-900 mb-1">Importante:</p>
-                      <p class="text-gray-800 text-sm">
+                      <p class="font-medium text-blue-900 mb-1">Importante:</p>
+                      <p class="text-blue-800 text-sm">
                         Evitá el suavizante para mantener el rendimiento técnico de tu camiseta.
                       </p>
                     </div>
