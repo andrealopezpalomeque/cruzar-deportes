@@ -15,12 +15,49 @@
     />
 
     <!-- Products Grid -->
-    <div v-else-if="categoryProducts.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      <ProductCard 
-        v-for="product in categoryProducts" 
-        :key="product.id"
-        :product="product"
-      />
+    <div v-else-if="categoryProducts.length > 0">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+        <ProductCard
+          v-for="product in paginatedProducts"
+          :key="product.id"
+          :product="product"
+        />
+      </div>
+
+      <!-- Pagination -->
+      <div v-if="totalPages > 1" class="flex justify-center items-center space-x-2">
+        <button
+          @click="currentPage = Math.max(1, currentPage - 1)"
+          :disabled="currentPage === 1"
+          class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+        >
+          Anterior
+        </button>
+
+        <div class="flex space-x-1">
+          <button
+            v-for="page in visiblePages"
+            :key="page"
+            @click="currentPage = page"
+            :class="[
+              'px-3 py-2 text-sm font-medium rounded-md',
+              currentPage === page
+                ? 'bg-black text-white'
+                : 'text-gray-800 bg-white border border-gray-300 hover:bg-gray-50'
+            ]"
+          >
+            {{ page }}
+          </button>
+        </div>
+
+        <button
+          @click="currentPage = Math.min(totalPages, currentPage + 1)"
+          :disabled="currentPage === totalPages"
+          class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+        >
+          Siguiente
+        </button>
+      </div>
     </div>
 
     <!-- Empty State -->
@@ -47,6 +84,8 @@ const route = useRoute()
 const productsStore = useProductsStore()
 
 const categorySlug = computed(() => route.params.slug)
+const currentPage = ref(1)
+const itemsPerPage = 20
 
 const categoryProducts = computed(() => 
   productsStore.getProductsByCategory(categorySlug.value)
@@ -58,6 +97,38 @@ const category = computed(() =>
 
 const categoryName = computed(() => category.value?.name || 'Category')
 const categoryDescription = computed(() => category.value?.description || '')
+
+const totalPages = computed(() => Math.ceil(categoryProducts.value.length / itemsPerPage))
+
+const paginatedProducts = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage
+  const end = start + itemsPerPage
+  return categoryProducts.value.slice(start, end)
+})
+
+const visiblePages = computed(() => {
+  const pages = []
+  const maxVisible = 5
+  const half = Math.floor(maxVisible / 2)
+
+  let start = Math.max(1, currentPage.value - half)
+  let end = Math.min(totalPages.value, start + maxVisible - 1)
+
+  if (end - start + 1 < maxVisible) {
+    start = Math.max(1, end - maxVisible + 1)
+  }
+
+  for (let i = start; i <= end; i++) {
+    pages.push(i)
+  }
+
+  return pages
+})
+
+// Reset to page 1 when category changes
+watch(categorySlug, () => {
+  currentPage.value = 1
+})
 
 onMounted(() => {
   productsStore.fetchCategories()
