@@ -80,12 +80,26 @@
     </div>
 
     <!-- Products Grid -->
-    <div v-else class="grid grid-cols-1 xl:grid-cols-2 gap-8">
-      <div
-        v-for="product in paginatedProducts"
-        :key="product.id"
-        class="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200"
-      >
+    <div v-else class="relative">
+      <!-- Loading Overlay -->
+      <Transition name="fade">
+        <div
+          v-if="isTransitioning"
+          class="absolute inset-0 bg-white bg-opacity-75 flex items-center justify-center z-10 rounded-lg"
+        >
+          <div class="flex flex-col items-center gap-3">
+            <IconLoading class="w-10 h-10 text-blue-500 animate-spin" />
+            <p class="text-sm text-gray-600 font-medium">Cargando productos...</p>
+          </div>
+        </div>
+      </Transition>
+
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+        <div
+          v-for="product in paginatedProducts"
+          :key="product.id"
+          class="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200"
+        >
         <!-- Product Header -->
         <div class="p-6 border-b border-gray-100">
           <div class="flex items-start justify-between">
@@ -258,6 +272,7 @@
             Última modificación: {{ formatDate(product.lastModified) }}
           </div>
         </div>
+      </div>
       </div>
     </div>
 
@@ -495,6 +510,7 @@ const selectedProducts = ref([])
 // Pagination state
 const currentPage = ref(1)
 const itemsPerPage = ref(20)
+const isTransitioning = ref(false)
 
 // Image browser state
 const showImageBrowser = ref(false)
@@ -849,11 +865,25 @@ const bulkProcessProducts = async () => {
   }
 }
 
-const goToPage = (page) => {
+const goToPage = async (page) => {
   if (page < 1 || page > totalPages.value) return
+
+  // Show loading state
+  isTransitioning.value = true
+
+  // Use nextTick to ensure the transition is visible
+  await nextTick()
+
+  // Brief delay for visual feedback
+  await new Promise(resolve => setTimeout(resolve, 300))
+
   currentPage.value = page
+
   // Scroll to top of products grid
   window.scrollTo({ top: 0, behavior: 'smooth' })
+
+  // Hide loading state
+  isTransitioning.value = false
 }
 
 const nextPage = () => {
@@ -869,8 +899,19 @@ const prevPage = () => {
 }
 
 // Watchers - Reset pagination when filters change
-watch([selectedCategory, selectedProcessedFilter, searchTerm], () => {
+watch([selectedCategory, selectedProcessedFilter, searchTerm], async () => {
+  // Show loading state for filter changes
+  isTransitioning.value = true
+
+  await nextTick()
+
+  // Brief delay for visual feedback
+  await new Promise(resolve => setTimeout(resolve, 300))
+
   currentPage.value = 1
+
+  // Hide loading state
+  isTransitioning.value = false
 })
 
 // Lifecycle
@@ -878,3 +919,15 @@ onMounted(() => {
   loadAllProducts()
 })
 </script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
