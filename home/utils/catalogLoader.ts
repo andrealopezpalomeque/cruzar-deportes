@@ -36,6 +36,8 @@ const isUsableImageUrl = (url: string): boolean => {
   return true
 }
 
+const NON_CURATED_IMAGE_LIMIT = 12
+
 const buildImageGallery = (shared: SharedProduct): { images: string[]; total: number } => {
   const curatedImages = (shared.selectedImages ?? []).filter(isUsableImageUrl)
   const galleryImages = (shared.allAvailableImages ?? []).filter(isUsableImageUrl)
@@ -60,14 +62,21 @@ const buildImageGallery = (shared: SharedProduct): { images: string[]; total: nu
     return acc
   }, [])
 
-  const images = uniqueImages.length > 0 ? uniqueImages.slice(0, 5) : [FALLBACK_IMAGE]
-  const total = shared.totalImages
-    || orderedSources.length
+  const shouldLimit = curatedImages.length === 0
+  const limitedImages = shouldLimit
+    ? uniqueImages.slice(0, NON_CURATED_IMAGE_LIMIT)
+    : uniqueImages
+
+  const images = limitedImages.length > 0 ? limitedImages : [FALLBACK_IMAGE]
+  const totalSourceCount = shared.totalImages
+    || (curatedImages.length > 0 ? curatedImages.length : orderedSources.length)
     || uniqueImages.length
+
+  const total = totalSourceCount || images.length || 1
 
   return {
     images,
-    total: total || 1
+    total
   }
 }
 
