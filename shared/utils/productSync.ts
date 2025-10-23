@@ -80,21 +80,66 @@ const resolveProjectId = (): string | undefined => {
   return undefined
 }
 
-const resolveStorageBucket = (projectId?: string): string | undefined => {
-  if (process.env.FIREBASE_STORAGE_BUCKET) {
-    return process.env.FIREBASE_STORAGE_BUCKET
+const extractBucketName = (value: string): string => {
+  let bucket = value.trim()
+
+  if (bucket.startsWith('gs://')) {
+    bucket = bucket.slice('gs://'.length)
   }
+
+  if (bucket.includes('://')) {
+    try {
+      const url = new URL(bucket)
+      bucket = `${url.host}${url.pathname}`
+    } catch {
+      // ignore parse errors, fall back to simple heuristics
+    }
+  }
+
+  // When provided a full REST path like /v0/b/<bucket>/o/...
+  const bucketMatch = bucket.match(/\/b\/([^/]+)/)
+  if (bucketMatch) {
+    bucket = bucketMatch[1]
+  }
+
+  // Remove any trailing path segments
+  const slashIndex = bucket.indexOf('/')
+  if (slashIndex >= 0) {
+    bucket = bucket.slice(0, slashIndex)
+  }
+
+  return bucket
+}
+
+const resolveStorageBucketCandidates = (projectId?: string): string[] => {
+  const candidates = new Set<string>()
+
+  const addBucket = (value?: string) => {
+    if (!value) return
+    const bucket = extractBucketName(value)
+    if (!bucket) return
+    candidates.add(bucket)
+
+    if (bucket.endsWith('.firebasestorage.app')) {
+      candidates.add(bucket.replace(/\.firebasestorage\.app$/, '.appspot.com'))
+    }
+
+    if (bucket.endsWith('.appspot.com')) {
+      candidates.add(bucket.replace(/\.appspot\.com$/, '.firebasestorage.app'))
+    }
+  }
+
+  addBucket(process.env.FIREBASE_STORAGE_BUCKET)
 
   const firebaseConfig = resolveFirebaseConfig()
-  if (firebaseConfig?.storageBucket) {
-    return firebaseConfig.storageBucket
+  addBucket(firebaseConfig?.storageBucket)
+
+  if (projectId) {
+    addBucket(`${projectId}.appspot.com`)
+    addBucket(`${projectId}.firebasestorage.app`)
   }
 
-  if (!projectId) {
-    return undefined
-  }
-
-  return `${projectId}.appspot.com`
+  return Array.from(candidates)
 }
 
 const loadFirebaseAdmin = async (): Promise<typeof import('firebase-admin') | null> => {
@@ -112,11 +157,11 @@ const loadFirebaseAdmin = async (): Promise<typeof import('firebase-admin') | nu
   admin = module.default ?? module
 
   if (!admin.apps.length) {
-    const storageBucket = resolveStorageBucket(projectId)
+    const bucketCandidates = resolveStorageBucketCandidates(projectId)
     const options: Record<string, any> = {}
 
     if (projectId) options.projectId = projectId
-    if (storageBucket) options.storageBucket = storageBucket
+    if (bucketCandidates.length > 0) options.storageBucket = bucketCandidates[0]
 
     admin.initializeApp(options)
   }
@@ -125,14 +170,36 @@ const loadFirebaseAdmin = async (): Promise<typeof import('firebase-admin') | nu
   return admin
 }
 
-const getStorageFile = async () => {
+type StorageContext = {
+  storage: import('firebase-admin').storage.Storage
+  buckets: string[]
+}
+
+export type ProductDatabaseReadResult = {
+  database: ProductDatabase
+  source: 'remote' | 'local'
+  bucket?: string
+}
+
+const getStorageContext = async (): Promise<StorageContext | null> => {
   const fbAdmin = await loadFirebaseAdmin()
   if (!fbAdmin) return null
 
   const projectId = resolveProjectId()
-  const bucketName = resolveStorageBucket(projectId)
-  const bucket = bucketName ? fbAdmin.storage().bucket(bucketName) : fbAdmin.storage().bucket()
-  return bucket.file(STORAGE_OBJECT_PATH)
+  const candidates = resolveStorageBucketCandidates(projectId)
+  const storage = fbAdmin.storage()
+
+  if (candidates.length === 0) {
+    const defaultBucket = storage.bucket().name
+    if (defaultBucket) {
+      candidates.push(defaultBucket)
+    }
+  }
+
+  return {
+    storage,
+    buckets: candidates
+  }
 }
 
 // Initialize empty database structure
@@ -155,33 +222,80 @@ const createEmptyDatabase = (): ProductDatabase => ({
   }
 })
 
-// Read products database
-export async function readProductsDatabase(): Promise<ProductDatabase> {
-  const storageFile = await getStorageFile()
+type ReadProductsDatabaseOptions =
+  | undefined
+  | {
+      withMetadata?: false
+    }
+  | {
+      withMetadata: true
+    }
 
-  if (storageFile) {
-    try {
-      const [contents] = await storageFile.download()
-      const json = contents.toString('utf-8')
-      await fs.mkdir(LOCAL_FALLBACK_DIR, { recursive: true })
-      await fs.writeFile(LOCAL_PRODUCTS_FILE, json, 'utf-8')
-      return JSON.parse(json) as ProductDatabase
-    } catch (error: any) {
-      if (error.code === 404 || /bucket does not exist/i.test(error.message)) {
-        console.warn('Storage bucket unavailable, using local products.json fallback')
-      } else {
-        throw error
+export async function readProductsDatabase(): Promise<ProductDatabase>
+export async function readProductsDatabase(options: { withMetadata: true }): Promise<ProductDatabaseReadResult>
+// Read products database
+export async function readProductsDatabase(options?: ReadProductsDatabaseOptions): Promise<ProductDatabase | ProductDatabaseReadResult> {
+  const storageContext = await getStorageContext()
+
+  if (storageContext) {
+    const { storage, buckets } = storageContext
+
+    for (const bucketName of buckets) {
+      const file = storage.bucket(bucketName).file(STORAGE_OBJECT_PATH)
+      try {
+        const [contents] = await file.download()
+        const json = contents.toString('utf-8')
+        await fs.mkdir(LOCAL_FALLBACK_DIR, { recursive: true })
+        await fs.writeFile(LOCAL_PRODUCTS_FILE, json, 'utf-8')
+        const database = JSON.parse(json) as ProductDatabase
+
+        if (options?.withMetadata) {
+          return {
+            database,
+            source: 'remote',
+            bucket: bucketName
+          }
+        }
+
+        return database
+      } catch (error: any) {
+        const errorMessage = error?.message ?? String(error)
+        const errorCode = error?.code
+        const isMissingBucket = errorCode === 404 || /bucket does not exist/i.test(errorMessage) || /not found/i.test(errorMessage)
+        console.warn(`Unable to download catalog from bucket "${bucketName}": ${errorMessage}`)
+
+        if (!isMissingBucket) {
+          throw error
+        }
       }
     }
+
+    console.warn('All remote storage buckets unavailable, using local products.json fallback')
   }
 
   try {
     const data = await fs.readFile(LOCAL_PRODUCTS_FILE, 'utf-8')
-    return JSON.parse(data)
+    const database = JSON.parse(data) as ProductDatabase
+
+    if (options?.withMetadata) {
+      return {
+        database,
+        source: 'local'
+      }
+    }
+
+    return database
   } catch (error: any) {
     if (error.code === 'ENOENT') {
       const emptyDb = createEmptyDatabase()
       await writeProductsDatabase(emptyDb)
+      if (options?.withMetadata) {
+        return {
+          database: emptyDb,
+          source: 'local'
+        }
+      }
+
       return emptyDb
     }
     throw error
@@ -280,24 +394,34 @@ export async function writeProductsDatabase(database: ProductDatabase): Promise<
 
   const data = JSON.stringify(database, null, 2)
 
-  const storageFile = await getStorageFile()
+  const storageContext = await getStorageContext()
 
-  if (storageFile) {
-    try {
-      await storageFile.save(data, {
-        contentType: 'application/json',
-        resumable: false
-      })
-  await fs.mkdir(LOCAL_FALLBACK_DIR, { recursive: true })
-      await fs.writeFile(LOCAL_PRODUCTS_FILE, data, 'utf-8')
-      return
-    } catch (error: any) {
-      if (error.code === 404 || /bucket does not exist/i.test(error.message)) {
-        console.warn('Storage bucket unavailable, writing to local products.json')
-      } else {
-        throw error
+  if (storageContext) {
+    const { storage, buckets } = storageContext
+
+    for (const bucketName of buckets) {
+      const file = storage.bucket(bucketName).file(STORAGE_OBJECT_PATH)
+      try {
+        await file.save(data, {
+          contentType: 'application/json',
+          resumable: false
+        })
+        await fs.mkdir(LOCAL_FALLBACK_DIR, { recursive: true })
+        await fs.writeFile(LOCAL_PRODUCTS_FILE, data, 'utf-8')
+        return
+      } catch (error: any) {
+        const errorMessage = error?.message ?? String(error)
+        const errorCode = error?.code
+        const isMissingBucket = errorCode === 404 || /bucket does not exist/i.test(errorMessage) || /not found/i.test(errorMessage)
+        console.warn(`Unable to write catalog to bucket "${bucketName}": ${errorMessage}`)
+
+        if (!isMissingBucket) {
+          throw error
+        }
       }
     }
+
+    console.warn('All remote storage buckets unavailable, writing to local products.json')
   }
 
   await fs.mkdir(LOCAL_FALLBACK_DIR, { recursive: true })
