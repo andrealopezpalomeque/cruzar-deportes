@@ -147,9 +147,12 @@
           <h3 class="text-lg font-medium text-gray-900">
             Actividad Reciente
           </h3>
-          <button class="text-sm text-blue-600 hover:text-blue-700">
+          <NuxtLink
+            to="/activity"
+            class="text-sm text-blue-600 hover:text-blue-700"
+          >
             Ver todo
-          </button>
+          </NuxtLink>
         </div>
       </div>
       <div class="card-body">

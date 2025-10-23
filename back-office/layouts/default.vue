@@ -9,9 +9,11 @@
         <!-- Logo -->
         <div class="flex items-center justify-between px-6 py-6 border-b border-gray-200/60 bg-gradient-to-r from-white to-gray-50/50">
           <div class="flex items-center">
-            <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mr-3 shadow-lg">
-              <IconTshirtCrew class="text-white w-[22px] h-[22px]" />
-            </div>
+            <img
+              src="/cruzar-logo-no-bg.png"
+              alt="Cruzar Deportes"
+              class="h-16 w-auto object-contain mr-3"
+            />
             <div>
               <h1 class="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                 Cruzar Deportes
