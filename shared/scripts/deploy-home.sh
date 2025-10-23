@@ -33,6 +33,13 @@ node scripts/bootstrap-storage.ts
 echo "Ensuring catalog contains all team products..."
 node scripts/rebuild-catalog.ts
 
+if [[ ! -L "$HOME_DIR/shared" ]]; then
+  echo "Copying updated catalog into home storefront..."
+  cp -f "$ROOT_DIR/shared/products.json" "$HOME_DIR/shared/products.json"
+else
+  echo "Home storefront uses shared/ symlink; skipping copy step."
+fi
+
 cd "$HOME_DIR"
 
 echo "Installing dependencies (npm ci)..."
