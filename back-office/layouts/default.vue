@@ -33,7 +33,14 @@
         <div class="px-6 py-4 border-b border-gray-200/60 bg-gradient-to-r from-blue-50/50 to-indigo-50/50">
           <div class="flex items-center">
             <div class="flex-shrink-0">
-              <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center shadow-md">
+              <img
+                v-if="authStore.currentUser?.username === 'tati_valesani'"
+                src="/tati_valesani.png"
+                alt="Administrator"
+                class="w-10 h-10 rounded-full object-cover shadow-md ring-2 ring-blue-500/20"
+                style="object-position: center 10%;"
+              />
+              <div v-else class="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center shadow-md">
                 <IconAccount class="w-[18px] h-[18px] text-white" />
               </div>
             </div>
