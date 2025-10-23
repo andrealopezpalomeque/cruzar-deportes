@@ -2,7 +2,7 @@ import type { ApiResponse } from '~/types'
 import { requireSession } from '../../utils/session'
 import { readProductsDatabase } from '~/shared/utils/productSync'
 
-const MAX_ACTIVITY_ITEMS = 10
+const MAX_ACTIVITY_ITEMS = 50
 
 interface ActivityItem {
   id: string
