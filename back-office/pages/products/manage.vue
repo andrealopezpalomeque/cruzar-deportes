@@ -43,6 +43,7 @@
         </div>
 
         <!-- Bulk Actions -->
+        <!-- TODO: Bulk selection feature - to be implemented in the future
         <div v-if="selectedProducts.length > 0" class="flex gap-2">
           <span class="text-sm text-gray-600">{{ selectedProducts.length }} seleccionados:</span>
           <button
@@ -67,6 +68,7 @@
             Limpiar
           </button>
         </div>
+        -->
       </div>
     </div>
 
@@ -109,6 +111,7 @@
           <div class="flex items-start justify-between">
             <div class="flex items-start gap-3">
               <!-- Checkbox for bulk selection -->
+              <!-- TODO: Bulk selection feature - to be implemented in the future
               <input
                 v-if="!product.isProcessed"
                 type="checkbox"
@@ -116,6 +119,7 @@
                 @change="toggleProductSelection(product.id)"
                 class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
               />
+              -->
               <div>
                 <h3 class="text-xl font-semibold text-gray-900">{{ product.name }}</h3>
                 <p class="text-sm text-gray-500 mt-1">{{ getCategoryName(product.category) }}</p>
@@ -539,7 +543,8 @@ const products = ref([])
 const selectedCategory = ref('')
 const selectedProcessedFilter = ref('')
 const searchTerm = ref('')
-const selectedProducts = ref([])
+// TODO: Bulk selection feature - to be implemented in the future
+// const selectedProducts = ref([])
 
 // Pagination state
 const currentPage = ref(1)
@@ -907,6 +912,8 @@ const processProduct = async (product) => {
   }
 }
 
+// TODO: Bulk selection feature - to be implemented in the future
+/*
 const toggleProductSelection = (productId) => {
   const index = selectedProducts.value.indexOf(productId)
   if (index > -1) {
@@ -919,7 +926,10 @@ const toggleProductSelection = (productId) => {
 const clearSelection = () => {
   selectedProducts.value = []
 }
+*/
 
+// TODO: Bulk selection feature - to be implemented in the future
+/*
 const bulkProcessProducts = async () => {
   if (selectedProducts.value.length === 0) return
 
@@ -951,6 +961,7 @@ const bulkProcessProducts = async () => {
     processingProducts.bulk = false
   }
 }
+*/
 
 const goToPage = async (page) => {
   if (page < 1 || page > totalPages.value) return
