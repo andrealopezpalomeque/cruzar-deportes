@@ -110,17 +110,23 @@
         v-if="product.inStock"
         class="h-5 w-5 text-green-700"
       />
-      <IconAlertCircle 
+      <IconClockOutline 
         v-else
-        class="h-5 w-5 text-red-700"
+        class="h-5 w-5 text-blue-700"
       />
       <span 
-        :class="product.inStock ? 'text-green-700' : 'text-red-700'"
+        :class="product.inStock ? 'text-green-700' : 'text-blue-700'"
         class="text-sm font-medium"
       >
-        {{ product.inStock ? 'En stock' : 'Agotado' }}
+        {{ product.inStock ? 'En stock' : 'Disponible para encargar' }}
       </span>
     </div>
+    <p
+      v-if="!product.inStock"
+      class="text-sm text-gray-700"
+    >
+      Este producto se solicita bajo pedido. Te contactaremos para coordinar tiempos de entrega.
+    </p>
 
     <!-- Add to Cart Button -->
     <div class="space-y-4">
@@ -133,11 +139,11 @@
         }"
       >
         <IconLoading v-if="isAddingToCart" class="h-5 w-5 inline mr-2 animate-spin" />
-        <IconAlertCircle v-else-if="!product.inStock" class="h-5 w-5 inline mr-2" />
+        <IconClockOutline v-else-if="!product.inStock" class="h-5 w-5 inline mr-2 text-blue-700" />
         <IconCartPlus v-else class="h-5 w-5 inline mr-2" />
         
         <span v-if="isAddingToCart">Agregando...</span>
-        <span v-else-if="!product.inStock">Agotado</span>
+        <span v-else-if="!product.inStock">Encargar ahora - ${{ totalPrice }}</span>
         <span v-else>Agregar al Carrito - ${{ totalPrice }}</span>
       </button>
 
@@ -198,6 +204,7 @@ import IconPlus from '~icons/mdi/plus'
 import IconCheckCircle from '~icons/mdi/check-circle'
 import IconAlertCircle from '~icons/mdi/alert-circle'
 import IconLoading from '~icons/mdi/loading'
+import IconClockOutline from '~icons/mdi/clock-outline'
 import IconCartPlus from '~icons/mdi/cart-plus'
 import IconShieldCheck from '~icons/mdi/shield-check'
 import IconTruck from '~icons/mdi/truck'
@@ -227,8 +234,7 @@ const totalPrice = computed(() => {
 })
 
 const canAddToCart = computed(() => {
-  return props.product.inStock && 
-         selectedSize.value && selectedSize.value.trim() !== '' &&
+  return selectedSize.value && selectedSize.value.trim() !== '' &&
          selectedColor.value && selectedColor.value.trim() !== '' &&
          quantity.value > 0 &&
          !isAddingToCart.value
@@ -236,10 +242,6 @@ const canAddToCart = computed(() => {
 
 const validationMessages = computed(() => {
   const messages = []
-  
-  if (!props.product.inStock) {
-    messages.push('Este producto está agotado')
-  }
   
   if (!selectedSize.value || selectedSize.value.trim() === '') {
     messages.push('Por favor especifica una talla')

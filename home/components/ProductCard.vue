@@ -88,14 +88,13 @@
         <!-- Quick View Button -->
         <button
           @click.stop="viewProduct"
-          :disabled="!product.inStock"
-          class="px-3 py-2 bg-black text-white text-sm font-medium rounded-md hover:bg-gray-900 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500"
-          :title="product.inStock ? 'Ver producto' : 'Agotado'"
-          :aria-label="product.inStock ? `Ver detalles de ${product.name}` : `${product.name} - Agotado`"
+          class="px-3 py-2 bg-black text-white text-sm font-medium rounded-md hover:bg-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500"
+          :title="product.inStock ? 'Ver producto' : 'Disponible para encargar'"
+          :aria-label="product.inStock ? `Ver detalles de ${product.name}` : `${product.name} - disponible para encargar`"
         >
-          <IconClose v-if="!product.inStock" class="h-4 w-4" aria-hidden="true" />
+          <IconClockOutline v-if="!product.inStock" class="h-4 w-4" aria-hidden="true" />
           <IconPlus v-else class="h-4 w-4" aria-hidden="true" />
-          <span class="sr-only">{{ product.inStock ? 'Ver producto' : 'Producto agotado' }}</span>
+          <span class="sr-only">{{ product.inStock ? 'Ver producto' : 'Producto disponible para encargar' }}</span>
         </button>
       </div>
       
@@ -106,15 +105,15 @@
             v-if="product.inStock"
             class="h-4 w-4 text-green-700"
           />
-          <IconAlertCircle
+          <IconClockOutline
             v-else
-            class="h-4 w-4 text-red-700"
+            class="h-4 w-4 text-blue-700"
           />
           <span 
-            :class="product.inStock ? 'text-green-700' : 'text-red-700'"
+            :class="product.inStock ? 'text-green-700' : 'text-blue-700'"
             class="text-sm font-medium"
           >
-            {{ product.inStock ? 'En stock' : 'Agotado' }}
+            {{ product.inStock ? 'En stock' : 'Disponible para encargar' }}
           </span>
         </div>
         
@@ -135,13 +134,11 @@
 import IconTshirtCrew from '~icons/mdi/tshirt-crew'
 import IconStar from '~icons/mdi/star'
 import IconImageMultiple from '~icons/mdi/image-multiple'
-import IconClose from '~icons/mdi/close'
 import IconPlus from '~icons/mdi/plus'
 import IconCheckCircle from '~icons/mdi/check-circle'
-import IconAlertCircle from '~icons/mdi/alert-circle'
+import IconClockOutline from '~icons/mdi/clock-outline'
 
 const props = defineProps(['product'])
-const cartStore = useCartStore()
 const productsStore = useProductsStore()
 
 // Computed properties
@@ -151,8 +148,6 @@ const categoryName = computed(() => {
 })
 
 function viewProduct() {
-  if (!props.product.inStock) return
-
   // Navigate to product detail page
   navigateTo(`/products/${props.product.slug}`)
 }
