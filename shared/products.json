@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-10-24T05:40:40.410Z",
+  "lastUpdated": "2025-10-24T05:56:57.995Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -1028,8 +1028,8 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-10-24T05:40:40.410Z",
-      "isProcessed": true,
+      "lastModified": "2025-10-24T05:49:32.119Z",
+      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -6140,10 +6140,10 @@
         "Home",
         "Away"
       ],
-      "inStock": true,
+      "inStock": false,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-10-24T05:34:57.010Z",
+      "lastModified": "2025-10-24T05:56:57.995Z",
       "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -13169,6 +13169,6 @@
   "metadata": {
     "totalProducts": 237,
     "totalImages": 1117,
-    "lastSync": "2025-10-24T05:40:40.410Z"
+    "lastSync": "2025-10-24T05:56:57.995Z"
   }
 }
