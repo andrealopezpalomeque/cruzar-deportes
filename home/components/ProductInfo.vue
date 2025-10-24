@@ -176,7 +176,7 @@
         </div>
         <div class="flex items-center space-x-2">
           <IconTruck class="h-4 w-4 text-gray-800" />
-          <span class="text-gray-800">Envío gratuito en compras +$99.999</span>
+          <span class="text-gray-800">Envío gratuito en compras +$120.000</span>
         </div>
         <div class="flex items-center space-x-2">
           <IconRefresh class="h-4 w-4 text-gray-800" />

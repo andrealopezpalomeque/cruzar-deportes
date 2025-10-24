@@ -30,7 +30,7 @@
               <IconCube class="w-6 h-6 text-gray-600" />
             </div>
             <h3 class="font-medium text-gray-900 mb-2">Envío Gratis</h3>
-            <p class="text-sm text-gray-600">En compras superiores a $99.999</p>
+            <p class="text-sm text-gray-600">En compras superiores a $120.000</p>
           </div>
         </UiCard>
 
@@ -71,7 +71,7 @@
             <div class="pb-6 pt-2">
               <div class="ml-4 sm:ml-8 md:ml-14">
                 <p class="text-gray-700 leading-relaxed mb-4">
-                  Realizamos envíos a todo el país. El envío es gratuito en compras superiores a $99.999. Para
+                  Realizamos envíos a todo el país. El envío es gratuito en compras superiores a $120.000. Para
                   montos menores, el costo varía según la ubicación.
                 </p>
                 <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
