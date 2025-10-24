@@ -120,9 +120,38 @@
                 class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
               />
               -->
-              <div>
-                <h3 class="text-xl font-semibold text-gray-900">{{ product.name }}</h3>
-                <p class="text-sm text-gray-500 mt-1">{{ getCategoryName(product.category) }}</p>
+              <div class="flex flex-col gap-3">
+                <div>
+                  <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide">Nombre</label>
+                  <div class="mt-1 flex items-center gap-2">
+                    <input
+                      v-model="product.name"
+                      @blur="updateProductDetails(product)"
+                      @keyup.enter.prevent="$event.target.blur()"
+                      :disabled="isDetailsLoading(product.id)"
+                      type="text"
+                      class="w-full px-2 py-1.5 text-xl font-semibold text-gray-900 border border-transparent rounded-md focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-0 disabled:bg-gray-100"
+                    />
+                    <IconLoading
+                      v-if="isDetailsLoading(product.id)"
+                      class="w-4 h-4 text-blue-500 animate-spin"
+                    />
+                  </div>
+                </div>
+
+                <p class="text-sm text-gray-500">{{ getCategoryName(product.category) }}</p>
+
+                <div>
+                  <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide">Descripción</label>
+                  <textarea
+                    v-model="product.description"
+                    @blur="updateProductDetails(product)"
+                    :disabled="isDetailsLoading(product.id)"
+                    rows="3"
+                    class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
+                    placeholder="Agrega una descripción breve del producto"
+                  />
+                </div>
               </div>
             </div>
 
@@ -536,6 +565,17 @@ const optimizeUrl = (url, size = 300) => {
   return url.replace('/upload/', `/upload/c_thumb,w_${size},h_${size},g_face/`)
 }
 
+const slugify = (value) => {
+  return (value ?? '')
+    .toString()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
 // Reactive state
 const loading = ref(false)
 const error = ref(null)
@@ -564,6 +604,36 @@ const processingProducts = reactive({
   bulk: false,
   globalSingleActive: false
 })
+const detailsLoading = reactive({})
+const detailsSnapshots = reactive({})
+
+const isDetailsLoading = (productId) => Boolean(detailsLoading[productId])
+
+const captureDetailsSnapshot = (product) => {
+  const sanitizedName = (product.name ?? '').trim()
+  const sanitizedDescription = (product.description ?? '').trim()
+  let sanitizedSlug = (product.slug ?? '').toString().trim()
+
+  if (!sanitizedSlug) {
+    const fallbackBase = sanitizedName || product.id || 'producto'
+    const fallbackSlug = slugify(fallbackBase)
+    sanitizedSlug = fallbackSlug || String(product.id || 'producto')
+  }
+
+  product.name = sanitizedName
+  product.description = sanitizedDescription
+  product.slug = sanitizedSlug
+
+  detailsSnapshots[product.id] = {
+    name: sanitizedName,
+    description: sanitizedDescription,
+    slug: sanitizedSlug
+  }
+}
+
+const getDetailsSnapshot = (productId) => {
+  return detailsSnapshots[productId] || { name: '', description: '', slug: '' }
+}
 
 const allowSelectedDrop = (event) => {
   event.preventDefault()
@@ -721,7 +791,15 @@ const loadAllProducts = async () => {
       delete processingProducts.single[key]
     })
     processingProducts.bulk = false
-    products.value = await loadProducts()
+    Object.keys(detailsLoading).forEach(key => {
+      delete detailsLoading[key]
+    })
+    Object.keys(detailsSnapshots).forEach(key => {
+      delete detailsSnapshots[key]
+    })
+    const loadedProducts = await loadProducts()
+    products.value = loadedProducts
+    products.value.forEach(captureDetailsSnapshot)
   } catch (err) {
     error.value = err.message
     toast.error('Error al cargar productos')
@@ -839,6 +917,75 @@ const saveImageSelection = async () => {
     closeImageBrowser()
   } catch (err) {
     toast.error('Error al guardar selección de imágenes')
+  }
+}
+
+const updateProductDetails = async (product) => {
+  if (!product?.id) {
+    return
+  }
+
+  const productId = product.id
+  const snapshot = getDetailsSnapshot(productId)
+  const trimmedName = (product.name ?? '').trim()
+  const trimmedDescription = (product.description ?? '').trim()
+  const trimmedSnapshotName = (snapshot.name ?? '').trim()
+  const trimmedSnapshotDescription = (snapshot.description ?? '').trim()
+  const snapshotSlug = (snapshot.slug ?? '').trim()
+
+  if (!trimmedName) {
+    toast.error('El nombre del producto no puede estar vacío')
+    product.name = snapshot.name
+    product.description = snapshot.description
+    product.slug = snapshotSlug
+    return
+  }
+
+  if (detailsLoading[productId]) {
+    return
+  }
+
+  let generatedSlug = slugify(trimmedName)
+  if (!generatedSlug) {
+    const fallbackBase = trimmedName || product.id || snapshotSlug || 'producto'
+    generatedSlug = slugify(fallbackBase) || snapshotSlug || String(product.id || 'producto')
+  }
+
+  const shouldUpdate =
+    trimmedName !== trimmedSnapshotName ||
+    trimmedDescription !== trimmedSnapshotDescription ||
+    generatedSlug !== snapshotSlug
+
+  if (!shouldUpdate) {
+    return
+  }
+
+  try {
+    detailsLoading[productId] = true
+
+    const payload = {
+      ...product,
+      name: trimmedName,
+      description: trimmedDescription,
+      slug: generatedSlug
+    }
+
+    await saveProduct(payload)
+
+    product.name = trimmedName
+    product.description = trimmedDescription
+    product.slug = generatedSlug
+    product.lastModified = new Date().toISOString()
+    captureDetailsSnapshot(product)
+
+    toast.success('Datos del producto actualizados')
+  } catch (err) {
+    toast.error('Error al actualizar datos del producto')
+    product.name = snapshot.name
+    product.description = snapshot.description
+    product.slug = snapshotSlug
+  } finally {
+    delete detailsLoading[productId]
   }
 }
 
