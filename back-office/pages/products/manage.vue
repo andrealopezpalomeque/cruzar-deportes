@@ -150,7 +150,7 @@
                   product.inStock ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
                 ]"
               >
-                {{ product.inStock ? 'En Stock' : 'Disponible para encargar' }}
+                {{ product.inStock ? 'En Stock' : 'A pedido' }}
               </span>
             </div>
           </div>

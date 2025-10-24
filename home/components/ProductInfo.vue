@@ -105,25 +105,25 @@
     </div>
 
     <!-- Stock Status -->
-    <div class="flex items-center space-x-2">
-      <IconCheckCircle 
+    <div>
+      <div
         v-if="product.inStock"
-        class="h-5 w-5 text-green-700"
-      />
-      <IconClockOutline 
-        v-else
-        class="h-5 w-5 text-blue-700"
-      />
-      <span 
-        :class="product.inStock ? 'text-green-700' : 'text-blue-700'"
-        class="text-sm font-medium"
+        class="inline-flex items-center gap-2 rounded-full bg-green-50 px-3 py-1.5 text-sm font-normal text-green-700 ring-1 ring-green-200"
       >
-        {{ product.inStock ? 'En stock' : 'Disponible para encargar' }}
-      </span>
+        <IconCheckCircle class="h-5 w-5" />
+        <span>En stock</span>
+      </div>
+      <div
+        v-else
+        class="inline-flex items-center gap-2 rounded-full bg-amber-50 px-3 py-1.5 text-sm font-normal text-amber-700 ring-1 ring-amber-200"
+      >
+        <IconClockOutline class="h-5 w-5" />
+        <span>A pedido</span>
+      </div>
     </div>
     <p
       v-if="!product.inStock"
-      class="text-sm text-gray-700"
+      class="text-sm text-amber-700"
     >
       Este producto se solicita bajo pedido. Te contactaremos para coordinar tiempos de entrega.
     </p>
