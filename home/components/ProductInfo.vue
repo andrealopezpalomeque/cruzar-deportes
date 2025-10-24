@@ -139,7 +139,7 @@
         }"
       >
         <IconLoading v-if="isAddingToCart" class="h-5 w-5 inline mr-2 animate-spin" />
-        <IconClockOutline v-else-if="!product.inStock" class="h-5 w-5 inline mr-2 text-blue-700" />
+        <IconClockOutline v-else-if="!product.inStock" class="h-5 w-5 inline mr-2" />
         <IconCartPlus v-else class="h-5 w-5 inline mr-2" />
         
         <span v-if="isAddingToCart">Agregando...</span>
