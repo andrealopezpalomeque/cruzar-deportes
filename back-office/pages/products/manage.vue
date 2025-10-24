@@ -100,103 +100,135 @@
         </div>
       </Transition>
 
-      <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
         <div
           v-for="product in paginatedProducts"
           :key="product.id"
-          class="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200"
+          class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300 transition-all duration-300 overflow-hidden"
         >
         <!-- Product Header -->
-        <div class="p-6 border-b border-gray-100">
-          <div class="flex items-start justify-between">
-            <div class="flex items-start gap-3">
-              <!-- Checkbox for bulk selection -->
-              <!-- TODO: Bulk selection feature - to be implemented in the future
-              <input
-                v-if="!product.isProcessed"
-                type="checkbox"
-                :checked="selectedProducts.includes(product.id)"
-                @change="toggleProductSelection(product.id)"
-                class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-              />
-              -->
-              <div class="flex flex-col gap-3">
-                <div>
-                  <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide">Nombre</label>
-                  <div class="mt-1 flex items-center gap-2">
-                    <input
-                      v-model="product.name"
-                      @blur="updateProductDetails(product)"
-                      @keyup.enter.prevent="$event.target.blur()"
-                      :disabled="isDetailsLoading(product.id)"
-                      type="text"
-                      class="w-full px-2 py-1.5 text-xl font-semibold text-gray-900 border border-transparent rounded-md focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-0 disabled:bg-gray-100"
-                    />
-                    <IconLoading
-                      v-if="isDetailsLoading(product.id)"
-                      class="w-4 h-4 text-blue-500 animate-spin"
-                    />
-                  </div>
+        <div class="p-8 border-b border-gray-100">
+          <div class="flex items-start justify-between gap-6">
+            <div class="flex-1 space-y-4">
+              <!-- Product Title - Inline Edit -->
+              <div class="group relative">
+                <div class="flex items-start gap-2">
+                  <IconPencil class="w-4 h-4 text-gray-400 mt-1 flex-shrink-0" />
+                  <input
+                    v-model="product.name"
+                    @input="markProductDirty(product)"
+                    :disabled="isProductSaving(product.id)"
+                    type="text"
+                    class="flex-1 text-xl font-semibold text-gray-900 bg-gray-50 border border-gray-200 outline-none rounded-lg px-3 py-2 transition-all hover:border-gray-300 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-offset-0 disabled:opacity-60 disabled:cursor-wait cursor-text"
+                    placeholder="Nombre del producto"
+                  />
                 </div>
+              </div>
 
-                <p class="text-sm text-gray-500">{{ getCategoryName(product.category) }}</p>
+              <!-- Category Tag -->
+              <div class="flex items-center gap-2 pl-6">
+                <span class="text-xs font-medium text-gray-500 tracking-wide">
+                  {{ getCategoryName(product.category) }}
+                </span>
+              </div>
 
-                <div>
-                  <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide">Descripción</label>
+              <!-- Product Description - Inline Edit -->
+              <div class="group relative">
+                <div class="flex items-start gap-2">
+                  <IconPencil class="w-4 h-4 text-gray-400 mt-2 flex-shrink-0" />
                   <textarea
                     v-model="product.description"
-                    @blur="updateProductDetails(product)"
-                    :disabled="isDetailsLoading(product.id)"
-                    rows="3"
-                    class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
-                    placeholder="Agrega una descripción breve del producto"
+                    @input="markProductDirty(product)"
+                    :disabled="isProductSaving(product.id)"
+                    rows="2"
+                    class="flex-1 text-sm text-gray-600 leading-relaxed bg-gray-50 border border-gray-200 outline-none resize-none rounded-lg px-3 py-2 transition-all hover:border-gray-300 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-offset-0 disabled:opacity-60 disabled:cursor-wait cursor-text"
+                    placeholder="Agrega una descripción del producto..."
                   />
                 </div>
               </div>
             </div>
 
-            <!-- Status Badges -->
-            <div class="flex flex-col gap-2">
-              <span
-                :class="[
-                  'px-2 py-1 text-xs font-medium rounded-full',
-                  product.isProcessed ? 'bg-blue-100 text-blue-800' : 'bg-orange-100 text-orange-800'
-                ]"
-              >
-                {{ product.isProcessed ? 'Gestionado' : 'Sin Gestionar' }}
-              </span>
-              <span
-                :class="[
-                  'px-2 py-1 text-xs font-medium rounded-full',
-                  product.featured ? 'bg-yellow-100 text-yellow-800' : 'bg-gray-100 text-gray-600'
-                ]"
-              >
-                {{ product.featured ? 'Destacado' : 'Normal' }}
-              </span>
-              <span
-                :class="[
-                  'px-2 py-1 text-xs font-medium rounded-full',
-                  product.inStock ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
-                ]"
-              >
-                {{ product.inStock ? 'En Stock' : 'A pedido' }}
-              </span>
+            <!-- Status Badges & Save/Cancel Buttons -->
+            <div class="flex flex-col gap-3 items-end min-w-[140px]">
+              <!-- Save/Cancel Buttons (shown when dirty) -->
+              <Transition name="fade">
+                <div v-if="isProductDirty(product.id)" class="flex flex-col gap-2 w-full mb-2">
+                  <button
+                    @click="saveProductChanges(product)"
+                    :disabled="isProductSaving(product.id)"
+                    :class="[
+                      'w-full px-3 py-2 bg-gray-900 text-white text-xs font-medium rounded-lg transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2',
+                      isProductSaving(product.id) ? 'opacity-60 cursor-wait' : 'hover:bg-gray-800'
+                    ]"
+                  >
+                    <IconLoading
+                      v-if="isProductSaving(product.id)"
+                      class="w-3 h-3 animate-spin"
+                    />
+                    <span>{{ isProductSaving(product.id) ? 'Guardando...' : 'Guardar cambios' }}</span>
+                  </button>
+                  <button
+                    @click="cancelProductChanges(product)"
+                    :disabled="isProductSaving(product.id)"
+                    class="w-full px-3 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-60 disabled:cursor-wait"
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              </Transition>
+
+              <!-- Status Badges -->
+              <div class="flex items-center gap-2">
+                <span
+                  :class="[
+                    'w-2 h-2 rounded-full',
+                    product.isProcessed ? 'bg-blue-500' : 'bg-orange-400'
+                  ]"
+                />
+                <span class="text-xs font-medium text-gray-700">
+                  {{ product.isProcessed ? 'Gestionado' : 'Sin gestionar' }}
+                </span>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <span
+                  :class="[
+                    'w-2 h-2 rounded-full',
+                    product.featured ? 'bg-yellow-500' : 'bg-gray-300'
+                  ]"
+                />
+                <span class="text-xs font-medium text-gray-700">
+                  {{ product.featured ? 'Destacado' : 'Normal' }}
+                </span>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <span
+                  :class="[
+                    'w-2 h-2 rounded-full',
+                    product.inStock ? 'bg-green-500' : 'bg-blue-400'
+                  ]"
+                />
+                <span class="text-xs font-medium text-gray-700">
+                  {{ product.inStock ? 'En stock' : 'A pedido' }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Product Content -->
-        <div class="p-6 space-y-6">
+        <div class="p-8 space-y-8">
           <!-- Images Management -->
-          <div>
-            <h4 class="text-lg font-medium text-gray-900 mb-4">Imágenes Seleccionadas</h4>
+          <div class="space-y-4">
+            <h4 class="text-base font-medium text-gray-900">Imágenes</h4>
 
             <!-- Selected Images Grid -->
-            <div v-if="product.selectedImages.length > 0" class="grid grid-cols-4 gap-2 mb-4">
+            <div v-if="product.selectedImages.length > 0" class="grid grid-cols-4 gap-3 mb-4">
               <div
                 v-for="(image, index) in product.selectedImages"
                 :key="index"
-                class="relative group aspect-square bg-gray-100 rounded-lg overflow-hidden"
+                class="relative group aspect-square bg-gray-100 rounded-xl overflow-hidden ring-1 ring-gray-200 hover:ring-gray-300 transition-all"
               >
                 <img
                   :src="optimizeUrl(image, 150)"
@@ -205,26 +237,29 @@
                 />
                 <button
                   @click="removeSelectedImage(product.id, index)"
-                  class="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                  class="absolute top-2 right-2 bg-white/95 backdrop-blur-sm text-gray-700 hover:text-red-600 rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:shadow-xl"
                 >
-                  <IconClose class="w-3 h-3" />
+                  <IconClose class="w-3.5 h-3.5" />
                 </button>
+                <div class="absolute bottom-2 left-2 bg-black/60 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full font-medium">
+                  {{ index + 1 }}
+                </div>
               </div>
             </div>
 
             <!-- No Images State -->
-            <div v-else class="text-center py-8 bg-gray-50 rounded-lg">
-              <IconImageOff class="w-10 h-10 text-gray-400 mx-auto mb-2" />
-              <p class="text-gray-500">No hay imágenes seleccionadas</p>
+            <div v-else class="text-center py-12 bg-gray-50 rounded-xl border-2 border-dashed border-gray-200">
+              <IconImageOff class="w-12 h-12 text-gray-300 mx-auto mb-3" />
+              <p class="text-sm text-gray-500">No hay imágenes seleccionadas</p>
             </div>
 
             <!-- Browse Images Button -->
             <button
               @click="openImageBrowser(product)"
-              class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              class="w-full px-4 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 active:bg-gray-900 transition-all font-medium shadow-sm hover:shadow-md flex items-center justify-center gap-2"
             >
-              <IconImageMultiple class="inline w-5 h-5 mr-2" />
-              Seleccionar Imágenes
+              <IconImageMultiple class="w-5 h-5" />
+              <span>Seleccionar imágenes</span>
             </button>
 
             <!-- Process Toggle Button -->
@@ -232,9 +267,11 @@
               @click="processProduct(product)"
               :disabled="processingProducts.single[product.id] || processingProducts.globalSingleActive"
               :class="[
-                'w-full px-4 py-2 text-white rounded-lg transition-colors font-medium mt-2 flex items-center justify-center gap-2',
-                product.isProcessed ? 'bg-gray-600 hover:bg-gray-700' : 'bg-green-600 hover:bg-green-700',
-                processingProducts.single[product.id] || processingProducts.globalSingleActive ? 'opacity-70 cursor-wait' : ''
+                'w-full px-4 py-3 rounded-xl transition-all font-medium shadow-sm hover:shadow-md flex items-center justify-center gap-2',
+                product.isProcessed
+                  ? 'bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-100'
+                  : 'bg-green-600 text-white hover:bg-green-700 active:bg-green-600',
+                processingProducts.single[product.id] || processingProducts.globalSingleActive ? 'opacity-60 cursor-wait' : ''
               ]"
             >
               <component
@@ -246,96 +283,111 @@
               </span>
               <IconLoading
                 v-if="processingProducts.single[product.id]"
-                class="w-4 h-4 animate-spin text-white"
+                class="w-4 h-4 animate-spin"
               />
             </button>
           </div>
 
           <!-- Pricing Management -->
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Precio (ARS)</label>
-              <input
-                v-model.number="product.price"
-                @blur="updateProductPricing(product)"
-                type="number"
-                step="100"
-                min="0"
-                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
+          <div class="space-y-4">
+            <h4 class="text-base font-medium text-gray-900">Precios</h4>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label class="block text-xs font-medium text-gray-600">Precio actual</label>
+                <div class="relative">
+                  <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
+                  <input
+                    v-model.number="product.price"
+                    @input="markProductDirty(product)"
+                    :disabled="isProductSaving(product.id)"
+                    type="number"
+                    step="100"
+                    min="0"
+                    class="w-full pl-7 pr-3 py-2.5 border border-gray-200 rounded-xl text-gray-900 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent hover:border-gray-300 transition-colors cursor-text disabled:opacity-60 disabled:cursor-wait"
+                  />
+                </div>
+              </div>
 
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Precio Original (ARS)</label>
-              <input
-                v-model.number="product.originalPrice"
-                @blur="updateProductPricing(product)"
-                type="number"
-                step="100"
-                min="0"
-                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
+              <div class="space-y-2">
+                <label class="block text-xs font-medium text-gray-600">Precio original</label>
+                <div class="relative">
+                  <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
+                  <input
+                    v-model.number="product.originalPrice"
+                    @input="markProductDirty(product)"
+                    :disabled="isProductSaving(product.id)"
+                    type="number"
+                    step="100"
+                    min="0"
+                    class="w-full pl-7 pr-3 py-2.5 border border-gray-200 rounded-xl text-gray-900 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent hover:border-gray-300 transition-colors cursor-text disabled:opacity-60 disabled:cursor-wait"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- Status Toggles -->
-          <div class="grid grid-cols-2 gap-4">
-            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-              <span class="text-sm font-medium text-gray-700">Producto Destacado</span>
-              <div class="flex items-center gap-2">
-                <button
-                  @click="toggleProductStatus(product, 'featured')"
-                  :disabled="isStatusLoading(product.id, 'featured')"
-                  :class="[
-                    'relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500',
-                    product.featured ? 'bg-blue-600' : 'bg-gray-200',
-                    isStatusLoading(product.id, 'featured') ? 'opacity-60 cursor-wait' : ''
-                  ]"
-                >
-                  <span
-                    :class="[
-                      'inline-block h-4 w-4 transform rounded-full bg-white transition-transform',
-                      product.featured ? 'translate-x-6' : 'translate-x-1'
-                    ]"
+          <div class="space-y-4">
+            <h4 class="text-base font-medium text-gray-900">Configuración</h4>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                <span class="text-sm font-medium text-gray-900">Producto destacado</span>
+                <div class="flex items-center gap-3">
+                  <IconLoading
+                    v-if="isStatusLoading(product.id, 'featured')"
+                    class="w-4 h-4 text-gray-500 animate-spin"
                   />
-                </button>
-                <IconLoading
-                  v-if="isStatusLoading(product.id, 'featured')"
-                  class="w-4 h-4 text-blue-500 animate-spin"
-                />
+                  <button
+                    @click="toggleProductStatus(product, 'featured')"
+                    :disabled="isStatusLoading(product.id, 'featured')"
+                    :class="[
+                      'relative inline-flex h-7 w-12 items-center rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2',
+                      product.featured ? 'bg-gray-900' : 'bg-gray-300',
+                      isStatusLoading(product.id, 'featured') ? 'opacity-50 cursor-wait' : ''
+                    ]"
+                  >
+                    <span
+                      :class="[
+                        'inline-block h-5 w-5 transform rounded-full bg-white shadow-sm transition-transform',
+                        product.featured ? 'translate-x-6' : 'translate-x-1'
+                      ]"
+                    />
+                  </button>
+                </div>
               </div>
-            </div>
 
-            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-              <span class="text-sm font-medium text-gray-700">En Stock</span>
-              <div class="flex items-center gap-2">
-                <button
-                  @click="toggleProductStatus(product, 'inStock')"
-                  :disabled="isStatusLoading(product.id, 'inStock')"
-                  :class="[
-                    'relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-green-500',
-                    product.inStock ? 'bg-green-600' : 'bg-gray-200',
-                    isStatusLoading(product.id, 'inStock') ? 'opacity-60 cursor-wait' : ''
-                  ]"
-                >
-                  <span
-                    :class="[
-                      'inline-block h-4 w-4 transform rounded-full bg-white transition-transform',
-                      product.inStock ? 'translate-x-6' : 'translate-x-1'
-                    ]"
+              <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                <span class="text-sm font-medium text-gray-900">Disponible en stock</span>
+                <div class="flex items-center gap-3">
+                  <IconLoading
+                    v-if="isStatusLoading(product.id, 'inStock')"
+                    class="w-4 h-4 text-gray-500 animate-spin"
                   />
-                </button>
-                <IconLoading
-                  v-if="isStatusLoading(product.id, 'inStock')"
-                  class="w-4 h-4 text-green-600 animate-spin"
-                />
+                  <button
+                    @click="toggleProductStatus(product, 'inStock')"
+                    :disabled="isStatusLoading(product.id, 'inStock')"
+                    :class="[
+                      'relative inline-flex h-7 w-12 items-center rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2',
+                      product.inStock ? 'bg-green-600' : 'bg-gray-300',
+                      isStatusLoading(product.id, 'inStock') ? 'opacity-50 cursor-wait' : ''
+                    ]"
+                  >
+                    <span
+                      :class="[
+                        'inline-block h-5 w-5 transform rounded-full bg-white shadow-sm transition-transform',
+                        product.inStock ? 'translate-x-6' : 'translate-x-1'
+                      ]"
+                    />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Last Modified -->
-          <div class="text-xs text-gray-500 pt-2 border-t border-gray-100">
-            Última modificación: {{ formatDate(product.lastModified) }}
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <span class="text-xs text-gray-500">Última modificación</span>
+            <span class="text-xs font-medium text-gray-700">{{ formatDate(product.lastModified) }}</span>
           </div>
         </div>
       </div>
@@ -539,6 +591,7 @@ import IconImageMultiple from '~icons/mdi/image-multiple'
 import IconCheckCircle from '~icons/mdi/check-circle'
 import IconCheck from '~icons/mdi/check'
 import IconRestore from '~icons/mdi/restore'
+import IconPencil from '~icons/mdi/pencil'
 
 // Page meta
 definePageMeta({
@@ -606,8 +659,12 @@ const processingProducts = reactive({
 })
 const detailsLoading = reactive({})
 const detailsSnapshots = reactive({})
+const dirtyProducts = reactive({}) // Track which products have unsaved changes
+const savingProducts = reactive({}) // Track which products are being saved
 
 const isDetailsLoading = (productId) => Boolean(detailsLoading[productId])
+const isProductDirty = (productId) => Boolean(dirtyProducts[productId])
+const isProductSaving = (productId) => Boolean(savingProducts[productId])
 
 const captureDetailsSnapshot = (product) => {
   const sanitizedName = (product.name ?? '').trim()
@@ -627,12 +684,40 @@ const captureDetailsSnapshot = (product) => {
   detailsSnapshots[product.id] = {
     name: sanitizedName,
     description: sanitizedDescription,
-    slug: sanitizedSlug
+    slug: sanitizedSlug,
+    price: product.price || 0,
+    originalPrice: product.originalPrice || 0
   }
 }
 
 const getDetailsSnapshot = (productId) => {
-  return detailsSnapshots[productId] || { name: '', description: '', slug: '' }
+  return detailsSnapshots[productId] || { name: '', description: '', slug: '', price: 0, originalPrice: 0 }
+}
+
+// Mark product as dirty when any field changes
+const markProductDirty = (product) => {
+  const snapshot = getDetailsSnapshot(product.id)
+  const isDirty =
+    product.name?.trim() !== snapshot.name ||
+    product.description?.trim() !== snapshot.description ||
+    product.price !== snapshot.price ||
+    product.originalPrice !== snapshot.originalPrice
+
+  if (isDirty) {
+    dirtyProducts[product.id] = true
+  } else {
+    delete dirtyProducts[product.id]
+  }
+}
+
+// Cancel changes and revert to snapshot
+const cancelProductChanges = (product) => {
+  const snapshot = getDetailsSnapshot(product.id)
+  product.name = snapshot.name
+  product.description = snapshot.description
+  product.price = snapshot.price
+  product.originalPrice = snapshot.originalPrice
+  delete dirtyProducts[product.id]
 }
 
 const allowSelectedDrop = (event) => {
@@ -920,7 +1005,8 @@ const saveImageSelection = async () => {
   }
 }
 
-const updateProductDetails = async (product) => {
+// Unified save function for all product changes
+const saveProductChanges = async (product) => {
   if (!product?.id) {
     return
   }
@@ -929,45 +1015,37 @@ const updateProductDetails = async (product) => {
   const snapshot = getDetailsSnapshot(productId)
   const trimmedName = (product.name ?? '').trim()
   const trimmedDescription = (product.description ?? '').trim()
-  const trimmedSnapshotName = (snapshot.name ?? '').trim()
-  const trimmedSnapshotDescription = (snapshot.description ?? '').trim()
-  const snapshotSlug = (snapshot.slug ?? '').trim()
 
   if (!trimmedName) {
     toast.error('El nombre del producto no puede estar vacío')
     product.name = snapshot.name
     product.description = snapshot.description
-    product.slug = snapshotSlug
+    product.price = snapshot.price
+    product.originalPrice = snapshot.originalPrice
+    delete dirtyProducts[productId]
     return
   }
 
-  if (detailsLoading[productId]) {
+  if (savingProducts[productId]) {
     return
   }
 
   let generatedSlug = slugify(trimmedName)
   if (!generatedSlug) {
-    const fallbackBase = trimmedName || product.id || snapshotSlug || 'producto'
-    generatedSlug = slugify(fallbackBase) || snapshotSlug || String(product.id || 'producto')
-  }
-
-  const shouldUpdate =
-    trimmedName !== trimmedSnapshotName ||
-    trimmedDescription !== trimmedSnapshotDescription ||
-    generatedSlug !== snapshotSlug
-
-  if (!shouldUpdate) {
-    return
+    const fallbackBase = trimmedName || product.id || snapshot.slug || 'producto'
+    generatedSlug = slugify(fallbackBase) || snapshot.slug || String(product.id || 'producto')
   }
 
   try {
-    detailsLoading[productId] = true
+    savingProducts[productId] = true
 
     const payload = {
       ...product,
       name: trimmedName,
       description: trimmedDescription,
-      slug: generatedSlug
+      slug: generatedSlug,
+      price: product.price || 0,
+      originalPrice: product.originalPrice || 0
     }
 
     await saveProduct(payload)
@@ -977,25 +1055,30 @@ const updateProductDetails = async (product) => {
     product.slug = generatedSlug
     product.lastModified = new Date().toISOString()
     captureDetailsSnapshot(product)
+    delete dirtyProducts[productId]
 
-    toast.success('Datos del producto actualizados')
+    toast.success('Cambios guardados correctamente')
   } catch (err) {
-    toast.error('Error al actualizar datos del producto')
+    toast.error('Error al guardar los cambios')
     product.name = snapshot.name
     product.description = snapshot.description
-    product.slug = snapshotSlug
+    product.slug = snapshot.slug
+    product.price = snapshot.price
+    product.originalPrice = snapshot.originalPrice
   } finally {
-    delete detailsLoading[productId]
+    delete savingProducts[productId]
   }
 }
 
+// Keep old function for backwards compatibility (but it won't be used from UI anymore)
+const updateProductDetails = async (product) => {
+  await saveProductChanges(product)
+}
+
+// Keep old function name but it won't actually save - just for backwards compatibility
 const updateProductPricing = async (product) => {
-  try {
-    await updateProductPricingAPI(product.id, product.price, product.originalPrice)
-    toast.success('Precio actualizado')
-  } catch (err) {
-    toast.error('Error al actualizar precio')
-  }
+  // This function is no longer used - pricing is saved via saveProductChanges
+  // Kept for backwards compatibility only
 }
 
 const toggleProductStatus = async (product, field) => {
