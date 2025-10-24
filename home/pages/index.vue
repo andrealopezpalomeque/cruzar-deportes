@@ -56,7 +56,7 @@
               <IconTruck class="w-6 h-6 text-gray-800" />
             </div>
             <h3 class="font-medium mb-2">Envío Gratis</h3>
-            <p class="text-sm text-gray-800">En compras superiores a $99.999</p>
+            <p class="text-sm text-gray-800">En compras superiores a $120.000</p>
           </div>
 
           <div class="text-center cursor-default">
