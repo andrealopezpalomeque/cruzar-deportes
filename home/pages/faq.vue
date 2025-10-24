@@ -74,14 +74,34 @@
                   Realizamos envíos a todo el país. El envío es gratuito en compras superiores a $120.000. Para
                   montos menores, el costo varía según la ubicación.
                 </p>
-                <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
-                  <div class="flex items-start gap-3">
-                    <IconInformationCircle class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p class="font-medium text-blue-900 mb-1">Seguimiento:</p>
-                      <p class="text-blue-800 text-sm">
-                        Recibirás un código de seguimiento por WhatsApp una vez que tu pedido sea despachado.
-                      </p>
+
+                <div class="space-y-3 mb-4">
+                  <!-- Delivery Time -->
+                  <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
+                    <div class="flex items-start gap-3">
+                      <IconCube class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p class="font-medium text-blue-900 mb-1">Tiempo de entrega:</p>
+                        <p class="text-blue-800 text-sm">
+                          Los envíos dentro de Argentina demoran entre 2 y 5 días hábiles.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- In-Store Pickup -->
+                  <div class="bg-green-50/80 border-l-4 border-green-400 p-4 rounded-r-lg backdrop-blur-sm">
+                    <div class="flex items-start gap-3">
+                      <IconInformationCircle class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p class="font-medium text-green-900 mb-1">Retiro en tienda:</p>
+                        <p class="text-green-800 text-sm mb-1">
+                          Podés retirar tu pedido personalmente en Corrientes Capital.
+                        </p>
+                        <p class="text-green-700 text-xs italic">
+                          Consultá la dirección por WhatsApp al realizar tu pedido.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
