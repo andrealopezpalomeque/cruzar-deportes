@@ -107,19 +107,19 @@
           class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300 transition-all duration-300 overflow-hidden"
         >
         <!-- Product Header -->
-        <div class="p-8 border-b border-gray-100">
-          <div class="flex items-start justify-between gap-6">
-            <div class="flex-1 space-y-4">
+        <div class="p-4 sm:p-6 lg:p-8 border-b border-gray-100">
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-6">
+            <div class="flex-1 space-y-3 sm:space-y-4">
               <!-- Product Title - Inline Edit -->
               <div class="group relative">
                 <div class="flex items-start gap-2">
-                  <IconPencil class="w-4 h-4 text-gray-400 mt-1 flex-shrink-0" />
+                  <IconPencil class="w-4 h-4 text-gray-400 mt-0.5 sm:mt-1 flex-shrink-0" />
                   <input
                     v-model="product.name"
                     @input="markProductDirty(product)"
                     :disabled="isProductSaving(product.id)"
                     type="text"
-                    class="flex-1 text-xl font-semibold text-gray-900 bg-gray-50 border border-gray-200 outline-none rounded-lg px-3 py-2 transition-all hover:border-gray-300 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-offset-0 disabled:opacity-60 disabled:cursor-wait cursor-text"
+                    class="flex-1 text-lg sm:text-xl font-semibold text-gray-900 bg-gray-50 border border-gray-200 outline-none rounded-lg px-3 py-2 transition-all hover:border-gray-300 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-offset-0 disabled:opacity-60 disabled:cursor-wait cursor-text"
                     placeholder="Nombre del producto"
                   />
                 </div>
@@ -149,7 +149,7 @@
             </div>
 
             <!-- Status Badges & Save/Cancel Buttons -->
-            <div class="flex flex-col gap-3 items-end min-w-[140px]">
+            <div class="flex flex-col gap-3 items-stretch sm:items-end w-full sm:w-auto sm:min-w-[140px]">
               <!-- Save/Cancel Buttons (shown when dirty) -->
               <Transition name="fade">
                 <div v-if="isProductDirty(product.id)" class="flex flex-col gap-2 w-full mb-2">
@@ -157,7 +157,7 @@
                     @click="saveProductChanges(product)"
                     :disabled="isProductSaving(product.id)"
                     :class="[
-                      'w-full px-3 py-2 bg-gray-900 text-white text-xs font-medium rounded-lg transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2',
+                      'w-full px-3 py-2.5 sm:py-2 bg-gray-900 text-white text-xs sm:text-xs font-medium rounded-lg transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2',
                       isProductSaving(product.id) ? 'opacity-60 cursor-wait' : 'hover:bg-gray-800'
                     ]"
                   >
@@ -170,7 +170,7 @@
                   <button
                     @click="cancelProductChanges(product)"
                     :disabled="isProductSaving(product.id)"
-                    class="w-full px-3 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-60 disabled:cursor-wait"
+                    class="w-full px-3 py-2.5 sm:py-2 bg-gray-100 text-gray-700 text-xs sm:text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-60 disabled:cursor-wait"
                   >
                     Cancelar
                   </button>
@@ -178,7 +178,7 @@
               </Transition>
 
               <!-- Status Badges -->
-              <div class="flex items-center gap-2">
+              <div class="flex items-center justify-start sm:justify-end gap-2">
                 <span
                   :class="[
                     'w-2 h-2 rounded-full',
@@ -190,7 +190,7 @@
                 </span>
               </div>
 
-              <div class="flex items-center gap-2">
+              <div class="flex items-center justify-start sm:justify-end gap-2">
                 <span
                   :class="[
                     'w-2 h-2 rounded-full',
@@ -202,7 +202,7 @@
                 </span>
               </div>
 
-              <div class="flex items-center gap-2">
+              <div class="flex items-center justify-start sm:justify-end gap-2">
                 <span
                   :class="[
                     'w-2 h-2 rounded-full',
@@ -218,7 +218,7 @@
         </div>
 
         <!-- Product Content -->
-        <div class="p-8 space-y-8">
+        <div class="p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8">
           <!-- Images Management -->
           <div class="space-y-4">
             <h4 class="text-base font-medium text-gray-900">Imágenes</h4>
