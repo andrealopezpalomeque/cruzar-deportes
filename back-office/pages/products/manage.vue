@@ -2,11 +2,6 @@
   <div class="p-6 space-y-8">
     <!-- Header -->
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-      <div>
-        <h1 class="text-3xl font-bold text-gray-900">Gestión de Productos</h1>
-        <p class="text-gray-600 mt-1">Administra imágenes, precios y estado de productos</p>
-      </div>
-
       <!-- Filters -->
       <div class="flex flex-wrap gap-3">
         <select
@@ -52,9 +47,18 @@
           <span class="text-sm text-gray-600">{{ selectedProducts.length }} seleccionados:</span>
           <button
             @click="bulkProcessProducts"
-            class="px-3 py-1 bg-green-600 text-white rounded text-sm hover:bg-green-700 transition-colors"
+            :disabled="processingProducts.bulk"
+            :class="[
+              'px-3 py-1 bg-green-600 text-white rounded text-sm transition-colors flex items-center gap-2',
+              processingProducts.bulk ? 'opacity-70 cursor-wait' : 'hover:bg-green-700'
+            ]"
           >
-            Marcar como Gestionados
+            <IconCheckCircle class="w-4 h-4" />
+            <span>Marcar como Gestionados</span>
+            <IconLoading
+              v-if="processingProducts.bulk"
+              class="w-4 h-4 animate-spin text-white"
+            />
           </button>
           <button
             @click="clearSelection"
@@ -139,10 +143,10 @@
               <span
                 :class="[
                   'px-2 py-1 text-xs font-medium rounded-full',
-                  product.inStock ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                  product.inStock ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
                 ]"
               >
-                {{ product.inStock ? 'En Stock' : 'Agotado' }}
+                {{ product.inStock ? 'En Stock' : 'Disponible para encargar' }}
               </span>
             </div>
           </div>
@@ -190,14 +194,22 @@
               Seleccionar Imágenes
             </button>
 
-            <!-- Process Product Button (for unmanaged products) -->
+            <!-- Process Toggle Button -->
             <button
-              v-if="!product.isProcessed"
               @click="processProduct(product)"
-              class="w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium mt-2"
+              :disabled="processingProducts.single[product.id] || processingProducts.globalSingleActive"
+              :class="[
+                'w-full px-4 py-2 text-white rounded-lg transition-colors font-medium mt-2 flex items-center justify-center gap-2',
+                product.isProcessed ? 'bg-gray-600 hover:bg-gray-700' : 'bg-green-600 hover:bg-green-700',
+                processingProducts.single[product.id] || processingProducts.globalSingleActive ? 'opacity-70 cursor-wait' : ''
+              ]"
             >
-              <IconCheckCircle class="inline w-5 h-5 mr-2" />
-              Marcar como Gestionado
+              <IconCheckCircle class="w-5 h-5" />
+              <span>{{ product.isProcessed ? 'Marcar como sin gestionar' : 'Marcar como gestionado' }}</span>
+              <IconLoading
+                v-if="processingProducts.single[product.id]"
+                class="w-4 h-4 animate-spin text-white"
+              />
             </button>
           </div>
 
@@ -232,38 +244,54 @@
           <div class="grid grid-cols-2 gap-4">
             <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <span class="text-sm font-medium text-gray-700">Producto Destacado</span>
-              <button
-                @click="toggleProductStatus(product, 'featured')"
-                :class="[
-                  'relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500',
-                  product.featured ? 'bg-blue-600' : 'bg-gray-200'
-                ]"
-              >
-                <span
+              <div class="flex items-center gap-2">
+                <button
+                  @click="toggleProductStatus(product, 'featured')"
+                  :disabled="isStatusLoading(product.id, 'featured')"
                   :class="[
-                    'inline-block h-4 w-4 transform rounded-full bg-white transition-transform',
-                    product.featured ? 'translate-x-6' : 'translate-x-1'
+                    'relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500',
+                    product.featured ? 'bg-blue-600' : 'bg-gray-200',
+                    isStatusLoading(product.id, 'featured') ? 'opacity-60 cursor-wait' : ''
                   ]"
+                >
+                  <span
+                    :class="[
+                      'inline-block h-4 w-4 transform rounded-full bg-white transition-transform',
+                      product.featured ? 'translate-x-6' : 'translate-x-1'
+                    ]"
+                  />
+                </button>
+                <IconLoading
+                  v-if="isStatusLoading(product.id, 'featured')"
+                  class="w-4 h-4 text-blue-500 animate-spin"
                 />
-              </button>
+              </div>
             </div>
 
             <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <span class="text-sm font-medium text-gray-700">En Stock</span>
-              <button
-                @click="toggleProductStatus(product, 'inStock')"
-                :class="[
-                  'relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-green-500',
-                  product.inStock ? 'bg-green-600' : 'bg-gray-200'
-                ]"
-              >
-                <span
+              <div class="flex items-center gap-2">
+                <button
+                  @click="toggleProductStatus(product, 'inStock')"
+                  :disabled="isStatusLoading(product.id, 'inStock')"
                   :class="[
-                    'inline-block h-4 w-4 transform rounded-full bg-white transition-transform',
-                    product.inStock ? 'translate-x-6' : 'translate-x-1'
+                    'relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-green-500',
+                    product.inStock ? 'bg-green-600' : 'bg-gray-200',
+                    isStatusLoading(product.id, 'inStock') ? 'opacity-60 cursor-wait' : ''
                   ]"
+                >
+                  <span
+                    :class="[
+                      'inline-block h-4 w-4 transform rounded-full bg-white transition-transform',
+                      product.inStock ? 'translate-x-6' : 'translate-x-1'
+                    ]"
+                  />
+                </button>
+                <IconLoading
+                  v-if="isStatusLoading(product.id, 'inStock')"
+                  class="w-4 h-4 text-green-600 animate-spin"
                 />
-              </button>
+              </div>
             </div>
           </div>
 
@@ -519,6 +547,12 @@ const availableImages = ref([])
 const tempSelectedImages = ref([])
 const loadingImages = ref(false)
 const draggingSelectedIndex = ref(null)
+const statusLoading = reactive({})
+const processingProducts = reactive({
+  single: {},
+  bulk: false,
+  globalSingleActive: false
+})
 
 const allowSelectedDrop = (event) => {
   event.preventDefault()
@@ -662,10 +696,20 @@ const currentRangeEnd = computed(() => {
 })
 
 // Methods
+const getStatusKey = (productId, field) => `${productId}-${field}`
+const isStatusLoading = (productId, field) => Boolean(statusLoading[getStatusKey(productId, field)])
+
 const loadAllProducts = async () => {
   try {
     loading.value = true
     error.value = null
+    Object.keys(statusLoading).forEach(key => {
+      delete statusLoading[key]
+    })
+    Object.keys(processingProducts.single).forEach(key => {
+      delete processingProducts.single[key]
+    })
+    processingProducts.bulk = false
     products.value = await loadProducts()
   } catch (err) {
     error.value = err.message
@@ -798,6 +842,12 @@ const updateProductPricing = async (product) => {
 
 const toggleProductStatus = async (product, field) => {
   try {
+    const statusKey = getStatusKey(product.id, field)
+    if (statusLoading[statusKey]) {
+      return
+    }
+    statusLoading[statusKey] = true
+
     const updates = {
       [field]: !product[field]
     }
@@ -811,21 +861,43 @@ const toggleProductStatus = async (product, field) => {
     toast.success(`Estado ${statusName} actualizado`)
   } catch (err) {
     toast.error(`Error al actualizar estado ${field}`)
+  } finally {
+    const statusKey = getStatusKey(product.id, field)
+    statusLoading[statusKey] = false
   }
 }
 
 const processProduct = async (product) => {
   try {
-    // Create a managed version by saving the product
-    await saveProduct(product)
+    if (processingProducts.globalSingleActive) {
+      return
+    }
+    if (processingProducts.single[product.id]) {
+      return
+    }
+    processingProducts.single[product.id] = true
+    processingProducts.globalSingleActive = true
+    const targetIsProcessed = !product.isProcessed
+    const payload = {
+      ...product,
+      isProcessed: targetIsProcessed
+    }
+    await saveProduct(payload)
 
     // Update local state
-    product.isProcessed = true
+    product.isProcessed = targetIsProcessed
     product.lastModified = new Date().toISOString()
 
-    toast.success(`Producto "${product.name}" marcado como gestionado`)
+    toast.success(
+      targetIsProcessed
+        ? `Producto "${product.name}" marcado como gestionado`
+        : `Producto "${product.name}" marcado como sin gestionar`
+    )
   } catch (err) {
     toast.error('Error al procesar producto')
+  } finally {
+    delete processingProducts.single[product.id]
+    processingProducts.globalSingleActive = false
   }
 }
 
@@ -846,12 +918,20 @@ const bulkProcessProducts = async () => {
   if (selectedProducts.value.length === 0) return
 
   try {
+    if (processingProducts.bulk) {
+      return
+    }
+    processingProducts.bulk = true
     loading.value = true
     const productsToProcess = products.value.filter(p => selectedProducts.value.includes(p.id))
 
     // Process each product
     for (const product of productsToProcess) {
-      await saveProduct(product)
+      const payload = {
+        ...product,
+        isProcessed: true
+      }
+      await saveProduct(payload)
       product.isProcessed = true
       product.lastModified = new Date().toISOString()
     }
@@ -862,6 +942,7 @@ const bulkProcessProducts = async () => {
     toast.error('Error al procesar productos en lote')
   } finally {
     loading.value = false
+    processingProducts.bulk = false
   }
 }
 

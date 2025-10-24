@@ -44,10 +44,11 @@ export default defineEventHandler(async (event): Promise<ApiResponse<SharedProdu
         }
 
         // Merge managed data with generated data, prioritizing managed fields
+        const managedProcessed = managedProduct.isProcessed
         return {
           ...product,
           ...managedProduct,
-          isProcessed: true, // Mark as processed since it exists in managed database
+          isProcessed: managedProcessed !== undefined ? managedProcessed : true,
           cloudinaryFolderPath: correctFolderPath
         }
       }
