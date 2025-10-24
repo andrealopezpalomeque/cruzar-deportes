@@ -50,7 +50,7 @@
               <IconHeart class="w-6 h-6 text-gray-600" />
             </div>
             <h3 class="font-medium text-gray-900 mb-2">30 Días</h3>
-            <p class="text-sm text-gray-600">Garantía de devolución sin preguntas</p>
+            <p class="text-sm text-gray-600">Garantía de devolución</p>
           </div>
         </UiCard>
       </div>
