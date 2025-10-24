@@ -98,7 +98,7 @@
       <!-- Stock Status -->
       <div
         v-if="product.inStock"
-        class="flex items-center gap-2 text-sm font-normal text-green-600"
+        class="inline-flex items-center gap-2 rounded-full bg-green-50 px-3 py-1.5 text-sm font-normal text-green-700 ring-1 ring-green-200"
       >
         <IconCheckCircle class="h-4 w-4" />
         <span>En stock</span>

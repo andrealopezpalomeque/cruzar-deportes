@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-10-24T05:56:57.995Z",
+  "lastUpdated": "2025-10-24T12:53:41.868Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -5988,8 +5988,8 @@
     },
     "team-argentina_2014_adizero": {
       "id": "team-argentina_2014_adizero",
-      "name": "Argentina 2014 Adizero",
-      "slug": "argentina-2014-adizero",
+      "name": "Argentina 2014",
+      "slug": "argentina-2014",
       "description": "Argentina 2014 World Cup Adizero player version jersey",
       "price": 70000,
       "originalPrice": 75000,
@@ -6037,7 +6037,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": true,
-      "lastModified": "2025-10-24T05:34:23.445Z",
+      "lastModified": "2025-10-24T12:53:41.868Z",
       "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
@@ -13169,6 +13169,6 @@
   "metadata": {
     "totalProducts": 237,
     "totalImages": 1117,
-    "lastSync": "2025-10-24T05:56:57.995Z"
+    "lastSync": "2025-10-24T12:53:41.868Z"
   }
 }
