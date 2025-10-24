@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-10-23T22:41:32.839Z",
+  "lastUpdated": "2025-10-24T04:54:14.356Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -329,10 +329,12 @@
       "category": "lpf_afa",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168505/cruzar-deportes/products/lpf_afa/boca/o7vfdpd8fe8mrbndwb1d.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168507/cruzar-deportes/products/lpf_afa/boca/kav8dzzfizamaraivz6v.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168510/cruzar-deportes/products/lpf_afa/boca/jqtjelpoijpe0dmrffd7.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168512/cruzar-deportes/products/lpf_afa/boca/hj4l2d4ilbspavpdik14.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168515/cruzar-deportes/products/lpf_afa/boca/yay8j7mjioqmhhsjglpj.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168651/cruzar-deportes/products/lpf_afa/boca/q9s47y2k8ck3b6p5cezz.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168644/cruzar-deportes/products/lpf_afa/boca/vhzsofqwpzihagdslfh9.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168625/cruzar-deportes/products/lpf_afa/boca/xlvli3ik5zb8kbbli2qg.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758185746/cruzar-deportes/products/lpf_afa/boca/ggq42fdkpdbrrgilaijw.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168759/cruzar-deportes/products/lpf_afa/boca/sck4d35rkvkr9a4th0fx.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168748/cruzar-deportes/products/lpf_afa/boca/ecisayrs2laxib5lpvp6.jpg"
       ],
       "allAvailableImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168505/cruzar-deportes/products/lpf_afa/boca/o7vfdpd8fe8mrbndwb1d.jpg",
@@ -400,7 +402,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-10-23T19:46:47.523Z",
+      "lastModified": "2025-10-24T04:54:14.356Z",
       "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.493Z",
       "createdBy": "scraper"
@@ -3672,7 +3674,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": true,
-      "lastModified": "2025-10-23T22:41:32.838Z",
+      "lastModified": "2025-10-24T04:50:06.738Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
@@ -13166,7 +13168,7 @@
   },
   "metadata": {
     "totalProducts": 237,
-    "totalImages": 1115,
-    "lastSync": "2025-10-23T22:41:32.839Z"
+    "totalImages": 1117,
+    "lastSync": "2025-10-24T04:54:14.356Z"
   }
 }
