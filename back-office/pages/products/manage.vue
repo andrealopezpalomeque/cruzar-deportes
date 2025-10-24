@@ -204,8 +204,13 @@
                 processingProducts.single[product.id] || processingProducts.globalSingleActive ? 'opacity-70 cursor-wait' : ''
               ]"
             >
-              <IconCheckCircle class="w-5 h-5" />
-              <span>{{ product.isProcessed ? 'Marcar como sin gestionar' : 'Marcar como gestionado' }}</span>
+              <component
+                :is="product.isProcessed ? IconRestore : IconCheckCircle"
+                class="w-5 h-5"
+              />
+              <span>
+                {{ product.isProcessed ? 'Marcar como sin gestionar' : 'Marcar como gestionado' }}
+              </span>
               <IconLoading
                 v-if="processingProducts.single[product.id]"
                 class="w-4 h-4 animate-spin text-white"
@@ -500,6 +505,7 @@ import IconImageOff from '~icons/mdi/image-off'
 import IconImageMultiple from '~icons/mdi/image-multiple'
 import IconCheckCircle from '~icons/mdi/check-circle'
 import IconCheck from '~icons/mdi/check'
+import IconRestore from '~icons/mdi/restore'
 
 // Page meta
 definePageMeta({
