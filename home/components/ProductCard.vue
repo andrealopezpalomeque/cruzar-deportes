@@ -72,59 +72,43 @@
       </NuxtLink>
       
       <p class="text-sm text-gray-800 mb-3 capitalize cursor-default">{{ categoryName }}</p>
-      
-      <!-- Price and Action -->
-      <div class="flex items-center justify-between cursor-default">
+
+      <!-- Price and Add Button -->
+      <div class="flex items-center justify-between mb-3">
         <div class="flex items-center space-x-2">
           <span class="text-lg font-medium text-gray-900">${{ product.price }}</span>
-          <span 
+          <span
             v-if="product.originalPrice && product.originalPrice > product.price"
             class="text-sm text-gray-700 line-through"
           >
             ${{ product.originalPrice }}
           </span>
         </div>
-        
-        <!-- Quick View Button -->
+
+        <!-- Add Button -->
         <button
           @click.stop="viewProduct"
-          class="px-3 py-2 bg-black text-white text-sm font-medium rounded-md hover:bg-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500"
-          :title="product.inStock ? 'Ver producto' : 'Disponible para encargar'"
-          :aria-label="product.inStock ? `Ver detalles de ${product.name}` : `${product.name} - disponible para encargar`"
+          class="flex h-8 w-8 items-center justify-center rounded-full bg-black text-white hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+          :aria-label="`Ver ${product.name}`"
         >
-          <IconClockOutline v-if="!product.inStock" class="h-4 w-4" aria-hidden="true" />
-          <IconPlus v-else class="h-4 w-4" aria-hidden="true" />
-          <span class="sr-only">{{ product.inStock ? 'Ver producto' : 'Producto disponible para encargar' }}</span>
+          <IconPlus class="h-5 w-5" />
         </button>
       </div>
-      
+
       <!-- Stock Status -->
-      <div class="mt-2 flex items-center justify-between cursor-default">
-        <div class="flex items-center space-x-2">
-          <IconCheckCircle
-            v-if="product.inStock"
-            class="h-4 w-4 text-green-700"
-          />
-          <IconClockOutline
-            v-else
-            class="h-4 w-4 text-blue-700"
-          />
-          <span 
-            :class="product.inStock ? 'text-green-700' : 'text-blue-700'"
-            class="text-sm font-medium"
-          >
-            {{ product.inStock ? 'En stock' : 'Disponible para encargar' }}
-          </span>
-        </div>
-        
-        <!-- View Details Link -->
-        <NuxtLink
-          :to="`/products/${product.slug}`"
-          class="text-sm text-gray-800 hover:text-black font-medium transition-colors"
-          :aria-label="`Ver detalles completos de ${product.name}`"
-        >
-          Ver detalles
-        </NuxtLink>
+      <div
+        v-if="product.inStock"
+        class="flex items-center gap-2 text-sm font-normal text-green-600"
+      >
+        <IconCheckCircle class="h-4 w-4" />
+        <span>En stock</span>
+      </div>
+      <div
+        v-else
+        class="inline-flex items-center gap-2 rounded-full bg-amber-50 px-3 py-1.5 text-sm font-normal text-amber-700 ring-1 ring-amber-200"
+      >
+        <IconClockOutline class="h-4 w-4" />
+        <span>A pedido</span>
       </div>
     </div>
   </div>
@@ -134,9 +118,9 @@
 import IconTshirtCrew from '~icons/mdi/tshirt-crew'
 import IconStar from '~icons/mdi/star'
 import IconImageMultiple from '~icons/mdi/image-multiple'
-import IconPlus from '~icons/mdi/plus'
 import IconCheckCircle from '~icons/mdi/check-circle'
 import IconClockOutline from '~icons/mdi/clock-outline'
+import IconPlus from '~icons/mdi/plus'
 
 const props = defineProps(['product'])
 const productsStore = useProductsStore()
