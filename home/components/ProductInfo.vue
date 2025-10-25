@@ -108,16 +108,16 @@
     <div>
       <div
         v-if="product.inStock"
-        class="inline-flex items-center gap-2 rounded-full bg-green-50 px-3 py-1.5 text-sm font-normal text-green-700 ring-1 ring-green-200"
+        class="inline-flex items-center gap-1.5 text-sm text-green-700"
       >
-        <IconCheckCircle class="h-5 w-5" />
+        <IconCheckCircle class="h-4 w-4" />
         <span>En stock</span>
       </div>
       <div
         v-else
-        class="inline-flex items-center gap-2 rounded-full bg-amber-50 px-3 py-1.5 text-sm font-normal text-amber-700 ring-1 ring-amber-200"
+        class="inline-flex items-center gap-1.5 text-sm text-amber-700"
       >
-        <IconClockOutline class="h-5 w-5" />
+        <IconClockOutline class="h-4 w-4" />
         <span>A pedido</span>
       </div>
     </div>
@@ -161,14 +161,24 @@
     </div>
 
     <!-- Success Message -->
-    <div 
-      v-if="showSuccessMessage" 
+    <div
+      v-if="showSuccessMessage"
       class="bg-green-50 border border-green-200 rounded-md p-4 flex items-center space-x-3"
     >
       <IconCheckCircle class="h-5 w-5 text-green-700 flex-shrink-0" />
       <div>
         <p class="text-sm font-medium text-green-800">¡Producto agregado al carrito!</p>
         <p class="text-sm text-green-700">{{ product.name }} - Talla: {{ selectedSize }}, Color/Modelo: {{ selectedColor }}</p>
+      </div>
+    </div>
+
+    <!-- Payment Promotions -->
+    <div class="bg-amber-50/80 border-l-4 border-amber-400 rounded-r-lg p-3">
+      <div class="flex items-center gap-2">
+        <IconBuildingBank class="h-5 w-5 text-amber-600 flex-shrink-0" />
+        <p class="text-sm text-amber-900">
+          <span class="font-semibold">10% OFF</span> con transferencia bancaria
+        </p>
       </div>
     </div>
 
@@ -210,6 +220,7 @@ import IconShieldCheck from '~icons/mdi/shield-check'
 import IconTruck from '~icons/mdi/truck'
 import IconRefresh from '~icons/mdi/refresh'
 import IconMedal from '~icons/mdi/medal'
+import IconBuildingBank from '~icons/heroicons/building-library'
 
 const props = defineProps(['product'])
 

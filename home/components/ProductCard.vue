@@ -98,16 +98,16 @@
       <!-- Stock Status -->
       <div
         v-if="product.inStock"
-        class="inline-flex items-center gap-2 rounded-full bg-green-50 px-3 py-1.5 text-sm font-normal text-green-700 ring-1 ring-green-200"
+        class="inline-flex items-center gap-1.5 text-xs text-green-700"
       >
-        <IconCheckCircle class="h-4 w-4" />
+        <IconCheckCircle class="h-3.5 w-3.5" />
         <span>En stock</span>
       </div>
       <div
         v-else
-        class="inline-flex items-center gap-2 rounded-full bg-amber-50 px-3 py-1.5 text-sm font-normal text-amber-700 ring-1 ring-amber-200"
+        class="inline-flex items-center gap-1.5 text-xs text-amber-700"
       >
-        <IconClockOutline class="h-4 w-4" />
+        <IconClockOutline class="h-3.5 w-3.5" />
         <span>A pedido</span>
       </div>
     </div>
