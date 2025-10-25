@@ -142,8 +142,8 @@
                     </div>
                   </div>
 
-                  <!-- All Cards Promotion -->
-                  <div class="bg-green-50/80 border-l-4 border-green-400 p-4 rounded-r-lg backdrop-blur-sm">
+                  <!-- COMMENTED: Future "Todas las Tarjetas" promo -->
+                  <!-- <div class="bg-green-50/80 border-l-4 border-green-400 p-4 rounded-r-lg backdrop-blur-sm">
                     <div class="flex items-start gap-3">
                       <IconCreditCard class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
                       <div>
@@ -154,6 +154,23 @@
                         </p>
                         <p class="text-green-700 text-xs italic">
                           ¡Cualquier tarjeta es válida!
+                        </p>
+                      </div>
+                    </div>
+                  </div> -->
+
+                  <!-- Bank Transfer Promotion -->
+                  <div class="bg-amber-50/80 border-l-4 border-amber-400 p-4 rounded-r-lg backdrop-blur-sm">
+                    <div class="flex items-start gap-3">
+                      <IconBuildingBank class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p class="font-semibold text-amber-900 mb-2">Transferencia Bancaria - Todos los días</p>
+                        <p class="text-amber-800 text-sm mb-2">
+                          Realizando tu pago por transferencia bancaria obtenés un
+                          <span class="font-semibold">10% de descuento directo</span> en tu compra.
+                        </p>
+                        <p class="text-amber-700 text-xs italic">
+                          ¡Disponible todos los días de la semana!
                         </p>
                       </div>
                     </div>
@@ -269,6 +286,7 @@ import IconHeart from '~icons/heroicons/heart'
 import IconArrowLeft from '~icons/heroicons/arrow-left'
 import IconQuestionMarkCircle from '~icons/heroicons/question-mark-circle'
 import IconWhatsapp from '~icons/mdi/whatsapp'
+import IconBuildingBank from '~icons/heroicons/building-library'
 
 useHead({
   title: 'Preguntas Frecuentes | Cruzar Deportes',
