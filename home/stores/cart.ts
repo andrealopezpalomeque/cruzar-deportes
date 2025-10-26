@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, computed, watch } from 'vue'
+import { formatArs } from '~/shared/utils/currency'
 import type { CartItem, Product } from '~/types'
 
 export interface CustomerInfo {
@@ -81,10 +82,7 @@ export const useCartStore = defineStore('cart', () => {
   })
 
   const formattedTotalPrice = computed(() => {
-    return new Intl.NumberFormat('es-AR', {
-      style: 'currency',
-      currency: 'ARS'
-    }).format(totalPrice.value)
+    return formatArs(totalPrice.value)
   })
 
   function addItem(productId: string, size: string, color: string, quantity = 1) {

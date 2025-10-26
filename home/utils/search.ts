@@ -1,5 +1,6 @@
 import type { Product } from '~/types'
 import type { SearchResult } from '~/stores/search'
+import { formatArs } from '~/shared/utils/currency'
 
 // Debounce function for search input
 export function debounce<T extends (...args: any[]) => any>(
@@ -177,11 +178,7 @@ export function highlightText(text: string, query: string): string {
 
 // Format price for display
 export function formatPrice(price: number): string {
-  return new Intl.NumberFormat('es-AR', {
-    style: 'currency',
-    currency: 'ARS',
-    minimumFractionDigits: 0
-  }).format(price)
+  return formatArs(price)
 }
 
 // Check if search query is valid

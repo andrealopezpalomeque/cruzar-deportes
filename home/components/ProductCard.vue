@@ -76,12 +76,12 @@
       <!-- Price and Add Button -->
       <div class="flex items-center justify-between mb-3">
         <div class="flex items-center space-x-2">
-          <span class="text-lg font-medium text-gray-900">${{ product.price }}</span>
+          <span class="text-lg font-medium text-gray-900">{{ formatArs(product.price) }}</span>
           <span
             v-if="product.originalPrice && product.originalPrice > product.price"
             class="text-sm text-gray-700 line-through"
           >
-            ${{ product.originalPrice }}
+            {{ formatArs(product.originalPrice) }}
           </span>
         </div>
 
@@ -121,6 +121,7 @@ import IconImageMultiple from '~icons/mdi/image-multiple'
 import IconCheckCircle from '~icons/mdi/check-circle'
 import IconClockOutline from '~icons/mdi/clock-outline'
 import IconPlus from '~icons/mdi/plus'
+import { formatArs } from '~/shared/utils/currency'
 
 const props = defineProps(['product'])
 const productsStore = useProductsStore()
