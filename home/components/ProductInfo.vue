@@ -15,12 +15,12 @@
       <h1 class="text-3xl font-light text-gray-900 mb-4">{{ product.name }}</h1>
       
       <div class="flex items-baseline space-x-3 mb-4">
-        <span class="text-3xl font-medium text-gray-900">${{ product.price }}</span>
+        <span class="text-3xl font-medium text-gray-900">{{ formatArs(product.price) }}</span>
         <span 
           v-if="product.originalPrice && product.originalPrice > product.price"
           class="text-xl text-gray-700 line-through"
         >
-          ${{ product.originalPrice }}
+          {{ formatArs(product.originalPrice) }}
         </span>
         <span 
           v-if="product.originalPrice && product.originalPrice > product.price"
@@ -143,8 +143,8 @@
         <IconCartPlus v-else class="h-5 w-5 inline mr-2" />
         
         <span v-if="isAddingToCart">Agregando...</span>
-        <span v-else-if="!product.inStock">Encargar ahora - ${{ totalPrice }}</span>
-        <span v-else>Agregar al Carrito - ${{ totalPrice }}</span>
+        <span v-else-if="!product.inStock">Encargar ahora - {{ formattedTotalPrice }}</span>
+        <span v-else>Agregar al Carrito - {{ formattedTotalPrice }}</span>
       </button>
 
       <!-- Validation Messages -->
@@ -221,6 +221,7 @@ import IconTruck from '~icons/mdi/truck'
 import IconRefresh from '~icons/mdi/refresh'
 import IconMedal from '~icons/mdi/medal'
 import IconBuildingBank from '~icons/heroicons/building-library'
+import { formatArs } from '~/shared/utils/currency'
 
 const props = defineProps(['product'])
 
@@ -241,8 +242,10 @@ const categoryName = computed(() => {
 })
 
 const totalPrice = computed(() => {
-  return (props.product.price * quantity.value).toFixed(2)
+  return props.product.price * quantity.value
 })
+
+const formattedTotalPrice = computed(() => formatArs(totalPrice.value))
 
 const canAddToCart = computed(() => {
   return selectedSize.value && selectedSize.value.trim() !== '' &&

@@ -93,7 +93,7 @@
                         <span>Talla: {{ item.size }}</span>
                         <span>Color: {{ item.color }}</span>
                       </div>
-                      <p class="text-lg font-medium text-black mt-1">${{ item.product.price }} c/u</p>
+                      <p class="text-lg font-medium text-black mt-1">{{ formatArs(item.product.price) }} c/u</p>
                     </div>
                     
                     <!-- Quantity Controls -->
@@ -139,7 +139,7 @@
                       <h4 class="font-medium text-gray-900 truncate">{{ item.product.name }}</h4>
                       <p class="text-sm text-gray-700">Talla: {{ item.size }}</p>
                       <p class="text-sm text-gray-700">Color: {{ item.color }}</p>
-                      <p class="text-sm font-medium text-black">${{ item.product.price }} c/u</p>
+                      <p class="text-sm font-medium text-black">{{ formatArs(item.product.price) }} c/u</p>
                     </div>
                     
                     <!-- Quantity Controls -->
@@ -367,6 +367,7 @@ import IconWhatsapp from '~icons/mdi/whatsapp'
 import IconLoading from '~icons/mdi/loading'
 import IconInformationCircle from '~icons/mdi/information'
 import { openURLMobileOptimized, isMobileDevice } from '~/utils/device'
+import { formatArs } from '~/shared/utils/currency'
 
 const router = useRouter()
 const cartStore = useCartStore()
