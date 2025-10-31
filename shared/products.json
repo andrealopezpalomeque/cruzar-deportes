@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-10-24T15:45:18.678Z",
+  "lastUpdated": "2025-10-31T19:57:06.505Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -335,6 +335,9 @@
       ],
       "allAvailableImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168505/cruzar-deportes/products/lpf_afa/boca/o7vfdpd8fe8mrbndwb1d.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168651/cruzar-deportes/products/lpf_afa/boca/q9s47y2k8ck3b6p5cezz.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758185746/cruzar-deportes/products/lpf_afa/boca/ggq42fdkpdbrrgilaijw.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168759/cruzar-deportes/products/lpf_afa/boca/sck4d35rkvkr9a4th0fx.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168507/cruzar-deportes/products/lpf_afa/boca/kav8dzzfizamaraivz6v.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168510/cruzar-deportes/products/lpf_afa/boca/jqtjelpoijpe0dmrffd7.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168512/cruzar-deportes/products/lpf_afa/boca/hj4l2d4ilbspavpdik14.jpg",
@@ -362,7 +365,6 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168644/cruzar-deportes/products/lpf_afa/boca/vhzsofqwpzihagdslfh9.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168646/cruzar-deportes/products/lpf_afa/boca/yqtgxxlxwyh8zypfeyex.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168649/cruzar-deportes/products/lpf_afa/boca/j0uyw76ipchr2swgxaet.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168651/cruzar-deportes/products/lpf_afa/boca/q9s47y2k8ck3b6p5cezz.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168652/cruzar-deportes/products/lpf_afa/boca/gptewb4ks8oceza2i3su.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168728/cruzar-deportes/products/lpf_afa/boca/v1w7pg7is1hne6ycotlj.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168730/cruzar-deportes/products/lpf_afa/boca/pmaxn5ocff2nxaadmknz.jpg",
@@ -380,8 +382,6 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168752/cruzar-deportes/products/lpf_afa/boca/oyn5gtu5zgoqmlu4lyk4.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168755/cruzar-deportes/products/lpf_afa/boca/hi5vpjyudncrgxd3ro9d.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168757/cruzar-deportes/products/lpf_afa/boca/j55bnxwphbxr5jb9msvq.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168759/cruzar-deportes/products/lpf_afa/boca/sck4d35rkvkr9a4th0fx.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758185746/cruzar-deportes/products/lpf_afa/boca/ggq42fdkpdbrrgilaijw.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758185747/cruzar-deportes/products/lpf_afa/boca/lg3ol3azbadtwf9lcquj.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/lpf_afa/boca",
@@ -399,7 +399,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-10-24T14:52:20.951Z",
+      "lastModified": "2025-10-31T19:35:10.361Z",
       "isProcessed": true,
       "createdAt": "2025-09-25T22:20:59.493Z",
       "createdBy": "scraper"
@@ -1000,12 +1000,12 @@
       ],
       "allAvailableImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758167439/cruzar-deportes/products/caf/cs_constantine_player_version/ddsn7ar1nx7e1pq1vuaa.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758167456/cruzar-deportes/products/caf/cs_constantine_player_version/e8ltkqbky8j6jamrprli.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758167442/cruzar-deportes/products/caf/cs_constantine_player_version/qvtkappvniblr8nudb16.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758167446/cruzar-deportes/products/caf/cs_constantine_player_version/yzpap4alusv7cdhn0xtc.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758167451/cruzar-deportes/products/caf/cs_constantine_player_version/znq06jujo1qejnoecq9s.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758167453/cruzar-deportes/products/caf/cs_constantine_player_version/hbxnydkehxsfzg7yfhwa.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758167455/cruzar-deportes/products/caf/cs_constantine_player_version/zbatw51zq85u73urgo6r.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758167456/cruzar-deportes/products/caf/cs_constantine_player_version/e8ltkqbky8j6jamrprli.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758167455/cruzar-deportes/products/caf/cs_constantine_player_version/zbatw51zq85u73urgo6r.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/caf/cs_constantine_player_version",
       "sizes": [
@@ -3594,13 +3594,15 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168878/cruzar-deportes/products/lpf_afa/boca_authentic/nrpst5vdinxjyzfrbbkm.jpg"
       ],
       "allAvailableImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168855/cruzar-deportes/products/lpf_afa/boca_authentic/bf46r51rg88m0ibtz9aq.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168839/cruzar-deportes/products/lpf_afa/boca_authentic/genaikpjgnblq3svv2vm.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168767/cruzar-deportes/products/lpf_afa/boca_authentic/kixckictwhndoee6ewi4.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168878/cruzar-deportes/products/lpf_afa/boca_authentic/nrpst5vdinxjyzfrbbkm.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168760/cruzar-deportes/products/lpf_afa/boca_authentic/pvh7phxsx4nosbtczhzz.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168762/cruzar-deportes/products/lpf_afa/boca_authentic/mgv6dscmhawsb0oemvpu.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168764/cruzar-deportes/products/lpf_afa/boca_authentic/rhg3lafqsdlf1tjrx58k.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168765/cruzar-deportes/products/lpf_afa/boca_authentic/fcybzhzsjr5tgnrm0l28.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168767/cruzar-deportes/products/lpf_afa/boca_authentic/kixckictwhndoee6ewi4.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168837/cruzar-deportes/products/lpf_afa/boca_authentic/lyhov1fqhd54d0iwapiw.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168839/cruzar-deportes/products/lpf_afa/boca_authentic/genaikpjgnblq3svv2vm.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168841/cruzar-deportes/products/lpf_afa/boca_authentic/skdf049w6oxxe7kaj5sf.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168842/cruzar-deportes/products/lpf_afa/boca_authentic/tnm77pkq0xdm6lyidilr.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168844/cruzar-deportes/products/lpf_afa/boca_authentic/o91qjxmpc4nunddrgk6z.jpg",
@@ -3609,7 +3611,6 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168849/cruzar-deportes/products/lpf_afa/boca_authentic/atlfhapzymujwmfmdlre.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168851/cruzar-deportes/products/lpf_afa/boca_authentic/gw9mgd7idgtgcrhvdy00.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168853/cruzar-deportes/products/lpf_afa/boca_authentic/sqayiizrvzfdnbuug4gb.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168855/cruzar-deportes/products/lpf_afa/boca_authentic/bf46r51rg88m0ibtz9aq.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168857/cruzar-deportes/products/lpf_afa/boca_authentic/byfbmueqmfryylczuh4z.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168858/cruzar-deportes/products/lpf_afa/boca_authentic/tmbqf40docpdprkggcon.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168859/cruzar-deportes/products/lpf_afa/boca_authentic/qaanoekipflwi0ti3dfq.jpg",
@@ -3626,7 +3627,6 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168873/cruzar-deportes/products/lpf_afa/boca_authentic/hdbuw5itpcmwtsoxf7mn.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168875/cruzar-deportes/products/lpf_afa/boca_authentic/fg1iazcwlv7pn2lbfoxz.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168876/cruzar-deportes/products/lpf_afa/boca_authentic/m915jnceaeackwfse8oc.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168878/cruzar-deportes/products/lpf_afa/boca_authentic/nrpst5vdinxjyzfrbbkm.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168880/cruzar-deportes/products/lpf_afa/boca_authentic/kfgkn3adoc0uexvln393.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168958/cruzar-deportes/products/lpf_afa/boca_authentic/ws1dnfz8jmk49py4rwym.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168959/cruzar-deportes/products/lpf_afa/boca_authentic/cpqipgs5cgy5bxff3o8x.jpg",
@@ -6787,6 +6787,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173180/cruzar-deportes/products/national_retro/denmark_1992/q46rw8hudqbadxvwddim.jpg"
       ],
       "allAvailableImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173183/cruzar-deportes/products/national_retro/denmark_1992/xlcqpx7qypjm0p3ehgju.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173180/cruzar-deportes/products/national_retro/denmark_1992/q46rw8hudqbadxvwddim.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173160/cruzar-deportes/products/national_retro/denmark_1992/iu0csf1p4zfq2qj8yw9m.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173161/cruzar-deportes/products/national_retro/denmark_1992/jluepwnbpxqqupomqk9a.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173163/cruzar-deportes/products/national_retro/denmark_1992/savgmeg4xklv3pjxirve.jpg",
@@ -6800,9 +6802,7 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173176/cruzar-deportes/products/national_retro/denmark_1992/lvvji1tu46llgldhxedb.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173177/cruzar-deportes/products/national_retro/denmark_1992/mnuz1fjexjon0pfadbvw.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173178/cruzar-deportes/products/national_retro/denmark_1992/fb1spidkh7lkjqdcyeqh.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173180/cruzar-deportes/products/national_retro/denmark_1992/q46rw8hudqbadxvwddim.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173181/cruzar-deportes/products/national_retro/denmark_1992/fgyjrvtyzl0yfajpq73m.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173183/cruzar-deportes/products/national_retro/denmark_1992/xlcqpx7qypjm0p3ehgju.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173184/cruzar-deportes/products/national_retro/denmark_1992/mjqdntdcznlbjly0jn0m.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173186/cruzar-deportes/products/national_retro/denmark_1992/osrn7yp1jts1alkb2soi.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173188/cruzar-deportes/products/national_retro/denmark_1992/jkjkmosmjwcg9hujw4gc.jpg",
@@ -6845,6 +6845,10 @@
       ],
       "allAvailableImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173191/cruzar-deportes/products/national_retro/denmark_1998/hcnupxr7t9o0jxf23tyf.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173341/cruzar-deportes/products/national_retro/denmark_1998/qxctpcuxk5hzbbxnv7vj.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173314/cruzar-deportes/products/national_retro/denmark_1998/ino5vr3pzxweqiiaxatn.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173297/cruzar-deportes/products/national_retro/denmark_1998/vlptb5jb49kemu4nq97y.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173278/cruzar-deportes/products/national_retro/denmark_1998/epzhv3skxbq0hyts1uhr.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173264/cruzar-deportes/products/national_retro/denmark_1998/gzmi5foly6rw3m9e9tig.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173265/cruzar-deportes/products/national_retro/denmark_1998/fpbwabcdms4r0i4uhkoq.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173267/cruzar-deportes/products/national_retro/denmark_1998/tsoohjds7kd66z46afgx.jpg",
@@ -6855,7 +6859,6 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173274/cruzar-deportes/products/national_retro/denmark_1998/rpfg6qstvbeweij8hns6.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173275/cruzar-deportes/products/national_retro/denmark_1998/avvkopyxr54oye0rclw8.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173277/cruzar-deportes/products/national_retro/denmark_1998/igsb3eiv5gfuhmhdbsbb.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173278/cruzar-deportes/products/national_retro/denmark_1998/epzhv3skxbq0hyts1uhr.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173279/cruzar-deportes/products/national_retro/denmark_1998/eqtxbsqxnxhjf6xawhfe.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173281/cruzar-deportes/products/national_retro/denmark_1998/ksb2rddvwekkeufsari3.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173282/cruzar-deportes/products/national_retro/denmark_1998/apetzwdootppe3edskzm.jpg",
@@ -6864,13 +6867,11 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173288/cruzar-deportes/products/national_retro/denmark_1998/gpa945mp0slkxtpgpumi.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173290/cruzar-deportes/products/national_retro/denmark_1998/m8gn1ygt7evgvkkmszwe.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173293/cruzar-deportes/products/national_retro/denmark_1998/e6hufwnd0zon2bpncbbt.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173297/cruzar-deportes/products/national_retro/denmark_1998/vlptb5jb49kemu4nq97y.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173299/cruzar-deportes/products/national_retro/denmark_1998/xoswrebaxqbaeznda4di.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173300/cruzar-deportes/products/national_retro/denmark_1998/wvbpmcluyzbok5g5c7ey.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173304/cruzar-deportes/products/national_retro/denmark_1998/t3itpsy8rlkyt3zk20cm.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173306/cruzar-deportes/products/national_retro/denmark_1998/zshr6yzy9o2moa60ub3b.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173309/cruzar-deportes/products/national_retro/denmark_1998/cyovfonbukhck0ysqil6.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173314/cruzar-deportes/products/national_retro/denmark_1998/ino5vr3pzxweqiiaxatn.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173319/cruzar-deportes/products/national_retro/denmark_1998/fz8271nyqzsw5lwxzomz.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173322/cruzar-deportes/products/national_retro/denmark_1998/yey1k3y3ncmzrdphyfq4.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173326/cruzar-deportes/products/national_retro/denmark_1998/asszlflybzgstbbnctna.jpg",
@@ -6880,7 +6881,6 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173335/cruzar-deportes/products/national_retro/denmark_1998/ts8ex33rfsm1xeojkfbs.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173337/cruzar-deportes/products/national_retro/denmark_1998/vxvnt6idlws6ypyrzp0g.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173340/cruzar-deportes/products/national_retro/denmark_1998/edqnutueeaiq6wibul3l.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173341/cruzar-deportes/products/national_retro/denmark_1998/qxctpcuxk5hzbbxnv7vj.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173342/cruzar-deportes/products/national_retro/denmark_1998/sdiug38ohvvbc8s1k6xw.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173344/cruzar-deportes/products/national_retro/denmark_1998/acwdzqxiljo2wt1cverq.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173345/cruzar-deportes/products/national_retro/denmark_1998/f0zfok8xjodwata1ijkm.jpg",
@@ -6926,9 +6926,12 @@
       ],
       "allAvailableImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173351/cruzar-deportes/products/national_retro/denmark_88/ikgafuywclrygtjil7et.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173439/cruzar-deportes/products/national_retro/denmark_88/inioximuzfsovuf1xycd.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173425/cruzar-deportes/products/national_retro/denmark_88/yxcx7szczwfu93luncox.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758185798/cruzar-deportes/products/national_retro/denmark_88/buxlndv0velzbznyht28.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173444/cruzar-deportes/products/national_retro/denmark_88/t8w2rhfcry7b2ykgavr0.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173352/cruzar-deportes/products/national_retro/denmark_88/ms1efw03xpzsbtav0pjs.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173354/cruzar-deportes/products/national_retro/denmark_88/si3agjxhire55ntlbnsi.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173425/cruzar-deportes/products/national_retro/denmark_88/yxcx7szczwfu93luncox.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173428/cruzar-deportes/products/national_retro/denmark_88/bg94bwiaivouui1d1rhc.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173430/cruzar-deportes/products/national_retro/denmark_88/znlond0tupcageohdjka.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173432/cruzar-deportes/products/national_retro/denmark_88/nolglswgxzsovaqkgzvr.jpg",
@@ -6936,16 +6939,13 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173435/cruzar-deportes/products/national_retro/denmark_88/rsreoy4a4hgw9wp2grxb.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173436/cruzar-deportes/products/national_retro/denmark_88/kxi67lhvuook2yjlw1pt.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173437/cruzar-deportes/products/national_retro/denmark_88/cvh9vmjlex9aqlejr9gl.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173439/cruzar-deportes/products/national_retro/denmark_88/inioximuzfsovuf1xycd.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173440/cruzar-deportes/products/national_retro/denmark_88/ywv8adp9cpidniqlopqq.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173441/cruzar-deportes/products/national_retro/denmark_88/g6tqht9dbrezdmn3zdxr.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173443/cruzar-deportes/products/national_retro/denmark_88/dlbacc3asfnl1dh1z0g1.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173444/cruzar-deportes/products/national_retro/denmark_88/t8w2rhfcry7b2ykgavr0.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173445/cruzar-deportes/products/national_retro/denmark_88/qlzapubqkcc7wi3o0heu.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173448/cruzar-deportes/products/national_retro/denmark_88/jk8tp9ebbvumr8qx9qln.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173449/cruzar-deportes/products/national_retro/denmark_88/ehrzndal2pj9u5wccpb4.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173451/cruzar-deportes/products/national_retro/denmark_88/k88smdy1bsgj2dpljjfb.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758185798/cruzar-deportes/products/national_retro/denmark_88/buxlndv0velzbznyht28.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173451/cruzar-deportes/products/national_retro/denmark_88/k88smdy1bsgj2dpljjfb.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/denmark_88",
       "sizes": [
@@ -6979,8 +6979,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173452/cruzar-deportes/products/national_retro/england_02_kid_kit/bivt4utny0qn6d1fo9li.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173452/cruzar-deportes/products/national_retro/england_02_kid_kit/bivt4utny0qn6d1fo9li.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173452/cruzar-deportes/products/national_retro/england_02_kid_kit/bivt4utny0qn6d1fo9li.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/england_02_kid_kit",
       "sizes": [
@@ -7014,8 +7014,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173453/cruzar-deportes/products/national_retro/england_02_long_sleeve/ao5gmymxmby8wchuxeus.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173453/cruzar-deportes/products/national_retro/england_02_long_sleeve/ao5gmymxmby8wchuxeus.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173455/cruzar-deportes/products/national_retro/england_02_long_sleeve/vndzsmwvnmd71hftzk12.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173456/cruzar-deportes/products/national_retro/england_02_long_sleeve/cmqj5odirthm2gqt3o0a.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173457/cruzar-deportes/products/national_retro/england_02_long_sleeve/poyqbeubwnlwc1dek2df.jpg",
@@ -7053,8 +7053,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173547/cruzar-deportes/products/national_retro/england_06_long_sleeve/ssjlsrhhpxxefoay8sfy.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173547/cruzar-deportes/products/national_retro/england_06_long_sleeve/ssjlsrhhpxxefoay8sfy.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173549/cruzar-deportes/products/national_retro/england_06_long_sleeve/kptqx0f9vtr1pvhcopqe.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173550/cruzar-deportes/products/national_retro/england_06_long_sleeve/osay9z3ln7x2zb8ctjyx.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173551/cruzar-deportes/products/national_retro/england_06_long_sleeve/vlnz550oufvklnt41bgt.jpg",
@@ -7092,8 +7092,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173580/cruzar-deportes/products/national_retro/england_06_shorts/fuiovhy5pmgxazkb1p0x.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173580/cruzar-deportes/products/national_retro/england_06_shorts/fuiovhy5pmgxazkb1p0x.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173582/cruzar-deportes/products/national_retro/england_06_shorts/lotf5lhpdx5d0fm47nnd.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173584/cruzar-deportes/products/national_retro/england_06_shorts/vp2mduc9tdaraxeqn4p8.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173587/cruzar-deportes/products/national_retro/england_06_shorts/ppqnjpfobykcmo2dhx0y.jpg",
@@ -7132,8 +7132,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173603/cruzar-deportes/products/national_retro/england_1966/es7gar5g5bdzzgbz8if9.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173603/cruzar-deportes/products/national_retro/england_1966/es7gar5g5bdzzgbz8if9.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173604/cruzar-deportes/products/national_retro/england_1966/ubhbrresjxqhwu4f3nww.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173605/cruzar-deportes/products/national_retro/england_1966/bcnsrtb6t9hipbe0kg4v.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173606/cruzar-deportes/products/national_retro/england_1966/ofawzonozzgpr9j4blnh.jpg",
@@ -7170,8 +7170,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173629/cruzar-deportes/products/national_retro/england_1980/vflrygorv3hfjceq4qfg.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173629/cruzar-deportes/products/national_retro/england_1980/vflrygorv3hfjceq4qfg.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173631/cruzar-deportes/products/national_retro/england_1980/f8alhexfrzvljlcruhs1.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173632/cruzar-deportes/products/national_retro/england_1980/gg0brzztlrffduyigquj.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173633/cruzar-deportes/products/national_retro/england_1980/yf2pivihlpdwbdd3wxso.jpg",
@@ -7214,12 +7214,14 @@
       ],
       "allAvailableImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173776/cruzar-deportes/products/national_retro/england_1982/crsluilyfooqvbxpnrbj.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173779/cruzar-deportes/products/national_retro/england_1982/dq6pa1edaour91d1d7oi.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173780/cruzar-deportes/products/national_retro/england_1982/ex0dxekjgeyo9zlrng4l.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173877/cruzar-deportes/products/national_retro/england_1982/zs1eet7a5yvshfoxqzqu.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173799/cruzar-deportes/products/national_retro/england_1982/mcdqztn8q9qjvvftkki9.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173788/cruzar-deportes/products/national_retro/england_1982/c5xqtvs8rg5awazqtbb4.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173779/cruzar-deportes/products/national_retro/england_1982/dq6pa1edaour91d1d7oi.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173782/cruzar-deportes/products/national_retro/england_1982/ml5wxz1gfom54gdnlvob.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173785/cruzar-deportes/products/national_retro/england_1982/eqvffv6e89vhmwvopm6a.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173786/cruzar-deportes/products/national_retro/england_1982/zj5nvdbmmwzu6kjxig9f.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173788/cruzar-deportes/products/national_retro/england_1982/c5xqtvs8rg5awazqtbb4.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173789/cruzar-deportes/products/national_retro/england_1982/eb0mfu3a1dapb2dsljca.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173791/cruzar-deportes/products/national_retro/england_1982/jdopn72ahzptng3oxmhc.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173792/cruzar-deportes/products/national_retro/england_1982/adjxb5sl2fyebzswbkkn.jpg",
@@ -7227,13 +7229,11 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173795/cruzar-deportes/products/national_retro/england_1982/bra7njypetj22hzdcch8.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173796/cruzar-deportes/products/national_retro/england_1982/db5nopmevalxfjxb636w.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173797/cruzar-deportes/products/national_retro/england_1982/y55vgmzbcut7pn8otmcv.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173799/cruzar-deportes/products/national_retro/england_1982/mcdqztn8q9qjvvftkki9.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173870/cruzar-deportes/products/national_retro/england_1982/boiku7flo2y9moy2qmhu.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173872/cruzar-deportes/products/national_retro/england_1982/va220dzdkrxdrqkms6rr.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173873/cruzar-deportes/products/national_retro/england_1982/uyuvquc7pcoucl4jysa1.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173874/cruzar-deportes/products/national_retro/england_1982/veh43tl3kmhsr2moojvz.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173876/cruzar-deportes/products/national_retro/england_1982/ncsfa1c85yiqv3dxq6xy.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173877/cruzar-deportes/products/national_retro/england_1982/zs1eet7a5yvshfoxqzqu.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173878/cruzar-deportes/products/national_retro/england_1982/ip6esjl3ommoycovhzjl.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173880/cruzar-deportes/products/national_retro/england_1982/h4bofnjvdx4ptkapa7iy.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173881/cruzar-deportes/products/national_retro/england_1982/ksqrp2fgxrptgm9pojdw.jpg",
@@ -7278,16 +7278,18 @@
       ],
       "allAvailableImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173885/cruzar-deportes/products/national_retro/england_1989/n81tnmlp9uqmpbpaduwr.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173895/cruzar-deportes/products/national_retro/england_1989/nsphofw1oc1aajt290ow.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173996/cruzar-deportes/products/national_retro/england_1989/gylqsvdn0ii4kgzmnmu5.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173986/cruzar-deportes/products/national_retro/england_1989/yu4sa5nnv9i1lzacog5v.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173902/cruzar-deportes/products/national_retro/england_1989/zico7h0zcaxfcpgd4ite.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173887/cruzar-deportes/products/national_retro/england_1989/fylr8efrbtye09ykkr06.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173888/cruzar-deportes/products/national_retro/england_1989/sflzdiitcphrwmkuil17.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173889/cruzar-deportes/products/national_retro/england_1989/nbcl7ctibbl4d2t1j9xd.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173891/cruzar-deportes/products/national_retro/england_1989/biieib7chn8sjnf00mqh.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173892/cruzar-deportes/products/national_retro/england_1989/p10mkxipqtgpccxr9dda.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173895/cruzar-deportes/products/national_retro/england_1989/nsphofw1oc1aajt290ow.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173898/cruzar-deportes/products/national_retro/england_1989/drbwsukpvd61futtktj0.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173900/cruzar-deportes/products/national_retro/england_1989/unjlcqbpqjmjk2qfgjew.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173901/cruzar-deportes/products/national_retro/england_1989/cjj9eifz4jbtajnjuvcu.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173902/cruzar-deportes/products/national_retro/england_1989/zico7h0zcaxfcpgd4ite.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173904/cruzar-deportes/products/national_retro/england_1989/feqpq5xvarv4jdtwf5m1.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173905/cruzar-deportes/products/national_retro/england_1989/heszlocx0cvwykbxwwlt.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173906/cruzar-deportes/products/national_retro/england_1989/xafu052fzx6exryajec2.jpg",
@@ -7297,12 +7299,10 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173913/cruzar-deportes/products/national_retro/england_1989/cd2nspybfwgytlo6dhyt.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173983/cruzar-deportes/products/national_retro/england_1989/z77clrobogtlsiywjoo9.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173984/cruzar-deportes/products/national_retro/england_1989/un8bkkldugwclaiewf9f.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173986/cruzar-deportes/products/national_retro/england_1989/yu4sa5nnv9i1lzacog5v.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173987/cruzar-deportes/products/national_retro/england_1989/d6lqcmgols1jbujsyr1g.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173989/cruzar-deportes/products/national_retro/england_1989/eaykyscgbopogpsodwto.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173991/cruzar-deportes/products/national_retro/england_1989/b9lxxwldjnmcjw9asroh.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173993/cruzar-deportes/products/national_retro/england_1989/hjzwswt3qdroj1zkqwhm.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173996/cruzar-deportes/products/national_retro/england_1989/gylqsvdn0ii4kgzmnmu5.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758173999/cruzar-deportes/products/national_retro/england_1989/vhvxluyosvmqirk8acat.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174003/cruzar-deportes/products/national_retro/england_1989/jvjh42am9ochwbmi3pge.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174007/cruzar-deportes/products/national_retro/england_1989/wy6roaurp8tw6ausr6bp.jpg",
@@ -7341,8 +7341,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174009/cruzar-deportes/products/national_retro/england_1990/ue3xdomqhmtrhuxtdtzt.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174009/cruzar-deportes/products/national_retro/england_1990/ue3xdomqhmtrhuxtdtzt.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174012/cruzar-deportes/products/national_retro/england_1990/uhqblg444u48vq8k0c6x.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174016/cruzar-deportes/products/national_retro/england_1990/bxr0uiym2fbkxwwgkcql.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174019/cruzar-deportes/products/national_retro/england_1990/hwqybfmi5dngvzsmbzpe.jpg",
@@ -7379,8 +7379,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174329/cruzar-deportes/products/national_retro/england_1992/au1q8drjcjdenpeabg2o.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174329/cruzar-deportes/products/national_retro/england_1992/au1q8drjcjdenpeabg2o.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174330/cruzar-deportes/products/national_retro/england_1992/fkqpxto8dkh6oadfxaod.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174332/cruzar-deportes/products/national_retro/england_1992/tzbtx5kn7nonlgyoudja.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174333/cruzar-deportes/products/national_retro/england_1992/xdcflihxpwyjpvszy58g.jpg",
@@ -7418,8 +7418,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174350/cruzar-deportes/products/national_retro/england_1994/loo1kjkkxa76p6vx13ss.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174350/cruzar-deportes/products/national_retro/england_1994/loo1kjkkxa76p6vx13ss.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174351/cruzar-deportes/products/national_retro/england_1994/reyeeo7ddalfwuhbgz0e.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174353/cruzar-deportes/products/national_retro/england_1994/r8bmutm5vkdzme8fritf.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174355/cruzar-deportes/products/national_retro/england_1994/yolsc4pcq4zmwmwg8xq7.jpg",
@@ -7458,8 +7458,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174572/cruzar-deportes/products/national_retro/england_1996/ji16np47caududlevzgj.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174572/cruzar-deportes/products/national_retro/england_1996/ji16np47caududlevzgj.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174573/cruzar-deportes/products/national_retro/england_1996/iuc8rikg5boesvv3iwxh.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174575/cruzar-deportes/products/national_retro/england_1996/durjj4mkygxaccmx6bcz.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174576/cruzar-deportes/products/national_retro/england_1996/e4kr2iwrvcjlabv3ulfd.jpg",
@@ -7497,8 +7497,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174705/cruzar-deportes/products/national_retro/england_1998/apkewtsvs46ivbgsu5fe.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174705/cruzar-deportes/products/national_retro/england_1998/apkewtsvs46ivbgsu5fe.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174708/cruzar-deportes/products/national_retro/england_1998/czdx4dodfrvxhcyqeym0.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174711/cruzar-deportes/products/national_retro/england_1998/tpyetfqsmznfamccsg4t.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174780/cruzar-deportes/products/national_retro/england_1998/ildlprrh9r8jsg9ilkuw.jpg",
@@ -7537,12 +7537,12 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174937/cruzar-deportes/products/national_retro/england_1998_long_sleeve/jeowwco6hgkhxl1hqxjb.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174934/cruzar-deportes/products/national_retro/england_1998_long_sleeve/icuagflyhyjv0wx9bg7f.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174936/cruzar-deportes/products/national_retro/england_1998_long_sleeve/bol1zghiphfgdhjkdsqo.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175008/cruzar-deportes/products/national_retro/england_1998_long_sleeve/izimktwlfzkwogy4xv81.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174937/cruzar-deportes/products/national_retro/england_1998_long_sleeve/jeowwco6hgkhxl1hqxjb.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174939/cruzar-deportes/products/national_retro/england_1998_long_sleeve/ph2psg5wtbszz51mnuwo.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175008/cruzar-deportes/products/national_retro/england_1998_long_sleeve/izimktwlfzkwogy4xv81.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174936/cruzar-deportes/products/national_retro/england_1998_long_sleeve/bol1zghiphfgdhjkdsqo.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758174939/cruzar-deportes/products/national_retro/england_1998_long_sleeve/ph2psg5wtbszz51mnuwo.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/england_1998_long_sleeve",
       "sizes": [
@@ -7556,10 +7556,10 @@
         "Home",
         "Away"
       ],
-      "inStock": true,
+      "inStock": false,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-10-24T15:30:42.836Z",
+      "lastModified": "2025-10-31T19:32:57.932Z",
       "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
@@ -7576,8 +7576,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175049/cruzar-deportes/products/national_retro/england_1998_shorts/vkn6sy9cmdt2fulnuyi5.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175049/cruzar-deportes/products/national_retro/england_1998_shorts/vkn6sy9cmdt2fulnuyi5.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175051/cruzar-deportes/products/national_retro/england_1998_shorts/y17z5qodhljec91d4twn.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175052/cruzar-deportes/products/national_retro/england_1998_shorts/dfuxfnvqmrkqc8y7ep6e.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175126/cruzar-deportes/products/national_retro/england_1998_shorts/njgcedc3d1wazh53ajtg.jpg",
@@ -7615,8 +7615,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175132/cruzar-deportes/products/national_retro/england_2000/mcw9nrzus41t1msckifu.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175132/cruzar-deportes/products/national_retro/england_2000/mcw9nrzus41t1msckifu.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175133/cruzar-deportes/products/national_retro/england_2000/k7jd3jq1ljq5yp0nrrei.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175134/cruzar-deportes/products/national_retro/england_2000/saezutvjiv1axdyb4b02.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175136/cruzar-deportes/products/national_retro/england_2000/xkgngsp8c2jitrnwcdk4.jpg",
@@ -7654,8 +7654,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175156/cruzar-deportes/products/national_retro/england_2002/az0xucqitwv2bsphqpsg.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175156/cruzar-deportes/products/national_retro/england_2002/az0xucqitwv2bsphqpsg.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175157/cruzar-deportes/products/national_retro/england_2002/t9waqxzxqzoatbac06q1.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175159/cruzar-deportes/products/national_retro/england_2002/py69nazzep188upfcudm.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175160/cruzar-deportes/products/national_retro/england_2002/at64zryghusy3hffysyb.jpg",
@@ -7693,8 +7693,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175475/cruzar-deportes/products/national_retro/england_2004/obueooxuoxoi4fss9eeq.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175475/cruzar-deportes/products/national_retro/england_2004/obueooxuoxoi4fss9eeq.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175477/cruzar-deportes/products/national_retro/england_2004/iatuylqboxzs7rvnn2tf.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175478/cruzar-deportes/products/national_retro/england_2004/zmw8oirixqpkidywdyx6.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175480/cruzar-deportes/products/national_retro/england_2004/jpcrajxpx5p2dw2wpkau.jpg",
@@ -7733,12 +7733,12 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175594/cruzar-deportes/products/national_retro/england_2006/pwh8fy1kzhfbmofqhd2p.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175588/cruzar-deportes/products/national_retro/england_2006/pqxwci9yb7gxxfqw4wnk.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175594/cruzar-deportes/products/national_retro/england_2006/pwh8fy1kzhfbmofqhd2p.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175590/cruzar-deportes/products/national_retro/england_2006/fotuvgvtwkok5lbq16sl.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175591/cruzar-deportes/products/national_retro/england_2006/fnqifzhoaxxifiwzqvc6.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175593/cruzar-deportes/products/national_retro/england_2006/iwxsteikpwsqguufozpa.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175594/cruzar-deportes/products/national_retro/england_2006/pwh8fy1kzhfbmofqhd2p.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175593/cruzar-deportes/products/national_retro/england_2006/iwxsteikpwsqguufozpa.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/england_2006",
       "sizes": [
@@ -7774,12 +7774,12 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175715/cruzar-deportes/products/national_retro/england_2010/yfkri65lucj6qurape8z.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175712/cruzar-deportes/products/national_retro/england_2010/vznqo1thj23hwzzynfjz.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175714/cruzar-deportes/products/national_retro/england_2010/p4a6svailqlj7ezn8wth.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175718/cruzar-deportes/products/national_retro/england_2010/tqwmgtq9i4fgliia1ubn.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175715/cruzar-deportes/products/national_retro/england_2010/yfkri65lucj6qurape8z.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175717/cruzar-deportes/products/national_retro/england_2010/xlddi8dn87fm9pcivexd.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175718/cruzar-deportes/products/national_retro/england_2010/tqwmgtq9i4fgliia1ubn.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175714/cruzar-deportes/products/national_retro/england_2010/p4a6svailqlj7ezn8wth.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175717/cruzar-deportes/products/national_retro/england_2010/xlddi8dn87fm9pcivexd.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/england_2010",
       "sizes": [
@@ -7813,8 +7813,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175822/cruzar-deportes/products/national_retro/england_2012/r0idxvbjkhajwckalewm.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175822/cruzar-deportes/products/national_retro/england_2012/r0idxvbjkhajwckalewm.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175824/cruzar-deportes/products/national_retro/england_2012/o7uw8mcyyojh6wo50bet.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175825/cruzar-deportes/products/national_retro/england_2012/sermcvcrkpxxeh6urhjg.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175827/cruzar-deportes/products/national_retro/england_2012/v7114ewlewjj3fifw1q9.jpg",
@@ -7852,8 +7852,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175841/cruzar-deportes/products/national_retro/england_2013/ystgsjhqdr97wqhchkhy.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175841/cruzar-deportes/products/national_retro/england_2013/ystgsjhqdr97wqhchkhy.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175842/cruzar-deportes/products/national_retro/england_2013/wionpkzjsk1ftagqma2a.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175844/cruzar-deportes/products/national_retro/england_2013/g2z40nsskqrh9pgfcyoc.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758175845/cruzar-deportes/products/national_retro/england_2013/dus9joz0ofbo8pqvnmyx.jpg",
@@ -7888,14 +7888,20 @@
       "price": 90,
       "originalPrice": 105,
       "category": "national_retro",
-      "selectedImages": [],
-      "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
+      "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176039/cruzar-deportes/products/national_retro/england_2018/jxxoybak2p4v3otds5vb.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176040/cruzar-deportes/products/national_retro/england_2018/pt9pru6nxwtqnjzbbao2.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176042/cruzar-deportes/products/national_retro/england_2018/n7rpfvbehn5nosqxo8wb.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176044/cruzar-deportes/products/national_retro/england_2018/xxqa1hxzfblelldgralk.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176045/cruzar-deportes/products/national_retro/england_2018/dwgmrdxpxek1ant1dfst.jpg"
+      ],
+      "allAvailableImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176039/cruzar-deportes/products/national_retro/england_2018/jxxoybak2p4v3otds5vb.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176040/cruzar-deportes/products/national_retro/england_2018/pt9pru6nxwtqnjzbbao2.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176042/cruzar-deportes/products/national_retro/england_2018/n7rpfvbehn5nosqxo8wb.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176044/cruzar-deportes/products/national_retro/england_2018/xxqa1hxzfblelldgralk.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176045/cruzar-deportes/products/national_retro/england_2018/dwgmrdxpxek1ant1dfst.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/england_2018",
       "sizes": [
@@ -7929,12 +7935,12 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176152/cruzar-deportes/products/national_retro/england_82_kid_kit/epprxg05den7ttbdanm6.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176073/cruzar-deportes/products/national_retro/england_82_kid_kit/pud2gjgjqsrz9qruwmk3.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176152/cruzar-deportes/products/national_retro/england_82_kid_kit/epprxg05den7ttbdanm6.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176075/cruzar-deportes/products/national_retro/england_82_kid_kit/qpihu0wjmbkwie181lkw.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176076/cruzar-deportes/products/national_retro/england_82_kid_kit/jtyeqtrsve6ajxfoqf4d.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176077/cruzar-deportes/products/national_retro/england_82_kid_kit/gctlcvblkoempt1iqais.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176152/cruzar-deportes/products/national_retro/england_82_kid_kit/epprxg05den7ttbdanm6.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176077/cruzar-deportes/products/national_retro/england_82_kid_kit/gctlcvblkoempt1iqais.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/england_82_kid_kit",
       "sizes": [
@@ -7969,9 +7975,9 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176168/cruzar-deportes/products/national_retro/england_86/iuinssthhebtytawuqq0.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176167/cruzar-deportes/products/national_retro/england_86/txfhpri4tnxo0hlaxlgw.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176168/cruzar-deportes/products/national_retro/england_86/iuinssthhebtytawuqq0.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176170/cruzar-deportes/products/national_retro/england_86/n7xfdcgf5urhyle8qcol.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176171/cruzar-deportes/products/national_retro/england_86/agoulolnlcepfkskl98o.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176173/cruzar-deportes/products/national_retro/england_86/jmxb1jdtjk0kmp0jrtfg.jpg"
@@ -8008,12 +8014,14 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176180/cruzar-deportes/products/national_retro/england_90s_kid_kit/vcvbs0xlr38bqj5x8k1z.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176180/cruzar-deportes/products/national_retro/england_90s_kid_kit/vcvbs0xlr38bqj5x8k1z.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176182/cruzar-deportes/products/national_retro/england_90s_kid_kit/jqy8lmzamy53wp1rfeu4.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176183/cruzar-deportes/products/national_retro/england_90s_kid_kit/q1mf2dp44mgekivzljdl.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176185/cruzar-deportes/products/national_retro/england_90s_kid_kit/otdqbsbnwqx1wgnyumfl.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176186/cruzar-deportes/products/national_retro/england_90s_kid_kit/az1hutddakkveuwr7nqn.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176186/cruzar-deportes/products/national_retro/england_90s_kid_kit/az1hutddakkveuwr7nqn.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176188/cruzar-deportes/products/national_retro/england_90s_kid_kit/ncow1glrrxbzbwsakntd.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176189/cruzar-deportes/products/national_retro/england_90s_kid_kit/iyw5brs8mdirvu9ea6y5.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176191/cruzar-deportes/products/national_retro/england_90s_kid_kit/kamvwwoizpwjz0epsbev.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/england_90s_kid_kit",
       "sizes": [
@@ -8047,8 +8055,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176192/cruzar-deportes/products/national_retro/england_92/vcbxiuc57ttomcujx4zy.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176192/cruzar-deportes/products/national_retro/england_92/vcbxiuc57ttomcujx4zy.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176269/cruzar-deportes/products/national_retro/england_92/juchql8afevatft063ea.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176272/cruzar-deportes/products/national_retro/england_92/qe2ev5iljic0iadpmwhe.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176274/cruzar-deportes/products/national_retro/england_92/igpqzk9d9kgphe1hihn6.jpg",
@@ -8087,12 +8095,12 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176397/cruzar-deportes/products/national_retro/england_96_gk_long_sleeve/c6mjtxerquy6mumbwl9h.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176390/cruzar-deportes/products/national_retro/england_96_gk_long_sleeve/llm5odrw8jjdktgydlk0.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176397/cruzar-deportes/products/national_retro/england_96_gk_long_sleeve/c6mjtxerquy6mumbwl9h.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176392/cruzar-deportes/products/national_retro/england_96_gk_long_sleeve/bsdcogluvfjcra5qgjyd.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176393/cruzar-deportes/products/national_retro/england_96_gk_long_sleeve/uoiqf9metvk5vpiktbsy.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176395/cruzar-deportes/products/national_retro/england_96_gk_long_sleeve/uny7frnpchmdrjqucny6.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176397/cruzar-deportes/products/national_retro/england_96_gk_long_sleeve/c6mjtxerquy6mumbwl9h.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176395/cruzar-deportes/products/national_retro/england_96_gk_long_sleeve/uny7frnpchmdrjqucny6.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/england_96_gk_long_sleeve",
       "sizes": [
@@ -8129,6 +8137,8 @@
       ],
       "allAvailableImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176409/cruzar-deportes/products/national_retro/england_96_kid_kit/kn1znznxz9umh4fxznoe.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176418/cruzar-deportes/products/national_retro/england_96_kid_kit/ua4efd2ztdsebmzghdbq.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176521/cruzar-deportes/products/national_retro/england_96_kid_kit/unvvwx50fqaasrmolmt6.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176410/cruzar-deportes/products/national_retro/england_96_kid_kit/hhpy563caxrcob911wk9.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176411/cruzar-deportes/products/national_retro/england_96_kid_kit/rbnrojax0ckebwy0kb1s.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176412/cruzar-deportes/products/national_retro/england_96_kid_kit/v4vq7kv71vr6sbeuzion.jpg",
@@ -8136,7 +8146,6 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176414/cruzar-deportes/products/national_retro/england_96_kid_kit/mosblvzj3tjmeqhvtkth.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176415/cruzar-deportes/products/national_retro/england_96_kid_kit/t0pvuwbb4nls67zarju0.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176417/cruzar-deportes/products/national_retro/england_96_kid_kit/vfch76twtvbjgapdqyhb.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176418/cruzar-deportes/products/national_retro/england_96_kid_kit/ua4efd2ztdsebmzghdbq.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176420/cruzar-deportes/products/national_retro/england_96_kid_kit/mz40ms8kmda7oaiwsmlc.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176507/cruzar-deportes/products/national_retro/england_96_kid_kit/xdzuggxpebj8szlyoetb.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176510/cruzar-deportes/products/national_retro/england_96_kid_kit/cnir9j7rimxnxr4x7ks0.jpg",
@@ -8146,7 +8155,6 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176516/cruzar-deportes/products/national_retro/england_96_kid_kit/xyo8n7ysytxkztamxvo2.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176517/cruzar-deportes/products/national_retro/england_96_kid_kit/omyladmyetd9wyupseod.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176519/cruzar-deportes/products/national_retro/england_96_kid_kit/dtvygpo5es2lxgbnvn5d.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176521/cruzar-deportes/products/national_retro/england_96_kid_kit/unvvwx50fqaasrmolmt6.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176522/cruzar-deportes/products/national_retro/england_96_kid_kit/aytszlstpkb1ejgqyvjy.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176524/cruzar-deportes/products/national_retro/england_96_kid_kit/ufynyw9rvmnbmd0eijcs.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176525/cruzar-deportes/products/national_retro/england_96_kid_kit/nbztd1fuaazhsvq15lct.jpg",
@@ -8191,8 +8199,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176533/cruzar-deportes/products/national_retro/england_96_long_sleeve/hcx769opytxugysoz2le.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176533/cruzar-deportes/products/national_retro/england_96_long_sleeve/hcx769opytxugysoz2le.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176535/cruzar-deportes/products/national_retro/england_96_long_sleeve/holkucaps6jwftsuvcth.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176606/cruzar-deportes/products/national_retro/england_96_long_sleeve/pu7pmpgonrmcrodcbuyj.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176608/cruzar-deportes/products/national_retro/england_96_long_sleeve/fcqqfoffvu5pgt5kaq16.jpg",
@@ -8326,18 +8334,16 @@
     },
     "team-greece_04": {
       "id": "team-greece_04",
-      "name": "Greece Retro 2004",
-      "slug": "greece-04",
+      "name": "Grecia - Retro 2004",
+      "slug": "grecia-retro-2004",
       "description": "Legendary Greece Euro 2004 Champions jersey",
-      "price": 100,
-      "originalPrice": 120,
+      "price": 75000,
+      "originalPrice": 85000,
       "category": "national_retro",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176773/cruzar-deportes/products/national_retro/greece_04/jxp2aaajcjopdkurztz8.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176775/cruzar-deportes/products/national_retro/greece_04/t5kczugupvtrssgxcpqp.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176776/cruzar-deportes/products/national_retro/greece_04/wlutkgjgfk8lemoiuy3v.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176777/cruzar-deportes/products/national_retro/greece_04/gfl8ux8zfvaqqmcdxzqo.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176779/cruzar-deportes/products/national_retro/greece_04/wsrdshrg36cplohfbs2v.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176779/cruzar-deportes/products/national_retro/greece_04/wsrdshrg36cplohfbs2v.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176797/cruzar-deportes/products/national_retro/greece_04/epay535iuvbusmvojiem.jpg"
       ],
       "allAvailableImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758176773/cruzar-deportes/products/national_retro/greece_04/jxp2aaajcjopdkurztz8.jpg",
@@ -8379,11 +8385,11 @@
         "Home",
         "Away"
       ],
-      "inStock": true,
+      "inStock": false,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
+      "lastModified": "2025-10-31T19:41:49.493Z",
+      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -8600,18 +8606,18 @@
     },
     "team-italy_1994": {
       "id": "team-italy_1994",
-      "name": "Italy Retro 1994",
-      "slug": "italy-1994",
+      "name": "Italia - Retro 1994",
+      "slug": "italia-retro-1994",
       "description": "Classic Italy national team jersey from 1994 World Cup",
-      "price": 100,
-      "originalPrice": 115,
+      "price": 75000,
+      "originalPrice": 85000,
       "category": "national_retro",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177126/cruzar-deportes/products/national_retro/italy_1994/vadzrf8quhuhlksumv30.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177127/cruzar-deportes/products/national_retro/italy_1994/vlaxhevyqzd7vzupduk1.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177128/cruzar-deportes/products/national_retro/italy_1994/honxyk2t1mtohgwdmyaa.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177130/cruzar-deportes/products/national_retro/italy_1994/zlodjumqewdjkxzlydge.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177131/cruzar-deportes/products/national_retro/italy_1994/af20lvjdzx3rdzu3v65a.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177356/cruzar-deportes/products/national_retro/italy_1994/b3apdsa4wo80thwkmewl.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177264/cruzar-deportes/products/national_retro/italy_1994/k7vqs4zichd4qoo2rya8.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177137/cruzar-deportes/products/national_retro/italy_1994/m1kwahp8anmbkshszy2a.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177128/cruzar-deportes/products/national_retro/italy_1994/honxyk2t1mtohgwdmyaa.jpg"
       ],
       "allAvailableImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177126/cruzar-deportes/products/national_retro/italy_1994/vadzrf8quhuhlksumv30.jpg",
@@ -8686,11 +8692,11 @@
         "Home",
         "Away"
       ],
-      "inStock": true,
+      "inStock": false,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
+      "lastModified": "2025-10-31T19:44:09.729Z",
+      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -9061,37 +9067,21 @@
     },
     "team-japan_00": {
       "id": "team-japan_00",
-      "name": "Japan Retro 2000",
-      "slug": "japan-00",
+      "name": "Japon - Retro 2000",
+      "slug": "japon-retro-2000",
       "description": "Japan national team jersey from 2000",
-      "price": 90,
+      "price": 75000,
       "category": "national_retro",
       "selectedImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177873/cruzar-deportes/products/national_retro/japan_00/ac2cmlk1aofpzjzkudh1.jpg"
+      ],
+      "allAvailableImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177873/cruzar-deportes/products/national_retro/japan_00/ac2cmlk1aofpzjzkudh1.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177874/cruzar-deportes/products/national_retro/japan_00/hd1lsdzjj5pbdrene5ge.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177876/cruzar-deportes/products/national_retro/japan_00/zpuz3i26ee8ojht2zcqx.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177877/cruzar-deportes/products/national_retro/japan_00/pcdjjgjtmadxieomhrbw.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177879/cruzar-deportes/products/national_retro/japan_00/zvple7s6welktbkkjmn0.jpg"
-      ],
-      "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177873/cruzar-deportes/products/national_retro/japan_00/ac2cmlk1aofpzjzkudh1.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177874/cruzar-deportes/products/national_retro/japan_00/hd1lsdzjj5pbdrene5ge.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177876/cruzar-deportes/products/national_retro/japan_00/zpuz3i26ee8ojht2zcqx.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177877/cruzar-deportes/products/national_retro/japan_00/pcdjjgjtmadxieomhrbw.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177879/cruzar-deportes/products/national_retro/japan_00/zvple7s6welktbkkjmn0.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177880/cruzar-deportes/products/national_retro/japan_00/ohgpxbnqgaeumg69hlvc.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177882/cruzar-deportes/products/national_retro/japan_00/ylw9n6l3hbfcpnf67lee.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177883/cruzar-deportes/products/national_retro/japan_00/gwur43hg5q94fz7kycby.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177884/cruzar-deportes/products/national_retro/japan_00/no1k5yl2bs42ogzo5iix.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177886/cruzar-deportes/products/national_retro/japan_00/hnd3rqb4tqjlndor6twy.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177887/cruzar-deportes/products/national_retro/japan_00/wblwtqam03n3kv88fwyi.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177889/cruzar-deportes/products/national_retro/japan_00/k51ngyclb4qidkehiyek.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177890/cruzar-deportes/products/national_retro/japan_00/prxfhw2ek2xt3uy3cyjn.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177963/cruzar-deportes/products/national_retro/japan_00/apmb2fy50gz54xhzcvll.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177965/cruzar-deportes/products/national_retro/japan_00/pqsyojt7dakqt1fvosun.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177967/cruzar-deportes/products/national_retro/japan_00/pdte5rrgglkamt5fyfbu.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758177968/cruzar-deportes/products/national_retro/japan_00/crm8ptj0kpumimt71md8.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758185853/cruzar-deportes/products/national_retro/japan_00/la5ueq6klkz57b6zwvt9.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/japan_00",
       "sizes": [
@@ -9105,13 +9095,14 @@
         "Home",
         "Away"
       ],
-      "inStock": true,
+      "inStock": false,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
+      "lastModified": "2025-10-31T19:45:29.085Z",
+      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "originalPrice": 85000
     },
     "team-japan_00_long_sleeve": {
       "id": "team-japan_00_long_sleeve",
@@ -9458,84 +9449,23 @@
     },
     "team-japan_1998": {
       "id": "team-japan_1998",
-      "name": "Japan Retro 1998",
-      "slug": "japan-1998",
+      "name": "Japon - Retro 1998",
+      "slug": "japon-retro-1998",
       "description": "Historic Japan national team jersey from 1998 World Cup",
-      "price": 95,
-      "originalPrice": 110,
+      "price": 75000,
+      "originalPrice": 85000,
       "category": "national_retro",
       "selectedImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178323/cruzar-deportes/products/national_retro/japan_1998/zqcl5cljekcyjcbbhshb.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178321/cruzar-deportes/products/national_retro/japan_1998/yh0ovyfwbtjuiamchzhw.jpg"
+      ],
+      "allAvailableImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178319/cruzar-deportes/products/national_retro/japan_1998/uvfq4ooqxqvhqmq8ze76.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178321/cruzar-deportes/products/national_retro/japan_1998/yh0ovyfwbtjuiamchzhw.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178322/cruzar-deportes/products/national_retro/japan_1998/opuzkh6on8ktcojkfu03.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178323/cruzar-deportes/products/national_retro/japan_1998/zqcl5cljekcyjcbbhshb.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178325/cruzar-deportes/products/national_retro/japan_1998/jirma7zgw1xieywpw41v.jpg"
-      ],
-      "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178319/cruzar-deportes/products/national_retro/japan_1998/uvfq4ooqxqvhqmq8ze76.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178321/cruzar-deportes/products/national_retro/japan_1998/yh0ovyfwbtjuiamchzhw.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178322/cruzar-deportes/products/national_retro/japan_1998/opuzkh6on8ktcojkfu03.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178323/cruzar-deportes/products/national_retro/japan_1998/zqcl5cljekcyjcbbhshb.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178325/cruzar-deportes/products/national_retro/japan_1998/jirma7zgw1xieywpw41v.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178327/cruzar-deportes/products/national_retro/japan_1998/nn9z0dyudhg5347wo1zy.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178330/cruzar-deportes/products/national_retro/japan_1998/i4wpxw2qp9glkfpkhvya.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178333/cruzar-deportes/products/national_retro/japan_1998/lv5hzdrnd1qe2m4xrduk.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178335/cruzar-deportes/products/national_retro/japan_1998/zrpidimmapw2mu9owcxz.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178340/cruzar-deportes/products/national_retro/japan_1998/fnwts1ftf7juv54yvbjp.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178342/cruzar-deportes/products/national_retro/japan_1998/tf6aeradcjxwa4zl3a4b.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178344/cruzar-deportes/products/national_retro/japan_1998/r0qbulugafwbd9akuo3t.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178346/cruzar-deportes/products/national_retro/japan_1998/dgvkjiybdqb90jzytxmh.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178348/cruzar-deportes/products/national_retro/japan_1998/hmqvbrekqau1fywdlulc.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178349/cruzar-deportes/products/national_retro/japan_1998/beobq4zxy3rrsaesvoru.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178351/cruzar-deportes/products/national_retro/japan_1998/r5zsyzqidntxnhzgm2s5.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178352/cruzar-deportes/products/national_retro/japan_1998/bypkynfmwtoq2kpdqb2w.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178353/cruzar-deportes/products/national_retro/japan_1998/aafuyp8ru99em0okyskg.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178355/cruzar-deportes/products/national_retro/japan_1998/kwvcebrpfceazln44qzb.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178356/cruzar-deportes/products/national_retro/japan_1998/grhswoejnqblbbv1rmll.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178358/cruzar-deportes/products/national_retro/japan_1998/qqllbj9lbndttyzyfuef.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178359/cruzar-deportes/products/national_retro/japan_1998/dztwlgbygldltdcitanw.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178361/cruzar-deportes/products/national_retro/japan_1998/qnhaermrif5bnsl4g8io.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178362/cruzar-deportes/products/national_retro/japan_1998/esfocwlhsj7cybq1dvgc.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178364/cruzar-deportes/products/national_retro/japan_1998/ydvporyjsvvta5yxf99j.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178365/cruzar-deportes/products/national_retro/japan_1998/hk6dulfzvtzgersgu0t3.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178366/cruzar-deportes/products/national_retro/japan_1998/nscsh7ecatixnkx1zycn.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178368/cruzar-deportes/products/national_retro/japan_1998/yia208cdbpp0x7wktcze.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178369/cruzar-deportes/products/national_retro/japan_1998/zxbwqzwyxolaq5w2l3hx.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178370/cruzar-deportes/products/national_retro/japan_1998/flkilxf6jq897hcms7ff.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178372/cruzar-deportes/products/national_retro/japan_1998/riusz6bhvq6xaawjnx9k.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178373/cruzar-deportes/products/national_retro/japan_1998/sj8orjvrjspzflzoxln5.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178374/cruzar-deportes/products/national_retro/japan_1998/e5iylgudmlbyiweevh2i.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178376/cruzar-deportes/products/national_retro/japan_1998/skhb5nf2evgk0nwfbhgs.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178380/cruzar-deportes/products/national_retro/japan_1998/s8tehdbuvdx5btbunhus.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178384/cruzar-deportes/products/national_retro/japan_1998/jtrfum5deg5oe3sbehgo.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178385/cruzar-deportes/products/national_retro/japan_1998/uqorqs8qjuzxceolss75.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178386/cruzar-deportes/products/national_retro/japan_1998/j0sdh2aaxajqfhjkjuyl.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178388/cruzar-deportes/products/national_retro/japan_1998/qekrhfe2lez1wvevz3ut.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178389/cruzar-deportes/products/national_retro/japan_1998/blo03t0nnagklklm8xie.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178391/cruzar-deportes/products/national_retro/japan_1998/feo08jul5tnelac3tpcc.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178392/cruzar-deportes/products/national_retro/japan_1998/sntodmhuzoprgcbfluzc.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178472/cruzar-deportes/products/national_retro/japan_1998/rzqlvkhk2eca6hxtvko6.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178474/cruzar-deportes/products/national_retro/japan_1998/inodwkxfufdksr0ehmsa.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178475/cruzar-deportes/products/national_retro/japan_1998/jep0iyj3ysydvdh6uu0b.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178476/cruzar-deportes/products/national_retro/japan_1998/hux0vxl59wyf3u0d3jv7.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178477/cruzar-deportes/products/national_retro/japan_1998/emnxu4umr7vqznoq71hn.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178479/cruzar-deportes/products/national_retro/japan_1998/bvlnbewm1kxoqg3jlrgy.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178480/cruzar-deportes/products/national_retro/japan_1998/abturuipuo44ta1li6my.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178482/cruzar-deportes/products/national_retro/japan_1998/j6azcyn4fhdjec5s6f3m.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178483/cruzar-deportes/products/national_retro/japan_1998/bctuutna5lwhtgcaje7o.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178484/cruzar-deportes/products/national_retro/japan_1998/wos4kt9cqcb8tmtwtrz0.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178485/cruzar-deportes/products/national_retro/japan_1998/gjiv9kbecndqygukz9j3.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178487/cruzar-deportes/products/national_retro/japan_1998/bp3wug6v1queagatldhm.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178489/cruzar-deportes/products/national_retro/japan_1998/fjh9tqdmppxx17f5lnug.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178490/cruzar-deportes/products/national_retro/japan_1998/zfkflso7yghv0xjr11ev.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178492/cruzar-deportes/products/national_retro/japan_1998/bob6xviczmauyv2pso6g.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178493/cruzar-deportes/products/national_retro/japan_1998/qwxfhotpvqgjzak54she.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178495/cruzar-deportes/products/national_retro/japan_1998/vfvqpnnwh6j9t4z161vr.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178496/cruzar-deportes/products/national_retro/japan_1998/ilsragmov8v99qct1wfd.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178497/cruzar-deportes/products/national_retro/japan_1998/qcr0ekzoqkgbh87uv2re.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178498/cruzar-deportes/products/national_retro/japan_1998/apcdufsxybsbmzfzinfa.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178499/cruzar-deportes/products/national_retro/japan_1998/nzorgk6uwa8e4a0kjayk.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758185861/cruzar-deportes/products/national_retro/japan_1998/dof0axy0cqwoyr8lb6cv.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/japan_1998",
       "sizes": [
@@ -9549,11 +9479,11 @@
         "Home",
         "Away"
       ],
-      "inStock": true,
+      "inStock": false,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
+      "lastModified": "2025-10-31T19:47:30.272Z",
+      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -9802,35 +9732,23 @@
     },
     "team-japan_98_gk_long_sleeve": {
       "id": "team-japan_98_gk_long_sleeve",
-      "name": "Japan 1998 GK Long Sleeve",
-      "slug": "japan-98-gk-long-sleeve",
+      "name": "Japon - Retro 1998 (Arquero)",
+      "slug": "japon-retro-1998-arquero",
       "description": "Japan goalkeeper long sleeve jersey from 1998 World Cup",
-      "price": 100,
+      "price": 80000,
       "category": "national_retro",
       "selectedImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178605/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/gwtferfmuovpm2vvowjf.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178608/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/xbvbfpwb1wn6nzulk3lj.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178695/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/ya2ftwkfhti5kaegjlr2.jpg"
+      ],
+      "allAvailableImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178605/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/gwtferfmuovpm2vvowjf.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178608/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/xbvbfpwb1wn6nzulk3lj.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178609/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/fhrtfoi4ra17ztmchie1.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178694/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/rnz4jglflov2kuq5xpmr.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178695/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/ya2ftwkfhti5kaegjlr2.jpg"
-      ],
-      "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178605/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/gwtferfmuovpm2vvowjf.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178608/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/xbvbfpwb1wn6nzulk3lj.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178609/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/fhrtfoi4ra17ztmchie1.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178694/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/rnz4jglflov2kuq5xpmr.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178695/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/ya2ftwkfhti5kaegjlr2.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178697/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/w3mlngfke1qgjvsp693o.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178698/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/kvudjripwwhz2yjfl6rs.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178700/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/wfaxitusdcs7z412avsm.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178701/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/jf4sxjr6epabvkx6fryo.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178702/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/tz54eoluvjq0lhlmh4bx.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178704/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/m42ej3zsfh1ocrnwazws.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178705/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/gwoqhrasiy9ljyurxpti.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178706/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/nd6xewfktjyx4jpme87w.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178708/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/sbubvmpcuc7xebum4xd2.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758178709/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/lgfyy9dbix3sjdaoxwnf.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758185863/cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve/amaehj5ugdrg2aimirf6.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/japan_98_gk_long_sleeve",
       "sizes": [
@@ -9844,13 +9762,14 @@
         "Home",
         "Away"
       ],
-      "inStock": true,
+      "inStock": false,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
+      "lastModified": "2025-10-31T19:49:23.159Z",
+      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "originalPrice": 90000
     },
     "team-japan_98_kid_kit": {
       "id": "team-japan_98_kid_kit",
@@ -10242,62 +10161,23 @@
     },
     "team-netherland_04": {
       "id": "team-netherland_04",
-      "name": "Netherlands Retro 2004",
-      "slug": "netherland-04",
+      "name": "Holanda - Retro 2004",
+      "slug": "holanda-retro-2004",
       "description": "Netherlands national team jersey from Euro 2004",
-      "price": 95,
+      "price": 75000,
       "category": "national_retro",
       "selectedImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179404/cruzar-deportes/products/national_retro/netherland_04/pzvniweljjltqymvu4vn.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179410/cruzar-deportes/products/national_retro/netherland_04/hploay3lvfnunlsxt2oi.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179411/cruzar-deportes/products/national_retro/netherland_04/szinibjhh96fiklq4flo.jpg"
+      ],
+      "allAvailableImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179404/cruzar-deportes/products/national_retro/netherland_04/pzvniweljjltqymvu4vn.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179407/cruzar-deportes/products/national_retro/netherland_04/tygnt4pamfq5rdj8zzj1.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179409/cruzar-deportes/products/national_retro/netherland_04/ktomxly8tvvx51hug6uj.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179410/cruzar-deportes/products/national_retro/netherland_04/hploay3lvfnunlsxt2oi.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179411/cruzar-deportes/products/national_retro/netherland_04/szinibjhh96fiklq4flo.jpg"
-      ],
-      "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179404/cruzar-deportes/products/national_retro/netherland_04/pzvniweljjltqymvu4vn.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179407/cruzar-deportes/products/national_retro/netherland_04/tygnt4pamfq5rdj8zzj1.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179409/cruzar-deportes/products/national_retro/netherland_04/ktomxly8tvvx51hug6uj.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179410/cruzar-deportes/products/national_retro/netherland_04/hploay3lvfnunlsxt2oi.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179411/cruzar-deportes/products/national_retro/netherland_04/szinibjhh96fiklq4flo.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179413/cruzar-deportes/products/national_retro/netherland_04/loyobur747hwdylaw0vr.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179414/cruzar-deportes/products/national_retro/netherland_04/ozsgl5rhsda6qqlf8npr.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179415/cruzar-deportes/products/national_retro/netherland_04/ky5xw5irckdlkae8l721.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179417/cruzar-deportes/products/national_retro/netherland_04/o8c551bono31farl0dsr.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179503/cruzar-deportes/products/national_retro/netherland_04/dynsp29de0cbimqephmp.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179505/cruzar-deportes/products/national_retro/netherland_04/codyfhgskbarfa7lagzr.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179506/cruzar-deportes/products/national_retro/netherland_04/mdnqsjagqo31knjxva7s.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179507/cruzar-deportes/products/national_retro/netherland_04/zmgrr50r0condummhgfj.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179509/cruzar-deportes/products/national_retro/netherland_04/mhdtmgwurgx3jj9nu7el.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179510/cruzar-deportes/products/national_retro/netherland_04/yzqvgonbacgrpuzn9sgj.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179512/cruzar-deportes/products/national_retro/netherland_04/m9jjbyd2ahokjvzdoy6t.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179513/cruzar-deportes/products/national_retro/netherland_04/ixoayagkzt56q8o76evh.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179515/cruzar-deportes/products/national_retro/netherland_04/pm9knsaanfuijzodojaw.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179516/cruzar-deportes/products/national_retro/netherland_04/z7o3bmfjsr1bsjz7167l.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179518/cruzar-deportes/products/national_retro/netherland_04/jpv0pn77jtl3dwg1zuzq.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179519/cruzar-deportes/products/national_retro/netherland_04/blishirsonb8jztbhkxh.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179521/cruzar-deportes/products/national_retro/netherland_04/qwbvrobswwdaey8cldl5.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179523/cruzar-deportes/products/national_retro/netherland_04/ednfaluu513zpm5az9k9.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179524/cruzar-deportes/products/national_retro/netherland_04/zsd5rwqsmzc9j6tpu4w1.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179525/cruzar-deportes/products/national_retro/netherland_04/lau3x1vwy1amualdhjxt.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179528/cruzar-deportes/products/national_retro/netherland_04/wawfmg8ncssyposytjxd.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179531/cruzar-deportes/products/national_retro/netherland_04/paxfatgwfxrqhinl0tuc.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179604/cruzar-deportes/products/national_retro/netherland_04/yhaekenbfkaeyjklr0xe.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179605/cruzar-deportes/products/national_retro/netherland_04/arxbzgvprrtjfs046det.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179607/cruzar-deportes/products/national_retro/netherland_04/rezvtvntpyuf9upwo1au.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179608/cruzar-deportes/products/national_retro/netherland_04/lsfc7ygyyndpxight1sj.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179610/cruzar-deportes/products/national_retro/netherland_04/ykols1zugdtth8ffoj5y.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179611/cruzar-deportes/products/national_retro/netherland_04/ywj5avbuvyu0wvxsfb7c.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179613/cruzar-deportes/products/national_retro/netherland_04/xxez9nb8gcftej50jaqw.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179614/cruzar-deportes/products/national_retro/netherland_04/dtposobx7c7xxsfmzv3g.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179615/cruzar-deportes/products/national_retro/netherland_04/spa5wpftuc1k2i58qzuu.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179616/cruzar-deportes/products/national_retro/netherland_04/sbmsag1ksumrpymxrrp5.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179618/cruzar-deportes/products/national_retro/netherland_04/ax5xdjmwgcxlkjbxr2wp.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179620/cruzar-deportes/products/national_retro/netherland_04/gqqmkfgpf5rmqrr4l8jw.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179621/cruzar-deportes/products/national_retro/netherland_04/vaytyvbpiplxzbmjgnv4.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179622/cruzar-deportes/products/national_retro/netherland_04/tkwmv1jpmnsw8n3bl5op.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758185870/cruzar-deportes/products/national_retro/netherland_04/pvao9qvdunuyhxbdo4w2.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758185871/cruzar-deportes/products/national_retro/netherland_04/ajc3dalw2bibwq4vutge.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/netherland_04",
       "sizes": [
@@ -10311,13 +10191,14 @@
         "Home",
         "Away"
       ],
-      "inStock": true,
+      "inStock": false,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
+      "lastModified": "2025-10-31T19:50:53.599Z",
+      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "originalPrice": 85000
     },
     "team-netherland_04_long_sleeve": {
       "id": "team-netherland_04_long_sleeve",
@@ -10408,29 +10289,22 @@
     },
     "team-netherland_1988_training": {
       "id": "team-netherland_1988_training",
-      "name": "Netherlands 1988 Training",
-      "slug": "netherland-1988-training",
+      "name": "Holanda - Retro 1988",
+      "slug": "holanda-retro-1988",
       "description": "Netherlands training jersey from Euro 1988",
-      "price": 85,
+      "price": 75000,
       "category": "national_retro",
       "selectedImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179719/cruzar-deportes/products/national_retro/netherland_1988_training/b7bp4cesrkppz46ias2f.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179723/cruzar-deportes/products/national_retro/netherland_1988_training/zd6iwqxsbwpvf1oh6qo2.jpg"
+      ],
+      "allAvailableImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179719/cruzar-deportes/products/national_retro/netherland_1988_training/b7bp4cesrkppz46ias2f.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179720/cruzar-deportes/products/national_retro/netherland_1988_training/jivkzcazfqjo1qrxnijt.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179721/cruzar-deportes/products/national_retro/netherland_1988_training/vfxtrk0np5rc1mmlfkzv.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179723/cruzar-deportes/products/national_retro/netherland_1988_training/zd6iwqxsbwpvf1oh6qo2.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179725/cruzar-deportes/products/national_retro/netherland_1988_training/zee1btceswpangsw3g56.jpg"
-      ],
-      "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179719/cruzar-deportes/products/national_retro/netherland_1988_training/b7bp4cesrkppz46ias2f.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179720/cruzar-deportes/products/national_retro/netherland_1988_training/jivkzcazfqjo1qrxnijt.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179721/cruzar-deportes/products/national_retro/netherland_1988_training/vfxtrk0np5rc1mmlfkzv.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179723/cruzar-deportes/products/national_retro/netherland_1988_training/zd6iwqxsbwpvf1oh6qo2.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179725/cruzar-deportes/products/national_retro/netherland_1988_training/zee1btceswpangsw3g56.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179730/cruzar-deportes/products/national_retro/netherland_1988_training/tm8dpwy7mexikcp82bzb.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179731/cruzar-deportes/products/national_retro/netherland_1988_training/kpyh4ydpfja6dfhdiuue.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179733/cruzar-deportes/products/national_retro/netherland_1988_training/ehl5bam6bgx5zbhfg3xn.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179734/cruzar-deportes/products/national_retro/netherland_1988_training/wg6sad3qzdciv2spbg9b.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179735/cruzar-deportes/products/national_retro/netherland_1988_training/zvmlsmzm1kixui8diuap.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/netherland_1988_training",
       "sizes": [
@@ -10444,45 +10318,33 @@
         "Home",
         "Away"
       ],
-      "inStock": true,
+      "inStock": false,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
+      "lastModified": "2025-10-31T19:51:49.684Z",
+      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "originalPrice": 85000
     },
     "team-netherland_2002": {
       "id": "team-netherland_2002",
-      "name": "Netherlands Retro 2002",
-      "slug": "netherland-2002",
+      "name": "Holanda - Retro 2002",
+      "slug": "holanda-retro-2002",
       "description": "Netherlands national team jersey from 2002 World Cup",
-      "price": 95,
+      "price": 75000,
       "category": "national_retro",
       "selectedImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179737/cruzar-deportes/products/national_retro/netherland_2002/ibh9jfvqvpqioffmicle.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179742/cruzar-deportes/products/national_retro/netherland_2002/cjhhdpayvozklvyqtnu4.jpg"
+      ],
+      "allAvailableImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179737/cruzar-deportes/products/national_retro/netherland_2002/ibh9jfvqvpqioffmicle.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179738/cruzar-deportes/products/national_retro/netherland_2002/ea1zhxkqsobulclcud0p.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179740/cruzar-deportes/products/national_retro/netherland_2002/cbrywwepkpxfdh3qxnav.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179741/cruzar-deportes/products/national_retro/netherland_2002/d6vyzstzk9zlq1tqfzot.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179742/cruzar-deportes/products/national_retro/netherland_2002/cjhhdpayvozklvyqtnu4.jpg"
-      ],
-      "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179737/cruzar-deportes/products/national_retro/netherland_2002/ibh9jfvqvpqioffmicle.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179738/cruzar-deportes/products/national_retro/netherland_2002/ea1zhxkqsobulclcud0p.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179740/cruzar-deportes/products/national_retro/netherland_2002/cbrywwepkpxfdh3qxnav.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179741/cruzar-deportes/products/national_retro/netherland_2002/d6vyzstzk9zlq1tqfzot.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179742/cruzar-deportes/products/national_retro/netherland_2002/cjhhdpayvozklvyqtnu4.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179744/cruzar-deportes/products/national_retro/netherland_2002/upb3vm59ih242f6ig6ws.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179745/cruzar-deportes/products/national_retro/netherland_2002/ansn75jt9i1ms2jd26zk.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179746/cruzar-deportes/products/national_retro/netherland_2002/thz4sdv8jl5cex3lj1qm.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179748/cruzar-deportes/products/national_retro/netherland_2002/dg26i4cc83mmxnafcsi2.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179751/cruzar-deportes/products/national_retro/netherland_2002/adqqdltolgndxa7csng4.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179753/cruzar-deportes/products/national_retro/netherland_2002/q6t3lymwwvhyku7bov57.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179756/cruzar-deportes/products/national_retro/netherland_2002/yhyxw72b3e8zevfozmkm.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179759/cruzar-deportes/products/national_retro/netherland_2002/ifp4eaatzczkqenkw2ua.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179832/cruzar-deportes/products/national_retro/netherland_2002/uhi4qatz8mdx0fi3m1q4.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179834/cruzar-deportes/products/national_retro/netherland_2002/ftonu1m7eivbrreixray.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758185873/cruzar-deportes/products/national_retro/netherland_2002/k4uwyibi3guy3fmapwmc.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/netherland_2002",
       "sizes": [
@@ -10496,63 +10358,35 @@
         "Home",
         "Away"
       ],
-      "inStock": true,
+      "inStock": false,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
+      "lastModified": "2025-10-31T19:54:27.128Z",
+      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "originalPrice": 85000
     },
     "team-netherland_2010": {
       "id": "team-netherland_2010",
-      "name": "Netherlands Retro 2010",
-      "slug": "netherland-2010",
+      "name": "Holanda - Retro 2010",
+      "slug": "holanda-retro-2010",
       "description": "Netherlands national team jersey from 2010 World Cup",
-      "price": 100,
-      "originalPrice": 115,
+      "price": 75000,
+      "originalPrice": 85000,
       "category": "national_retro",
       "selectedImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179835/cruzar-deportes/products/national_retro/netherland_2010/zsxfj24okadjlduosatt.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179838/cruzar-deportes/products/national_retro/netherland_2010/rtp76mvxcwn8cfnkwuyh.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179840/cruzar-deportes/products/national_retro/netherland_2010/z4l5ayq08cxbtilizt2p.jpg"
+      ],
+      "allAvailableImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179835/cruzar-deportes/products/national_retro/netherland_2010/zsxfj24okadjlduosatt.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179836/cruzar-deportes/products/national_retro/netherland_2010/srao1usac73dn18pbm1w.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179838/cruzar-deportes/products/national_retro/netherland_2010/rtp76mvxcwn8cfnkwuyh.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179839/cruzar-deportes/products/national_retro/netherland_2010/dsucvaoicb4egaeowxuy.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179840/cruzar-deportes/products/national_retro/netherland_2010/z4l5ayq08cxbtilizt2p.jpg"
-      ],
-      "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179835/cruzar-deportes/products/national_retro/netherland_2010/zsxfj24okadjlduosatt.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179836/cruzar-deportes/products/national_retro/netherland_2010/srao1usac73dn18pbm1w.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179838/cruzar-deportes/products/national_retro/netherland_2010/rtp76mvxcwn8cfnkwuyh.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179839/cruzar-deportes/products/national_retro/netherland_2010/dsucvaoicb4egaeowxuy.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179840/cruzar-deportes/products/national_retro/netherland_2010/z4l5ayq08cxbtilizt2p.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179841/cruzar-deportes/products/national_retro/netherland_2010/zlsaa7f3xzpbdrgwkags.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179843/cruzar-deportes/products/national_retro/netherland_2010/pm7mmc2f1te2mwbzbiqw.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179844/cruzar-deportes/products/national_retro/netherland_2010/f0kcbw0imhrz1jptoe4i.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179846/cruzar-deportes/products/national_retro/netherland_2010/ucahgi6ahtwbvarywbdw.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179847/cruzar-deportes/products/national_retro/netherland_2010/qk1f4uctpzoybyhq1usw.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179848/cruzar-deportes/products/national_retro/netherland_2010/e3vuznfw9gcyalcucydv.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179849/cruzar-deportes/products/national_retro/netherland_2010/qerw8hg0vygiwhelzbdq.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179851/cruzar-deportes/products/national_retro/netherland_2010/xfdqjuwhmssuctbcqjpb.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179852/cruzar-deportes/products/national_retro/netherland_2010/znsrsldncp5mm0nfbajx.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179853/cruzar-deportes/products/national_retro/netherland_2010/v1cd8m5qi6x8mgn6xy6a.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179854/cruzar-deportes/products/national_retro/netherland_2010/frfzphselhhnihnfk3qa.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179855/cruzar-deportes/products/national_retro/netherland_2010/zhfzhisv9gkbf5jmkxok.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179856/cruzar-deportes/products/national_retro/netherland_2010/rweyecbvgpp6nwbqn2ar.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179858/cruzar-deportes/products/national_retro/netherland_2010/k9gsdts4ollvdyxplwi3.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179859/cruzar-deportes/products/national_retro/netherland_2010/tvie71jzurgncp8ffcp6.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179861/cruzar-deportes/products/national_retro/netherland_2010/lcnlpyib4ebrocyatijt.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179864/cruzar-deportes/products/national_retro/netherland_2010/to5iom0xstbzieozks1f.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179871/cruzar-deportes/products/national_retro/netherland_2010/f6am3yagyywr1klic2mm.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179873/cruzar-deportes/products/national_retro/netherland_2010/qjtfstlgpw4nxftmluaq.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179874/cruzar-deportes/products/national_retro/netherland_2010/mtzcta8lfu2lzg5erfl0.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179944/cruzar-deportes/products/national_retro/netherland_2010/hdlp1g2q4ngqxysd7wi3.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179949/cruzar-deportes/products/national_retro/netherland_2010/fkat6u7yz1mj7dmyyjmi.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179952/cruzar-deportes/products/national_retro/netherland_2010/pevrkic8p0csrmbypeul.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179953/cruzar-deportes/products/national_retro/netherland_2010/bat6f8gyhpr1wvsrwoc5.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179955/cruzar-deportes/products/national_retro/netherland_2010/gyrlptslwtnrftd8yr61.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179956/cruzar-deportes/products/national_retro/netherland_2010/lx6hteosc3synbvfjnkg.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179958/cruzar-deportes/products/national_retro/netherland_2010/vbtr3wurswyao4fkpkbe.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758179959/cruzar-deportes/products/national_retro/netherland_2010/uhnddb0ujemc5ptsqx9h.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/netherland_2010",
       "sizes": [
@@ -10569,8 +10403,8 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
+      "lastModified": "2025-10-31T19:53:42.759Z",
+      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -10934,37 +10768,21 @@
     },
     "team-netherlands_1996": {
       "id": "team-netherlands_1996",
-      "name": "Netherlands Retro 1996",
-      "slug": "netherlands-1996",
+      "name": "Holanda - Retro 1996",
+      "slug": "holanda-retro-1996",
       "description": "Netherlands national team jersey from Euro 1996",
-      "price": 100,
+      "price": 75000,
       "category": "national_retro",
       "selectedImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180671/cruzar-deportes/products/national_retro/netherlands_1996/tnmprkszfftvqfrbs6dn.jpg"
+      ],
+      "allAvailableImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180671/cruzar-deportes/products/national_retro/netherlands_1996/tnmprkszfftvqfrbs6dn.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180673/cruzar-deportes/products/national_retro/netherlands_1996/getbnzhdbu8ofq5xzhgp.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180744/cruzar-deportes/products/national_retro/netherlands_1996/lnjzx1ldif52zz2l6l4l.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180745/cruzar-deportes/products/national_retro/netherlands_1996/c7jwwlvtgsi0h2wzw9xg.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180747/cruzar-deportes/products/national_retro/netherlands_1996/lk8fk5qsyavgdgvq3oey.jpg"
-      ],
-      "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180671/cruzar-deportes/products/national_retro/netherlands_1996/tnmprkszfftvqfrbs6dn.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180673/cruzar-deportes/products/national_retro/netherlands_1996/getbnzhdbu8ofq5xzhgp.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180744/cruzar-deportes/products/national_retro/netherlands_1996/lnjzx1ldif52zz2l6l4l.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180745/cruzar-deportes/products/national_retro/netherlands_1996/c7jwwlvtgsi0h2wzw9xg.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180747/cruzar-deportes/products/national_retro/netherlands_1996/lk8fk5qsyavgdgvq3oey.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180748/cruzar-deportes/products/national_retro/netherlands_1996/rahbfctg8viagjfzvukh.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180750/cruzar-deportes/products/national_retro/netherlands_1996/j9ytgeesykezmyxd0zsw.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180751/cruzar-deportes/products/national_retro/netherlands_1996/hwrnirihownwnowcelee.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180753/cruzar-deportes/products/national_retro/netherlands_1996/ldieatuauvcjwkvsw3u4.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180754/cruzar-deportes/products/national_retro/netherlands_1996/nzyzkjlilvqh6jesvyjp.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180756/cruzar-deportes/products/national_retro/netherlands_1996/qnv35z6ywh8rwd1k0kvx.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180757/cruzar-deportes/products/national_retro/netherlands_1996/qpuvg1iqe9yvvolwc1nc.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180758/cruzar-deportes/products/national_retro/netherlands_1996/yhzhuxkcligamaaixzb9.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180760/cruzar-deportes/products/national_retro/netherlands_1996/owiwwqvejmeebghg5c6f.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180762/cruzar-deportes/products/national_retro/netherlands_1996/ay4rlued3hxhjpiyeejy.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180763/cruzar-deportes/products/national_retro/netherlands_1996/rfgdh3onaax1dgck0sxm.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180765/cruzar-deportes/products/national_retro/netherlands_1996/sb1qhfzcdzyntcof7zne.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758185881/cruzar-deportes/products/national_retro/netherlands_1996/dtvdmu96mrhkd1o6p6sj.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/netherlands_1996",
       "sizes": [
@@ -10978,85 +10796,33 @@
         "Home",
         "Away"
       ],
-      "inStock": true,
+      "inStock": false,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
+      "lastModified": "2025-10-31T19:55:07.721Z",
+      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "originalPrice": 85000
     },
     "team-netherlands_1998": {
       "id": "team-netherlands_1998",
-      "name": "Netherlands Retro 1998",
-      "slug": "netherlands-1998",
+      "name": "Holanda - Retro 1998",
+      "slug": "holanda-retro-1998",
       "description": "Classic Netherlands national team jersey from 1998 World Cup",
-      "price": 100,
-      "originalPrice": 115,
+      "price": 75000,
+      "originalPrice": 85000,
       "category": "national_retro",
       "selectedImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180766/cruzar-deportes/products/national_retro/netherlands_1998/htgaxmzclsiui4nq18hr.jpg"
+      ],
+      "allAvailableImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/c_limit,w_800,q_auto,f_auto/cruzar-deportes/fallback/jersey-placeholder.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180766/cruzar-deportes/products/national_retro/netherlands_1998/htgaxmzclsiui4nq18hr.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180768/cruzar-deportes/products/national_retro/netherlands_1998/jvlpgihlicilsiddtwsw.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180770/cruzar-deportes/products/national_retro/netherlands_1998/d950zemklb1enop9bgf1.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180771/cruzar-deportes/products/national_retro/netherlands_1998/ejyya9srfhalwamv9wq7.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180773/cruzar-deportes/products/national_retro/netherlands_1998/hl5ijvdj9dp3nhklswqm.jpg"
-      ],
-      "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180766/cruzar-deportes/products/national_retro/netherlands_1998/htgaxmzclsiui4nq18hr.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180768/cruzar-deportes/products/national_retro/netherlands_1998/jvlpgihlicilsiddtwsw.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180770/cruzar-deportes/products/national_retro/netherlands_1998/d950zemklb1enop9bgf1.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180771/cruzar-deportes/products/national_retro/netherlands_1998/ejyya9srfhalwamv9wq7.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180773/cruzar-deportes/products/national_retro/netherlands_1998/hl5ijvdj9dp3nhklswqm.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180774/cruzar-deportes/products/national_retro/netherlands_1998/wj3obsv9bpwxpcrnlb5c.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180775/cruzar-deportes/products/national_retro/netherlands_1998/xi40ib3zdgreihbeniik.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180777/cruzar-deportes/products/national_retro/netherlands_1998/qqrnuxmlwkcflut0ronv.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180778/cruzar-deportes/products/national_retro/netherlands_1998/u45mzycwtu1cqzq8yykf.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180779/cruzar-deportes/products/national_retro/netherlands_1998/mup5miji3bsgamxkjp5p.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180781/cruzar-deportes/products/national_retro/netherlands_1998/bexmiderqierkkxv44te.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180783/cruzar-deportes/products/national_retro/netherlands_1998/mprsztlj23xlsjfhpwww.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180784/cruzar-deportes/products/national_retro/netherlands_1998/t7v2roxgbnna7izmqysm.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180786/cruzar-deportes/products/national_retro/netherlands_1998/ipgwgcpvjerbsbm3unok.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180861/cruzar-deportes/products/national_retro/netherlands_1998/f45wenpoptlidqjo3cjt.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180862/cruzar-deportes/products/national_retro/netherlands_1998/nj6cqwxblngul4rtjov6.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180863/cruzar-deportes/products/national_retro/netherlands_1998/rlajavqqququedgla2rp.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180865/cruzar-deportes/products/national_retro/netherlands_1998/cejyumlkbjwtvwiiuqnq.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180866/cruzar-deportes/products/national_retro/netherlands_1998/ymwxgonseceohwoofvea.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180868/cruzar-deportes/products/national_retro/netherlands_1998/qgmv5zxjdiovb1j1dxpf.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180869/cruzar-deportes/products/national_retro/netherlands_1998/baqbegpre4lmqgywimp8.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180870/cruzar-deportes/products/national_retro/netherlands_1998/zngnbkeq1a7ighgdak0h.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180871/cruzar-deportes/products/national_retro/netherlands_1998/hmqug9mkavxilnhtqnyt.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180873/cruzar-deportes/products/national_retro/netherlands_1998/khbydcxuftptaepgpimv.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180874/cruzar-deportes/products/national_retro/netherlands_1998/zouxtaero2b44nuoowq3.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180875/cruzar-deportes/products/national_retro/netherlands_1998/qkv2icownpj0bc6opyoy.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180877/cruzar-deportes/products/national_retro/netherlands_1998/lj9xywtcvonjx6kyujwp.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180878/cruzar-deportes/products/national_retro/netherlands_1998/nb4exie1iiwggjgdjxc7.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180880/cruzar-deportes/products/national_retro/netherlands_1998/sygkx8jieicgdnqzpsx3.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180881/cruzar-deportes/products/national_retro/netherlands_1998/h02gamyf55ujo4qkbwpd.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180882/cruzar-deportes/products/national_retro/netherlands_1998/aolgqk0uyw5v3ft1er75.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180884/cruzar-deportes/products/national_retro/netherlands_1998/at5ripb5zaoi0rd46yy0.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180885/cruzar-deportes/products/national_retro/netherlands_1998/z4yz0u7lcno56shi9j2h.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180887/cruzar-deportes/products/national_retro/netherlands_1998/p2xe51y4jzfjrcnzyhh1.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180888/cruzar-deportes/products/national_retro/netherlands_1998/ordoko9k0fuac3g4kwcl.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180889/cruzar-deportes/products/national_retro/netherlands_1998/zfr5kbho8iirgcj7ouqp.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180891/cruzar-deportes/products/national_retro/netherlands_1998/d8qhoiaziebhtnuyswkd.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180893/cruzar-deportes/products/national_retro/netherlands_1998/gx6dgiyirezhjleh50ca.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180894/cruzar-deportes/products/national_retro/netherlands_1998/hukahfnnxvp2oc1ikxp8.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180896/cruzar-deportes/products/national_retro/netherlands_1998/aplz9jvg9pacdlvx1njz.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180897/cruzar-deportes/products/national_retro/netherlands_1998/zyyatbyrjmdmyyog7l47.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180899/cruzar-deportes/products/national_retro/netherlands_1998/ntfqu9jal6uogklzz4pp.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180900/cruzar-deportes/products/national_retro/netherlands_1998/n1ij6z9ptorhnztkidl0.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180901/cruzar-deportes/products/national_retro/netherlands_1998/wg2fqel5luujab0ndz4z.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180903/cruzar-deportes/products/national_retro/netherlands_1998/prdmj0innzpsrw7khh1p.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180904/cruzar-deportes/products/national_retro/netherlands_1998/kdnafbxhgkk39z9pbbd6.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180905/cruzar-deportes/products/national_retro/netherlands_1998/h4mmleurutrtl5ps7lan.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180907/cruzar-deportes/products/national_retro/netherlands_1998/buexa1ghhv7trmzl7pus.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180908/cruzar-deportes/products/national_retro/netherlands_1998/pbpncvflb0szoeqjshs0.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180909/cruzar-deportes/products/national_retro/netherlands_1998/wew0fmcrcw0njxzkk0ar.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180911/cruzar-deportes/products/national_retro/netherlands_1998/eotgwdjzzv5fxg9rk7si.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180912/cruzar-deportes/products/national_retro/netherlands_1998/syggqp4ty0h5dyrnfsla.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180914/cruzar-deportes/products/national_retro/netherlands_1998/u5yhwwu5yhthio16lfvo.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758180915/cruzar-deportes/products/national_retro/netherlands_1998/etnkxrizphsvvhpjnicz.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758185883/cruzar-deportes/products/national_retro/netherlands_1998/hkz1rtz69bcmw6trttb6.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/national_retro/netherlands_1998",
       "sizes": [
@@ -11073,24 +10839,24 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
+      "lastModified": "2025-10-31T19:55:42.532Z",
+      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
     "team-netherlands_2014": {
       "id": "team-netherlands_2014",
-      "name": "Netherlands Retro 2014",
-      "slug": "netherlands-2014",
+      "name": "Holanda - Retro 2014",
+      "slug": "holanda-retro-2014",
       "description": "Netherlands national team jersey from 2014 World Cup",
-      "price": 85,
+      "price": 75000,
       "category": "national_retro",
       "selectedImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758181022/cruzar-deportes/products/national_retro/netherlands_2014/w14ux6zdwtzai3wicmhb.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758185885/cruzar-deportes/products/national_retro/netherlands_2014/e54i9ixkzqyfbzbhwwkc.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758181038/cruzar-deportes/products/national_retro/netherlands_2014/qgsmlfdlc8pnzxcsvdq5.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758181024/cruzar-deportes/products/national_retro/netherlands_2014/lft0adi1brtftlxkuwii.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758181025/cruzar-deportes/products/national_retro/netherlands_2014/hx0najx0bullucyah8ni.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758181027/cruzar-deportes/products/national_retro/netherlands_2014/x0usebgqhvsuqulheg6d.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758181028/cruzar-deportes/products/national_retro/netherlands_2014/pyu9ptkts26wc9hnqf4r.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758181049/cruzar-deportes/products/national_retro/netherlands_2014/c7v8e7g8wlkhwxwcd4pj.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758181045/cruzar-deportes/products/national_retro/netherlands_2014/vzrxfjmpgrsmag1tkxyy.jpg"
       ],
       "allAvailableImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758181022/cruzar-deportes/products/national_retro/netherlands_2014/w14ux6zdwtzai3wicmhb.jpg",
@@ -11134,13 +10900,14 @@
         "Home",
         "Away"
       ],
-      "inStock": true,
+      "inStock": false,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
+      "lastModified": "2025-10-31T19:57:06.505Z",
+      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "originalPrice": 85000
     },
     "team-netherlands_84": {
       "id": "team-netherlands_84",
@@ -12591,7 +12358,7 @@
   },
   "metadata": {
     "totalProducts": 237,
-    "totalImages": 1005,
-    "lastSync": "2025-10-24T15:45:18.678Z"
+    "totalImages": 981,
+    "lastSync": "2025-10-31T19:57:06.505Z"
   }
 }
