@@ -38,7 +38,6 @@ const fromTeamCatalog = (teamKey: string, teamInfo: typeof teamCatalog[string]):
     stockStatus: 'in_stock',
     featured: false,
     lastModified: now,
-    isProcessed: false,
     createdAt: now,
     createdBy: 'system'
   }
@@ -95,7 +94,6 @@ async function rebuildCatalog() {
       // New product - use generated data as-is
       database.products[product.id] = {
         ...product,
-        isProcessed: false,
         createdAt: product.createdAt ?? new Date().toISOString(),
         createdBy: product.createdBy ?? 'system'
       }
@@ -108,9 +106,8 @@ async function rebuildCatalog() {
 
       const existingAll = Array.isArray(existing.allAvailableImages) ? existing.allAvailableImages : []
       const generatedAll = Array.isArray(product.allAvailableImages) ? product.allAvailableImages : []
-      const isProcessed = existing.isProcessed === true
 
-      const baseAll = isProcessed && existingAll.length > 0
+      const baseAll = existingAll.length > 0
         ? existingAll
         : generatedAll
 

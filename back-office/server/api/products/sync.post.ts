@@ -36,7 +36,6 @@ const toSharedProduct = (variant: ProductVariant, albumPath: string, category: s
     stockStatus: 'in_stock',
     featured: false,
     lastModified: new Date().toISOString(),
-    isProcessed: true,
     createdAt: new Date().toISOString(),
     createdBy: 'admin'
   }

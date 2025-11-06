@@ -88,7 +88,6 @@ export const useCloudinary = () => {
               images: [], // Empty initially - will be loaded on demand
               totalImages: summary.totalImages,
               lastModified: summary.lastModified,
-              isProcessed: summary.isProcessed,
               coverImage: summary.coverImage
             }))
           }
@@ -155,8 +154,7 @@ export const useCloudinary = () => {
             totalImages: images.length,
             lastModified: images.length > 0
               ? new Date(Math.max(...images.map(img => new Date(img.created_at).getTime()))).toISOString()
-              : new Date().toISOString(),
-            isProcessed: false // We'll determine this based on product generation
+              : new Date().toISOString()
           }
 
           albumsByCategory[category].push(album)
@@ -205,7 +203,6 @@ export const useCloudinary = () => {
           lastModified: images.length > 0
             ? new Date(Math.max(...images.map(img => new Date(img.created_at).getTime()))).toISOString()
             : new Date().toISOString(),
-          isProcessed: false,
           coverImage: images.length > 0 ? images[0].secure_url : undefined
         }
       })

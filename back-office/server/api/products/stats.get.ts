@@ -7,7 +7,6 @@ export default defineEventHandler(async (event): Promise<ApiResponse<{
   totalImages: number
   categoryCounts: Record<CategoryType, number>
   lastUpdated: string
-  processedProducts: number
   featuredProducts: number
   inStockProducts: number
 }>> => {
@@ -32,7 +31,6 @@ export default defineEventHandler(async (event): Promise<ApiResponse<{
       }
     }
 
-    const processedProducts = products.filter(p => p.isProcessed).length
     const featuredProducts = products.filter(p => p.featured).length
     const inStockProducts = products.filter(p => p.inStock).length
 
@@ -43,7 +41,6 @@ export default defineEventHandler(async (event): Promise<ApiResponse<{
         totalImages: database.metadata.totalImages,
         categoryCounts,
         lastUpdated: database.lastUpdated,
-        processedProducts,
         featuredProducts,
         inStockProducts
       },

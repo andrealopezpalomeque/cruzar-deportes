@@ -179,7 +179,6 @@ export async function migrateFromMainStore(): Promise<ProductDatabase> {
 
       // Metadata
       lastModified: new Date().toISOString(),
-      isProcessed: false, // Needs admin curation
       createdAt: new Date().toISOString(),
       createdBy: 'scraper'
     }

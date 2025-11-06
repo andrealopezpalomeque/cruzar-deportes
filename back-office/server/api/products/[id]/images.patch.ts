@@ -50,7 +50,6 @@ export default defineEventHandler(async (event): Promise<ApiResponse<null>> => {
 
       const generatedProduct = {
         ...sourceProduct,
-        isProcessed: true,
         lastModified: new Date().toISOString()
       }
 

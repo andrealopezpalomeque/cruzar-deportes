@@ -17,15 +17,6 @@
           <option value="national_retro">Retro Nacional</option>
         </select>
 
-        <select
-          v-model="selectedProcessedFilter"
-          class="px-4 py-2 border border-gray-300 rounded-lg bg-white text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-        >
-          <option value="">Todos los productos</option>
-          <option value="processed">Solo productos gestionados</option>
-          <option value="unprocessed">Solo productos sin gestionar</option>
-        </select>
-
         <input
           v-model="searchTerm"
           type="text"
@@ -38,37 +29,34 @@
       <div class="flex flex-wrap items-center justify-between gap-4">
         <div class="flex flex-wrap gap-4 text-sm text-gray-600">
           <span class="font-medium">Mostrando {{ currentRangeStart }}-{{ currentRangeEnd }} de {{ filteredProducts.length }} productos</span>
-          <span>Gestionados: {{ filteredProducts.filter(p => p.isProcessed).length }}</span>
-          <span>Sin gestionar: {{ filteredProducts.filter(p => !p.isProcessed).length }}</span>
         </div>
 
         <!-- Bulk Actions -->
-        <!-- TODO: Bulk selection feature - to be implemented in the future
-        <div v-if="selectedProducts.length > 0" class="flex gap-2">
-          <span class="text-sm text-gray-600">{{ selectedProducts.length }} seleccionados:</span>
-          <button
-            @click="bulkProcessProducts"
-            :disabled="processingProducts.bulk"
-            :class="[
-              'px-3 py-1 bg-green-600 text-white rounded text-sm transition-colors flex items-center gap-2',
-              processingProducts.bulk ? 'opacity-70 cursor-wait' : 'hover:bg-green-700'
-            ]"
-          >
-            <IconCheckCircle class="w-4 h-4" />
-            <span>Marcar como Gestionados</span>
-            <IconLoading
-              v-if="processingProducts.bulk"
-              class="w-4 h-4 animate-spin text-white"
-            />
-          </button>
-          <button
-            @click="clearSelection"
-            class="px-3 py-1 bg-gray-500 text-white rounded text-sm hover:bg-gray-600 transition-colors"
-          >
-            Limpiar
-          </button>
+        <div
+          v-if="selectedProducts.length > 0"
+          class="flex flex-wrap items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2"
+        >
+          <span class="text-sm text-gray-700 font-medium">
+            {{ selectedProducts.length }} {{ selectedProducts.length === 1 ? 'producto seleccionado' : 'productos seleccionados' }}
+          </span>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <button
+              @click="openBulkPricingModal"
+              class="px-3 py-1.5 rounded-lg text-sm transition-colors flex items-center gap-2 border bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100"
+            >
+              <IconCashMultiple class="w-4 h-4" />
+              <span>Editar precios</span>
+            </button>
+
+            <button
+              @click="clearSelection"
+              class="px-3 py-1.5 text-sm text-gray-600 rounded-lg hover:bg-white transition-colors border border-transparent"
+            >
+              Limpiar selección
+            </button>
+          </div>
         </div>
-        -->
       </div>
     </div>
 
@@ -104,7 +92,10 @@
         <div
           v-for="product in paginatedProducts"
           :key="product.id"
-          class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300 transition-all duration-300 overflow-hidden"
+          :class="[
+            'relative bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300 transition-all duration-300 overflow-hidden',
+            isProductSelected(product.id) ? 'ring-2 ring-green-200 border-green-300 shadow-md' : ''
+          ]"
         >
         <!-- Product Header -->
         <div class="p-4 sm:p-6 lg:p-8 border-b border-gray-100">
@@ -150,6 +141,21 @@
 
             <!-- Status Badges & Save/Cancel Buttons -->
             <div class="flex flex-col gap-3 items-stretch sm:items-end w-full sm:w-auto sm:min-w-[140px]">
+              <div class="flex items-center justify-start sm:justify-end">
+                <button
+                  type="button"
+                  @click.stop="toggleProductSelection(product.id)"
+                  :class="[
+                    'px-3 py-1 text-xs font-medium rounded-full border transition-colors',
+                    isProductSelected(product.id)
+                      ? 'bg-green-50 text-green-700 border-green-200 hover:bg-green-100'
+                      : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'
+                  ]"
+                >
+                  {{ isProductSelected(product.id) ? 'Seleccionado' : 'Seleccionar' }}
+                </button>
+              </div>
+
               <!-- Save/Cancel Buttons (shown when dirty) -->
               <Transition name="fade">
                 <div v-if="isProductDirty(product.id)" class="flex flex-col gap-2 w-full mb-2">
@@ -176,19 +182,6 @@
                   </button>
                 </div>
               </Transition>
-
-              <!-- Status Badges -->
-              <div class="flex items-center justify-start sm:justify-end gap-2">
-                <span
-                  :class="[
-                    'w-2 h-2 rounded-full',
-                    product.isProcessed ? 'bg-blue-500' : 'bg-orange-400'
-                  ]"
-                />
-                <span class="text-xs font-medium text-gray-700">
-                  {{ product.isProcessed ? 'Gestionado' : 'Sin gestionar' }}
-                </span>
-              </div>
 
               <div class="flex items-center justify-start sm:justify-end gap-2">
                 <span
@@ -262,30 +255,6 @@
               <span>Seleccionar imágenes</span>
             </button>
 
-            <!-- Process Toggle Button -->
-            <button
-              @click="processProduct(product)"
-              :disabled="processingProducts.single[product.id] || processingProducts.globalSingleActive"
-              :class="[
-                'w-full px-4 py-3 rounded-xl transition-all font-medium shadow-sm hover:shadow-md flex items-center justify-center gap-2',
-                product.isProcessed
-                  ? 'bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-100'
-                  : 'bg-green-600 text-white hover:bg-green-700 active:bg-green-600',
-                processingProducts.single[product.id] || processingProducts.globalSingleActive ? 'opacity-60 cursor-wait' : ''
-              ]"
-            >
-              <component
-                :is="product.isProcessed ? IconRestore : IconCheckCircle"
-                class="w-5 h-5"
-              />
-              <span>
-                {{ product.isProcessed ? 'Marcar como sin gestionar' : 'Marcar como gestionado' }}
-              </span>
-              <IconLoading
-                v-if="processingProducts.single[product.id]"
-                class="w-4 h-4 animate-spin"
-              />
-            </button>
           </div>
 
           <!-- Pricing Management -->
@@ -579,6 +548,202 @@
         </div>
       </div>
     </Teleport>
+
+    <!-- Bulk Pricing Modal -->
+    <Teleport to="body">
+      <Transition name="fade">
+        <div
+          v-if="showBulkPricingModal"
+          class="fixed inset-0 z-50 flex items-center justify-center px-4 py-8"
+        >
+          <div
+            class="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            @click="closeBulkPricingModal"
+          />
+          <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[calc(100vh-4rem)] overflow-hidden flex flex-col">
+            <div class="flex items-start justify-between p-6 border-b border-gray-100">
+              <div>
+                <p class="text-xs font-semibold text-blue-600 uppercase tracking-wide">
+                  Actualización masiva
+                </p>
+                <h3 class="text-xl font-semibold text-gray-900 mt-1">
+                  Editar precios ({{ selectedProducts.length }})
+                </h3>
+                <p class="text-sm text-gray-500 mt-2">
+                  Define valores específicos o aplica un ajuste porcentual para los productos seleccionados.
+                </p>
+              </div>
+              <button
+                @click="closeBulkPricingModal"
+                :disabled="bulkPricingState.saving"
+                class="text-gray-400 hover:text-gray-600 transition-colors disabled:opacity-50"
+              >
+                <IconClose class="w-5 h-5" />
+              </button>
+            </div>
+
+            <div class="flex-1 overflow-y-auto p-6 space-y-6">
+              <div class="bg-gray-50 rounded-xl p-4 border border-dashed border-gray-200">
+                <p class="text-sm font-medium text-gray-700">Resumen de selección</p>
+                <ul class="mt-3 space-y-2">
+                  <li
+                    v-for="product in selectedProductPreview"
+                    :key="product.id"
+                    class="flex items-center justify-between text-sm text-gray-600"
+                  >
+                    <span class="truncate pr-3">{{ product.name }}</span>
+                    <span class="text-gray-900 font-medium">
+                      {{ formatPrice(product.price) }}
+                    </span>
+                  </li>
+                </ul>
+                <p
+                  v-if="selectedProducts.length > selectedProductPreview.length"
+                  class="mt-2 text-xs text-gray-500"
+                >
+                  + {{ selectedProducts.length - selectedProductPreview.length }} productos adicionales seleccionados
+                </p>
+              </div>
+
+              <div>
+                <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">
+                  Modo de actualización
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <label
+                    class="flex items-start gap-3 border rounded-xl p-3 cursor-pointer transition-colors"
+                    :class="bulkPricingForm.strategy === 'absolute' ? 'border-blue-500 bg-blue-50/60' : 'border-gray-200 hover:border-gray-300'"
+                  >
+                    <input
+                      type="radio"
+                      value="absolute"
+                      v-model="bulkPricingForm.strategy"
+                      class="mt-1 text-blue-600 focus:ring-blue-500"
+                    />
+                    <div>
+                      <p class="text-sm font-semibold text-gray-900">Establecer valores</p>
+                      <p class="text-xs text-gray-600">Define un nuevo precio y/o precio original fijo.</p>
+                    </div>
+                  </label>
+                  <label
+                    class="flex items-start gap-3 border rounded-xl p-3 cursor-pointer transition-colors"
+                    :class="bulkPricingForm.strategy === 'percent' ? 'border-blue-500 bg-blue-50/60' : 'border-gray-200 hover:border-gray-300'"
+                  >
+                    <input
+                      type="radio"
+                      value="percent"
+                      v-model="bulkPricingForm.strategy"
+                      class="mt-1 text-blue-600 focus:ring-blue-500"
+                    />
+                    <div>
+                      <p class="text-sm font-semibold text-gray-900">Ajustar por porcentaje</p>
+                      <p class="text-xs text-gray-600">Incrementa o reduce los precios actuales en bloque.</p>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div v-if="bulkPricingForm.strategy === 'absolute'" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="space-y-2">
+                  <label class="text-sm font-medium text-gray-700">Nuevo precio</label>
+                  <div class="relative">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                    <input
+                      v-model.number="bulkPricingForm.priceValue"
+                      type="number"
+                      min="0"
+                      step="100"
+                      placeholder="Sin cambios"
+                      class="w-full pl-7 pr-3 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+                  <p class="text-xs text-gray-500">Deja vacío para mantener el valor actual.</p>
+                </div>
+                <div class="space-y-2">
+                  <label class="text-sm font-medium text-gray-700">Nuevo precio original</label>
+                  <div class="relative">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                    <input
+                      v-model.number="bulkPricingForm.originalPriceValue"
+                      type="number"
+                      min="0"
+                      step="100"
+                      placeholder="Sin cambios"
+                      class="w-full pl-7 pr-3 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+                  <p class="text-xs text-gray-500">Opcional. Úsalo para precios tachados o comparativos.</p>
+                </div>
+              </div>
+
+              <div v-else class="space-y-4">
+                <div class="space-y-2">
+                  <label class="text-sm font-medium text-gray-700">Porcentaje de ajuste</label>
+                  <div class="relative">
+                    <input
+                      v-model.number="bulkPricingForm.percentageValue"
+                      type="number"
+                      step="0.5"
+                      placeholder="Ej. 10 para +10% o -15 para -15%"
+                      class="w-full pr-12 pl-3 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                    <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">%</span>
+                  </div>
+                  <p class="text-xs text-gray-500">Utiliza valores negativos para aplicar descuentos.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                  <label class="flex items-center gap-2 text-sm font-medium text-gray-700">
+                    <input
+                      type="checkbox"
+                      v-model="bulkPricingForm.applyToPrice"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    Precio actual
+                  </label>
+                  <label class="flex items-center gap-2 text-sm font-medium text-gray-700">
+                    <input
+                      type="checkbox"
+                      v-model="bulkPricingForm.applyToOriginalPrice"
+                      class="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                    Precio original
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-6 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <p class="text-sm text-gray-500">
+                {{ selectedProducts.length }} {{ selectedProducts.length === 1 ? 'producto' : 'productos' }} serán actualizados.
+              </p>
+              <div class="flex items-center gap-3">
+                <button
+                  @click="closeBulkPricingModal"
+                  :disabled="bulkPricingState.saving"
+                  class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors disabled:opacity-60"
+                >
+                  Cancelar
+                </button>
+                <button
+                  @click="applyBulkPricing"
+                  :disabled="!isBulkPricingValid || bulkPricingState.saving"
+                  :class="[
+                    'px-4 py-2 rounded-lg text-white flex items-center gap-2 transition-colors',
+                    !isBulkPricingValid || bulkPricingState.saving ? 'bg-blue-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+                  ]"
+                >
+                  <IconLoading
+                    v-if="bulkPricingState.saving"
+                    class="w-4 h-4 animate-spin text-white"
+                  />
+                  <span>{{ bulkPricingState.saving ? 'Aplicando...' : 'Aplicar cambios' }}</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Transition>
+    </Teleport>
   </div>
 </template>
 
@@ -588,9 +753,8 @@ import IconAlertCircle from '~icons/mdi/alert-circle'
 import IconClose from '~icons/mdi/close'
 import IconImageOff from '~icons/mdi/image-off'
 import IconImageMultiple from '~icons/mdi/image-multiple'
-import IconCheckCircle from '~icons/mdi/check-circle'
 import IconCheck from '~icons/mdi/check'
-import IconRestore from '~icons/mdi/restore'
+import IconCashMultiple from '~icons/mdi/cash-multiple'
 import IconPencil from '~icons/mdi/pencil'
 
 // Page meta
@@ -634,10 +798,9 @@ const loading = ref(false)
 const error = ref(null)
 const products = ref([])
 const selectedCategory = ref('')
-const selectedProcessedFilter = ref('')
 const searchTerm = ref('')
-// TODO: Bulk selection feature - to be implemented in the future
-// const selectedProducts = ref([])
+const selectedProducts = ref([])
+const showBulkPricingModal = ref(false)
 
 // Pagination state
 const currentPage = ref(1)
@@ -652,10 +815,16 @@ const tempSelectedImages = ref([])
 const loadingImages = ref(false)
 const draggingSelectedIndex = ref(null)
 const statusLoading = reactive({})
-const processingProducts = reactive({
-  single: {},
-  bulk: false,
-  globalSingleActive: false
+const bulkPricingForm = reactive({
+  strategy: 'absolute',
+  priceValue: null,
+  originalPriceValue: null,
+  percentageValue: null,
+  applyToPrice: true,
+  applyToOriginalPrice: false
+})
+const bulkPricingState = reactive({
+  saving: false
 })
 const detailsLoading = reactive({})
 const detailsSnapshots = reactive({})
@@ -665,6 +834,95 @@ const savingProducts = reactive({}) // Track which products are being saved
 const isDetailsLoading = (productId) => Boolean(detailsLoading[productId])
 const isProductDirty = (productId) => Boolean(dirtyProducts[productId])
 const isProductSaving = (productId) => Boolean(savingProducts[productId])
+const isProductSelected = (productId) => selectedProducts.value.includes(productId)
+
+const toggleProductSelection = (productId) => {
+  const index = selectedProducts.value.indexOf(productId)
+  if (index > -1) {
+    selectedProducts.value.splice(index, 1)
+  } else {
+    selectedProducts.value.push(productId)
+  }
+}
+
+const clearSelection = () => {
+  selectedProducts.value = []
+}
+
+const selectedProductPreview = computed(() => {
+  const selectedIds = new Set(selectedProducts.value)
+  return products.value.filter(p => selectedIds.has(p.id)).slice(0, 4)
+})
+
+const currencyFormatter = new Intl.NumberFormat('es-AR', {
+  style: 'currency',
+  currency: 'ARS',
+  maximumFractionDigits: 2,
+  minimumFractionDigits: 0
+})
+
+const formatPrice = (value) => {
+  if (value === null || value === undefined || value === '') {
+    return '—'
+  }
+  try {
+    return currencyFormatter.format(value)
+  } catch (err) {
+    return `$${value}`
+  }
+}
+
+const resetBulkPricingForm = () => {
+  bulkPricingForm.strategy = 'absolute'
+  bulkPricingForm.priceValue = null
+  bulkPricingForm.originalPriceValue = null
+  bulkPricingForm.percentageValue = null
+  bulkPricingForm.applyToPrice = true
+  bulkPricingForm.applyToOriginalPrice = false
+}
+
+const openBulkPricingModal = () => {
+  if (selectedProducts.value.length === 0) {
+    return
+  }
+  resetBulkPricingForm()
+  showBulkPricingModal.value = true
+}
+
+const closeBulkPricingModal = () => {
+  if (bulkPricingState.saving) {
+    return
+  }
+  showBulkPricingModal.value = false
+}
+
+const parseMoneyInput = (value) => {
+  if (value === null || value === undefined || value === '') {
+    return null
+  }
+  const parsed = Number(value)
+  if (Number.isNaN(parsed)) {
+    return null
+  }
+  return Math.max(0, parsed)
+}
+
+const isBulkPricingValid = computed(() => {
+  if (selectedProducts.value.length === 0) {
+    return false
+  }
+
+  if (bulkPricingForm.strategy === 'absolute') {
+    const priceValue = parseMoneyInput(bulkPricingForm.priceValue)
+    const originalValue = parseMoneyInput(bulkPricingForm.originalPriceValue)
+    return priceValue !== null || originalValue !== null
+  }
+
+  const percent = Number(bulkPricingForm.percentageValue)
+  const hasPercent = !Number.isNaN(percent) && percent !== 0
+  const hasTarget = bulkPricingForm.applyToPrice || bulkPricingForm.applyToOriginalPrice
+  return hasPercent && hasTarget
+})
 
 const captureDetailsSnapshot = (product) => {
   const sanitizedName = (product.name ?? '').trim()
@@ -787,14 +1045,6 @@ const filteredProducts = computed(() => {
     filtered = filtered.filter(p => p.category === selectedCategory.value)
   }
 
-  if (selectedProcessedFilter.value) {
-    if (selectedProcessedFilter.value === 'processed') {
-      filtered = filtered.filter(p => p.isProcessed === true)
-    } else if (selectedProcessedFilter.value === 'unprocessed') {
-      filtered = filtered.filter(p => p.isProcessed === false)
-    }
-  }
-
   if (searchTerm.value) {
     const search = searchTerm.value.toLowerCase()
     filtered = filtered.filter(p =>
@@ -872,10 +1122,6 @@ const loadAllProducts = async () => {
     Object.keys(statusLoading).forEach(key => {
       delete statusLoading[key]
     })
-    Object.keys(processingProducts.single).forEach(key => {
-      delete processingProducts.single[key]
-    })
-    processingProducts.bulk = false
     Object.keys(detailsLoading).forEach(key => {
       delete detailsLoading[key]
     })
@@ -885,6 +1131,7 @@ const loadAllProducts = async () => {
     const loadedProducts = await loadProducts()
     products.value = loadedProducts
     products.value.forEach(captureDetailsSnapshot)
+    clearSelection()
   } catch (err) {
     error.value = err.message
     toast.error('Error al cargar productos')
@@ -1108,90 +1355,84 @@ const toggleProductStatus = async (product, field) => {
   }
 }
 
-const processProduct = async (product) => {
-  try {
-    if (processingProducts.globalSingleActive) {
-      return
-    }
-    if (processingProducts.single[product.id]) {
-      return
-    }
-    processingProducts.single[product.id] = true
-    processingProducts.globalSingleActive = true
-    const targetIsProcessed = !product.isProcessed
-    const payload = {
-      ...product,
-      isProcessed: targetIsProcessed
-    }
-    await saveProduct(payload)
+const applyBulkPricing = async () => {
+  if (!isBulkPricingValid.value) {
+    return
+  }
 
-    // Update local state
-    product.isProcessed = targetIsProcessed
-    product.lastModified = new Date().toISOString()
+  try {
+    bulkPricingState.saving = true
+    const selectedIds = new Set(selectedProducts.value)
+    const productsToUpdate = products.value.filter(p => selectedIds.has(p.id))
+    const priceValue = parseMoneyInput(bulkPricingForm.priceValue)
+    const originalValue = parseMoneyInput(bulkPricingForm.originalPriceValue)
+    const percent = Number(bulkPricingForm.percentageValue)
+    const percentFactor = 1 + percent / 100
+    let updatedCount = 0
+
+    for (const product of productsToUpdate) {
+      let nextPrice = typeof product.price === 'number' ? product.price : 0
+      let nextOriginalPrice = typeof product.originalPrice === 'number' ? product.originalPrice : nextPrice
+      let shouldUpdate = false
+
+      if (bulkPricingForm.strategy === 'absolute') {
+        if (priceValue !== null && priceValue !== product.price) {
+          nextPrice = priceValue
+          shouldUpdate = true
+        }
+        if (originalValue !== null && originalValue !== product.originalPrice) {
+          nextOriginalPrice = originalValue
+          shouldUpdate = true
+        }
+      } else {
+        if (bulkPricingForm.applyToPrice) {
+          const basePrice = typeof product.price === 'number' ? product.price : 0
+          const calculatedPrice = Number((basePrice * percentFactor).toFixed(2))
+          if (!Number.isNaN(calculatedPrice) && calculatedPrice !== product.price) {
+            nextPrice = calculatedPrice
+            shouldUpdate = true
+          }
+        }
+        if (bulkPricingForm.applyToOriginalPrice) {
+          const baseOriginal = typeof product.originalPrice === 'number'
+            ? product.originalPrice
+            : (typeof product.price === 'number' ? product.price : 0)
+          const calculatedOriginal = Number((baseOriginal * percentFactor).toFixed(2))
+          if (!Number.isNaN(calculatedOriginal) && calculatedOriginal !== product.originalPrice) {
+            nextOriginalPrice = calculatedOriginal
+            shouldUpdate = true
+          }
+        }
+      }
+
+      if (shouldUpdate) {
+        await updateProductPricingAPI(product.id, nextPrice, nextOriginalPrice)
+        product.price = nextPrice
+        product.originalPrice = nextOriginalPrice
+        product.lastModified = new Date().toISOString()
+        captureDetailsSnapshot(product)
+        delete dirtyProducts[product.id]
+        updatedCount++
+      }
+    }
+
+    if (updatedCount === 0) {
+      toast.info('No hubo cambios de precio necesarios')
+      return
+    }
 
     toast.success(
-      targetIsProcessed
-        ? `Producto "${product.name}" marcado como gestionado`
-        : `Producto "${product.name}" marcado como sin gestionar`
+      updatedCount === 1
+        ? 'Se actualizó el precio de 1 producto'
+        : `Se actualizaron los precios de ${updatedCount} productos`
     )
+    showBulkPricingModal.value = false
   } catch (err) {
-    toast.error('Error al procesar producto')
+    toast.error('Error al actualizar precios en lote')
   } finally {
-    delete processingProducts.single[product.id]
-    processingProducts.globalSingleActive = false
+    bulkPricingState.saving = false
   }
 }
-
-// TODO: Bulk selection feature - to be implemented in the future
-/*
-const toggleProductSelection = (productId) => {
-  const index = selectedProducts.value.indexOf(productId)
-  if (index > -1) {
-    selectedProducts.value.splice(index, 1)
-  } else {
-    selectedProducts.value.push(productId)
-  }
-}
-
-const clearSelection = () => {
-  selectedProducts.value = []
-}
-*/
-
-// TODO: Bulk selection feature - to be implemented in the future
-/*
-const bulkProcessProducts = async () => {
-  if (selectedProducts.value.length === 0) return
-
-  try {
-    if (processingProducts.bulk) {
-      return
-    }
-    processingProducts.bulk = true
-    loading.value = true
-    const productsToProcess = products.value.filter(p => selectedProducts.value.includes(p.id))
-
-    // Process each product
-    for (const product of productsToProcess) {
-      const payload = {
-        ...product,
-        isProcessed: true
-      }
-      await saveProduct(payload)
-      product.isProcessed = true
-      product.lastModified = new Date().toISOString()
-    }
-
-    clearSelection()
-    toast.success(`${productsToProcess.length} productos marcados como gestionados`)
-  } catch (err) {
-    toast.error('Error al procesar productos en lote')
-  } finally {
-    loading.value = false
-    processingProducts.bulk = false
-  }
-}
-*/
 
 const goToPage = async (page) => {
   if (page < 1 || page > totalPages.value) return
@@ -1226,8 +1467,17 @@ const prevPage = () => {
   }
 }
 
+watch(
+  () => selectedProducts.value.length,
+  (newLength) => {
+    if (newLength === 0 && showBulkPricingModal.value) {
+      closeBulkPricingModal()
+    }
+  }
+)
+
 // Watchers - Reset pagination when filters change
-watch([selectedCategory, selectedProcessedFilter, searchTerm], async () => {
+watch([selectedCategory, searchTerm], async () => {
   // Show loading state for filter changes
   isTransitioning.value = true
 
@@ -1237,6 +1487,7 @@ watch([selectedCategory, selectedProcessedFilter, searchTerm], async () => {
   await new Promise(resolve => setTimeout(resolve, 300))
 
   currentPage.value = 1
+  clearSelection()
 
   // Hide loading state
   isTransitioning.value = false

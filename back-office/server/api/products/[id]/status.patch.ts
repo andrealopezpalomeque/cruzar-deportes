@@ -47,7 +47,6 @@ export default defineEventHandler(async (event): Promise<ApiResponse<null>> => {
 
       await saveProduct({
         ...sourceProduct,
-        isProcessed: true,
         lastModified: new Date().toISOString()
       })
     }

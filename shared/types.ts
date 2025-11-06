@@ -31,7 +31,6 @@ export interface SharedProduct {
 
   // Metadata
   lastModified: string
-  isProcessed: boolean              // Has been curated by admin
   createdAt: string
   createdBy: 'scraper' | 'admin'
 }

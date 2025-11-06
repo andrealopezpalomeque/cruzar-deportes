@@ -15,7 +15,6 @@ export default defineEventHandler(async (event): Promise<ApiResponse<SharedProdu
     const search = query.search as string | undefined
     const featured = query.featured ? query.featured === 'true' : undefined
     const inStock = query.inStock ? query.inStock === 'true' : undefined
-    const isProcessed = query.isProcessed ? query.isProcessed === 'true' : undefined
 
     // Generate all products from static data
     const allProducts = generateAllProducts()
@@ -44,11 +43,9 @@ export default defineEventHandler(async (event): Promise<ApiResponse<SharedProdu
         }
 
         // Merge managed data with generated data, prioritizing managed fields
-        const managedProcessed = managedProduct.isProcessed
         return {
           ...product,
           ...managedProduct,
-          isProcessed: managedProcessed !== undefined ? managedProcessed : true,
           cloudinaryFolderPath: correctFolderPath
         }
       }
@@ -74,10 +71,6 @@ export default defineEventHandler(async (event): Promise<ApiResponse<SharedProdu
 
     if (inStock !== undefined) {
       products = products.filter(p => p.inStock === inStock)
-    }
-
-    if (isProcessed !== undefined) {
-      products = products.filter(p => p.isProcessed === isProcessed)
     }
 
     // Sort by last modified (newest first)

@@ -51,7 +51,6 @@ export default defineEventHandler(async (event): Promise<ApiResponse<null>> => {
       // Add the product to the database
       await saveProduct({
         ...sourceProduct,
-        isProcessed: true,
         lastModified: new Date().toISOString()
       })
     }

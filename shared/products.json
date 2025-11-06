@@ -50,7 +50,6 @@
       "stockStatus": "in_stock",
       "featured": true,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.488Z",
       "createdBy": "scraper"
     },
@@ -93,7 +92,6 @@
       "stockStatus": "in_stock",
       "featured": true,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.489Z",
       "createdBy": "scraper",
       "originalPrice": 70000
@@ -167,7 +165,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.490Z",
       "createdBy": "scraper"
     },
@@ -236,7 +233,6 @@
       "stockStatus": "in_stock",
       "featured": true,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.491Z",
       "createdBy": "scraper"
     },
@@ -315,7 +311,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.492Z",
       "createdBy": "scraper"
     },
@@ -400,7 +395,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-31T19:35:10.361Z",
-      "isProcessed": true,
       "createdAt": "2025-09-25T22:20:59.493Z",
       "createdBy": "scraper"
     },
@@ -483,7 +477,6 @@
       "stockStatus": "in_stock",
       "featured": true,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.494Z",
       "createdBy": "scraper"
     },
@@ -557,7 +550,6 @@
       "stockStatus": "in_stock",
       "featured": true,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.495Z",
       "createdBy": "scraper"
     },
@@ -635,7 +627,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-25T22:20:59.497Z",
       "createdBy": "scraper"
     },
@@ -713,7 +704,6 @@
       "stockStatus": "in_stock",
       "featured": true,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -786,7 +776,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -821,7 +810,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -862,7 +850,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system",
       "originalPrice": 80000
@@ -899,7 +886,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -943,7 +929,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -982,7 +967,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1023,7 +1007,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T14:50:53.734Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1073,7 +1056,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1128,7 +1110,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1176,7 +1157,6 @@
       "stockStatus": "in_stock",
       "featured": true,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system",
       "originalPrice": 80000
@@ -1219,7 +1199,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system",
       "originalPrice": 80000
@@ -1289,7 +1268,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1328,7 +1306,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1402,7 +1379,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1450,7 +1426,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1496,7 +1471,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1542,7 +1516,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1577,7 +1550,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1621,7 +1593,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1667,7 +1638,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1704,7 +1674,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1743,7 +1712,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1782,7 +1750,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system",
       "originalPrice": 80000
@@ -1826,7 +1793,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1906,7 +1872,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -1960,7 +1925,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2006,7 +1970,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2052,7 +2015,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2087,7 +2049,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2122,7 +2083,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2169,7 +2129,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2216,7 +2175,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2257,7 +2215,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2298,7 +2255,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2337,7 +2293,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2372,7 +2327,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2430,7 +2384,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2469,7 +2422,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2508,7 +2460,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2547,7 +2498,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2589,7 +2539,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2638,7 +2587,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2677,7 +2625,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2718,7 +2665,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2777,7 +2723,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2832,7 +2777,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2895,7 +2839,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2948,7 +2891,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -2981,7 +2923,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -3072,7 +3013,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -3113,7 +3053,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -3165,7 +3104,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -3210,7 +3148,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -3253,7 +3190,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -3296,7 +3232,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -3336,7 +3271,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -3373,7 +3307,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -3408,7 +3341,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -3443,7 +3375,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -3488,7 +3419,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -3529,7 +3459,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -3575,7 +3504,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -3665,7 +3593,6 @@
       "stockStatus": "in_stock",
       "featured": true,
       "lastModified": "2025-10-24T14:53:01.463Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system"
     },
@@ -3757,7 +3684,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -3809,7 +3735,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -3932,7 +3857,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4009,7 +3933,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4064,7 +3987,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4145,7 +4067,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4219,7 +4140,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4285,7 +4205,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4351,7 +4270,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4414,7 +4332,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4469,7 +4386,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4520,7 +4436,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4583,7 +4498,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4637,7 +4551,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4686,7 +4599,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4735,7 +4647,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4770,7 +4681,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4812,7 +4722,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4854,7 +4763,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4896,7 +4804,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4943,7 +4850,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -4982,7 +4888,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5017,7 +4922,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5067,7 +4971,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5106,7 +5009,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5152,7 +5054,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5201,7 +5102,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5261,7 +5161,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5300,7 +5199,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5339,7 +5237,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5407,7 +5304,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5442,7 +5338,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5489,7 +5384,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5540,7 +5434,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5612,7 +5505,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5691,7 +5583,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5758,7 +5649,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T14:46:56.675Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5844,7 +5734,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5905,7 +5794,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -5972,7 +5860,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -6028,7 +5915,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T14:45:53.652Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -6077,7 +5963,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -6134,7 +6019,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:00:10.165Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -6193,7 +6077,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -6247,7 +6130,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -6325,7 +6207,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -6366,7 +6247,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -6407,7 +6287,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -6448,7 +6327,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -6509,7 +6387,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -6584,7 +6461,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -6627,7 +6503,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -6702,7 +6577,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -6770,7 +6644,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T14:52:37.972Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -6825,7 +6698,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T14:56:45.634Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -6905,7 +6777,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T14:58:16.239Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -6963,7 +6834,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T14:53:20.902Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -6998,7 +6868,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T14:59:39.444Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 80000
@@ -7037,7 +6906,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:01:04.959Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 90000
@@ -7076,7 +6944,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:02:21.240Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 70000
@@ -7115,7 +6982,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:03:30.471Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 65000
@@ -7155,7 +7021,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:05:30.740Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -7193,7 +7058,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:05:28.480Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -7257,7 +7121,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:06:46.936Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -7324,7 +7187,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:07:29.982Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -7364,7 +7226,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:09:04.676Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -7402,7 +7263,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:10:33.911Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -7441,7 +7301,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:11:32.148Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -7481,7 +7340,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:18:33.808Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -7520,7 +7378,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:30:27.755Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -7560,7 +7417,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-31T19:32:57.932Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 70000
@@ -7599,7 +7455,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:31:52.086Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 60000
@@ -7638,7 +7493,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:32:49.683Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -7677,7 +7531,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:33:31.100Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -7716,7 +7569,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:34:07.496Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -7756,7 +7608,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:35:18.336Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -7797,7 +7648,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:36:00.437Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -7836,7 +7686,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:36:31.412Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -7875,7 +7724,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:37:08.405Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -7919,7 +7767,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:39:51.744Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -7958,7 +7805,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:39:26.709Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 80000
@@ -7998,7 +7844,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:41:18.199Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -8039,7 +7884,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:42:31.534Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 80000
@@ -8078,7 +7922,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:43:03.012Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -8118,7 +7961,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:43:42.872Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -8182,7 +8024,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:44:40.501Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 60000
@@ -8222,7 +8063,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-24T15:45:18.678Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -8279,7 +8119,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -8328,7 +8167,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -8389,7 +8227,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-31T19:41:49.493Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -8443,7 +8280,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -8492,7 +8328,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -8544,7 +8379,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -8600,7 +8434,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -8696,7 +8529,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-31T19:44:09.729Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -8743,7 +8575,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -8788,7 +8619,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -8833,7 +8663,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -8874,7 +8703,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -8917,7 +8745,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -8981,7 +8808,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-11-04T20:04:08.205Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 0
@@ -9062,7 +8888,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-11-04T20:04:54.595Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 0
@@ -9101,7 +8926,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-31T19:45:29.085Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -9153,7 +8977,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -9198,7 +9021,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -9249,7 +9071,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -9300,7 +9121,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -9346,7 +9166,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -9389,7 +9208,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -9445,7 +9263,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -9485,7 +9302,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-31T19:47:30.272Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -9528,7 +9344,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-11-04T20:10:23.306Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 0
@@ -9593,7 +9408,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-11-04T20:10:44.735Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 0
@@ -9643,7 +9457,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -9678,7 +9491,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -9724,7 +9536,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-11-04T20:11:46.178Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 0
@@ -9765,7 +9576,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-31T19:49:23.159Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 90000
@@ -9831,7 +9641,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -9897,7 +9706,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -9949,7 +9757,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -10034,7 +9841,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-11-04T20:14:18.800Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -10083,7 +9889,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -10152,7 +9957,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -10192,7 +9996,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-31T19:50:53.599Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -10228,7 +10031,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -10280,7 +10082,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -10319,7 +10120,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-31T19:51:49.684Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -10359,7 +10159,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-31T19:54:27.128Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -10401,7 +10200,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-31T19:53:42.759Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -10452,7 +10250,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -10498,7 +10295,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -10566,7 +10362,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -10614,7 +10409,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -10684,7 +10478,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -10759,7 +10552,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -10797,7 +10589,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-31T19:55:07.721Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -10837,7 +10628,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-31T19:55:42.532Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -10901,7 +10691,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-10-31T19:57:06.505Z",
-      "isProcessed": true,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system",
       "originalPrice": 85000
@@ -10951,7 +10740,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -10997,7 +10785,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11048,7 +10835,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11097,7 +10883,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11142,7 +10927,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11192,7 +10976,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11239,7 +11022,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11285,7 +11067,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11343,7 +11124,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11398,7 +11178,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11449,7 +11228,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11500,7 +11278,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11582,7 +11359,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11637,7 +11413,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11702,7 +11477,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11751,7 +11525,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11804,7 +11577,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11862,7 +11634,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11915,7 +11686,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -11961,7 +11731,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -12015,7 +11784,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -12063,7 +11831,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -12128,7 +11895,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -12202,7 +11968,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -12256,7 +12021,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     },
@@ -12304,7 +12068,6 @@
       "stockStatus": "in_stock",
       "featured": false,
       "lastModified": "2025-09-30T20:53:28.589Z",
-      "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.363Z",
       "createdBy": "system"
     }
