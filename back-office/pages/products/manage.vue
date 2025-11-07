@@ -208,7 +208,9 @@
           <div class="space-y-2">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
-                <IconImageMultiple class="w-4 h-4 text-gray-500" />
+                <svg class="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
                 <span class="text-sm font-medium text-gray-700">
                   {{ product.selectedImages.length > 0
                     ? `${product.selectedImages.length} ${product.selectedImages.length === 1 ? 'imagen' : 'imágenes'}`
@@ -219,8 +221,10 @@
                 @click="openImageBrowser(product)"
                 class="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs rounded-lg hover:bg-gray-200 transition-colors font-medium flex items-center gap-1.5"
               >
-                <IconPencil class="w-3.5 h-3.5" />
-                <span>Editar</span>
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+                <span>Seleccionar</span>
               </button>
             </div>
           </div>
@@ -266,7 +270,7 @@
           <!-- Status Toggles -->
           <div class="space-y-3">
             <h4 class="text-sm font-medium text-gray-900">Configuración</h4>
-            <div class="space-y-2">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                 <span class="text-sm font-medium text-gray-700">Destacado</span>
                 <div class="flex items-center gap-2">
