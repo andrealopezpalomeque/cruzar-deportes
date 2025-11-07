@@ -88,51 +88,46 @@
     <!-- Quick Actions -->
     <div class="card">
       <div class="card-header">
-        <h3 class="text-lg font-medium text-gray-900">
-          Acciones Rápidas
-        </h3>
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="text-lg font-medium text-gray-900">
+              Acciones Rápidas
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Accede a las herramientas clave del back office en un solo clic.
+            </p>
+          </div>
+        </div>
       </div>
       <div class="card-body">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <NuxtLink
-            to="/products/manage"
-            class="p-6 border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all duration-200 group"
+            v-for="action in quickActions"
+            :key="action.title"
+            :to="action.to"
+            class="p-5 border border-gray-200 rounded-xl transition-all duration-200 group bg-white/60 hover:bg-white hover:shadow-md"
+            :class="action.borderClass"
           >
-            <div class="flex items-center">
-              <div class="flex-shrink-0">
-                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                  <IconTshirtCrew class="w-5 h-5 text-blue-600" />
+            <div class="flex items-start gap-4">
+              <div>
+                <div
+                  class="w-10 h-10 rounded-lg flex items-center justify-center transition-colors"
+                  :class="action.iconWrapperClass"
+                >
+                  <component :is="action.icon" class="w-5 h-5" :class="action.iconClass" />
                 </div>
               </div>
-              <div class="ml-4">
-                <p class="text-base font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
-                  Ver Productos
+              <div class="flex-1 space-y-1">
+                <p class="text-base font-semibold text-gray-900 group-hover:text-gray-900">
+                  {{ action.title }}
                 </p>
                 <p class="text-sm text-gray-500">
-                  Gestiona tu catálogo
+                  {{ action.description }}
                 </p>
-              </div>
-            </div>
-          </NuxtLink>
-
-
-          <NuxtLink
-            to="/bulk-operations?from=dashboard"
-            class="p-6 border border-gray-200 rounded-lg hover:border-green-300 hover:shadow-md transition-all duration-200 group"
-          >
-            <div class="flex items-center">
-              <div class="flex-shrink-0">
-                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-200 transition-colors">
-                  <IconFormatListBulleted class="w-5 h-5 text-green-600" />
-                </div>
-              </div>
-              <div class="ml-4">
-                <p class="text-base font-medium text-gray-900 group-hover:text-green-600 transition-colors">
-                  Operaciones en Lote
-                </p>
-                <p class="text-sm text-gray-500">
-                  Cambios masivos
-                </p>
+                <span class="inline-flex items-center text-sm font-medium" :class="action.linkClass">
+                  {{ action.cta }}
+                  <IconChevronRight class="w-4 h-4 ml-1" />
+                </span>
               </div>
             </div>
           </NuxtLink>
@@ -198,8 +193,9 @@ import IconViewDashboard from '~icons/mdi/view-dashboard'
 import IconTshirtCrew from '~icons/mdi/tshirt-crew'
 import IconStar from '~icons/mdi/star'
 import IconPackageVariantClosed from '~icons/mdi/package-variant-closed'
-import IconFormatListBulleted from '~icons/mdi/format-list-bulleted'
 import IconClockOutline from '~icons/mdi/clock-outline'
+import IconCog from '~icons/mdi/cog'
+import IconChevronRight from '~icons/mdi/chevron-right'
 import IconPlus from '~icons/mdi/plus'
 import IconPencil from '~icons/mdi/pencil'
 import IconDelete from '~icons/mdi/delete'
@@ -212,6 +208,42 @@ definePageMeta({
 
 // Composables
 const authStore = useAuthStore()
+
+const quickActions = [
+  {
+    title: 'Ver productos',
+    description: 'Gestiona tu catálogo, precios e imágenes',
+    to: '/products/manage',
+    icon: IconTshirtCrew,
+    iconWrapperClass: 'bg-blue-100 group-hover:bg-blue-200',
+    iconClass: 'text-blue-600',
+    borderClass: 'hover:border-blue-300',
+    linkClass: 'text-blue-600 group-hover:text-blue-700',
+    cta: 'Ir a productos'
+  },
+  {
+    title: 'Configuración general',
+    description: 'Actualiza ajustes y accesos del back office',
+    to: '/settings',
+    icon: IconCog,
+    iconWrapperClass: 'bg-purple-100 group-hover:bg-purple-200',
+    iconClass: 'text-purple-600',
+    borderClass: 'hover:border-purple-300',
+    linkClass: 'text-purple-600 group-hover:text-purple-700',
+    cta: 'Abrir configuración'
+  },
+  {
+    title: 'Actividad reciente',
+    description: 'Revisa los últimos cambios aplicados al catálogo',
+    to: '/activity',
+    icon: IconClockOutline,
+    iconWrapperClass: 'bg-amber-100 group-hover:bg-amber-200',
+    iconClass: 'text-amber-600',
+    borderClass: 'hover:border-amber-300',
+    linkClass: 'text-amber-600 group-hover:text-amber-700',
+    cta: 'Ver historial'
+  }
+]
 
 // State
 const stats = ref({

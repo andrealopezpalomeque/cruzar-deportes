@@ -85,16 +85,6 @@
             </p>
             <div class="space-y-1">
               <NuxtLink
-                to="/bulk-operations"
-                class="nav-link"
-                :class="{ active: $route.path.startsWith('/bulk') }"
-                @click="closeSidebarOnMobile"
-              >
-                <IconFormatListBulleted class="w-5 h-5" />
-                <span>Operaciones en Lote</span>
-              </NuxtLink>
-
-              <NuxtLink
                 to="/settings"
                 class="nav-link"
                 :class="{ active: $route.path.startsWith('/settings') }"
@@ -196,7 +186,6 @@ import IconTshirtCrew from '~icons/mdi/tshirt-crew'
 import IconClose from '~icons/mdi/close'
 import IconAccount from '~icons/mdi/account'
 import IconViewDashboard from '~icons/mdi/view-dashboard'
-import IconFormatListBulleted from '~icons/mdi/format-list-bulleted'
 import IconCog from '~icons/mdi/cog'
 import IconLogout from '~icons/mdi/logout'
 import IconMenu from '~icons/mdi/menu'
@@ -216,7 +205,6 @@ const pageTitle = computed(() => {
   const titleMap = {
     '/': 'Dashboard',
     '/products': 'Gestión de Productos',
-    '/bulk-operations': 'Operaciones en Lote',
     '/settings': 'Configuración'
   }
 
@@ -234,7 +222,6 @@ const pageDescription = computed(() => {
   const descriptionMap = {
     '/': 'Resumen general de tu tienda de camisetas deportivas',
     '/products': 'Administra imágenes, precios y estado de productos',
-    '/bulk-operations': 'Realiza cambios masivos en múltiples productos',
     '/settings': 'Configuración del sistema'
   }
 

@@ -23,7 +23,7 @@ Administrative panel for managing the sports jersey e-commerce platform.
 - [ ] Product listing and editing interfaces
 - [ ] Pricing management (individual & bulk)
 - [ ] Status management (featured, stock)
-- [ ] Bulk operations system
+- [ ] Expand contextual bulk actions within product management
 
 🚀 **Phase 4: Deployment (Pending)**
 - [ ] Firebase project setup and deployment
@@ -84,6 +84,7 @@ npm run dev
 
 ### 💰 Product Management
 - Individual and bulk pricing updates
+- Contextual bulk actions surfaced directly in la vista de productos (selección múltiple)
 - Featured product management
 - Stock status control
 - Real-time preview of changes
