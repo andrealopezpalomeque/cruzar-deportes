@@ -221,13 +221,20 @@
           <div class="space-y-3">
             <div class="flex items-center justify-between p-3 bg-gradient-to-br from-slate-50 to-gray-50 rounded-xl border border-slate-200 shadow-sm">
               <div class="flex items-center gap-3">
+                <!-- Image Preview or Icon -->
                 <div
-                  :class="[
-                    'flex items-center justify-center w-9 h-9 rounded-lg shadow-sm',
-                    product.selectedImages.length > 0
-                      ? 'bg-gradient-to-br from-sky-500 to-blue-600'
-                      : 'bg-gradient-to-br from-gray-300 to-gray-400'
-                  ]"
+                  v-if="product.selectedImages.length > 0"
+                  class="w-9 h-9 rounded-lg shadow-sm overflow-hidden ring-2 ring-sky-500/30"
+                >
+                  <img
+                    :src="optimizeUrl(product.selectedImages[0], 100)"
+                    :alt="`${product.name} preview`"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div
+                  v-else
+                  class="flex items-center justify-center w-9 h-9 rounded-lg shadow-sm bg-gradient-to-br from-gray-300 to-gray-400"
                 >
                   <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -252,7 +259,7 @@
                 class="px-4 py-2 bg-gradient-to-r from-slate-700 to-gray-800 text-white text-xs rounded-lg hover:from-slate-800 hover:to-gray-900 transition-all shadow-md hover:shadow-lg font-semibold flex items-center gap-2 transform hover:scale-105"
               >
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 <span>Gestionar</span>
               </button>
