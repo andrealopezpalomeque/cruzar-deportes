@@ -93,34 +93,68 @@
           v-for="product in paginatedProducts"
           :key="product.id"
           :class="[
-            'relative bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:border-gray-300 transition-all duration-300 overflow-hidden',
-            isProductSelected(product.id) ? 'ring-2 ring-green-200 border-green-300 shadow-md' : ''
+            'relative bg-white rounded-2xl border-2 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden',
+            isProductSelected(product.id)
+              ? 'border-blue-500 bg-blue-50/30 shadow-md'
+              : 'border-gray-200 hover:border-gray-300'
           ]"
         >
+        <!-- Selection Checkbox (top-left overlay) -->
+        <div class="absolute top-4 left-4 z-10">
+          <label class="flex items-center cursor-pointer group">
+            <input
+              type="checkbox"
+              :checked="isProductSelected(product.id)"
+              @change="toggleProductSelection(product.id)"
+              class="sr-only"
+            />
+            <div
+              :class="[
+                'w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all',
+                isProductSelected(product.id)
+                  ? 'bg-blue-600 border-blue-600'
+                  : 'bg-white border-gray-300 group-hover:border-blue-400'
+              ]"
+            >
+              <IconCheck v-if="isProductSelected(product.id)" class="w-4 h-4 text-white" />
+            </div>
+          </label>
+        </div>
+
         <!-- Product Header -->
-        <div class="p-4 sm:p-6 lg:p-8 border-b border-gray-100">
-          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-6">
-            <div class="flex-1 space-y-3 sm:space-y-4">
+        <div class="p-4 sm:p-5 border-b border-gray-100">
+          <div class="flex flex-col gap-3">
+            <div class="flex-1 space-y-3 pl-10">
+              <!-- Category & Status Badges - Compact Row -->
+              <div class="flex items-center gap-3 flex-wrap">
+                <span class="text-xs font-medium text-gray-500 tracking-wide">
+                  {{ getCategoryName(product.category) }}
+                </span>
+                <span class="text-gray-300">•</span>
+                <div class="flex items-center gap-1.5">
+                  <span :class="['w-1.5 h-1.5 rounded-full', product.featured ? 'bg-yellow-500' : 'bg-gray-300']" />
+                  <span class="text-xs text-gray-600">{{ product.featured ? 'Destacado' : 'Normal' }}</span>
+                </div>
+                <span class="text-gray-300">•</span>
+                <div class="flex items-center gap-1.5">
+                  <span :class="['w-1.5 h-1.5 rounded-full', product.inStock ? 'bg-green-500' : 'bg-blue-400']" />
+                  <span class="text-xs text-gray-600">{{ product.inStock ? 'En stock' : 'A pedido' }}</span>
+                </div>
+              </div>
+
               <!-- Product Title - Inline Edit -->
               <div class="group relative">
                 <div class="flex items-start gap-2">
-                  <IconPencil class="w-4 h-4 text-gray-400 mt-0.5 sm:mt-1 flex-shrink-0" />
+                  <IconPencil class="w-4 h-4 text-gray-400 mt-1 flex-shrink-0" />
                   <input
                     v-model="product.name"
                     @input="markProductDirty(product)"
                     :disabled="isProductSaving(product.id)"
                     type="text"
-                    class="flex-1 text-lg sm:text-xl font-semibold text-gray-900 bg-gray-50 border border-gray-200 outline-none rounded-lg px-3 py-2 transition-all hover:border-gray-300 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-offset-0 disabled:opacity-60 disabled:cursor-wait cursor-text"
+                    class="flex-1 text-lg font-semibold text-gray-900 bg-gray-50 border border-gray-200 outline-none rounded-lg px-3 py-2 transition-all hover:border-gray-300 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-offset-0 disabled:opacity-60 disabled:cursor-wait cursor-text"
                     placeholder="Nombre del producto"
                   />
                 </div>
-              </div>
-
-              <!-- Category Tag -->
-              <div class="flex items-center gap-2 pl-6">
-                <span class="text-xs font-medium text-gray-500 tracking-wide">
-                  {{ getCategoryName(product.category) }}
-                </span>
               </div>
 
               <!-- Product Description - Inline Edit -->
@@ -139,129 +173,63 @@
               </div>
             </div>
 
-            <!-- Status Badges & Save/Cancel Buttons -->
-            <div class="flex flex-col gap-3 items-stretch sm:items-end w-full sm:w-auto sm:min-w-[140px]">
-              <div class="flex items-center justify-start sm:justify-end">
+            <!-- Save/Cancel Buttons (shown when dirty) -->
+            <Transition name="fade">
+              <div v-if="isProductDirty(product.id)" class="flex gap-2 pl-10">
                 <button
-                  type="button"
-                  @click.stop="toggleProductSelection(product.id)"
+                  @click="saveProductChanges(product)"
+                  :disabled="isProductSaving(product.id)"
                   :class="[
-                    'px-3 py-1 text-xs font-medium rounded-full border transition-colors',
-                    isProductSelected(product.id)
-                      ? 'bg-green-50 text-green-700 border-green-200 hover:bg-green-100'
-                      : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'
+                    'px-4 py-2 bg-gray-900 text-white text-xs font-medium rounded-lg transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2',
+                    isProductSaving(product.id) ? 'opacity-60 cursor-wait' : 'hover:bg-gray-800'
                   ]"
                 >
-                  {{ isProductSelected(product.id) ? 'Seleccionado' : 'Seleccionar' }}
+                  <IconLoading
+                    v-if="isProductSaving(product.id)"
+                    class="w-3 h-3 animate-spin"
+                  />
+                  <span>{{ isProductSaving(product.id) ? 'Guardando...' : 'Guardar' }}</span>
+                </button>
+                <button
+                  @click="cancelProductChanges(product)"
+                  :disabled="isProductSaving(product.id)"
+                  class="px-4 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-60 disabled:cursor-wait"
+                >
+                  Cancelar
                 </button>
               </div>
-
-              <!-- Save/Cancel Buttons (shown when dirty) -->
-              <Transition name="fade">
-                <div v-if="isProductDirty(product.id)" class="flex flex-col gap-2 w-full mb-2">
-                  <button
-                    @click="saveProductChanges(product)"
-                    :disabled="isProductSaving(product.id)"
-                    :class="[
-                      'w-full px-3 py-2.5 sm:py-2 bg-gray-900 text-white text-xs sm:text-xs font-medium rounded-lg transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2',
-                      isProductSaving(product.id) ? 'opacity-60 cursor-wait' : 'hover:bg-gray-800'
-                    ]"
-                  >
-                    <IconLoading
-                      v-if="isProductSaving(product.id)"
-                      class="w-3 h-3 animate-spin"
-                    />
-                    <span>{{ isProductSaving(product.id) ? 'Guardando...' : 'Guardar cambios' }}</span>
-                  </button>
-                  <button
-                    @click="cancelProductChanges(product)"
-                    :disabled="isProductSaving(product.id)"
-                    class="w-full px-3 py-2.5 sm:py-2 bg-gray-100 text-gray-700 text-xs sm:text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-60 disabled:cursor-wait"
-                  >
-                    Cancelar
-                  </button>
-                </div>
-              </Transition>
-
-              <div class="flex items-center justify-start sm:justify-end gap-2">
-                <span
-                  :class="[
-                    'w-2 h-2 rounded-full',
-                    product.featured ? 'bg-yellow-500' : 'bg-gray-300'
-                  ]"
-                />
-                <span class="text-xs font-medium text-gray-700">
-                  {{ product.featured ? 'Destacado' : 'Normal' }}
-                </span>
-              </div>
-
-              <div class="flex items-center justify-start sm:justify-end gap-2">
-                <span
-                  :class="[
-                    'w-2 h-2 rounded-full',
-                    product.inStock ? 'bg-green-500' : 'bg-blue-400'
-                  ]"
-                />
-                <span class="text-xs font-medium text-gray-700">
-                  {{ product.inStock ? 'En stock' : 'A pedido' }}
-                </span>
-              </div>
-            </div>
+            </Transition>
           </div>
         </div>
 
         <!-- Product Content -->
-        <div class="p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8">
-          <!-- Images Management -->
-          <div class="space-y-4">
-            <h4 class="text-base font-medium text-gray-900">Imágenes</h4>
-
-            <!-- Selected Images Grid -->
-            <div v-if="product.selectedImages.length > 0" class="grid grid-cols-4 gap-3 mb-4">
-              <div
-                v-for="(image, index) in product.selectedImages"
-                :key="index"
-                class="relative group aspect-square bg-gray-100 rounded-xl overflow-hidden ring-1 ring-gray-200 hover:ring-gray-300 transition-all"
-              >
-                <img
-                  :src="optimizeUrl(image, 150)"
-                  :alt="`${product.name} ${index + 1}`"
-                  class="w-full h-full object-cover"
-                />
-                <button
-                  @click="removeSelectedImage(product.id, index)"
-                  class="absolute top-2 right-2 bg-white/95 backdrop-blur-sm text-gray-700 hover:text-red-600 rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:shadow-xl"
-                >
-                  <IconClose class="w-3.5 h-3.5" />
-                </button>
-                <div class="absolute bottom-2 left-2 bg-black/60 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full font-medium">
-                  {{ index + 1 }}
-                </div>
+        <div class="p-4 sm:p-5 space-y-5">
+          <!-- Images Management - Compact -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <IconImageMultiple class="w-4 h-4 text-gray-500" />
+                <span class="text-sm font-medium text-gray-700">
+                  {{ product.selectedImages.length > 0
+                    ? `${product.selectedImages.length} ${product.selectedImages.length === 1 ? 'imagen' : 'imágenes'}`
+                    : 'Sin imágenes' }}
+                </span>
               </div>
+              <button
+                @click="openImageBrowser(product)"
+                class="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs rounded-lg hover:bg-gray-200 transition-colors font-medium flex items-center gap-1.5"
+              >
+                <IconPencil class="w-3.5 h-3.5" />
+                <span>Editar</span>
+              </button>
             </div>
-
-            <!-- No Images State -->
-            <div v-else class="text-center py-12 bg-gray-50 rounded-xl border-2 border-dashed border-gray-200">
-              <IconImageOff class="w-12 h-12 text-gray-300 mx-auto mb-3" />
-              <p class="text-sm text-gray-500">No hay imágenes seleccionadas</p>
-            </div>
-
-            <!-- Browse Images Button -->
-            <button
-              @click="openImageBrowser(product)"
-              class="w-full px-4 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 active:bg-gray-900 transition-all font-medium shadow-sm hover:shadow-md flex items-center justify-center gap-2"
-            >
-              <IconImageMultiple class="w-5 h-5" />
-              <span>Seleccionar imágenes</span>
-            </button>
-
           </div>
 
           <!-- Pricing Management -->
-          <div class="space-y-4">
-            <h4 class="text-base font-medium text-gray-900">Precios</h4>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="space-y-2">
+          <div class="space-y-3">
+            <h4 class="text-sm font-medium text-gray-900">Precios</h4>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="space-y-1.5">
                 <label class="block text-xs font-medium text-gray-600">Precio actual</label>
                 <div class="relative">
                   <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
@@ -272,12 +240,12 @@
                     type="number"
                     step="100"
                     min="0"
-                    class="w-full pl-7 pr-3 py-2.5 border border-gray-200 rounded-xl text-gray-900 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent hover:border-gray-300 transition-colors cursor-text disabled:opacity-60 disabled:cursor-wait"
+                    class="w-full pl-7 pr-3 py-2 border border-gray-200 rounded-lg text-gray-900 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent hover:border-gray-300 transition-colors cursor-text disabled:opacity-60 disabled:cursor-wait"
                   />
                 </div>
               </div>
 
-              <div class="space-y-2">
+              <div class="space-y-1.5">
                 <label class="block text-xs font-medium text-gray-600">Precio original</label>
                 <div class="relative">
                   <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">$</span>
@@ -288,7 +256,7 @@
                     type="number"
                     step="100"
                     min="0"
-                    class="w-full pl-7 pr-3 py-2.5 border border-gray-200 rounded-xl text-gray-900 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent hover:border-gray-300 transition-colors cursor-text disabled:opacity-60 disabled:cursor-wait"
+                    class="w-full pl-7 pr-3 py-2 border border-gray-200 rounded-lg text-gray-900 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent hover:border-gray-300 transition-colors cursor-text disabled:opacity-60 disabled:cursor-wait"
                   />
                 </div>
               </div>
@@ -296,12 +264,12 @@
           </div>
 
           <!-- Status Toggles -->
-          <div class="space-y-4">
-            <h4 class="text-base font-medium text-gray-900">Configuración</h4>
-            <div class="space-y-3">
-              <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
-                <span class="text-sm font-medium text-gray-900">Producto destacado</span>
-                <div class="flex items-center gap-3">
+          <div class="space-y-3">
+            <h4 class="text-sm font-medium text-gray-900">Configuración</h4>
+            <div class="space-y-2">
+              <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                <span class="text-sm font-medium text-gray-700">Destacado</span>
+                <div class="flex items-center gap-2">
                   <IconLoading
                     v-if="isStatusLoading(product.id, 'featured')"
                     class="w-4 h-4 text-gray-500 animate-spin"
@@ -310,14 +278,14 @@
                     @click="toggleProductStatus(product, 'featured')"
                     :disabled="isStatusLoading(product.id, 'featured')"
                     :class="[
-                      'relative inline-flex h-7 w-12 items-center rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2',
+                      'relative inline-flex h-6 w-11 items-center rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2',
                       product.featured ? 'bg-gray-900' : 'bg-gray-300',
                       isStatusLoading(product.id, 'featured') ? 'opacity-50 cursor-wait' : ''
                     ]"
                   >
                     <span
                       :class="[
-                        'inline-block h-5 w-5 transform rounded-full bg-white shadow-sm transition-transform',
+                        'inline-block h-4 w-4 transform rounded-full bg-white shadow-sm transition-transform',
                         product.featured ? 'translate-x-6' : 'translate-x-1'
                       ]"
                     />
@@ -325,9 +293,9 @@
                 </div>
               </div>
 
-              <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
-                <span class="text-sm font-medium text-gray-900">Disponible en stock</span>
-                <div class="flex items-center gap-3">
+              <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                <span class="text-sm font-medium text-gray-700">En stock</span>
+                <div class="flex items-center gap-2">
                   <IconLoading
                     v-if="isStatusLoading(product.id, 'inStock')"
                     class="w-4 h-4 text-gray-500 animate-spin"
@@ -336,14 +304,14 @@
                     @click="toggleProductStatus(product, 'inStock')"
                     :disabled="isStatusLoading(product.id, 'inStock')"
                     :class="[
-                      'relative inline-flex h-7 w-12 items-center rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2',
+                      'relative inline-flex h-6 w-11 items-center rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2',
                       product.inStock ? 'bg-green-600' : 'bg-gray-300',
                       isStatusLoading(product.id, 'inStock') ? 'opacity-50 cursor-wait' : ''
                     ]"
                   >
                     <span
                       :class="[
-                        'inline-block h-5 w-5 transform rounded-full bg-white shadow-sm transition-transform',
+                        'inline-block h-4 w-4 transform rounded-full bg-white shadow-sm transition-transform',
                         product.inStock ? 'translate-x-6' : 'translate-x-1'
                       ]"
                     />
@@ -354,7 +322,7 @@
           </div>
 
           <!-- Last Modified -->
-          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+          <div class="flex items-center justify-between pt-3 border-t border-gray-100">
             <span class="text-xs text-gray-500">Última modificación</span>
             <span class="text-xs font-medium text-gray-700">{{ formatDate(product.lastModified) }}</span>
           </div>
