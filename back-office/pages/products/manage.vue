@@ -125,21 +125,34 @@
         <div class="p-4 sm:p-5 border-b border-gray-100">
           <div class="flex flex-col gap-3">
             <div class="flex-1 space-y-3 pl-10">
-              <!-- Category & Status Badges - Compact Row -->
-              <div class="flex items-center gap-3 flex-wrap">
-                <span class="text-xs font-medium text-gray-500 tracking-wide">
+              <!-- Category & Status Badges - Enhanced Row -->
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-sm">
                   {{ getCategoryName(product.category) }}
                 </span>
-                <span class="text-gray-300">•</span>
-                <div class="flex items-center gap-1.5">
-                  <span :class="['w-1.5 h-1.5 rounded-full', product.featured ? 'bg-yellow-500' : 'bg-gray-300']" />
-                  <span class="text-xs text-gray-600">{{ product.featured ? 'Destacado' : 'Normal' }}</span>
-                </div>
-                <span class="text-gray-300">•</span>
-                <div class="flex items-center gap-1.5">
-                  <span :class="['w-1.5 h-1.5 rounded-full', product.inStock ? 'bg-green-500' : 'bg-blue-400']" />
-                  <span class="text-xs text-gray-600">{{ product.inStock ? 'En stock' : 'A pedido' }}</span>
-                </div>
+                <span
+                  v-if="product.featured"
+                  class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 shadow-sm"
+                >
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <span>Destacado</span>
+                </span>
+                <span
+                  :class="[
+                    'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold shadow-sm',
+                    product.inStock
+                      ? 'bg-gradient-to-r from-green-500 to-green-600 text-white'
+                      : 'bg-gradient-to-r from-blue-400 to-blue-500 text-white'
+                  ]"
+                >
+                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path v-if="product.inStock" stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    <path v-else stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>{{ product.inStock ? 'En stock' : 'A pedido' }}</span>
+                </span>
               </div>
 
               <!-- Product Title - Inline Edit -->
@@ -204,27 +217,44 @@
 
         <!-- Product Content -->
         <div class="p-4 sm:p-5 space-y-5">
-          <!-- Images Management - Compact -->
-          <div class="space-y-2">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <span class="text-sm font-medium text-gray-700">
-                  {{ product.selectedImages.length > 0
-                    ? `${product.selectedImages.length} ${product.selectedImages.length === 1 ? 'imagen' : 'imágenes'}`
-                    : 'Sin imágenes' }}
-                </span>
+          <!-- Images Management - Enhanced -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-3 bg-gradient-to-br from-slate-50 to-gray-50 rounded-xl border border-slate-200 shadow-sm">
+              <div class="flex items-center gap-3">
+                <div
+                  :class="[
+                    'flex items-center justify-center w-9 h-9 rounded-lg shadow-sm',
+                    product.selectedImages.length > 0
+                      ? 'bg-gradient-to-br from-sky-500 to-blue-600'
+                      : 'bg-gradient-to-br from-gray-300 to-gray-400'
+                  ]"
+                >
+                  <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs font-medium text-gray-500 uppercase tracking-wide">Galería</p>
+                  <p
+                    :class="[
+                      'text-sm font-bold',
+                      product.selectedImages.length > 0 ? 'text-slate-700' : 'text-gray-500'
+                    ]"
+                  >
+                    {{ product.selectedImages.length > 0
+                      ? `${product.selectedImages.length} ${product.selectedImages.length === 1 ? 'imagen' : 'imágenes'}`
+                      : 'Sin imágenes' }}
+                  </p>
+                </div>
               </div>
               <button
                 @click="openImageBrowser(product)"
-                class="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs rounded-lg hover:bg-gray-200 transition-colors font-medium flex items-center gap-1.5"
+                class="px-4 py-2 bg-gradient-to-r from-slate-700 to-gray-800 text-white text-xs rounded-lg hover:from-slate-800 hover:to-gray-900 transition-all shadow-md hover:shadow-lg font-semibold flex items-center gap-2 transform hover:scale-105"
               >
-                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                 </svg>
-                <span>Seleccionar</span>
+                <span>Gestionar</span>
               </button>
             </div>
           </div>
