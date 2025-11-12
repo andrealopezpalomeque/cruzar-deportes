@@ -1504,6 +1504,584 @@ export const teamCatalog: Record<string, TeamCatalogEntry> = {
     category: 'national_retro',
     price: 95,
     description: 'Yugoslavia national team jersey from 1999'
+  },
+
+  // Basket Teams
+  'alba_berlin': {
+    name: 'Alba Berlin',
+    category: 'basket',
+    price: 95,
+    description: 'Official Alba Berlin basketball jersey from the Cruzar collection.'
+  },
+  'anadolu': {
+    name: 'Anadolu',
+    category: 'basket',
+    price: 95,
+    description: 'Official Anadolu basketball jersey from the Cruzar collection.'
+  },
+  'angola': {
+    name: 'Angola',
+    category: 'basket',
+    price: 95,
+    description: 'Official Angola basketball jersey from the Cruzar collection.'
+  },
+  'argentina': {
+    name: 'Argentina',
+    category: 'basket',
+    price: 95,
+    description: 'Official Argentina basketball jersey from the Cruzar collection.'
+  },
+  'atm_90_91': {
+    name: 'Atlético Madrid 1990-91',
+    category: 'basket',
+    price: 95,
+    description: 'Official Atlético Madrid 1990-91 basketball jersey from the Cruzar collection.'
+  },
+  'australia': {
+    name: 'Australia',
+    category: 'basket',
+    price: 95,
+    description: 'Official Australia basketball jersey from the Cruzar collection.'
+  },
+  'b_a': {
+    name: 'B. A.',
+    category: 'basket',
+    price: 95,
+    description: 'Official B. A. basketball jersey from the Cruzar collection.'
+  },
+  'baskonia': {
+    name: 'Baskonia',
+    category: 'basket',
+    price: 95,
+    description: 'Official Baskonia basketball jersey from the Cruzar collection.'
+  },
+  'basquet_corua': {
+    name: 'Basquet Corua',
+    category: 'basket',
+    price: 95,
+    description: 'Official Basquet Corua basketball jersey from the Cruzar collection.'
+  },
+  'bayern': {
+    name: 'Bayern',
+    category: 'basket',
+    price: 95,
+    description: 'Official Bayern basketball jersey from the Cruzar collection.'
+  },
+  'bbk': {
+    name: 'BBK',
+    category: 'basket',
+    price: 95,
+    description: 'Official BBK basketball jersey from the Cruzar collection.'
+  },
+  'bcn': {
+    name: 'FC Barcelona',
+    category: 'basket',
+    price: 95,
+    description: 'Official FC Barcelona basketball jersey from the Cruzar collection.'
+  },
+  'bcn_21_22': {
+    name: 'Bcn 21 22',
+    category: 'basket',
+    price: 95,
+    description: 'Official Bcn 21 22 basketball jersey from the Cruzar collection.'
+  },
+  'bcn_86_87': {
+    name: 'Bcn 86 87',
+    category: 'basket',
+    price: 95,
+    description: 'Official Bcn 86 87 basketball jersey from the Cruzar collection.'
+  },
+  'bcn_89_90': {
+    name: 'Bcn 89 90',
+    category: 'basket',
+    price: 95,
+    description: 'Official Bcn 89 90 basketball jersey from the Cruzar collection.'
+  },
+  'bcn_97': {
+    name: 'Bcn 97',
+    category: 'basket',
+    price: 95,
+    description: 'Official Bcn 97 basketball jersey from the Cruzar collection.'
+  },
+  'belgium': {
+    name: 'Belgium',
+    category: 'basket',
+    price: 95,
+    description: 'Official Belgium basketball jersey from the Cruzar collection.'
+  },
+  'besiktas': {
+    name: 'Besiktas',
+    category: 'basket',
+    price: 95,
+    description: 'Official Besiktas basketball jersey from the Cruzar collection.'
+  },
+  'bosnia_hezergobina': {
+    name: 'Bosnia Hezergobina',
+    category: 'basket',
+    price: 95,
+    description: 'Official Bosnia Hezergobina basketball jersey from the Cruzar collection.'
+  },
+  'brazil': {
+    name: 'Brazil',
+    category: 'basket',
+    price: 95,
+    description: 'Official Brazil basketball jersey from the Cruzar collection.'
+  },
+  'breogan': {
+    name: 'Breogan',
+    category: 'basket',
+    price: 95,
+    description: 'Official Breogan basketball jersey from the Cruzar collection.'
+  },
+  'bts': {
+    name: 'BTS',
+    category: 'basket',
+    price: 95,
+    description: 'Official BTS basketball jersey from the Cruzar collection.'
+  },
+  'bulgaria': {
+    name: 'Bulgaria',
+    category: 'basket',
+    price: 95,
+    description: 'Official Bulgaria basketball jersey from the Cruzar collection.'
+  },
+  'burgos': {
+    name: 'Burgos',
+    category: 'basket',
+    price: 95,
+    description: 'Official Burgos basketball jersey from the Cruzar collection.'
+  },
+  'cameroon': {
+    name: 'Cameroon',
+    category: 'basket',
+    price: 95,
+    description: 'Official Cameroon basketball jersey from the Cruzar collection.'
+  },
+  'canarias': {
+    name: 'Canarias',
+    category: 'basket',
+    price: 95,
+    description: 'Official Canarias basketball jersey from the Cruzar collection.'
+  },
+  'catalunya': {
+    name: 'Catalunya',
+    category: 'basket',
+    price: 95,
+    description: 'Official Catalunya basketball jersey from the Cruzar collection.'
+  },
+  'cccp': {
+    name: 'USSR',
+    category: 'basket',
+    price: 95,
+    description: 'Official USSR basketball jersey from the Cruzar collection.'
+  },
+  'clesa': {
+    name: 'Clesa',
+    category: 'basket',
+    price: 95,
+    description: 'Official Clesa basketball jersey from the Cruzar collection.'
+  },
+  'cold_hearts_2025': {
+    name: 'Cold Hearts 2025',
+    category: 'basket',
+    price: 95,
+    description: 'Official Cold Hearts 2025 basketball jersey from the Cruzar collection.'
+  },
+  'cska': {
+    name: 'CSKA Moscow',
+    category: 'basket',
+    price: 95,
+    description: 'Official CSKA Moscow basketball jersey from the Cruzar collection.'
+  },
+  'dynamo_moscow': {
+    name: 'Dynamo Moscow',
+    category: 'basket',
+    price: 95,
+    description: 'Official Dynamo Moscow basketball jersey from the Cruzar collection.'
+  },
+  'eden': {
+    name: 'EDEN',
+    category: 'basket',
+    price: 95,
+    description: 'Official EDEN basketball jersey from the Cruzar collection.'
+  },
+  'estrella_roja': {
+    name: 'Estrella Roja',
+    category: 'basket',
+    price: 95,
+    description: 'Official Estrella Roja basketball jersey from the Cruzar collection.'
+  },
+  'estudiantes': {
+    name: 'Estudiantes',
+    category: 'basket',
+    price: 95,
+    description: 'Official Estudiantes basketball jersey from the Cruzar collection.'
+  },
+  'fenerbahce': {
+    name: 'Fenerbahce',
+    category: 'basket',
+    price: 95,
+    description: 'Official Fenerbahce basketball jersey from the Cruzar collection.'
+  },
+  'forum_valladolid': {
+    name: 'Forum Valladolid',
+    category: 'basket',
+    price: 95,
+    description: 'Official Forum Valladolid basketball jersey from the Cruzar collection.'
+  },
+  'france': {
+    name: 'France',
+    category: 'basket',
+    price: 95,
+    description: 'Official France basketball jersey from the Cruzar collection.'
+  },
+  'georgia': {
+    name: 'Georgia',
+    category: 'basket',
+    price: 95,
+    description: 'Official Georgia basketball jersey from the Cruzar collection.'
+  },
+  'germany': {
+    name: 'Germany',
+    category: 'basket',
+    price: 95,
+    description: 'Official Germany basketball jersey from the Cruzar collection.'
+  },
+  'gran_canaria': {
+    name: 'Gran Canaria',
+    category: 'basket',
+    price: 95,
+    description: 'Official Gran Canaria basketball jersey from the Cruzar collection.'
+  },
+  'granada': {
+    name: 'Granada',
+    category: 'basket',
+    price: 95,
+    description: 'Official Granada basketball jersey from the Cruzar collection.'
+  },
+  'greece': {
+    name: 'Greece',
+    category: 'basket',
+    price: 95,
+    description: 'Official Greece basketball jersey from the Cruzar collection.'
+  },
+  'italy': {
+    name: 'Italy',
+    category: 'basket',
+    price: 95,
+    description: 'Official Italy basketball jersey from the Cruzar collection.'
+  },
+  'ivory_coast': {
+    name: 'Ivory Coast',
+    category: 'basket',
+    price: 95,
+    description: 'Official Ivory Coast basketball jersey from the Cruzar collection.'
+  },
+  'joventut': {
+    name: 'Joventut',
+    category: 'basket',
+    price: 95,
+    description: 'Official Joventut basketball jersey from the Cruzar collection.'
+  },
+  'kazan': {
+    name: 'Kazan',
+    category: 'basket',
+    price: 95,
+    description: 'Official Kazan basketball jersey from the Cruzar collection.'
+  },
+  'lakers_in_n_out': {
+    name: 'Lakers In N Out',
+    category: 'basket',
+    price: 95,
+    description: 'Official Lakers In N Out basketball jersey from the Cruzar collection.'
+  },
+  'latvija': {
+    name: 'Latvia',
+    category: 'basket',
+    price: 95,
+    description: 'Official Latvia basketball jersey from the Cruzar collection.'
+  },
+  'leon': {
+    name: 'Leon',
+    category: 'basket',
+    price: 95,
+    description: 'Official Leon basketball jersey from the Cruzar collection.'
+  },
+  'letonia': {
+    name: 'Latvia',
+    category: 'basket',
+    price: 95,
+    description: 'Official Latvia basketball jersey from the Cruzar collection.'
+  },
+  'lleida': {
+    name: 'Lleida',
+    category: 'basket',
+    price: 95,
+    description: 'Official Lleida basketball jersey from the Cruzar collection.'
+  },
+  'maccabi': {
+    name: 'Maccabi',
+    category: 'basket',
+    price: 95,
+    description: 'Official Maccabi basketball jersey from the Cruzar collection.'
+  },
+  'madrid': {
+    name: 'Real Madrid',
+    category: 'basket',
+    price: 95,
+    description: 'Official Real Madrid basketball jersey from the Cruzar collection.'
+  },
+  'madrid_16_17': {
+    name: 'Madrid 16 17',
+    category: 'basket',
+    price: 95,
+    description: 'Official Madrid 16 17 basketball jersey from the Cruzar collection.'
+  },
+  'madrid_17_18': {
+    name: 'Madrid 17 18',
+    category: 'basket',
+    price: 95,
+    description: 'Official Madrid 17 18 basketball jersey from the Cruzar collection.'
+  },
+  'madrid_19_20': {
+    name: 'Madrid 19 20',
+    category: 'basket',
+    price: 95,
+    description: 'Official Madrid 19 20 basketball jersey from the Cruzar collection.'
+  },
+  'madrid_89_basketball': {
+    name: 'Madrid 89 Basketball',
+    category: 'basket',
+    price: 95,
+    description: 'Official Madrid 89 Basketball basketball jersey from the Cruzar collection.'
+  },
+  'madrid_doncic': {
+    name: 'Real Madrid Doncic',
+    category: 'basket',
+    price: 95,
+    description: 'Official Real Madrid Doncic basketball jersey from the Cruzar collection.'
+  },
+  'malaga': {
+    name: 'Malaga',
+    category: 'basket',
+    price: 95,
+    description: 'Official Malaga basketball jersey from the Cruzar collection.'
+  },
+  'mali': {
+    name: 'Mali',
+    category: 'basket',
+    price: 95,
+    description: 'Official Mali basketball jersey from the Cruzar collection.'
+  },
+  'maristas': {
+    name: 'Maristas',
+    category: 'basket',
+    price: 95,
+    description: 'Official Maristas basketball jersey from the Cruzar collection.'
+  },
+  'monaco': {
+    name: 'Monaco',
+    category: 'basket',
+    price: 95,
+    description: 'Official Monaco basketball jersey from the Cruzar collection.'
+  },
+  'montenegro': {
+    name: 'Montenegro',
+    category: 'basket',
+    price: 95,
+    description: 'Official Montenegro basketball jersey from the Cruzar collection.'
+  },
+  'mozzart': {
+    name: 'Mozzart',
+    category: 'basket',
+    price: 95,
+    description: 'Official Mozzart basketball jersey from the Cruzar collection.'
+  },
+  'murcia': {
+    name: 'Murcia',
+    category: 'basket',
+    price: 95,
+    description: 'Official Murcia basketball jersey from the Cruzar collection.'
+  },
+  'napoles': {
+    name: 'Napoles',
+    category: 'basket',
+    price: 95,
+    description: 'Official Napoles basketball jersey from the Cruzar collection.'
+  },
+  'netherland': {
+    name: 'Netherland',
+    category: 'basket',
+    price: 95,
+    description: 'Official Netherland basketball jersey from the Cruzar collection.'
+  },
+  'olimpia_milano': {
+    name: 'Olimpia Milano',
+    category: 'basket',
+    price: 95,
+    description: 'Official Olimpia Milano basketball jersey from the Cruzar collection.'
+  },
+  'olympiakos': {
+    name: 'Olympiakos',
+    category: 'basket',
+    price: 95,
+    description: 'Official Olympiakos basketball jersey from the Cruzar collection.'
+  },
+  'panathinaikos': {
+    name: 'Panathinaikos',
+    category: 'basket',
+    price: 95,
+    description: 'Official Panathinaikos basketball jersey from the Cruzar collection.'
+  },
+  'panionios_athens': {
+    name: 'Panionios Athens',
+    category: 'basket',
+    price: 95,
+    description: 'Official Panionios Athens basketball jersey from the Cruzar collection.'
+  },
+  'paok': {
+    name: 'PAOK',
+    category: 'basket',
+    price: 95,
+    description: 'Official PAOK basketball jersey from the Cruzar collection.'
+  },
+  'paris': {
+    name: 'Paris',
+    category: 'basket',
+    price: 95,
+    description: 'Official Paris basketball jersey from the Cruzar collection.'
+  },
+  'partizan': {
+    name: 'Partizan',
+    category: 'basket',
+    price: 95,
+    description: 'Official Partizan basketball jersey from the Cruzar collection.'
+  },
+  'philippines': {
+    name: 'Philippines',
+    category: 'basket',
+    price: 95,
+    description: 'Official Philippines basketball jersey from the Cruzar collection.'
+  },
+  'puerto_rico': {
+    name: 'Puerto Rico',
+    category: 'basket',
+    price: 95,
+    description: 'Official Puerto Rico basketball jersey from the Cruzar collection.'
+  },
+  'republica_dominicana': {
+    name: 'Republica Dominicana',
+    category: 'basket',
+    price: 95,
+    description: 'Official Republica Dominicana basketball jersey from the Cruzar collection.'
+  },
+  'roma': {
+    name: 'Roma',
+    category: 'basket',
+    price: 95,
+    description: 'Official Roma basketball jersey from the Cruzar collection.'
+  },
+  'russia': {
+    name: 'Russia',
+    category: 'basket',
+    price: 95,
+    description: 'Official Russia basketball jersey from the Cruzar collection.'
+  },
+  'scg': {
+    name: 'Serbia and Montenegro',
+    category: 'basket',
+    price: 95,
+    description: 'Official Serbia and Montenegro basketball jersey from the Cruzar collection.'
+  },
+  'senegal': {
+    name: 'Senegal',
+    category: 'basket',
+    price: 95,
+    description: 'Official Senegal basketball jersey from the Cruzar collection.'
+  },
+  'serbia': {
+    name: 'Serbia',
+    category: 'basket',
+    price: 95,
+    description: 'Official Serbia basketball jersey from the Cruzar collection.'
+  },
+  'siegmund': {
+    name: 'Siegmund',
+    category: 'basket',
+    price: 95,
+    description: 'Official Siegmund basketball jersey from the Cruzar collection.'
+  },
+  'siroki': {
+    name: 'Siroki',
+    category: 'basket',
+    price: 95,
+    description: 'Official Siroki basketball jersey from the Cruzar collection.'
+  },
+  'size_table': {
+    name: 'Basket Size Table',
+    category: 'basket',
+    price: 95,
+    description: 'Official Basket Size Table basketball jersey from the Cruzar collection.'
+  },
+  'slovenija': {
+    name: 'Slovenija',
+    category: 'basket',
+    price: 95,
+    description: 'Official Slovenija basketball jersey from the Cruzar collection.'
+  },
+  'spain': {
+    name: 'Spain',
+    category: 'basket',
+    price: 95,
+    description: 'Official Spain basketball jersey from the Cruzar collection.'
+  },
+  'stefanel': {
+    name: 'Stefanel',
+    category: 'basket',
+    price: 95,
+    description: 'Official Stefanel basketball jersey from the Cruzar collection.'
+  },
+  'ucam': {
+    name: 'Ucam',
+    category: 'basket',
+    price: 95,
+    description: 'Official Ucam basketball jersey from the Cruzar collection.'
+  },
+  'villeurbanne': {
+    name: 'Villeurbanne',
+    category: 'basket',
+    price: 95,
+    description: 'Official Villeurbanne basketball jersey from the Cruzar collection.'
+  },
+  'virtus': {
+    name: 'Virtus',
+    category: 'basket',
+    price: 95,
+    description: 'Official Virtus basketball jersey from the Cruzar collection.'
+  },
+  'vla': {
+    name: 'VLA',
+    category: 'basket',
+    price: 95,
+    description: 'Official VLA basketball jersey from the Cruzar collection.'
+  },
+  'yugoslavia': {
+    name: 'Yugoslavia',
+    category: 'basket',
+    price: 95,
+    description: 'Official Yugoslavia basketball jersey from the Cruzar collection.'
+  },
+  'zalgiris': {
+    name: 'Zalgiris',
+    category: 'basket',
+    price: 95,
+    description: 'Official Zalgiris basketball jersey from the Cruzar collection.'
+  },
+  'zaragoza': {
+    name: 'Zaragoza',
+    category: 'basket',
+    price: 95,
+    description: 'Official Zaragoza basketball jersey from the Cruzar collection.'
   }
 }
 

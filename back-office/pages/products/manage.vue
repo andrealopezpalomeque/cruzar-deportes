@@ -10,6 +10,7 @@
         >
           <option value="">Todas las categorías</option>
           <option value="afc">AFC</option>
+          <option value="basket">Basket</option>
           <option value="caf">CAF</option>
           <option value="eredivisie">Eredivisie</option>
           <option value="lpf_afa">LPF AFA</option>
@@ -1152,6 +1153,7 @@ const loadAllProducts = async () => {
 const getCategoryName = (category) => {
   const categoryNames = {
     afc: 'AFC',
+    basket: 'Basket',
     caf: 'CAF',
     eredivisie: 'Eredivisie',
     lpf_afa: 'LPF AFA',

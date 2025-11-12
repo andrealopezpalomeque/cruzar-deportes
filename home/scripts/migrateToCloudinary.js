@@ -2,7 +2,7 @@
 
 import dotenv from 'dotenv'
 import { v2 as cloudinary } from 'cloudinary'
-import { readFileSync, readdirSync, statSync, writeFileSync } from 'fs'
+import { existsSync, readFileSync, readdirSync, statSync, writeFileSync } from 'fs'
 import { join, basename, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -17,6 +17,42 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET
 })
+
+const mappingPath = join(__dirname, 'url-mapping.json')
+const reportPath = join(__dirname, 'cloudinary-migration-report.json')
+const cliOptions = parseCliOptions()
+
+function parseCliOptions() {
+  const args = process.argv.slice(2)
+  const options = {
+    dirs: [],
+    force: false,
+    limit: null
+  }
+
+  for (const arg of args) {
+    if (arg.startsWith('--dir=')) {
+      const rawValue = arg.split('=')[1]?.trim()
+      if (!rawValue) continue
+      if (rawValue.includes('..')) {
+        throw new Error(`Invalid --dir value "${rawValue}". Relative paths outside public/images are not allowed.`)
+      }
+      const sanitized = rawValue.replace(/^\/+/, '')
+      options.dirs.push(sanitized)
+    } else if (arg === '--force') {
+      options.force = true
+    } else if (arg.startsWith('--limit=')) {
+      const limitValue = Number.parseInt(arg.split('=')[1] ?? '', 10)
+      if (!Number.isNaN(limitValue) && limitValue > 0) {
+        options.limit = limitValue
+      }
+    } else {
+      console.warn(`⚠️  Unknown argument ignored: ${arg}`)
+    }
+  }
+
+  return options
+}
 
 function getAllImageFiles(dir, fileList = []) {
   const files = readdirSync(dir)
@@ -33,6 +69,46 @@ function getAllImageFiles(dir, fileList = []) {
   })
 
   return fileList
+}
+
+function collectImageFiles(baseDir, dirs) {
+  if (!dirs || dirs.length === 0) {
+    return getAllImageFiles(baseDir)
+  }
+
+  const seen = new Set()
+
+  dirs.forEach(dir => {
+    if (!dir) return
+    const normalized = dir.replace(/\\/g, '/')
+    const targetDir = join(baseDir, normalized)
+
+    if (!existsSync(targetDir)) {
+      throw new Error(`Directory not found: ${targetDir}`)
+    }
+
+    getAllImageFiles(targetDir).forEach(filePath => seen.add(filePath))
+  })
+
+  return Array.from(seen)
+}
+
+function loadExistingMapping(filePath) {
+  if (!existsSync(filePath)) {
+    return { mapping: {}, raw: null }
+  }
+
+  try {
+    const raw = readFileSync(filePath, 'utf-8')
+    if (!raw.trim()) {
+      return { mapping: {}, raw }
+    }
+    return { mapping: JSON.parse(raw), raw }
+  } catch (error) {
+    console.warn(`⚠️  Could not parse existing mapping file at ${filePath}. Starting fresh.`)
+    console.warn(error.message)
+    return { mapping: {}, raw: null }
+  }
 }
 
 async function uploadImageToCloudinary(localPath, cloudinaryFolder) {
@@ -80,22 +156,55 @@ function getCloudinaryFolderFromLocal(localPath) {
 
 async function migrateImages() {
   const imagesDir = join(__dirname, '../public/images')
-  const imageFiles = getAllImageFiles(imagesDir)
+  let imageFiles = collectImageFiles(imagesDir, cliOptions.dirs)
+
+  if (cliOptions.limit) {
+    imageFiles = imageFiles.slice(0, cliOptions.limit)
+  }
+
+  const { mapping: existingMapping, raw: existingMappingRaw } = loadExistingMapping(mappingPath)
 
   console.log('🚀 Starting Cloudinary migration...')
-  console.log(`📊 Found ${imageFiles.length} images to migrate`)
+  console.log(`📁 Target: ${cliOptions.dirs.length > 0 ? cliOptions.dirs.join(', ') : 'all folders'}`)
+  console.log(`📊 Found ${imageFiles.length} images to evaluate`)
   console.log('⚙️  Using Cloudinary cloud:', process.env.CLOUDINARY_CLOUD_NAME)
+  console.log(`🗺️  Existing mapping entries: ${Object.keys(existingMapping).length}`)
+  console.log(cliOptions.force
+    ? '♻️  Force mode enabled - existing entries will be re-uploaded.'
+    : '⏭️  Existing mapping entries will be skipped automatically.')
+
+  if (imageFiles.length === 0) {
+    console.log('Nothing to upload. Exiting.')
+    return {
+      successful: [],
+      failed: [],
+      skipped: [],
+      urlMapping: existingMapping
+    }
+  }
 
   const migrationResults = {
     successful: [],
     failed: [],
-    urlMapping: {} // Map old local paths to new Cloudinary URLs
+    skipped: [],
+    urlMapping: { ...existingMapping } // Preserve existing mapping entries
   }
 
   for (let i = 0; i < imageFiles.length; i++) {
     const localPath = imageFiles[i]
     const cloudinaryFolder = getCloudinaryFolderFromLocal(localPath)
     const fileName = basename(localPath)
+    const relativePath = localPath.replace(join(__dirname, '../public'), '')
+
+    if (!cliOptions.force && migrationResults.urlMapping[relativePath]) {
+      migrationResults.skipped.push({
+        localPath,
+        reason: 'already uploaded'
+      })
+      console.log(`📤 Skipping ${i + 1}/${imageFiles.length}: ${fileName}`)
+      console.log('   ⏭️  Reason: already present in url-mapping.json')
+      continue
+    }
 
     console.log(`📤 Uploading ${i + 1}/${imageFiles.length}: ${fileName}`)
     console.log(`   📁 Folder: ${cloudinaryFolder}`)
@@ -110,7 +219,6 @@ async function migrateImages() {
       })
 
       // Create URL mapping for updating product generator
-      const relativePath = localPath.replace(join(__dirname, '../public'), '')
       migrationResults.urlMapping[relativePath] = result.cloudinary_url
 
       console.log(`   ✅ Success: ${result.cloudinary_url}`)
@@ -131,6 +239,7 @@ async function migrateImages() {
   console.log('\n🎉 Migration Complete!')
   console.log(`✅ Successful uploads: ${migrationResults.successful.length}`)
   console.log(`❌ Failed uploads: ${migrationResults.failed.length}`)
+  console.log(`⏭️  Skipped (already uploaded): ${migrationResults.skipped.length}`)
 
   if (migrationResults.failed.length > 0) {
     console.log('\n⚠️  Failed uploads:')
@@ -140,14 +249,28 @@ async function migrateImages() {
   }
 
   // Save migration report and URL mapping
-  const reportPath = join(__dirname, 'cloudinary-migration-report.json')
-  const mappingPath = join(__dirname, 'url-mapping.json')
+  const reportData = {
+    ...migrationResults,
+    options: cliOptions
+  }
 
-  writeFileSync(reportPath, JSON.stringify(migrationResults, null, 2))
-  writeFileSync(mappingPath, JSON.stringify(migrationResults.urlMapping, null, 2))
+  writeFileSync(reportPath, JSON.stringify(reportData, null, 2))
+
+  if (migrationResults.successful.length > 0) {
+    if (existingMappingRaw) {
+      const backupPath = `${mappingPath}.backup-${Date.now()}`
+      writeFileSync(backupPath, existingMappingRaw)
+      console.log(`💾 Backup of previous mapping saved to: ${backupPath}`)
+    }
+
+    writeFileSync(mappingPath, JSON.stringify(migrationResults.urlMapping, null, 2))
+    console.log(`🗺️  URL mapping updated with ${migrationResults.successful.length} new entries.`)
+  } else {
+    console.log('ℹ️  No new uploads performed; url-mapping.json left untouched.')
+  }
 
   console.log(`\n📄 Migration report saved to: ${reportPath}`)
-  console.log(`🗺️  URL mapping saved to: ${mappingPath}`)
+  console.log(`🗺️  URL mapping located at: ${mappingPath}`)
 
   if (migrationResults.successful.length > 0) {
     console.log('\n🔄 Next steps:')

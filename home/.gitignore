@@ -31,3 +31,15 @@ logs
 firebase-debug.log
 firebase-debug.*.log
 .firebaserc
+
+# Firebase service account
+/scripts/cruzar-back-office-admin.json
+
+# Cloudinary images (served externally, not tracked in git)
+public/images/afc/
+public/images/basket/
+public/images/caf/
+public/images/eredivisie/
+public/images/lpf_afa/
+public/images/national_retro/
+public/images/serie_a_enilive/

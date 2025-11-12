@@ -18,6 +18,7 @@ export default defineEventHandler(async (event): Promise<ApiResponse<{
 
     const categoryCounts: Record<CategoryType, number> = {
       afc: 0,
+      basket: 0,
       caf: 0,
       eredivisie: 0,
       lpf_afa: 0,
