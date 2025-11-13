@@ -2017,12 +2017,6 @@ export const teamCatalog: Record<string, TeamCatalogEntry> = {
     price: 95,
     description: 'Official Siroki basketball jersey from the Cruzar collection.'
   },
-  'size_table': {
-    name: 'Basket Size Table',
-    category: 'basket',
-    price: 95,
-    description: 'Official Basket Size Table basketball jersey from the Cruzar collection.'
-  },
   'slovenija': {
     name: 'Slovenija',
     category: 'basket',

@@ -17084,40 +17084,6 @@
       "createdAt": "2025-11-11T20:45:34.204Z",
       "createdBy": "system"
     },
-    "team-size_table": {
-      "id": "team-size_table",
-      "name": "Basket Size Table",
-      "slug": "size-table",
-      "description": "Official Basket Size Table basketball jersey from the Cruzar collection.",
-      "price": 95,
-      "category": "basket",
-      "selectedImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890185/cruzar-deportes/products/basket/size_table/size_table_photo_img_0_1762466863226_bdezrk.png",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890186/cruzar-deportes/products/basket/size_table/size_table_photo_img_1_1762466866256_iab1ze.png"
-      ],
-      "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890185/cruzar-deportes/products/basket/size_table/size_table_photo_img_0_1762466863226_bdezrk.png",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890186/cruzar-deportes/products/basket/size_table/size_table_photo_img_1_1762466866256_iab1ze.png"
-      ],
-      "cloudinaryFolderPath": "cruzar-deportes/products/basket/size_table",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "colors": [
-        "Home",
-        "Away"
-      ],
-      "inStock": true,
-      "stockStatus": "in_stock",
-      "featured": false,
-      "lastModified": "2025-11-11T20:45:34.206Z",
-      "createdAt": "2025-11-11T20:45:34.206Z",
-      "createdBy": "system"
-    },
     "team-slovenija": {
       "id": "team-slovenija",
       "name": "Slovenija",
