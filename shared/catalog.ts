@@ -1903,12 +1903,6 @@ export const teamCatalog: Record<string, TeamCatalogEntry> = {
     price: 95,
     description: 'Official Murcia basketball jersey from the Cruzar collection.'
   },
-  'napoles': {
-    name: 'Napoles',
-    category: 'basket',
-    price: 95,
-    description: 'Official Napoles basketball jersey from the Cruzar collection.'
-  },
   'netherland': {
     name: 'Netherland',
     category: 'basket',
