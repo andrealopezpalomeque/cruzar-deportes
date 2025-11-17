@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-11-11T20:45:34.221Z",
+  "lastUpdated": "2025-11-13T13:20:29.683Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -17716,11 +17716,8 @@
       "price": 95,
       "category": "basket",
       "selectedImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890161/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_70_1762470238154_drgatb.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890162/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_53_1762470155631_o5wscu.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890162/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_68_1762470228998_zvxipl.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890163/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_57_1762470174503_qp7ujw.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890163/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_64_1762470209650_wczswk.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762891266/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_22_1762469980567_okzouh.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762891240/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_19_1762469960654_ie4dbi.jpg"
       ],
       "allAvailableImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890161/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_70_1762470238154_drgatb.jpg",
@@ -17811,7 +17808,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-11-11T20:45:34.219Z",
+      "lastModified": "2025-11-13T13:20:29.682Z",
       "createdAt": "2025-11-11T20:45:34.219Z",
       "createdBy": "system"
     }
@@ -17863,13 +17860,13 @@
       "id": "basket",
       "name": "Basket",
       "slug": "basket",
-      "productCount": 95,
+      "productCount": 94,
       "lastModified": "2025-11-11T20:45:30.433Z"
     }
   },
   "metadata": {
-    "totalProducts": 332,
-    "totalImages": 1442,
-    "lastSync": "2025-11-11T20:45:34.221Z"
+    "totalProducts": 331,
+    "totalImages": 1437,
+    "lastSync": "2025-11-13T13:20:29.683Z"
   }
 }
