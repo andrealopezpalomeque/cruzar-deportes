@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-11-18T19:32:56.804Z",
+  "lastUpdated": "2025-11-18T20:33:19.601Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -2338,9 +2338,9 @@
     "team-atalanta_kid_kit": {
       "id": "team-atalanta_kid_kit",
       "name": "Atalanta BC Kids Kit",
-      "slug": "atalanta-kid-kit",
+      "slug": "atalanta-bc-kids-kit",
       "description": "Official Atalanta BC kids jersey from Serie A Enilive",
-      "price": 55,
+      "price": 70000,
       "category": "serie_a_enilive",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758182514/cruzar-deportes/products/serie_a_enilive/atalanta_kid_kit/dvbudz9fj6pk70plddtv.jpg",
@@ -2362,20 +2362,21 @@
         "Home",
         "Away"
       ],
-      "inStock": true,
+      "inStock": false,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
+      "lastModified": "2025-11-18T20:33:19.600Z",
       "createdAt": "2025-09-29T03:33:53.362Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "isProcessed": false,
+      "originalPrice": 60000
     },
     "team-inter_authentic_kid_kit": {
       "id": "team-inter_authentic_kid_kit",
       "name": "Inter Milan Authentic Kids Kit",
-      "slug": "inter-authentic-kid-kit",
+      "slug": "inter-milan-authentic-kids-kit",
       "description": "Authentic Inter Milan kids jersey from Serie A Enilive",
-      "price": 75,
+      "price": 70000,
       "category": "serie_a_enilive",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758182517/cruzar-deportes/products/serie_a_enilive/inter_authentic_kid_kit/kmetvplat8amiujvhob5.jpg",
@@ -2423,17 +2424,18 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
+      "lastModified": "2025-11-18T20:13:19.730Z",
       "createdAt": "2025-09-29T03:33:53.362Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "isProcessed": false,
+      "originalPrice": 60000
     },
     "team-inter_gk": {
       "id": "team-inter_gk",
       "name": "Inter Milan Goalkeeper",
       "slug": "inter-gk",
       "description": "Official Inter Milan goalkeeper jersey from Serie A Enilive",
-      "price": 80,
+      "price": 60000,
       "category": "serie_a_enilive",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758182558/cruzar-deportes/products/serie_a_enilive/inter_gk/nxtbjvxuyvywm9rtqely.jpg",
@@ -2462,17 +2464,18 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.588Z",
+      "lastModified": "2025-11-18T20:12:58.150Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "originalPrice": 60000
     },
     "team-inter_gk_kid_kit": {
       "id": "team-inter_gk_kid_kit",
       "name": "Inter Milan GK Kids Kit",
       "slug": "inter-gk-kid-kit",
       "description": "Inter Milan goalkeeper kids jersey from Serie A Enilive",
-      "price": 55,
+      "price": 60000,
       "category": "serie_a_enilive",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758182562/cruzar-deportes/products/serie_a_enilive/inter_gk_kid_kit/fkh0wgcjbchqgmxncppa.jpg",
@@ -2501,10 +2504,11 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.588Z",
+      "lastModified": "2025-11-18T20:12:59.004Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "originalPrice": 60000
     },
     "team-inter_gk_short": {
       "id": "team-inter_gk_short",
@@ -17660,10 +17664,10 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890433/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_16_1762469367749_iw4ou2.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890433/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_16_1762469367749_iw4ou2.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890433/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_20_1762469389341_qi4bno.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890298/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_13_1762469350304_y9v1d6.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890297/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_10_1762469331670_dvyoqi.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890297/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_10_1762469331670_dvyoqi.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890433/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_20_1762469389341_qi4bno.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890433/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_16_1762469367749_iw4ou2.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/basket/zalgiris",
       "sizes": [
@@ -18219,6 +18223,6 @@
   "metadata": {
     "totalProducts": 332,
     "totalImages": 1434,
-    "lastSync": "2025-11-18T19:32:56.804Z"
+    "lastSync": "2025-11-18T20:33:19.601Z"
   }
 }
