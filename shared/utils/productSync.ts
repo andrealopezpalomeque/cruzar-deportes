@@ -142,63 +142,6 @@ const resolveStorageBucketCandidates = (projectId?: string): string[] => {
   return Array.from(candidates)
 }
 
-const resolveRepoCredentialPaths = (): string[] => {
-  const relativeCandidates = [
-    '../../scripts/cruzar-back-office-admin.json',
-    '../../home/scripts/cruzar-back-office-admin.json',
-    '../../../home/scripts/cruzar-back-office-admin.json'
-  ]
-
-  return relativeCandidates.map((relativePath) => {
-    try {
-      return fileURLToPath(new URL(relativePath, import.meta.url))
-    } catch {
-      return ''
-    }
-  }).filter(Boolean)
-}
-
-const locateFallbackCredential = async (): Promise<string | null> => {
-  const fallbacks = resolveRepoCredentialPaths()
-
-  for (const candidate of fallbacks) {
-    try {
-      await fs.access(candidate)
-      return candidate
-    } catch {
-      // try the next candidate
-    }
-  }
-
-  return null
-}
-
-const hasUsableCredentialFile = async (): Promise<boolean> => {
-  const credentialPath = process.env.GOOGLE_APPLICATION_CREDENTIALS
-  if (credentialPath) {
-    try {
-      await fs.access(credentialPath)
-      return true
-    } catch (error) {
-      if ((error as NodeJS.ErrnoException | undefined)?.code === 'ENOENT') {
-        console.warn(`[productSync] Credential file not found at ${credentialPath}. Attempting repo fallback.`)
-      } else {
-        console.warn('[productSync] Unable to access credential file, attempting repo fallback.', error)
-      }
-    }
-  }
-
-  const fallback = await locateFallbackCredential()
-  if (fallback) {
-    process.env.GOOGLE_APPLICATION_CREDENTIALS = fallback
-    console.info(`[productSync] Using fallback credential at ${fallback}`)
-    return true
-  }
-
-  console.warn('[productSync] No Firebase credential file available. Remote sync disabled.')
-  return false
-}
-
 const loadFirebaseAdmin = async (): Promise<typeof import('firebase-admin') | null> => {
   if (adminInitialized) {
     return admin
@@ -210,19 +153,7 @@ const loadFirebaseAdmin = async (): Promise<typeof import('firebase-admin') | nu
     return null
   }
 
-  if (!(await hasUsableCredentialFile())) {
-    adminInitialized = true
-    return null
-  }
-
-  let module: typeof import('firebase-admin')
-  try {
-    module = await import('firebase-admin')
-  } catch (error) {
-    console.error('[productSync] Failed to load firebase-admin, using local data only.', error)
-    adminInitialized = true
-    return null
-  }
+  const module = await import('firebase-admin')
   admin = module.default ?? module
 
   if (!admin.apps.length) {
@@ -232,14 +163,7 @@ const loadFirebaseAdmin = async (): Promise<typeof import('firebase-admin') | nu
     if (projectId) options.projectId = projectId
     if (bucketCandidates.length > 0) options.storageBucket = bucketCandidates[0]
 
-    try {
-      admin.initializeApp(options)
-    } catch (error) {
-      console.error('[productSync] Firebase Admin initialization failed, falling back to local data.', error)
-      adminInitialized = true
-      admin = null
-      return null
-    }
+    admin.initializeApp(options)
   }
 
   adminInitialized = true
