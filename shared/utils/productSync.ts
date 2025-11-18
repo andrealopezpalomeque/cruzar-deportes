@@ -2,7 +2,8 @@ import { promises as fs } from 'fs'
 import { join } from 'path'
 import { fileURLToPath } from 'url'
 import os from 'os'
-import type { ProductDatabase, SharedProduct, CategoryType } from '../types'
+import type { ProductDatabase, SharedProduct, CategoryType, SharedCategory } from '../types'
+import { loadAvailableCategories } from './categoryLoader'
 
 let admin: typeof import('firebase-admin') | null = null
 let adminInitialized = false
@@ -223,6 +224,28 @@ const createEmptyDatabase = (): ProductDatabase => ({
   }
 })
 
+const ensureCategoryRegistry = async (
+  database: ProductDatabase,
+  timestampIso: string
+) => {
+  database.categories = database.categories || {} as Record<CategoryType, SharedCategory>
+  const availableCategories = await loadAvailableCategories()
+
+  for (const category of availableCategories) {
+    const slug = category.slug as CategoryType
+    if (!database.categories[slug]) {
+      database.categories[slug] = {
+        id: slug,
+        name: category.name,
+        slug,
+        description: category.nameEs || undefined,
+        productCount: 0,
+        lastModified: timestampIso
+      }
+    }
+  }
+}
+
 type ReadProductsDatabaseOptions =
   | undefined
   | {
@@ -351,6 +374,8 @@ export async function writeProductsDatabase(database: ProductDatabase): Promise<
       hasMeaningfulChanges = true
     }
   }
+
+  await ensureCategoryRegistry(database, nowIso)
 
   // Update metadata totals
   database.metadata.totalProducts = Object.keys(database.products).length

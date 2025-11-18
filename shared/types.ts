@@ -1,12 +1,5 @@
 // Shared types between back-office and main store
-export type CategoryType =
-  | 'afc'
-  | 'caf'
-  | 'eredivisie'
-  | 'lpf_afa'
-  | 'serie_a_enilive'
-  | 'national_retro'
-  | 'basket'
+export type CategoryType = string
 
 export interface SharedProduct {
   id: string

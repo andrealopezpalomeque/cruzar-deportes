@@ -102,12 +102,14 @@ const toProduct = (shared: SharedProduct): Product => {
 }
 
 const toCategory = (database: ProductDatabase): Category[] => {
-  return Object.values(database.categories).map((category) => ({
-    id: category.id,
-    name: category.name,
-    slug: category.slug,
-    description: category.description
-  }))
+  return Object.values(database.categories)
+    .filter((category) => (category.productCount ?? 0) > 0)
+    .map((category) => ({
+      id: category.id,
+      name: category.name,
+      slug: category.slug,
+      description: category.description
+    }))
 }
 
 export const loadCatalog = async (): Promise<CatalogPayload> => {

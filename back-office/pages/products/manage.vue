@@ -34,20 +34,22 @@
                 class="fixed inset-0 z-[100]"
                 @click="isDropdownOpen = false"
               />
-              <div class="absolute left-0 right-0 top-full z-[110] mt-2 overflow-hidden rounded-xl border border-gray-200/80 bg-white shadow-lg shadow-gray-900/5 backdrop-blur-xl">
-                <button
-                  v-for="category in categories"
-                  :key="category.value"
-                  @click="selectCategory(category.value)"
-                  :class="[
-                    'block w-full px-4 py-2.5 text-left text-sm transition-colors duration-150',
-                    category.value === selectedCategory
-                      ? 'bg-gray-900 text-white font-medium'
-                      : 'text-gray-700 hover:bg-gray-50'
-                  ]"
-                >
-                  {{ category.label }}
-                </button>
+              <div class="absolute left-0 right-0 top-full z-[110] mt-2 rounded-xl border border-gray-200/80 bg-white shadow-lg shadow-gray-900/5 backdrop-blur-xl">
+                <div class="max-h-80 overflow-y-auto custom-scroll">
+                  <button
+                    v-for="category in categories"
+                    :key="category.value"
+                    @click="selectCategory(category.value)"
+                    :class="[
+                      'block w-full px-4 py-2.5 text-left text-sm transition-colors duration-150',
+                      category.value === selectedCategory
+                        ? 'bg-gray-900 text-white font-medium'
+                        : 'text-gray-700 hover:bg-gray-50'
+                    ]"
+                  >
+                    {{ category.label }}
+                  </button>
+                </div>
               </div>
             </div>
           </Transition>
@@ -997,16 +999,10 @@ const isDropdownOpen = ref(false)
 const showCreateProductModal = ref(false)
 
 // Category options
-const categories = [
-  { value: '', label: 'Todas las categorías' },
-  { value: 'afc', label: 'AFC' },
-  { value: 'basket', label: 'Basket' },
-  { value: 'caf', label: 'CAF' },
-  { value: 'eredivisie', label: 'Eredivisie' },
-  { value: 'lpf_afa', label: 'LPF AFA' },
-  { value: 'serie_a_enilive', label: 'Serie A Enilive' },
-  { value: 'national_retro', label: 'Retro Nacional' }
-]
+const categories = ref([
+  { value: '', label: 'Todas las categorías', productCount: 0 }
+])
+const categoriesLoading = ref(false)
 
 // Pagination state
 const currentPage = ref(1)
@@ -1052,7 +1048,7 @@ const modalSelectedForDeletion = ref(new Set())
 const modalSaveState = reactive({
   saving: false
 })
-const createModalCategories = computed(() => categories.filter(category => category.value))
+const createModalCategories = computed(() => categories.value.filter(category => category.value))
 const existingProductSlugs = computed(() => products.value
   .map(product => (product.slug ?? '').toString())
   .filter(Boolean))
@@ -1637,20 +1633,21 @@ const loadAllProducts = async () => {
 }
 
 const getCategoryName = (category) => {
-  const categoryNames = {
-    afc: 'AFC',
-    basket: 'Basket',
-    caf: 'CAF',
-    eredivisie: 'Eredivisie',
-    lpf_afa: 'LPF AFA',
-    serie_a_enilive: 'Serie A Enilive',
-    national_retro: 'Retro Nacional'
+  const match = categories.value.find(c => c.value === category)
+  if (match) {
+    return match.label
   }
-  return categoryNames[category] || category
+  if (!category) {
+    return 'Sin categoría'
+  }
+  return category
 }
 
 const getCategoryDisplayName = (value) => {
-  const category = categories.find(c => c.value === value)
+  if (!value) {
+    return 'Todas las categorías'
+  }
+  const category = categories.value.find(c => c.value === value)
   return category ? category.label : 'Todas las categorías'
 }
 
@@ -2038,9 +2035,36 @@ watch([selectedCategory, searchTerm], async () => {
   isTransitioning.value = false
 })
 
+const loadAvailableCategories = async () => {
+  try {
+    categoriesLoading.value = true
+    const response = await $fetch('/api/categories')
+    if (response.success && Array.isArray(response.data)) {
+      const normalized = response.data.map((category) => ({
+        value: category.slug,
+        label: category.label,
+        productCount: category.productCount,
+        emoji: category.emoji || null
+      }))
+      categories.value = [
+        { value: '', label: 'Todas las categorías', productCount: 0 },
+        ...normalized
+      ]
+    } else if (response.error) {
+      throw new Error(response.error)
+    }
+  } catch (err) {
+    console.error('Error loading categories:', err)
+    toast.error('No pudimos cargar las categorías disponibles')
+  } finally {
+    categoriesLoading.value = false
+  }
+}
+
 // Lifecycle
 onMounted(() => {
   loadAllProducts()
+  loadAvailableCategories()
 })
 </script>
 
@@ -2064,5 +2088,23 @@ onMounted(() => {
 .dropdown-leave-to {
   opacity: 0;
   transform: translateY(-8px);
+}
+
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #9ca3af transparent;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(107, 114, 128, 0.6);
+  border-radius: 9999px;
 }
 </style>
