@@ -106,6 +106,24 @@
                 <IconCashMultiple class="w-4 h-4" />
                 <span>Editar precios</span>
               </button>
+              <button
+                @click="deleteSelectedProducts"
+                :disabled="bulkDeleteState.deleting"
+                :class="[
+                  'px-3 py-1.5 rounded-lg text-sm transition-colors flex items-center gap-2 border text-red-700 bg-red-50 border-red-200',
+                  bulkDeleteState.deleting ? 'opacity-60 cursor-not-allowed' : 'hover:bg-red-100'
+                ]"
+              >
+                <IconLoading
+                  v-if="bulkDeleteState.deleting"
+                  class="w-4 h-4 text-red-600 animate-spin"
+                />
+                <IconTrashCan
+                  v-else
+                  class="w-4 h-4"
+                />
+                <span>{{ bulkDeleteState.deleting ? 'Eliminando...' : 'Eliminar' }}</span>
+              </button>
 
               <button
                 @click="clearSelection"
@@ -951,7 +969,8 @@ const {
   saveProduct,
   updateProductImages,
   updateProductPricing: updateProductPricingAPI,
-  updateProductStatus
+  updateProductStatus,
+  deleteProduct
 } = useSharedProducts()
 const { getFolderImages, uploadImage, deleteImage: deleteCloudinaryImage } = useCloudinary()
 // Prefer manifest but fall back to Cloudinary when needed for custom products
@@ -1012,6 +1031,9 @@ const bulkPricingForm = reactive({
 })
 const bulkPricingState = reactive({
   saving: false
+})
+const bulkDeleteState = reactive({
+  deleting: false
 })
 const detailsLoading = reactive({})
 const detailsSnapshots = reactive({})
@@ -1290,6 +1312,84 @@ const closeBulkPricingModal = () => {
     return
   }
   showBulkPricingModal.value = false
+}
+
+const deleteSelectedProducts = async () => {
+  if (selectedProducts.value.length === 0 || bulkDeleteState.deleting) {
+    return
+  }
+
+  const confirmed = window.confirm(
+    selectedProducts.value.length === 1
+      ? '¿Seguro que querés eliminar este producto?'
+      : `¿Seguro que querés eliminar estos ${selectedProducts.value.length} productos?`
+  )
+
+  if (!confirmed) {
+    return
+  }
+
+  bulkDeleteState.deleting = true
+
+  try {
+    const idsToDelete = [...selectedProducts.value]
+    const failedIds = []
+    let deletedCount = 0
+
+    for (const productId of idsToDelete) {
+      try {
+        await deleteProduct(productId)
+        const productIndex = products.value.findIndex(product => product.id === productId)
+        if (productIndex !== -1) {
+          products.value.splice(productIndex, 1)
+        }
+        if (selectedProduct.value?.id === productId) {
+          selectedProduct.value = null
+          showImageBrowser.value = false
+        }
+        delete dirtyProducts[productId]
+        delete detailsSnapshots[productId]
+        delete detailsLoading[productId]
+        Object.keys(statusLoading).forEach((key) => {
+          if (key.startsWith(`${productId}-`)) {
+            delete statusLoading[key]
+          }
+        })
+        deletedCount++
+      } catch (error) {
+        console.error(`Error deleting product ${productId}:`, error)
+        failedIds.push(productId)
+      }
+    }
+
+    if (deletedCount > 0) {
+      toast.success(
+        deletedCount === 1
+          ? 'Se eliminó 1 producto'
+          : `Se eliminaron ${deletedCount} productos`
+      )
+    }
+
+    if (failedIds.length > 0) {
+      toast.error(
+        failedIds.length === 1
+          ? 'No pudimos eliminar 1 producto'
+          : `No pudimos eliminar ${failedIds.length} productos`
+      )
+      selectedProducts.value = failedIds
+    } else {
+      clearSelection()
+    }
+
+    if (currentPage.value > totalPages.value) {
+      currentPage.value = Math.max(totalPages.value, 1)
+    }
+  } catch (error) {
+    console.error('Error deleting selected products:', error)
+    toast.error('No pudimos eliminar los productos seleccionados')
+  } finally {
+    bulkDeleteState.deleting = false
+  }
 }
 
 const parseMoneyInput = (value) => {
