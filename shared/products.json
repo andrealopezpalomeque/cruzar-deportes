@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-11-18T11:59:10.870Z",
+  "lastUpdated": "2025-11-18T13:44:06.046Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -17812,6 +17812,38 @@
       "lastModified": "2025-11-13T13:20:29.682Z",
       "createdAt": "2025-11-11T20:45:34.219Z",
       "createdBy": "system"
+    },
+    "team-ajax_2025_26_tercera": {
+      "id": "team-ajax_2025_26_tercera",
+      "name": "Ajax 2025/26 (tercera)",
+      "slug": "ajax-2025-26-tercera",
+      "description": "Ajax 2025/26 (tercera) - Conmemoración a los 750 años de Ámsterdam",
+      "price": 70000,
+      "category": "eredivisie",
+      "selectedImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1763473414/cruzar-deportes/products/eredivisie/ajax_2025_26_tercera/mjfkphytft1pwblmlufy.jpg"
+      ],
+      "allAvailableImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1763473414/cruzar-deportes/products/eredivisie/ajax_2025_26_tercera/mjfkphytft1pwblmlufy.jpg"
+      ],
+      "cloudinaryFolderPath": "cruzar-deportes/products/eredivisie/ajax_2025_26_tercera",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "Home",
+        "Away"
+      ],
+      "inStock": true,
+      "stockStatus": "in_stock",
+      "featured": false,
+      "lastModified": "2025-11-18T13:44:06.046Z",
+      "createdAt": "2025-11-18T13:44:06.046Z",
+      "createdBy": "admin"
     }
   },
   "categories": {
@@ -17833,7 +17865,7 @@
       "id": "eredivisie",
       "name": "Equipos Eredivisie",
       "slug": "eredivisie",
-      "productCount": 29,
+      "productCount": 30,
       "lastModified": "2025-10-01T04:05:38.621Z"
     },
     "lpf_afa": {
@@ -17866,8 +17898,8 @@
     }
   },
   "metadata": {
-    "totalProducts": 331,
-    "totalImages": 1437,
-    "lastSync": "2025-11-18T11:59:10.870Z"
+    "totalProducts": 332,
+    "totalImages": 1438,
+    "lastSync": "2025-11-18T13:44:06.046Z"
   }
 }

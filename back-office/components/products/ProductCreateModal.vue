@@ -212,6 +212,14 @@
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-1">Ruta generada</label>
               <input
+                ref="fileInputRef"
+                type="file"
+                class="hidden"
+                accept="image/*"
+                multiple
+                @change="handleFilesSelected"
+              />
+              <input
                 :value="generatedFolderPath"
                 type="text"
                 readonly
@@ -223,9 +231,39 @@
             </div>
 
             <div class="space-y-3 rounded-xl border border-dashed border-gray-200 bg-white/60 p-4">
+              <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">Subí imágenes desde tu computadora</p>
+                  <p class="text-xs text-gray-500">
+                    Las enviaremos a <span class="font-mono text-[11px]">{{ generatedFolderPath || 'la carpeta del producto' }}</span>
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="inline-flex items-center gap-2 rounded-xl border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                  :disabled="!generatedFolderPath || uploadState.isUploading || isSaving"
+                  @click="triggerFilePicker"
+                >
+                  <IconCloudUpload class="w-4 h-4" />
+                  {{ uploadState.isUploading ? 'Subiendo...' : 'Seleccionar archivos' }}
+                </button>
+              </div>
+              <p v-if="uploadState.isUploading" class="text-xs text-gray-500">
+                Subiendo {{ uploadState.uploaded }} de {{ uploadState.total }} archivos...
+              </p>
+              <p class="text-xs text-gray-500">
+                Podés seleccionar varias imágenes a la vez. Se agregarán automáticamente a la galería de este producto.
+              </p>
+            </div>
+
+            <div class="space-y-3 rounded-xl border border-dashed border-gray-200 bg-white/60 p-4">
               <div>
                 <p class="text-sm font-semibold text-gray-900">Agregar imágenes manualmente</p>
-                <p class="text-xs text-gray-500">Pega URLs completas de Cloudinary u otra CDN para construir la galería inicial.</p>
+                <p class="text-xs text-gray-500">
+                  Si ya tenés URLs (por ejemplo, de un producto existente), pegá el enlace y usá los botones de abajo.
+                  <strong>Agregar URL</strong> incorpora una sola imagen y
+                  <strong>Agregar lista de URLs</strong> acepta múltiples enlaces, uno por línea.
+                </p>
               </div>
               <div class="flex flex-col sm:flex-row gap-2">
                 <input
@@ -241,7 +279,7 @@
                   @click="addManualImage"
                 >
                   <IconPlus class="w-4 h-4" />
-                  Agregar
+                  Agregar URL
                 </button>
               </div>
               <div class="space-y-2">
@@ -258,7 +296,7 @@
                   @click="addBulkImages"
                 >
                   <IconPlus class="w-4 h-4" />
-                  Agregar lista
+                  Agregar lista de URLs
                 </button>
               </div>
             </div>
@@ -387,6 +425,7 @@ import IconCheck from '~icons/mdi/check'
 import IconChevronUp from '~icons/mdi/chevron-up'
 import IconChevronDown from '~icons/mdi/chevron-down'
 import IconPlus from '~icons/mdi/plus'
+import IconCloudUpload from '~icons/mdi/cloud-upload'
 import IconLoading from '~icons/eos-icons/loading'
 import { slugify, buildProductIdFromSlug } from '~/utils/slugify'
 
@@ -412,6 +451,7 @@ const props = defineProps({
 const emit = defineEmits(['close', 'created'])
 
 const { saveProduct } = useSharedProducts()
+const { uploadImage } = useCloudinary()
 const toast = useToast()
 
 const DEFAULT_SIZES = ['S', 'M', 'L', 'XL', 'XXL']
@@ -436,6 +476,12 @@ const isSaving = ref(false)
 const slugEdited = ref(false)
 const manualImageUrl = ref('')
 const bulkImagesInput = ref('')
+const fileInputRef = ref(null)
+const uploadState = reactive({
+  isUploading: false,
+  uploaded: 0,
+  total: 0
+})
 
 const categoryOptions = computed(() => props.categories.filter(option => option.value))
 const firstCategoryValue = computed(() => categoryOptions.value[0]?.value || '')
@@ -503,6 +549,24 @@ const handleSlugBlur = () => {
   }
 }
 
+const appendImageUrl = (imageUrl) => {
+  if (!imageUrl) {
+    return
+  }
+
+  if (!availableImages.value.includes(imageUrl)) {
+    availableImages.value = [...availableImages.value, imageUrl]
+  }
+
+  if (!form.allAvailableImages.includes(imageUrl)) {
+    form.allAvailableImages = [...form.allAvailableImages, imageUrl]
+  }
+
+  if (!form.selectedImages.includes(imageUrl)) {
+    form.selectedImages = [...form.selectedImages, imageUrl]
+  }
+}
+
 const isImageSelected = (imageUrl) => form.selectedImages.includes(imageUrl)
 
 const toggleImageSelection = (imageUrl) => {
@@ -519,15 +583,7 @@ const addManualImage = () => {
   const normalized = manualImageUrl.value.trim()
   if (!normalized) return
   const ensureHttps = normalized.startsWith('http') ? normalized : `https://${normalized}`
-  if (!availableImages.value.includes(ensureHttps)) {
-    availableImages.value = [...availableImages.value, ensureHttps]
-  }
-  if (!form.selectedImages.includes(ensureHttps)) {
-    form.selectedImages = [...form.selectedImages, ensureHttps]
-  }
-  if (!form.allAvailableImages.includes(ensureHttps)) {
-    form.allAvailableImages = [...form.allAvailableImages, ensureHttps]
-  }
+  appendImageUrl(ensureHttps)
   manualImageUrl.value = ''
 }
 
@@ -538,26 +594,58 @@ const addBulkImages = () => {
     .filter(Boolean)
   if (entries.length === 0) return
 
-  let updatedAvailable = [...availableImages.value]
-  let updatedSelected = [...form.selectedImages]
-
-  const newAll = new Set(form.allAvailableImages)
-
   for (const entry of entries) {
     const normalized = entry.startsWith('http') ? entry : `https://${entry}`
-    if (!updatedAvailable.includes(normalized)) {
-      updatedAvailable.push(normalized)
-    }
-    if (!updatedSelected.includes(normalized)) {
-      updatedSelected.push(normalized)
-    }
-    newAll.add(normalized)
+    appendImageUrl(normalized)
+  }
+  bulkImagesInput.value = ''
+}
+
+const triggerFilePicker = () => {
+  if (!generatedFolderPath.value) {
+    toast.info('Definí nombre y categoría antes de subir imágenes')
+    return
+  }
+  fileInputRef.value?.click()
+}
+
+const handleFilesSelected = async (event) => {
+  const input = event.target
+  const files = Array.from(input?.files || [])
+  if (!files.length) {
+    return
   }
 
-  availableImages.value = updatedAvailable
-  form.selectedImages = updatedSelected
-  form.allAvailableImages = Array.from(newAll)
-  bulkImagesInput.value = ''
+  if (!generatedFolderPath.value) {
+    toast.error('Seleccioná una categoría y nombre antes de subir imágenes')
+    if (input) {
+      input.value = ''
+    }
+    return
+  }
+
+  uploadState.isUploading = true
+  uploadState.uploaded = 0
+  uploadState.total = files.length
+
+  for (const file of files) {
+    try {
+      const uploadedAsset = await uploadImage(file, generatedFolderPath.value)
+      const secureUrl = uploadedAsset?.secure_url || uploadedAsset
+      appendImageUrl(secureUrl)
+      uploadState.uploaded += 1
+    } catch (error) {
+      console.error('Error al subir imagen', error)
+      toast.error(`No pudimos subir "${file.name}"`)
+    }
+  }
+
+  uploadState.isUploading = false
+  uploadState.uploaded = 0
+  uploadState.total = 0
+  if (input) {
+    input.value = ''
+  }
 }
 
 const moveSelectedImage = (index, direction) => {

@@ -9,17 +9,20 @@ Administrative panel for managing the sports jersey e-commerce platform.
 ## Features
 
 ✅ **Phase 1: Core Structure (Complete)**
+
 - [x] Project setup with Nuxt 4 and Tailwind CSS
 - [x] Simple username/password authentication
 - [x] Main dashboard layout with navigation
 - [x] Responsive design following main site aesthetic
 
 ✅ **Phase 2: Image Management (Complete)**
+
 - [x] Cloudinary integration for album browsing
 - [x] Image selection interface
 - [x] Album splitting functionality
 
 📋 **Phase 3: Product Management (Pending)**
+
 - [x] Product creation y onboarding completo con selección de carpeta en Cloudinary
 - [ ] Product listing and editing interfaces
 - [ ] Pricing management (individual & bulk)
@@ -27,17 +30,20 @@ Administrative panel for managing the sports jersey e-commerce platform.
 - [ ] Expand contextual bulk actions within product management
 
 🚀 **Phase 4: Deployment (Pending)**
+
 - [ ] Firebase project setup and deployment
 
 ## Development Setup
 
 1. Install dependencies:
+
 ```bash
 cd back-office
 npm install
 ```
 
 2. Set up environment variables:
+
 ```bash
 # Create .env file with:
 CLOUDINARY_CLOUD_NAME=your_cloud_name
@@ -50,6 +56,7 @@ BACKOFFICE_PASSWORD=your_secure_password
 > **Firebase access:** Copy the repository level `.env.example` to `.env` (at the repo root) and fill in the Firebase service account credentials there. The back-office server and the shared deploy scripts read that file to connect to Cloud Storage and keep `shared/products.json` in sync.
 
 3. Run development server:
+
 ```bash
 npm run dev
 ```
@@ -73,6 +80,7 @@ npm run dev
 ## Key Features
 
 ### 🖼️ Image Management
+
 - Browse all Cloudinary albums organized by category
 - Visual thumbnail previews with processing status
 - **Optimized loading** - Fast album overview (< 2 seconds vs 10-25 seconds)
@@ -84,7 +92,8 @@ npm run dev
 - Skeleton loaders for better UX
 
 ### 💰 Product Management
-- Product creation wizard with automatic Cloudinary folder generation and quick image selection
+
+- Product creation wizard with automatic Cloudinary folder generation, direct uploads from local files and quick image selection
 - Individual and bulk pricing updates
 - Contextual bulk actions surfaced directly in la vista de productos (selección múltiple)
 - Featured product management
@@ -92,12 +101,14 @@ npm run dev
 - Real-time preview of changes
 
 ### 🎨 Modern UX/UI
+
 - Clean, intuitive interface inspired by Apple's design philosophy
 - Responsive mobile-first design
 - Smooth animations and transitions
 - Keyboard shortcuts for power users
 
 ### 🔐 Security
+
 - Session-based authentication
 - Protected API routes
 - Environment variable configuration
