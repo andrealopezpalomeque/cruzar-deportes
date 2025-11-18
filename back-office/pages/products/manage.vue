@@ -80,30 +80,40 @@
           <span class="font-medium">Mostrando {{ currentRangeStart }}-{{ currentRangeEnd }} de {{ filteredProducts.length }} productos</span>
         </div>
 
-        <!-- Bulk Actions -->
-        <div
-          v-if="selectedProducts.length > 0"
-          class="flex flex-wrap items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2"
-        >
-          <span class="text-sm text-gray-700 font-medium">
-            {{ selectedProducts.length }} {{ selectedProducts.length === 1 ? 'producto seleccionado' : 'productos seleccionados' }}
-          </span>
+        <div class="flex flex-wrap items-center gap-3">
+          <button
+            @click="openCreateProductModal"
+            class="inline-flex items-center gap-2 rounded-xl bg-gray-900 text-white px-4 py-2.5 text-sm font-semibold shadow-sm hover:bg-black transition-colors"
+          >
+            <IconPlus class="w-4 h-4" />
+            Nuevo producto
+          </button>
 
-          <div class="flex flex-wrap items-center gap-2">
-            <button
-              @click="openBulkPricingModal"
-              class="px-3 py-1.5 rounded-lg text-sm transition-colors flex items-center gap-2 border bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100"
-            >
-              <IconCashMultiple class="w-4 h-4" />
-              <span>Editar precios</span>
-            </button>
+          <!-- Bulk Actions -->
+          <div
+            v-if="selectedProducts.length > 0"
+            class="flex flex-wrap items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2"
+          >
+            <span class="text-sm text-gray-700 font-medium">
+              {{ selectedProducts.length }} {{ selectedProducts.length === 1 ? 'producto seleccionado' : 'productos seleccionados' }}
+            </span>
 
-            <button
-              @click="clearSelection"
-              class="px-3 py-1.5 text-sm text-gray-600 rounded-lg hover:bg-white transition-colors border border-transparent"
-            >
-              Limpiar selección
-            </button>
+            <div class="flex flex-wrap items-center gap-2">
+              <button
+                @click="openBulkPricingModal"
+                class="px-3 py-1.5 rounded-lg text-sm transition-colors flex items-center gap-2 border bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100"
+              >
+                <IconCashMultiple class="w-4 h-4" />
+                <span>Editar precios</span>
+              </button>
+
+              <button
+                @click="clearSelection"
+                class="px-3 py-1.5 text-sm text-gray-600 rounded-lg hover:bg-white transition-colors border border-transparent"
+              >
+                Limpiar selección
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -802,6 +812,15 @@
         </div>
       </Transition>
     </Teleport>
+
+    <ProductCreateModal
+      :show="showCreateProductModal"
+      :categories="createModalCategories"
+      :existing-slugs="existingProductSlugs"
+      :existing-ids="existingProductIds"
+      @close="closeCreateProductModal"
+      @created="handleNewProductCreated"
+    />
   </div>
 </template>
 
@@ -816,6 +835,8 @@ import IconCashMultiple from '~icons/mdi/cash-multiple'
 import IconPencil from '~icons/mdi/pencil'
 import IconSearch from '~icons/mdi/magnify'
 import IconChevronDown from '~icons/mdi/chevron-down'
+import IconPlus from '~icons/mdi/plus'
+import { slugify } from '~/utils/slugify'
 
 // Page meta
 definePageMeta({
@@ -830,7 +851,8 @@ const {
   updateProductPricing: updateProductPricingAPI,
   updateProductStatus
 } = useSharedProducts()
-// Removed useCloudinary - now using efficient manifest approach
+const { getFolderImages } = useCloudinary()
+// Prefer manifest but fall back to Cloudinary when needed for custom products
 const toast = useToast()
 
 // Helper to optimize URLs using cloudinaryImageLoader
@@ -842,17 +864,6 @@ const optimizeUrl = (url, size = 300) => {
   return url.replace('/upload/', `/upload/c_thumb,w_${size},h_${size},g_face/`)
 }
 
-const slugify = (value) => {
-  return (value ?? '')
-    .toString()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-}
-
 // Reactive state
 const loading = ref(false)
 const error = ref(null)
@@ -862,6 +873,7 @@ const searchTerm = ref('')
 const selectedProducts = ref([])
 const showBulkPricingModal = ref(false)
 const isDropdownOpen = ref(false)
+const showCreateProductModal = ref(false)
 
 // Category options
 const categories = [
@@ -903,6 +915,13 @@ const detailsLoading = reactive({})
 const detailsSnapshots = reactive({})
 const dirtyProducts = reactive({}) // Track which products have unsaved changes
 const savingProducts = reactive({}) // Track which products are being saved
+const createModalCategories = computed(() => categories.filter(category => category.value))
+const existingProductSlugs = computed(() => products.value
+  .map(product => (product.slug ?? '').toString())
+  .filter(Boolean))
+const existingProductIds = computed(() => products.value
+  .map(product => product.id)
+  .filter(Boolean))
 
 const isDetailsLoading = (productId) => Boolean(detailsLoading[productId])
 const isProductDirty = (productId) => Boolean(dirtyProducts[productId])
@@ -920,6 +939,25 @@ const toggleProductSelection = (productId) => {
 
 const clearSelection = () => {
   selectedProducts.value = []
+}
+
+const openCreateProductModal = () => {
+  showCreateProductModal.value = true
+}
+
+const closeCreateProductModal = () => {
+  if (showCreateProductModal.value) {
+    showCreateProductModal.value = false
+  }
+}
+
+const handleNewProductCreated = async () => {
+  showCreateProductModal.value = false
+  await loadAllProducts()
+  currentPage.value = 1
+  if (typeof window !== 'undefined') {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 }
 
 const selectedProductPreview = computed(() => {
@@ -1270,21 +1308,34 @@ const openImageBrowser = async (product) => {
   tempSelectedImages.value = [...product.selectedImages]
   showImageBrowser.value = true
 
-  // Load available images using smart manifest approach (same as home project)
   try {
     loadingImages.value = true
 
-    // Extract team key from product slug/id
-    const teamKey = product.slug.replace(/-/g, '_') // Convert slug back to team key
+    let resolvedImages = []
 
-    // Use the efficient image loader from home project
-    const { getTeamImages } = await import('~/utils/cloudinaryImageLoader')
-    const images = await getTeamImages(teamKey, product.category)
-    const uniqueImages = Array.from(new Set([...images, ...tempSelectedImages.value]))
+    if (product.cloudinaryFolderPath) {
+      try {
+        const assets = await getFolderImages(product.cloudinaryFolderPath)
+        resolvedImages = assets.map(asset => asset.secure_url)
+      } catch (cloudError) {
+        console.warn(`No se pudo leer la carpeta ${product.cloudinaryFolderPath}:`, cloudError)
+      }
+    }
+
+    if (resolvedImages.length === 0) {
+      const teamKey = product.slug.replace(/-/g, '_')
+      const { getTeamImages } = await import('~/utils/cloudinaryImageLoader')
+      resolvedImages = await getTeamImages(teamKey, product.category)
+    }
+
+    const fallbackGallery = Array.isArray(product.allAvailableImages) ? product.allAvailableImages : []
+    const uniqueImages = Array.from(new Set([
+      ...resolvedImages,
+      ...fallbackGallery,
+      ...tempSelectedImages.value
+    ]))
 
     availableImages.value = uniqueImages
-
-    console.log(`Found ${availableImages.value.length} images in folder`)
   } catch (err) {
     console.error('Error loading images:', err)
     toast.error('Error al cargar imágenes disponibles')

@@ -28,6 +28,9 @@ export default defineEventHandler(async (event): Promise<ApiResponse<SharedProdu
       console.warn('No shared products found, using generated products only', error)
     }
 
+    const managedProductEntries = Object.entries(managedProducts)
+    const generatedProductIds = new Set(allProducts.map(product => product.id))
+
     // Merge generated products with managed overrides
     let products = allProducts.map(product => {
       const managedProduct = managedProducts[product.id]
@@ -51,6 +54,25 @@ export default defineEventHandler(async (event): Promise<ApiResponse<SharedProdu
       }
       return product
     })
+
+    // Append custom products that only exist in the managed database
+    for (const [productId, managedProduct] of managedProductEntries) {
+      if (!generatedProductIds.has(productId)) {
+        let resolvedCloudinaryPath = managedProduct.cloudinaryFolderPath
+        if ((!resolvedCloudinaryPath || resolvedCloudinaryPath.length === 0) && managedProduct.allAvailableImages?.length) {
+          const firstUrl = managedProduct.allAvailableImages[0]
+          const match = firstUrl.match(/cruzar-deportes\/[^/]+\/[^/]+\/[^/]+/)
+          if (match) {
+            resolvedCloudinaryPath = match[0]
+          }
+        }
+
+        products.push({
+          ...managedProduct,
+          cloudinaryFolderPath: resolvedCloudinaryPath || managedProduct.cloudinaryFolderPath
+        })
+      }
+    }
 
     // Apply filters
     if (category) {

@@ -20,6 +20,12 @@ export default defineEventHandler(async (event): Promise<ApiResponse<CloudinaryA
 
     // Configure Cloudinary
     const config = useRuntimeConfig()
+    if (!config.public.cloudinaryCloudName || !config.cloudinaryApiKey || !config.cloudinaryApiSecret) {
+      throw createError({
+        statusCode: 503,
+        statusMessage: 'Cloudinary no está configurado. Define CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY y CLOUDINARY_API_SECRET.'
+      })
+    }
     cloudinary.config({
       cloud_name: config.public.cloudinaryCloudName,
       api_key: config.cloudinaryApiKey,

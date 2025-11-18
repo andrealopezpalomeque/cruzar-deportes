@@ -20,6 +20,7 @@ Administrative panel for managing the sports jersey e-commerce platform.
 - [x] Album splitting functionality
 
 📋 **Phase 3: Product Management (Pending)**
+- [x] Product creation y onboarding completo con selección de carpeta en Cloudinary
 - [ ] Product listing and editing interfaces
 - [ ] Pricing management (individual & bulk)
 - [ ] Status management (featured, stock)
@@ -83,6 +84,7 @@ npm run dev
 - Skeleton loaders for better UX
 
 ### 💰 Product Management
+- Product creation wizard with folder-aware Cloudinary image selection
 - Individual and bulk pricing updates
 - Contextual bulk actions surfaced directly in la vista de productos (selección múltiple)
 - Featured product management
