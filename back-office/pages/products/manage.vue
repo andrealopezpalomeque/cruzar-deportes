@@ -4,26 +4,74 @@
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <!-- Filters -->
       <div class="flex flex-wrap gap-3">
-        <select
-          v-model="selectedCategory"
-          class="px-4 py-2 border border-gray-300 rounded-lg bg-white text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-        >
-          <option value="">Todas las categorías</option>
-          <option value="afc">AFC</option>
-          <option value="basket">Basket</option>
-          <option value="caf">CAF</option>
-          <option value="eredivisie">Eredivisie</option>
-          <option value="lpf_afa">LPF AFA</option>
-          <option value="serie_a_enilive">Serie A Enilive</option>
-          <option value="national_retro">Retro Nacional</option>
-        </select>
+        <!-- Custom Dropdown Select -->
+        <div class="relative">
+          <button
+            @click="isDropdownOpen = !isDropdownOpen"
+            :class="[
+              'group flex h-11 min-w-[220px] items-center justify-between gap-3 rounded-xl',
+              'border border-gray-200/80 bg-white px-4 transition-all duration-200',
+              'hover:border-gray-300 hover:shadow-sm',
+              'focus:outline-none focus:ring-2 focus:ring-gray-900/10 focus:ring-offset-0',
+              isDropdownOpen && 'border-gray-300 shadow-sm'
+            ]"
+          >
+            <span class="text-sm font-medium text-gray-900">
+              {{ getCategoryDisplayName(selectedCategory) }}
+            </span>
+            <IconChevronDown
+              :class="[
+                'w-4 h-4 text-gray-500 transition-transform duration-200',
+                isDropdownOpen && 'rotate-180'
+              ]"
+            />
+          </button>
 
-        <input
-          v-model="searchTerm"
-          type="text"
-          placeholder="Buscar productos..."
-          class="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-        />
+          <!-- Dropdown Menu -->
+          <Transition name="dropdown">
+            <div v-if="isDropdownOpen" class="relative">
+              <div
+                class="fixed inset-0 z-40"
+                @click="isDropdownOpen = false"
+              />
+              <div class="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-xl border border-gray-200/80 bg-white shadow-lg shadow-gray-900/5 backdrop-blur-xl">
+                <button
+                  v-for="category in categories"
+                  :key="category.value"
+                  @click="selectCategory(category.value)"
+                  :class="[
+                    'block w-full px-4 py-2.5 text-left text-sm transition-colors duration-150',
+                    category.value === selectedCategory
+                      ? 'bg-gray-900 text-white font-medium'
+                      : 'text-gray-700 hover:bg-gray-50'
+                  ]"
+                >
+                  {{ category.label }}
+                </button>
+              </div>
+            </div>
+          </Transition>
+        </div>
+
+        <!-- Enhanced Search Input -->
+        <div class="relative">
+          <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+            <IconSearch class="w-4 h-4 text-gray-400" />
+          </div>
+          <input
+            v-model="searchTerm"
+            type="text"
+            placeholder="Buscar productos..."
+            :class="[
+              'h-11 w-full sm:w-[320px] rounded-xl border border-gray-200/80 bg-white pl-11 pr-4',
+              'text-sm text-gray-900 placeholder:text-gray-400',
+              'transition-all duration-200',
+              'hover:border-gray-300 hover:shadow-sm',
+              'focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900/10 focus:ring-offset-0',
+              searchTerm && 'border-gray-300 shadow-sm'
+            ]"
+          />
+        </div>
       </div>
 
       <!-- Product Stats and Bulk Actions -->
@@ -766,6 +814,8 @@ import IconImageMultiple from '~icons/mdi/image-multiple'
 import IconCheck from '~icons/mdi/check'
 import IconCashMultiple from '~icons/mdi/cash-multiple'
 import IconPencil from '~icons/mdi/pencil'
+import IconSearch from '~icons/mdi/magnify'
+import IconChevronDown from '~icons/mdi/chevron-down'
 
 // Page meta
 definePageMeta({
@@ -811,6 +861,19 @@ const selectedCategory = ref('')
 const searchTerm = ref('')
 const selectedProducts = ref([])
 const showBulkPricingModal = ref(false)
+const isDropdownOpen = ref(false)
+
+// Category options
+const categories = [
+  { value: '', label: 'Todas las categorías' },
+  { value: 'afc', label: 'AFC' },
+  { value: 'basket', label: 'Basket' },
+  { value: 'caf', label: 'CAF' },
+  { value: 'eredivisie', label: 'Eredivisie' },
+  { value: 'lpf_afa', label: 'LPF AFA' },
+  { value: 'serie_a_enilive', label: 'Serie A Enilive' },
+  { value: 'national_retro', label: 'Retro Nacional' }
+]
 
 // Pagination state
 const currentPage = ref(1)
@@ -1161,6 +1224,16 @@ const getCategoryName = (category) => {
     national_retro: 'Retro Nacional'
   }
   return categoryNames[category] || category
+}
+
+const getCategoryDisplayName = (value) => {
+  const category = categories.find(c => c.value === value)
+  return category ? category.label : 'Todas las categorías'
+}
+
+const selectCategory = (value) => {
+  selectedCategory.value = value
+  isDropdownOpen.value = false
 }
 
 const formatDate = (dateString) => {
@@ -1519,5 +1592,16 @@ onMounted(() => {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition: all 0.2s ease;
+}
+
+.dropdown-enter-from,
+.dropdown-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
 }
 </style>
