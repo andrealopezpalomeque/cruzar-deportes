@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-11-18T14:20:27.178Z",
+  "lastUpdated": "2025-11-18T17:33:19.950Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -1818,7 +1818,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-11-18T14:20:27.178Z",
+      "lastModified": "2025-11-18T17:33:19.950Z",
       "createdAt": "2025-09-29T03:33:53.362Z",
       "createdBy": "system",
       "isProcessed": false,
@@ -17893,6 +17893,6 @@
   "metadata": {
     "totalProducts": 332,
     "totalImages": 1435,
-    "lastSync": "2025-11-18T14:20:27.178Z"
+    "lastSync": "2025-11-18T17:33:19.950Z"
   }
 }

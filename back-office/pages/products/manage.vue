@@ -29,12 +29,12 @@
 
           <!-- Dropdown Menu -->
           <Transition name="dropdown">
-            <div v-if="isDropdownOpen" class="relative">
+            <div v-if="isDropdownOpen" class="relative z-[100]">
               <div
-                class="fixed inset-0 z-40"
+                class="fixed inset-0 z-[100]"
                 @click="isDropdownOpen = false"
               />
-              <div class="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-xl border border-gray-200/80 bg-white shadow-lg shadow-gray-900/5 backdrop-blur-xl">
+              <div class="absolute left-0 right-0 top-full z-[110] mt-2 overflow-hidden rounded-xl border border-gray-200/80 bg-white shadow-lg shadow-gray-900/5 backdrop-blur-xl">
                 <button
                   v-for="category in categories"
                   :key="category.value"
