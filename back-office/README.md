@@ -95,7 +95,7 @@ npm run dev
 
 - Product creation wizard with automatic Cloudinary folder generation, direct uploads from local files and quick image selection
 - Individual and bulk pricing updates
-- Contextual bulk actions surfaced directly in la vista de productos (selección múltiple)
+- Contextual bulk actions surfaced directly in the product view (multiple selection)
 - Featured product management
 - Stock status control
 - Real-time preview of changes
