@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-11-13T13:20:29.683Z",
+  "lastUpdated": "2025-11-18T11:59:10.870Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -952,7 +952,7 @@
       "name": "Al Ahly SC",
       "slug": "al-ahly",
       "description": "Official Al Ahly SC jersey from Egyptian Premier League",
-      "price": 65,
+      "price": 70000,
       "category": "caf",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758167417/cruzar-deportes/products/caf/al_ahly/yjhjhf0pmjpw1k422osk.jpg",
@@ -981,10 +981,11 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.588Z",
+      "lastModified": "2025-11-18T11:59:10.869Z",
       "isProcessed": false,
       "createdAt": "2025-09-29T03:33:53.362Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "originalPrice": 65
     },
     "team-cs_constantine_player_version": {
       "id": "team-cs_constantine_player_version",
@@ -3280,7 +3281,7 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758182947/cruzar-deportes/products/serie_a_enilive/napoles/zpckokwexmuxosbkwuri.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758182950/cruzar-deportes/products/serie_a_enilive/napoles/mabmofkbh1xozqgxeqbp.jpg"
       ],
-      "cloudinaryFolderPath": "cruzar-deportes/products/basket/napoles",
+      "cloudinaryFolderPath": "cruzar-deportes/products/serie_a_enilive/napoles",
       "sizes": [
         "S",
         "M",
@@ -17720,6 +17721,8 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762891240/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_19_1762469960654_ie4dbi.jpg"
       ],
       "allAvailableImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762891266/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_22_1762469980567_okzouh.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762891240/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_19_1762469960654_ie4dbi.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890161/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_70_1762470238154_drgatb.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890162/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_53_1762470155631_o5wscu.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890162/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_68_1762470228998_zvxipl.jpg",
@@ -17789,9 +17792,7 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762891205/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_18_1762469949093_vauz9r.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762891206/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_6_1762469869497_rkbw89.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762891216/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_0_1762469825779_hrso5l.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762891222/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_9_1762469892149_syz8qw.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762891240/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_19_1762469960654_ie4dbi.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762891266/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_22_1762469980567_okzouh.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762891222/cruzar-deportes/products/basket/zaragoza/zaragoza_photo_img_9_1762469892149_syz8qw.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/basket/zaragoza",
       "sizes": [
@@ -17867,6 +17868,6 @@
   "metadata": {
     "totalProducts": 331,
     "totalImages": 1437,
-    "lastSync": "2025-11-13T13:20:29.683Z"
+    "lastSync": "2025-11-18T11:59:10.870Z"
   }
 }
