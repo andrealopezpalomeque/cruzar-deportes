@@ -3,7 +3,7 @@ import { join } from 'path'
 import { fileURLToPath } from 'url'
 import os from 'os'
 import type { ProductDatabase, SharedProduct, CategoryType, SharedCategory } from '../types'
-import { loadAvailableCategories } from './categoryLoader'
+import { loadAvailableCategories } from './categoryLoader.ts'
 
 let admin: typeof import('firebase-admin') | null = null
 let adminInitialized = false
