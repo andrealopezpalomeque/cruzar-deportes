@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-11-18T18:23:57.919Z",
+  "lastUpdated": "2025-11-18T18:24:42.963Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -17660,6 +17660,10 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890433/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_16_1762469367749_iw4ou2.jpg"
       ],
       "allAvailableImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890298/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_13_1762469350304_y9v1d6.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890297/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_10_1762469331670_dvyoqi.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890433/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_20_1762469389341_qi4bno.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890433/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_16_1762469367749_iw4ou2.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762891030/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_1_1762469272214_sum2n4.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890971/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_2_1762469281781_cigtz1.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890952/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_6_1762469310498_mqu24x.jpg",
@@ -17668,11 +17672,7 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890652/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_8_1762469322380_ynnsqf.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890632/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_19_1762469383787_pywnad.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890556/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_15_1762469362606_qajoed.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890433/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_16_1762469367749_iw4ou2.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890433/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_20_1762469389341_qi4bno.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890429/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_12_1762469344820_wyqtp6.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890298/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_13_1762469350304_y9v1d6.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890297/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_10_1762469331670_dvyoqi.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890429/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_12_1762469344820_wyqtp6.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/basket/zalgiris",
       "sizes": [
@@ -17884,6 +17884,6 @@
   "metadata": {
     "totalProducts": 332,
     "totalImages": 1434,
-    "lastSync": "2025-11-18T18:23:57.919Z"
+    "lastSync": "2025-11-18T18:24:42.963Z"
   }
 }
