@@ -488,7 +488,7 @@
       <div
         v-if="showImageBrowser"
         class="fixed inset-0 z-50 overflow-y-auto"
-        @click.self="closeImageBrowser"
+        @click.self="handleModalOverlayClick"
       >
         <div class="flex min-h-screen items-center justify-center p-4">
           <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity"></div>
@@ -499,12 +499,37 @@
               <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
                 Seleccionar Imágenes - {{ selectedProduct?.name }}
               </h3>
-              <button
-                @click="closeImageBrowser"
-                class="text-gray-400 hover:text-gray-600 transition-colors"
-              >
-                <IconClose class="w-6 h-6" />
-              </button>
+              <div class="flex items-center gap-3">
+                <button
+                  v-if="modalSelectedForDeletion.size > 0"
+                  type="button"
+                  class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium text-gray-700 border border-gray-200 bg-white hover:bg-gray-50 disabled:opacity-60 disabled:cursor-not-allowed"
+                  :disabled="modalDeletionState.processing"
+                  @click="handleModalBulkDelete"
+                >
+                  <IconLoading
+                    v-if="modalDeletionState.processing"
+                    class="w-4 h-4 text-gray-500 animate-spin"
+                  />
+                  <IconTrashCan
+                    v-else
+                    class="w-4 h-4"
+                  />
+                  <span>
+                    {{ modalDeletionState.processing
+                      ? 'Eliminando...'
+                      : `Eliminar seleccionadas (${modalSelectedForDeletion.size})`
+                    }}
+                  </span>
+                </button>
+                <button
+                  @click="handleModalClose"
+                  :disabled="modalDeletionState.processing"
+                  class="text-gray-400 hover:text-gray-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                >
+                  <IconClose class="w-6 h-6" />
+                </button>
+              </div>
             </div>
 
             <!-- Scrollable Content -->
@@ -553,7 +578,10 @@
               <div v-if="tempSelectedImages.length" class="px-4 sm:px-6 pt-4 sm:pt-6">
                 <div class="flex items-center justify-between mb-3">
                   <h4 class="text-sm font-medium text-gray-900">Imágenes seleccionadas</h4>
-                  <span class="text-xs text-gray-500 hidden sm:inline">Arrastra para cambiar el orden</span>
+                  <div class="flex items-center gap-3 text-xs text-gray-500">
+                    <span>Arrastra para cambiar el orden</span>
+                    <span class="hidden sm:inline">Click para marcarlas y eliminarlas en lote</span>
+                  </div>
                 </div>
 
                 <div
@@ -566,11 +594,15 @@
                     :key="image"
                     class="relative group w-20 h-20 sm:w-24 sm:h-24 rounded-lg overflow-hidden border border-gray-200 shadow-sm"
                     draggable="true"
-                    :class="draggingSelectedIndex === index ? 'ring-2 ring-blue-400 ring-offset-2' : ''"
+                    :class="[
+                      draggingSelectedIndex === index ? 'ring-2 ring-blue-400 ring-offset-2' : '',
+                      modalSelectedForDeletion.has(image) ? 'border-red-400 ring-2 ring-red-200' : ''
+                    ]"
                     @dragstart="handleSelectedDragStart(index, $event)"
                     @dragover.prevent="allowSelectedDrop"
                     @drop.prevent="handleSelectedItemDrop(index, $event)"
                     @dragend="handleSelectedDragEnd"
+                    @click="toggleModalImageSelection(image)"
                   >
                     <img
                       :src="optimizeUrl(image, 180)"
@@ -582,7 +614,14 @@
                       {{ index + 1 }}
                     </span>
 
+                    <div
+                      v-if="modalSelectedForDeletion.has(image)"
+                      class="absolute inset-0 bg-red-500/30 flex items-center justify-center text-white text-xs font-semibold"
+                    >
+                      Seleccionada
+                    </div>
                     <button
+                      v-if="!modalSelectedForDeletion.has(image)"
                       type="button"
                       @click.stop="removeFromSelection(image)"
                       class="absolute top-1 right-1 bg-white/90 text-gray-700 hover:text-red-600 hover:bg-white rounded-full p-1 shadow transition-colors"
@@ -622,21 +661,20 @@
                     >
                       <IconCheck class="w-3 h-3" />
                     </div>
-                    <button
-                      type="button"
-                      class="absolute top-1 left-1 bg-white/90 text-gray-700 rounded-full p-1 shadow transition-colors hover:bg-red-500 hover:text-white"
-                      :disabled="isModalImageDeleting(image)"
-                      @click.stop="handleModalDeleteImage(image)"
+                    <div
+                      class="absolute top-1 left-1 flex gap-1"
                     >
-                      <IconLoading
-                        v-if="isModalImageDeleting(image)"
-                        class="w-3 h-3 animate-spin"
-                      />
-                      <IconTrashCan
-                        v-else
-                        class="w-3 h-3"
-                      />
-                    </button>
+                      <button
+                        type="button"
+                        class="bg-white/90 rounded-full p-1 shadow transition-colors"
+                        :class="modalSelectedForDeletion.has(image) ? 'bg-red-50 text-red-600 ring-2 ring-red-500' : 'text-gray-700 hover:bg-red-100 hover:text-red-600'"
+                        @click.stop="toggleModalImageSelection(image)"
+                      >
+                        <IconTrashCan
+                          class="w-3 h-3"
+                        />
+                      </button>
+                    </div>
                   </div>
                 </div>
 
@@ -655,16 +693,22 @@
 
               <div class="flex gap-3">
                 <button
-                  @click="closeImageBrowser"
-                  class="flex-1 sm:flex-none px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+                  @click="handleModalClose"
+                  :disabled="modalDeletionState.processing || modalSaveState.saving"
+                  class="flex-1 sm:flex-none px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   Cancelar
                 </button>
                 <button
                   @click="saveImageSelection"
-                  class="flex-1 sm:flex-none px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  :disabled="modalSaveState.saving || modalDeletionState.processing"
+                  class="flex-1 sm:flex-none px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
-                  Guardar Selección
+                  <IconLoading
+                    v-if="modalSaveState.saving"
+                    class="w-4 h-4 animate-spin text-white"
+                  />
+                  <span>{{ modalSaveState.saving ? 'Guardando...' : 'Guardar Selección' }}</span>
                 </button>
               </div>
             </div>
@@ -979,7 +1023,13 @@ const modalUploadState = reactive({
   uploaded: 0,
   total: 0
 })
-const modalDeletionState = reactive({})
+const modalDeletionState = reactive({
+  processing: false
+})
+const modalSelectedForDeletion = ref(new Set())
+const modalSaveState = reactive({
+  saving: false
+})
 const createModalCategories = computed(() => categories.filter(category => category.value))
 const existingProductSlugs = computed(() => products.value
   .map(product => (product.slug ?? '').toString())
@@ -1116,44 +1166,63 @@ const extractPublicIdFromUrl = (url) => {
   return path
 }
 
-const getModalDeletionKey = (imageUrl) => `${selectedProduct.value?.id || 'modal'}-${imageUrl}`
-const isModalImageDeleting = (imageUrl) => Boolean(modalDeletionState[getModalDeletionKey(imageUrl)])
+const toggleModalImageSelection = (imageUrl) => {
+  const current = new Set(modalSelectedForDeletion.value)
+  if (current.has(imageUrl)) {
+    current.delete(imageUrl)
+  } else {
+    current.add(imageUrl)
+  }
+  modalSelectedForDeletion.value = current
+}
 
-const handleModalDeleteImage = async (imageUrl) => {
-  if (!selectedProduct.value || !imageUrl) {
+const clearModalDeletions = () => {
+  modalSelectedForDeletion.value = new Set()
+}
+
+const handleModalBulkDelete = async () => {
+  if (!selectedProduct.value || modalSelectedForDeletion.value.size === 0) {
     return
   }
 
-  const deletionKey = getModalDeletionKey(imageUrl)
-  if (modalDeletionState[deletionKey]) {
-    return
-  }
-
-  const confirmed = window.confirm('¿Seguro que querés eliminar esta imagen?')
+  const confirmed = window.confirm(
+    modalSelectedForDeletion.value.size === 1
+      ? '¿Seguro que querés eliminar esta imagen?'
+      : `¿Seguro que querés eliminar estas ${modalSelectedForDeletion.value.size} imágenes?`
+  )
   if (!confirmed) {
     return
   }
 
-  modalDeletionState[deletionKey] = true
+  modalDeletionState.processing = true
 
   try {
-    const publicId = extractPublicIdFromUrl(imageUrl)
-    if (publicId) {
-      await deleteCloudinaryImage(publicId)
+    const urlsToDelete = Array.from(modalSelectedForDeletion.value)
+    for (const imageUrl of urlsToDelete) {
+      const publicId = extractPublicIdFromUrl(imageUrl)
+      if (publicId) {
+        await deleteCloudinaryImage(publicId)
+      }
     }
-    const updatedSelected = (selectedProduct.value.selectedImages || []).filter(url => url !== imageUrl)
-    const updatedAll = (selectedProduct.value.allAvailableImages || []).filter(url => url !== imageUrl)
+
+    const updatedSelected = (selectedProduct.value.selectedImages || []).filter(url => !modalSelectedForDeletion.value.has(url))
+    const updatedAll = (selectedProduct.value.allAvailableImages || []).filter(url => !modalSelectedForDeletion.value.has(url))
     await updateProductImages(selectedProduct.value.id, updatedSelected, updatedAll)
     selectedProduct.value.selectedImages = updatedSelected
     selectedProduct.value.allAvailableImages = updatedAll
-    tempSelectedImages.value = tempSelectedImages.value.filter(url => url !== imageUrl)
-    availableImages.value = availableImages.value.filter(url => url !== imageUrl)
-    toast.success('Imagen eliminada')
+    tempSelectedImages.value = tempSelectedImages.value.filter(url => updatedSelected.includes(url))
+    availableImages.value = availableImages.value.filter(url => updatedAll.includes(url))
+    toast.success(
+      urlsToDelete.length === 1
+        ? 'Imagen eliminada'
+        : `Se eliminaron ${urlsToDelete.length} imágenes`
+    )
+    clearModalDeletions()
   } catch (error) {
-    console.error('Error deleting image:', error)
-    toast.error('No pudimos eliminar la imagen')
+    console.error('Error deleting images:', error)
+    toast.error('No pudimos eliminar las imágenes')
   } finally {
-    delete modalDeletionState[deletionKey]
+    modalDeletionState.processing = false
   }
 }
 
@@ -1523,6 +1592,8 @@ const openImageBrowser = async (product) => {
   selectedProduct.value = product
   tempSelectedImages.value = [...product.selectedImages]
   showImageBrowser.value = true
+  modalSelectedForDeletion.value = new Set()
+  modalDeletionState.processing = false
 
   try {
     loadingImages.value = true
@@ -1567,6 +1638,22 @@ const closeImageBrowser = () => {
   availableImages.value = []
   tempSelectedImages.value = []
   draggingSelectedIndex.value = null
+  modalSelectedForDeletion.value = new Set()
+  modalDeletionState.processing = false
+}
+
+const handleModalClose = () => {
+  if (modalDeletionState.processing) {
+    return
+  }
+  closeImageBrowser()
+}
+
+const handleModalOverlayClick = () => {
+  if (modalDeletionState.processing) {
+    return
+  }
+  closeImageBrowser()
 }
 
 const isImageSelected = (imageUrl) => {
@@ -1586,6 +1673,11 @@ const saveImageSelection = async () => {
   if (!selectedProduct.value) return
 
   try {
+    if (modalSaveState.saving) {
+      return
+    }
+
+    modalSaveState.saving = true
     await updateProductImages(
       selectedProduct.value.id,
       tempSelectedImages.value,
@@ -1600,6 +1692,8 @@ const saveImageSelection = async () => {
     closeImageBrowser()
   } catch (err) {
     toast.error('Error al guardar selección de imágenes')
+  } finally {
+    modalSaveState.saving = false
   }
 }
 
