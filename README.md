@@ -110,10 +110,10 @@ The project uses a shared `.env` file at the repository root for Firebase and Cl
    cp .env.example .env
    ```
 
-2. **Fill in your credentials**:
+2. **Fill in your credentials** (a service-account file already lives at `home/scripts/cruzar-back-office-admin.json`):
    ```env
    # Firebase service account (absolute path)
-   GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/to/cruzar-back-office-service-account.json
+   GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/to/cruzar-deportes/home/scripts/cruzar-back-office-admin.json
 
    # Firebase project details
    GCLOUD_PROJECT=cruzar-back-office
