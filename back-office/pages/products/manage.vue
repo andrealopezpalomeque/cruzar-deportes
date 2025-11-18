@@ -323,6 +323,7 @@
                 <span>Gestionar</span>
               </button>
             </div>
+
           </div>
 
           <!-- Pricing Management -->
@@ -508,6 +509,46 @@
 
             <!-- Scrollable Content -->
             <div class="flex-1 overflow-y-auto">
+              <!-- Upload Controls -->
+              <div class="px-4 sm:px-6 pt-4 sm:pt-6">
+                <input
+                  type="file"
+                  class="hidden"
+                  accept="image/*"
+                  multiple
+                  ref="modalUploadInputRef"
+                  @change="handleModalFilesSelected"
+                />
+                <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <p class="text-sm font-semibold text-gray-900">Subí imágenes nuevas</p>
+                    <p class="text-xs text-gray-500">
+                      Se guardarán en <span class="font-mono text-[11px]">{{ selectedProduct ? getProductFolderPath(selectedProduct) : 'la carpeta del producto' }}</span>
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    class="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-200 text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-60 disabled:cursor-not-allowed"
+                    :disabled="modalUploadState.uploading || !selectedProduct"
+                    @click="triggerModalUpload"
+                  >
+                    <IconCloudUpload class="w-4 h-4" />
+                    <span>
+                      {{ modalUploadState.uploading
+                        ? `Subiendo ${modalUploadState.uploaded}/${modalUploadState.total}`
+                        : 'Seleccionar archivos'
+                      }}
+                    </span>
+                  </button>
+                </div>
+                <p
+                  v-if="modalUploadState.uploading"
+                  class="mt-2 text-xs text-gray-500"
+                >
+                  Esto puede tardar unos segundos...
+                </p>
+              </div>
+
               <!-- Selected Images (reorderable) -->
               <div v-if="tempSelectedImages.length" class="px-4 sm:px-6 pt-4 sm:pt-6">
                 <div class="flex items-center justify-between mb-3">
@@ -581,6 +622,21 @@
                     >
                       <IconCheck class="w-3 h-3" />
                     </div>
+                    <button
+                      type="button"
+                      class="absolute top-1 left-1 bg-white/90 text-gray-700 rounded-full p-1 shadow transition-colors hover:bg-red-500 hover:text-white"
+                      :disabled="isModalImageDeleting(image)"
+                      @click.stop="handleModalDeleteImage(image)"
+                    >
+                      <IconLoading
+                        v-if="isModalImageDeleting(image)"
+                        class="w-3 h-3 animate-spin"
+                      />
+                      <IconTrashCan
+                        v-else
+                        class="w-3 h-3"
+                      />
+                    </button>
                   </div>
                 </div>
 
@@ -836,6 +892,8 @@ import IconPencil from '~icons/mdi/pencil'
 import IconSearch from '~icons/mdi/magnify'
 import IconChevronDown from '~icons/mdi/chevron-down'
 import IconPlus from '~icons/mdi/plus'
+import IconCloudUpload from '~icons/mdi/cloud-upload'
+import IconTrashCan from '~icons/mdi/trash-can'
 import { slugify } from '~/utils/slugify'
 
 // Page meta
@@ -851,7 +909,7 @@ const {
   updateProductPricing: updateProductPricingAPI,
   updateProductStatus
 } = useSharedProducts()
-const { getFolderImages } = useCloudinary()
+const { getFolderImages, uploadImage, deleteImage: deleteCloudinaryImage } = useCloudinary()
 // Prefer manifest but fall back to Cloudinary when needed for custom products
 const toast = useToast()
 
@@ -915,6 +973,13 @@ const detailsLoading = reactive({})
 const detailsSnapshots = reactive({})
 const dirtyProducts = reactive({}) // Track which products have unsaved changes
 const savingProducts = reactive({}) // Track which products are being saved
+const modalUploadInputRef = ref(null)
+const modalUploadState = reactive({
+  uploading: false,
+  uploaded: 0,
+  total: 0
+})
+const modalDeletionState = reactive({})
 const createModalCategories = computed(() => categories.filter(category => category.value))
 const existingProductSlugs = computed(() => products.value
   .map(product => (product.slug ?? '').toString())
@@ -939,6 +1004,157 @@ const toggleProductSelection = (productId) => {
 
 const clearSelection = () => {
   selectedProducts.value = []
+}
+
+const getProductFolderPath = (product) => {
+  if (product.cloudinaryFolderPath) {
+    return product.cloudinaryFolderPath
+  }
+  const normalizedSlug = slugify(product.slug || product.name || product.id || 'producto')
+  const folderSegment = normalizedSlug.replace(/-/g, '_')
+  return `cruzar-deportes/products/${product.category}/${folderSegment}`
+}
+
+const appendImagesToProduct = async (product, newUrls) => {
+  if (!Array.isArray(newUrls) || newUrls.length === 0) {
+    return
+  }
+
+  const currentSelected = Array.isArray(product.selectedImages) ? [...product.selectedImages] : []
+  const currentAll = Array.isArray(product.allAvailableImages) ? [...product.allAvailableImages] : []
+  const mergedSelected = Array.from(new Set([...currentSelected, ...newUrls]))
+  const mergedAll = Array.from(new Set([...currentAll, ...newUrls]))
+
+  await updateProductImages(product.id, mergedSelected, mergedAll)
+  product.selectedImages = mergedSelected
+  product.allAvailableImages = mergedAll
+}
+
+const triggerModalUpload = () => {
+  if (!selectedProduct.value) {
+    toast.error('Seleccioná un producto')
+    return
+  }
+  modalUploadInputRef.value?.click()
+}
+
+const handleModalFilesSelected = async (event) => {
+  if (!selectedProduct.value) {
+    toast.error('Seleccioná un producto')
+    return
+  }
+  const input = event.target
+  const files = Array.from(input?.files || [])
+  if (!files.length) {
+    return
+  }
+
+  const folderPath = getProductFolderPath(selectedProduct.value)
+  modalUploadState.uploading = true
+  modalUploadState.uploaded = 0
+  modalUploadState.total = files.length
+
+  const uploadedUrls = []
+
+  for (const file of files) {
+    try {
+      const uploadResult = await uploadImage(file, folderPath)
+      const secureUrl = typeof uploadResult === 'string' ? uploadResult : uploadResult?.secure_url
+      if (secureUrl) {
+        uploadedUrls.push(secureUrl)
+      }
+    } catch (error) {
+      console.error('Error uploading image:', error)
+      toast.error(`No pudimos subir "${file.name}"`)
+    } finally {
+      modalUploadState.uploaded += 1
+    }
+  }
+
+  if (uploadedUrls.length > 0) {
+    await appendImagesToProduct(selectedProduct.value, uploadedUrls)
+    selectedProduct.value.cloudinaryFolderPath = folderPath
+    availableImages.value = [...selectedProduct.value.allAvailableImages]
+    tempSelectedImages.value = [...selectedProduct.value.selectedImages]
+    toast.success(
+      uploadedUrls.length === 1
+        ? 'Se subió 1 imagen'
+        : `Se subieron ${uploadedUrls.length} imágenes`
+    )
+  }
+
+  modalUploadState.uploading = false
+  modalUploadState.uploaded = 0
+  modalUploadState.total = 0
+  if (input) {
+    input.value = ''
+  }
+}
+
+const extractPublicIdFromUrl = (url) => {
+  if (!url || typeof url !== 'string') {
+    return null
+  }
+  const uploadIndex = url.indexOf('/upload/')
+  if (uploadIndex === -1) {
+    return null
+  }
+  let path = url.slice(uploadIndex + '/upload/'.length)
+  const segments = path.split('/')
+  if (segments[0]?.startsWith('v') && /^\d+$/.test(segments[0].slice(1))) {
+    segments.shift()
+  }
+  path = segments.join('/')
+  const queryIndex = path.indexOf('?')
+  if (queryIndex !== -1) {
+    path = path.slice(0, queryIndex)
+  }
+  const extensionIndex = path.lastIndexOf('.')
+  if (extensionIndex !== -1) {
+    path = path.slice(0, extensionIndex)
+  }
+  return path
+}
+
+const getModalDeletionKey = (imageUrl) => `${selectedProduct.value?.id || 'modal'}-${imageUrl}`
+const isModalImageDeleting = (imageUrl) => Boolean(modalDeletionState[getModalDeletionKey(imageUrl)])
+
+const handleModalDeleteImage = async (imageUrl) => {
+  if (!selectedProduct.value || !imageUrl) {
+    return
+  }
+
+  const deletionKey = getModalDeletionKey(imageUrl)
+  if (modalDeletionState[deletionKey]) {
+    return
+  }
+
+  const confirmed = window.confirm('¿Seguro que querés eliminar esta imagen?')
+  if (!confirmed) {
+    return
+  }
+
+  modalDeletionState[deletionKey] = true
+
+  try {
+    const publicId = extractPublicIdFromUrl(imageUrl)
+    if (publicId) {
+      await deleteCloudinaryImage(publicId)
+    }
+    const updatedSelected = (selectedProduct.value.selectedImages || []).filter(url => url !== imageUrl)
+    const updatedAll = (selectedProduct.value.allAvailableImages || []).filter(url => url !== imageUrl)
+    await updateProductImages(selectedProduct.value.id, updatedSelected, updatedAll)
+    selectedProduct.value.selectedImages = updatedSelected
+    selectedProduct.value.allAvailableImages = updatedAll
+    tempSelectedImages.value = tempSelectedImages.value.filter(url => url !== imageUrl)
+    availableImages.value = availableImages.value.filter(url => url !== imageUrl)
+    toast.success('Imagen eliminada')
+  } catch (error) {
+    console.error('Error deleting image:', error)
+    toast.error('No pudimos eliminar la imagen')
+  } finally {
+    delete modalDeletionState[deletionKey]
+  }
 }
 
 const openCreateProductModal = () => {

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-11-18T13:44:06.046Z",
+  "lastUpdated": "2025-11-18T14:20:27.178Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -1790,26 +1790,18 @@
     },
     "team-psv_gk_short": {
       "id": "team-psv_gk_short",
-      "name": "PSV GK Shorts",
+      "name": "PSV GK Short",
       "slug": "psv-gk-short",
       "description": "Official PSV Eindhoven goalkeeper shorts from Eredivisie",
       "price": 30,
       "category": "eredivisie",
       "selectedImages": [
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168136/cruzar-deportes/products/eredivisie/psv_gk_short/d8utktpvgrrpdrq5cv8m.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168142/cruzar-deportes/products/eredivisie/psv_gk_short/y8x8xpztri87m0nsddgm.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168144/cruzar-deportes/products/eredivisie/psv_gk_short/b5apd0xnr0nvlhn8eqbe.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168145/cruzar-deportes/products/eredivisie/psv_gk_short/fxhmccdosh7ewvrfiwk7.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168145/cruzar-deportes/products/eredivisie/psv_gk_short/nuczhpuxcipcuyrhkk3y.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168136/cruzar-deportes/products/eredivisie/psv_gk_short/d8utktpvgrrpdrq5cv8m.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168142/cruzar-deportes/products/eredivisie/psv_gk_short/y8x8xpztri87m0nsddgm.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168144/cruzar-deportes/products/eredivisie/psv_gk_short/b5apd0xnr0nvlhn8eqbe.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168145/cruzar-deportes/products/eredivisie/psv_gk_short/fxhmccdosh7ewvrfiwk7.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168145/cruzar-deportes/products/eredivisie/psv_gk_short/nuczhpuxcipcuyrhkk3y.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168147/cruzar-deportes/products/eredivisie/psv_gk_short/s4jkwhxyo9od9ii2mrik.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168149/cruzar-deportes/products/eredivisie/psv_gk_short/nffjkbcqxxkzgyn2xzam.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1758168136/cruzar-deportes/products/eredivisie/psv_gk_short/d8utktpvgrrpdrq5cv8m.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/eredivisie/psv_gk_short",
       "sizes": [
@@ -1826,10 +1818,11 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-09-30T20:53:28.588Z",
-      "isProcessed": false,
+      "lastModified": "2025-11-18T14:20:27.178Z",
       "createdAt": "2025-09-29T03:33:53.362Z",
-      "createdBy": "system"
+      "createdBy": "system",
+      "isProcessed": false,
+      "originalPrice": 0
     },
     "team-psv_kid_kit": {
       "id": "team-psv_kid_kit",
@@ -17899,7 +17892,7 @@
   },
   "metadata": {
     "totalProducts": 332,
-    "totalImages": 1438,
-    "lastSync": "2025-11-18T13:44:06.046Z"
+    "totalImages": 1435,
+    "lastSync": "2025-11-18T14:20:27.178Z"
   }
 }
