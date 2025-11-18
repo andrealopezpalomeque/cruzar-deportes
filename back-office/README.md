@@ -84,7 +84,7 @@ npm run dev
 - Skeleton loaders for better UX
 
 ### 💰 Product Management
-- Product creation wizard with folder-aware Cloudinary image selection
+- Product creation wizard with automatic Cloudinary folder generation and quick image selection
 - Individual and bulk pricing updates
 - Contextual bulk actions surfaced directly in la vista de productos (selección múltiple)
 - Featured product management

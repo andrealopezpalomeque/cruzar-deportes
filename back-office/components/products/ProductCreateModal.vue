@@ -120,34 +120,22 @@
               </div>
             </div>
 
-            <div class="grid gap-4 md:grid-cols-2">
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Categoría</label>
-                <select
-                  v-model="form.category"
-                  class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
-                  :disabled="isSaving"
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Categoría</label>
+              <select
+                v-model="form.category"
+                class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
+                :disabled="isSaving"
+              >
+                <option disabled value="">Selecciona una categoría</option>
+                <option
+                  v-for="option in categoryOptions"
+                  :key="option.value"
+                  :value="option.value"
                 >
-                  <option disabled value="">Selecciona una categoría</option>
-                  <option
-                    v-for="option in categoryOptions"
-                    :key="option.value"
-                    :value="option.value"
-                  >
-                    {{ option.label }}
-                  </option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Subcategoría (opcional)</label>
-                <input
-                  v-model.trim="form.subcategory"
-                  type="text"
-                  class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
-                  placeholder="Kids, Player version, Retro..."
-                  :disabled="isSaving"
-                />
-              </div>
+                  {{ option.label }}
+                </option>
+              </select>
             </div>
           </section>
 
@@ -211,146 +199,26 @@
             </div>
           </section>
 
-          <!-- Attributes -->
-          <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 space-y-6">
-            <div>
-              <p class="text-xs uppercase font-semibold text-gray-400">Variantes</p>
-              <h3 class="text-lg font-semibold text-gray-900">Talles y variantes de color</h3>
-            </div>
-
-            <div class="space-y-3">
-              <div class="flex items-center justify-between">
-                <p class="text-sm font-semibold text-gray-900">Talles disponibles</p>
-                <span class="text-xs text-gray-500">{{ form.sizes.length }} seleccionados</span>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <button
-                  v-for="size in sizeOptions"
-                  :key="size"
-                  type="button"
-                  class="px-3 py-1.5 rounded-full border text-sm transition-colors"
-                  :class="form.sizes.includes(size) ? 'bg-gray-900 text-white border-gray-900' : 'bg-white text-gray-700 border-gray-200 hover:border-gray-300'"
-                  @click="toggleSize(size)"
-                >
-                  {{ size }}
-                </button>
-              </div>
-              <div class="flex items-center gap-2">
-                <input
-                  v-model="newSizeInput"
-                  type="text"
-                  placeholder="Agregar otro talle..."
-                  class="flex-1 rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-900"
-                  :disabled="isSaving"
-                />
-                <button
-                  type="button"
-                  class="inline-flex items-center gap-1.5 rounded-xl border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100"
-                  @click="addCustomSize"
-                >
-                  <IconPlus class="w-4 h-4" />
-                  Agregar
-                </button>
-              </div>
-            </div>
-
-            <div class="space-y-3">
-              <div class="flex items-center justify-between">
-                <p class="text-sm font-semibold text-gray-900">Variantes de color</p>
-                <span class="text-xs text-gray-500">{{ form.colors.length }} seleccionados</span>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <button
-                  v-for="color in colorOptions"
-                  :key="color"
-                  type="button"
-                  class="px-3 py-1.5 rounded-full border text-sm transition-colors"
-                  :class="form.colors.includes(color) ? 'bg-gray-900 text-white border-gray-900' : 'bg-white text-gray-700 border-gray-200 hover:border-gray-300'"
-                  @click="toggleColor(color)"
-                >
-                  {{ color }}
-                </button>
-              </div>
-              <div class="flex items-center gap-2">
-                <input
-                  v-model="newColorInput"
-                  type="text"
-                  placeholder="Agregar otra variante..."
-                  class="flex-1 rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-900"
-                  :disabled="isSaving"
-                />
-                <button
-                  type="button"
-                  class="inline-flex items-center gap-1.5 rounded-xl border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100"
-                  @click="addCustomColor"
-                >
-                  <IconPlus class="w-4 h-4" />
-                  Agregar
-                </button>
-              </div>
-            </div>
-          </section>
-
           <!-- Cloudinary -->
           <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 space-y-5">
-            <div class="flex items-center justify-between">
-              <div>
-                <p class="text-xs uppercase font-semibold text-gray-400">Imágenes</p>
-                <h3 class="text-lg font-semibold text-gray-900">Seleccioná la carpeta y las fotos</h3>
-              </div>
-              <button
-                type="button"
-                class="inline-flex items-center gap-2 rounded-xl border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100"
-                @click="refreshFolders"
-                :disabled="loadingFolders"
-              >
-                <IconRefresh class="w-4 h-4" :class="loadingFolders ? 'animate-spin' : ''" />
-                Actualizar
-              </button>
+            <div>
+              <p class="text-xs uppercase font-semibold text-gray-400">Imágenes</p>
+              <h3 class="text-lg font-semibold text-gray-900">La carpeta se generará automáticamente</h3>
+              <p class="text-sm text-gray-500 mt-1">
+                Usamos la categoría seleccionada y el nombre del producto para crear una nueva carpeta en Cloudinary.
+              </p>
             </div>
 
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Carpeta de Cloudinary</label>
-              <div v-if="cloudinaryUnavailable" class="space-y-2">
-                <input
-                  v-model="form.cloudinaryFolderPath"
-                  type="text"
-                  class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
-                  placeholder="cruzar-deportes/products/categoria/nuevo-equipo"
-                  :disabled="isSaving"
-                />
-                <p class="text-xs text-amber-600">
-                  {{ cloudinaryFoldersError || 'Cloudinary no está configurado en este entorno. Ingresa la ruta manualmente y pega las URLs de las imágenes.' }}
-                </p>
-              </div>
-              <div v-else class="relative">
-                <select
-                  v-model="form.cloudinaryFolderPath"
-                  class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
-                  :disabled="loadingFolders || isSaving || folders.length === 0"
-                  @change="handleFolderChange"
-                >
-                  <option value="" disabled>Selecciona una carpeta</option>
-                  <optgroup
-                    v-for="group in folderGroups"
-                    :key="group.key"
-                    :label="group.label"
-                  >
-                    <option
-                      v-for="folder in group.folders"
-                      :key="folder.path"
-                      :value="folder.path"
-                    >
-                      {{ folder.label }}
-                    </option>
-                  </optgroup>
-                </select>
-                <div v-if="loadingFolders" class="absolute inset-y-0 right-3 flex items-center">
-                  <IconLoading class="w-5 h-5 text-blue-500 animate-spin" />
-                </div>
-              </div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Ruta generada</label>
+              <input
+                :value="generatedFolderPath"
+                type="text"
+                readonly
+                class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none"
+              />
               <p class="text-xs text-gray-500 mt-1">
-                {{ cloudinaryUnavailable ? 'Ejemplo: cruzar-deportes/products/lpf_afa/boca' : 'Solo se listan carpetas bajo cruzar-deportes/' }}
+                Se creará automáticamente en Cloudinary al guardar.
               </p>
             </div>
 
@@ -401,20 +269,16 @@
                 <span class="text-xs text-gray-500">{{ availableImages.length }} encontradas</span>
               </div>
 
-              <div v-if="folderImagesLoading" class="flex items-center justify-center rounded-xl border border-dashed border-gray-200 py-8">
-                <IconLoading class="w-8 h-8 text-blue-500 animate-spin" />
-              </div>
-
               <div
-                v-else-if="!cloudinaryUnavailable && form.cloudinaryFolderPath && availableImages.length === 0"
+                v-if="availableImages.length === 0"
                 class="flex flex-col items-center justify-center rounded-xl border border-dashed border-gray-200 py-8 text-center text-gray-500"
               >
                 <IconImageOff class="w-10 h-10 mb-2 text-gray-400" />
-                No encontramos imágenes en esta carpeta.
+                Aún no agregaste imágenes. Pegá URLs en los campos superiores.
               </div>
 
               <div
-                v-else-if="availableImages.length"
+                v-else
                 class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3"
               >
                 <button
@@ -522,7 +386,6 @@ import IconImageOff from '~icons/mdi/image-off'
 import IconCheck from '~icons/mdi/check'
 import IconChevronUp from '~icons/mdi/chevron-up'
 import IconChevronDown from '~icons/mdi/chevron-down'
-import IconRefresh from '~icons/mdi/refresh'
 import IconPlus from '~icons/mdi/plus'
 import IconLoading from '~icons/eos-icons/loading'
 import { slugify, buildProductIdFromSlug } from '~/utils/slugify'
@@ -549,11 +412,10 @@ const props = defineProps({
 const emit = defineEmits(['close', 'created'])
 
 const { saveProduct } = useSharedProducts()
-const { getFolders, getFolderImages } = useCloudinary()
 const toast = useToast()
 
-const sizeOptions = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
-const colorOptions = ['Home', 'Away', 'Third', 'Goalkeeper', 'Alternate']
+const DEFAULT_SIZES = ['S', 'M', 'L', 'XL', 'XXL']
+const DEFAULT_COLORS = ['Home', 'Away']
 
 const form = reactive({
   name: '',
@@ -562,98 +424,39 @@ const form = reactive({
   price: '',
   originalPrice: '',
   category: '',
-  subcategory: '',
-  colors: [...colorOptions.slice(0, 2)],
-  sizes: [...sizeOptions.slice(1)],
   inStock: true,
   stockStatus: 'in_stock',
   featured: false,
-  cloudinaryFolderPath: '',
   selectedImages: [],
   allAvailableImages: []
 })
 
 const availableImages = ref([])
-const folders = ref([])
-const loadingFolders = ref(false)
-const folderImagesLoading = ref(false)
 const isSaving = ref(false)
 const slugEdited = ref(false)
-const foldersLoaded = ref(false)
-const newSizeInput = ref('')
-const newColorInput = ref('')
 const manualImageUrl = ref('')
 const bulkImagesInput = ref('')
-const cloudinaryUnavailable = ref(false)
-const cloudinaryFoldersError = ref('')
 
 const categoryOptions = computed(() => props.categories.filter(option => option.value))
-const categoryOrder = computed(() => {
-  const orderMap = new Map()
-  categoryOptions.value.forEach((option, index) => {
-    orderMap.set(option.value, index)
-  })
-  return orderMap
-})
 const firstCategoryValue = computed(() => categoryOptions.value[0]?.value || '')
 
 const normalizedExistingSlugs = computed(() => props.existingSlugs.map(slug => (slug || '').toString().toLowerCase()).filter(Boolean))
 const existingIdsSet = computed(() => new Set(props.existingIds || []))
-
-const folderMetaMap = computed(() => {
-  const records = new Map()
-  for (const folder of folders.value) {
-    records.set(folder.path, parseFolderMeta(folder.path, folder.name))
-  }
-  return records
-})
-
-const folderGroups = computed(() => {
-  if (folders.value.length === 0) {
-    return []
+const generatedFolderPath = computed(() => {
+  if (!form.category) {
+    return ''
   }
 
-  const groups = new Map()
-  for (const folder of folders.value) {
-    const meta = folderMetaMap.value.get(folder.path) || { category: 'otros', teamName: folder.name }
-    const categoryKey = categoryOrder.value.has(meta.category) ? meta.category : 'otros'
-    const label = categoryKey === 'otros'
-      ? 'Otros'
-      : (categoryOptions.value.find(option => option.value === categoryKey)?.label || meta.category)
+  const normalizedSlug = slugify(form.slug || form.name)
+  const fallbackSlug = normalizedSlug || slugify(form.name) || 'nuevo-producto'
+  const folderSegment = fallbackSlug.replace(/-/g, '_')
 
-    if (!groups.has(categoryKey)) {
-      groups.set(categoryKey, {
-        key: categoryKey,
-        label,
-        folders: []
-      })
-    }
-
-    groups.get(categoryKey).folders.push({
-      path: folder.path,
-      label: prettifyName(meta.teamName || folder.name)
-    })
-  }
-
-  return Array.from(groups.values())
-    .map(group => ({
-      ...group,
-      folders: group.folders.sort((a, b) => a.label.localeCompare(b.label))
-    }))
-    .sort((a, b) => {
-      const orderA = categoryOrder.value.get(a.key) ?? Number.MAX_SAFE_INTEGER
-      const orderB = categoryOrder.value.get(b.key) ?? Number.MAX_SAFE_INTEGER
-      if (orderA === orderB) {
-        return a.label.localeCompare(b.label)
-      }
-      return orderA - orderB
-    })
+  return `cruzar-deportes/products/${form.category}/${folderSegment}`
 })
 
 watch(() => props.show, (visible) => {
   if (visible) {
     resetForm()
-    ensureFoldersLoaded()
   } else {
     availableImages.value = []
   }
@@ -671,35 +474,6 @@ watch(() => form.slug, (value) => {
   }
 })
 
-const ensureFoldersLoaded = async () => {
-  if (foldersLoaded.value || loadingFolders.value || cloudinaryUnavailable.value) {
-    return
-  }
-
-  try {
-    loadingFolders.value = true
-    const fetched = await getFolders()
-    folders.value = Array.isArray(fetched) ? fetched : []
-    foldersLoaded.value = true
-    cloudinaryUnavailable.value = false
-    cloudinaryFoldersError.value = ''
-  } catch (error) {
-    console.error('No se pudieron cargar las carpetas de Cloudinary:', error)
-    toast.error('No pudimos listar las carpetas de Cloudinary')
-    cloudinaryUnavailable.value = true
-    cloudinaryFoldersError.value = error?.message || 'Verifica las variables CLOUDINARY_* en tu entorno.'
-  } finally {
-    loadingFolders.value = false
-  }
-}
-
-const refreshFolders = async () => {
-  cloudinaryUnavailable.value = false
-  cloudinaryFoldersError.value = ''
-  foldersLoaded.value = false
-  await ensureFoldersLoaded()
-}
-
 const resetForm = () => {
   form.name = ''
   form.slug = ''
@@ -707,19 +481,13 @@ const resetForm = () => {
   form.price = ''
   form.originalPrice = ''
   form.category = firstCategoryValue.value
-  form.subcategory = ''
-  form.colors = [...colorOptions.slice(0, 2)]
-  form.sizes = [...sizeOptions.slice(1)]
   form.inStock = true
   form.stockStatus = 'in_stock'
   form.featured = false
-  form.cloudinaryFolderPath = ''
   form.selectedImages = []
   form.allAvailableImages = []
   availableImages.value = []
   slugEdited.value = false
-  newSizeInput.value = ''
-  newColorInput.value = ''
   manualImageUrl.value = ''
   bulkImagesInput.value = ''
 }
@@ -733,135 +501,6 @@ const handleSlugBlur = () => {
     form.slug = slugify(form.name)
     slugEdited.value = false
   }
-}
-
-const parseFolderMeta = (path, fallbackName) => {
-  const segments = path.split('/').filter(Boolean)
-
-  if (segments.length >= 4 && segments[1] === 'products') {
-    return {
-      category: segments[2],
-      teamName: segments[3],
-      folderName: fallbackName
-    }
-  }
-
-  if (segments.length >= 3) {
-    return {
-      category: segments[1],
-      teamName: segments[2],
-      folderName: fallbackName
-    }
-  }
-
-  return {
-    category: '',
-    teamName: fallbackName,
-    folderName: fallbackName
-  }
-}
-
-const prettifyName = (value) => {
-  if (!value) return ''
-  return value
-    .replace(/[-_]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ')
-}
-
-const handleFolderChange = async () => {
-  if (!form.cloudinaryFolderPath) {
-    availableImages.value = []
-    form.selectedImages = []
-    form.allAvailableImages = []
-    return
-  }
-
-  const meta = folderMetaMap.value.get(form.cloudinaryFolderPath)
-  if (meta?.category) {
-    form.category = meta.category
-  }
-  if (!form.name && meta?.teamName) {
-    form.name = prettifyName(meta.teamName)
-  }
-  if (!slugEdited.value) {
-    form.slug = slugify(form.name || meta?.teamName || '')
-  }
-
-  await loadImagesForFolder(form.cloudinaryFolderPath)
-}
-
-const loadImagesForFolder = async (folderPath) => {
-  if (!folderPath) {
-    return
-  }
-  if (cloudinaryUnavailable.value) {
-    toast.info('Cloudinary no está disponible, agrega las imágenes manualmente')
-    return
-  }
-  try {
-    folderImagesLoading.value = true
-    const response = await getFolderImages(folderPath)
-    const urls = Array.isArray(response) ? response.map(asset => asset.secure_url) : []
-    availableImages.value = urls
-    form.allAvailableImages = [...urls]
-
-    if (urls.length > 0) {
-      const filteredSelection = form.selectedImages.filter(url => urls.includes(url))
-      form.selectedImages = filteredSelection.length > 0
-        ? filteredSelection
-        : urls.slice(0, Math.min(urls.length, 5))
-    } else {
-      form.selectedImages = []
-    }
-  } catch (error) {
-    console.error('Error al obtener imágenes de la carpeta', folderPath, error)
-    toast.error('No pudimos cargar las imágenes de esa carpeta')
-    availableImages.value = []
-    form.selectedImages = []
-    form.allAvailableImages = []
-  } finally {
-    folderImagesLoading.value = false
-  }
-}
-
-const toggleSize = (sizeValue) => {
-  const normalized = sizeValue.trim().toUpperCase()
-  if (!normalized) return
-  if (form.sizes.includes(normalized)) {
-    form.sizes = form.sizes.filter(size => size !== normalized)
-  } else {
-    form.sizes = [...form.sizes, normalized]
-  }
-}
-
-const addCustomSize = () => {
-  const normalized = newSizeInput.value.trim().toUpperCase()
-  if (normalized && !form.sizes.includes(normalized)) {
-    form.sizes = [...form.sizes, normalized]
-  }
-  newSizeInput.value = ''
-}
-
-const toggleColor = (colorValue) => {
-  const normalized = prettifyName(colorValue)
-  if (!normalized) return
-  if (form.colors.includes(normalized)) {
-    form.colors = form.colors.filter(color => color !== normalized)
-  } else {
-    form.colors = [...form.colors, normalized]
-  }
-}
-
-const addCustomColor = () => {
-  const normalized = prettifyName(newColorInput.value)
-  if (normalized && !form.colors.includes(normalized)) {
-    form.colors = [...form.colors, normalized]
-  }
-  newColorInput.value = ''
 }
 
 const isImageSelected = (imageUrl) => form.selectedImages.includes(imageUrl)
@@ -886,6 +525,9 @@ const addManualImage = () => {
   if (!form.selectedImages.includes(ensureHttps)) {
     form.selectedImages = [...form.selectedImages, ensureHttps]
   }
+  if (!form.allAvailableImages.includes(ensureHttps)) {
+    form.allAvailableImages = [...form.allAvailableImages, ensureHttps]
+  }
   manualImageUrl.value = ''
 }
 
@@ -899,6 +541,8 @@ const addBulkImages = () => {
   let updatedAvailable = [...availableImages.value]
   let updatedSelected = [...form.selectedImages]
 
+  const newAll = new Set(form.allAvailableImages)
+
   for (const entry of entries) {
     const normalized = entry.startsWith('http') ? entry : `https://${entry}`
     if (!updatedAvailable.includes(normalized)) {
@@ -907,10 +551,12 @@ const addBulkImages = () => {
     if (!updatedSelected.includes(normalized)) {
       updatedSelected.push(normalized)
     }
+    newAll.add(normalized)
   }
 
   availableImages.value = updatedAvailable
   form.selectedImages = updatedSelected
+  form.allAvailableImages = Array.from(newAll)
   bulkImagesInput.value = ''
 }
 
@@ -961,25 +607,17 @@ const validateForm = () => {
     return 'Seleccioná una categoría'
   }
 
+  if (!generatedFolderPath.value) {
+    return 'No pudimos generar la carpeta, verificá el nombre y la categoría'
+  }
+
   const price = parsePrice(form.price)
   if (price === null) {
     return 'Ingresá un precio válido'
   }
 
-  if (!form.cloudinaryFolderPath) {
-    return 'Seleccioná o ingresá una carpeta de Cloudinary'
-  }
-
   if (form.selectedImages.length === 0) {
     return 'Seleccioná al menos una imagen para mostrar'
-  }
-
-  if (form.sizes.length === 0) {
-    return 'El producto debe tener al menos un talle disponible'
-  }
-
-  if (form.colors.length === 0) {
-    return 'Definí al menos un color o variante'
   }
 
   const generatedId = buildProductIdFromSlug(normalizedSlug)
@@ -1009,14 +647,13 @@ const handleSubmit = async () => {
     price,
     originalPrice,
     category: form.category,
-    subcategory: form.subcategory?.trim() || undefined,
     selectedImages: [...form.selectedImages],
     allAvailableImages: form.allAvailableImages.length > 0
       ? [...new Set(form.allAvailableImages)]
       : [...form.selectedImages],
-    cloudinaryFolderPath: form.cloudinaryFolderPath,
-    sizes: [...form.sizes],
-    colors: [...form.colors],
+    cloudinaryFolderPath: generatedFolderPath.value,
+    sizes: [...DEFAULT_SIZES],
+    colors: [...DEFAULT_COLORS],
     inStock: form.inStock,
     stockStatus: form.stockStatus,
     featured: form.featured,
