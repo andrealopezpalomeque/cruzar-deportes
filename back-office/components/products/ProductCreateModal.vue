@@ -256,6 +256,7 @@
               </p>
             </div>
 
+            <!--
             <div class="space-y-3 rounded-xl border border-dashed border-gray-200 bg-white/60 p-4">
               <div>
                 <p class="text-sm font-semibold text-gray-900">Agregar imágenes manualmente</p>
@@ -300,6 +301,7 @@
                 </button>
               </div>
             </div>
+            -->
 
             <div class="space-y-3">
               <div class="flex items-center justify-between">
@@ -312,7 +314,7 @@
                 class="flex flex-col items-center justify-center rounded-xl border border-dashed border-gray-200 py-8 text-center text-gray-500"
               >
                 <IconImageOff class="w-10 h-10 mb-2 text-gray-400" />
-                Aún no agregaste imágenes. Pegá URLs en los campos superiores.
+                Aún no agregaste imágenes. Subilas desde tu computadora usando el botón superior.
               </div>
 
               <div

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-11-18T18:24:42.963Z",
+  "lastUpdated": "2025-11-18T19:32:56.804Z",
   "products": {
     "team-johor": {
       "id": "team-johor",
@@ -17660,19 +17660,10 @@
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890433/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_16_1762469367749_iw4ou2.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890298/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_13_1762469350304_y9v1d6.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890297/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_10_1762469331670_dvyoqi.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890433/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_20_1762469389341_qi4bno.jpg",
         "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890433/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_16_1762469367749_iw4ou2.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762891030/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_1_1762469272214_sum2n4.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890971/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_2_1762469281781_cigtz1.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890952/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_6_1762469310498_mqu24x.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890772/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_17_1762469371925_al5wyh.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890721/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_11_1762469337870_g4kdq6.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890652/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_8_1762469322380_ynnsqf.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890632/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_19_1762469383787_pywnad.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890556/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_15_1762469362606_qajoed.jpg",
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890429/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_12_1762469344820_wyqtp6.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890433/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_20_1762469389341_qi4bno.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890298/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_13_1762469350304_y9v1d6.jpg",
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1762890297/cruzar-deportes/products/basket/zalgiris/zalgiris_photo_img_10_1762469331670_dvyoqi.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/basket/zalgiris",
       "sizes": [
@@ -17689,7 +17680,7 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-11-18T18:07:29.948Z",
+      "lastModified": "2025-11-18T19:28:47.125Z",
       "createdAt": "2025-11-11T20:45:34.218Z",
       "createdBy": "system"
     },
@@ -17802,13 +17793,13 @@
       "name": "Ajax 2025/26 (tercera)",
       "slug": "ajax-2025-26-tercera",
       "description": "Ajax 2025/26 (tercera) - Conmemoración a los 750 años de Ámsterdam",
-      "price": 70000,
+      "price": 60000,
       "category": "eredivisie",
       "selectedImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1763473414/cruzar-deportes/products/eredivisie/ajax_2025_26_tercera/mjfkphytft1pwblmlufy.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1763494370/cruzar-deportes/products/eredivisie/ajax_2025_26_tercera/yihxgfxxxq7dltgr61yf.jpg"
       ],
       "allAvailableImages": [
-        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1763473414/cruzar-deportes/products/eredivisie/ajax_2025_26_tercera/mjfkphytft1pwblmlufy.jpg"
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1763494370/cruzar-deportes/products/eredivisie/ajax_2025_26_tercera/yihxgfxxxq7dltgr61yf.jpg"
       ],
       "cloudinaryFolderPath": "cruzar-deportes/products/eredivisie/ajax_2025_26_tercera",
       "sizes": [
@@ -17825,8 +17816,8 @@
       "inStock": true,
       "stockStatus": "in_stock",
       "featured": false,
-      "lastModified": "2025-11-18T13:44:06.046Z",
-      "createdAt": "2025-11-18T13:44:06.046Z",
+      "lastModified": "2025-11-18T19:32:56.804Z",
+      "createdAt": "2025-11-18T19:32:56.804Z",
       "createdBy": "admin"
     }
   },
@@ -17879,11 +17870,355 @@
       "slug": "basket",
       "productCount": 94,
       "lastModified": "2025-11-11T20:45:30.433Z"
+    },
+    "national_tracksuits": {
+      "id": "national_tracksuits",
+      "name": "NATIONAL TRACKSUITS",
+      "slug": "national_tracksuits",
+      "description": "CHANDAL SELECCIONES",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "national_kid_tracksuits": {
+      "id": "national_kid_tracksuits",
+      "name": "|NATIONAL KID TRACKSUITS",
+      "slug": "national_kid_tracksuits",
+      "description": "CHANDAL NIÑO SELECCIONE",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "national_training_suits": {
+      "id": "national_training_suits",
+      "name": "|NATIONAL TRAINING SUITS",
+      "slug": "national_training_suits",
+      "description": "CHANDAL ENTRENO SELECCI",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "national_polos": {
+      "id": "national_polos",
+      "name": "NATIONAL POLOS",
+      "slug": "national_polos",
+      "description": "POLOS SELECCIONES",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "national_training": {
+      "id": "national_training",
+      "name": "NATIONAL TRAINING",
+      "slug": "national_training",
+      "description": "ENTRENAMIENTO SELECCIONES",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "club_tracksuit": {
+      "id": "club_tracksuit",
+      "name": "CLUB TRACKSUIT",
+      "slug": "club_tracksuit",
+      "description": "CHANDAL EQUIPO",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "club_training_suits": {
+      "id": "club_training_suits",
+      "name": "CLUB TRAINING SUITS",
+      "slug": "club_training_suits",
+      "description": "CHANDAL ENTRENO EQUIPOS",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "club_kid_tracksuits": {
+      "id": "club_kid_tracksuits",
+      "name": "CLUB KID TRACKSUITS",
+      "slug": "club_kid_tracksuits",
+      "description": "CHANDAL NIÑO EQUIPOS",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "club_polos": {
+      "id": "club_polos",
+      "name": "CLUB POLOS",
+      "slug": "club_polos",
+      "description": "POLOS EQUIPOS",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "club_training": {
+      "id": "club_training",
+      "name": "CLUB TRAINING",
+      "slug": "club_training",
+      "description": "ENTRENAMIENTO EQUIPOS",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "baby": {
+      "id": "baby",
+      "name": "BABY",
+      "slug": "baby",
+      "description": "BEBÉ",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "meiji_yasuda_j1_league": {
+      "id": "meiji_yasuda_j1_league",
+      "name": "MEIJI YASUDA J1 LEAGUE",
+      "slug": "meiji_yasuda_j1_league",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "conmebol_concacaf": {
+      "id": "conmebol_concacaf",
+      "name": "CONMEBOL - CONCACAF",
+      "slug": "conmebol_concacaf",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "liga_bbva_mx_liga_expansion_mx": {
+      "id": "liga_bbva_mx_liga_expansion_mx",
+      "name": "LIGA BBVA MX - LIGA EXPANSION MX",
+      "slug": "liga_bbva_mx_liga_expansion_mx",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "brasileiro_betano": {
+      "id": "brasileiro_betano",
+      "name": "BRASILEIRÃO BETANO",
+      "slug": "brasileiro_betano",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "mls": {
+      "id": "mls",
+      "name": "MLS",
+      "slug": "mls",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "uefa": {
+      "id": "uefa",
+      "name": "UEFA",
+      "slug": "uefa",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "liga_portugal_betclic": {
+      "id": "liga_portugal_betclic",
+      "name": "LIGA PORTUGAL BETCLIC",
+      "slug": "liga_portugal_betclic",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "ligue1_mcdonalds": {
+      "id": "ligue1_mcdonalds",
+      "name": "LIGUE1 MCDONALDS",
+      "slug": "ligue1_mcdonalds",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "bundesliga": {
+      "id": "bundesliga",
+      "name": "BUNDESLIGA",
+      "slug": "bundesliga",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "laliga_ea_sports_hypermotion": {
+      "id": "laliga_ea_sports_hypermotion",
+      "name": "LALIGA EA SPORTS - HYPERMOTION",
+      "slug": "laliga_ea_sports_hypermotion",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "club_retro": {
+      "id": "club_retro",
+      "name": "CLUB RETRO",
+      "slug": "club_retro",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "special_edition": {
+      "id": "special_edition",
+      "name": "SPECIAL EDITION",
+      "slug": "special_edition",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "links": {
+      "id": "links",
+      "name": "LINKS",
+      "slug": "links",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "contact_information": {
+      "id": "contact_information",
+      "name": "ℹ️ CONTACT INFORMATION",
+      "slug": "contact_information",
+      "description": "INFORMACION DE CONTACTO",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "premier_league_championship": {
+      "id": "premier_league_championship",
+      "name": "PREMIER LEAGUE - CHAMPIONSHIP",
+      "slug": "premier_league_championship",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "asia": {
+      "id": "asia",
+      "name": "ASIA",
+      "slug": "asia",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "club_jackets": {
+      "id": "club_jackets",
+      "name": "CLUB JACKETS",
+      "slug": "club_jackets",
+      "description": "CHAQUETAS EQUIPOS",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "national_jackets": {
+      "id": "national_jackets",
+      "name": "NATIONAL JACKETS",
+      "slug": "national_jackets",
+      "description": "CHAQUETAS SLECCIONES",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "africa": {
+      "id": "africa",
+      "name": "AFRICA",
+      "slug": "africa",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "measures_and_news": {
+      "id": "measures_and_news",
+      "name": "MEASURES AND NEWS",
+      "slug": "measures_and_news",
+      "description": "MEDIDAS Y NOVEDADES",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "socks": {
+      "id": "socks",
+      "name": "SOCKS",
+      "slug": "socks",
+      "description": "MEDIAS",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "coats": {
+      "id": "coats",
+      "name": "COATS",
+      "slug": "coats",
+      "description": "PLUMAS",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "f1": {
+      "id": "f1",
+      "name": "F1",
+      "slug": "f1",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "vest": {
+      "id": "vest",
+      "name": "VEST",
+      "slug": "vest",
+      "description": "PETOS",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "training_sets": {
+      "id": "training_sets",
+      "name": "TRAINING SETS",
+      "slug": "training_sets",
+      "description": "SETS ENTRENAMIENTO",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "kings_league": {
+      "id": "kings_league",
+      "name": "KINGS LEAGUE",
+      "slug": "kings_league",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "medals": {
+      "id": "medals",
+      "name": "MEDALS",
+      "slug": "medals",
+      "description": "MEDALLAS",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "rsl": {
+      "id": "rsl",
+      "name": "RSL",
+      "slug": "rsl",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "reversible_jakcet": {
+      "id": "reversible_jakcet",
+      "name": "REVERSIBLE JAKCET",
+      "slug": "reversible_jakcet",
+      "description": "CHAQUETAS REVERSIBLES",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "vest_sets": {
+      "id": "vest_sets",
+      "name": "VEST SETS",
+      "slug": "vest_sets",
+      "description": "CONJUNTOS PETOS",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "america": {
+      "id": "america",
+      "name": "AMERICA",
+      "slug": "america",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "europe": {
+      "id": "europe",
+      "name": "EUROPE",
+      "slug": "europe",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "2025_euro_female": {
+      "id": "2025_euro_female",
+      "name": "2025 EURO FEMALE",
+      "slug": "2025_euro_female",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "25_26_fake": {
+      "id": "25_26_fake",
+      "name": "25-26 FAKE",
+      "slug": "25_26_fake",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
+    },
+    "25_26_ok": {
+      "id": "25_26_ok",
+      "name": "25-26 OK",
+      "slug": "25_26_ok",
+      "productCount": 0,
+      "lastModified": "2025-11-18T18:58:22.733Z"
     }
   },
   "metadata": {
     "totalProducts": 332,
     "totalImages": 1434,
-    "lastSync": "2025-11-18T18:24:42.963Z"
+    "lastSync": "2025-11-18T19:32:56.804Z"
   }
 }
