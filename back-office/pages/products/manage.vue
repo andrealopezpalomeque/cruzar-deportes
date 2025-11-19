@@ -999,10 +999,30 @@ const isDropdownOpen = ref(false)
 const showCreateProductModal = ref(false)
 
 // Category options
-const categories = ref([
-  { value: '', label: 'Todas las categorías', productCount: 0 }
-])
-const categoriesLoading = ref(false)
+const STATIC_CATEGORY_OPTIONS = [
+  { value: '', label: 'Todas las categorías', productCount: 0 },
+  { value: 'afc', label: '🇰🇷 AFC', productCount: 0 },
+  { value: 'basket', label: '🏀 BASKET', productCount: 0 },
+  { value: 'brasileiro_betano', label: '🇧🇷 BRASILEIRÃO BETANO', productCount: 0 },
+  { value: 'bundesliga', label: '🇩🇪 BUNDESLIGA', productCount: 0 },
+  { value: 'caf', label: '🇿🇦 CAF', productCount: 0 },
+  { value: 'club_retro', label: 'CLUB RETRO', productCount: 0 },
+  { value: 'conmebol_concacaf', label: '🇨🇴 CONMEBOL - CONCACAF', productCount: 0 },
+  { value: 'eredivisie', label: '🇳🇱 EREDIVISIE', productCount: 0 },
+  { value: 'f1', label: '🏎️ F1', productCount: 0 },
+  { value: 'kings_league', label: '👑 KINGS LEAGUE', productCount: 0 },
+  { value: 'laliga_ea_sports_hypermotion', label: '🇪🇸 LALIGA EA SPORTS - HYPERMOTION', productCount: 0 },
+  { value: 'liga_bbva_mx_liga_expansion_mx', label: '🇲🇽 LIGA BBVA MX - LIGA EXPANSION MX', productCount: 0 },
+  { value: 'liga_portugal_betclic', label: '🇵🇹 LIGA PORTUGAL BETCLIC', productCount: 0 },
+  { value: 'ligue1_mcdonalds', label: '🇫🇷 LIGUE1 MCDONALDS', productCount: 0 },
+  { value: 'lpf_afa', label: '🇦🇷 LPF AFA', productCount: 0 },
+  { value: 'mls', label: '🇺🇸 MLS', productCount: 0 },
+  { value: 'national_retro', label: 'NATIONAL RETRO', productCount: 0 },
+  { value: 'rsl', label: '🇸🇦 RSL', productCount: 0 },
+  { value: 'serie_a_enilive', label: '🇮🇹 SERIE A ENILIVE', productCount: 0 },
+  { value: 'uefa', label: '🇪🇺 UEFA', productCount: 0 }
+]
+const categories = ref([...STATIC_CATEGORY_OPTIONS])
 
 // Pagination state
 const currentPage = ref(1)
@@ -2035,36 +2055,9 @@ watch([selectedCategory, searchTerm], async () => {
   isTransitioning.value = false
 })
 
-const loadAvailableCategories = async () => {
-  try {
-    categoriesLoading.value = true
-    const response = await $fetch('/api/categories')
-    if (response.success && Array.isArray(response.data)) {
-      const normalized = response.data.map((category) => ({
-        value: category.slug,
-        label: category.label,
-        productCount: category.productCount,
-        emoji: category.emoji || null
-      }))
-      categories.value = [
-        { value: '', label: 'Todas las categorías', productCount: 0 },
-        ...normalized
-      ]
-    } else if (response.error) {
-      throw new Error(response.error)
-    }
-  } catch (err) {
-    console.error('Error loading categories:', err)
-    toast.error('No pudimos cargar las categorías disponibles')
-  } finally {
-    categoriesLoading.value = false
-  }
-}
-
 // Lifecycle
 onMounted(() => {
   loadAllProducts()
-  loadAvailableCategories()
 })
 </script>
 

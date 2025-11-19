@@ -3,7 +3,7 @@ import { join } from 'path'
 import { fileURLToPath } from 'url'
 import os from 'os'
 import type { ProductDatabase, SharedProduct, CategoryType, SharedCategory } from '../types'
-import { loadAvailableCategories } from './categoryLoader.ts'
+import { loadAvailableCategories, HARDCODED_AVAILABLE_CATEGORIES } from './categoryLoader.ts'
 
 let admin: typeof import('firebase-admin') | null = null
 let adminInitialized = false
@@ -204,25 +204,36 @@ const getStorageContext = async (): Promise<StorageContext | null> => {
 }
 
 // Initialize empty database structure
-const createEmptyDatabase = (): ProductDatabase => ({
-  version: '1.0.0',
-  lastUpdated: new Date().toISOString(),
-  products: {},
-  categories: {
-    afc: { id: 'afc', name: 'Equipos AFC', slug: 'afc', productCount: 0, lastModified: new Date().toISOString() },
-    caf: { id: 'caf', name: 'Equipos CAF', slug: 'caf', productCount: 0, lastModified: new Date().toISOString() },
-    eredivisie: { id: 'eredivisie', name: 'Equipos Eredivisie', slug: 'eredivisie', productCount: 0, lastModified: new Date().toISOString() },
-    lpf_afa: { id: 'lpf_afa', name: 'Liga Profesional Argentina', slug: 'lpf_afa', productCount: 0, lastModified: new Date().toISOString() },
-    serie_a_enilive: { id: 'serie_a_enilive', name: 'Serie A Enilive', slug: 'serie_a_enilive', productCount: 0, lastModified: new Date().toISOString() },
-    national_retro: { id: 'national_retro', name: 'Camisetas Retro Selecciones', slug: 'national_retro', productCount: 0, lastModified: new Date().toISOString() },
-    basket: { id: 'basket', name: 'Equipos de Básquet', slug: 'basket', productCount: 0, lastModified: new Date().toISOString() }
-  },
-  metadata: {
-    totalProducts: 0,
-    totalImages: 0,
-    lastSync: new Date().toISOString()
+const createEmptyDatabase = (): ProductDatabase => {
+  const timestamp = new Date().toISOString()
+  const categories: Record<CategoryType, SharedCategory> = HARDCODED_AVAILABLE_CATEGORIES.reduce(
+    (acc, category) => {
+      const slug = category.slug as CategoryType
+      acc[slug] = {
+        id: slug,
+        name: category.name,
+        slug,
+        description: category.nameEs || undefined,
+        productCount: 0,
+        lastModified: timestamp
+      }
+      return acc
+    },
+    {} as Record<CategoryType, SharedCategory>
+  )
+
+  return {
+    version: '1.0.0',
+    lastUpdated: timestamp,
+    products: {},
+    categories,
+    metadata: {
+      totalProducts: 0,
+      totalImages: 0,
+      lastSync: timestamp
+    }
   }
-})
+}
 
 const ensureCategoryRegistry = async (
   database: ProductDatabase,
