@@ -43,14 +43,25 @@
           Talla
           <span class="text-red-700">*</span>
         </label>
-        <input
-          v-model="selectedSize"
-          type="text"
-          placeholder="Ej: L, XL, 42, etc."
-          class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
-        />
+        <div class="relative">
+          <select
+            v-model="selectedSize"
+            class="w-full px-4 py-3.5 pr-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black bg-white appearance-none cursor-pointer hover:border-gray-400 transition-colors text-base font-medium text-gray-900"
+            :class="{ 'text-gray-500': !selectedSize }"
+          >
+            <option value="" disabled>Selecciona una talla</option>
+            <option value="S" class="text-gray-900 font-medium py-2">S - Small</option>
+            <option value="M" class="text-gray-900 font-medium py-2">M - Medium</option>
+            <option value="L" class="text-gray-900 font-medium py-2">L - Large</option>
+            <option value="XL" class="text-gray-900 font-medium py-2">XL - Extra Large</option>
+            <option value="2XL" class="text-gray-900 font-medium py-2">2XL - Double XL</option>
+            <option value="3XL" class="text-gray-900 font-medium py-2">3XL - Triple XL</option>
+            <option value="4XL" class="text-gray-900 font-medium py-2">4XL - Quad XL</option>
+          </select>
+          <IconChevronDown class="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-600 pointer-events-none" />
+        </div>
         <p class="text-sm text-gray-700 mt-2">
-          Especifica la talla que necesitas (letras o números)
+          Selecciona la talla que necesitas
         </p>
       </div>
 
@@ -196,6 +207,7 @@ import IconShieldCheck from '~icons/mdi/shield-check'
 import IconTruck from '~icons/mdi/truck'
 import IconRefresh from '~icons/mdi/refresh'
 import IconMedal from '~icons/mdi/medal'
+import IconChevronDown from '~icons/mdi/chevron-down'
 import IconBuildingBank from '~icons/heroicons/building-library'
 import { formatArs } from '~/shared/utils/currency'
 
