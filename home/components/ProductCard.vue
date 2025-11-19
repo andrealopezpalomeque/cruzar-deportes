@@ -95,21 +95,6 @@
         </button>
       </div>
 
-      <!-- Stock Status -->
-      <div
-        v-if="product.inStock"
-        class="inline-flex items-center gap-1.5 text-xs text-green-700"
-      >
-        <IconCheckCircle class="h-3.5 w-3.5" />
-        <span>En stock</span>
-      </div>
-      <div
-        v-else
-        class="inline-flex items-center gap-1.5 text-xs text-amber-700"
-      >
-        <IconClockOutline class="h-3.5 w-3.5" />
-        <span>A pedido</span>
-      </div>
     </div>
   </div>
 </template>
@@ -118,8 +103,6 @@
 import IconTshirtCrew from '~icons/mdi/tshirt-crew'
 import IconStar from '~icons/mdi/star'
 import IconImageMultiple from '~icons/mdi/image-multiple'
-import IconCheckCircle from '~icons/mdi/check-circle'
-import IconClockOutline from '~icons/mdi/clock-outline'
 import IconPlus from '~icons/mdi/plus'
 import { formatArs } from '~/shared/utils/currency'
 

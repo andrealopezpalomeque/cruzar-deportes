@@ -104,30 +104,6 @@
       </div>
     </div>
 
-    <!-- Stock Status -->
-    <div>
-      <div
-        v-if="product.inStock"
-        class="inline-flex items-center gap-1.5 text-sm text-green-700"
-      >
-        <IconCheckCircle class="h-4 w-4" />
-        <span>En stock</span>
-      </div>
-      <div
-        v-else
-        class="inline-flex items-center gap-1.5 text-sm text-amber-700"
-      >
-        <IconClockOutline class="h-4 w-4" />
-        <span>A pedido</span>
-      </div>
-    </div>
-    <p
-      v-if="!product.inStock"
-      class="text-sm text-amber-700"
-    >
-      Este producto se solicita bajo pedido. Te contactaremos para coordinar tiempos de entrega.
-    </p>
-
     <!-- Add to Cart Button -->
     <div class="space-y-4">
       <button
