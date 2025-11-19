@@ -38,30 +38,44 @@
     <!-- Product Options -->
     <div class="space-y-6">
       <!-- Size Selection -->
-      <div>
-        <label class="block text-sm font-medium text-gray-900 mb-3">
-          Talla
-          <span class="text-red-700">*</span>
-        </label>
-        <div class="relative">
-          <select
-            v-model="selectedSize"
-            class="w-full px-4 py-3.5 pr-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-black bg-white appearance-none cursor-pointer hover:border-gray-400 transition-colors text-base font-medium text-gray-900"
-            :class="{ 'text-gray-500': !selectedSize }"
-          >
-            <option value="" disabled>Selecciona una talla</option>
-            <option value="S" class="text-gray-900 font-medium py-2">S - Small</option>
-            <option value="M" class="text-gray-900 font-medium py-2">M - Medium</option>
-            <option value="L" class="text-gray-900 font-medium py-2">L - Large</option>
-            <option value="XL" class="text-gray-900 font-medium py-2">XL - Extra Large</option>
-            <option value="2XL" class="text-gray-900 font-medium py-2">2XL - Double XL</option>
-            <option value="3XL" class="text-gray-900 font-medium py-2">3XL - Triple XL</option>
-            <option value="4XL" class="text-gray-900 font-medium py-2">4XL - Quad XL</option>
-          </select>
-          <IconChevronDown class="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-600 pointer-events-none" />
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <label class="text-sm font-medium text-gray-900">
+            Talla <span class="text-red-500">*</span>
+          </label>
+          <button class="text-sm text-gray-500 underline hover:text-gray-900 transition-colors">
+            Guía de talles
+          </button>
         </div>
-        <p class="text-sm text-gray-700 mt-2">
-          Selecciona la talla que necesitas
+
+        <div class="grid grid-cols-4 gap-3">
+          <button
+            v-for="size in sizes"
+            :key="size.id"
+            @click="selectedSize = size.id"
+            class="relative flex h-12 items-center justify-center rounded-lg border text-sm font-medium transition-all duration-200 ease-out hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-1"
+            :class="{
+              'border-gray-900 bg-gray-900 text-white shadow-md scale-[1.02]': selectedSize === size.id,
+              'border-gray-200 bg-white text-gray-900': selectedSize !== size.id
+            }"
+          >
+            {{ size.label }}
+
+            <!-- Selected Indicator -->
+            <span
+              v-if="selectedSize === size.id"
+              class="absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-white text-gray-900 shadow-sm ring-1 ring-gray-200"
+            >
+              <IconCheck class="h-2.5 w-2.5" />
+            </span>
+          </button>
+        </div>
+
+        <p
+          v-if="selectedSize"
+          class="text-sm text-gray-500 animate-in fade-in slide-in-from-top-1 duration-300"
+        >
+          Has seleccionado: <span class="font-medium text-gray-900">{{ sizes.find(s => s.id === selectedSize)?.label }}</span>
         </p>
       </div>
 
@@ -198,6 +212,7 @@
 import IconStar from '~icons/mdi/star'
 import IconMinus from '~icons/mdi/minus'
 import IconPlus from '~icons/mdi/plus'
+import IconCheck from '~icons/mdi/check'
 import IconCheckCircle from '~icons/mdi/check-circle'
 import IconAlertCircle from '~icons/mdi/alert-circle'
 import IconLoading from '~icons/mdi/loading'
@@ -215,6 +230,17 @@ const props = defineProps(['product'])
 
 const cartStore = useCartStore()
 const productsStore = useProductsStore()
+
+// Size options
+const sizes = [
+  { id: 'S', label: 'S' },
+  { id: 'M', label: 'M' },
+  { id: 'L', label: 'L' },
+  { id: 'XL', label: 'XL' },
+  { id: '2XL', label: '2XL' },
+  { id: '3XL', label: '3XL' },
+  { id: '4XL', label: '4XL' }
+]
 
 // Reactive state
 const selectedSize = ref('')
