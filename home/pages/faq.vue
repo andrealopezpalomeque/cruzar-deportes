@@ -4,18 +4,23 @@
     <div class="relative overflow-hidden bg-white">
       <div class="absolute inset-0 bg-gray-50" />
       <div class="relative max-w-4xl mx-auto px-6 py-16 text-center">
-        <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700 mb-6">
+        <div
+          class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700 mb-6"
+        >
           <IconInformationCircle class="w-4 h-4 mr-2" />
           Centro de Ayuda
         </div>
-        <h1 class="text-4xl md:text-5xl font-light text-gray-900 mb-6 cursor-default">
+        <h1
+          class="text-4xl md:text-5xl font-light text-gray-900 mb-6 cursor-default"
+        >
           Preguntas
-          <span class="text-black">
-            Frecuentes
-          </span>
+          <span class="text-black"> Frecuentes </span>
         </h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed cursor-default">
-          Encontrá respuestas a las preguntas más comunes sobre compras, envíos, devoluciones y más.
+        <p
+          class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed cursor-default"
+        >
+          Encontrá respuestas a las preguntas más comunes sobre compras, envíos,
+          devoluciones y más.
         </p>
       </div>
     </div>
@@ -26,31 +31,43 @@
       <div class="grid md:grid-cols-3 gap-6 mb-8">
         <UiCard class="border-0 shadow-lg bg-white/80 backdrop-blur-sm">
           <div class="p-6 text-center cursor-default">
-            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <div
+              class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4"
+            >
               <IconCube class="w-6 h-6 text-gray-600" />
             </div>
             <h3 class="font-medium text-gray-900 mb-2">Envío Gratis</h3>
-            <p class="text-sm text-gray-600">En compras superiores a $120.000</p>
+            <p class="text-sm text-gray-600">
+              En compras superiores a $120.000
+            </p>
           </div>
         </UiCard>
 
         <UiCard class="border-0 shadow-lg bg-white/80 backdrop-blur-sm">
           <div class="p-6 text-center cursor-default">
-            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <div
+              class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4"
+            >
               <IconCreditCard class="w-6 h-6 text-gray-600" />
             </div>
             <h3 class="font-medium text-gray-900 mb-2">Pago Seguro</h3>
-            <p class="text-sm text-gray-600">Múltiples métodos de pago disponibles</p>
+            <p class="text-sm text-gray-600">
+              Múltiples métodos de pago disponibles
+            </p>
           </div>
         </UiCard>
 
         <UiCard class="border-0 shadow-lg bg-white/80 backdrop-blur-sm">
           <div class="p-6 text-center cursor-default">
-            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <div
+              class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4"
+            >
               <IconHeart class="w-6 h-6 text-gray-600" />
             </div>
             <h3 class="font-medium text-gray-900 mb-2">30 Días</h3>
-            <p class="text-sm text-gray-600">Garantía de cambio o devolución por 30 días</p>
+            <p class="text-sm text-gray-600">
+              Garantía de cambio o devolución por 30 días
+            </p>
           </div>
         </UiCard>
       </div>
@@ -58,48 +75,71 @@
       <!-- FAQ Section -->
       <div class="space-y-4">
         <!-- FAQ Item 1: Shipping -->
-        <UiAccordionItem value="item-1" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+        <UiAccordionItem
+          value="item-1"
+          class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200"
+        >
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div
+                class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0"
+              >
                 <IconCube class="w-5 h-5 text-gray-600" />
               </div>
-              <span class="font-medium text-gray-900">¿Cuáles son los tiempos y costos de envío?</span>
+              <span class="font-medium text-gray-900"
+                >¿Cuáles son los tiempos y costos de envío?</span
+              >
             </div>
           </template>
           <template #content>
             <div class="pb-6 pt-2">
               <div class="ml-4 sm:ml-8 md:ml-14">
                 <p class="text-gray-700 leading-relaxed mb-4">
-                  Realizamos envíos a todo el país. El envío es gratuito en compras superiores a $120.000. Para
-                  montos menores, el costo varía según la ubicación.
+                  Realizamos envíos a todo el país. El envío es gratuito en
+                  compras superiores a $120.000. Para montos menores, el costo
+                  varía según la ubicación.
                 </p>
 
                 <div class="space-y-3 mb-4">
                   <!-- Delivery Time -->
-                  <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
+                  <div
+                    class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm"
+                  >
                     <div class="flex items-start gap-3">
-                      <IconCube class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <IconCube
+                        class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0"
+                      />
                       <div>
-                        <p class="font-medium text-blue-900 mb-1">Tiempo de entrega:</p>
+                        <p class="font-medium text-blue-900 mb-1">
+                          Tiempo de entrega:
+                        </p>
                         <p class="text-blue-800 text-sm">
-                          Los envíos dentro de Argentina demoran entre 2 y 5 días hábiles.
+                          Los envíos dentro de Argentina demoran entre 2 y 5
+                          días hábiles.
                         </p>
                       </div>
                     </div>
                   </div>
 
                   <!-- In-Store Pickup -->
-                  <div class="bg-green-50/80 border-l-4 border-green-400 p-4 rounded-r-lg backdrop-blur-sm">
+                  <div
+                    class="bg-green-50/80 border-l-4 border-green-400 p-4 rounded-r-lg backdrop-blur-sm"
+                  >
                     <div class="flex items-start gap-3">
-                      <IconInformationCircle class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <IconInformationCircle
+                        class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"
+                      />
                       <div>
-                        <p class="font-medium text-green-900 mb-1">Retiro en tienda:</p>
+                        <p class="font-medium text-green-900 mb-1">
+                          Retiro en tienda:
+                        </p>
                         <p class="text-green-800 text-sm mb-1">
-                          Podés retirar tu pedido personalmente en Corrientes Capital.
+                          Podés retirar tu pedido personalmente en Corrientes
+                          Capital.
                         </p>
                         <p class="text-green-700 text-xs italic">
-                          Consultá la dirección por WhatsApp al realizar tu pedido.
+                          Consultá la dirección por WhatsApp al realizar tu
+                          pedido.
                         </p>
                       </div>
                     </div>
@@ -111,13 +151,20 @@
         </UiAccordionItem>
 
         <!-- FAQ Item 2: Payment -->
-        <UiAccordionItem value="item-2" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+        <UiAccordionItem
+          value="item-2"
+          class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200"
+        >
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div
+                class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0"
+              >
                 <IconCreditCard class="w-5 h-5 text-gray-600" />
               </div>
-              <span class="font-medium text-gray-900">¿Qué métodos de pago aceptan?</span>
+              <span class="font-medium text-gray-900"
+                >¿Qué métodos de pago aceptan?</span
+              >
             </div>
           </template>
           <template #content>
@@ -125,52 +172,87 @@
               <div class="ml-4 sm:ml-8 md:ml-14">
                 <div class="space-y-4">
                   <!-- Banco de Corrientes Promotion -->
-                  <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
+                  <div
+                    class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm"
+                  >
                     <div class="flex items-start gap-3">
-                      <IconCreditCard class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <IconCreditCard
+                        class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0"
+                      />
                       <div>
-                        <p class="font-semibold text-blue-900 mb-2">Banco de Corrientes - Lunes y Martes</p>
+                        <p class="font-semibold text-blue-900 mb-2">
+                          Banco de Corrientes - Lunes
+                        </p>
                         <p class="text-blue-800 text-sm mb-2">
-                          Con tu tarjeta de crédito VISA del BanCo tenés todos los lunes y martes un
-                          <span class="font-semibold">30% de reintegro</span> y hasta
-                          <span class="font-semibold">6 cuotas sin interés</span>.
+                          Abonando con tu tarjeta de crédito Visa del BanCo a
+                          través de
+                          <span class="font-semibold">MODO</span> accedés los
+                          lunes a
+                          <span class="font-semibold"
+                            >3 cuotas sin interés</span
+                          >
+                          y un
+                          <span class="font-semibold">30% de reintegro</span>
+                          con tope de
+                          <span class="font-semibold">$20.000</span>.
                         </p>
                         <p class="text-blue-700 text-xs italic">
-                          Promo exclusiva con la app Más Banco.
+                          Operación exclusiva con Visa Banco de Corrientes vía
+                          MODO.
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <!-- COMMENTED: Future "Todas las Tarjetas" promo -->
-                  <!-- <div class="bg-green-50/80 border-l-4 border-green-400 p-4 rounded-r-lg backdrop-blur-sm">
+                  <div
+                    class="bg-green-50/80 border-l-4 border-green-400 p-4 rounded-r-lg backdrop-blur-sm"
+                  >
                     <div class="flex items-start gap-3">
-                      <IconCreditCard class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                      <IconCreditCard
+                        class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"
+                      />
                       <div>
-                        <p class="font-semibold text-green-900 mb-2">Todas las Tarjetas - Miércoles y Sábados</p>
+                        <p class="font-semibold text-green-900 mb-2">
+                          Visa y Mastercard - Miércoles y Sábados
+                        </p>
                         <p class="text-green-800 text-sm mb-2">
-                          Los miércoles y sábados de agosto y septiembre podés aprovechar para comprar en
-                          <span class="font-semibold">3 cuotas sin interés</span>.
+                          Los miércoles y Sábados disfrutá de
+                          <span class="font-semibold"
+                            >3 cuotas sin interés</span
+                          >
+                          pagando con tarjetas Visa o Mastercard de cualquier
+                          banco.
                         </p>
                         <p class="text-green-700 text-xs italic">
-                          ¡Cualquier tarjeta es válida!
+                          Válido para tarjetas emitidas por cualquier entidad
+                          bancaria.
                         </p>
                       </div>
                     </div>
-                  </div> -->
+                  </div>
 
                   <!-- Bank Transfer Promotion -->
-                  <div class="bg-amber-50/80 border-l-4 border-amber-400 p-4 rounded-r-lg backdrop-blur-sm">
+                  <div
+                    class="bg-amber-50/80 border-l-4 border-amber-400 p-4 rounded-r-lg backdrop-blur-sm"
+                  >
                     <div class="flex items-start gap-3">
-                      <IconBuildingBank class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+                      <IconBuildingBank
+                        class="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0"
+                      />
                       <div>
-                        <p class="font-semibold text-amber-900 mb-2">Transferencia Bancaria - Todos los días</p>
+                        <p class="font-semibold text-amber-900 mb-2">
+                          Efectivo o Transferencia - Todos los días
+                        </p>
                         <p class="text-amber-800 text-sm mb-2">
-                          Realizando tu pago por transferencia bancaria obtenés un
-                          <span class="font-semibold">10% de descuento directo</span> en tu compra.
+                          Pagando en efectivo o mediante transferencia obtenés
+                          un
+                          <span class="font-semibold"
+                            >10% de descuento directo</span
+                          >
+                          en tu compra.
                         </p>
                         <p class="text-amber-700 text-xs italic">
-                          ¡Disponible todos los días de la semana!
+                          Beneficio disponible todos los días de la semana.
                         </p>
                       </div>
                     </div>
@@ -179,8 +261,9 @@
                   <!-- General Payment Methods -->
                   <div class="mt-4 pt-4 border-t border-gray-200">
                     <p class="text-gray-700 leading-relaxed text-sm">
-                      También aceptamos todas las tarjetas de débito y crédito (Visa, Mastercard, American Express),
-                      transferencias bancarias, y MercadoPago.
+                      También aceptamos todas las tarjetas de débito y crédito
+                      (Visa, Mastercard, American Express), transferencias
+                      bancarias, y MercadoPago.
                     </p>
                   </div>
                 </div>
@@ -190,30 +273,46 @@
         </UiAccordionItem>
 
         <!-- FAQ Item 3: Returns -->
-        <UiAccordionItem value="item-3" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+        <UiAccordionItem
+          value="item-3"
+          class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200"
+        >
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div
+                class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0"
+              >
                 <IconArrowLeft class="w-5 h-5 text-gray-600" />
               </div>
-              <span class="font-medium text-gray-900">¿Puedo devolver o cambiar un producto?</span>
+              <span class="font-medium text-gray-900"
+                >¿Puedo devolver o cambiar un producto?</span
+              >
             </div>
           </template>
           <template #content>
             <div class="pb-6 pt-2">
               <div class="ml-4 sm:ml-8 md:ml-14">
                 <p class="text-gray-700 leading-relaxed mb-4">
-                  Sí, tenés 30 días desde la recepción del producto para devolverlo o cambiarlo. El artículo debe
-                  estar sin usar, con las etiquetas intactas y en su empaque inicial. Los gastos de envío para
-                  devoluciones corren por cuenta del cliente, excepto en casos de productos defectuosos.
+                  Sí, tenés 30 días desde la recepción del producto para
+                  devolverlo o cambiarlo. El artículo debe estar sin usar, con
+                  las etiquetas intactas y en su empaque inicial. Los gastos de
+                  envío para devoluciones corren por cuenta del cliente, excepto
+                  en casos de productos defectuosos.
                 </p>
-                <div class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm">
+                <div
+                  class="bg-blue-50/80 border-l-4 border-blue-400 p-4 rounded-r-lg backdrop-blur-sm"
+                >
                   <div class="flex items-start gap-3">
-                    <IconInformationCircle class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <IconInformationCircle
+                      class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0"
+                    />
                     <div>
-                      <p class="font-medium text-blue-900 mb-1">Proceso simple:</p>
+                      <p class="font-medium text-blue-900 mb-1">
+                        Proceso simple:
+                      </p>
                       <p class="text-blue-800 text-sm">
-                        Contactanos por WhatsApp para iniciar el proceso de devolución.
+                        Contactanos por WhatsApp para iniciar el proceso de
+                        devolución.
                       </p>
                     </div>
                   </div>
@@ -223,23 +322,30 @@
           </template>
         </UiAccordionItem>
 
-
         <!-- FAQ Item 5: Tracking -->
-        <UiAccordionItem value="item-5" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+        <UiAccordionItem
+          value="item-5"
+          class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200"
+        >
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div
+                class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0"
+              >
                 <IconQuestionMarkCircle class="w-5 h-5 text-gray-600" />
               </div>
-              <span class="font-medium text-gray-900">¿Cómo puedo rastrear mi pedido?</span>
+              <span class="font-medium text-gray-900"
+                >¿Cómo puedo rastrear mi pedido?</span
+              >
             </div>
           </template>
           <template #content>
             <div class="pb-6 pt-2">
               <div class="ml-4 sm:ml-8 md:ml-14">
                 <p class="text-gray-700 leading-relaxed">
-                  Una vez que tu pedido sea despachado, recibirás un mensaje de WhatsApp con el número de seguimiento y un enlace
-                  para rastrear tu envío en tiempo real.
+                  Una vez que tu pedido sea despachado, recibirás un mensaje de
+                  WhatsApp con el número de seguimiento y un enlace para
+                  rastrear tu envío en tiempo real.
                 </p>
               </div>
             </div>
@@ -251,13 +357,21 @@
       <div class="bg-black rounded-lg max-w-4xl mx-auto mt-12">
         <div class="p-8 md:p-12 text-center">
           <div class="max-w-3xl mx-auto">
-            <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div
+              class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
               <IconWhatsapp class="w-8 h-8 text-white" />
             </div>
-            <h3 class="text-3xl md:text-4xl font-light text-white mb-6 cursor-default">¿Necesitás más ayuda?</h3>
-            <p class="text-lg text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto cursor-default">
-              Si tenés dudas específicas sobre tu compra o necesitás asistencia personalizada, no
-              dudes en contactarnos.
+            <h3
+              class="text-3xl md:text-4xl font-light text-white mb-6 cursor-default"
+            >
+              ¿Necesitás más ayuda?
+            </h3>
+            <p
+              class="text-lg text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto cursor-default"
+            >
+              Si tenés dudas específicas sobre tu compra o necesitás asistencia
+              personalizada, no dudes en contactarnos.
             </p>
 
             <button
@@ -279,25 +393,29 @@
 </template>
 
 <script setup>
-import IconInformationCircle from '~icons/heroicons/information-circle'
-import IconCube from '~icons/heroicons/cube'
-import IconCreditCard from '~icons/heroicons/credit-card'
-import IconHeart from '~icons/heroicons/heart'
-import IconArrowLeft from '~icons/heroicons/arrow-left'
-import IconQuestionMarkCircle from '~icons/heroicons/question-mark-circle'
-import IconWhatsapp from '~icons/mdi/whatsapp'
-import IconBuildingBank from '~icons/heroicons/building-library'
+import IconInformationCircle from "~icons/heroicons/information-circle";
+import IconCube from "~icons/heroicons/cube";
+import IconCreditCard from "~icons/heroicons/credit-card";
+import IconHeart from "~icons/heroicons/heart";
+import IconArrowLeft from "~icons/heroicons/arrow-left";
+import IconQuestionMarkCircle from "~icons/heroicons/question-mark-circle";
+import IconWhatsapp from "~icons/mdi/whatsapp";
+import IconBuildingBank from "~icons/heroicons/building-library";
 
 useHead({
-  title: 'Preguntas Frecuentes | Cruzar Deportes',
+  title: "Preguntas Frecuentes | Cruzar Deportes",
   meta: [
-    { name: 'description', content: 'Respuestas a las preguntas más frecuentes sobre compras, envíos, devoluciones y atención al cliente en Cruzar Deportes.' }
-  ]
-})
+    {
+      name: "description",
+      content:
+        "Respuestas a las preguntas más frecuentes sobre compras, envíos, devoluciones y atención al cliente en Cruzar Deportes.",
+    },
+  ],
+});
 
 const openWhatsApp = () => {
-  const phoneNumber = '5493794000783'
-  const message = encodeURIComponent('Hola, necesito ayuda con mi compra.')
-  window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank')
-}
+  const phoneNumber = "5493794000783";
+  const message = encodeURIComponent("Hola, necesito ayuda con mi compra.");
+  window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+};
 </script>
