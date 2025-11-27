@@ -63,6 +63,18 @@ npm run dev
 
 4. Access the back-office at: http://localhost:3001
 
+### Sync catalog to Firebase Storage
+
+When `shared/products.json` changes locally (e.g., after running migrations or manual edits), push it to Cloud Storage so the deployed back-office reads the updated catalog:
+
+```bash
+# from back-office/
+gcloud config set project cruzar-back-office
+gcloud storage cp ../shared/products.json gs://cruzar-back-office.firebasestorage.app/shared/products.json
+```
+
+The back-office API reads this file as the single source of truth, so make sure the upload succeeds before checking the deployed app.
+
 ## Default Login
 
 - **Username**: admin (or value from BACKOFFICE_USERNAME)
