@@ -1,7 +1,6 @@
 import { requireSession } from '../../utils/session'
 import type { ApiResponse, CategoryType } from '~/types'
-import type { SharedProduct, ProductDatabase } from '../../../shared/types'
-import { generateAllProducts } from '~/utils/productGenerator'
+import type { SharedProduct } from '../../../shared/types'
 import { readProductsDatabase } from '~/shared/utils/productSync'
 
 export default defineEventHandler(async (event): Promise<ApiResponse<SharedProduct[]>> => {
@@ -16,63 +15,9 @@ export default defineEventHandler(async (event): Promise<ApiResponse<SharedProdu
     const featured = query.featured ? query.featured === 'true' : undefined
     const inStock = query.inStock ? query.inStock === 'true' : undefined
 
-    // Generate all products from static data
-    const allProducts = generateAllProducts()
-
-    // Read managed products database for overrides
-    let managedProducts: Record<string, SharedProduct> = {}
-    try {
-      const database: ProductDatabase = await readProductsDatabase()
-      managedProducts = database.products || {}
-    } catch (error) {
-      console.warn('No shared products found, using generated products only', error)
-    }
-
-    const managedProductEntries = Object.entries(managedProducts)
-    const generatedProductIds = new Set(allProducts.map(product => product.id))
-
-    // Merge generated products with managed overrides
-    let products = allProducts.map(product => {
-      const managedProduct = managedProducts[product.id]
-      if (managedProduct) {
-        // Extract the correct folder path from the URLs in allAvailableImages
-        let correctFolderPath = product.cloudinaryFolderPath
-        if (managedProduct.allAvailableImages && managedProduct.allAvailableImages.length > 0) {
-          const firstUrl = managedProduct.allAvailableImages[0]
-          const match = firstUrl.match(/cruzar-deportes\/[^\/]+\/[^\/]+\/[^\/]+/)
-          if (match) {
-            correctFolderPath = match[0]
-          }
-        }
-
-        // Merge managed data with generated data, prioritizing managed fields
-        return {
-          ...product,
-          ...managedProduct,
-          cloudinaryFolderPath: correctFolderPath
-        }
-      }
-      return product
-    })
-
-    // Append custom products that only exist in the managed database
-    for (const [productId, managedProduct] of managedProductEntries) {
-      if (!generatedProductIds.has(productId)) {
-        let resolvedCloudinaryPath = managedProduct.cloudinaryFolderPath
-        if ((!resolvedCloudinaryPath || resolvedCloudinaryPath.length === 0) && managedProduct.allAvailableImages?.length) {
-          const firstUrl = managedProduct.allAvailableImages[0]
-          const match = firstUrl.match(/cruzar-deportes\/[^/]+\/[^/]+\/[^/]+/)
-          if (match) {
-            resolvedCloudinaryPath = match[0]
-          }
-        }
-
-        products.push({
-          ...managedProduct,
-          cloudinaryFolderPath: resolvedCloudinaryPath || managedProduct.cloudinaryFolderPath
-        })
-      }
-    }
+    // Read managed products database as the single source of truth
+    const database = await readProductsDatabase()
+    let products = Object.values(database.products || {})
 
     // Apply filters
     if (category) {
@@ -96,7 +41,10 @@ export default defineEventHandler(async (event): Promise<ApiResponse<SharedProdu
     }
 
     // Sort by last modified (newest first)
-    products.sort((a, b) => new Date(b.lastModified).getTime() - new Date(a.lastModified).getTime())
+    const resolveTimestamp = (value?: string) => value ? new Date(value).getTime() : 0
+    products.sort((a, b) =>
+      resolveTimestamp(b.lastModified || b.createdAt) - resolveTimestamp(a.lastModified || a.createdAt)
+    )
 
     return {
       success: true,
