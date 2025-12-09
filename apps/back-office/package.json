@@ -11,7 +11,7 @@
     "check:no-ts": "bash scripts/check-no-typescript.sh",
     "prebuild": "npm run check:no-ts",
     "firebase:build": "nuxt build",
-    "firebase:deploy": "firebase deploy --only hosting,functions",
+    "firebase:deploy": "cd ../.. && firebase deploy --only hosting:admin,functions",
     "firebase:build-deploy": "npm run firebase:build && npm run firebase:deploy"
   },
   "dependencies": {

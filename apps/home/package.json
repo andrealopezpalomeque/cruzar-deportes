@@ -13,7 +13,7 @@
     "clean:dev": "npm run clean && npm run dev",
     "clean:all": "npm run clean && rm -rf node_modules",
     "firebase:build": "nuxt generate",
-    "firebase:deploy": "firebase deploy",
+    "firebase:deploy": "cd ../.. && firebase deploy --only hosting:storefront",
     "firebase:build-deploy": "npm run firebase:build && npm run firebase:deploy",
     "migrate:cloudinary": "node scripts/migrateToCloudinary.js",
     "retry:failed-uploads": "node scripts/retryFailedUploads.js"
