@@ -84,6 +84,10 @@ firebase deploy --only hosting:storefront
 firebase deploy --only hosting:admin,functions
 ```
 
+## 📚 Additional Documentation
+
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** - System architecture, data flow diagrams, and lifecycle explanation.
+
 ## 📱 Applications Details
 
 ### Home (Storefront)
