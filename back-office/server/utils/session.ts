@@ -2,7 +2,7 @@ import type { H3Event } from 'h3'
 import { getCookie, deleteCookie, createError } from 'h3'
 
 const isProduction = process.env.NODE_ENV === 'production'
-const COOKIE_DOMAIN = process.env.BACKOFFICE_COOKIE_DOMAIN || (isProduction ? 'cruzar-back-office.web.app' : undefined)
+const COOKIE_DOMAIN = process.env.BACKOFFICE_COOKIE_DOMAIN || (isProduction ? 'deportes-cruzar-admin.web.app' : undefined)
 const SESSION_COOKIE_NAME = '__session'
 
 const COOKIE_OPTIONS = {
@@ -10,7 +10,7 @@ const COOKIE_OPTIONS = {
   sameSite: 'lax' as const,
   httpOnly: true,
   secure: isProduction,
-  ...(COOKIE_DOMAIN ? { domain: COOKIE_DOMAIN } : {})
+  // Domain not set: defaults to host-only (safest for single-site apps)
 }
 
 export const getSessionToken = (event: H3Event): string | null => {

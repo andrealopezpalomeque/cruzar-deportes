@@ -44,9 +44,11 @@ async function main() {
   const remoteDb = remoteResult.database
 
   if (remoteResult.source !== 'remote') {
-    console.error('Unable to download catalog from Firebase Storage. Aborting deploy to avoid using stale data.')
-    console.error('Please verify Google Cloud credentials and network access, then retry.')
-    process.exit(1)
+    console.warn('Unable to download catalog from Firebase Storage (likely because it does not exist yet).')
+    console.log('Forcing upload of local products.json to Initialize storage...')
+    await writeProductsDatabase(localDb)
+    console.log('Upload complete.')
+    return
   }
 
   const localProductCount = Object.keys(localDb.products).length
