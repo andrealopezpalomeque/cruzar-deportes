@@ -1,5 +1,12 @@
 {
-  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*"
+  ],
   "dependencies": {
     "firebase-admin": "^12.5.0",
     "firebase-functions": "^6.4.0"

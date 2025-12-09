@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "storefront",
-      "public": "home/.output/public",
+      "public": "apps/home/.output/public",
       "ignore": [
         "firebase.json",
         "**/.*",
@@ -17,7 +17,7 @@
     },
     {
       "target": "admin",
-      "public": "back-office/.output/public",
+      "public": "apps/back-office/.output/public",
       "ignore": [
         "firebase.json",
         "**/.*",
@@ -32,6 +32,6 @@
     }
   ],
   "functions": {
-    "source": "back-office/.output/server"
+    "source": "apps/back-office/.output/server"
   }
 }

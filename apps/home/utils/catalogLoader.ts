@@ -1,0 +1,135 @@
+
+import type { Product, Category } from '~/types'
+import type { ProductDatabase, SharedProduct } from '@cruzar/shared'
+import { getTeamCloudinaryUrls } from '@cruzar/shared'
+
+interface CatalogPayload {
+  products: Product[]
+  categories: Category[]
+}
+
+let cachedCatalog: CatalogPayload | null = null
+
+const FALLBACK_IMAGE = '/images/cruzar-logo-1.png'
+
+const IMAGE_EXTENSION_REGEX = /\.(jpe?g|png|webp|avif|gif|bmp|tiff)(\?|$)/i
+
+const isUsableImageUrl = (url: string): boolean => {
+  if (!url) return false
+
+  if (url.startsWith('http')) {
+    const parsedHasExtension = IMAGE_EXTENSION_REGEX.test(url)
+
+    // Many older entries pointed to Cloudinary folders that were removed
+    // Discard those lacking extensions so we can fall back to the migrated mapping
+    if (url.includes('cloudinary.com') && !parsedHasExtension) {
+      return false
+    }
+
+    return true
+  }
+
+  if (url.startsWith('/')) {
+    return IMAGE_EXTENSION_REGEX.test(url)
+  }
+
+  return true
+}
+
+const NON_CURATED_IMAGE_LIMIT = 12
+
+const buildImageGallery = (shared: SharedProduct): { images: string[]; total: number } => {
+  const curatedImages = (shared.selectedImages ?? []).filter(isUsableImageUrl)
+  const galleryImages = (shared.allAvailableImages ?? []).filter(isUsableImageUrl)
+
+  const teamKey = shared.slug.replace(/-/g, '_')
+  const mappedImages = getTeamCloudinaryUrls(teamKey, shared.category).filter(isUsableImageUrl)
+
+  let orderedSources: string[] = []
+
+  if (curatedImages.length > 0) {
+    orderedSources = [...curatedImages]
+  } else if (galleryImages.length > 0) {
+    orderedSources = [...galleryImages]
+  } else {
+    orderedSources = [...mappedImages]
+  }
+
+  const uniqueImages = orderedSources.reduce<string[]>((acc, imageUrl) => {
+    if (imageUrl && !acc.includes(imageUrl)) {
+      acc.push(imageUrl)
+    }
+    return acc
+  }, [])
+
+  const shouldLimit = curatedImages.length === 0
+  const limitedImages = shouldLimit
+    ? uniqueImages.slice(0, NON_CURATED_IMAGE_LIMIT)
+    : uniqueImages
+
+  const images = limitedImages.length > 0 ? limitedImages : [FALLBACK_IMAGE]
+  const totalSourceCount = (curatedImages.length > 0 ? curatedImages.length : orderedSources.length)
+    || uniqueImages.length
+
+  const total = totalSourceCount || images.length || 1
+
+  return {
+    images,
+    total
+  }
+}
+
+const toProduct = (shared: SharedProduct): Product => {
+  const { images, total } = buildImageGallery(shared)
+
+  return {
+    id: shared.id,
+    name: shared.name,
+    slug: shared.slug,
+    description: shared.description,
+    price: shared.price,
+    originalPrice: shared.originalPrice,
+    category: shared.category,
+    subcategory: shared.subcategory,
+    images,
+    totalImages: total,
+    sizes: shared.sizes,
+    colors: shared.colors,
+    inStock: shared.inStock,
+    featured: shared.featured
+  }
+}
+
+const toCategory = (database: ProductDatabase): Category[] => {
+  return Object.values(database.categories)
+    .filter((category) => (category.productCount ?? 0) > 0)
+    .map((category) => ({
+      id: category.id,
+      name: category.name,
+      slug: category.slug,
+      description: category.description
+    }))
+}
+
+export const loadCatalog = async (): Promise<CatalogPayload> => {
+  if (cachedCatalog) {
+    return cachedCatalog
+  }
+
+  const module = await import('@cruzar/shared/products.json')
+  const database = (module.default || module) as ProductDatabase
+
+  const products = Object.values(database.products)
+    .map(toProduct)
+    .sort((a, b) => a.name.localeCompare(b.name))
+
+  const categories = toCategory(database)
+    .sort((a, b) => a.name.localeCompare(b.name))
+
+  cachedCatalog = { products, categories }
+  return cachedCatalog
+}
+
+export const clearCatalogCache = () => {
+  cachedCatalog = null
+}
