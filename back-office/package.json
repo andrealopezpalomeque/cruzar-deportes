@@ -23,7 +23,7 @@
     "firebase-admin": "^12.5.0",
     "firebase-functions": "^5.1.0",
     "dayjs-nuxt": "^2.1.11",
-    "nuxt": "^4.0.3",
+    "nuxt": "^4.2.1",
     "pinia": "^3.0.3",
     "unplugin-icons": "^22.2.0",
     "vue": "^3.5.18",
