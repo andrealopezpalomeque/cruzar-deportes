@@ -4,7 +4,7 @@
   },
   "hosting": [
     {
-      "site": "cruzar-back-office",
+      "site": "deportes-cruzar",
       "public": ".output/public",
       "cleanUrls": true,
       "rewrites": [
