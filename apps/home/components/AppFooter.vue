@@ -1,9 +1,9 @@
 <template>
   <footer class="bg-white border-t border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Company Info -->
-        <div class="col-span-1 md:col-span-2">
+        <div class="col-span-1 md:col-span-2 lg:col-span-1">
           <div class="flex items-center space-x-2 mb-4">
             <OptimizedImage
               src="/images/cruzar-logo-no-bg.png"
@@ -30,6 +30,15 @@
             <li><NuxtLink to="/" class="text-gray-800 hover:text-black transition-colors">Inicio</NuxtLink></li>
             <li><NuxtLink to="/categories" class="text-gray-800 hover:text-black transition-colors">Categorías</NuxtLink></li>
             <li><NuxtLink to="/products" class="text-gray-800 hover:text-black transition-colors">Todos los Productos</NuxtLink></li>
+          </ul>
+        </div>
+
+        <!-- Special Offers -->
+        <div>
+          <h3 class="text-lg font-medium mb-4 text-gray-900 cursor-default">Ofertas Especiales</h3>
+          <ul class="space-y-2">
+            <li><NuxtLink to="/ofertas/caja-misteriosa" class="text-gray-800 hover:text-black transition-colors">Caja Misteriosa</NuxtLink></li>
+            <li><NuxtLink to="/ofertas/pedidos-equipos" class="text-gray-800 hover:text-black transition-colors">Pedidos de Equipos</NuxtLink></li>
           </ul>
         </div>
 

@@ -18,7 +18,8 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     public: {
-      firebaseProjectId: process.env.FIREBASE_PROJECT_ID
+      firebaseProjectId: process.env.FIREBASE_PROJECT_ID,
+      cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME
     },
     cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
     cloudinaryApiKey: process.env.CLOUDINARY_API_KEY,

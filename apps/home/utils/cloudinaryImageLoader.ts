@@ -9,7 +9,8 @@ export class CloudinaryImageLoader {
   constructor() {
     try {
       const config = useRuntimeConfig()
-      this.cloudName = config.cloudinaryCloudName || process.env.CLOUDINARY_CLOUD_NAME || 'dmb1vyveg'
+      const publicConfig = (config && 'public' in config ? (config as any).public : {}) || {}
+      this.cloudName = publicConfig.cloudinaryCloudName || process.env.CLOUDINARY_CLOUD_NAME || 'dmb1vyveg'
     } catch (error) {
       // Fallback when useRuntimeConfig is not available (e.g., in server context)
       this.cloudName = process.env.CLOUDINARY_CLOUD_NAME || 'dmb1vyveg'

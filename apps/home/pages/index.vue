@@ -127,6 +127,25 @@
       </div>
     </section>
 
+    <!-- Special Deals Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12 cursor-default">
+          <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-normal bg-gray-100 border border-gray-200 text-gray-700 mb-4">
+            <IconSparkles class="w-4 h-4 mr-2" />
+            Ofertas Exclusivas
+          </div>
+          <h2 class="text-3xl md:text-4xl font-light mb-4">Descubrí Nuestras Promociones</h2>
+          <p class="text-lg text-gray-800">Ofertas especiales pensadas para verdaderos fanáticos</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <MysteryBoxCard />
+          <TeamOrdersCard />
+        </div>
+      </div>
+    </section>
+
     <!-- Custom Jersey Request Section -->
     <section class="py-16">
       <div class="container mx-auto px-4">
@@ -170,6 +189,9 @@ import IconUserGroup from '~icons/heroicons/user-group'
 import IconTshirtCrew from '~icons/mdi/tshirt-crew'
 import IconMagnifyingGlass from '~icons/heroicons/magnifying-glass'
 import IconWhatsapp from '~icons/mdi/whatsapp'
+import IconSparkles from '~icons/heroicons/sparkles'
+import MysteryBoxCard from '~/components/deals/MysteryBoxCard.vue'
+import TeamOrdersCard from '~/components/deals/TeamOrdersCard.vue'
 
 const productsStore = useProductsStore()
 
