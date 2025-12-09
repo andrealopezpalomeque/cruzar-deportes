@@ -43,9 +43,7 @@
           <label class="text-sm font-medium text-gray-900">
             Talla <span class="text-red-500">*</span>
           </label>
-          <button class="text-sm text-gray-500 underline hover:text-gray-900 transition-colors">
-            Guía de talles
-          </button>
+          <button class="text-sm text-gray-500 underline hover:text-gray-900 transition-colors"><IconClipboardOutline class="h-4 w-4 inline mr-1" />Guía de talles</button>
         </div>
 
         <div class="grid grid-cols-4 gap-3">
@@ -222,7 +220,7 @@ import IconShieldCheck from '~icons/mdi/shield-check'
 import IconTruck from '~icons/mdi/truck'
 import IconRefresh from '~icons/mdi/refresh'
 import IconMedal from '~icons/mdi/medal'
-import IconChevronDown from '~icons/mdi/chevron-down'
+import IconClipboardOutline from '~icons/mdi/clipboard-outline'
 import IconBuildingBank from '~icons/heroicons/building-library'
 import { formatArs } from '@cruzar/shared/utils/currency'
 
