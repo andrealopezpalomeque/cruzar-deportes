@@ -1,10 +1,10 @@
 <template>
   <div class="min-h-screen bg-gray-50">
     <!-- Hero Section -->
-    <section class="relative py-12 md:py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white overflow-hidden">
+    <section class="relative py-12 md:py-16 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
       <div class="container mx-auto px-4 relative">
         <!-- Breadcrumb -->
-        <nav class="flex items-center space-x-2 text-sm text-blue-200 mb-8">
+        <nav class="flex items-center space-x-2 text-sm text-gray-300 mb-8">
           <NuxtLink to="/" class="hover:text-white transition-colors">Inicio</NuxtLink>
           <IconChevronRight class="h-4 w-4" />
           <span class="text-white font-medium">Pedidos de Equipos</span>
@@ -20,14 +20,14 @@
             Pedidos de <span class="font-medium">Equipos</span>
           </h1>
 
-          <p class="text-xl text-blue-100 mb-8 leading-relaxed cursor-default">
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed cursor-default">
             Equipá a todo tu equipo con camisetas personalizadas. Obtené descuentos por cantidad
             y personalización incluida en pedidos grupales.
           </p>
 
           <button
             @click="openWhatsApp"
-            class="inline-flex items-center px-8 py-3 bg-white text-blue-700 text-base font-medium rounded-lg hover:bg-blue-50 transition-colors"
+            class="inline-flex items-center px-8 py-3 bg-white text-black text-base font-medium rounded-lg hover:bg-gray-100 transition-colors"
           >
             <IconWhatsapp class="w-5 h-5 mr-2" />
             Consultar por WhatsApp
@@ -45,8 +45,8 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="flex">
               <div class="flex-shrink-0">
-                <div class="w-12 h-12 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center">
-                  <IconPercent class="w-6 h-6 text-blue-600" />
+                <div class="w-12 h-12 bg-gray-50 border border-gray-100 rounded-lg flex items-center justify-center">
+                  <IconPercent class="w-6 h-6 text-gray-800" />
                 </div>
               </div>
               <div class="ml-4 cursor-default">
@@ -57,8 +57,8 @@
 
             <div class="flex">
               <div class="flex-shrink-0">
-                <div class="w-12 h-12 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center">
-                  <IconPencil class="w-6 h-6 text-blue-600" />
+                <div class="w-12 h-12 bg-gray-50 border border-gray-100 rounded-lg flex items-center justify-center">
+                  <IconPencil class="w-6 h-6 text-gray-800" />
                 </div>
               </div>
               <div class="ml-4 cursor-default">
@@ -69,8 +69,8 @@
 
             <div class="flex">
               <div class="flex-shrink-0">
-                <div class="w-12 h-12 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center">
-                  <IconResize class="w-6 h-6 text-blue-600" />
+                <div class="w-12 h-12 bg-gray-50 border border-gray-100 rounded-lg flex items-center justify-center">
+                  <IconResize class="w-6 h-6 text-gray-800" />
                 </div>
               </div>
               <div class="ml-4 cursor-default">
@@ -81,8 +81,8 @@
 
             <div class="flex">
               <div class="flex-shrink-0">
-                <div class="w-12 h-12 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-center">
-                  <IconHeadset class="w-6 h-6 text-blue-600" />
+                <div class="w-12 h-12 bg-gray-50 border border-gray-100 rounded-lg flex items-center justify-center">
+                  <IconHeadset class="w-6 h-6 text-gray-800" />
                 </div>
               </div>
               <div class="ml-4 cursor-default">
@@ -106,7 +106,7 @@
               <div class="p-6 border-b md:border-b-0 md:border-r border-gray-200 text-center cursor-default">
                 <div class="text-4xl font-light text-gray-900 mb-2">10+</div>
                 <div class="text-sm text-gray-600 mb-3">unidades</div>
-                <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-50 text-blue-700">
+                <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700">
                   10% OFF
                 </div>
               </div>
@@ -114,7 +114,7 @@
               <div class="p-6 border-b md:border-b-0 md:border-r border-gray-200 text-center cursor-default">
                 <div class="text-4xl font-light text-gray-900 mb-2">20+</div>
                 <div class="text-sm text-gray-600 mb-3">unidades</div>
-                <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-200 text-gray-800">
                   15% OFF
                 </div>
               </div>
@@ -122,7 +122,7 @@
               <div class="p-6 border-b md:border-b-0 md:border-r border-gray-200 text-center cursor-default">
                 <div class="text-4xl font-light text-gray-900 mb-2">30+</div>
                 <div class="text-sm text-gray-600 mb-3">unidades</div>
-                <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-500 text-white">
+                <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-white">
                   20% OFF
                 </div>
               </div>
@@ -130,7 +130,7 @@
               <div class="p-6 text-center cursor-default">
                 <div class="text-4xl font-light text-gray-900 mb-2">50+</div>
                 <div class="text-sm text-gray-600 mb-3">unidades</div>
-                <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-600 text-white">
+                <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-black text-white">
                   25% OFF
                 </div>
               </div>
@@ -153,7 +153,7 @@
           <div class="space-y-8">
             <div class="flex">
               <div class="flex-shrink-0">
-                <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-medium">
+                <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-medium">
                   1
                 </div>
               </div>
@@ -168,7 +168,7 @@
 
             <div class="flex">
               <div class="flex-shrink-0">
-                <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-medium">
+                <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-medium">
                   2
                 </div>
               </div>
@@ -183,7 +183,7 @@
 
             <div class="flex">
               <div class="flex-shrink-0">
-                <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-medium">
+                <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-medium">
                   3
                 </div>
               </div>
@@ -198,7 +198,7 @@
 
             <div class="flex">
               <div class="flex-shrink-0">
-                <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-medium">
+                <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-medium">
                   4
                 </div>
               </div>
@@ -215,56 +215,10 @@
       </div>
     </section>
 
-    <!-- Customization Options Section -->
-    <section class="py-16 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-light text-center mb-12 cursor-default">Opciones de Personalización</h2>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card class="p-6 cursor-default">
-              <IconPencil class="w-8 h-8 text-blue-600 mb-4" />
-              <h3 class="text-lg font-medium mb-2">Estampado de Nombre</h3>
-              <p class="text-gray-800 text-sm">
-                Agregá el nombre de cada jugador en la parte posterior de la camiseta.
-                Fuente y tamaño estándar incluidos.
-              </p>
-            </Card>
-
-            <Card class="p-6 cursor-default">
-              <IconHashtag class="w-8 h-8 text-blue-600 mb-4" />
-              <h3 class="text-lg font-medium mb-2">Número de Jugador</h3>
-              <p class="text-gray-800 text-sm">
-                Número personalizado en la espalda. Podés elegir del 1 al 99 para cada camiseta.
-              </p>
-            </Card>
-
-            <Card class="p-6 cursor-default">
-              <IconShield class="w-8 h-8 text-blue-600 mb-4" />
-              <h3 class="text-lg font-medium mb-2">Escudo del Equipo</h3>
-              <p class="text-gray-800 text-sm">
-                Si tenés un logo o escudo propio, lo bordamos o estampamos en la camiseta
-                (consultar costos adicionales).
-              </p>
-            </Card>
-
-            <Card class="p-6 cursor-default">
-              <IconPalette class="w-8 h-8 text-blue-600 mb-4" />
-              <h3 class="text-lg font-medium mb-2">Colores Personalizados</h3>
-              <p class="text-gray-800 text-sm">
-                Podés elegir entre los colores disponibles del modelo o consultar por
-                opciones de personalización completa.
-              </p>
-            </Card>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
-        <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-lg max-w-4xl mx-auto">
+        <div class="bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-lg max-w-4xl mx-auto">
           <div class="p-8 md:p-12 text-center">
             <div class="max-w-3xl mx-auto">
               <div class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6">
@@ -273,20 +227,20 @@
               <h2 class="text-3xl md:text-4xl font-light text-white mb-6 cursor-default">
                 ¿Listo para Equipar a tu Equipo?
               </h2>
-              <p class="text-lg text-blue-100 mb-8 leading-relaxed cursor-default">
+              <p class="text-lg text-gray-300 mb-8 leading-relaxed cursor-default">
                 Contactanos ahora y recibí una cotización personalizada en menos de 24 horas.
                 Sin compromiso.
               </p>
 
               <button
                 @click="openWhatsApp"
-                class="inline-flex items-center px-8 py-3 bg-white text-blue-700 text-base font-medium rounded-lg hover:bg-blue-50 transition-colors"
+                class="inline-flex items-center px-8 py-3 bg-white text-black text-base font-medium rounded-lg hover:bg-gray-100 transition-colors"
               >
                 <IconWhatsapp class="w-5 h-5 mr-2" />
                 Iniciar Consulta por WhatsApp
               </button>
 
-              <p class="text-sm text-blue-200 mt-4 cursor-default">
+              <p class="text-sm text-gray-400 mt-4 cursor-default">
                 Respuesta en menos de 2 horas en horario comercial
               </p>
             </div>
@@ -342,9 +296,6 @@ import IconPencil from '~icons/heroicons/pencil'
 import IconResize from '~icons/mdi/resize'
 import IconHeadset from '~icons/heroicons/phone'
 import IconAccountGroup from '~icons/mdi/account-group-outline'
-import IconHashtag from '~icons/mdi/pound'
-import IconShield from '~icons/heroicons/shield-check'
-import IconPalette from '~icons/mdi/palette-outline'
 
 const openWhatsApp = () => {
   const phoneNumber = '5493794000783'

@@ -142,7 +142,7 @@
 
             <!-- Deluxe Box -->
             <Card class="p-6 text-center cursor-default">
-              <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <IconTshirt class="w-6 h-6 text-white" />
               </div>
               <h3 class="text-2xl font-light mb-2">Deluxe</h3>
@@ -150,15 +150,15 @@
               <p class="text-sm text-gray-800 mb-6">~$25.000 por camiseta</p>
               <ul class="space-y-2 text-left mb-6">
                 <li class="flex items-start text-sm text-gray-700">
-                  <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-blue-600" />
+                  <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-black" />
                   <span>10 camisetas sorpresa</span>
                 </li>
                 <li class="flex items-start text-sm text-gray-700">
-                  <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-blue-600" />
+                  <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-black" />
                   <span>Incluye camisetas exclusivas</span>
                 </li>
                 <li class="flex items-start text-sm text-gray-700">
-                  <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-blue-600" />
+                  <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-black" />
                   <span>Máxima diversidad de ligas</span>
                 </li>
               </ul>

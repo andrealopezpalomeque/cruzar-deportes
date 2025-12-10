@@ -1,7 +1,7 @@
 <template>
   <Card class="overflow-hidden group hover:shadow-xl transition-all duration-300 cursor-pointer" @click="navigateToDeal">
     <!-- Visual Header with Gradient -->
-    <div class="relative h-48 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 overflow-hidden">
+    <div class="relative h-48 bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
       <div class="relative h-full flex items-center justify-center">
         <div class="text-center">
           <div class="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -26,19 +26,19 @@
       <!-- Features List -->
       <div class="space-y-2 mb-6">
         <div class="flex items-center text-sm text-gray-700">
-          <IconCheck class="w-4 h-4 mr-2 text-blue-600 flex-shrink-0" />
+          <IconCheck class="w-4 h-4 mr-2 text-black flex-shrink-0" />
           <span>Descuento por cantidad</span>
         </div>
         <div class="flex items-center text-sm text-gray-700">
-          <IconCheck class="w-4 h-4 mr-2 text-blue-600 flex-shrink-0" />
+          <IconCheck class="w-4 h-4 mr-2 text-black flex-shrink-0" />
           <span>Personalización incluida</span>
         </div>
         <div class="flex items-center text-sm text-gray-700">
-          <IconCheck class="w-4 h-4 mr-2 text-blue-600 flex-shrink-0" />
+          <IconCheck class="w-4 h-4 mr-2 text-black flex-shrink-0" />
           <span>Múltiples talles disponibles</span>
         </div>
         <div class="flex items-center text-sm text-gray-700">
-          <IconCheck class="w-4 h-4 mr-2 text-blue-600 flex-shrink-0" />
+          <IconCheck class="w-4 h-4 mr-2 text-black flex-shrink-0" />
           <span>Asesoramiento personalizado</span>
         </div>
       </div>
