@@ -5,9 +5,11 @@
       <!-- Background Image with Overlay -->
       <div class="absolute inset-0 opacity-20">
         <img
-          src="/images/stadium-crowd.jpg"
+          src="/images/stadium-crowd.webp"
           alt=""
           class="w-full h-full object-cover"
+          fetchpriority="high"
+          loading="eager"
         />
       </div>
 
@@ -153,8 +155,17 @@
     <!-- Custom Jersey Request Section -->
     <section class="py-16">
       <div class="container mx-auto px-4">
-        <div class="bg-black rounded-lg max-w-4xl mx-auto">
-          <div class="p-8 md:p-12 text-center">
+        <div class="relative bg-gradient-to-br from-black via-gray-900 to-gray-800 rounded-lg max-w-4xl mx-auto overflow-hidden">
+          <!-- Background Image with Overlay -->
+          <div class="absolute inset-0 opacity-15">
+            <img
+              src="/images/stadium-field.webp"
+              alt=""
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-8 md:p-12 text-center relative z-10">
             <div class="max-w-3xl mx-auto">
               <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <IconMagnifyingGlass class="w-8 h-8 text-white" />
