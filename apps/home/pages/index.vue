@@ -1,46 +1,50 @@
 <template>
   <div class="min-h-screen bg-white">
     <!-- Hero Section -->
-    <section class="relative py-12 md:py-16 overflow-hidden">
-      <div class="absolute inset-0 bg-white"></div>
-      <div class="container mx-auto px-4 relative">
-        <div class="max-w-4xl mx-auto text-center">
-          <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-normal bg-white border border-gray-200 text-gray-700 mb-6 cursor-default">
-            <IconSoccer class="w-4 h-4 mr-2" />
+    <section class="relative py-20 md:py-32 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      <!-- Background Image with Overlay -->
+      <div class="absolute inset-0 opacity-20">
+        <img
+          src="/images/stadium-crowd.jpg"
+          alt=""
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl mx-auto text-center space-y-6">
+          <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <IconSoccer class="w-4 h-4" />
             Nueva Colección 2025
           </div>
 
-          <h1 class="text-4xl md:text-6xl font-light mb-6 text-balance cursor-default">
-            Vestí tu Pasión por el <span class="text-black">Deporte</span>
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-balance">
+            Vestí tu Pasión por el Deporte
           </h1>
 
-          <p class="text-lg md:text-xl text-gray-800 mb-8 text-pretty max-w-2xl mx-auto cursor-default">
+          <p class="text-lg md:text-xl text-gray-100 text-balance max-w-2xl mx-auto">
             Descubrí la colección más completa de camisetas deportivas de equipos de todo el mundo. Calidad premium,
             diseños auténticos.
           </p>
 
-          <!-- Category Pills -->
-          <div class="mb-8">
-            <div class="flex items-center justify-center">
-              <div class="flex flex-wrap gap-2 sm:gap-3 justify-center max-w-3xl">
-                <NuxtLink
-                  v-for="category in categories"
-                  :key="category.id"
-                  :to="`/categories/${category.slug}`"
-                  class="inline-flex items-center px-4 py-2 bg-white border border-gray-200 text-gray-700 text-sm font-normal rounded-full hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 shadow-sm hover:shadow-md"
-                >
-                  {{ category.name }}
-                </NuxtLink>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex justify-center">
+          <div class="flex justify-center pt-4">
             <NuxtLink
               to="/products"
-              class="inline-flex items-center px-8 py-3 bg-black text-white text-base font-medium rounded-lg hover:bg-gray-900 transition-colors"
+              class="inline-flex items-center px-8 py-3 bg-white text-black text-base font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
             >
               Explorar Colección
+            </NuxtLink>
+          </div>
+
+          <!-- Category Pills -->
+          <div class="flex flex-wrap items-center justify-center gap-3 pt-8">
+            <NuxtLink
+              v-for="category in categories.slice(0, 5)"
+              :key="category.id"
+              :to="`/categories/${category.slug}`"
+              class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium rounded-full hover:bg-white/20 hover:border-white/30 transition-all duration-200 shadow-sm"
+            >
+              {{ category.name }}
             </NuxtLink>
           </div>
         </div>
