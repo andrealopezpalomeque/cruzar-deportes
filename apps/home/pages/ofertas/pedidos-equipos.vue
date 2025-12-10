@@ -218,8 +218,17 @@
     <!-- CTA Section -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
-        <div class="bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-lg max-w-4xl mx-auto">
-          <div class="p-8 md:p-12 text-center">
+        <div class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-lg max-w-4xl mx-auto overflow-hidden">
+          <!-- Background Image with Overlay -->
+          <div class="absolute inset-0 opacity-15">
+            <img
+              src="/images/football-team-1.webp"
+              alt=""
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-8 md:p-12 text-center relative z-10">
             <div class="max-w-3xl mx-auto">
               <div class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6">
                 <IconAccountGroup class="w-8 h-8 text-white" />
