@@ -92,6 +92,7 @@ definePageMeta({
 // Composables
 const authStore = useAuthStore()
 const router = useRouter()
+const toast = useToast()
 
 // State
 const credentials = ref({
