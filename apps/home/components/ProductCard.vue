@@ -100,6 +100,7 @@
 </template>
 
 <script setup>
+import { useProductsStore } from '~/stores/products'
 import IconTshirtCrew from '~icons/mdi/tshirt-crew'
 import IconStar from '~icons/mdi/star'
 import IconImageMultiple from '~icons/mdi/image-multiple'

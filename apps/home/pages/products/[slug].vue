@@ -58,6 +58,7 @@
 
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
+import { useProductsStore } from '~/stores/products'
 import IconChevronRight from '~icons/mdi/chevron-right'
 import IconAlertCircle from '~icons/mdi/alert-circle'
 import IconArrowLeft from '~icons/mdi/arrow-left'

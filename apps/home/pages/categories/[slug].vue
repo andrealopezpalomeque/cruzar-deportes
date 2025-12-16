@@ -77,6 +77,7 @@
 </template>
 
 <script setup>
+import { useProductsStore } from '~/stores/products'
 import IconTshirtCrew from '~icons/mdi/tshirt-crew'
 import IconArrowLeft from '~icons/mdi/arrow-left'
 

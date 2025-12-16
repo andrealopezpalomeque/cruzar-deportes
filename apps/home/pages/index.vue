@@ -197,6 +197,7 @@
 </template>
 
 <script setup>
+import { useProductsStore } from '~/stores/products'
 import IconSoccer from '~icons/mdi/soccer'
 import IconTruck from '~icons/heroicons/truck'
 import IconShieldCheck from '~icons/heroicons/shield-check'

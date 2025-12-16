@@ -51,6 +51,7 @@
 </template>
 
 <script setup>
+import { useProductsStore } from '~/stores/products'
 import IconArrowRight from '~icons/mdi/arrow-right'
 
 const productsStore = useProductsStore()

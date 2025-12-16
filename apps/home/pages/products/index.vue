@@ -114,6 +114,7 @@
 </template>
 
 <script setup>
+import { useProductsStore } from '~/stores/products'
 import IconTshirtCrew from '~icons/mdi/tshirt-crew'
 import IconRefresh from '~icons/mdi/refresh'
 
