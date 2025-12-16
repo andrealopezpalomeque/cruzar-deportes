@@ -37,6 +37,12 @@ Ensure you have the `.env` file at the **root** of the monorepo with:
 - `GOOGLE_APPLICATION_CREDENTIALS` (Service Account Key path)
 - `BACKOFFICE_USERNAME` / `PASSWORD`
 
+For **local development**, create `apps/back-office/.env.local` (not deployed) with:
+- `GCLOUD_PROJECT=deportes-cruzar`
+- `FIREBASE_STORAGE_BUCKET=deportes-cruzar.firebasestorage.app`
+
+Keep the deployed `apps/back-office/.env` limited to the auth/Cloudinary keys to avoid Firebase reserved env var errors when deploying functions.
+
 ## 📜 TypeScript Policy
 **Rule:** No TypeScript in Vue components (`.vue` files). Use plain JavaScript (`<script setup>`).
 **Allowed:** TypeScript IS allowed in `server/`, `utils/`, `stores/`, and `types/`.

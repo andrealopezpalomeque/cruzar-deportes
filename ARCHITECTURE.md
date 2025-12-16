@@ -83,6 +83,50 @@ To publish changes made in the Back-Office to the public Storefront:
     npm run firebase:build-deploy
     ```
 
+## 🔧 Deployment Workflow (Step-by-Step)
+
+### When admin makes changes in back-office:
+
+1. **Admin edits products** → Changes saved to Firebase Storage automatically ✅
+2. **Run deployment workflow** → Execute from project root:
+   ```bash
+   npm run sync
+   # or
+   bash packages/shared/scripts/deploy-home.sh
+   ```
+3. **Verify deployment** → Check live site for updated products
+
+### For local development:
+
+To pull latest products without deploying:
+```bash
+npm run sync:data
+cd apps/home
+npm run dev
+```
+
+### Available npm scripts:
+
+| Command | Description |
+|---------|-------------|
+| `npm run sync` | Complete deployment workflow (sync + build + deploy) |
+| `npm run sync:data` | Download latest products.json only (for local dev) |
+| `npm run deploy:storefront` | Deploy only (without syncing data) |
+| `npm run deploy:storefront:full` | Same as `npm run sync` |
+
+### Understanding the Sync Process
+
+The `deploy-home.sh` script performs these steps:
+1. **Bootstrap Storage** - Syncs products.json from Firebase Storage
+2. **Rebuild Catalog** - Ensures all team products are present
+3. **Copy to Storefront** - Updates apps/home with latest data
+4. **Build** - Generates static HTML with updated products
+5. **Deploy** - Uploads to Firebase Hosting
+
+**Important**: Always run `npm run sync` after making changes in the back-office to ensure the storefront reflects the latest data.
+
+---
+
 ## 🔌 Future Improvements: Runtime Fetching
 
 To avoid rebuilding for every price change, we can switch the Storefront to **Runtime Fetching**:

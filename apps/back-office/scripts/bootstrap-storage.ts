@@ -54,6 +54,10 @@ async function main() {
   const localProductCount = Object.keys(localDb.products).length
   const remoteProductCount = Object.keys(remoteDb.products).length
 
+  console.log(`\n📊 Product Count Comparison:`)
+  console.log(`   Local:  ${localProductCount} products (updated: ${localDb.lastUpdated ?? 'unknown'})`)
+  console.log(`   Remote: ${remoteProductCount} products (updated: ${remoteDb.lastUpdated ?? 'unknown'})`)
+
   const parseTimestamp = (value?: string) => {
     if (!value) return 0
     const time = Date.parse(value)
@@ -67,6 +71,18 @@ async function main() {
   const localHasCatalog = localProductCount > 0
   const localIsNewer = localUpdatedAt > remoteUpdatedAt
   const remoteIsNewer = remoteUpdatedAt > localUpdatedAt
+
+  // Warn about large deletions
+  if (remoteProductCount > 0 && localProductCount > 0) {
+    const productDiff = Math.abs(remoteProductCount - localProductCount)
+    const percentageChange = (productDiff / Math.max(remoteProductCount, localProductCount)) * 100
+
+    if (percentageChange > 50) {
+      console.warn(`\n⚠️  WARNING: Large product count change detected!`)
+      console.warn(`   Change: ${productDiff} products (${percentageChange.toFixed(1)}% difference)`)
+      console.warn(`   This is a significant change. Please verify this is intentional.`)
+    }
+  }
 
   if ((remoteIsEmpty && localHasCatalog) || localIsNewer) {
     const reason = remoteIsEmpty

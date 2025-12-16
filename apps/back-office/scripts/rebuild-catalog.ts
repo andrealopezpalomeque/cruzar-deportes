@@ -1,6 +1,6 @@
-import type { CategoryType, SharedProduct, SharedCategory } from '../../../packages/shared/types'
-import { teamCatalog } from '../../../packages/shared/catalog'
-import { readProductsDatabase, writeProductsDatabase } from '../../../packages/shared/utils/productSync'
+import type { CategoryType, SharedProduct, SharedCategory } from '../../../packages/shared/types.ts'
+import { teamCatalog } from '../../../packages/shared/catalog.ts'
+import { readProductsDatabase, writeProductsDatabase } from '../../../packages/shared/utils/productSync.ts'
 import { getTeamCloudinaryUrls } from '../utils/cloudinaryUrlMapping.ts'
 
 
