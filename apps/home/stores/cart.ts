@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { ref, computed, watch } from 'vue'
 import { formatArs } from '@cruzar/shared/utils/currency'
 import type { CartItem, Product } from '~/types'
+import { useProductsStore } from './products'
 
 export interface CustomerInfo {
   name: string
