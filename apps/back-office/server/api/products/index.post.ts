@@ -1,7 +1,7 @@
 import type { ApiResponse } from '~/types'
 import type { SharedProduct } from '@cruzar/shared/types'
 import { requireSession } from '../../utils/session'
-import { writeProductsDatabase } from '@cruzar/shared/utils/productSync'
+import { saveProduct } from '@cruzar/shared/utils/productSync'
 
 export default defineEventHandler(async (event): Promise<ApiResponse<null>> => {
   try {
