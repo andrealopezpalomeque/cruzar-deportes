@@ -91,6 +91,38 @@
             Nuevo producto
           </button>
 
+          <!-- Select All on Page -->
+          <div
+            v-if="!loading && !error && paginatedProducts.length > 0"
+            class="flex items-center gap-2 bg-white border border-gray-200 rounded-xl px-3 py-2"
+          >
+            <label class="flex items-center cursor-pointer group">
+              <input
+                type="checkbox"
+                :checked="allOnPageSelected"
+                :indeterminate="someOnPageSelected && !allOnPageSelected"
+                @change="toggleSelectAllOnPage"
+                class="sr-only"
+              />
+              <div
+                :class="[
+                  'w-5 h-5 rounded border-2 flex items-center justify-center transition-all',
+                  allOnPageSelected
+                    ? 'bg-blue-600 border-blue-600'
+                    : someOnPageSelected
+                    ? 'bg-blue-100 border-blue-600'
+                    : 'bg-white border-gray-300 group-hover:border-blue-400'
+                ]"
+              >
+                <IconCheck v-if="allOnPageSelected" class="w-3.5 h-3.5 text-white" />
+                <IconMinus v-else-if="someOnPageSelected" class="w-3.5 h-3.5 text-blue-600" />
+              </div>
+            </label>
+            <span class="text-sm text-gray-700 font-medium">
+              Seleccionar página
+            </span>
+          </div>
+
           <!-- Bulk Actions -->
           <div
             v-if="selectedProducts.length > 0"
@@ -951,6 +983,7 @@ import IconClose from '~icons/mdi/close'
 import IconImageOff from '~icons/mdi/image-off'
 import IconImageMultiple from '~icons/mdi/image-multiple'
 import IconCheck from '~icons/mdi/check'
+import IconMinus from '~icons/mdi/minus'
 import IconCashMultiple from '~icons/mdi/cash-multiple'
 import IconPencil from '~icons/mdi/pencil'
 import IconSearch from '~icons/mdi/magnify'
@@ -1092,6 +1125,35 @@ const toggleProductSelection = (productId) => {
 
 const clearSelection = () => {
   selectedProducts.value = []
+}
+
+// Select all products on current page
+const allOnPageSelected = computed(() => {
+  if (paginatedProducts.value.length === 0) return false
+  return paginatedProducts.value.every(p => isProductSelected(p.id))
+})
+
+// Check if some (but not all) products on current page are selected
+const someOnPageSelected = computed(() => {
+  if (paginatedProducts.value.length === 0) return false
+  return paginatedProducts.value.some(p => isProductSelected(p.id))
+})
+
+const toggleSelectAllOnPage = () => {
+  const allSelected = allOnPageSelected.value
+
+  if (allSelected) {
+    // Deselect all products on current page
+    const pageIds = new Set(paginatedProducts.value.map(p => p.id))
+    selectedProducts.value = selectedProducts.value.filter(id => !pageIds.has(id))
+  } else {
+    // Select all products on current page
+    paginatedProducts.value.forEach(p => {
+      if (!isProductSelected(p.id)) {
+        selectedProducts.value.push(p.id)
+      }
+    })
+  }
 }
 
 const getProductFolderPath = (product) => {
