@@ -4,6 +4,9 @@
   "type": "module",
   "main": "index.ts",
   "types": "index.ts",
+  "dependencies": {
+    "firebase-admin": "^12.5.0"
+  },
   "devDependencies": {
     "typescript": "^5.0.0"
   }

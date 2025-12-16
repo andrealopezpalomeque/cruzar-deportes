@@ -1,128 +1,81 @@
+import { Cloudinary } from '@cloudinary/url-gen'
+import { fill } from '@cloudinary/url-gen/actions/resize'
+import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity'
+import { quality } from '@cloudinary/url-gen/actions/delivery'
+import { format } from '@cloudinary/url-gen/actions/delivery'
+
 export const useCloudinary = () => {
   const config = useRuntimeConfig()
+  const cloudName = config.public.cloudinaryCloudName
 
-  const uploadImage = async (file: File, folder: string = 'general'): Promise<string> => {
-    try {
-      const formData = new FormData()
-      formData.append('file', file)
-      formData.append('folder', `cruzar-deportes/${folder}`)
-      formData.append('cloud_name', config.cloudinaryCloudName)
-      formData.append('upload_preset', 'unsigned_preset') // You'll need to create this in Cloudinary
+  if (!cloudName) {
+    console.warn('Cloudinary cloud name not configured')
+  }
 
-      const response = await $fetch<{
-        secure_url: string
-        public_id: string
-        format: string
-      }>(`https://api.cloudinary.com/v1_1/${config.cloudinaryCloudName}/image/upload`, {
-        method: 'POST',
-        body: formData
-      })
-
-      return response.secure_url
-    } catch (error) {
-      console.error('Error uploading to Cloudinary:', error)
-      throw new Error('Failed to upload image to Cloudinary')
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: cloudName || ''
+    },
+    url: {
+      secure: true
     }
-  }
+  })
 
-  const uploadImages = async (files: File[], folder: string = 'general'): Promise<string[]> => {
-    const uploadPromises = files.map(file => uploadImage(file, folder))
-    return Promise.all(uploadPromises)
-  }
-
-  const uploadProductImages = async (
-    files: File[],
-    productSlug: string,
-    category: string
-  ): Promise<string[]> => {
-    const folder = `products/${category}/${productSlug}`
-    return uploadImages(files, folder)
-  }
-
-  const deleteImage = async (publicId: string): Promise<void> => {
-    try {
-      // This requires server-side implementation for security
-      // For now, we'll just handle this through the Cloudinary dashboard
-      await $fetch('/api/cloudinary/delete', {
-        method: 'POST',
-        body: { publicId }
-      })
-    } catch (error) {
-      console.error('Error deleting from Cloudinary:', error)
-      throw new Error('Failed to delete image from Cloudinary')
-    }
-  }
-
-  const getOptimizedUrl = (
-    url: string,
-    options: {
+  /**
+   * Generate optimized image URL from Cloudinary
+   * @param publicId - The public ID of the image in Cloudinary
+   * @param options - Transformation options
+   */
+  const getImageUrl = (
+    publicId: string,
+    options?: {
       width?: number
       height?: number
-      quality?: 'auto' | number
-      format?: 'auto' | 'webp' | 'avif' | 'jpg' | 'png'
-      crop?: 'fill' | 'fit' | 'crop' | 'scale'
-    } = {}
+      crop?: string
+      quality?: number | string
+      format?: string
+    }
   ): string => {
-    if (!url.includes('cloudinary.com')) {
-      return url // Return original URL if not a Cloudinary URL
+    if (!publicId) return ''
+
+    const image = cld.image(publicId)
+
+    // Apply transformations
+    if (options?.width || options?.height) {
+      const resizeAction = fill()
+      if (options.width) resizeAction.width(options.width)
+      if (options.height) resizeAction.height(options.height)
+      resizeAction.gravity(autoGravity())
+      image.resize(resizeAction)
     }
 
-    const {
-      width,
-      height,
-      quality = 'auto',
-      format = 'auto',
-      crop = 'fit'
-    } = options
-
-    const transformations = []
-
-    if (width || height) {
-      const dimensions = []
-      if (width) dimensions.push(`w_${width}`)
-      if (height) dimensions.push(`h_${height}`)
-      if (crop) dimensions.push(`c_${crop}`)
-      transformations.push(dimensions.join(','))
+    if (options?.quality) {
+      image.delivery(quality(options.quality))
     }
 
-    if (quality) {
-      transformations.push(`q_${quality}`)
+    if (options?.format) {
+      image.delivery(format(options.format))
     }
 
-    if (format) {
-      transformations.push(`f_${format}`)
-    }
-
-    if (transformations.length === 0) {
-      return url
-    }
-
-    // Insert transformations into Cloudinary URL
-    const transformString = transformations.join('/')
-    return url.replace('/upload/', `/upload/${transformString}/`)
+    return image.toURL()
   }
 
-  const getImageInfo = (url: string) => {
-    if (!url.includes('cloudinary.com')) {
-      return null
-    }
-
-    const matches = url.match(/\/([^\/]+)\/([^\/]+)\.(jpg|jpeg|png|gif|webp)/)
-    if (!matches) return null
-
+  /**
+   * Generate responsive image URLs for different screen sizes
+   */
+  const getResponsiveUrls = (publicId: string) => {
     return {
-      folder: matches[1],
-      filename: matches[2],
-      format: matches[3]
+      thumbnail: getImageUrl(publicId, { width: 200, height: 200, quality: 'auto' }),
+      small: getImageUrl(publicId, { width: 400, quality: 'auto' }),
+      medium: getImageUrl(publicId, { width: 800, quality: 'auto' }),
+      large: getImageUrl(publicId, { width: 1200, quality: 'auto' }),
+      original: getImageUrl(publicId, { quality: 'auto', format: 'auto' })
     }
   }
 
   return {
-    uploadImage,
-    uploadImages,
-    uploadProductImages,
-    deleteImage,
-    getOptimizedUrl,
-    getImageInfo
+    cld,
+    getImageUrl,
+    getResponsiveUrls
   }
 }

@@ -30,8 +30,9 @@ echo "Syncing shared catalog from Firebase Storage..."
 cd "$BACKOFFICE_DIR"
 node scripts/bootstrap-storage.ts
 
-echo "Ensuring catalog contains all team products..."
-node scripts/rebuild-catalog.ts
+# echo "Ensuring catalog contains all team products..."
+# node scripts/rebuild-catalog.ts
+# Note: Rebuild catalog disabled to preserve manually selected products only
 
 SHARED_TARGET="$ROOT_DIR/packages/shared"
 SHARED_LINK="$HOME_DIR/shared"
