@@ -33,7 +33,7 @@ firebase-debug.*.log
 .firebaserc
 
 # Firebase service account
-/scripts/cruzar-back-office-admin.json
+/scripts/deportes-cruzar-firebase-admin.json
 
 # Cloudinary images (served externally, not tracked in git)
 public/images/afc/

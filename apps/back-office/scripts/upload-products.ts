@@ -8,7 +8,7 @@ const SHARED_DIR = join(ROOT_DIR, 'packages', 'shared')
 const LOCAL_FILE = join(SHARED_DIR, 'products.json')
 
 async function loadSharedUtils() {
-  const moduleUrl = new URL('../../shared/utils/productSync.ts', import.meta.url)
+  const moduleUrl = new URL('../../../packages/shared/utils/productSync.ts', import.meta.url)
   return await import(moduleUrl.href)
 }
 
