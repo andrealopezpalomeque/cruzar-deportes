@@ -33,23 +33,29 @@ node scripts/bootstrap-storage.ts
 echo "Ensuring catalog contains all team products..."
 node scripts/rebuild-catalog.ts
 
-if [[ ! -L "$HOME_DIR/shared" ]]; then
-  echo "Copying updated catalog into home storefront..."
-  mkdir -p "$HOME_DIR/shared"
-  cp -f "$ROOT_DIR/packages/shared/products.json" "$HOME_DIR/shared/products.json"
+SHARED_TARGET="$ROOT_DIR/packages/shared"
+SHARED_LINK="$HOME_DIR/shared"
+
+if [[ -L "$SHARED_LINK" ]]; then
+  echo "Home storefront shared directory already symlinked; skipping."
+elif [[ -e "$SHARED_LINK" ]]; then
+  echo "Home storefront shared directory exists but is not a symlink; replacing with symlink to $SHARED_TARGET."
+  rm -rf "$SHARED_LINK"
+  ln -s "$SHARED_TARGET" "$SHARED_LINK"
 else
-  echo "Home storefront uses shared/ symlink; skipping copy step."
+  echo "Creating symlink for shared catalog into home storefront..."
+  ln -s "$SHARED_TARGET" "$SHARED_LINK"
 fi
 
-cd "$HOME_DIR"
+cd "$ROOT_DIR"
 
 echo "Installing dependencies (npm ci)..."
-npm ci
+npm ci --workspace apps/home --include-workspace-root false
 
 echo "Building storefront (npm run firebase:build)..."
-npm run firebase:build
+npm run --workspace apps/home firebase:build
 
 echo "Deploying storefront (npm run firebase:deploy)..."
-npm run firebase:deploy
+npm run --workspace apps/home firebase:deploy
 
 echo "✅ Storefront deployed successfully."

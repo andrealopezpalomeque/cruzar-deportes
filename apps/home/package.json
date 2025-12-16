@@ -19,7 +19,7 @@
     "retry:failed-uploads": "node scripts/retryFailedUploads.js"
   },
   "dependencies": {
-    "@cruzar/shared": "workspace:*",
+    "@cruzar/shared": "file:../../packages/shared",
     "@iconify/vue": "^5.0.0",
     "@nuxtjs/cloudinary": "^4.0.0",
     "@nuxtjs/tailwindcss": "^6.14.0",

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-12-16T03:10:30.330Z",
+  "lastUpdated": "2025-12-16T04:33:33.149Z",
   "products": {
     "team-boca": {
       "id": "team-boca",
@@ -7060,6 +7060,38 @@
       "lastModified": "2025-11-18T19:32:56.804Z",
       "createdAt": "2025-11-18T19:32:56.804Z",
       "createdBy": "admin"
+    },
+    "team-club_atletico_ejemplo": {
+      "id": "team-club_atletico_ejemplo",
+      "name": "club atletico ejemplo",
+      "slug": "club-atletico-ejemplo",
+      "description": "",
+      "price": 345333,
+      "category": "f1",
+      "selectedImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1765859610/cruzar-deportes/products/f1/club_atletico_ejemplo/h9n7o20fn5vs9moyeoyw.webp"
+      ],
+      "allAvailableImages": [
+        "https://res.cloudinary.com/dmb1vyveg/image/upload/v1765859610/cruzar-deportes/products/f1/club_atletico_ejemplo/h9n7o20fn5vs9moyeoyw.webp"
+      ],
+      "cloudinaryFolderPath": "cruzar-deportes/products/f1/club_atletico_ejemplo",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "Home",
+        "Away"
+      ],
+      "inStock": true,
+      "stockStatus": "in_stock",
+      "featured": false,
+      "lastModified": "2025-12-16T04:33:33.149Z",
+      "createdAt": "2025-12-16T04:33:33.149Z",
+      "createdBy": "admin"
     }
   },
   "categories": {
@@ -7364,7 +7396,7 @@
       "id": "f1",
       "name": "F1",
       "slug": "f1",
-      "productCount": 0,
+      "productCount": 1,
       "lastModified": "2025-11-18T18:58:22.733Z"
     },
     "vest": {
@@ -7458,8 +7490,8 @@
     }
   },
   "metadata": {
-    "totalProducts": 132,
-    "totalImages": 492,
-    "lastSync": "2025-12-16T03:10:30.330Z"
+    "totalProducts": 133,
+    "totalImages": 493,
+    "lastSync": "2025-12-16T04:33:33.149Z"
   }
 }
