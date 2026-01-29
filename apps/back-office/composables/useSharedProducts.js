@@ -1,16 +1,46 @@
+/**
+ * Composable for managing products via external API
+ *
+ * Uses the external Cruzar API at https://cruzar-api.onrender.com
+ * - GET requests: No authentication required
+ * - POST/PUT/DELETE requests: Require x-api-key header
+ */
 export const useSharedProducts = () => {
+  const config = useRuntimeConfig()
   const loading = ref(false)
   const error = ref(null)
 
-  // Load products from shared database
-  const loadProducts = async (filters) => {
+  // Base URL for the external API
+  const apiUrl = config.public.apiUrl
+
+  // Helper to get headers for authenticated requests
+  const getAuthHeaders = () => {
+    const headers = {
+      'Content-Type': 'application/json'
+    }
+    if (config.public.apiKey) {
+      headers['x-api-key'] = config.public.apiKey
+    }
+    return headers
+  }
+
+  // Load products from external API
+  const loadProducts = async (filters = {}) => {
     try {
       loading.value = true
       error.value = null
 
-      const response = await $fetch('/api/products', {
-        query: filters
-      })
+      // Build query string from filters
+      const queryParams = new URLSearchParams()
+      if (filters.category) queryParams.append('category', filters.category)
+      if (filters.search) queryParams.append('search', filters.search)
+      if (filters.featured !== undefined) queryParams.append('featured', filters.featured)
+      if (filters.inStock !== undefined) queryParams.append('inStock', filters.inStock)
+
+      const queryString = queryParams.toString()
+      const url = `${apiUrl}/api/products${queryString ? `?${queryString}` : ''}`
+
+      const response = await $fetch(url)
 
       if (response.success && response.data) {
         // Post-process products to ensure they have allAvailableImages populated
@@ -30,8 +60,8 @@ export const useSharedProducts = () => {
                     product.selectedImages = product.allAvailableImages.slice(0, 5)
                   }
                 }
-              } catch (error) {
-                console.warn(`Failed to load images for product ${product.id}:`, error)
+              } catch (err) {
+                console.warn(`Failed to load images for product ${product.id}:`, err)
               }
             }
             return product
@@ -56,7 +86,7 @@ export const useSharedProducts = () => {
       loading.value = true
       error.value = null
 
-      const response = await $fetch(`/api/products/${productId}`)
+      const response = await $fetch(`${apiUrl}/api/products/${productId}`)
 
       if (response.success && response.data) {
         return response.data
@@ -70,20 +100,23 @@ export const useSharedProducts = () => {
     }
   }
 
-  // Save product
+  // Save/create product
   const saveProduct = async (product) => {
     try {
       loading.value = true
       error.value = null
 
-      const response = await $fetch('/api/products', {
+      const response = await $fetch(`${apiUrl}/api/products`, {
         method: 'POST',
+        headers: getAuthHeaders(),
         body: product
       })
 
       if (!response.success) {
         throw new Error(response.error || 'Failed to save product')
       }
+
+      return response.data
     } catch (err) {
       error.value = err.message || 'Failed to save product'
       throw err
@@ -92,18 +125,41 @@ export const useSharedProducts = () => {
     }
   }
 
-  // Update product images
-  const updateProductImages = async (
-    productId,
-    selectedImages,
-    allAvailableImages
-  ) => {
+  // Update product (full update)
+  const updateProduct = async (productId, productData) => {
     try {
       loading.value = true
       error.value = null
 
-      const response = await $fetch(`/api/products/${productId}/images`, {
-        method: 'PATCH',
+      const response = await $fetch(`${apiUrl}/api/products/${productId}`, {
+        method: 'PUT',
+        headers: getAuthHeaders(),
+        body: productData
+      })
+
+      if (!response.success) {
+        throw new Error(response.error || 'Failed to update product')
+      }
+
+      return response.data
+    } catch (err) {
+      error.value = err.message || 'Failed to update product'
+      throw err
+    } finally {
+      loading.value = false
+    }
+  }
+
+  // Update product images
+  const updateProductImages = async (productId, selectedImages, allAvailableImages) => {
+    try {
+      loading.value = true
+      error.value = null
+
+      // Use PUT to update the product with new images
+      const response = await $fetch(`${apiUrl}/api/products/${productId}`, {
+        method: 'PUT',
+        headers: getAuthHeaders(),
         body: {
           selectedImages,
           allAvailableImages
@@ -113,6 +169,8 @@ export const useSharedProducts = () => {
       if (!response.success) {
         throw new Error(response.error || 'Failed to update images')
       }
+
+      return response.data
     } catch (err) {
       error.value = err.message || 'Failed to update images'
       throw err
@@ -122,17 +180,14 @@ export const useSharedProducts = () => {
   }
 
   // Update product pricing
-  const updateProductPricing = async (
-    productId,
-    price,
-    originalPrice
-  ) => {
+  const updateProductPricing = async (productId, price, originalPrice) => {
     try {
       loading.value = true
       error.value = null
 
-      const response = await $fetch(`/api/products/${productId}/pricing`, {
-        method: 'PATCH',
+      const response = await $fetch(`${apiUrl}/api/products/${productId}`, {
+        method: 'PUT',
+        headers: getAuthHeaders(),
         body: {
           price,
           originalPrice
@@ -142,6 +197,8 @@ export const useSharedProducts = () => {
       if (!response.success) {
         throw new Error(response.error || 'Failed to update pricing')
       }
+
+      return response.data
     } catch (err) {
       error.value = err.message || 'Failed to update pricing'
       throw err
@@ -150,23 +207,23 @@ export const useSharedProducts = () => {
     }
   }
 
-  // Update product status
-  const updateProductStatus = async (
-    productId,
-    updates
-  ) => {
+  // Update product status (featured, inStock, etc.)
+  const updateProductStatus = async (productId, updates) => {
     try {
       loading.value = true
       error.value = null
 
-      const response = await $fetch(`/api/products/${productId}/status`, {
-        method: 'PATCH',
+      const response = await $fetch(`${apiUrl}/api/products/${productId}`, {
+        method: 'PUT',
+        headers: getAuthHeaders(),
         body: updates
       })
 
       if (!response.success) {
         throw new Error(response.error || 'Failed to update status')
       }
+
+      return response.data
     } catch (err) {
       error.value = err.message || 'Failed to update status'
       throw err
@@ -175,26 +232,30 @@ export const useSharedProducts = () => {
     }
   }
 
-  // Bulk operations
-  const bulkUpdateProducts = async (
-    productIds,
-    updates
-  ) => {
+  // Bulk update products
+  const bulkUpdateProducts = async (productIds, updates) => {
     try {
       loading.value = true
       error.value = null
 
-      const response = await $fetch('/api/products/bulk', {
-        method: 'PATCH',
-        body: {
-          productIds,
-          updates
-        }
-      })
+      // Update each product individually since the external API may not support bulk
+      const results = await Promise.all(
+        productIds.map(async (id) => {
+          const response = await $fetch(`${apiUrl}/api/products/${id}`, {
+            method: 'PUT',
+            headers: getAuthHeaders(),
+            body: updates
+          })
+          return response
+        })
+      )
 
-      if (!response.success) {
-        throw new Error(response.error || 'Failed to bulk update products')
+      const failed = results.filter(r => !r.success)
+      if (failed.length > 0) {
+        throw new Error(`Failed to update ${failed.length} products`)
       }
+
+      return results
     } catch (err) {
       error.value = err.message || 'Failed to bulk update products'
       throw err
@@ -209,13 +270,16 @@ export const useSharedProducts = () => {
       loading.value = true
       error.value = null
 
-      const response = await $fetch(`/api/products/${productId}`, {
-        method: 'DELETE'
+      const response = await $fetch(`${apiUrl}/api/products/${productId}`, {
+        method: 'DELETE',
+        headers: getAuthHeaders()
       })
 
       if (!response.success) {
         throw new Error(response.error || 'Failed to delete product')
       }
+
+      return true
     } catch (err) {
       error.value = err.message || 'Failed to delete product'
       throw err
@@ -227,12 +291,23 @@ export const useSharedProducts = () => {
   // Get database stats
   const getDatabaseStats = async () => {
     try {
-      const response = await $fetch('/api/products/stats')
-
-      if (response.success && response.data) {
-        return response.data
+      // Try to get stats from the API, fall back to computing from products list
+      try {
+        const response = await $fetch(`${apiUrl}/api/products/stats`)
+        if (response.success && response.data) {
+          return response.data
+        }
+      } catch {
+        // Stats endpoint may not exist, compute from products
       }
-      return null
+
+      // Fallback: compute stats from products list
+      const products = await loadProducts()
+      return {
+        totalProducts: products.length,
+        totalImages: products.reduce((acc, p) => acc + (p.selectedImages?.length || 0), 0),
+        categories: [...new Set(products.map(p => p.category || p.categoryId))].length
+      }
     } catch (err) {
       console.error('Failed to get database stats:', err)
       return null
@@ -246,6 +321,7 @@ export const useSharedProducts = () => {
     loadProducts,
     loadProduct,
     saveProduct,
+    updateProduct,
     updateProductImages,
     updateProductPricing,
     updateProductStatus,

@@ -30,7 +30,9 @@ export default defineNuxtConfig({
     // Public keys (exposed to the client-side code)
     public: {
       cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
-      appName: 'Cruzar Deportes - Back Office'
+      appName: 'Cruzar Deportes - Back Office',
+      apiUrl: process.env.NUXT_PUBLIC_API_URL || 'http://localhost:3002',
+      apiKey: process.env.NUXT_PUBLIC_API_KEY || ''
     }
   },
 
