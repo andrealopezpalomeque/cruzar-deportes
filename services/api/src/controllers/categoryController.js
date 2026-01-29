@@ -1,46 +1,36 @@
-// Mock data for development
-const mockCategories = [
-  {
-    id: '1',
-    name: 'Ropa',
-    slug: 'ropa',
-    description: 'Ropa deportiva de alto rendimiento',
-    image: 'https://example.com/category-ropa.jpg',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-  },
-  {
-    id: '2',
-    name: 'Calzado',
-    slug: 'calzado',
-    description: 'Calzado deportivo profesional',
-    image: 'https://example.com/category-calzado.jpg',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-  },
-  {
-    id: '3',
-    name: 'Accesorios',
-    slug: 'accesorios',
-    description: 'Accesorios deportivos',
-    image: 'https://example.com/category-accesorios.jpg',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-  }
-];
+const { db, admin } = require('../config/firebase');
+
+const categoriesCollection = db.collection('categories');
+
+// Helper to convert Firestore doc to plain object with id
+const docToCategory = (doc) => {
+  const data = doc.data();
+  return {
+    id: doc.id,
+    ...data,
+    createdAt: data.createdAt?.toDate?.()?.toISOString() || data.createdAt,
+    updatedAt: data.updatedAt?.toDate?.()?.toISOString() || data.updatedAt
+  };
+};
 
 // Get all categories
 const getAllCategories = async (req, res) => {
   try {
-    // TODO: Replace with Firestore query
+    const snapshot = await categoriesCollection.orderBy('order', 'asc').get();
+    const categories = snapshot.docs.map(docToCategory);
+
     res.json({
       success: true,
-      data: mockCategories,
-      total: mockCategories.length
+      data: categories,
+      total: categories.length
     });
   } catch (error) {
     console.error('Error fetching categories:', error);
-    res.status(500).json({ success: false, error: 'Failed to fetch categories' });
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch categories',
+      message: error.message
+    });
   }
 };
 
@@ -48,17 +38,20 @@ const getAllCategories = async (req, res) => {
 const getCategoryById = async (req, res) => {
   try {
     const { id } = req.params;
-    // TODO: Replace with Firestore query
-    const category = mockCategories.find(c => c.id === id);
+    const doc = await categoriesCollection.doc(id).get();
 
-    if (!category) {
+    if (!doc.exists) {
       return res.status(404).json({ success: false, error: 'Category not found' });
     }
 
-    res.json({ success: true, data: category });
+    res.json({ success: true, data: docToCategory(doc) });
   } catch (error) {
     console.error('Error fetching category:', error);
-    res.status(500).json({ success: false, error: 'Failed to fetch category' });
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch category',
+      message: error.message
+    });
   }
 };
 
@@ -66,18 +59,33 @@ const getCategoryById = async (req, res) => {
 const createCategory = async (req, res) => {
   try {
     const categoryData = req.body;
-    // TODO: Replace with Firestore create
+    const now = admin.firestore.FieldValue.serverTimestamp();
+
     const newCategory = {
-      id: String(Date.now()),
-      ...categoryData,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString()
+      name: categoryData.name || '',
+      slug: categoryData.slug || '',
+      description: categoryData.description || '',
+      image: categoryData.image || null,
+      order: categoryData.order ?? 0,
+      isActive: categoryData.isActive ?? true,
+      createdAt: now,
+      updatedAt: now
     };
 
-    res.status(201).json({ success: true, data: newCategory });
+    const docRef = await categoriesCollection.add(newCategory);
+    const createdDoc = await docRef.get();
+
+    res.status(201).json({
+      success: true,
+      data: docToCategory(createdDoc)
+    });
   } catch (error) {
     console.error('Error creating category:', error);
-    res.status(500).json({ success: false, error: 'Failed to create category' });
+    res.status(500).json({
+      success: false,
+      error: 'Failed to create category',
+      message: error.message
+    });
   }
 };
 
@@ -86,23 +94,34 @@ const updateCategory = async (req, res) => {
   try {
     const { id } = req.params;
     const updateData = req.body;
-    // TODO: Replace with Firestore update
-    const category = mockCategories.find(c => c.id === id);
 
-    if (!category) {
+    const docRef = categoriesCollection.doc(id);
+    const doc = await docRef.get();
+
+    if (!doc.exists) {
       return res.status(404).json({ success: false, error: 'Category not found' });
     }
 
-    const updatedCategory = {
-      ...category,
+    const dataToUpdate = {
       ...updateData,
-      updatedAt: new Date().toISOString()
+      updatedAt: admin.firestore.FieldValue.serverTimestamp()
     };
 
-    res.json({ success: true, data: updatedCategory });
+    // Remove id from update data if present
+    delete dataToUpdate.id;
+    delete dataToUpdate.createdAt;
+
+    await docRef.update(dataToUpdate);
+    const updatedDoc = await docRef.get();
+
+    res.json({ success: true, data: docToCategory(updatedDoc) });
   } catch (error) {
     console.error('Error updating category:', error);
-    res.status(500).json({ success: false, error: 'Failed to update category' });
+    res.status(500).json({
+      success: false,
+      error: 'Failed to update category',
+      message: error.message
+    });
   }
 };
 
@@ -110,17 +129,24 @@ const updateCategory = async (req, res) => {
 const deleteCategory = async (req, res) => {
   try {
     const { id } = req.params;
-    // TODO: Replace with Firestore delete
-    const category = mockCategories.find(c => c.id === id);
 
-    if (!category) {
+    const docRef = categoriesCollection.doc(id);
+    const doc = await docRef.get();
+
+    if (!doc.exists) {
       return res.status(404).json({ success: false, error: 'Category not found' });
     }
+
+    await docRef.delete();
 
     res.json({ success: true, message: 'Category deleted successfully' });
   } catch (error) {
     console.error('Error deleting category:', error);
-    res.status(500).json({ success: false, error: 'Failed to delete category' });
+    res.status(500).json({
+      success: false,
+      error: 'Failed to delete category',
+      message: error.message
+    });
   }
 };
 

@@ -1,41 +1,36 @@
-// Mock data for development
-const mockProducts = [
-  {
-    id: '1',
-    name: 'Camiseta Deportiva',
-    description: 'Camiseta de alto rendimiento',
-    price: 29990,
-    category: 'ropa',
-    stock: 50,
-    images: ['https://example.com/image1.jpg'],
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-  },
-  {
-    id: '2',
-    name: 'Zapatillas Running',
-    description: 'Zapatillas para correr profesionales',
-    price: 89990,
-    category: 'calzado',
-    stock: 25,
-    images: ['https://example.com/image2.jpg'],
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-  }
-];
+const { db, admin } = require('../config/firebase');
+
+const productsCollection = db.collection('products');
+
+// Helper to convert Firestore doc to plain object with id
+const docToProduct = (doc) => {
+  const data = doc.data();
+  return {
+    id: doc.id,
+    ...data,
+    createdAt: data.createdAt?.toDate?.()?.toISOString() || data.createdAt,
+    updatedAt: data.updatedAt?.toDate?.()?.toISOString() || data.updatedAt
+  };
+};
 
 // Get all products
 const getAllProducts = async (req, res) => {
   try {
-    // TODO: Replace with Firestore query
+    const snapshot = await productsCollection.orderBy('createdAt', 'desc').get();
+    const products = snapshot.docs.map(docToProduct);
+
     res.json({
       success: true,
-      data: mockProducts,
-      total: mockProducts.length
+      data: products,
+      total: products.length
     });
   } catch (error) {
     console.error('Error fetching products:', error);
-    res.status(500).json({ success: false, error: 'Failed to fetch products' });
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch products',
+      message: error.message
+    });
   }
 };
 
@@ -43,17 +38,20 @@ const getAllProducts = async (req, res) => {
 const getProductById = async (req, res) => {
   try {
     const { id } = req.params;
-    // TODO: Replace with Firestore query
-    const product = mockProducts.find(p => p.id === id);
+    const doc = await productsCollection.doc(id).get();
 
-    if (!product) {
+    if (!doc.exists) {
       return res.status(404).json({ success: false, error: 'Product not found' });
     }
 
-    res.json({ success: true, data: product });
+    res.json({ success: true, data: docToProduct(doc) });
   } catch (error) {
     console.error('Error fetching product:', error);
-    res.status(500).json({ success: false, error: 'Failed to fetch product' });
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch product',
+      message: error.message
+    });
   }
 };
 
@@ -61,18 +59,37 @@ const getProductById = async (req, res) => {
 const createProduct = async (req, res) => {
   try {
     const productData = req.body;
-    // TODO: Replace with Firestore create
+    const now = admin.firestore.FieldValue.serverTimestamp();
+
     const newProduct = {
-      id: String(Date.now()),
-      ...productData,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString()
+      name: productData.name || '',
+      slug: productData.slug || '',
+      description: productData.description || '',
+      price: productData.price || 0,
+      originalPrice: productData.originalPrice || null,
+      categoryId: productData.categoryId || '',
+      images: productData.images || [],
+      sizes: productData.sizes || [],
+      isActive: productData.isActive ?? true,
+      inStock: productData.inStock ?? true,
+      createdAt: now,
+      updatedAt: now
     };
 
-    res.status(201).json({ success: true, data: newProduct });
+    const docRef = await productsCollection.add(newProduct);
+    const createdDoc = await docRef.get();
+
+    res.status(201).json({
+      success: true,
+      data: docToProduct(createdDoc)
+    });
   } catch (error) {
     console.error('Error creating product:', error);
-    res.status(500).json({ success: false, error: 'Failed to create product' });
+    res.status(500).json({
+      success: false,
+      error: 'Failed to create product',
+      message: error.message
+    });
   }
 };
 
@@ -81,23 +98,34 @@ const updateProduct = async (req, res) => {
   try {
     const { id } = req.params;
     const updateData = req.body;
-    // TODO: Replace with Firestore update
-    const product = mockProducts.find(p => p.id === id);
 
-    if (!product) {
+    const docRef = productsCollection.doc(id);
+    const doc = await docRef.get();
+
+    if (!doc.exists) {
       return res.status(404).json({ success: false, error: 'Product not found' });
     }
 
-    const updatedProduct = {
-      ...product,
+    const dataToUpdate = {
       ...updateData,
-      updatedAt: new Date().toISOString()
+      updatedAt: admin.firestore.FieldValue.serverTimestamp()
     };
 
-    res.json({ success: true, data: updatedProduct });
+    // Remove id from update data if present
+    delete dataToUpdate.id;
+    delete dataToUpdate.createdAt;
+
+    await docRef.update(dataToUpdate);
+    const updatedDoc = await docRef.get();
+
+    res.json({ success: true, data: docToProduct(updatedDoc) });
   } catch (error) {
     console.error('Error updating product:', error);
-    res.status(500).json({ success: false, error: 'Failed to update product' });
+    res.status(500).json({
+      success: false,
+      error: 'Failed to update product',
+      message: error.message
+    });
   }
 };
 
@@ -105,17 +133,24 @@ const updateProduct = async (req, res) => {
 const deleteProduct = async (req, res) => {
   try {
     const { id } = req.params;
-    // TODO: Replace with Firestore delete
-    const product = mockProducts.find(p => p.id === id);
 
-    if (!product) {
+    const docRef = productsCollection.doc(id);
+    const doc = await docRef.get();
+
+    if (!doc.exists) {
       return res.status(404).json({ success: false, error: 'Product not found' });
     }
+
+    await docRef.delete();
 
     res.json({ success: true, message: 'Product deleted successfully' });
   } catch (error) {
     console.error('Error deleting product:', error);
-    res.status(500).json({ success: false, error: 'Failed to delete product' });
+    res.status(500).json({
+      success: false,
+      error: 'Failed to delete product',
+      message: error.message
+    });
   }
 };
 
