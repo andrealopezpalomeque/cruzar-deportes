@@ -17,6 +17,7 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     public: {
+      apiUrl: process.env.NUXT_PUBLIC_API_URL || 'http://localhost:3002',
       firebaseProjectId: process.env.FIREBASE_PROJECT_ID,
       cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME
     },

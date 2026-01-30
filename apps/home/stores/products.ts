@@ -87,9 +87,6 @@ export const useProductsStore = defineStore('products', () => {
     productsLoading.value = true
     loading.value = productsLoading.value || categoriesLoading.value
 
-    const startTime = Date.now()
-    const minLoadingTime = 800 // Minimum 800ms loading time
-
     try {
       const { products: catalogProducts, categories: catalogCategories } = await loadCatalog()
       products.value = catalogProducts
@@ -100,14 +97,6 @@ export const useProductsStore = defineStore('products', () => {
     } catch (error) {
       console.error('Error fetching products:', error)
     } finally {
-      // Ensure minimum loading time for better UX
-      const elapsedTime = Date.now() - startTime
-      const remainingTime = Math.max(0, minLoadingTime - elapsedTime)
-
-      if (remainingTime > 0) {
-        await new Promise(resolve => setTimeout(resolve, remainingTime))
-      }
-
       productsLoading.value = false
       loading.value = productsLoading.value || categoriesLoading.value
     }
@@ -138,10 +127,7 @@ export const useProductsStore = defineStore('products', () => {
   async function fetchCategories() {
     categoriesLoading.value = true
     loading.value = productsLoading.value || categoriesLoading.value
-    
-    const startTime = Date.now()
-    const minLoadingTime = 600 // Minimum 600ms loading time (shorter for categories)
-    
+
     try {
       const { categories: catalogCategories, products: catalogProducts } = await loadCatalog()
       categories.value = catalogCategories
@@ -152,14 +138,6 @@ export const useProductsStore = defineStore('products', () => {
     } catch (error) {
       console.error('Error fetching categories:', error)
     } finally {
-      // Ensure minimum loading time for better UX
-      const elapsedTime = Date.now() - startTime
-      const remainingTime = Math.max(0, minLoadingTime - elapsedTime)
-      
-      if (remainingTime > 0) {
-        await new Promise(resolve => setTimeout(resolve, remainingTime))
-      }
-      
       categoriesLoading.value = false
       loading.value = productsLoading.value || categoriesLoading.value
     }
