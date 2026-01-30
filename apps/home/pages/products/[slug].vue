@@ -126,7 +126,7 @@ watch(() => product.value?.images, (newImages) => {
 
 // SEO and meta tags
 const categoryName = computed(() => {
-  const category = productsStore.categories.find(cat => cat.id === product.value?.category)
+  const category = productsStore.categories.find(cat => cat.slug === product.value?.category)
   return category?.name || ''
 })
 

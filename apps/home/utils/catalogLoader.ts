@@ -21,8 +21,10 @@ interface ApiProduct {
   price: number
   originalPrice?: number
   currency?: string
-  categoryId: string
-  images: ApiImage[]
+  categoryId?: string
+  category?: string
+  images?: ApiImage[]
+  selectedImages?: string[]
   sizes: string[]
   colors?: string[]
   isActive: boolean
@@ -53,17 +55,35 @@ const FALLBACK_IMAGE = '/images/cruzar-logo-1.png'
 
 /**
  * Transform API product to storefront Product type
+ * @param apiProduct - The product from the API
+ * @param categoryIdToSlug - Map of category ID to slug for proper lookup
  */
-const transformProduct = (apiProduct: ApiProduct): Product => {
-  // Extract image URLs, sorted by order, main image first
-  const sortedImages = [...apiProduct.images].sort((a, b) => {
-    if (a.isMain && !b.isMain) return -1
-    if (!a.isMain && b.isMain) return 1
-    return (a.order ?? 0) - (b.order ?? 0)
-  })
+const transformProduct = (apiProduct: ApiProduct, categoryIdToSlug: Map<string, string>): Product => {
+  // Handle images: prefer selectedImages (array of URLs), fall back to images (array of objects)
+  let images: string[] = []
 
-  const imageUrls = sortedImages.map(img => img.url).filter(Boolean)
-  const images = imageUrls.length > 0 ? imageUrls : [FALLBACK_IMAGE]
+  if (apiProduct.selectedImages && apiProduct.selectedImages.length > 0) {
+    // API returns selectedImages as array of URL strings
+    images = apiProduct.selectedImages.filter(Boolean)
+  } else if (apiProduct.images && apiProduct.images.length > 0) {
+    // Fallback: extract URLs from image objects, sorted by order/main
+    const sortedImages = [...apiProduct.images].sort((a, b) => {
+      if (a.isMain && !b.isMain) return -1
+      if (!a.isMain && b.isMain) return 1
+      return (a.order ?? 0) - (b.order ?? 0)
+    })
+    images = sortedImages.map(img => img.url).filter(Boolean)
+  }
+
+  if (images.length === 0) {
+    images = [FALLBACK_IMAGE]
+  }
+
+  // Handle category: prefer category (slug), fall back to categoryId mapped through lookup
+  let categorySlug = apiProduct.category || ''
+  if (!categorySlug && apiProduct.categoryId) {
+    categorySlug = categoryIdToSlug.get(apiProduct.categoryId) ?? apiProduct.categoryId
+  }
 
   return {
     id: apiProduct.id,
@@ -72,7 +92,7 @@ const transformProduct = (apiProduct: ApiProduct): Product => {
     description: apiProduct.description,
     price: apiProduct.price,
     originalPrice: apiProduct.originalPrice,
-    category: apiProduct.categoryId as CategoryType,
+    category: categorySlug as CategoryType,
     images,
     totalImages: images.length,
     sizes: apiProduct.sizes ?? [],
@@ -116,23 +136,32 @@ export const loadCatalog = async (): Promise<CatalogPayload> => {
     let products: Product[] = []
     let categories: Category[] = []
 
-    if (productsResponse.success && Array.isArray(productsResponse.data)) {
-      products = productsResponse.data
-        .filter(p => p.isActive)
-        .map(transformProduct)
-        .sort((a, b) => a.name.localeCompare(b.name))
-    } else {
-      console.error('Failed to fetch products:', productsResponse.error)
-    }
-
+    // Process categories first to build the ID → slug map
+    const categoryIdToSlug = new Map<string, string>()
+    let allCategories: Category[] = []
     if (categoriesResponse.success && Array.isArray(categoriesResponse.data)) {
-      categories = categoriesResponse.data
-        .filter(c => (c.productCount ?? 0) > 0)
+      for (const cat of categoriesResponse.data) {
+        categoryIdToSlug.set(cat.id, cat.slug)
+      }
+      allCategories = categoriesResponse.data
         .map(transformCategory)
         .sort((a, b) => a.name.localeCompare(b.name))
     } else {
       console.error('Failed to fetch categories:', categoriesResponse.error)
     }
+
+    if (productsResponse.success && Array.isArray(productsResponse.data)) {
+      products = productsResponse.data
+        .filter(p => p.isActive)
+        .map(p => transformProduct(p, categoryIdToSlug))
+        .sort((a, b) => a.name.localeCompare(b.name))
+    } else {
+      console.error('Failed to fetch products:', productsResponse.error)
+    }
+
+    // Only include categories that have at least one active product
+    const categorySlugsWithProducts = new Set(products.map(p => p.category))
+    categories = allCategories.filter(c => categorySlugsWithProducts.has(c.slug))
 
     cachedCatalog = { products, categories }
     return cachedCatalog

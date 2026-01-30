@@ -251,7 +251,7 @@ const showSuccessMessage = ref(false)
 
 // Computed properties
 const categoryName = computed(() => {
-  const category = productsStore.categories.find(cat => cat.id === props.product.category)
+  const category = productsStore.categories.find(cat => cat.slug === props.product.category)
   return category?.name || props.product.category
 })
 
