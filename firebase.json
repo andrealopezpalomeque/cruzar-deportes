@@ -26,12 +26,9 @@
       "rewrites": [
         {
           "source": "**",
-          "function": "server"
+          "destination": "/index.html"
         }
       ]
     }
-  ],
-  "functions": {
-    "source": "apps/back-office/.output/server"
-  }
+  ]
 }

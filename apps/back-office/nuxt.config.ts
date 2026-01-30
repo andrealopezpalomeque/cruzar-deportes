@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-09-25',
   devtools: { enabled: true },
 
+  // Static SPA mode (no server-side rendering)
+  ssr: false,
+
   // Modules
   modules: [
     '@nuxtjs/tailwindcss',
@@ -59,13 +62,9 @@ export default defineNuxtConfig({
     port: 3001 // Different port from main app
   },
 
-  // Build configuration
+  // Build configuration - static preset for Firebase Hosting (no Functions)
   nitro: {
-    preset: 'firebase',
-    firebase: {
-      gen: 2,
-      region: 'us-central1'
-    }
+    preset: 'static'
   },
 
   // TypeScript configuration
