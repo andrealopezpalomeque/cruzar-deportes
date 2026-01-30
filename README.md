@@ -2,32 +2,50 @@
 
 Sports jersey e-commerce platform specializing in authentic team apparel from major leagues worldwide.
 
-## 🌐 Live Sites
+## Live Sites
 
 - **Customer Storefront**: https://deportes-cruzar.web.app/
 - **Admin Back-Office**: https://deportes-cruzar-admin.web.app/
 
-## 📂 Repository Structure (Monorepo)
+## Repository Structure (Monorepo)
 
 The project is organized as a Monorepo using NPM Workspaces:
 
 ```
-📁 cruzar-deportes/
-├── 📁 apps/
-│   ├── 📁 home/              # Customer-facing e-commerce storefront (Nuxt 4)
-│   └── 📁 back-office/       # Admin panel for product management (Nuxt 4, SSR)
-├── 📁 services/
-│   └── 📁 scraper/           # Image collection tool (Node.js)
-├── 📁 packages/
-│   └── 📁 shared/            # Shared types, data, and utilities
-│       ├── products.json     # Central product database
-│       ├── types.ts          # TypeScript interfaces
-│       └── utils/            # Shared logic
-├── package.json              # Root workspace configuration
-└── firebase.json             # Unified deployment configuration
+cruzar-deportes/
+├── apps/
+│   ├── home/              # Customer-facing e-commerce storefront (Nuxt 4)
+│   └── back-office/       # Admin panel for product management (Nuxt 4, SSR)
+├── package.json           # Root workspace configuration
+└── firebase.json          # Unified deployment configuration
 ```
 
-## 🚀 Quick Start
+## Architecture
+
+The system uses an **external API** for data management:
+
+- **API Server**: Hosted on Render (`https://cruzar-api.onrender.com`)
+- **Database**: Firebase Firestore (managed by the API)
+- **Images**: Cloudinary CDN
+
+### Data Flow
+
+```
+┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+│ Back-Office │────▶│  External   │◀────│  Storefront │
+│   (Admin)   │     │     API     │     │   (Home)    │
+└─────────────┘     └─────────────┘     └─────────────┘
+                          │
+                          ▼
+                    ┌───────────┐
+                    │ Firestore │
+                    │ Cloudinary│
+                    └───────────┘
+```
+
+Both applications fetch product/category data from the external API at runtime. Changes made in the back-office are immediately visible on the storefront (no rebuild required).
+
+## Quick Start
 
 ### 1. Install Dependencies
 Run this at the root to install dependencies for all applications:
@@ -35,73 +53,63 @@ Run this at the root to install dependencies for all applications:
 npm install
 ```
 
-### 2. Run Locally
-You can start any application from the root using workspace commands:
+### 2. Environment Setup
+
+**Storefront (`apps/home/.env`):**
+```env
+NUXT_PUBLIC_API_URL=https://cruzar-api.onrender.com
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+```
+
+**Back-Office (`apps/back-office/.env`):**
+```env
+NUXT_PUBLIC_API_URL=https://cruzar-api.onrender.com
+NUXT_PUBLIC_API_KEY=your_api_key
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+```
+
+### 3. Run Locally
 
 **Storefront:**
 ```bash
-npm run dev --prefix apps/home
-# OR
 npm run dev -w apps/home
 ```
 *Access at: http://localhost:3000*
 
 **Admin Panel:**
 ```bash
-npm run dev --prefix apps/back-office
-# OR
 npm run dev -w apps/back-office
 ```
 *Access at: http://localhost:3001*
 
-**Scraper:**
-```bash
-cd services/scraper
-yarn install # Scraper still uses yarn locally if preferred, or npm
-node src/scraper.js --help
-```
+## Deployment
 
-## 🔧 Environment Configuration
-
-Shared keys (Firebase) are managed at the root or per-application `.env` files.
-
-**Essential Variables:**
-- `GOOGLE_APPLICATION_CREDENTIALS` (for server-side functions)
-- `CLOUDINARY_*` (for image management)
-
-## 🚢 Deployment
-
-The project uses a unified `firebase.json` at the root.
+The project uses Firebase Hosting with a unified `firebase.json` at the root.
 
 ```bash
 # Deploy everything (Storefront + Admin)
-firebase deploy
+npm run deploy
 
 # Deploy Storefront only
-firebase deploy --only hosting:storefront
+npm run deploy:storefront
 
 # Deploy Admin Panel (Hosting + Functions)
-firebase deploy --only hosting:admin,functions
+npm run deploy:admin
 ```
 
-## 📚 Additional Documentation
-
-- **[ARCHITECTURE.md](ARCHITECTURE.md)** - System architecture, data flow diagrams, and lifecycle explanation.
-
-## 📱 Applications Details
+## Applications Details
 
 ### Home (Storefront)
-- **Tech**: Nuxt 4 (SSG/SPA), Tailwind CSS, Pinia.
-- **Data**: Reads product data at build time. Requires rebuild to update catalog.
+- **Tech**: Nuxt 4 (SPA), Tailwind CSS, Pinia
+- **Data**: Fetches from external API at runtime
+- **Features**: Product catalog, category browsing, WhatsApp integration
 
 ### Back-Office (Admin)
-- **Tech**: Nuxt 4 (SSR on Firebase Functions), Cloudinary Integration.
-- **Auth**: Simple session-based login.
-- **Features**: Product image management, album organization.
-
-### Scraper
-- **Tech**: Node.js, Cheerio, Sharp.
-- **Usage**: Discovers and scrapes product images to build `products.json`.
+- **Tech**: Nuxt 4 (SSR on Firebase Functions), Cloudinary Integration
+- **Auth**: Simple session-based login
+- **Features**: Product CRUD, image management, category management
 
 ---
-**Cruzar Deportes** - Vestí tu Pasión por el Deporte 🏆
+**Cruzar Deportes** - Vesti tu Pasion por el Deporte

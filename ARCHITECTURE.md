@@ -1,147 +1,155 @@
 # System Architecture & Data Flow
 
-This document outlines the architecture of the Cruzar Deportes monorepo and how data flows between the Back-Office, Firebase Storage, and the Storefront.
+This document outlines the architecture of the Cruzar Deportes monorepo and how data flows between the applications and the external API.
 
-## 🏗️ High-Level Architecture
+## High-Level Architecture
 
-The system is organized as a **Monorepo** containing two main applications and shared packages:
+The system consists of two frontend applications that communicate with an external API:
 
-```mermaid
-graph TD
-    Repo[Monorepo Root] --> Apps
-    Repo --> Packages
-    
-    Apps --> Storefront[apps/home]
-    Apps --> BackOffice[apps/back-office]
-    
-    Packages --> Shared[packages/shared]
-    
-    Storefront -.->|Imports Types & Utils| Shared
-    BackOffice -.->|Imports Types & Utils| Shared
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                         Monorepo                                │
+│  ┌─────────────────┐              ┌─────────────────┐          │
+│  │   apps/home     │              │ apps/back-office│          │
+│  │  (Storefront)   │              │    (Admin)      │          │
+│  │   Nuxt 4 SPA    │              │  Nuxt 4 SSR     │          │
+│  └────────┬────────┘              └────────┬────────┘          │
+└───────────┼────────────────────────────────┼────────────────────┘
+            │                                │
+            │         HTTPS REST API         │
+            └───────────────┬────────────────┘
+                            │
+                            ▼
+              ┌─────────────────────────┐
+              │     External API        │
+              │  (cruzar-api.onrender)  │
+              │                         │
+              │  - Products CRUD        │
+              │  - Categories CRUD      │
+              │  - Image management     │
+              └───────────┬─────────────┘
+                          │
+            ┌─────────────┴─────────────┐
+            ▼                           ▼
+   ┌─────────────────┐       ┌─────────────────┐
+   │    Firestore    │       │   Cloudinary    │
+   │   (Database)    │       │    (Images)     │
+   └─────────────────┘       └─────────────────┘
 ```
 
-## 🔄 Data Lifecycle & Updates
+## Data Flow
 
-The product data (`products.json`) is the central source of truth. It is managed by the Back-Office and stored in the cloud, then consumed by the Storefront.
+### Runtime Data Fetching
 
-### Current Flow (Static Generation)
+Both applications fetch data from the external API at runtime:
 
-1.  **Edit**: Admin updates a product in the Back-Office.
-2.  **Save**: Back-Office writes the updated JSON to **Firebase Cloud Storage**.
-3.  **Deploy**: Storefront must be **rebuilt** to include the new JSON.
-
-```mermaid
-sequenceDiagram
-    participant Admin
-    participant BO as Back-Office (App)
-    participant Storage as Firebase Cloud Storage
-    participant Dev as Developer / CI
-    participant Store as Storefront (App)
-
-    Note over Admin, Storage: Phase 1: Update
-    Admin->>BO: Updates Product Price
-    BO->>Storage: Writes products.json
-    BO->>BO: UI Updates (Locally)
-    
-    Note over Storage, Store: Phase 2: Reflection
-    Note right of Storage: *Storage has new data*<br/>*Storefront has OLD data*
-    
-    Dev->>Storage: 1. Downloads products.json
-    Dev->>Store: 2. npm run generate (Build)
-    Dev->>Store: 3. firebase deploy
-    
-    Store->>User: Now serves updated content
+```
+┌──────────┐     GET /api/products      ┌──────────┐
+│  User    │ ──────────────────────────▶│   API    │
+│ Browser  │                            │  Server  │
+│          │ ◀────────────────────────  │          │
+└──────────┘     JSON Response          └──────────┘
 ```
 
-### Implications
-*   **Back-Office**: Reflects changes immediately because it reads directly from Cloud Storage or Local cache.
-*   **Storefront**: Reflects changes **only after a redeployment**. This ensures maximum performance (no API calls for data) but requires a build step for updates.
+**Benefits:**
+- Changes in back-office are immediately visible on storefront
+- No rebuild/redeploy required for content updates
+- Single source of truth (API/Firestore)
 
-## 🚀 Deployment Strategy
+### Admin Operations
+
+When an admin updates a product:
+
+```
+┌─────────────┐    PUT /api/products/:id    ┌──────────┐
+│ Back-Office │ ───────────────────────────▶│   API    │
+│             │                             │          │
+│             │ ◀─────────────────────────  │          │
+└─────────────┘    Success Response         └──────────┘
+                                                  │
+                                                  ▼
+                                           ┌──────────┐
+                                           │Firestore │
+                                           │ Updated  │
+                                           └──────────┘
+                                                  │
+      ┌─────────────────────────────────────────────┘
+      │ Next request from storefront
+      ▼
+┌──────────┐    GET /api/products    ┌──────────┐
+│Storefront│ ──────────────────────▶ │   API    │
+│          │ ◀────────────────────── │          │
+└──────────┘    Updated Data         └──────────┘
+```
+
+## API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/products` | GET | List all active products |
+| `/api/products/:id` | GET | Get single product |
+| `/api/products` | POST | Create product |
+| `/api/products/:id` | PUT | Update product |
+| `/api/products/:id` | DELETE | Delete product |
+| `/api/categories` | GET | List all categories |
+| `/api/categories/:id` | GET | Get single category |
+
+## Image Management
+
+Images are stored in Cloudinary and managed through the back-office:
+
+1. Admin uploads image via back-office
+2. Image is uploaded to Cloudinary
+3. Cloudinary URL is stored in Firestore via API
+4. Storefront fetches product with Cloudinary URLs
+5. Images are served via Cloudinary CDN with automatic optimization
+
+## Deployment Strategy
 
 ### Firebase Project Structure
-All applications now exist under a single Firebase project (`deportes-cruzar`).
-*   **Hosting Target**: `storefront` -> `apps/home`
-*   **Hosting Target**: `admin` -> `apps/back-office`
 
-### Recommended Workflow
-To publish changes made in the Back-Office to the public Storefront:
+All applications exist under a single Firebase project (`deportes-cruzar`):
 
-1.  **Verify Data**: Check the Back-Office to ensure all products look correct.
-2.  **Trigger Deploy**:
-    ```bash
-    # From project root
-    npm run deploy:storefront
-    # (Assuming a script exists to download json + build + deploy)
-    ```
+- **Hosting Target**: `storefront` -> `apps/home`
+- **Hosting Target**: `admin` -> `apps/back-office`
 
-    *If doing it manually:*
-    ```bash
-    # 1. Download latest data (if not using shared/scripts yet)
-    # 2. Build and Deploy
-    cd apps/home
-    npm run firebase:build-deploy
-    ```
+### Deployment Commands
 
-## 🔧 Deployment Workflow (Step-by-Step)
-
-### When admin makes changes in back-office:
-
-1. **Admin edits products** → Changes saved to Firebase Storage automatically ✅
-2. **Run deployment workflow** → Execute from project root:
-   ```bash
-   npm run sync
-   # or
-   bash packages/shared/scripts/deploy-home.sh
-   ```
-3. **Verify deployment** → Check live site for updated products
-
-### For local development:
-
-To pull latest products without deploying:
 ```bash
-npm run sync:data
-cd apps/home
-npm run dev
+# Deploy everything
+npm run deploy
+
+# Deploy Storefront only
+npm run deploy:storefront
+
+# Deploy Admin Panel (Hosting + Functions)
+npm run deploy:admin
 ```
 
-### Available npm scripts:
+## Environment Configuration
 
-| Command | Description |
-|---------|-------------|
-| `npm run sync` | Complete deployment workflow (sync + build + deploy) |
-| `npm run sync:data` | Download latest products.json only (for local dev) |
-| `npm run deploy:storefront` | Deploy only (without syncing data) |
-| `npm run deploy:storefront:full` | Same as `npm run sync` |
-
-### Understanding the Sync Process
-
-The `deploy-home.sh` script performs these steps:
-1. **Bootstrap Storage** - Syncs products.json from Firebase Storage
-2. **Rebuild Catalog** - Ensures all team products are present
-3. **Copy to Storefront** - Updates apps/home with latest data
-4. **Build** - Generates static HTML with updated products
-5. **Deploy** - Uploads to Firebase Hosting
-
-**Important**: Always run `npm run sync` after making changes in the back-office to ensure the storefront reflects the latest data.
-
----
-
-## 🔌 Future Improvements: Runtime Fetching
-
-To avoid rebuilding for every price change, we can switch the Storefront to **Runtime Fetching**:
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant Store as Storefront
-    participant Storage as Firebase Cloud Storage
-
-    User->>Store: Visits Website
-    Store->>Storage: Fetches https://.../products.json
-    Storage-->>Store: Returns Data
-    Store-->>User: Renders Page with Live Data
+### Storefront (`apps/home`)
+```env
+NUXT_PUBLIC_API_URL=https://cruzar-api.onrender.com
+CLOUDINARY_CLOUD_NAME=dmb1vyveg
 ```
 
-**Pros**: Instant updates.
-**Cons**: Small network delay on initial load.
+### Back-Office (`apps/back-office`)
+```env
+NUXT_PUBLIC_API_URL=https://cruzar-api.onrender.com
+NUXT_PUBLIC_API_KEY=<api-key>
+CLOUDINARY_CLOUD_NAME=dmb1vyveg
+CLOUDINARY_API_KEY=<cloudinary-key>
+CLOUDINARY_API_SECRET=<cloudinary-secret>
+```
+
+## Caching Strategy
+
+### Client-Side (Storefront)
+- `catalogLoader.ts` caches API responses in memory
+- Cache persists for the browser session
+- Hard refresh clears the cache
+
+### API-Side
+- Consider implementing cache headers for GET requests
+- CDN caching can be added at the API level if needed

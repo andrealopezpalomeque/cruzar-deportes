@@ -1,9 +1,7 @@
-import type { CategoryType } from '@cruzar/shared/types'
+// Category type (simple string for flexibility with external API)
+export type CategoryType = string
 
-// Re-export types from the main project
-export type { CategoryType } from '@cruzar/shared/types'
-
-// Base interfaces from main project
+// Base interfaces
 export interface Product {
   id: string
   name: string

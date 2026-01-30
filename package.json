@@ -7,7 +7,6 @@
     "services/*"
   ],
   "scripts": {
-    "sync:data": "cd apps/back-office && node scripts/bootstrap-storage.ts && node scripts/rebuild-catalog.ts",
     "deploy": "firebase deploy",
     "deploy:storefront": "firebase deploy --only hosting:storefront",
     "deploy:admin": "firebase deploy --only hosting:admin,functions"

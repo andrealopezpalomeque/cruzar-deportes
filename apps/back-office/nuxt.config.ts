@@ -1,6 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { fileURLToPath } from 'url'
-
 export default defineNuxtConfig({
   compatibilityDate: '2025-09-25',
   devtools: { enabled: true },
@@ -90,9 +88,5 @@ export default defineNuxtConfig({
       path: '~/components',
       pathPrefix: false,
     },
-  ],
-
-  alias: {
-    '@cruzar/shared': fileURLToPath(new URL('../../packages/shared', import.meta.url))
-  }
+  ]
 })
