@@ -1,9 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2025-01-30',
   devtools: { enabled: true },
   nitro: {
-    preset: 'static',
-    compatibilityDate: '2026-01-30'
+    preset: 'static'
   },
   ssr: false,
   modules: [
