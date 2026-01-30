@@ -1,19 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { fileURLToPath } from 'url'
-
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   nitro: {
-    preset: 'static'
+    preset: 'static',
+    compatibilityDate: '2026-01-30'
   },
   ssr: false,
   modules: [
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
     'unplugin-icons/nuxt',
-    'dayjs-nuxt',
-    '~/modules/tsconfig-fix'
+    'dayjs-nuxt'
   ],
   runtimeConfig: {
     public: {
@@ -51,8 +48,5 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: false,
     shim: false
-  },
-  alias: {
-    '@cruzar/shared': fileURLToPath(new URL('../../packages/shared', import.meta.url))
   }
 })

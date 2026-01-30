@@ -1,6 +1,6 @@
 import type { Product } from '~/types'
 import type { SearchResult } from '~/stores/search'
-import { formatArs } from '@cruzar/shared/utils/currency'
+import { formatArs } from '~/utils/currency'
 
 // Debounce function for search input
 export function debounce<T extends (...args: any[]) => any>(

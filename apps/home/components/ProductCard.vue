@@ -105,7 +105,7 @@ import IconTshirtCrew from '~icons/mdi/tshirt-crew'
 import IconStar from '~icons/mdi/star'
 import IconImageMultiple from '~icons/mdi/image-multiple'
 import IconPlus from '~icons/mdi/plus'
-import { formatArs } from '@cruzar/shared/utils/currency'
+import { formatArs } from '~/utils/currency'
 
 const props = defineProps(['product'])
 const productsStore = useProductsStore()

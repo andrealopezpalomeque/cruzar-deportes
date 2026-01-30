@@ -4,15 +4,12 @@
   "license": "ISC",
   "workspaces": [
     "apps/*",
-    "services/*",
-    "packages/*"
+    "services/*"
   ],
   "scripts": {
-    "sync": "bash packages/shared/scripts/deploy-home.sh",
     "sync:data": "cd apps/back-office && node scripts/bootstrap-storage.ts && node scripts/rebuild-catalog.ts",
     "deploy": "firebase deploy",
     "deploy:storefront": "firebase deploy --only hosting:storefront",
-    "deploy:storefront:full": "bash packages/shared/scripts/deploy-home.sh",
     "deploy:admin": "firebase deploy --only hosting:admin,functions"
   },
   "dependencies": {

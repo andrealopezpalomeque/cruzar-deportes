@@ -9,14 +9,11 @@ https://deportes-cruzar.web.app/
 - **Framework**: Nuxt 4 (SSG/SPA)
 - **State**: Pinia
 - **Styling**: Tailwind CSS
-- **Data**: Static JSON (bundled at build time)
-- **Images**: Cloudinary (via `@nuxtjs/cloudinary`)
+- **Data**: External API
+- **Images**: Cloudinary
 
 ## 📦 Data Source
-This app imports product data from the shared package:
-`import { ... } from '@cruzar/shared'`
-
-The data is **static**. To update products on the live site, the application must be **rebuilt and redeployed**.
+This app fetches product data from the external API at runtime. Configure the API URL via the `NUXT_PUBLIC_API_URL` environment variable.
 
 ## 💻 Development
 
@@ -47,4 +44,4 @@ firebase deploy --only hosting:storefront
 - `components/` - Vue components
 - `pages/` - Nuxt pages
 - `stores/` - Pinia stores
-- `utils/catalogLoader.ts` - Loads and transforms data from `@cruzar/shared`
+- `utils/catalogLoader.ts` - Fetches and transforms data from the external API

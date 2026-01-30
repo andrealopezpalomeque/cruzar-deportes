@@ -86,49 +86,35 @@ const relatedProducts = computed(() => {
     .slice(0, 8) // Get up to 8 related products
 })
 
-// Load product images
-async function loadProductImages() {
+// Load product images from API data
+function loadProductImages() {
   if (!product.value) {
     productImages.value = []
     return
   }
 
-  try {
-    const curatedImages = Array.isArray(product.value.images) ? product.value.images.filter(Boolean) : []
-
-    if (curatedImages.length > 0) {
-      productImages.value = [...curatedImages]
-      return
-    }
-
-    const { getTeamImages } = await import('~/utils/cloudinaryImageLoader')
-    const teamKey = product.value.slug.replace(/-/g, '_') // Convert slug back to team key
-    const images = await getTeamImages(teamKey, product.value.category)
-    productImages.value = images
-  } catch (error) {
-    console.error('Error loading product images:', error)
-    productImages.value = Array.isArray(product.value.images) ? product.value.images : []
-  }
+  const images = Array.isArray(product.value.images) ? product.value.images.filter(Boolean) : []
+  productImages.value = images.length > 0 ? images : ['/images/cruzar-logo-1.png']
 }
 
 // Initialize data
 onMounted(async () => {
   loading.value = true
-  
+
   // Ensure products are loaded
   await productsStore.fetchProducts()
   await productsStore.fetchCategories()
-  
+
   // Load product images
-  await loadProductImages()
-  
+  loadProductImages()
+
   loading.value = false
 })
 
 // Watch for route changes (if user navigates to different product)
-watch(() => route.params.slug, async () => {
+watch(() => route.params.slug, () => {
   loading.value = true
-  await loadProductImages()
+  loadProductImages()
   loading.value = false
 })
 

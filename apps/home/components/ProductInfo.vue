@@ -224,7 +224,7 @@ import IconRefresh from '~icons/mdi/refresh'
 import IconMedal from '~icons/mdi/medal'
 import IconClipboardOutline from '~icons/mdi/clipboard-outline'
 import IconBuildingBank from '~icons/heroicons/building-library'
-import { formatArs } from '@cruzar/shared/utils/currency'
+import { formatArs } from '~/utils/currency'
 
 const props = defineProps(['product'])
 

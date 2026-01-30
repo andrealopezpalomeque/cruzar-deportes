@@ -367,7 +367,7 @@ import IconWhatsapp from '~icons/mdi/whatsapp'
 import IconLoading from '~icons/mdi/loading'
 import IconInformationCircle from '~icons/mdi/information'
 import { openURLMobileOptimized, isMobileDevice } from '~/utils/device'
-import { formatArs } from '@cruzar/shared/utils/currency'
+import { formatArs } from '~/utils/currency'
 
 const router = useRouter()
 const cartStore = useCartStore()

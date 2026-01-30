@@ -1,6 +1,4 @@
-import type { CategoryType } from '@cruzar/shared'
-
-export type { CategoryType } from '@cruzar/shared'
+export type CategoryType = string
 
 export interface Product {
   id: string
