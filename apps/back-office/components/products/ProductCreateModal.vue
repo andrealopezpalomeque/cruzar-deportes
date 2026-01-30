@@ -736,7 +736,9 @@ const handleSubmit = async () => {
     description: form.description?.trim() || '',
     price,
     originalPrice,
-    category: form.category,
+    categoryId: form.category,  // API expects "categoryId", not "category"
+    category: form.category,    // Also include "category" for front-end consistency
+    images: [...form.selectedImages],  // API expects "images" field
     selectedImages: [...form.selectedImages],
     allAvailableImages: form.allAvailableImages.length > 0
       ? [...new Set(form.allAvailableImages)]

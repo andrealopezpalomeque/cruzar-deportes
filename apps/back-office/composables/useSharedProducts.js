@@ -161,6 +161,7 @@ export const useSharedProducts = () => {
         method: 'PUT',
         headers: getAuthHeaders(),
         body: {
+          images: selectedImages,  // API expects "images" field
           selectedImages,
           allAvailableImages
         }

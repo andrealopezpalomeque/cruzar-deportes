@@ -1708,6 +1708,7 @@ const loadAllProducts = async () => {
       allAvailableImages: p.allAvailableImages || p.images || [],
       images: p.images || p.selectedImages || [],
       category: p.category || p.categoryId || '',
+      categoryId: p.categoryId || p.category || '',  // Ensure categoryId is set
       inStock: p.inStock ?? true,
       featured: p.featured ?? false
     }))
@@ -1922,8 +1923,11 @@ const saveProductChanges = async (product) => {
       slug: generatedSlug,
       price: product.price || 0,
       originalPrice: product.originalPrice || 0,
-      category: product.category || product.categoryId,
+      categoryId: product.categoryId || product.category,  // API expects "categoryId"
+      category: product.category || product.categoryId,    // Keep for front-end consistency
       images: product.images || product.selectedImages || [],
+      selectedImages: product.selectedImages || product.images || [],
+      allAvailableImages: product.allAvailableImages || product.images || [],
       inStock: product.inStock,
       featured: product.featured
     }
