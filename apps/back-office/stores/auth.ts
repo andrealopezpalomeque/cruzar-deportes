@@ -18,8 +18,9 @@ export const useAuthStore = defineStore('auth', () => {
     error.value = null
 
     try {
-      // Call the login API endpoint
-      const response = await $fetch('/api/auth/login', {
+      // Call the external API for authentication
+      const config = useRuntimeConfig()
+      const response = await $fetch<{ success: boolean; data?: { username: string }; error?: string }>(`${config.public.apiUrl}/api/auth/login`, {
         method: 'POST',
         body: credentials
       })
