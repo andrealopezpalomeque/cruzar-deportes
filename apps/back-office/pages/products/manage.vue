@@ -334,11 +334,11 @@
               <div class="flex items-center gap-3">
                 <!-- Image Preview or Icon -->
                 <div
-                  v-if="product.selectedImages.length > 0"
+                  v-if="(product.selectedImages || product.images || []).length > 0"
                   class="w-9 h-9 rounded-lg shadow-sm overflow-hidden ring-2 ring-sky-500/30"
                 >
                   <img
-                    :src="optimizeUrl(product.selectedImages[0], 100)"
+                    :src="optimizeUrl((product.selectedImages || product.images || [])[0], 100)"
                     :alt="`${product.name} preview`"
                     class="w-full h-full object-cover"
                   />
@@ -356,11 +356,11 @@
                   <p
                     :class="[
                       'text-sm font-bold',
-                      product.selectedImages.length > 0 ? 'text-slate-700' : 'text-gray-500'
+                      (product.selectedImages || product.images || []).length > 0 ? 'text-slate-700' : 'text-gray-500'
                     ]"
                   >
-                    {{ product.selectedImages.length > 0
-                      ? `${product.selectedImages.length} ${product.selectedImages.length === 1 ? 'imagen' : 'imágenes'}`
+                    {{ (product.selectedImages || product.images || []).length > 0
+                      ? `${(product.selectedImages || product.images || []).length} ${(product.selectedImages || product.images || []).length === 1 ? 'imagen' : 'imágenes'}`
                       : 'Sin imágenes' }}
                   </p>
                 </div>
@@ -1002,16 +1002,17 @@ definePageMeta({
 const {
   loadProducts,
   saveProduct,
+  updateProduct,
   updateProductImages,
   updateProductPricing: updateProductPricingAPI,
   updateProductStatus,
   deleteProduct
 } = useSharedProducts()
+const { loadCategories } = useCategories()
 const { getFolderImages, uploadImage, deleteImage: deleteCloudinaryImage } = useCloudinary()
-// Prefer manifest but fall back to Cloudinary when needed for custom products
 const toast = useToast()
 
-// Helper to optimize URLs using cloudinaryImageLoader
+// Helper to optimize Cloudinary URLs
 const optimizeUrl = (url, size = 300) => {
   if (!url.includes('cloudinary.com')) {
     return url
@@ -1031,31 +1032,27 @@ const showBulkPricingModal = ref(false)
 const isDropdownOpen = ref(false)
 const showCreateProductModal = ref(false)
 
-// Category options
-const STATIC_CATEGORY_OPTIONS = [
-  { value: '', label: 'Todas las categorías', productCount: 0 },
-  { value: 'afc', label: '🇰🇷 AFC', productCount: 0 },
-  { value: 'basket', label: '🏀 BASKET', productCount: 0 },
-  { value: 'brasileiro_betano', label: '🇧🇷 BRASILEIRÃO BETANO', productCount: 0 },
-  { value: 'bundesliga', label: '🇩🇪 BUNDESLIGA', productCount: 0 },
-  { value: 'caf', label: '🇿🇦 CAF', productCount: 0 },
-  { value: 'club_retro', label: 'CLUB RETRO', productCount: 0 },
-  { value: 'conmebol_concacaf', label: '🇨🇴 CONMEBOL - CONCACAF', productCount: 0 },
-  { value: 'eredivisie', label: '🇳🇱 EREDIVISIE', productCount: 0 },
-  { value: 'f1', label: '🏎️ F1', productCount: 0 },
-  { value: 'kings_league', label: '👑 KINGS LEAGUE', productCount: 0 },
-  { value: 'laliga_ea_sports_hypermotion', label: '🇪🇸 LALIGA EA SPORTS - HYPERMOTION', productCount: 0 },
-  { value: 'liga_bbva_mx_liga_expansion_mx', label: '🇲🇽 LIGA BBVA MX - LIGA EXPANSION MX', productCount: 0 },
-  { value: 'liga_portugal_betclic', label: '🇵🇹 LIGA PORTUGAL BETCLIC', productCount: 0 },
-  { value: 'ligue1_mcdonalds', label: '🇫🇷 LIGUE1 MCDONALDS', productCount: 0 },
-  { value: 'lpf_afa', label: '🇦🇷 LPF AFA', productCount: 0 },
-  { value: 'mls', label: '🇺🇸 MLS', productCount: 0 },
-  { value: 'national_retro', label: 'NATIONAL RETRO', productCount: 0 },
-  { value: 'rsl', label: '🇸🇦 RSL', productCount: 0 },
-  { value: 'serie_a_enilive', label: '🇮🇹 SERIE A ENILIVE', productCount: 0 },
-  { value: 'uefa', label: '🇪🇺 UEFA', productCount: 0 }
-]
-const categories = ref([...STATIC_CATEGORY_OPTIONS])
+// Category options - loaded from API
+const categories = ref([{ value: '', label: 'Todas las categorías', productCount: 0 }])
+
+// Load categories from API
+const fetchCategories = async () => {
+  try {
+    const apiCategories = await loadCategories()
+    const formattedCategories = [
+      { value: '', label: 'Todas las categorías', productCount: 0 },
+      ...apiCategories.map(cat => ({
+        value: cat.slug,
+        label: cat.emoji ? `${cat.emoji} ${cat.name}` : cat.name,
+        id: cat.id,
+        productCount: 0
+      }))
+    ]
+    categories.value = formattedCategories
+  } catch (err) {
+    console.error('Error loading categories:', err)
+  }
+}
 
 // Pagination state
 const currentPage = ref(1)
@@ -1162,7 +1159,8 @@ const getProductFolderPath = (product) => {
   }
   const normalizedSlug = slugify(product.slug || product.name || product.id || 'producto')
   const folderSegment = normalizedSlug.replace(/-/g, '_')
-  return `cruzar-deportes/products/${product.category}/${folderSegment}`
+  const categorySlug = product.category || product.categoryId || 'uncategorized'
+  return `cruzar-deportes/products/${categorySlug}/${folderSegment}`
 }
 
 const appendImagesToProduct = async (product, newUrls) => {
@@ -1703,7 +1701,16 @@ const loadAllProducts = async () => {
       delete detailsSnapshots[key]
     })
     const loadedProducts = await loadProducts()
-    products.value = loadedProducts
+    // Normalize products to ensure required fields exist
+    products.value = loadedProducts.map(p => ({
+      ...p,
+      selectedImages: p.selectedImages || p.images || [],
+      allAvailableImages: p.allAvailableImages || p.images || [],
+      images: p.images || p.selectedImages || [],
+      category: p.category || p.categoryId || '',
+      inStock: p.inStock ?? true,
+      featured: p.featured ?? false
+    }))
     products.value.forEach(captureDetailsSnapshot)
     clearSelection()
   } catch (err) {
@@ -1788,10 +1795,9 @@ const openImageBrowser = async (product) => {
       }
     }
 
+    // If no images from Cloudinary folder, use product's existing images
     if (resolvedImages.length === 0) {
-      const teamKey = product.slug.replace(/-/g, '_')
-      const { getTeamImages } = await import('~/utils/cloudinaryImageLoader')
-      resolvedImages = await getTeamImages(teamKey, product.category)
+      resolvedImages = product.images || product.selectedImages || []
     }
 
     const fallbackGallery = Array.isArray(product.allAvailableImages) ? product.allAvailableImages : []
@@ -1911,15 +1917,19 @@ const saveProductChanges = async (product) => {
     savingProducts[productId] = true
 
     const payload = {
-      ...product,
       name: trimmedName,
       description: trimmedDescription,
       slug: generatedSlug,
       price: product.price || 0,
-      originalPrice: product.originalPrice || 0
+      originalPrice: product.originalPrice || 0,
+      category: product.category || product.categoryId,
+      images: product.images || product.selectedImages || [],
+      inStock: product.inStock,
+      featured: product.featured
     }
 
-    await saveProduct(payload)
+    // Use updateProduct (PUT) for existing products, not saveProduct (POST)
+    await updateProduct(productId, payload)
 
     product.name = trimmedName
     product.description = trimmedDescription
@@ -2119,6 +2129,7 @@ watch([selectedCategory, searchTerm], async () => {
 
 // Lifecycle
 onMounted(() => {
+  fetchCategories()
   loadAllProducts()
 })
 </script>

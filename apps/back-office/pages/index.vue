@@ -208,6 +208,7 @@ definePageMeta({
 
 // Composables
 const authStore = useAuthStore()
+const { loadProducts } = useSharedProducts()
 
 const quickActions = [
   {
@@ -264,29 +265,36 @@ const loadDashboardData = async () => {
   try {
     loading.value = true
 
-    // Fetch dashboard stats from API
-    const response = await $fetch('/api/dashboard/stats')
+    // Fetch products from external API and compute stats
+    const products = await loadProducts()
 
-    if (response.success && response.data) {
-      stats.value = response.data
+    if (products && products.length > 0) {
+      stats.value = {
+        totalProducts: products.length,
+        totalCategories: new Set(products.map(p => p.category || p.categoryId)).size,
+        featuredProducts: products.filter(p => p.featured).length,
+        inStockProducts: products.filter(p => p.inStock).length,
+        availableOnOrderProducts: products.filter(p => p.stockStatus === 'available_on_order').length,
+        recentlyModified: products.filter(p => {
+          const lastMod = new Date(p.updatedAt || p.lastModified)
+          const dayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000)
+          return lastMod > dayAgo
+        }).length
+      }
     }
 
-    // Fetch recent activity
-    const activityResponse = await $fetch('/api/dashboard/activity')
-
-    if (activityResponse.success && activityResponse.data) {
-      recentActivity.value = activityResponse.data.slice(0, 5) // Show only last 5 activities
-    }
+    // Recent activity is not available from external API yet
+    // Could be implemented later if needed
+    recentActivity.value = []
   } catch (error) {
     console.error('Error loading dashboard data:', error)
-    // Use mock data for now
     stats.value = {
-      totalProducts: 125,
-      totalCategories: 6,
-      featuredProducts: 18,
-      inStockProducts: 98,
-      availableOnOrderProducts: 27,
-      recentlyModified: 3
+      totalProducts: 0,
+      totalCategories: 0,
+      featuredProducts: 0,
+      inStockProducts: 0,
+      availableOnOrderProducts: 0,
+      recentlyModified: 0
     }
   } finally {
     loading.value = false
