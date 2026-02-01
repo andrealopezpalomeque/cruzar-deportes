@@ -63,7 +63,7 @@
               <div class="space-y-3">
                 <div
                   v-for="item in cartItems"
-                  :key="`${item.productId}-${item.size}-${item.color}`"
+                  :key="`${item.productId}-${item.size}`"
                   class="bg-gray-50 rounded-lg p-4"
                 >
                   <!-- Mobile Layout (default) -->
@@ -89,10 +89,7 @@
                     <!-- Product Info -->
                     <div class="mb-3">
                       <h4 class="font-medium text-gray-900 mb-1">{{ item.product.name }}</h4>
-                      <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-700">
-                        <span>Talla: {{ item.size }}</span>
-                        <span>Color: {{ item.color }}</span>
-                      </div>
+                      <p class="text-sm text-gray-700">Talla: {{ item.size }}</p>
                       <p class="text-lg font-medium text-black mt-1">{{ formatArs(item.product.price) }} c/u</p>
                     </div>
                     
@@ -138,7 +135,6 @@
                     <div class="flex-1 min-w-0">
                       <h4 class="font-medium text-gray-900 truncate">{{ item.product.name }}</h4>
                       <p class="text-sm text-gray-700">Talla: {{ item.size }}</p>
-                      <p class="text-sm text-gray-700">Color: {{ item.color }}</p>
                       <p class="text-sm font-medium text-black">{{ formatArs(item.product.price) }} c/u</p>
                     </div>
                     
@@ -392,14 +388,14 @@ function updateQuantity(item, newQuantity) {
   if (newQuantity <= 0) {
     removeItem(item)
   } else {
-    cartStore.updateQuantity(item.productId, item.size, item.color, newQuantity)
+    cartStore.updateQuantity(item.productId, item.size, newQuantity)
     toast.success('Cantidad actualizada')
   }
 }
 
 // Remove item from cart
 function removeItem(item) {
-  cartStore.removeItem(item.productId, item.size, item.color)
+  cartStore.removeItem(item.productId, item.size)
   toast.success('Producto eliminado del carrito')
 }
 

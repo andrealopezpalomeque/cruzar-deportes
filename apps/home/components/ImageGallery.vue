@@ -2,25 +2,40 @@
   <div class="image-gallery">
     <!-- Main Image Display - Simplified -->
     <div class="relative bg-white rounded-lg overflow-hidden mb-4 shadow-sm" style="aspect-ratio: 1 / 1;">
+      <!-- Loading Overlay -->
+      <Transition name="fade">
+        <div
+          v-if="imageLoading"
+          class="absolute inset-0 z-10 flex items-center justify-center bg-white/80 backdrop-blur-sm"
+        >
+          <div class="flex flex-col items-center gap-2">
+            <div class="w-8 h-8 border-2 border-gray-300 border-t-gray-900 rounded-full animate-spin"></div>
+            <span class="text-sm text-gray-600">Cargando...</span>
+          </div>
+        </div>
+      </Transition>
+
       <!-- Optimized Main Image -->
       <OptimizedImage
         v-if="currentImage"
+        :key="currentImage"
         :src="currentImage"
         :alt="`${productName} - Imagen ${currentIndex + 1}`"
         type="gallery"
         loading="eager"
         fetchpriority="high"
         wrapper-class="w-full h-full"
-        img-class="w-full h-full object-cover"
-        @load="imageLoading = false"
+        img-class="w-full h-full object-cover transition-opacity duration-200"
+        :class="{ 'opacity-50': imageLoading }"
+        @load="handleImageLoad"
         @error="handleImageError"
       />
-      
+
       <!-- Simple Placeholder -->
       <div v-else class="w-full h-full flex items-center justify-center">
         <IconImage class="h-24 w-24 text-gray-400" />
       </div>
-      
+
       <!-- Simple Navigation - only if multiple images -->
       <button
         v-if="images.length > 1 && currentIndex > 0"
@@ -146,6 +161,10 @@ function previousImage() {
   }
 }
 
+function handleImageLoad() {
+  imageLoading.value = false
+}
+
 function handleImageError(event) {
   const img = event.target
   if (img) {
@@ -254,5 +273,16 @@ watch(currentIndex, (newIndex) => {
 /* Focus styles for accessibility */
 .image-gallery button:focus {
   outline: none;
+}
+
+/* Fade transition for loading overlay */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

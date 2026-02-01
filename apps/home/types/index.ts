@@ -12,7 +12,6 @@ export interface Product {
   images: string[]
   totalImages?: number
   sizes: string[]
-  colors: string[]
   inStock: boolean
   featured?: boolean
 }
@@ -39,7 +38,6 @@ export interface CartItem {
   productId: string
   quantity: number
   size: string
-  color: string
 }
 
 export interface User {

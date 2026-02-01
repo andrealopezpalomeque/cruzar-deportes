@@ -77,23 +77,6 @@
         </p>
       </div>
 
-      <!-- Color Selection -->
-      <div>
-        <label class="block text-sm font-medium text-gray-900 mb-3">
-          Color/Modelo
-          <span class="text-red-700">*</span>
-        </label>
-        <input
-          v-model="selectedColor"
-          type="text"
-          placeholder="Ej: Azul local como en foto #1, Rojo visitante como en foto #3"
-          class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
-        />
-        <p class="text-sm text-gray-700 mt-2">
-          Describe el color/modelo que deseas y referencia el número de foto donde lo ves
-        </p>
-      </div>
-
       <!-- Quantity Selection -->
       <div>
         <label class="block text-sm font-medium text-gray-900 mb-3">
@@ -167,7 +150,7 @@
       <IconCheckCircle class="h-5 w-5 text-green-700 flex-shrink-0" />
       <div>
         <p class="text-sm font-medium text-green-800">¡Producto agregado al carrito!</p>
-        <p class="text-sm text-green-700">{{ product.name }} - Talla: {{ selectedSize }}, Color/Modelo: {{ selectedColor }}</p>
+        <p class="text-sm text-green-700">{{ product.name }} - Talla: {{ selectedSize }}</p>
       </div>
     </div>
 
@@ -244,7 +227,6 @@ const sizes = [
 
 // Reactive state
 const selectedSize = ref('')
-const selectedColor = ref('')
 const quantity = ref(1)
 const isAddingToCart = ref(false)
 const showSuccessMessage = ref(false)
@@ -263,26 +245,21 @@ const formattedTotalPrice = computed(() => formatArs(totalPrice.value))
 
 const canAddToCart = computed(() => {
   return selectedSize.value && selectedSize.value.trim() !== '' &&
-         selectedColor.value && selectedColor.value.trim() !== '' &&
          quantity.value > 0 &&
          !isAddingToCart.value
 })
 
 const validationMessages = computed(() => {
   const messages = []
-  
+
   if (!selectedSize.value || selectedSize.value.trim() === '') {
-    messages.push('Por favor especifica una talla')
+    messages.push('Por favor selecciona una talla')
   }
-  
-  if (!selectedColor.value || selectedColor.value.trim() === '') {
-    messages.push('Por favor especifica el color/modelo')
-  }
-  
+
   if (quantity.value < 1) {
     messages.push('La cantidad debe ser mayor a 0')
   }
-  
+
   return messages
 })
 
@@ -301,28 +278,27 @@ function decreaseQuantity() {
 
 async function addToCart() {
   if (!canAddToCart.value) return
-  
+
   isAddingToCart.value = true
-  
+
   try {
     // Simulate API call delay
     await new Promise(resolve => setTimeout(resolve, 500))
-    
+
     cartStore.addItem(
       props.product.id,
       selectedSize.value,
-      selectedColor.value,
       quantity.value
     )
-    
+
     // Show success message
     showSuccessMessage.value = true
-    
+
     // Hide success message after 3 seconds
     setTimeout(() => {
       showSuccessMessage.value = false
     }, 3000)
-    
+
   } catch (error) {
     console.error('Error adding to cart:', error)
   } finally {
@@ -334,7 +310,6 @@ async function addToCart() {
 watch(() => props.product, () => {
   // Reset selections to empty state
   selectedSize.value = ''
-  selectedColor.value = ''
   quantity.value = 1
   showSuccessMessage.value = false
 }, { immediate: true })

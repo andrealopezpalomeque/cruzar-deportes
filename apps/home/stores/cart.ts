@@ -86,11 +86,9 @@ export const useCartStore = defineStore('cart', () => {
     return formatArs(totalPrice.value)
   })
 
-  function addItem(productId: string, size: string, color: string, quantity = 1) {
+  function addItem(productId: string, size: string, quantity = 1) {
     const existingItem = items.value.find(
-      item => item.productId === productId && 
-               item.size === size && 
-               item.color === color
+      item => item.productId === productId && item.size === size
     )
 
     if (existingItem) {
@@ -99,32 +97,27 @@ export const useCartStore = defineStore('cart', () => {
       items.value.push({
         productId,
         quantity,
-        size,
-        color
+        size
       })
     }
   }
 
-  function removeItem(productId: string, size: string, color: string) {
+  function removeItem(productId: string, size: string) {
     const index = items.value.findIndex(
-      item => item.productId === productId && 
-               item.size === size && 
-               item.color === color
+      item => item.productId === productId && item.size === size
     )
     if (index > -1) {
       items.value.splice(index, 1)
     }
   }
 
-  function updateQuantity(productId: string, size: string, color: string, quantity: number) {
+  function updateQuantity(productId: string, size: string, quantity: number) {
     const item = items.value.find(
-      item => item.productId === productId && 
-               item.size === size && 
-               item.color === color
+      item => item.productId === productId && item.size === size
     )
     if (item) {
       if (quantity <= 0) {
-        removeItem(productId, size, color)
+        removeItem(productId, size)
       } else {
         item.quantity = quantity
       }
@@ -193,7 +186,6 @@ export const useCartStore = defineStore('cart', () => {
       if (product) {
         message += `${index + 1}. *${product.name}*\n`
         message += `   - Talla: ${item.size}\n`
-        message += `   - Color/Modelo: ${item.color}\n`
         message += `   - Cantidad: ${item.quantity}\n`
         message += `   - Precio unitario: $${product.price}\n`
         message += `   - Subtotal: $${(product.price * item.quantity)}\n\n`
