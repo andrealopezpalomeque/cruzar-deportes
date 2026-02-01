@@ -77,6 +77,16 @@
               <IconTshirtCrew class="w-5 h-5" />
               <span>Gestión de Productos</span>
             </NuxtLink>
+
+            <NuxtLink
+              to="/orders"
+              class="nav-link"
+              :class="{ active: $route.path.startsWith('/orders') }"
+              @click="closeSidebarOnMobile"
+            >
+              <IconPackageVariant class="w-5 h-5" />
+              <span>Ordenes</span>
+            </NuxtLink>
           </div>
 
           <div class="border-t border-gray-200/60 pt-6 mt-6">
@@ -189,6 +199,7 @@ import IconViewDashboard from '~icons/mdi/view-dashboard'
 import IconCog from '~icons/mdi/cog'
 import IconLogout from '~icons/mdi/logout'
 import IconMenu from '~icons/mdi/menu'
+import IconPackageVariant from '~icons/mdi/package-variant'
 
 // Composables
 const authStore = useAuthStore()
@@ -205,6 +216,7 @@ const pageTitle = computed(() => {
   const titleMap = {
     '/': 'Dashboard',
     '/products': 'Gestión de Productos',
+    '/orders': 'Ordenes',
     '/settings': 'Configuración'
   }
 
@@ -222,6 +234,7 @@ const pageDescription = computed(() => {
   const descriptionMap = {
     '/': 'Resumen general de tu tienda de camisetas deportivas',
     '/products': 'Administra imágenes, precios y estado de productos',
+    '/orders': 'Gestiona pedidos y seguimiento de clientes',
     '/settings': 'Configuración del sistema'
   }
 

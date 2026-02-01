@@ -12,6 +12,32 @@ export interface CustomerInfo {
   paymentMethod: 'transfer' | 'cash' | 'card'
 }
 
+export interface OrderItem {
+  productId: string
+  productName: string
+  size: string
+  quantity: number
+  unitPrice: number
+  subtotal: number
+}
+
+export interface OrderData {
+  customer: CustomerInfo
+  items: OrderItem[]
+  totalItems: number
+  totalAmount: number
+  paymentMethod: string
+}
+
+export interface OrderResponse {
+  success: boolean
+  data?: {
+    id: string
+    orderNumber: string
+  }
+  error?: string
+}
+
 export const useCartStore = defineStore('cart', () => {
   const items = ref<CartItem[]>([])
   const isOpen = ref(false)
@@ -170,16 +196,20 @@ export const useCartStore = defineStore('cart', () => {
     return errors
   }
 
-  function generateWhatsAppMessage(): string {
+  function generateWhatsAppMessage(orderNumber?: string): string {
     const productsStore = useProductsStore()
-    
-    let message = `*NUEVA ORDEN - CRUZAR DEPORTES*\n\n`
+
+    let message = `*NUEVA ORDEN - CRUZAR DEPORTES*\n`
+    if (orderNumber) {
+      message += `*Orden #${orderNumber}*\n`
+    }
+    message += `\n`
     message += `*DATOS DEL CLIENTE:*\n`
     message += `- Nombre: ${customerInfo.value.name}\n`
     message += `- Telefono: ${customerInfo.value.phone}\n`
     message += `- Email: ${customerInfo.value.email}\n`
     message += `- Direccion: ${customerInfo.value.address}\n\n`
-    
+
     message += `*PRODUCTOS SOLICITADOS:*\n`
     items.value.forEach((item, index) => {
       const product = productsStore.products.find(p => p.id === item.productId)
@@ -191,28 +221,123 @@ export const useCartStore = defineStore('cart', () => {
         message += `   - Subtotal: $${(product.price * item.quantity)}\n\n`
       }
     })
-    
+
     const paymentMethodNames = {
       transfer: 'Transferencia bancaria',
       cash: 'Efectivo',
       card: 'Tarjeta de credito/debito'
     }
-    
+
     message += `*RESUMEN DE COMPRA:*\n`
     message += `- Total de productos: ${totalItems.value}\n`
     message += `- Metodo de pago: ${paymentMethodNames[customerInfo.value.paymentMethod]}\n`
     message += `- *TOTAL: ${formattedTotalPrice.value}*\n\n`
-    
+
     message += `*PROXIMOS PASOS:*\n`
     message += `Por favor confirma la disponibilidad y los detalles de envio. Gracias por elegir Cruzar Deportes!`
-    
+
     return message
   }
 
-  function generateWhatsAppURL(phoneNumber: string = '5493794000783'): string {
-    const message = generateWhatsAppMessage()
+  function generateWhatsAppURL(phoneNumber: string = '5493794000783', orderNumber?: string): string {
+    const message = generateWhatsAppMessage(orderNumber)
     const encodedMessage = encodeURIComponent(message)
     return `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+  }
+
+  // Build order data for API submission
+  function buildOrderData(): OrderData {
+    const productsStore = useProductsStore()
+
+    const orderItems: OrderItem[] = items.value
+      .map(item => {
+        const product = productsStore.products.find(p => p.id === item.productId)
+        if (!product) return null
+        return {
+          productId: item.productId,
+          productName: product.name,
+          size: item.size,
+          quantity: item.quantity,
+          unitPrice: product.price,
+          subtotal: product.price * item.quantity
+        }
+      })
+      .filter((item): item is OrderItem => item !== null)
+
+    return {
+      customer: { ...customerInfo.value },
+      items: orderItems,
+      totalItems: totalItems.value,
+      totalAmount: totalPrice.value,
+      paymentMethod: customerInfo.value.paymentMethod
+    }
+  }
+
+  // Submit order to API
+  async function submitOrder(): Promise<{ orderId: string; orderNumber: string } | null> {
+    const config = useRuntimeConfig()
+    const apiUrl = config.public.apiUrl
+
+    try {
+      const orderData = buildOrderData()
+
+      const response = await $fetch<OrderResponse>(`${apiUrl}/api/orders`, {
+        method: 'POST',
+        body: orderData
+      })
+
+      if (response.success && response.data) {
+        return {
+          orderId: response.data.id,
+          orderNumber: response.data.orderNumber
+        }
+      }
+
+      console.error('Order creation failed:', response.error)
+      return null
+    } catch (error) {
+      console.error('Error submitting order:', error)
+      return null
+    }
+  }
+
+  // Mark order as WhatsApp sent
+  async function markWhatsAppSent(orderId: string): Promise<void> {
+    const config = useRuntimeConfig()
+    const apiUrl = config.public.apiUrl
+
+    try {
+      await $fetch(`${apiUrl}/api/orders/${orderId}/status`, {
+        method: 'PATCH',
+        body: { whatsappSent: true }
+      })
+    } catch (error) {
+      // Non-critical - just log and continue
+      console.error('Error marking WhatsApp sent:', error)
+    }
+  }
+
+  // Complete checkout flow: create order, redirect to WhatsApp
+  async function sendOrderToWhatsApp(phoneNumber: string = '5493794000783'): Promise<string> {
+    let orderNumber: string | undefined
+    let orderId: string | undefined
+
+    // Try to create the order first
+    const orderResult = await submitOrder()
+    if (orderResult) {
+      orderId = orderResult.orderId
+      orderNumber = orderResult.orderNumber
+    }
+
+    // Generate WhatsApp URL (with or without order number)
+    const whatsappUrl = generateWhatsAppURL(phoneNumber, orderNumber)
+
+    // Mark WhatsApp as sent (fire and forget - don't block redirect)
+    if (orderId) {
+      markWhatsAppSent(orderId)
+    }
+
+    return whatsappUrl
   }
 
   function getCartItemsWithProducts() {
@@ -243,6 +368,10 @@ export const useCartStore = defineStore('cart', () => {
     validateCustomerInfo,
     generateWhatsAppMessage,
     generateWhatsAppURL,
-    getCartItemsWithProducts
+    getCartItemsWithProducts,
+    buildOrderData,
+    submitOrder,
+    markWhatsAppSent,
+    sendOrderToWhatsApp
   }
 })
