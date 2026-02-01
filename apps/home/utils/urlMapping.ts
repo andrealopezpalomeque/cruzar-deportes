@@ -67,9 +67,29 @@ export function isCloudinaryUrl(url: string): boolean {
 }
 
 /**
+ * Check if a URL is a static brand asset (logos, icons, etc.) that should NOT be mapped to Cloudinary
+ * These files exist locally and should be served directly from the public folder
+ */
+export function isStaticBrandAsset(url: string): boolean {
+  const brandAssets = [
+    'cruzar-logo',
+    'stadium-crowd',
+    'stadium-field',
+    'football-team'
+  ]
+  return brandAssets.some(asset => url.includes(asset))
+}
+
+/**
  * Get the mapped URL (Cloudinary if available, otherwise original)
+ * Static brand assets (logos, etc.) are excluded from Cloudinary mapping
  */
 export async function getOptimalImageUrl(url: string): Promise<string> {
+  // Keep brand assets local - don't map to Cloudinary
+  if (isStaticBrandAsset(url)) {
+    return url
+  }
+
   if (isLocalStaticFile(url)) {
     return await mapLocalUrlToCloudinary(url)
   }
