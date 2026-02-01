@@ -69,14 +69,27 @@ const createProduct = async (req, res) => {
       originalPrice: productData.originalPrice || null,
       categoryId: productData.categoryId || '',
       images: productData.images || [],
+      selectedImages: productData.selectedImages || productData.images || [],
+      allAvailableImages: productData.allAvailableImages || productData.images || [],
+      cloudinaryFolderPath: productData.cloudinaryFolderPath || null,
       sizes: productData.sizes || [],
+      colors: productData.colors || [],
       isActive: productData.isActive ?? true,
       inStock: productData.inStock ?? true,
+      featured: productData.featured ?? false,
+      stockStatus: productData.stockStatus || 'in_stock',
       createdAt: now,
       updatedAt: now
     };
 
-    const docRef = await productsCollection.add(newProduct);
+    // Use provided ID if available, otherwise auto-generate
+    let docRef;
+    if (productData.id) {
+      docRef = productsCollection.doc(productData.id);
+      await docRef.set(newProduct);
+    } else {
+      docRef = await productsCollection.add(newProduct);
+    }
     const createdDoc = await docRef.get();
 
     res.status(201).json({

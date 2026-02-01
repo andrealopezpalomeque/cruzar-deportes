@@ -296,33 +296,6 @@
                 </div>
               </div>
             </div>
-
-            <!-- Save/Cancel Buttons (shown when dirty) -->
-            <Transition name="fade">
-              <div v-if="isProductDirty(product.id)" class="flex gap-2 pl-10">
-                <button
-                  @click="saveProductChanges(product)"
-                  :disabled="isProductSaving(product.id)"
-                  :class="[
-                    'px-4 py-2 bg-gray-900 text-white text-xs font-medium rounded-lg transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2',
-                    isProductSaving(product.id) ? 'opacity-60 cursor-wait' : 'hover:bg-gray-800'
-                  ]"
-                >
-                  <IconLoading
-                    v-if="isProductSaving(product.id)"
-                    class="w-3 h-3 animate-spin"
-                  />
-                  <span>{{ isProductSaving(product.id) ? 'Guardando...' : 'Guardar' }}</span>
-                </button>
-                <button
-                  @click="cancelProductChanges(product)"
-                  :disabled="isProductSaving(product.id)"
-                  class="px-4 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-60 disabled:cursor-wait"
-                >
-                  Cancelar
-                </button>
-              </div>
-            </Transition>
           </div>
         </div>
 
@@ -479,6 +452,33 @@
             <span class="text-xs text-gray-500">Última modificación</span>
             <span class="text-xs font-medium text-gray-700">{{ formatDate(product.lastModified) }}</span>
           </div>
+
+          <!-- Save/Cancel Buttons (shown when dirty) - Fixed at bottom of card -->
+          <Transition name="fade">
+            <div v-if="isProductDirty(product.id)" class="flex justify-end gap-2 pt-4 mt-4 border-t border-gray-200">
+              <button
+                @click="cancelProductChanges(product)"
+                :disabled="isProductSaving(product.id)"
+                class="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-60 disabled:cursor-wait"
+              >
+                Cancelar
+              </button>
+              <button
+                @click="saveProductChanges(product)"
+                :disabled="isProductSaving(product.id)"
+                :class="[
+                  'px-5 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2',
+                  isProductSaving(product.id) ? 'opacity-60 cursor-wait' : 'hover:bg-gray-800'
+                ]"
+              >
+                <IconLoading
+                  v-if="isProductSaving(product.id)"
+                  class="w-4 h-4 animate-spin"
+                />
+                <span>{{ isProductSaving(product.id) ? 'Guardando...' : 'Guardar todos los cambios' }}</span>
+              </button>
+            </div>
+          </Transition>
         </div>
       </div>
       </div>
@@ -992,6 +992,7 @@ import IconPlus from '~icons/mdi/plus'
 import IconCloudUpload from '~icons/mdi/cloud-upload'
 import IconTrashCan from '~icons/mdi/trash-can'
 import { slugify } from '~/utils/slugify'
+import { onBeforeRouteLeave } from 'vue-router'
 
 // Page meta
 definePageMeta({
@@ -1917,6 +1918,10 @@ const saveProductChanges = async (product) => {
   try {
     savingProducts[productId] = true
 
+    // Preserve the existing cloudinaryFolderPath, or generate one if it doesn't exist
+    const existingFolderPath = product.cloudinaryFolderPath
+    const folderPath = existingFolderPath || getProductFolderPath(product)
+
     const payload = {
       name: trimmedName,
       description: trimmedDescription,
@@ -1928,6 +1933,7 @@ const saveProductChanges = async (product) => {
       images: product.images || product.selectedImages || [],
       selectedImages: product.selectedImages || product.images || [],
       allAvailableImages: product.allAvailableImages || product.images || [],
+      cloudinaryFolderPath: folderPath,  // Always preserve the folder path
       inStock: product.inStock,
       featured: product.featured
     }
@@ -1938,6 +1944,7 @@ const saveProductChanges = async (product) => {
     product.name = trimmedName
     product.description = trimmedDescription
     product.slug = generatedSlug
+    product.cloudinaryFolderPath = folderPath  // Store the folder path locally too
     product.lastModified = new Date().toISOString()
     captureDetailsSnapshot(product)
     delete dirtyProducts[productId]
@@ -2131,10 +2138,49 @@ watch([selectedCategory, searchTerm], async () => {
   isTransitioning.value = false
 })
 
+// Check if there are any unsaved changes
+const hasUnsavedChanges = computed(() => {
+  return Object.keys(dirtyProducts).length > 0
+})
+
+// Handle browser/tab close with unsaved changes
+const handleBeforeUnload = (event) => {
+  if (hasUnsavedChanges.value) {
+    event.preventDefault()
+    // Modern browsers require returnValue to be set
+    event.returnValue = 'Tenés cambios sin guardar. ¿Seguro que querés salir?'
+    return event.returnValue
+  }
+}
+
+// Navigation guard for in-app navigation
+onBeforeRouteLeave((to, from, next) => {
+  if (hasUnsavedChanges.value) {
+    const confirmed = window.confirm(
+      'Tenés cambios sin guardar. ¿Seguro que querés salir de esta página?'
+    )
+    if (confirmed) {
+      next()
+    } else {
+      next(false)
+    }
+  } else {
+    next()
+  }
+})
+
 // Lifecycle
 onMounted(() => {
   fetchCategories()
   loadAllProducts()
+
+  // Add beforeunload listener for tab close/refresh
+  window.addEventListener('beforeunload', handleBeforeUnload)
+})
+
+onUnmounted(() => {
+  // Clean up beforeunload listener
+  window.removeEventListener('beforeunload', handleBeforeUnload)
 })
 </script>
 

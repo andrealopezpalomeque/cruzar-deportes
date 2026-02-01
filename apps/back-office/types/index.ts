@@ -17,6 +17,7 @@ export interface Product {
   colors: string[]
   inStock: boolean
   featured?: boolean
+  cloudinaryFolderPath?: string
 }
 
 export interface Category {
