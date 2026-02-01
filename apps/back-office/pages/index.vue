@@ -274,7 +274,7 @@ const loadDashboardData = async () => {
         totalCategories: new Set(products.map(p => p.category || p.categoryId)).size,
         featuredProducts: products.filter(p => p.featured).length,
         inStockProducts: products.filter(p => p.inStock).length,
-        availableOnOrderProducts: products.filter(p => p.stockStatus === 'available_on_order').length,
+        availableOnOrderProducts: products.filter(p => !p.inStock).length,
         recentlyModified: products.filter(p => {
           const lastMod = new Date(p.updatedAt || p.lastModified)
           const dayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000)

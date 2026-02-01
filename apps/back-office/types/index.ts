@@ -42,7 +42,6 @@ export interface Subcategory {
 export interface BackofficeProduct extends Product {
   totalAvailableImages: number
   selectedImages: string[]
-  stockStatus: 'in_stock' | 'available_on_order'
   lastModified: string
   isModified: boolean
 }
@@ -58,7 +57,7 @@ export interface BulkOperation {
 export interface BulkOperationFilters {
   category?: CategoryType[]
   priceRange?: { min: number; max: number }
-  stockStatus?: ('in_stock' | 'available_on_order')[]
+  inStock?: boolean
   featured?: boolean
 }
 
@@ -72,7 +71,6 @@ export interface PriceUpdate {
 export interface StockUpdate {
   productId: string
   inStock: boolean
-  stockStatus: 'in_stock' | 'available_on_order'
 }
 
 export interface FeaturedUpdate {
@@ -122,7 +120,7 @@ export interface PaginatedResponse<T> {
 // Filter and search types
 export interface ProductFilters {
   category?: CategoryType[]
-  stockStatus?: ('in_stock' | 'available_on_order')[]
+  inStock?: boolean
   featured?: boolean
   priceRange?: { min: number; max: number }
   hasDiscount?: boolean

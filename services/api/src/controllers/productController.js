@@ -80,7 +80,6 @@ const createProduct = async (req, res) => {
       isActive: productData.isActive ?? true,
       inStock: productData.inStock ?? true,
       featured: productData.featured ?? false,
-      stockStatus: productData.stockStatus || 'in_stock',
       createdAt: now,
       updatedAt: now
     };

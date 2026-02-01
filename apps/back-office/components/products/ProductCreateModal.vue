@@ -148,11 +148,11 @@
               </div>
             </div>
 
-            <div class="grid gap-4 md:grid-cols-3">
+            <div class="grid gap-4 md:grid-cols-2">
               <div class="flex items-center justify-between rounded-2xl border border-gray-100 px-4 py-3 bg-gray-50">
                 <div>
                   <p class="text-sm font-semibold text-gray-900">En stock</p>
-                  <p class="text-xs text-gray-500">Disponible inmediato</p>
+                  <p class="text-xs text-gray-500">Si está apagado, se mostrará "Encargar ahora"</p>
                 </div>
                 <button
                   type="button"
@@ -183,18 +183,6 @@
                     :class="form.featured ? 'translate-x-6' : 'translate-x-1'"
                   />
                 </button>
-              </div>
-
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Modo de stock</label>
-                <select
-                  v-model="form.stockStatus"
-                  class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
-                  :disabled="isSaving"
-                >
-                  <option value="in_stock">Disponible ahora</option>
-                  <option value="available_on_order">A pedido</option>
-                </select>
               </div>
             </div>
           </section>
@@ -467,7 +455,6 @@ const form = reactive({
   originalPrice: '',
   category: '',
   inStock: true,
-  stockStatus: 'in_stock',
   featured: false,
   selectedImages: [],
   allAvailableImages: []
@@ -530,7 +517,6 @@ const resetForm = () => {
   form.originalPrice = ''
   form.category = firstCategoryValue.value
   form.inStock = true
-  form.stockStatus = 'in_stock'
   form.featured = false
   form.selectedImages = []
   form.allAvailableImages = []
@@ -745,9 +731,7 @@ const handleSubmit = async () => {
       : [...form.selectedImages],
     cloudinaryFolderPath: generatedFolderPath.value,
     sizes: [...DEFAULT_SIZES],
-    colors: [...DEFAULT_COLORS],
     inStock: form.inStock,
-    stockStatus: form.stockStatus,
     featured: form.featured,
     lastModified: now,
     createdAt: now,
