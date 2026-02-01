@@ -5,11 +5,14 @@ const productsCollection = db.collection('products');
 // Helper to convert Firestore doc to plain object with id
 const docToProduct = (doc) => {
   const data = doc.data();
+  const createdAt = data.createdAt?.toDate?.()?.toISOString() || data.createdAt || null;
+  const updatedAt = data.updatedAt?.toDate?.()?.toISOString() || data.updatedAt || null;
   return {
     id: doc.id,
     ...data,
-    createdAt: data.createdAt?.toDate?.()?.toISOString() || data.createdAt,
-    updatedAt: data.updatedAt?.toDate?.()?.toISOString() || data.updatedAt
+    createdAt,
+    updatedAt,
+    lastModified: updatedAt || createdAt // Alias for back-office compatibility
   };
 };
 

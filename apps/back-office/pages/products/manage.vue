@@ -1748,7 +1748,18 @@ const selectCategory = (value) => {
 }
 
 const formatDate = (dateString) => {
-  return new Date(dateString).toLocaleDateString('es-AR', {
+  if (!dateString) {
+    return 'Sin fecha'
+  }
+
+  const date = new Date(dateString)
+
+  // Check if date is valid
+  if (isNaN(date.getTime())) {
+    return 'Sin fecha'
+  }
+
+  return date.toLocaleDateString('es-AR', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
