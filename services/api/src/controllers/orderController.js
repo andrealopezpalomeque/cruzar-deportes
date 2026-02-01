@@ -158,7 +158,7 @@ const createOrder = async (req, res) => {
       notes: '',
 
       // Metadata
-      whatsappSent: false,
+      contactado: false,
       createdAt: now,
       updatedAt: now
     };
@@ -229,7 +229,7 @@ const updateOrder = async (req, res) => {
 const updateOrderStatus = async (req, res) => {
   try {
     const { id } = req.params;
-    const { status, whatsappSent } = req.body;
+    const { status, contactado } = req.body;
 
     const docRef = ordersCollection.doc(id);
     const doc = await docRef.get();
@@ -253,9 +253,9 @@ const updateOrderStatus = async (req, res) => {
       updateData.status = status;
     }
 
-    // Set whatsappSent if provided
-    if (whatsappSent !== undefined) {
-      updateData.whatsappSent = Boolean(whatsappSent);
+    // Set contactado if provided
+    if (contactado !== undefined) {
+      updateData.contactado = Boolean(contactado);
     }
 
     await docRef.update(updateData);

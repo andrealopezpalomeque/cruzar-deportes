@@ -424,14 +424,11 @@ async function handleCheckout() {
   }
   
   isProcessing.value = true
-  
-  try {
-    // Simulate processing delay
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    // Generate WhatsApp URL and redirect
-    const whatsappURL = cartStore.generateWhatsAppURL('5493794000783')
 
+  try {
+    // Create order in database and generate WhatsApp URL with order number
+    const whatsappURL = await cartStore.sendOrderToWhatsApp('5493794000783')
+    
     // Use mobile-optimized URL opening
     const openSuccess = openURLMobileOptimized(whatsappURL)
 

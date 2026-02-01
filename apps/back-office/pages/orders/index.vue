@@ -113,11 +113,14 @@
                     <span class="text-sm font-medium text-gray-900">
                       {{ order.orderNumber }}
                     </span>
-                    <IconWhatsapp
-                      v-if="order.whatsappSent"
-                      class="w-4 h-4 text-green-500 ml-2"
-                      title="WhatsApp enviado"
-                    />
+                    <span
+                      class="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium"
+                      :class="order.contactado ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'"
+                      :title="order.contactado ? 'Cliente contactado' : 'Pendiente de contacto'"
+                    >
+                      <IconCheck v-if="order.contactado" class="w-3 h-3" />
+                      <IconClock v-else class="w-3 h-3" />
+                    </span>
                   </div>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">
@@ -172,7 +175,8 @@
 import IconClose from '~icons/mdi/close'
 import IconRefresh from '~icons/mdi/refresh'
 import IconPackageVariantClosed from '~icons/mdi/package-variant-closed'
-import IconWhatsapp from '~icons/mdi/whatsapp'
+import IconCheck from '~icons/mdi/check'
+import IconClock from '~icons/mdi/clock-outline'
 
 // Define page meta
 definePageMeta({

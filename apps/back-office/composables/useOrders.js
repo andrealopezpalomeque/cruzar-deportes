@@ -154,6 +154,31 @@ export const useOrders = () => {
     }
   }
 
+  // Toggle contactado (contacted) status
+  const toggleContactado = async (orderId, contactado) => {
+    try {
+      loading.value = true
+      error.value = null
+
+      const response = await $fetch(`${apiUrl}/api/orders/${orderId}/status`, {
+        method: 'PATCH',
+        headers: getAuthHeaders(),
+        body: { contactado }
+      })
+
+      if (!response.success) {
+        throw new Error(response.error || 'Failed to update contact status')
+      }
+
+      return response.data
+    } catch (err) {
+      error.value = err.message || 'Failed to update contact status'
+      throw err
+    } finally {
+      loading.value = false
+    }
+  }
+
   // Delete order
   const deleteOrder = async (orderId) => {
     try {
@@ -216,6 +241,7 @@ export const useOrders = () => {
     loadOrder,
     updateOrder,
     updateOrderStatus,
+    toggleContactado,
     deleteOrder,
     getOrderStats
   }

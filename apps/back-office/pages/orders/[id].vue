@@ -211,16 +211,20 @@
                 </select>
               </div>
 
-              <!-- WhatsApp Status -->
+              <!-- Contactado Status -->
               <div class="flex items-center justify-between py-2 border-t border-gray-200">
-                <span class="text-sm text-gray-500">WhatsApp enviado:</span>
-                <span
-                  class="inline-flex items-center"
-                  :class="order.whatsappSent ? 'text-green-600' : 'text-gray-400'"
-                >
-                  <IconWhatsapp class="w-5 h-5 mr-1" />
-                  {{ order.whatsappSent ? 'Si' : 'No' }}
-                </span>
+                <div>
+                  <span class="text-sm text-gray-700 font-medium">Cliente contactado</span>
+                  <p class="text-xs text-gray-500">Marcar cuando recibas el WhatsApp del cliente</p>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                  <input
+                    type="checkbox"
+                    v-model="editableOrder.contactado"
+                    class="sr-only peer"
+                  />
+                  <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500"></div>
+                </label>
               </div>
 
               <!-- Payment Method -->
@@ -333,7 +337,6 @@ import IconContentSave from '~icons/mdi/content-save'
 import IconPackageVariantClosed from '~icons/mdi/package-variant-closed'
 import IconAccount from '~icons/mdi/account'
 import IconTshirtCrew from '~icons/mdi/tshirt-crew'
-import IconWhatsapp from '~icons/mdi/whatsapp'
 import IconAlertCircle from '~icons/mdi/alert-circle'
 
 // Define page meta
@@ -360,7 +363,8 @@ const order = ref(null)
 const editableOrder = ref({
   status: 'nuevo',
   adjustedAmount: 0,
-  notes: ''
+  notes: '',
+  contactado: false
 })
 const showDeleteConfirm = ref(false)
 
@@ -370,7 +374,8 @@ const hasChanges = computed(() => {
   return (
     editableOrder.value.status !== order.value.status ||
     editableOrder.value.adjustedAmount !== order.value.adjustedAmount ||
-    editableOrder.value.notes !== (order.value.notes || '')
+    editableOrder.value.notes !== (order.value.notes || '') ||
+    editableOrder.value.contactado !== (order.value.contactado || false)
   )
 })
 
@@ -432,7 +437,8 @@ const loadOrderData = async () => {
       editableOrder.value = {
         status: data.status || 'nuevo',
         adjustedAmount: data.adjustedAmount ?? data.totalAmount ?? 0,
-        notes: data.notes || ''
+        notes: data.notes || '',
+        contactado: data.contactado || false
       }
     }
   } catch (err) {
@@ -447,7 +453,8 @@ const saveOrder = async () => {
     await updateOrder(orderId, {
       status: editableOrder.value.status,
       adjustedAmount: editableOrder.value.adjustedAmount,
-      notes: editableOrder.value.notes
+      notes: editableOrder.value.notes,
+      contactado: editableOrder.value.contactado
     })
     toastSuccess('Orden actualizada correctamente')
     await loadOrderData()

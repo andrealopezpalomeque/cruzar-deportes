@@ -301,41 +301,18 @@ export const useCartStore = defineStore('cart', () => {
     }
   }
 
-  // Mark order as WhatsApp sent
-  async function markWhatsAppSent(orderId: string): Promise<void> {
-    const config = useRuntimeConfig()
-    const apiUrl = config.public.apiUrl
-
-    try {
-      await $fetch(`${apiUrl}/api/orders/${orderId}/status`, {
-        method: 'PATCH',
-        body: { whatsappSent: true }
-      })
-    } catch (error) {
-      // Non-critical - just log and continue
-      console.error('Error marking WhatsApp sent:', error)
-    }
-  }
-
   // Complete checkout flow: create order, redirect to WhatsApp
   async function sendOrderToWhatsApp(phoneNumber: string = '5493794000783'): Promise<string> {
     let orderNumber: string | undefined
-    let orderId: string | undefined
 
     // Try to create the order first
     const orderResult = await submitOrder()
     if (orderResult) {
-      orderId = orderResult.orderId
       orderNumber = orderResult.orderNumber
     }
 
     // Generate WhatsApp URL (with or without order number)
     const whatsappUrl = generateWhatsAppURL(phoneNumber, orderNumber)
-
-    // Mark WhatsApp as sent (fire and forget - don't block redirect)
-    if (orderId) {
-      markWhatsAppSent(orderId)
-    }
 
     return whatsappUrl
   }
@@ -371,7 +348,6 @@ export const useCartStore = defineStore('cart', () => {
     getCartItemsWithProducts,
     buildOrderData,
     submitOrder,
-    markWhatsAppSent,
     sendOrderToWhatsApp
   }
 })
