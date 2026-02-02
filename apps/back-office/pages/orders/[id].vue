@@ -41,7 +41,7 @@
     <!-- Loading State -->
     <div v-if="loading && !order" class="card">
       <div class="card-body p-8 text-center">
-        <div class="spinner w-8 h-8 text-blue-600 mx-auto mb-4"></div>
+        <div class="spinner w-8 h-8 text-gray-900 mx-auto mb-4"></div>
         <p class="text-gray-500">Cargando orden...</p>
       </div>
     </div>
@@ -79,13 +79,24 @@
                 <div>
                   <dt class="text-sm font-medium text-gray-500">Telefono</dt>
                   <dd class="text-sm text-gray-900">
-                    <a
-                      v-if="order.customer?.phone"
-                      :href="`tel:${order.customer.phone}`"
-                      class="text-blue-600 hover:text-blue-800"
-                    >
-                      {{ order.customer.phone }}
-                    </a>
+                    <div v-if="order.customer?.phone" class="flex items-center gap-3">
+                      <a
+                        :href="`tel:${order.customer.phone}`"
+                        class="text-gray-900 hover:text-black underline"
+                      >
+                        {{ order.customer.phone }}
+                      </a>
+                      <a
+                        :href="getWhatsAppUrl(order.customer.phone)"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-green-500 hover:bg-green-600 text-white text-xs font-medium rounded-lg transition-colors"
+                        title="Abrir conversacion en WhatsApp"
+                      >
+                        <IconWhatsapp class="w-4 h-4" />
+                        WhatsApp
+                      </a>
+                    </div>
                     <span v-else>-</span>
                   </dd>
                 </div>
@@ -95,7 +106,7 @@
                     <a
                       v-if="order.customer?.email"
                       :href="`mailto:${order.customer.email}`"
-                      class="text-blue-600 hover:text-blue-800"
+                      class="text-gray-900 hover:text-black underline"
                     >
                       {{ order.customer.email }}
                     </a>
@@ -338,6 +349,7 @@ import IconPackageVariantClosed from '~icons/mdi/package-variant-closed'
 import IconAccount from '~icons/mdi/account'
 import IconTshirtCrew from '~icons/mdi/tshirt-crew'
 import IconAlertCircle from '~icons/mdi/alert-circle'
+import IconWhatsapp from '~icons/mdi/whatsapp'
 
 // Define page meta
 definePageMeta({
@@ -422,6 +434,13 @@ const formatDate = (dateString) => {
   } catch {
     return dateString
   }
+}
+
+const getWhatsAppUrl = (phone) => {
+  if (!phone) return '#'
+  // Remove all non-numeric characters except +
+  const cleanPhone = phone.replace(/[^\d+]/g, '')
+  return `https://wa.me/${cleanPhone}`
 }
 
 const goBack = () => {

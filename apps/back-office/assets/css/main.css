@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -32,7 +34,7 @@
   }
 
   .btn-primary {
-    @apply bg-blue-600 text-white border-blue-600 hover:bg-blue-700 hover:border-blue-700 focus:ring-blue-500;
+    @apply bg-gray-900 text-white border-gray-900 hover:bg-black hover:border-black focus:ring-gray-500;
   }
 
   .btn-secondary {
@@ -57,7 +59,7 @@
 
   /* Form component styles */
   .form-input {
-    @apply block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200;
+    @apply block w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900/10 focus:border-gray-400 transition-colors duration-200;
   }
 
   .form-label {
@@ -112,14 +114,14 @@
 
   /* Navigation styles */
   .nav-link {
-    @apply flex items-center gap-3 px-4 py-3 text-gray-700 rounded-lg hover:bg-gray-100 hover:text-gray-900 transition-all duration-200 font-medium;
+    @apply flex items-center gap-3 px-4 py-3 text-gray-600 rounded-xl hover:bg-gray-100 hover:text-gray-900 transition-all duration-200 font-medium;
   }
 
   .nav-link.active {
-    @apply bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 shadow-sm border border-blue-200;
+    @apply bg-gray-900 text-white shadow-sm;
   }
 
-  .nav-link:hover {
+  .nav-link:hover:not(.active) {
     @apply transform translate-x-1;
   }
 
@@ -130,7 +132,7 @@
 
   /* Drag and drop styles */
   .drag-over {
-    @apply bg-blue-50 border-blue-300 border-dashed;
+    @apply bg-gray-100 border-gray-400 border-dashed;
   }
 
   .dragging {
@@ -151,6 +153,6 @@
   }
 
   .image-checkbox {
-    @apply absolute top-2 right-2 w-5 h-5 text-blue-600 bg-white rounded border-2 border-gray-300 focus:ring-blue-500;
+    @apply absolute top-2 right-2 w-5 h-5 text-gray-900 bg-white rounded border-2 border-gray-300 focus:ring-gray-500;
   }
 }

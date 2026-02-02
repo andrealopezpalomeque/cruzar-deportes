@@ -1,186 +1,219 @@
 <template>
   <div class="space-y-6">
-    <!-- Welcome Message -->
-    <div class="card">
-      <div class="card-body">
-        <div class="flex items-center">
-          <div class="flex-shrink-0">
-            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
-              <IconViewDashboard class="w-6 h-6 text-white" />
-            </div>
-          </div>
-          <div class="ml-4">
-            <h2 class="text-xl font-semibold text-gray-900">
-              ¡Bienvenido, {{ authStore.currentUser?.username }}!
-            </h2>
-            <p class="text-gray-600">
-              Administra tu catálogo de camisetas deportivas desde aquí
+    <!-- Welcome Header -->
+    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-black p-6 md:p-8">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-5">
+        <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white"></div>
+        <div class="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-white"></div>
+        <div class="absolute right-1/4 top-1/2 h-20 w-20 rounded-full bg-white"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="relative">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <p class="text-gray-400 text-sm font-medium mb-1">{{ todayFormatted }}</p>
+            <h1 class="text-2xl md:text-3xl font-bold text-white mb-2">
+              {{ greeting }}, {{ displayName }}
+            </h1>
+            <p class="text-gray-400">
+              Aqui tienes el resumen de tu tienda
             </p>
+          </div>
+          <div class="flex-shrink-0">
+            <img
+              v-if="authStore.currentUser?.username === 'tati_valesani'"
+              src="/tati_valesani.png"
+              alt="Profile"
+              class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover ring-4 ring-white/10 shadow-lg"
+              style="object-position: center 10%;"
+            />
+            <div v-else class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 flex items-center justify-center ring-4 ring-white/10">
+              <IconAccount class="w-8 h-8 text-white" />
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Stats Overview -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="card">
-        <div class="card-body">
-          <div class="flex items-center">
-            <div class="flex-shrink-0">
-              <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                <IconTshirtCrew class="w-5 h-5 text-green-600" />
-              </div>
-            </div>
-            <div class="ml-4">
-              <p class="text-sm font-medium text-gray-600">
-                Total Productos
-              </p>
-              <p class="text-2xl font-bold text-gray-900">
-                {{ stats.totalProducts }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <!-- Order Stats -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
       <div class="card">
         <div class="card-body">
           <div class="flex items-center">
             <div class="flex-shrink-0">
               <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                <IconStar class="w-5 h-5 text-blue-600" />
+                <IconPackageVariant class="w-5 h-5 text-blue-600" />
               </div>
             </div>
             <div class="ml-4">
-              <p class="text-sm font-medium text-gray-600">
-                Destacados
-              </p>
-              <p class="text-2xl font-bold text-gray-900">
-                {{ stats.featuredProducts }}
-              </p>
+              <p class="text-sm font-medium text-gray-600">Ordenes Nuevas</p>
+              <p class="text-2xl font-bold text-gray-900">{{ orderStats.nuevo }}</p>
             </div>
           </div>
         </div>
       </div>
 
+      <div class="card">
+        <div class="card-body">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                <IconClockOutline class="w-5 h-5 text-orange-600" />
+              </div>
+            </div>
+            <div class="ml-4">
+              <p class="text-sm font-medium text-gray-600">Pend. Contacto</p>
+              <p class="text-2xl font-bold text-gray-900">{{ orderStats.pendingContact }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="card">
         <div class="card-body">
           <div class="flex items-center">
             <div class="flex-shrink-0">
               <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">
-                <IconPackageVariantClosed class="w-5 h-5 text-yellow-600" />
+                <IconProgressClock class="w-5 h-5 text-yellow-600" />
               </div>
             </div>
             <div class="ml-4">
-              <p class="text-sm font-medium text-gray-600">
-                En Stock
-              </p>
-              <p class="text-2xl font-bold text-gray-900">
-                {{ stats.inStockProducts }}
-              </p>
+              <p class="text-sm font-medium text-gray-600">En Proceso</p>
+              <p class="text-2xl font-bold text-gray-900">{{ orderStats.inProcess }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                <IconCashMultiple class="w-5 h-5 text-green-600" />
+              </div>
+            </div>
+            <div class="ml-4">
+              <p class="text-sm font-medium text-gray-600">Vendido</p>
+              <p class="text-2xl font-bold text-gray-900">${{ formatNumber(orderStats.totalRevenue) }}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Quick Actions -->
+    <!-- Orders Needing Attention -->
     <div class="card">
       <div class="card-header">
         <div class="flex items-center justify-between">
           <div>
-            <h3 class="text-lg font-medium text-gray-900">
-              Acciones Rápidas
-            </h3>
-            <p class="text-sm text-gray-500 mt-1">
-              Accede a las herramientas clave del back office en un solo clic.
-            </p>
+            <h3 class="text-lg font-medium text-gray-900">Ordenes que Requieren Atencion</h3>
+            <p class="text-sm text-gray-500 mt-1">Ordenes nuevas o pendientes de contacto</p>
           </div>
+          <NuxtLink
+            to="/orders"
+            class="text-sm text-gray-900 hover:text-black font-medium underline underline-offset-2"
+          >
+            Ver todas las ordenes
+          </NuxtLink>
         </div>
       </div>
-      <div class="card-body">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <NuxtLink
-            v-for="action in quickActions"
-            :key="action.title"
-            :to="action.to"
-            class="p-5 border border-gray-200 rounded-xl transition-all duration-200 group bg-white/60 hover:bg-white hover:shadow-md"
-            :class="action.borderClass"
-          >
-            <div class="flex items-start gap-4">
-              <div>
-                <div
-                  class="w-10 h-10 rounded-lg flex items-center justify-center transition-colors"
-                  :class="action.iconWrapperClass"
-                >
-                  <component :is="action.icon" class="w-5 h-5" :class="action.iconClass" />
-                </div>
-              </div>
-              <div class="flex-1 space-y-1">
-                <p class="text-base font-semibold text-gray-900 group-hover:text-gray-900">
-                  {{ action.title }}
-                </p>
-                <p class="text-sm text-gray-500">
-                  {{ action.description }}
-                </p>
-                <span class="inline-flex items-center text-sm font-medium" :class="action.linkClass">
-                  {{ action.cta }}
-                  <IconChevronRight class="w-4 h-4 ml-1" />
-                </span>
-              </div>
-            </div>
-          </NuxtLink>
+      <div class="card-body p-0">
+        <!-- Loading -->
+        <div v-if="loading" class="p-6 text-center">
+          <div class="spinner w-6 h-6 text-gray-900 mx-auto"></div>
+        </div>
+
+        <!-- Empty State -->
+        <div v-else-if="ordersNeedingAttention.length === 0" class="p-6 text-center">
+          <IconCheckCircle class="w-12 h-12 text-green-400 mx-auto mb-3" />
+          <p class="text-gray-500">No hay ordenes pendientes de atencion</p>
+        </div>
+
+        <!-- Orders Table -->
+        <div v-else class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Orden</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Cliente</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Total</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Estado</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Fecha</th>
+                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase"></th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              <tr
+                v-for="order in ordersNeedingAttention"
+                :key="order.id"
+                class="hover:bg-gray-50"
+              >
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <span class="text-sm font-medium text-gray-900">{{ order.orderNumber }}</span>
+                    <span
+                      v-if="!order.contactado"
+                      class="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium bg-orange-100 text-orange-700"
+                      title="Pendiente de contacto"
+                    >
+                      <IconClock class="w-3 h-3" />
+                    </span>
+                  </div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="text-sm text-gray-900">{{ order.customer?.name || '-' }}</div>
+                  <div class="text-xs text-gray-500">{{ order.customer?.phone || '-' }}</div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  ${{ formatNumber(order.totalAmount) }}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <span
+                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
+                    :class="getStatusBadgeClass(order.status)"
+                  >
+                    {{ getStatusLabel(order.status) }}
+                  </span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {{ formatRelativeDate(order.createdAt) }}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right">
+                  <NuxtLink
+                    :to="`/orders/${order.id}`"
+                    class="text-gray-900 hover:text-black text-sm font-medium underline underline-offset-2"
+                  >
+                    Ver
+                  </NuxtLink>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
 
-    <!-- Recent Activity -->
+    <!-- Product Stats (Secondary) -->
     <div class="card">
       <div class="card-header">
-        <div class="flex items-center justify-between">
-          <h3 class="text-lg font-medium text-gray-900">
-            Actividad Reciente
-          </h3>
-          <NuxtLink
-            to="/activity"
-            class="text-sm text-blue-600 hover:text-blue-700"
-          >
-            Ver todo
-          </NuxtLink>
-        </div>
+        <h3 class="text-lg font-medium text-gray-900">Resumen de Productos</h3>
       </div>
       <div class="card-body">
-        <div v-if="recentActivity.length === 0" class="text-center py-8">
-          <IconClockOutline class="w-12 h-12 text-gray-300 mx-auto mb-4" />
-          <p class="text-gray-500">
-            No hay actividad reciente
-          </p>
-        </div>
-        <div v-else class="space-y-4">
-          <div
-            v-for="activity in recentActivity"
-            :key="activity.id"
-            class="flex items-start space-x-3"
-          >
-            <div class="flex-shrink-0">
-              <div class="w-8 h-8 rounded-full flex items-center justify-center"
-                   :class="getActivityIconClass(activity.type)"
-              >
-                <component
-                  :is="getActivityIcon(activity.type)"
-                  class="w-4 h-4 text-white"
-                />
-              </div>
-            </div>
-            <div class="flex-1 min-w-0">
-              <p class="text-sm text-gray-900">
-                {{ activity.description }}
-              </p>
-              <p class="text-xs text-gray-500">
-                {{ formatDate(activity.timestamp) }}
-              </p>
-            </div>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="text-center p-4 bg-gray-50 rounded-lg">
+            <p class="text-2xl font-bold text-gray-900">{{ productStats.totalProducts }}</p>
+            <p class="text-sm text-gray-600">Total</p>
+          </div>
+          <div class="text-center p-4 bg-gray-50 rounded-lg">
+            <p class="text-2xl font-bold text-gray-900">{{ productStats.featuredProducts }}</p>
+            <p class="text-sm text-gray-600">Destacados</p>
+          </div>
+          <div class="text-center p-4 bg-gray-50 rounded-lg">
+            <p class="text-2xl font-bold text-gray-900">{{ productStats.inStockProducts }}</p>
+            <p class="text-sm text-gray-600">En Stock</p>
           </div>
         </div>
       </div>
@@ -189,17 +222,13 @@
 </template>
 
 <script setup>
-import IconViewDashboard from '~icons/mdi/view-dashboard'
-import IconTshirtCrew from '~icons/mdi/tshirt-crew'
-import IconStar from '~icons/mdi/star'
-import IconPackageVariantClosed from '~icons/mdi/package-variant-closed'
+import IconPackageVariant from '~icons/mdi/package-variant'
 import IconClockOutline from '~icons/mdi/clock-outline'
-import IconCog from '~icons/mdi/cog'
-import IconChevronRight from '~icons/mdi/chevron-right'
-import IconPlus from '~icons/mdi/plus'
-import IconPencil from '~icons/mdi/pencil'
-import IconDelete from '~icons/mdi/delete'
-import IconInformation from '~icons/mdi/information'
+import IconClock from '~icons/mdi/clock-outline'
+import IconProgressClock from '~icons/mdi/progress-clock'
+import IconCashMultiple from '~icons/mdi/cash-multiple'
+import IconCheckCircle from '~icons/mdi/check-circle'
+import IconAccount from '~icons/mdi/account'
 
 // Define page meta
 definePageMeta({
@@ -209,118 +238,77 @@ definePageMeta({
 // Composables
 const authStore = useAuthStore()
 const { loadProducts } = useSharedProducts()
+const { loadOrders, getStatusLabel, getStatusColor } = useOrders()
 
-const quickActions = [
-  {
-    title: 'Ver productos',
-    description: 'Gestiona tu catálogo, precios e imágenes',
-    to: '/products/manage',
-    icon: IconTshirtCrew,
-    iconWrapperClass: 'bg-blue-100 group-hover:bg-blue-200',
-    iconClass: 'text-blue-600',
-    borderClass: 'hover:border-blue-300',
-    linkClass: 'text-blue-600 group-hover:text-blue-700',
-    cta: 'Ir a productos'
-  },
-  {
-    title: 'Configuración general',
-    description: 'Actualiza ajustes y accesos del back office',
-    to: '/settings',
-    icon: IconCog,
-    iconWrapperClass: 'bg-purple-100 group-hover:bg-purple-200',
-    iconClass: 'text-purple-600',
-    borderClass: 'hover:border-purple-300',
-    linkClass: 'text-purple-600 group-hover:text-purple-700',
-    cta: 'Abrir configuración'
-  },
-  {
-    title: 'Actividad reciente',
-    description: 'Revisa los últimos cambios aplicados al catálogo',
-    to: '/activity',
-    icon: IconClockOutline,
-    iconWrapperClass: 'bg-amber-100 group-hover:bg-amber-200',
-    iconClass: 'text-amber-600',
-    borderClass: 'hover:border-amber-300',
-    linkClass: 'text-amber-600 group-hover:text-amber-700',
-    cta: 'Ver historial'
-  }
-]
+// Display name mapping
+const userDisplayNames = {
+  'tati_valesani': 'Tati Valesani'
+}
 
 // State
-const stats = ref({
+const loading = ref(true)
+const orders = ref([])
+const orderStats = ref({
+  nuevo: 0,
+  pendingContact: 0,
+  inProcess: 0,
+  totalRevenue: 0
+})
+const productStats = ref({
   totalProducts: 0,
-  totalCategories: 6, // Based on your categories
   featuredProducts: 0,
-  inStockProducts: 0,
-  availableOnOrderProducts: 0,
-  recentlyModified: 0
+  inStockProducts: 0
 })
 
-const recentActivity = ref([])
+// Computed
+const displayName = computed(() => {
+  const username = authStore.currentUser?.username
+  if (!username) return 'Admin'
+  return userDisplayNames[username] || username.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+})
 
-const loading = ref(true)
+const greeting = computed(() => {
+  const hour = new Date().getHours()
+  if (hour < 12) return 'Buenos dias'
+  if (hour < 19) return 'Buenas tardes'
+  return 'Buenas noches'
+})
+
+const todayFormatted = computed(() => {
+  const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }
+  const date = new Date().toLocaleDateString('es-AR', options)
+  // Capitalize first letter
+  return date.charAt(0).toUpperCase() + date.slice(1)
+})
+
+const ordersNeedingAttention = computed(() => {
+  return orders.value
+    .filter(o => o.status === 'nuevo' || !o.contactado)
+    .slice(0, 5) // Show max 5
+})
 
 // Methods
-const loadDashboardData = async () => {
-  try {
-    loading.value = true
-
-    // Fetch products from external API and compute stats
-    const products = await loadProducts()
-
-    if (products && products.length > 0) {
-      stats.value = {
-        totalProducts: products.length,
-        totalCategories: new Set(products.map(p => p.category || p.categoryId)).size,
-        featuredProducts: products.filter(p => p.featured).length,
-        inStockProducts: products.filter(p => p.inStock).length,
-        availableOnOrderProducts: products.filter(p => !p.inStock).length,
-        recentlyModified: products.filter(p => {
-          const lastMod = new Date(p.updatedAt || p.lastModified)
-          const dayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000)
-          return lastMod > dayAgo
-        }).length
-      }
-    }
-
-    // Recent activity is not available from external API yet
-    // Could be implemented later if needed
-    recentActivity.value = []
-  } catch (error) {
-    console.error('Error loading dashboard data:', error)
-    stats.value = {
-      totalProducts: 0,
-      totalCategories: 0,
-      featuredProducts: 0,
-      inStockProducts: 0,
-      availableOnOrderProducts: 0,
-      recentlyModified: 0
-    }
-  } finally {
-    loading.value = false
+const getStatusBadgeClass = (status) => {
+  const color = getStatusColor(status)
+  const colorMap = {
+    blue: 'bg-blue-100 text-blue-800',
+    yellow: 'bg-yellow-100 text-yellow-800',
+    green: 'bg-green-100 text-green-800',
+    purple: 'bg-purple-100 text-purple-800',
+    orange: 'bg-orange-100 text-orange-800',
+    red: 'bg-red-100 text-red-800',
+    gray: 'bg-gray-100 text-gray-800'
   }
+  return colorMap[color] || colorMap.gray
 }
 
-const activityIconMap = {
-  create: IconPlus,
-  update: IconPencil,
-  delete: IconDelete
+const formatNumber = (num) => {
+  if (num === null || num === undefined) return '0'
+  return num.toLocaleString('es-AR')
 }
 
-const getActivityIcon = (type) => {
-  return activityIconMap[type] || IconInformation
-}
-
-const getActivityIconClass = (type) => {
-  const classMap = {
-    create: 'bg-green-500',
-    update: 'bg-blue-500',
-    delete: 'bg-red-500'
-  }
-  return classMap[type] || 'bg-gray-500'
-}
-
-const formatDate = (dateString) => {
+const formatRelativeDate = (dateString) => {
+  if (!dateString) return '-'
   try {
     const date = new Date(dateString)
     const now = new Date()
@@ -330,20 +318,57 @@ const formatDate = (dateString) => {
       return 'Hace unos segundos'
     } else if (diffInSeconds < 3600) {
       const minutes = Math.floor(diffInSeconds / 60)
-      return `Hace ${minutes} minuto${minutes > 1 ? 's' : ''}`
+      return `Hace ${minutes} min`
     } else if (diffInSeconds < 86400) {
       const hours = Math.floor(diffInSeconds / 3600)
-      return `Hace ${hours} hora${hours > 1 ? 's' : ''}`
+      return `Hace ${hours}h`
     } else {
-      return date.toLocaleDateString('es-ES', {
-        day: 'numeric',
-        month: 'short',
-        hour: '2-digit',
-        minute: '2-digit'
-      })
+      const days = Math.floor(diffInSeconds / 86400)
+      return `Hace ${days}d`
+    }
+  } catch {
+    return dateString
+  }
+}
+
+const loadDashboardData = async () => {
+  try {
+    loading.value = true
+
+    // Load orders and products in parallel
+    const [ordersResult, products] = await Promise.all([
+      loadOrders(),
+      loadProducts()
+    ])
+
+    // Store orders
+    orders.value = ordersResult.orders || []
+
+    // Calculate order stats
+    const allOrders = orders.value
+    orderStats.value = {
+      nuevo: allOrders.filter(o => o.status === 'nuevo').length,
+      pendingContact: allOrders.filter(o => !o.contactado).length,
+      inProcess: allOrders.filter(o =>
+        ['en_conversacion', 'confirmado', 'pagado', 'enviado'].includes(o.status)
+      ).length,
+      totalRevenue: allOrders
+        .filter(o => ['pagado', 'enviado', 'entregado'].includes(o.status))
+        .reduce((sum, o) => sum + (o.adjustedAmount || o.totalAmount || 0), 0)
+    }
+
+    // Calculate product stats
+    if (products && products.length > 0) {
+      productStats.value = {
+        totalProducts: products.length,
+        featuredProducts: products.filter(p => p.featured).length,
+        inStockProducts: products.filter(p => p.inStock).length
+      }
     }
   } catch (error) {
-    return dateString
+    console.error('Error loading dashboard data:', error)
+  } finally {
+    loading.value = false
   }
 }
 
@@ -352,3 +377,21 @@ onMounted(() => {
   loadDashboardData()
 })
 </script>
+
+<style scoped>
+.card {
+  @apply bg-white rounded-lg shadow-sm border border-gray-200;
+}
+
+.card-header {
+  @apply px-6 py-4 border-b border-gray-200;
+}
+
+.card-body {
+  @apply px-6 py-4;
+}
+
+.spinner {
+  @apply animate-spin rounded-full border-2 border-gray-200 border-t-current;
+}
+</style>

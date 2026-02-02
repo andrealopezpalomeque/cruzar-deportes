@@ -30,25 +30,25 @@
         </div>
 
         <!-- User Info -->
-        <div class="px-6 py-4 border-b border-gray-200/60 bg-gradient-to-r from-blue-50/50 to-indigo-50/50">
+        <div class="px-6 py-4 border-b border-gray-200/60 bg-gray-50/50">
           <div class="flex items-center">
             <div class="flex-shrink-0">
               <img
                 v-if="authStore.currentUser?.username === 'tati_valesani'"
                 src="/tati_valesani.png"
                 alt="Administrator"
-                class="w-10 h-10 rounded-full object-cover shadow-md ring-2 ring-blue-500/20"
+                class="w-10 h-10 rounded-full object-cover shadow-md ring-2 ring-gray-900/10"
                 style="object-position: center 10%;"
               />
-              <div v-else class="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center shadow-md">
+              <div v-else class="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center shadow-md">
                 <IconAccount class="w-[18px] h-[18px] text-white" />
               </div>
             </div>
             <div class="ml-3">
               <p class="text-sm font-semibold text-gray-900">
-                {{ authStore.currentUser?.username || 'Admin' }}
+                {{ displayName }}
               </p>
-              <p class="text-xs text-blue-600 font-medium">
+              <p class="text-xs text-gray-500 font-medium">
                 Administrador
               </p>
             </div>
@@ -87,23 +87,6 @@
               <IconPackageVariant class="w-5 h-5" />
               <span>Ordenes</span>
             </NuxtLink>
-          </div>
-
-          <div class="border-t border-gray-200/60 pt-6 mt-6">
-            <p class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
-              Herramientas
-            </p>
-            <div class="space-y-1">
-              <NuxtLink
-                to="/settings"
-                class="nav-link"
-                :class="{ active: $route.path.startsWith('/settings') }"
-                @click="closeSidebarOnMobile"
-              >
-                <IconCog class="w-5 h-5" />
-                <span>Configuración</span>
-              </NuxtLink>
-            </div>
           </div>
         </nav>
 
@@ -184,7 +167,7 @@
       class="fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center z-50"
     >
       <div class="text-center">
-        <div class="spinner w-12 h-12 text-blue-600 mx-auto mb-4"></div>
+        <div class="spinner w-12 h-12 text-gray-900 mx-auto mb-4"></div>
         <p class="text-gray-600">Cargando...</p>
       </div>
     </div>
@@ -196,7 +179,6 @@ import IconTshirtCrew from '~icons/mdi/tshirt-crew'
 import IconClose from '~icons/mdi/close'
 import IconAccount from '~icons/mdi/account'
 import IconViewDashboard from '~icons/mdi/view-dashboard'
-import IconCog from '~icons/mdi/cog'
 import IconLogout from '~icons/mdi/logout'
 import IconMenu from '~icons/mdi/menu'
 import IconPackageVariant from '~icons/mdi/package-variant'
@@ -211,13 +193,23 @@ const router = useRouter()
 const sidebarOpen = ref(false)
 const globalLoading = ref(false)
 
+// Display name mapping for users
+const userDisplayNames = {
+  'tati_valesani': 'Tati Valesani'
+}
+
 // Computed
+const displayName = computed(() => {
+  const username = authStore.currentUser?.username
+  if (!username) return 'Admin'
+  return userDisplayNames[username] || username.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+})
+
 const pageTitle = computed(() => {
   const titleMap = {
     '/': 'Dashboard',
     '/products': 'Gestión de Productos',
-    '/orders': 'Ordenes',
-    '/settings': 'Configuración'
+    '/orders': 'Ordenes'
   }
 
   // Find matching route (handles dynamic routes)
@@ -234,8 +226,7 @@ const pageDescription = computed(() => {
   const descriptionMap = {
     '/': 'Resumen general de tu tienda de camisetas deportivas',
     '/products': 'Administra imágenes, precios y estado de productos',
-    '/orders': 'Gestiona pedidos y seguimiento de clientes',
-    '/settings': 'Configuración del sistema'
+    '/orders': 'Gestiona pedidos y seguimiento de clientes'
   }
 
   for (const [path, description] of Object.entries(descriptionMap)) {

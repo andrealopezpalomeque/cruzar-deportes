@@ -40,19 +40,15 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          'Inter var',
-          'Inter',
+          'Poppins',
+          'ui-sans-serif',
+          'system-ui',
           '-apple-system',
           'BlinkMacSystemFont',
-          'San Francisco',
           'Segoe UI',
           'Roboto',
-          'Oxygen',
-          'Ubuntu',
-          'Cantarell',
-          'Fira Sans',
-          'Droid Sans',
           'Helvetica Neue',
+          'Arial',
           'sans-serif'
         ]
       },

@@ -61,7 +61,7 @@
       <div class="card-body p-0">
         <!-- Loading State -->
         <div v-if="loading && orders.length === 0" class="p-8 text-center">
-          <div class="spinner w-8 h-8 text-blue-600 mx-auto mb-4"></div>
+          <div class="spinner w-8 h-8 text-gray-900 mx-auto mb-4"></div>
           <p class="text-gray-500">Cargando ordenes...</p>
         </div>
 
@@ -157,7 +157,7 @@
                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <button
                     @click.stop="openOrder(order.id)"
-                    class="text-blue-600 hover:text-blue-900"
+                    class="text-gray-900 hover:text-black underline underline-offset-2"
                   >
                     Ver detalle
                   </button>
