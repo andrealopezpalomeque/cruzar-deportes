@@ -17,7 +17,7 @@
         <div class="max-w-3xl mx-auto text-center space-y-6">
           <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-4">
             <IconSoccer class="w-4 h-4" />
-            Nueva Colección 2025
+            Nueva Colección 2026
           </div>
 
           <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-balance">
