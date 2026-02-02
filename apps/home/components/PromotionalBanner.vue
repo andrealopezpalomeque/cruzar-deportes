@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-black text-white">
+  <div ref="bannerRef" class="w-full bg-black text-white">
     <div class="max-w-7xl mx-auto px-4">
       <div
         class="flex items-center justify-center py-3 cursor-pointer group"
@@ -79,6 +79,13 @@ import IconCreditCard from "~icons/heroicons/credit-card";
 
 const isExpanded = ref(false);
 const currentMessageIndex = ref(0);
+const bannerRef = ref(null);
+
+const handleClickOutside = (event) => {
+  if (isExpanded.value && bannerRef.value && !bannerRef.value.contains(event.target)) {
+    isExpanded.value = false;
+  }
+};
 
 const messages = computed(() => {
   const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, etc.
@@ -119,11 +126,15 @@ onMounted(() => {
     currentMessageIndex.value =
       (currentMessageIndex.value + 1) % messages.value.length;
   }, 5000);
+
+  // Listen for clicks outside to collapse the banner
+  document.addEventListener("click", handleClickOutside);
 });
 
 onUnmounted(() => {
   if (rotationInterval) {
     clearInterval(rotationInterval);
   }
+  document.removeEventListener("click", handleClickOutside);
 });
 </script>
