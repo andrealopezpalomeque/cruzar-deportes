@@ -195,11 +195,6 @@
             </div>
 
             <div class="bg-white rounded-lg p-6 border border-gray-200 cursor-default">
-              <h3 class="font-medium text-lg mb-2">¿Las camisetas son originales?</h3>
-              <p class="text-gray-800">Sí, todas nuestras camisetas son de calidad premium y auténticas. Garantizamos la calidad de cada producto.</p>
-            </div>
-
-            <div class="bg-white rounded-lg p-6 border border-gray-200 cursor-default">
               <h3 class="font-medium text-lg mb-2">¿Puedo devolver la caja si no me gusta?</h3>
               <p class="text-gray-800">Por la naturaleza sorpresa del producto, no aceptamos devoluciones. Sin embargo, si hay algún problema con la calidad, contactanos.</p>
             </div>
