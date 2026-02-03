@@ -71,6 +71,8 @@ const createProduct = async (req, res) => {
       price: productData.price || 0,
       originalPrice: productData.originalPrice || null,
       categoryId: productData.categoryId || '',
+      productType: productData.productType || '',
+      league: productData.league || '',
       images: productData.images || [],
       selectedImages: productData.selectedImages || productData.images || [],
       allAvailableImages: productData.allAvailableImages || productData.images || [],

@@ -1,17 +1,43 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import type { Product, Category } from '~/types'
+import type { Product, Category, ProductType, League } from '~/types'
 import type { SearchResult } from './search'
 import { loadCatalog } from '~/utils/catalogLoader'
 
 export const useProductsStore = defineStore('products', () => {
   const products = ref<Product[]>([])
   const categories = ref<Category[]>([])
+  const productTypes = ref<ProductType[]>([])
+  const leagues = ref<League[]>([])
   const loading = ref(false)
   const productsLoading = ref(false)
   const categoriesLoading = ref(false)
+
+  // Get products by category
   const getProductsByCategory = computed(() => (categorySlug: string) =>
     products.value.filter(product => product.category === categorySlug)
+  )
+
+  // Get products by product type
+  const getProductsByType = computed(() => (typeSlug: string) =>
+    products.value.filter(product => product.productType === typeSlug)
+  )
+
+  // Get products by league
+  const getProductsByLeague = computed(() => (leagueSlug: string) =>
+    products.value.filter(product => product.league === leagueSlug)
+  )
+
+  // Get products by both type and league
+  const getProductsByTypeAndLeague = computed(() => (typeSlug: string, leagueSlug: string) =>
+    products.value.filter(product =>
+      product.productType === typeSlug && product.league === leagueSlug
+    )
+  )
+
+  // Get leagues by product type (filtered by applicableTypes)
+  const getLeaguesByType = computed(() => (typeSlug: string) =>
+    leagues.value.filter(league => league.applicableTypes?.includes(typeSlug))
   )
 
   const getFeaturedProducts = computed(() => {
@@ -88,11 +114,19 @@ export const useProductsStore = defineStore('products', () => {
     loading.value = productsLoading.value || categoriesLoading.value
 
     try {
-      const { products: catalogProducts, categories: catalogCategories } = await loadCatalog()
-      products.value = catalogProducts
+      const catalog = await loadCatalog()
+      products.value = catalog.products
 
-      if (catalogCategories.length > 0 && categories.value.length === 0) {
-        categories.value = catalogCategories
+      if (catalog.categories.length > 0 && categories.value.length === 0) {
+        categories.value = catalog.categories
+      }
+
+      if (catalog.productTypes.length > 0) {
+        productTypes.value = catalog.productTypes
+      }
+
+      if (catalog.leagues.length > 0) {
+        leagues.value = catalog.leagues
       }
     } catch (error) {
       console.error('Error fetching products:', error)
@@ -129,11 +163,19 @@ export const useProductsStore = defineStore('products', () => {
     loading.value = productsLoading.value || categoriesLoading.value
 
     try {
-      const { categories: catalogCategories, products: catalogProducts } = await loadCatalog()
-      categories.value = catalogCategories
+      const catalog = await loadCatalog()
+      categories.value = catalog.categories
 
-      if (catalogProducts.length > 0 && products.value.length === 0) {
-        products.value = catalogProducts
+      if (catalog.products.length > 0 && products.value.length === 0) {
+        products.value = catalog.products
+      }
+
+      if (catalog.productTypes.length > 0) {
+        productTypes.value = catalog.productTypes
+      }
+
+      if (catalog.leagues.length > 0) {
+        leagues.value = catalog.leagues
       }
     } catch (error) {
       console.error('Error fetching categories:', error)
@@ -146,10 +188,16 @@ export const useProductsStore = defineStore('products', () => {
   return {
     products,
     categories,
+    productTypes,
+    leagues,
     loading,
     productsLoading,
     categoriesLoading,
     getProductsByCategory,
+    getProductsByType,
+    getProductsByLeague,
+    getProductsByTypeAndLeague,
+    getLeaguesByType,
     getFeaturedProducts,
     getProductBySlug,
     getPopularProducts,

@@ -1,8 +1,10 @@
-import type { Product, Category, CategoryType } from '~/types'
+import type { Product, Category, CategoryType, ProductType, League } from '~/types'
 
 interface CatalogPayload {
   products: Product[]
   categories: Category[]
+  productTypes: ProductType[]
+  leagues: League[]
 }
 
 // API response types
@@ -23,6 +25,8 @@ interface ApiProduct {
   currency?: string
   categoryId?: string
   category?: string
+  productType?: string
+  league?: string
   images?: ApiImage[]
   selectedImages?: string[]
   sizes: string[]
@@ -32,6 +36,23 @@ interface ApiProduct {
   featured?: boolean
   createdAt?: string
   updatedAt?: string
+}
+
+interface ApiProductType {
+  id: string
+  name: string
+  slug: string
+  order: number
+  isActive: boolean
+}
+
+interface ApiLeague {
+  id: string
+  name: string
+  slug: string
+  order: number
+  isActive: boolean
+  applicableTypes: string[]
 }
 
 interface ApiCategory {
@@ -93,12 +114,41 @@ const transformProduct = (apiProduct: ApiProduct, categoryIdToSlug: Map<string, 
     price: apiProduct.price,
     originalPrice: apiProduct.originalPrice,
     category: categorySlug as CategoryType,
+    productType: apiProduct.productType,
+    league: apiProduct.league,
     images,
     totalImages: images.length,
     sizes: apiProduct.sizes ?? [],
     colors: apiProduct.colors ?? [],
     inStock: apiProduct.inStock,
     featured: apiProduct.featured ?? false
+  }
+}
+
+/**
+ * Transform API product type to storefront ProductType type
+ */
+const transformProductType = (apiProductType: ApiProductType): ProductType => {
+  return {
+    id: apiProductType.id,
+    name: apiProductType.name,
+    slug: apiProductType.slug,
+    order: apiProductType.order,
+    isActive: apiProductType.isActive
+  }
+}
+
+/**
+ * Transform API league to storefront League type
+ */
+const transformLeague = (apiLeague: ApiLeague): League => {
+  return {
+    id: apiLeague.id,
+    name: apiLeague.name,
+    slug: apiLeague.slug,
+    order: apiLeague.order,
+    isActive: apiLeague.isActive,
+    applicableTypes: apiLeague.applicableTypes || []
   }
 }
 
@@ -127,14 +177,18 @@ export const loadCatalog = async (): Promise<CatalogPayload> => {
   const apiUrl = config.public.apiUrl as string
 
   try {
-    // Fetch products and categories in parallel
-    const [productsResponse, categoriesResponse] = await Promise.all([
+    // Fetch products, categories, product types, and leagues in parallel
+    const [productsResponse, categoriesResponse, productTypesResponse, leaguesResponse] = await Promise.all([
       $fetch<ApiResponse<ApiProduct[]>>(`${apiUrl}/api/products`),
-      $fetch<ApiResponse<ApiCategory[]>>(`${apiUrl}/api/categories`)
+      $fetch<ApiResponse<ApiCategory[]>>(`${apiUrl}/api/categories`),
+      $fetch<ApiResponse<ApiProductType[]>>(`${apiUrl}/api/product-types`),
+      $fetch<ApiResponse<ApiLeague[]>>(`${apiUrl}/api/leagues`)
     ])
 
     let products: Product[] = []
     let categories: Category[] = []
+    let productTypes: ProductType[] = []
+    let leagues: League[] = []
 
     // Process categories first to build the ID → slug map
     const categoryIdToSlug = new Map<string, string>()
@@ -150,6 +204,26 @@ export const loadCatalog = async (): Promise<CatalogPayload> => {
       console.error('Failed to fetch categories:', categoriesResponse.error)
     }
 
+    // Process product types
+    if (productTypesResponse.success && Array.isArray(productTypesResponse.data)) {
+      productTypes = productTypesResponse.data
+        .filter(t => t.isActive)
+        .map(transformProductType)
+        .sort((a, b) => a.order - b.order)
+    } else {
+      console.error('Failed to fetch product types:', productTypesResponse.error)
+    }
+
+    // Process leagues
+    if (leaguesResponse.success && Array.isArray(leaguesResponse.data)) {
+      leagues = leaguesResponse.data
+        .filter(l => l.isActive)
+        .map(transformLeague)
+        .sort((a, b) => a.order - b.order)
+    } else {
+      console.error('Failed to fetch leagues:', leaguesResponse.error)
+    }
+
     if (productsResponse.success && Array.isArray(productsResponse.data)) {
       products = productsResponse.data
         .filter(p => p.isActive)
@@ -163,11 +237,11 @@ export const loadCatalog = async (): Promise<CatalogPayload> => {
     const categorySlugsWithProducts = new Set(products.map(p => p.category))
     categories = allCategories.filter(c => categorySlugsWithProducts.has(c.slug))
 
-    cachedCatalog = { products, categories }
+    cachedCatalog = { products, categories, productTypes, leagues }
     return cachedCatalog
   } catch (error) {
     console.error('Error loading catalog from API:', error)
-    return { products: [], categories: [] }
+    return { products: [], categories: [], productTypes: [], leagues: [] }
   }
 }
 

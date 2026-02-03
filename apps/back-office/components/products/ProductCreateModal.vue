@@ -120,8 +120,45 @@
               </div>
             </div>
 
+            <div class="grid gap-4 md:grid-cols-2">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Tipo de Producto</label>
+                <select
+                  v-model="form.productType"
+                  class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
+                  :disabled="isSaving"
+                >
+                  <option disabled value="">Selecciona un tipo</option>
+                  <option
+                    v-for="option in productTypeOptions"
+                    :key="option.value"
+                    :value="option.value"
+                  >
+                    {{ option.label }}
+                  </option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Liga / Categoría</label>
+                <select
+                  v-model="form.league"
+                  class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
+                  :disabled="isSaving || !form.productType"
+                >
+                  <option disabled value="">{{ form.productType ? 'Selecciona una liga' : 'Primero selecciona un tipo' }}</option>
+                  <option
+                    v-for="option in filteredLeagueOptions"
+                    :key="option.value"
+                    :value="option.value"
+                  >
+                    {{ option.label }}
+                  </option>
+                </select>
+              </div>
+            </div>
+
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Categoría</label>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Categoría (legacy)</label>
               <select
                 v-model="form.category"
                 class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
@@ -428,6 +465,14 @@ const props = defineProps({
     type: Array,
     default: () => []
   },
+  productTypes: {
+    type: Array,
+    default: () => []
+  },
+  leagues: {
+    type: Array,
+    default: () => []
+  },
   existingSlugs: {
     type: Array,
     default: () => []
@@ -454,6 +499,8 @@ const form = reactive({
   price: '',
   originalPrice: '',
   category: '',
+  productType: '',
+  league: '',
   inStock: true,
   featured: false,
   selectedImages: [],
@@ -474,6 +521,30 @@ const uploadState = reactive({
 
 const categoryOptions = computed(() => props.categories.filter(option => option.value))
 const firstCategoryValue = computed(() => categoryOptions.value[0]?.value || '')
+
+// Product type options
+const productTypeOptions = computed(() =>
+  props.productTypes.filter(t => t.isActive !== false).map(t => ({
+    value: t.slug,
+    label: t.name
+  }))
+)
+
+// Filtered league options based on selected product type
+const filteredLeagueOptions = computed(() => {
+  if (!form.productType) return []
+  return props.leagues
+    .filter(l => l.isActive !== false && l.applicableTypes?.includes(form.productType))
+    .map(l => ({
+      value: l.slug,
+      label: l.name
+    }))
+})
+
+// Reset league when product type changes
+watch(() => form.productType, () => {
+  form.league = ''
+})
 
 const normalizedExistingSlugs = computed(() => props.existingSlugs.map(slug => (slug || '').toString().toLowerCase()).filter(Boolean))
 const existingIdsSet = computed(() => new Set(props.existingIds || []))
@@ -516,6 +587,8 @@ const resetForm = () => {
   form.price = ''
   form.originalPrice = ''
   form.category = firstCategoryValue.value
+  form.productType = ''
+  form.league = ''
   form.inStock = true
   form.featured = false
   form.selectedImages = []
@@ -724,6 +797,8 @@ const handleSubmit = async () => {
     originalPrice,
     categoryId: form.category,  // API expects "categoryId", not "category"
     category: form.category,    // Also include "category" for front-end consistency
+    productType: form.productType,
+    league: form.league,
     images: [...form.selectedImages],  // API expects "images" field
     selectedImages: [...form.selectedImages],
     allAvailableImages: form.allAvailableImages.length > 0

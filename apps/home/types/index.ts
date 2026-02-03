@@ -8,12 +8,31 @@ export interface Product {
   price: number
   originalPrice?: number
   category: CategoryType
+  productType?: string
+  league?: string
   subcategory?: string
   images: string[]
   totalImages?: number
   sizes: string[]
   inStock: boolean
   featured?: boolean
+}
+
+export interface ProductType {
+  id: string
+  name: string
+  slug: string
+  order: number
+  isActive: boolean
+}
+
+export interface League {
+  id: string
+  name: string
+  slug: string
+  order: number
+  isActive: boolean
+  applicableTypes: string[]
 }
 
 export interface Category {

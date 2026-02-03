@@ -87,6 +87,26 @@
               <IconPackageVariant class="w-5 h-5" />
               <span>Ordenes</span>
             </NuxtLink>
+
+            <NuxtLink
+              to="/product-types"
+              class="nav-link"
+              :class="{ active: $route.path.startsWith('/product-types') }"
+              @click="closeSidebarOnMobile"
+            >
+              <IconTag class="w-5 h-5" />
+              <span>Tipos de Producto</span>
+            </NuxtLink>
+
+            <NuxtLink
+              to="/leagues"
+              class="nav-link"
+              :class="{ active: $route.path.startsWith('/leagues') }"
+              @click="closeSidebarOnMobile"
+            >
+              <IconTrophy class="w-5 h-5" />
+              <span>Ligas</span>
+            </NuxtLink>
           </div>
         </nav>
 
@@ -182,6 +202,8 @@ import IconViewDashboard from '~icons/mdi/view-dashboard'
 import IconLogout from '~icons/mdi/logout'
 import IconMenu from '~icons/mdi/menu'
 import IconPackageVariant from '~icons/mdi/package-variant'
+import IconTag from '~icons/mdi/tag-outline'
+import IconTrophy from '~icons/mdi/trophy-outline'
 
 // Composables
 const authStore = useAuthStore()
@@ -209,7 +231,9 @@ const pageTitle = computed(() => {
   const titleMap = {
     '/': 'Dashboard',
     '/products': 'Gestión de Productos',
-    '/orders': 'Ordenes'
+    '/orders': 'Ordenes',
+    '/product-types': 'Tipos de Producto',
+    '/leagues': 'Ligas'
   }
 
   // Find matching route (handles dynamic routes)
@@ -226,7 +250,9 @@ const pageDescription = computed(() => {
   const descriptionMap = {
     '/': 'Resumen general de tu tienda de camisetas deportivas',
     '/products': 'Administra imágenes, precios y estado de productos',
-    '/orders': 'Gestiona pedidos y seguimiento de clientes'
+    '/orders': 'Gestiona pedidos y seguimiento de clientes',
+    '/product-types': 'Gestiona los tipos de productos disponibles',
+    '/leagues': 'Gestiona las ligas y categorías de equipos'
   }
 
   for (const [path, description] of Object.entries(descriptionMap)) {

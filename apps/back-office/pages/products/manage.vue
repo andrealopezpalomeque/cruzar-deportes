@@ -4,7 +4,115 @@
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <!-- Filters -->
       <div class="flex flex-wrap gap-3">
-        <!-- Custom Dropdown Select -->
+        <!-- Product Type Dropdown -->
+        <div class="relative">
+          <button
+            @click="isTypeDropdownOpen = !isTypeDropdownOpen"
+            :class="[
+              'group flex h-11 min-w-[180px] items-center justify-between gap-3 rounded-xl',
+              'border border-gray-200/80 bg-white px-4 transition-all duration-200',
+              'hover:border-gray-300 hover:shadow-sm',
+              'focus:outline-none focus:ring-2 focus:ring-gray-900/10 focus:ring-offset-0',
+              isTypeDropdownOpen && 'border-gray-300 shadow-sm'
+            ]"
+          >
+            <span class="text-sm font-medium text-gray-900">
+              {{ selectedProductType ? getProductTypeName(selectedProductType) : 'Todos los tipos' }}
+            </span>
+            <IconChevronDown
+              :class="[
+                'w-4 h-4 text-gray-500 transition-transform duration-200',
+                isTypeDropdownOpen && 'rotate-180'
+              ]"
+            />
+          </button>
+
+          <Transition name="dropdown">
+            <div v-if="isTypeDropdownOpen" class="relative z-[100]">
+              <div class="fixed inset-0 z-[100]" @click="isTypeDropdownOpen = false" />
+              <div class="absolute left-0 right-0 top-full z-[110] mt-2 rounded-xl border border-gray-200/80 bg-white shadow-lg shadow-gray-900/5 backdrop-blur-xl">
+                <div class="max-h-80 overflow-y-auto custom-scroll">
+                  <button
+                    @click="selectProductType('')"
+                    :class="[
+                      'block w-full px-4 py-2.5 text-left text-sm transition-colors duration-150',
+                      !selectedProductType ? 'bg-gray-900 text-white font-medium' : 'text-gray-700 hover:bg-gray-50'
+                    ]"
+                  >
+                    Todos los tipos
+                  </button>
+                  <button
+                    v-for="type in productTypes"
+                    :key="type.slug"
+                    @click="selectProductType(type.slug)"
+                    :class="[
+                      'block w-full px-4 py-2.5 text-left text-sm transition-colors duration-150',
+                      type.slug === selectedProductType ? 'bg-gray-900 text-white font-medium' : 'text-gray-700 hover:bg-gray-50'
+                    ]"
+                  >
+                    {{ type.name }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </Transition>
+        </div>
+
+        <!-- League Dropdown -->
+        <div class="relative">
+          <button
+            @click="isLeagueDropdownOpen = !isLeagueDropdownOpen"
+            :class="[
+              'group flex h-11 min-w-[180px] items-center justify-between gap-3 rounded-xl',
+              'border border-gray-200/80 bg-white px-4 transition-all duration-200',
+              'hover:border-gray-300 hover:shadow-sm',
+              'focus:outline-none focus:ring-2 focus:ring-gray-900/10 focus:ring-offset-0',
+              isLeagueDropdownOpen && 'border-gray-300 shadow-sm'
+            ]"
+          >
+            <span class="text-sm font-medium text-gray-900">
+              {{ selectedLeague ? getLeagueName(selectedLeague) : 'Todas las ligas' }}
+            </span>
+            <IconChevronDown
+              :class="[
+                'w-4 h-4 text-gray-500 transition-transform duration-200',
+                isLeagueDropdownOpen && 'rotate-180'
+              ]"
+            />
+          </button>
+
+          <Transition name="dropdown">
+            <div v-if="isLeagueDropdownOpen" class="relative z-[100]">
+              <div class="fixed inset-0 z-[100]" @click="isLeagueDropdownOpen = false" />
+              <div class="absolute left-0 right-0 top-full z-[110] mt-2 rounded-xl border border-gray-200/80 bg-white shadow-lg shadow-gray-900/5 backdrop-blur-xl">
+                <div class="max-h-80 overflow-y-auto custom-scroll">
+                  <button
+                    @click="selectLeague('')"
+                    :class="[
+                      'block w-full px-4 py-2.5 text-left text-sm transition-colors duration-150',
+                      !selectedLeague ? 'bg-gray-900 text-white font-medium' : 'text-gray-700 hover:bg-gray-50'
+                    ]"
+                  >
+                    Todas las ligas
+                  </button>
+                  <button
+                    v-for="league in filteredLeagueOptions"
+                    :key="league.slug"
+                    @click="selectLeague(league.slug)"
+                    :class="[
+                      'block w-full px-4 py-2.5 text-left text-sm transition-colors duration-150',
+                      league.slug === selectedLeague ? 'bg-gray-900 text-white font-medium' : 'text-gray-700 hover:bg-gray-50'
+                    ]"
+                  >
+                    {{ league.name }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </Transition>
+        </div>
+
+        <!-- Category Dropdown (legacy) -->
         <div class="relative">
           <button
             @click="isDropdownOpen = !isDropdownOpen"
@@ -238,6 +346,12 @@
             <div class="flex-1 space-y-3 pl-10">
               <!-- Category & Status Badges - Enhanced Row -->
               <div class="flex items-center gap-2.5 flex-wrap">
+                <span v-if="product.productType" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-sm">
+                  {{ getProductTypeName(product.productType) }}
+                </span>
+                <span v-if="product.league" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-purple-600 to-purple-700 text-white shadow-sm">
+                  {{ getLeagueName(product.league) }}
+                </span>
                 <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-sm">
                   {{ getCategoryName(product.category) }}
                 </span>
@@ -968,6 +1082,8 @@
     <ProductCreateModal
       :show="showCreateProductModal"
       :categories="createModalCategories"
+      :product-types="productTypes"
+      :leagues="leagues"
       :existing-slugs="existingProductSlugs"
       :existing-ids="existingProductIds"
       @close="closeCreateProductModal"
@@ -1010,6 +1126,8 @@ const {
   deleteProduct
 } = useSharedProducts()
 const { loadCategories } = useCategories()
+const { loadProductTypes } = useProductTypes()
+const { loadLeagues, loadLeaguesByProductType } = useLeagues()
 const { getFolderImages, uploadImage, deleteImage: deleteCloudinaryImage } = useCloudinary()
 const toast = useToast()
 
@@ -1036,6 +1154,14 @@ const showCreateProductModal = ref(false)
 // Category options - loaded from API
 const categories = ref([{ value: '', label: 'Todas las categorías', productCount: 0 }])
 
+// Product types and leagues - loaded from API
+const productTypes = ref([])
+const leagues = ref([])
+const selectedProductType = ref('')
+const selectedLeague = ref('')
+const isTypeDropdownOpen = ref(false)
+const isLeagueDropdownOpen = ref(false)
+
 // Load categories from API
 const fetchCategories = async () => {
   try {
@@ -1053,6 +1179,57 @@ const fetchCategories = async () => {
   } catch (err) {
     console.error('Error loading categories:', err)
   }
+}
+
+// Load product types from API
+const fetchProductTypes = async () => {
+  try {
+    const types = await loadProductTypes()
+    productTypes.value = types.filter(t => t.isActive !== false)
+  } catch (err) {
+    console.error('Error loading product types:', err)
+  }
+}
+
+// Load leagues from API
+const fetchLeagues = async () => {
+  try {
+    const allLeagues = await loadLeagues()
+    leagues.value = allLeagues.filter(l => l.isActive !== false)
+  } catch (err) {
+    console.error('Error loading leagues:', err)
+  }
+}
+
+// Computed filtered leagues based on selected product type
+const filteredLeagueOptions = computed(() => {
+  if (!selectedProductType.value) return leagues.value
+  return leagues.value.filter(l => l.applicableTypes?.includes(selectedProductType.value))
+})
+
+// Get product type name
+const getProductTypeName = (typeSlug) => {
+  const type = productTypes.value.find(t => t.slug === typeSlug)
+  return type?.name || typeSlug || 'Sin tipo'
+}
+
+// Get league name
+const getLeagueName = (leagueSlug) => {
+  const league = leagues.value.find(l => l.slug === leagueSlug)
+  return league?.name || leagueSlug || 'Sin liga'
+}
+
+// Select product type
+const selectProductType = (value) => {
+  selectedProductType.value = value
+  selectedLeague.value = '' // Reset league when type changes
+  isTypeDropdownOpen.value = false
+}
+
+// Select league
+const selectLeague = (value) => {
+  selectedLeague.value = value
+  isLeagueDropdownOpen.value = false
 }
 
 // Pagination state
@@ -1618,6 +1795,14 @@ const filteredProducts = computed(() => {
     filtered = filtered.filter(p => p.category === selectedCategory.value)
   }
 
+  if (selectedProductType.value) {
+    filtered = filtered.filter(p => p.productType === selectedProductType.value)
+  }
+
+  if (selectedLeague.value) {
+    filtered = filtered.filter(p => p.league === selectedLeague.value)
+  }
+
   if (searchTerm.value) {
     const search = searchTerm.value.toLowerCase()
     filtered = filtered.filter(p =>
@@ -2133,7 +2318,7 @@ watch(
 )
 
 // Watchers - Reset pagination when filters change
-watch([selectedCategory, searchTerm], async () => {
+watch([selectedCategory, selectedProductType, selectedLeague, searchTerm], async () => {
   // Show loading state for filter changes
   isTransitioning.value = true
 
@@ -2147,6 +2332,11 @@ watch([selectedCategory, searchTerm], async () => {
 
   // Hide loading state
   isTransitioning.value = false
+})
+
+// Reset league when product type changes
+watch(selectedProductType, () => {
+  selectedLeague.value = ''
 })
 
 // Check if there are any unsaved changes
@@ -2183,6 +2373,8 @@ onBeforeRouteLeave((to, from, next) => {
 // Lifecycle
 onMounted(() => {
   fetchCategories()
+  fetchProductTypes()
+  fetchLeagues()
   loadAllProducts()
 
   // Add beforeunload listener for tab close/refresh

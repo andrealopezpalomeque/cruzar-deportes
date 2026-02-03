@@ -10,6 +10,8 @@ export interface Product {
   price: number
   originalPrice?: number
   category: CategoryType
+  productType?: string
+  league?: string
   subcategory?: string
   images: string[]
   totalImages?: number
@@ -18,6 +20,27 @@ export interface Product {
   inStock: boolean
   featured?: boolean
   cloudinaryFolderPath?: string
+}
+
+export interface ProductType {
+  id: string
+  name: string
+  slug: string
+  order: number
+  isActive: boolean
+  createdAt?: string
+  updatedAt?: string
+}
+
+export interface League {
+  id: string
+  name: string
+  slug: string
+  order: number
+  isActive: boolean
+  applicableTypes: string[]
+  createdAt?: string
+  updatedAt?: string
 }
 
 export interface Category {
