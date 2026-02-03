@@ -2,7 +2,6 @@ const { db, admin } = require('../config/firebase');
 
 const productTypesCollection = db.collection('productTypes');
 const leaguesCollection = db.collection('leagues');
-const productsCollection = db.collection('products');
 
 // Seed data for product types
 const productTypesData = [
@@ -84,130 +83,6 @@ const seedCategories = async (req, res) => {
   }
 };
 
-// Mapping from old category slugs to new productType and league
-// Adjust this mapping based on your existing categories
-const categoryMigrationMap = {
-  // Football leagues -> camisetas + respective league
-  'futbol-argentino': { productType: 'camisetas', league: 'futbol-argentino' },
-  'premier-league': { productType: 'camisetas', league: 'premier-league' },
-  'la-liga': { productType: 'camisetas', league: 'la-liga' },
-  'serie-a': { productType: 'camisetas', league: 'serie-a' },
-  'bundesliga': { productType: 'camisetas', league: 'bundesliga' },
-  'brasileirao': { productType: 'camisetas', league: 'brasileirao' },
-  'resto-del-mundo': { productType: 'camisetas', league: 'resto-del-mundo' },
-  'selecciones': { productType: 'camisetas', league: 'selecciones' },
-  'basquet': { productType: 'camisetas', league: 'basquet' },
-  'otros-deportes': { productType: 'camisetas', league: 'otros-deportes' },
-  // Other products
-  'pelotas': { productType: 'otros-productos', league: 'pelotas' },
-  'guantes': { productType: 'otros-productos', league: 'guantes' },
-  'botines': { productType: 'otros-productos', league: 'botines' },
-  'abrigos': { productType: 'otros-productos', league: 'abrigos' },
-  'ropa-de-entrenamiento': { productType: 'otros-productos', league: 'ropa-de-entrenamiento' },
-  // Product types as categories (if they used type names as category)
-  'camisetas': { productType: 'camisetas', league: '' },
-  'shorts': { productType: 'shorts', league: '' },
-  'kit-ninos': { productType: 'kit-ninos', league: '' },
-  'otros-productos': { productType: 'otros-productos', league: '' }
-};
-
-// Migrate existing products to use productType and league fields
-const migrateProducts = async (req, res) => {
-  try {
-    const snapshot = await productsCollection.get();
-    const products = snapshot.docs;
-
-    if (products.length === 0) {
-      return res.json({
-        success: true,
-        message: 'No products found to migrate',
-        data: { migrated: 0, skipped: 0, errors: [] }
-      });
-    }
-
-    const results = {
-      migrated: 0,
-      skipped: 0,
-      errors: [],
-      details: []
-    };
-
-    const batch = db.batch();
-    const now = admin.firestore.FieldValue.serverTimestamp();
-
-    for (const doc of products) {
-      const product = doc.data();
-      const productId = doc.id;
-      const categorySlug = product.category || product.categoryId || '';
-
-      // Skip if already has productType set
-      if (product.productType) {
-        results.skipped++;
-        results.details.push({
-          id: productId,
-          name: product.name,
-          status: 'skipped',
-          reason: 'Already has productType'
-        });
-        continue;
-      }
-
-      // Try to map from old category
-      const mapping = categoryMigrationMap[categorySlug];
-
-      if (mapping) {
-        batch.update(doc.ref, {
-          productType: mapping.productType,
-          league: mapping.league,
-          updatedAt: now
-        });
-        results.migrated++;
-        results.details.push({
-          id: productId,
-          name: product.name,
-          status: 'migrated',
-          oldCategory: categorySlug,
-          newProductType: mapping.productType,
-          newLeague: mapping.league
-        });
-      } else {
-        // Default to camisetas if no mapping found
-        batch.update(doc.ref, {
-          productType: 'camisetas',
-          league: '',
-          updatedAt: now
-        });
-        results.migrated++;
-        results.details.push({
-          id: productId,
-          name: product.name,
-          status: 'migrated-default',
-          oldCategory: categorySlug,
-          newProductType: 'camisetas',
-          newLeague: '',
-          note: 'No mapping found, used default'
-        });
-      }
-    }
-
-    await batch.commit();
-
-    res.json({
-      success: true,
-      message: `Migration completed. ${results.migrated} products migrated, ${results.skipped} skipped.`,
-      data: results
-    });
-  } catch (error) {
-    console.error('Error migrating products:', error);
-    res.status(500).json({
-      success: false,
-      error: 'Failed to migrate products',
-      message: error.message
-    });
-  }
-};
-
 module.exports = {
-  seedCategories,
-  migrateProducts
+  seedCategories
 };
