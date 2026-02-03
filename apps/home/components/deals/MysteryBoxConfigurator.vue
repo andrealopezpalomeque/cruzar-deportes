@@ -2,7 +2,7 @@
   <Card class="p-8">
     <form @submit.prevent="handleSubmit" class="space-y-8">
       <!-- Step Indicator -->
-      <div class="flex items-center justify-between mb-8">
+      <div class="flex items-center justify-between mb-8 overflow-x-auto">
         <div
           v-for="(step, index) in steps"
           :key="index"
@@ -12,7 +12,7 @@
           <div class="flex items-center">
             <div
               :class="[
-                'w-10 h-10 rounded-full flex items-center justify-center transition-colors',
+                'w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-colors text-sm sm:text-base flex-shrink-0',
                 currentStep >= index + 1
                   ? 'bg-black text-white'
                   : 'bg-gray-200 text-gray-500'
@@ -21,7 +21,7 @@
               {{ index + 1 }}
             </div>
             <span
-              class="ml-3 text-sm font-medium hidden sm:block"
+              class="ml-2 sm:ml-3 text-sm font-medium hidden md:block"
               :class="currentStep >= index + 1 ? 'text-black' : 'text-gray-500'"
             >
               {{ step }}
@@ -29,7 +29,7 @@
           </div>
           <div
             v-if="index < steps.length - 1"
-            class="flex-1 h-0.5 mx-4"
+            class="flex-1 h-0.5 mx-2 sm:mx-4 min-w-[16px]"
             :class="currentStep > index + 1 ? 'bg-black' : 'bg-gray-200'"
           ></div>
         </div>
@@ -159,13 +159,13 @@
                   />
                   <div
                     :class="[
-                      'w-4 h-4 rounded-full border-2 flex items-center justify-center mr-3',
+                      'w-4 h-4 min-w-[16px] min-h-[16px] rounded-full border-2 flex items-center justify-center mr-3 flex-shrink-0',
                       formData.customer.paymentMethod === method.value ? 'border-black' : 'border-gray-300'
                     ]"
                   >
                     <div
                       v-if="formData.customer.paymentMethod === method.value"
-                      class="w-2 h-2 rounded-full bg-black"
+                      class="w-2 h-2 min-w-[8px] min-h-[8px] rounded-full bg-black"
                     ></div>
                   </div>
                   <span>{{ method.label }}</span>
@@ -208,23 +208,25 @@
       </div>
 
       <!-- Navigation Buttons -->
-      <div class="flex justify-between pt-6 border-t border-gray-200">
+      <div class="flex flex-col sm:flex-row justify-between gap-3 pt-6 border-t border-gray-200">
         <Button
           v-if="currentStep > 1"
           type="button"
           variant="outline"
           @click="previousStep"
+          class="order-2 sm:order-1"
         >
           <IconArrowLeft class="w-5 h-5 mr-2" />
           Anterior
         </Button>
-        <div v-else></div>
+        <div v-else class="hidden sm:block"></div>
 
         <Button
           v-if="currentStep < 5"
           type="button"
           variant="default"
           @click="nextStep"
+          class="order-1 sm:order-2"
         >
           Siguiente
           <IconArrowRight class="w-5 h-5 ml-2" />
@@ -234,6 +236,7 @@
           type="submit"
           variant="default"
           :disabled="isSubmitting"
+          class="order-1 sm:order-2"
         >
           <IconWhatsapp class="w-5 h-5 mr-2" />
           {{ isSubmitting ? 'Preparando...' : 'Solicitar por WhatsApp' }}
@@ -259,9 +262,7 @@ import TeamExclusionPicker from '~/components/deals/TeamExclusionPicker.vue'
 import EraPreferenceSelector from '~/components/deals/EraPreferenceSelector.vue'
 import BoxTypeSelector from '~/components/deals/BoxTypeSelector.vue'
 import MultiSizeSelector from '~/components/deals/MultiSizeSelector.vue'
-import { useMysteryBoxStore, BOX_CONFIG } from '~/stores/mysteryBox'
-
-const mysteryBoxStore = useMysteryBoxStore()
+import { BOX_CONFIG } from '~/stores/mysteryBox'
 
 const steps = ['Tipo de Caja', 'Talles', 'Exclusiones', 'Era', 'Datos']
 const currentStep = ref(1)
@@ -403,16 +404,87 @@ const handleSubmit = async () => {
 
   isSubmitting.value = true
 
-  // Update store with form data
-  mysteryBoxStore.setBoxType(formData.boxType)
-  mysteryBoxStore.setSizes(formData.sizes)
-  mysteryBoxStore.setExcludedTeams(formData.excludedTeams)
-  mysteryBoxStore.setEraPreference(formData.eraPreference)
-  mysteryBoxStore.setCustomerInfo(formData.customer)
-
   try {
-    // Submit order and get WhatsApp URL
-    const whatsappUrl = await mysteryBoxStore.sendOrderToWhatsApp()
+    // Build WhatsApp message directly from form data
+    const eraLabels = {
+      retro: 'Solo Retro',
+      current: 'Solo Actuales',
+      mixed: 'Mezcla de Ambas'
+    }
+
+    const paymentMethodLabels = {
+      transfer: 'Transferencia bancaria',
+      cash: 'Efectivo',
+      card: 'Tarjeta de crédito/débito'
+    }
+
+    // Format size distribution
+    const sizesList = Object.entries(formData.sizes)
+      .filter(([_, count]) => count > 0)
+      .map(([size, count]) => `${count}x ${size}`)
+      .join(', ')
+
+    // Try to submit order to API first
+    let orderNumber = ''
+    try {
+      const config = useRuntimeConfig()
+      const apiUrl = config.public.apiUrl
+
+      const orderData = {
+        orderType: 'mystery_box',
+        customer: { ...formData.customer },
+        boxType: formData.boxType,
+        jerseyCount: jerseyCount.value,
+        sizes: { ...formData.sizes },
+        excludedTeams: [...formData.excludedTeams],
+        eraPreference: formData.eraPreference,
+        totalAmount: BOX_CONFIG[formData.boxType]?.price || 0,
+        paymentMethod: formData.customer.paymentMethod
+      }
+
+      const response = await $fetch(`${apiUrl}/api/orders`, {
+        method: 'POST',
+        body: orderData
+      })
+
+      if (response?.success && response?.data?.orderNumber) {
+        orderNumber = response.data.orderNumber
+      }
+    } catch (apiError) {
+      console.warn('Could not create order in API, continuing with WhatsApp:', apiError)
+    }
+
+    // Build WhatsApp message
+    let message = `*NUEVA ORDEN CAJA MISTERIOSA - CRUZAR DEPORTES*\n`
+    if (orderNumber) {
+      message += `*Orden #${orderNumber}*\n`
+    }
+    message += `\n`
+    message += `*DATOS DEL CLIENTE:*\n`
+    message += `- Nombre: ${formData.customer.name}\n`
+    message += `- Teléfono: ${formData.customer.phone}\n`
+    message += `- Email: ${formData.customer.email}\n`
+    message += `- Dirección: ${formData.customer.address}\n\n`
+
+    message += `*CONFIGURACIÓN DE LA CAJA:*\n`
+    message += `- Tipo: Caja ${boxLabel.value}\n`
+    message += `- Cantidad: ${jerseyCount.value} camiseta(s)\n`
+    message += `- Talles: ${sizesList || 'No especificado'}\n`
+    message += `- Equipos excluidos: ${formData.excludedTeams.length > 0 ? formData.excludedTeams.join(', ') : 'Ninguno'}\n`
+    message += `- Preferencia de era: ${eraLabels[formData.eraPreference] || 'Mezcla de Ambas'}\n\n`
+
+    message += `*RESUMEN DE COMPRA:*\n`
+    message += `- Método de pago: ${paymentMethodLabels[formData.customer.paymentMethod] || 'Transferencia bancaria'}\n`
+    message += `- *TOTAL: ${formattedPrice.value}*\n\n`
+
+    message += `*PRÓXIMOS PASOS:*\n`
+    message += `Por favor confirma la disponibilidad y los detalles de envío. ¡Gracias por elegir Cruzar Deportes!`
+
+    const phoneNumber = '5493794000783'
+    const encodedMessage = encodeURIComponent(message)
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+
+    // Open WhatsApp
     window.open(whatsappUrl, '_blank')
   } catch (error) {
     console.error('Error submitting order:', error)

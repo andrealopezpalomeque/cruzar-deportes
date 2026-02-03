@@ -15,7 +15,7 @@
       <div class="flex items-center">
         <div
           :class="[
-            'w-5 h-5 rounded-full border-2 flex items-center justify-center mr-4',
+            'w-5 h-5 min-w-[20px] min-h-[20px] rounded-full border-2 flex items-center justify-center mr-4 flex-shrink-0',
             modelValue === era.value
               ? 'border-black'
               : 'border-gray-300'
@@ -23,7 +23,7 @@
         >
           <div
             v-if="modelValue === era.value"
-            class="w-3 h-3 rounded-full bg-black"
+            class="w-3 h-3 min-w-[12px] min-h-[12px] rounded-full bg-black"
           ></div>
         </div>
         <div>
