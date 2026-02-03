@@ -21,7 +21,7 @@
           </h1>
 
           <p class="text-xl text-gray-300 mb-8 leading-relaxed cursor-default">
-            Una experiencia única para coleccionistas. Recibí una selección curada de camisetas
+            Una experiencia única para coleccionistas. Recibí una selección exclusiva de camisetas
             sorpresa basada en tus preferencias.
           </p>
 
