@@ -1081,7 +1081,6 @@
 
     <ProductCreateModal
       :show="showCreateProductModal"
-      :categories="createModalCategories"
       :product-types="productTypes"
       :leagues="leagues"
       :existing-slugs="existingProductSlugs"
@@ -1276,7 +1275,6 @@ const modalSelectedForDeletion = ref(new Set())
 const modalSaveState = reactive({
   saving: false
 })
-const createModalCategories = computed(() => categories.value.filter(category => category.value))
 const existingProductSlugs = computed(() => products.value
   .map(product => (product.slug ?? '').toString())
   .filter(Boolean))

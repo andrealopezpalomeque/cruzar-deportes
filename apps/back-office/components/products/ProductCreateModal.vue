@@ -82,7 +82,7 @@
             <div class="flex items-center justify-between">
               <div>
                 <p class="text-xs uppercase font-semibold text-gray-400">Clasificación</p>
-                <h3 class="text-lg font-semibold text-gray-900">Precios y categoría</h3>
+                <h3 class="text-lg font-semibold text-gray-900">Precios y tipo de producto</h3>
               </div>
               <span class="text-xs text-gray-500">Controla cómo se mostrará en la tienda</span>
             </div>
@@ -156,24 +156,6 @@
                 </select>
               </div>
             </div>
-
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Categoría (legacy)</label>
-              <select
-                v-model="form.category"
-                class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
-                :disabled="isSaving"
-              >
-                <option disabled value="">Selecciona una categoría</option>
-                <option
-                  v-for="option in categoryOptions"
-                  :key="option.value"
-                  :value="option.value"
-                >
-                  {{ option.label }}
-                </option>
-              </select>
-            </div>
           </section>
 
           <!-- Inventory -->
@@ -230,7 +212,7 @@
               <p class="text-xs uppercase font-semibold text-gray-400">Imágenes</p>
               <h3 class="text-lg font-semibold text-gray-900">La carpeta se generará automáticamente</h3>
               <p class="text-sm text-gray-500 mt-1">
-                Usamos la categoría seleccionada y el nombre del producto para crear una nueva carpeta en Cloudinary.
+                Usamos el tipo de producto y el nombre para crear una nueva carpeta en Cloudinary.
               </p>
             </div>
 
@@ -461,10 +443,6 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
-  categories: {
-    type: Array,
-    default: () => []
-  },
   productTypes: {
     type: Array,
     default: () => []
@@ -498,7 +476,6 @@ const form = reactive({
   description: '',
   price: '',
   originalPrice: '',
-  category: '',
   productType: '',
   league: '',
   inStock: true,
@@ -518,9 +495,6 @@ const uploadState = reactive({
   uploaded: 0,
   total: 0
 })
-
-const categoryOptions = computed(() => props.categories.filter(option => option.value))
-const firstCategoryValue = computed(() => categoryOptions.value[0]?.value || '')
 
 // Product type options
 const productTypeOptions = computed(() =>
@@ -549,7 +523,7 @@ watch(() => form.productType, () => {
 const normalizedExistingSlugs = computed(() => props.existingSlugs.map(slug => (slug || '').toString().toLowerCase()).filter(Boolean))
 const existingIdsSet = computed(() => new Set(props.existingIds || []))
 const generatedFolderPath = computed(() => {
-  if (!form.category) {
+  if (!form.productType) {
     return ''
   }
 
@@ -557,7 +531,12 @@ const generatedFolderPath = computed(() => {
   const fallbackSlug = normalizedSlug || slugify(form.name) || 'nuevo-producto'
   const folderSegment = fallbackSlug.replace(/-/g, '_')
 
-  return `cruzar-deportes/products/${form.category}/${folderSegment}`
+  // Use productType and optionally league for folder structure
+  const basePath = form.league
+    ? `cruzar-deportes/products/${form.productType}/${form.league}`
+    : `cruzar-deportes/products/${form.productType}`
+
+  return `${basePath}/${folderSegment}`
 })
 
 watch(() => props.show, (visible) => {
@@ -586,7 +565,6 @@ const resetForm = () => {
   form.description = ''
   form.price = ''
   form.originalPrice = ''
-  form.category = firstCategoryValue.value
   form.productType = ''
   form.league = ''
   form.inStock = true
@@ -664,7 +642,7 @@ const addBulkImages = () => {
 
 const triggerFilePicker = () => {
   if (!generatedFolderPath.value) {
-    toast.info('Definí nombre y categoría antes de subir imágenes')
+    toast.info('Definí nombre y tipo de producto antes de subir imágenes')
     return
   }
   fileInputRef.value?.click()
@@ -678,7 +656,7 @@ const handleFilesSelected = async (event) => {
   }
 
   if (!generatedFolderPath.value) {
-    toast.error('Seleccioná una categoría y nombre antes de subir imágenes')
+    toast.error('Seleccioná un tipo de producto y nombre antes de subir imágenes')
     if (input) {
       input.value = ''
     }
@@ -752,12 +730,12 @@ const validateForm = () => {
     return 'Ya existe un producto con ese slug'
   }
 
-  if (!form.category) {
-    return 'Seleccioná una categoría'
+  if (!form.productType) {
+    return 'Seleccioná un tipo de producto'
   }
 
   if (!generatedFolderPath.value) {
-    return 'No pudimos generar la carpeta, verificá el nombre y la categoría'
+    return 'No pudimos generar la carpeta, verificá el nombre y el tipo de producto'
   }
 
   const price = parsePrice(form.price)
@@ -795,11 +773,9 @@ const handleSubmit = async () => {
     description: form.description?.trim() || '',
     price,
     originalPrice,
-    categoryId: form.category,  // API expects "categoryId", not "category"
-    category: form.category,    // Also include "category" for front-end consistency
     productType: form.productType,
     league: form.league,
-    images: [...form.selectedImages],  // API expects "images" field
+    images: [...form.selectedImages],
     selectedImages: [...form.selectedImages],
     allAvailableImages: form.allAvailableImages.length > 0
       ? [...new Set(form.allAvailableImages)]
