@@ -73,7 +73,7 @@
                 <span class="text-2xl font-light text-gray-900">4</span>
               </div>
               <h3 class="font-medium mb-2">Recibí tu Sorpresa</h3>
-              <p class="text-sm text-gray-800">Nosotros curamos y enviamos tu colección</p>
+              <p class="text-sm text-gray-800">Nosotros seleccionamos y enviamos tu colección</p>
             </div>
           </div>
         </div>
