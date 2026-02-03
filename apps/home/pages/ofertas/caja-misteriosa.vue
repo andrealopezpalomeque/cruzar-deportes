@@ -48,24 +48,24 @@
               <div class="w-16 h-16 bg-gray-50 border border-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-2xl font-light text-gray-900">1</span>
               </div>
-              <h3 class="font-medium mb-2">Elegí tu Talle</h3>
-              <p class="text-sm text-gray-800">Seleccioná el talle que usás habitualmente</p>
+              <h3 class="font-medium mb-2">Elegí tu Caja</h3>
+              <p class="text-sm text-gray-800">Individual (1), Básica (3), Premium (5) o Deluxe (10)</p>
             </div>
 
             <div class="text-center cursor-default">
               <div class="w-16 h-16 bg-gray-50 border border-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-2xl font-light text-gray-900">2</span>
               </div>
-              <h3 class="font-medium mb-2">Configurá Preferencias</h3>
-              <p class="text-sm text-gray-800">Excluí equipos y elegí la era de las camisetas</p>
+              <h3 class="font-medium mb-2">Distribuí Talles</h3>
+              <p class="text-sm text-gray-800">Elegí los talles para cada camiseta de tu caja</p>
             </div>
 
             <div class="text-center cursor-default">
               <div class="w-16 h-16 bg-gray-50 border border-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-2xl font-light text-gray-900">3</span>
               </div>
-              <h3 class="font-medium mb-2">Elegí tu Caja</h3>
-              <p class="text-sm text-gray-800">Básica (3 camisetas), Premium (5) o Deluxe (10)</p>
+              <h3 class="font-medium mb-2">Configurá Preferencias</h3>
+              <p class="text-sm text-gray-800">Excluí equipos y elegí la era de las camisetas</p>
             </div>
 
             <div class="text-center cursor-default">
@@ -86,15 +86,39 @@
         <div class="max-w-6xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-light text-center mb-12 cursor-default">Tipos de Cajas</h2>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Individual Box -->
+            <Card class="p-6 text-center cursor-default">
+              <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <IconTshirt class="w-6 h-6 text-gray-800" />
+              </div>
+              <h3 class="text-2xl font-light mb-2">Individual</h3>
+              <div class="text-4xl font-light mb-4">$56.000</div>
+              <p class="text-sm text-gray-800 mb-6">$56.000 por camiseta</p>
+              <ul class="space-y-2 text-left mb-6">
+                <li class="flex items-start text-sm text-gray-700">
+                  <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-black" />
+                  <span>1 camiseta sorpresa</span>
+                </li>
+                <li class="flex items-start text-sm text-gray-700">
+                  <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-black" />
+                  <span>Ideal para probar</span>
+                </li>
+                <li class="flex items-start text-sm text-gray-700">
+                  <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-black" />
+                  <span>Calidad garantizada</span>
+                </li>
+              </ul>
+            </Card>
+
             <!-- Basic Box -->
             <Card class="p-6 text-center cursor-default">
               <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <IconTshirt class="w-6 h-6 text-gray-800" />
               </div>
               <h3 class="text-2xl font-light mb-2">Básica</h3>
-              <div class="text-4xl font-light mb-4">$85.000</div>
-              <p class="text-sm text-gray-800 mb-6">~$28.300 por camiseta</p>
+              <div class="text-4xl font-light mb-4">$165.000</div>
+              <p class="text-sm text-gray-800 mb-6">~$55.000 por camiseta</p>
               <ul class="space-y-2 text-left mb-6">
                 <li class="flex items-start text-sm text-gray-700">
                   <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-black" />
@@ -122,8 +146,8 @@
                 <IconTshirt class="w-6 h-6 text-white" />
               </div>
               <h3 class="text-2xl font-light mb-2">Premium</h3>
-              <div class="text-4xl font-light mb-4">$135.000</div>
-              <p class="text-sm text-gray-800 mb-6">~$27.000 por camiseta</p>
+              <div class="text-4xl font-light mb-4">$250.000</div>
+              <p class="text-sm text-gray-800 mb-6">$50.000 por camiseta</p>
               <ul class="space-y-2 text-left mb-6">
                 <li class="flex items-start text-sm text-gray-700">
                   <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-black" />
@@ -135,7 +159,7 @@
                 </li>
                 <li class="flex items-start text-sm text-gray-700">
                   <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-black" />
-                  <span>Al menos 1 camiseta premium</span>
+                  <span>Mejor precio por camiseta</span>
                 </li>
               </ul>
             </Card>
@@ -146,8 +170,8 @@
                 <IconTshirt class="w-6 h-6 text-white" />
               </div>
               <h3 class="text-2xl font-light mb-2">Deluxe</h3>
-              <div class="text-4xl font-light mb-4">$250.000</div>
-              <p class="text-sm text-gray-800 mb-6">~$25.000 por camiseta</p>
+              <div class="text-4xl font-light mb-4">$450.000</div>
+              <p class="text-sm text-gray-800 mb-6">$45.000 por camiseta</p>
               <ul class="space-y-2 text-left mb-6">
                 <li class="flex items-start text-sm text-gray-700">
                   <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-black" />
@@ -159,7 +183,7 @@
                 </li>
                 <li class="flex items-start text-sm text-gray-700">
                   <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-black" />
-                  <span>Máxima diversidad de ligas</span>
+                  <span>Máximo ahorro por camiseta</span>
                 </li>
               </ul>
             </Card>

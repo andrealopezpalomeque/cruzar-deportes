@@ -16,9 +16,9 @@ const docToOrder = (doc) => {
   };
 };
 
-// Generate next order number (CD-0001, CD-0002, etc.)
-const generateOrderNumber = async () => {
-  const counterRef = countersCollection.doc('orders');
+// Generate next order number with configurable prefix (CD-0001 for regular, CM-0001 for mystery box)
+const generateOrderNumber = async (prefix = 'CD') => {
+  const counterRef = countersCollection.doc(`orders-${prefix}`);
 
   const result = await db.runTransaction(async (transaction) => {
     const counterDoc = await transaction.get(counterRef);
@@ -30,7 +30,7 @@ const generateOrderNumber = async () => {
 
     transaction.set(counterRef, { current: nextNumber }, { merge: true });
 
-    return `CD-${String(nextNumber).padStart(4, '0')}`;
+    return `${prefix}-${String(nextNumber).padStart(4, '0')}`;
   });
 
   return result;
@@ -115,53 +115,106 @@ const createOrder = async (req, res) => {
     const orderData = req.body;
     const now = admin.firestore.FieldValue.serverTimestamp();
 
-    // Generate order number
-    const orderNumber = await generateOrderNumber();
+    // Determine order type and prefix
+    const orderType = orderData.orderType || 'regular';
+    const prefix = orderType === 'mystery_box' ? 'CM' : 'CD';
 
-    // Validate required fields
-    if (!orderData.customer || !orderData.items || orderData.items.length === 0) {
-      return res.status(400).json({
-        success: false,
-        error: 'Missing required fields: customer and items are required'
-      });
+    // Generate order number with appropriate prefix
+    const orderNumber = await generateOrderNumber(prefix);
+
+    // Validate required fields based on order type
+    if (orderType === 'mystery_box') {
+      if (!orderData.customer || !orderData.boxType || !orderData.sizes) {
+        return res.status(400).json({
+          success: false,
+          error: 'Missing required fields for mystery box: customer, boxType, and sizes are required'
+        });
+      }
+    } else {
+      if (!orderData.customer || !orderData.items || orderData.items.length === 0) {
+        return res.status(400).json({
+          success: false,
+          error: 'Missing required fields: customer and items are required'
+        });
+      }
     }
 
-    const newOrder = {
-      orderNumber,
+    let newOrder;
 
-      // Customer info
-      customer: {
-        name: orderData.customer.name || '',
-        phone: orderData.customer.phone || '',
-        email: orderData.customer.email || '',
-        address: orderData.customer.address || ''
-      },
+    if (orderType === 'mystery_box') {
+      // Mystery box order structure
+      newOrder = {
+        orderNumber,
+        orderType: 'mystery_box',
 
-      // Products ordered
-      items: orderData.items.map(item => ({
-        productId: item.productId || '',
-        productName: item.productName || '',
-        size: item.size || '',
-        quantity: item.quantity || 1,
-        unitPrice: item.unitPrice || 0,
-        subtotal: item.subtotal || (item.unitPrice || 0) * (item.quantity || 1)
-      })),
+        // Customer info
+        customer: {
+          name: orderData.customer.name || '',
+          phone: orderData.customer.phone || '',
+          email: orderData.customer.email || '',
+          address: orderData.customer.address || ''
+        },
 
-      // Totals
-      totalItems: orderData.totalItems || orderData.items.reduce((sum, item) => sum + (item.quantity || 1), 0),
-      totalAmount: orderData.totalAmount || 0,
-      adjustedAmount: orderData.adjustedAmount || orderData.totalAmount || 0,
-      paymentMethod: orderData.paymentMethod || 'transfer',
+        // Mystery box specific fields
+        boxType: orderData.boxType,
+        jerseyCount: orderData.jerseyCount || 1,
+        sizes: orderData.sizes || {},
+        excludedTeams: orderData.excludedTeams || [],
+        eraPreference: orderData.eraPreference || 'mixed',
 
-      // Tracking
-      status: 'nuevo',
-      notes: '',
+        // Totals
+        totalAmount: orderData.totalAmount || 0,
+        paymentMethod: orderData.paymentMethod || 'transfer',
 
-      // Metadata
-      contactado: false,
-      createdAt: now,
-      updatedAt: now
-    };
+        // Tracking
+        status: 'nuevo',
+        notes: '',
+
+        // Metadata
+        contactado: false,
+        createdAt: now,
+        updatedAt: now
+      };
+    } else {
+      // Regular order structure
+      newOrder = {
+        orderNumber,
+        orderType: 'regular',
+
+        // Customer info
+        customer: {
+          name: orderData.customer.name || '',
+          phone: orderData.customer.phone || '',
+          email: orderData.customer.email || '',
+          address: orderData.customer.address || ''
+        },
+
+        // Products ordered
+        items: orderData.items.map(item => ({
+          productId: item.productId || '',
+          productName: item.productName || '',
+          size: item.size || '',
+          quantity: item.quantity || 1,
+          unitPrice: item.unitPrice || 0,
+          subtotal: item.subtotal || (item.unitPrice || 0) * (item.quantity || 1)
+        })),
+
+        // Totals
+        totalItems: orderData.totalItems || orderData.items.reduce((sum, item) => sum + (item.quantity || 1), 0),
+        totalAmount: orderData.totalAmount || 0,
+        adjustedAmount: orderData.adjustedAmount || orderData.totalAmount || 0,
+        paymentMethod: orderData.paymentMethod || 'transfer',
+
+        // Tracking
+        status: 'nuevo',
+        notes: '',
+
+        // Metadata
+        contactado: false,
+        createdAt: now,
+        updatedAt: now
+      };
+    }
 
     const docRef = await ordersCollection.add(newOrder);
     const createdDoc = await docRef.get();

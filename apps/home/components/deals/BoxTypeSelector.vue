@@ -47,29 +47,47 @@ const emit = defineEmits(['update:modelValue'])
 
 const boxTypes = [
   {
+    value: 'individual',
+    label: 'Individual',
+    description: '1 camiseta sorpresa',
+    price: '$56.000',
+    pricePerItem: '$56.000 c/u',
+    jerseyCount: 1,
+    priceValue: 56000
+  },
+  {
     value: 'basic',
     label: 'Caja Básica',
     description: '3 camisetas sorpresa',
-    price: '$85.000',
-    pricePerItem: '~$28.300 c/u'
+    price: '$165.000',
+    pricePerItem: '~$55.000 c/u',
+    jerseyCount: 3,
+    priceValue: 165000
   },
   {
     value: 'premium',
     label: 'Caja Premium',
-    description: '5 camisetas sorpresa + 1 premium',
-    price: '$135.000',
-    pricePerItem: '~$27.000 c/u'
+    description: '5 camisetas sorpresa',
+    price: '$250.000',
+    pricePerItem: '$50.000 c/u',
+    jerseyCount: 5,
+    priceValue: 250000
   },
   {
     value: 'deluxe',
     label: 'Caja Deluxe',
-    description: '10 camisetas + exclusivas',
-    price: '$250.000',
-    pricePerItem: '~$25.000 c/u'
+    description: '10 camisetas sorpresa',
+    price: '$450.000',
+    pricePerItem: '$45.000 c/u',
+    jerseyCount: 10,
+    priceValue: 450000
   }
 ]
 
 const selectBox = (value) => {
   emit('update:modelValue', value)
 }
+
+// Expose box types data for parent components
+defineExpose({ boxTypes })
 </script>

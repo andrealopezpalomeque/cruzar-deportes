@@ -35,20 +35,38 @@
         </div>
       </div>
 
-      <!-- Step 1: Size Selection -->
+      <!-- Step 1: Box Type Selection -->
       <div v-show="currentStep === 1" class="space-y-4">
         <div>
           <label class="block text-lg font-medium text-gray-900 mb-4">
-            <IconTshirt class="w-5 h-5 inline mr-2" />
-            Seleccioná tu Talle
+            <IconGift class="w-5 h-5 inline mr-2" />
+            Tipo de Caja
           </label>
-          <SizeSelector v-model="formData.size" :error="errors.size" />
-          <p class="text-sm text-gray-600 mt-2">Seleccioná tu talle habitual para camisetas deportivas</p>
+          <BoxTypeSelector v-model="formData.boxType" :error="errors.boxType" />
         </div>
       </div>
 
-      <!-- Step 2: Team Exclusions -->
+      <!-- Step 2: Size Distribution -->
       <div v-show="currentStep === 2" class="space-y-4">
+        <div>
+          <label class="block text-lg font-medium text-gray-900 mb-4">
+            <IconTshirt class="w-5 h-5 inline mr-2" />
+            Distribución de Talles
+          </label>
+          <p class="text-sm text-gray-600 mb-4">
+            Distribuí los {{ jerseyCount }} talles para tu caja {{ boxLabel }}
+          </p>
+          <MultiSizeSelector
+            ref="multiSizeSelector"
+            v-model="formData.sizes"
+            :jersey-count="jerseyCount"
+            :error="errors.sizes"
+          />
+        </div>
+      </div>
+
+      <!-- Step 3: Team Exclusions -->
+      <div v-show="currentStep === 3" class="space-y-4">
         <div>
           <label class="block text-lg font-medium text-gray-900 mb-4">
             <IconShieldOff class="w-5 h-5 inline mr-2" />
@@ -59,8 +77,8 @@
         </div>
       </div>
 
-      <!-- Step 3: Era Preference -->
-      <div v-show="currentStep === 3" class="space-y-4">
+      <!-- Step 4: Era Preference -->
+      <div v-show="currentStep === 4" class="space-y-4">
         <div>
           <label class="block text-lg font-medium text-gray-900 mb-4">
             <IconCalendar class="w-5 h-5 inline mr-2" />
@@ -71,23 +89,107 @@
         </div>
       </div>
 
-      <!-- Step 4: Box Type Selection -->
-      <div v-show="currentStep === 4" class="space-y-4">
+      <!-- Step 5: Customer Info + Summary -->
+      <div v-show="currentStep === 5" class="space-y-6">
+        <!-- Customer Form -->
         <div>
           <label class="block text-lg font-medium text-gray-900 mb-4">
-            <IconGift class="w-5 h-5 inline mr-2" />
-            Tipo de Caja
+            <IconUser class="w-5 h-5 inline mr-2" />
+            Datos de Contacto
           </label>
-          <BoxTypeSelector v-model="formData.boxType" :error="errors.boxType" />
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Nombre completo *</label>
+              <input
+                type="text"
+                v-model="formData.customer.name"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+                placeholder="Tu nombre"
+              />
+              <p v-if="errors.customerName" class="text-sm text-red-600 mt-1">{{ errors.customerName }}</p>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Teléfono *</label>
+              <input
+                type="tel"
+                v-model="formData.customer.phone"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+                placeholder="+54 9 11 1234-5678"
+              />
+              <p v-if="errors.customerPhone" class="text-sm text-red-600 mt-1">{{ errors.customerPhone }}</p>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+              <input
+                type="email"
+                v-model="formData.customer.email"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+                placeholder="tu@email.com"
+              />
+              <p v-if="errors.customerEmail" class="text-sm text-red-600 mt-1">{{ errors.customerEmail }}</p>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Dirección de envío *</label>
+              <textarea
+                v-model="formData.customer.address"
+                rows="2"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+                placeholder="Calle, número, ciudad, código postal"
+              ></textarea>
+              <p v-if="errors.customerAddress" class="text-sm text-red-600 mt-1">{{ errors.customerAddress }}</p>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Método de pago *</label>
+              <div class="space-y-2">
+                <label
+                  v-for="method in paymentMethods"
+                  :key="method.value"
+                  class="flex items-center p-3 border rounded-lg cursor-pointer transition-colors"
+                  :class="formData.customer.paymentMethod === method.value ? 'border-black bg-gray-50' : 'border-gray-200 hover:border-gray-300'"
+                >
+                  <input
+                    type="radio"
+                    :value="method.value"
+                    v-model="formData.customer.paymentMethod"
+                    class="sr-only"
+                  />
+                  <div
+                    :class="[
+                      'w-4 h-4 rounded-full border-2 flex items-center justify-center mr-3',
+                      formData.customer.paymentMethod === method.value ? 'border-black' : 'border-gray-300'
+                    ]"
+                  >
+                    <div
+                      v-if="formData.customer.paymentMethod === method.value"
+                      class="w-2 h-2 rounded-full bg-black"
+                    ></div>
+                  </div>
+                  <span>{{ method.label }}</span>
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Summary -->
-        <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+        <div class="p-6 bg-gray-50 rounded-lg">
           <h3 class="font-medium text-gray-900 mb-4">Resumen de tu Configuración</h3>
           <div class="space-y-2 text-sm">
             <div class="flex justify-between">
-              <span class="text-gray-700">Talle:</span>
-              <span class="font-medium">{{ formData.size || '-' }}</span>
+              <span class="text-gray-700">Tipo de Caja:</span>
+              <span class="font-medium">{{ boxLabel }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-700">Cantidad:</span>
+              <span class="font-medium">{{ jerseyCount }} camiseta(s)</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-700">Talles:</span>
+              <span class="font-medium">{{ formattedSizes || '-' }}</span>
             </div>
             <div class="flex justify-between">
               <span class="text-gray-700">Equipos excluidos:</span>
@@ -98,8 +200,8 @@
               <span class="font-medium">{{ getEraLabel(formData.eraPreference) }}</span>
             </div>
             <div class="flex justify-between items-center pt-4 border-t border-gray-200">
-              <span class="text-gray-900 font-medium">Caja {{ getBoxTypeLabel(formData.boxType) }}:</span>
-              <span class="text-2xl font-medium">{{ getBoxPrice(formData.boxType) }}</span>
+              <span class="text-gray-900 font-medium">Total:</span>
+              <span class="text-2xl font-medium">{{ formattedPrice }}</span>
             </div>
           </div>
         </div>
@@ -119,7 +221,7 @@
         <div v-else></div>
 
         <Button
-          v-if="currentStep < 4"
+          v-if="currentStep < 5"
           type="button"
           variant="default"
           @click="nextStep"
@@ -142,36 +244,79 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, computed, watch } from 'vue'
 import IconTshirt from '~icons/mdi/tshirt-crew'
 import IconShieldOff from '~icons/mdi/shield-off-outline'
 import IconCalendar from '~icons/mdi/calendar-range'
 import IconGift from '~icons/mdi/gift-outline'
+import IconUser from '~icons/mdi/account-outline'
 import IconArrowLeft from '~icons/mdi/arrow-left'
 import IconArrowRight from '~icons/mdi/arrow-right'
 import IconWhatsapp from '~icons/mdi/whatsapp'
 import Button from '~/components/ui/Button.vue'
 import Card from '~/components/ui/Card.vue'
-import SizeSelector from '~/components/deals/SizeSelector.vue'
 import TeamExclusionPicker from '~/components/deals/TeamExclusionPicker.vue'
 import EraPreferenceSelector from '~/components/deals/EraPreferenceSelector.vue'
 import BoxTypeSelector from '~/components/deals/BoxTypeSelector.vue'
+import MultiSizeSelector from '~/components/deals/MultiSizeSelector.vue'
+import { useMysteryBoxStore, BOX_CONFIG } from '~/stores/mysteryBox'
 
-const steps = ['Talle', 'Exclusiones', 'Era', 'Tipo de Caja']
+const mysteryBoxStore = useMysteryBoxStore()
+
+const steps = ['Tipo de Caja', 'Talles', 'Exclusiones', 'Era', 'Datos']
 const currentStep = ref(1)
 const isSubmitting = ref(false)
+const multiSizeSelector = ref(null)
 
 const formData = reactive({
-  size: '',
+  boxType: 'basic',
+  sizes: { XS: 0, S: 0, M: 0, L: 0, XL: 0, XXL: 0 },
   excludedTeams: [],
   eraPreference: 'mixed',
-  boxType: 'premium'
+  customer: {
+    name: '',
+    phone: '',
+    email: '',
+    address: '',
+    paymentMethod: 'transfer'
+  }
 })
 
 const errors = reactive({
-  size: '',
+  boxType: '',
+  sizes: '',
   eraPreference: '',
-  boxType: ''
+  customerName: '',
+  customerPhone: '',
+  customerEmail: '',
+  customerAddress: ''
+})
+
+const paymentMethods = [
+  { value: 'transfer', label: 'Transferencia bancaria' },
+  { value: 'cash', label: 'Efectivo' },
+  { value: 'card', label: 'Tarjeta de crédito/débito' }
+]
+
+// Computed values based on box type
+const jerseyCount = computed(() => BOX_CONFIG[formData.boxType]?.jerseyCount || 3)
+const boxLabel = computed(() => BOX_CONFIG[formData.boxType]?.label || 'Básica')
+const formattedPrice = computed(() => BOX_CONFIG[formData.boxType]?.priceFormatted || '$165.000')
+
+const formattedSizes = computed(() => {
+  const entries = Object.entries(formData.sizes)
+    .filter(([_, count]) => count > 0)
+    .map(([size, count]) => `${count}x ${size}`)
+  return entries.length > 0 ? entries.join(', ') : null
+})
+
+const totalSizesSelected = computed(() => {
+  return Object.values(formData.sizes).reduce((sum, count) => sum + count, 0)
+})
+
+// Reset sizes when box type changes
+watch(() => formData.boxType, () => {
+  formData.sizes = { XS: 0, S: 0, M: 0, L: 0, XL: 0, XXL: 0 }
 })
 
 const nextStep = () => {
@@ -188,22 +333,60 @@ const validateStep = (step) => {
   // Reset errors
   Object.keys(errors).forEach(key => errors[key] = '')
 
-  if (step === 1 && !formData.size) {
-    errors.size = 'Por favor seleccioná un talle'
-    return false
-  }
-
-  if (step === 3 && !formData.eraPreference) {
-    errors.eraPreference = 'Por favor seleccioná una preferencia'
-    return false
-  }
-
-  if (step === 4 && !formData.boxType) {
+  if (step === 1 && !formData.boxType) {
     errors.boxType = 'Por favor seleccioná un tipo de caja'
     return false
   }
 
+  if (step === 2) {
+    if (totalSizesSelected.value !== jerseyCount.value) {
+      errors.sizes = `Seleccioná exactamente ${jerseyCount.value} talle(s)`
+      return false
+    }
+  }
+
+  if (step === 4 && !formData.eraPreference) {
+    errors.eraPreference = 'Por favor seleccioná una preferencia'
+    return false
+  }
+
+  if (step === 5) {
+    return validateCustomerInfo()
+  }
+
   return true
+}
+
+const validateCustomerInfo = () => {
+  let isValid = true
+
+  if (!formData.customer.name.trim()) {
+    errors.customerName = 'El nombre es requerido'
+    isValid = false
+  }
+
+  if (!formData.customer.phone.trim()) {
+    errors.customerPhone = 'El teléfono es requerido'
+    isValid = false
+  } else if (!/^\+?[\d\s\-()]+$/.test(formData.customer.phone)) {
+    errors.customerPhone = 'El teléfono no tiene un formato válido'
+    isValid = false
+  }
+
+  if (!formData.customer.email.trim()) {
+    errors.customerEmail = 'El email es requerido'
+    isValid = false
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.customer.email)) {
+    errors.customerEmail = 'El email no tiene un formato válido'
+    isValid = false
+  }
+
+  if (!formData.customer.address.trim()) {
+    errors.customerAddress = 'La dirección es requerida'
+    isValid = false
+  }
+
+  return isValid
 }
 
 const getEraLabel = (era) => {
@@ -215,50 +398,26 @@ const getEraLabel = (era) => {
   return labels[era] || '-'
 }
 
-const getBoxTypeLabel = (type) => {
-  const labels = {
-    basic: 'Básica',
-    premium: 'Premium',
-    deluxe: 'Deluxe'
-  }
-  return labels[type] || ''
-}
-
-const getBoxPrice = (type) => {
-  const prices = {
-    basic: '$85.000',
-    premium: '$135.000',
-    deluxe: '$250.000'
-  }
-  return prices[type] || ''
-}
-
-const handleSubmit = () => {
-  if (!validateStep(4)) return
+const handleSubmit = async () => {
+  if (!validateCustomerInfo()) return
 
   isSubmitting.value = true
 
-  // Build WhatsApp message
-  const message = `
-¡Hola! Quiero solicitar una Caja Misteriosa con la siguiente configuración:
+  // Update store with form data
+  mysteryBoxStore.setBoxType(formData.boxType)
+  mysteryBoxStore.setSizes(formData.sizes)
+  mysteryBoxStore.setExcludedTeams(formData.excludedTeams)
+  mysteryBoxStore.setEraPreference(formData.eraPreference)
+  mysteryBoxStore.setCustomerInfo(formData.customer)
 
-📦 Tipo de Caja: ${getBoxTypeLabel(formData.boxType)}
-👕 Talle: ${formData.size}
-🚫 Equipos excluidos: ${formData.excludedTeams.length > 0 ? formData.excludedTeams.join(', ') : 'Ninguno'}
-📅 Preferencia de Era: ${getEraLabel(formData.eraPreference)}
-
-💰 Total: ${getBoxPrice(formData.boxType)}
-
-¿Podrían confirmar disponibilidad y formas de pago?
-  `.trim()
-
-  const phoneNumber = '5493794000783'
-  const encodedMessage = encodeURIComponent(message)
-  window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank')
-
-  // Reset form after slight delay
-  setTimeout(() => {
+  try {
+    // Submit order and get WhatsApp URL
+    const whatsappUrl = await mysteryBoxStore.sendOrderToWhatsApp()
+    window.open(whatsappUrl, '_blank')
+  } catch (error) {
+    console.error('Error submitting order:', error)
+  } finally {
     isSubmitting.value = false
-  }, 1000)
+  }
 }
 </script>
