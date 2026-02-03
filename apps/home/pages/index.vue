@@ -38,15 +38,15 @@
             </NuxtLink>
           </div>
 
-          <!-- Category Pills -->
+          <!-- League Pills -->
           <div class="flex flex-wrap items-center justify-center gap-3 pt-8">
             <NuxtLink
-              v-for="category in categories.slice(0, 5)"
-              :key="category.id"
-              :to="`/categories/${category.slug}`"
+              v-for="league in featuredLeagues"
+              :key="league.id"
+              :to="`/categories/${league.slug}`"
               class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium rounded-full hover:bg-white/20 hover:border-white/30 transition-all duration-200 shadow-sm"
             >
-              {{ category.name }}
+              {{ league.name }}
             </NuxtLink>
           </div>
         </div>
@@ -211,12 +211,14 @@ import TeamOrdersCard from '~/components/deals/TeamOrdersCard.vue'
 
 const productsStore = useProductsStore()
 
-const categories = computed(() => productsStore.categories)
+// Show first 6 leagues that have jersey-related products (football leagues + basquet)
+const featuredLeagues = computed(() => {
+  const jerseyLeagues = productsStore.leagues.filter(l =>
+    l.applicableTypes?.includes('camisetas') && l.isActive !== false
+  )
+  return jerseyLeagues.slice(0, 6)
+})
 const featuredProducts = computed(() => productsStore.getFeaturedProducts)
-
-function navigateToCategory(slug) {
-  navigateTo(`/categories/${slug}`)
-}
 
 const openCustomJerseyWhatsApp = () => {
   const phoneNumber = '5493794000783'
@@ -226,7 +228,6 @@ const openCustomJerseyWhatsApp = () => {
 
 
 onMounted(() => {
-  productsStore.fetchCategories()
   productsStore.fetchProducts()
 })
 

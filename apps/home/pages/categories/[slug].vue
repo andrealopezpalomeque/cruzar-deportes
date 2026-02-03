@@ -8,7 +8,7 @@
         </li>
         <li class="text-gray-400">/</li>
         <li>
-          <NuxtLink to="/categories" class="text-gray-500 hover:text-gray-700">Categorías</NuxtLink>
+          <NuxtLink to="/categories" class="text-gray-500 hover:text-gray-700">Ligas</NuxtLink>
         </li>
         <li class="text-gray-400">/</li>
         <li class="text-gray-900 font-medium">{{ displayName }}</li>
@@ -215,7 +215,6 @@ watch([categorySlug, selectedProductType], () => {
 })
 
 onMounted(() => {
-  productsStore.fetchCategories()
   productsStore.fetchProducts()
 })
 

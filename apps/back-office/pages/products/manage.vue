@@ -352,9 +352,6 @@
                 <span v-if="product.league" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-purple-600 to-purple-700 text-white shadow-sm">
                   {{ getLeagueName(product.league) }}
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-sm">
-                  {{ getCategoryName(product.category) }}
-                </span>
                 <span
                   v-if="product.featured"
                   class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 shadow-sm"

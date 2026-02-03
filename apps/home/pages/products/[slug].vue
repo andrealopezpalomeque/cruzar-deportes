@@ -78,10 +78,10 @@ const product = computed(() =>
   productsStore.getProductBySlug(productSlug.value)
 )
 
-// Get related products (same category, excluding current product)
+// Get related products (same league, excluding current product)
 const relatedProducts = computed(() => {
   if (!product.value) return []
-  return productsStore.getProductsByCategory(product.value.category)
+  return productsStore.getProductsByLeague(product.value.league)
     .filter(p => p.id !== product.value?.id)
     .slice(0, 8) // Get up to 8 related products
 })
@@ -103,7 +103,6 @@ onMounted(async () => {
 
   // Ensure products are loaded
   await productsStore.fetchProducts()
-  await productsStore.fetchCategories()
 
   // Load product images
   loadProductImages()
@@ -125,9 +124,9 @@ watch(() => product.value?.images, (newImages) => {
 })
 
 // SEO and meta tags
-const categoryName = computed(() => {
-  const category = productsStore.categories.find(cat => cat.slug === product.value?.category)
-  return category?.name || ''
+const leagueName = computed(() => {
+  const league = productsStore.leagues.find(l => l.slug === product.value?.league)
+  return league?.name || ''
 })
 
 useHead({
@@ -135,7 +134,7 @@ useHead({
   meta: [
     { 
       name: 'description', 
-      content: () => product.value?.description || `Compra ${product.value?.name || 'productos'} en Cruzar Deportes. ${categoryName.value} de calidad premium.`
+      content: () => product.value?.description || `Compra ${product.value?.name || 'productos'} en Cruzar Deportes. ${leagueName.value} de calidad premium.`
     },
     { 
       property: 'og:title', 
@@ -143,7 +142,7 @@ useHead({
     },
     { 
       property: 'og:description', 
-      content: () => product.value?.description || `Compra ${product.value?.name || 'productos'} en Cruzar Deportes. ${categoryName.value} de calidad premium.`
+      content: () => product.value?.description || `Compra ${product.value?.name || 'productos'} en Cruzar Deportes. ${leagueName.value} de calidad premium.`
     },
     { 
       property: 'og:image', 
@@ -163,7 +162,7 @@ useHead({
     },
     { 
       name: 'twitter:description', 
-      content: () => product.value?.description || `Compra ${product.value?.name || 'productos'} en Cruzar Deportes. ${categoryName.value} de calidad premium.`
+      content: () => product.value?.description || `Compra ${product.value?.name || 'productos'} en Cruzar Deportes. ${leagueName.value} de calidad premium.`
     },
     { 
       name: 'twitter:image', 

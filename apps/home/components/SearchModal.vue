@@ -75,7 +75,7 @@
                 @mouseenter="selectedIndex = index"
                 role="button"
                 tabindex="0"
-                :aria-label="`Ver ${product.name} de ${getCategoryName(product.category)} - Precio: ${formatPrice(product.price)}`"
+                :aria-label="`Ver ${product.name} de ${getLeagueName(product.league)} - Precio: ${formatPrice(product.price)}`"
                 @keydown.enter="goToProduct(product)"
                 @keydown.space.prevent="goToProduct(product)"
               >
@@ -86,7 +86,7 @@
                 />
                 <div class="flex-1 min-w-0">
                   <h3 class="font-medium text-gray-900 truncate" v-html="highlightText(product.name, localQuery)"></h3>
-                  <p class="text-sm text-gray-700 capitalize">{{ getCategoryName(product.category) }}</p>
+                  <p class="text-sm text-gray-700 capitalize">{{ getLeagueName(product.league) }}</p>
                   <div class="flex items-center space-x-2 mt-1">
                     <span class="font-bold text-primary-600">{{ formatPrice(product.price) }}</span>
                     <span
@@ -170,18 +170,18 @@
               </div>
             </div>
             
-            <!-- Popular Categories -->
+            <!-- Popular Leagues -->
             <div>
-              <h3 class="text-sm font-medium text-gray-900 mb-3">Categorías populares</h3>
+              <h3 class="text-sm font-medium text-gray-900 mb-3">Ligas populares</h3>
               <div class="grid grid-cols-2 gap-2">
                 <NuxtLink
-                  v-for="category in popularCategories"
-                  :key="category.slug"
-                  :to="`/categories/${category.slug}`"
+                  v-for="league in popularLeagues"
+                  :key="league.slug"
+                  :to="`/categories/${league.slug}`"
                   class="flex items-center p-3 rounded-lg border border-gray-200 hover:border-primary-300 hover:bg-primary-50 transition-all"
                   @click="searchStore.closeSearch"
                 >
-                  <span class="text-sm font-medium text-gray-900">{{ category.name }}</span>
+                  <span class="text-sm font-medium text-gray-900">{{ league.name }}</span>
                 </NuxtLink>
               </div>
             </div>
@@ -211,25 +211,17 @@ const searchInput = ref(null)
 const localQuery = ref('')
 const selectedIndex = ref(-1)
 
-// Popular categories for default state
-const popularCategories = computed(() => [
-  { name: 'Serie A', slug: 'serie_a_enilive' },
-  { name: 'AFC', slug: 'afc' },
-  { name: 'CAF', slug: 'caf' },
-  { name: 'Eredivisie', slug: 'eredivisie' }
-])
+// Popular leagues for default state (first 4 active leagues)
+const popularLeagues = computed(() => {
+  return productsStore.leagues
+    .filter(l => l.isActive !== false)
+    .slice(0, 4)
+})
 
-// Category name mapping
-const getCategoryName = (categorySlug) => {
-  const categoryMap = {
-    'serie_a_enilive': 'Serie A',
-    'afc': 'AFC',
-    'caf': 'CAF',
-    'eredivisie': 'Eredivisie',
-    'lpf_afa': 'LPF AFA',
-    'national_retro': 'Retro Nacional'
-  }
-  return categoryMap[categorySlug] || categorySlug
+// League name mapping
+const getLeagueName = (leagueSlug) => {
+  const league = productsStore.leagues.find(l => l.slug === leagueSlug)
+  return league?.name || leagueSlug || ''
 }
 
 // Debounced search function

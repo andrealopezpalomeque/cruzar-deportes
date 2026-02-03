@@ -3,8 +3,8 @@
     <!-- Product Header -->
     <div>
       <div class="flex items-center space-x-2 text-sm text-gray-800 mb-2">
-        <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md font-medium shadow-sm">
-          {{ categoryName }}
+        <span v-if="leagueName" class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md font-medium shadow-sm">
+          {{ leagueName }}
         </span>
         <span v-if="product.featured" class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md font-medium shadow-sm">
           <IconStar class="h-3 w-3 inline mr-1" />
@@ -248,9 +248,9 @@ const isAddingToCart = ref(false)
 const showSuccessMessage = ref(false)
 
 // Computed properties
-const categoryName = computed(() => {
-  const category = productsStore.categories.find(cat => cat.slug === props.product.category)
-  return category?.name || props.product.category
+const leagueName = computed(() => {
+  const league = productsStore.leagues.find(l => l.slug === props.product.league)
+  return league?.name || props.product.league || ''
 })
 
 const totalPrice = computed(() => {

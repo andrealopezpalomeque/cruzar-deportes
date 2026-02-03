@@ -24,11 +24,11 @@
           >
             Inicio
           </NuxtLink>
-          <NuxtLink 
-            to="/categories" 
+          <NuxtLink
+            to="/categories"
             class="text-gray-800 hover:text-black transition-colors"
           >
-            Categorías
+            Ligas
           </NuxtLink>
           <NuxtLink 
             to="/products" 
@@ -94,12 +94,12 @@
           >
             Inicio
           </NuxtLink>
-          <NuxtLink 
-            to="/categories" 
+          <NuxtLink
+            to="/categories"
             class="block px-3 py-2 text-gray-800 hover:text-black"
             @click="mobileMenuOpen = false"
           >
-            Categorías
+            Ligas
           </NuxtLink>
           <NuxtLink 
             to="/products" 

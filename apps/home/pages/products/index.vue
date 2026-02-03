@@ -64,34 +64,6 @@
         </button>
       </div>
 
-      <!-- Category Filter (legacy, shown when no product type selected) -->
-      <div v-if="!selectedProductType && categories.length > 0" class="flex flex-wrap gap-2">
-        <button
-          @click="selectedCategory = ''"
-          :class="[
-            'px-4 py-2 text-sm font-medium rounded-md transition-colors',
-            selectedCategory === ''
-              ? 'bg-gray-700 text-white'
-              : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-          ]"
-        >
-          Todas las Categorías
-        </button>
-        <button
-          v-for="category in categories"
-          :key="category.id"
-          @click="selectedCategory = category.slug"
-          :class="[
-            'px-4 py-2 text-sm font-medium rounded-md transition-colors',
-            selectedCategory === category.slug
-              ? 'bg-gray-700 text-white'
-              : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-          ]"
-        >
-          {{ category.name }}
-        </button>
-      </div>
-
       <div class="text-sm text-gray-800">
         {{ filteredProducts.length }} {{ filteredProducts.length === 1 ? 'producto' : 'productos' }}
       </div>
@@ -156,10 +128,10 @@
       <IconTshirtCrew class="h-16 w-16 text-gray-400 mx-auto mb-4" />
       <h3 class="text-lg font-medium text-gray-900 mb-2">No se encontraron productos</h3>
       <p class="text-gray-800 mb-6">
-        {{ selectedProductType || selectedLeague || selectedCategory ? 'No se encontraron productos con estos filtros.' : 'No hay productos disponibles en este momento.' }}
+        {{ selectedProductType || selectedLeague ? 'No se encontraron productos con estos filtros.' : 'No hay productos disponibles en este momento.' }}
       </p>
       <button
-        v-if="selectedProductType || selectedLeague || selectedCategory"
+        v-if="selectedProductType || selectedLeague"
         @click="resetFilters"
         class="inline-flex items-center px-4 py-2 bg-black text-white font-medium rounded-md hover:bg-gray-900 transition-colors"
       >
@@ -179,11 +151,9 @@ const productsStore = useProductsStore()
 
 const selectedProductType = ref('')
 const selectedLeague = ref('')
-const selectedCategory = ref('')
 const currentPage = ref(1)
 const itemsPerPage = 20
 
-const categories = computed(() => productsStore.categories)
 const productTypes = computed(() => productsStore.productTypes)
 const leagues = computed(() => productsStore.leagues)
 const allProducts = computed(() => productsStore.products)
@@ -205,11 +175,6 @@ const filteredProducts = computed(() => {
   // Filter by league
   if (selectedLeague.value) {
     products = products.filter(p => p.league === selectedLeague.value)
-  }
-
-  // Filter by category (legacy, only when no product type selected)
-  if (!selectedProductType.value && selectedCategory.value) {
-    products = products.filter(p => p.category === selectedCategory.value)
   }
 
   return products
@@ -245,22 +210,19 @@ const visiblePages = computed(() => {
 const selectProductType = (typeSlug) => {
   selectedProductType.value = typeSlug
   selectedLeague.value = '' // Reset league when type changes
-  selectedCategory.value = '' // Reset category when using type filter
 }
 
 const resetFilters = () => {
   selectedProductType.value = ''
   selectedLeague.value = ''
-  selectedCategory.value = ''
 }
 
 // Reset to page 1 when filters change
-watch([selectedProductType, selectedLeague, selectedCategory], () => {
+watch([selectedProductType, selectedLeague], () => {
   currentPage.value = 1
 })
 
 onMounted(() => {
-  productsStore.fetchCategories()
   productsStore.fetchProducts()
 })
 

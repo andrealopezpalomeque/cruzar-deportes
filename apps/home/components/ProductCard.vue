@@ -62,16 +62,16 @@
     
     <!-- Product Info -->
     <div class="p-4">
-      <!-- Product Title and Category -->
+      <!-- Product Title and League -->
       <NuxtLink
         :to="`/products/${product.slug}`"
         class="block hover:text-black transition-colors"
-        :aria-label="`Ver ${product.name} - ${categoryName}`"
+        :aria-label="`Ver ${product.name} - ${leagueName}`"
       >
         <h3 class="text-lg font-normal text-gray-900 mb-1 line-clamp-2">{{ product.name }}</h3>
       </NuxtLink>
-      
-      <p class="text-sm text-gray-800 mb-3 capitalize cursor-default">{{ categoryName }}</p>
+
+      <p class="text-sm text-gray-800 mb-3 capitalize cursor-default">{{ leagueName }}</p>
 
       <!-- Price and Add Button -->
       <div class="flex items-center justify-between mb-3">
@@ -111,9 +111,9 @@ const props = defineProps(['product'])
 const productsStore = useProductsStore()
 
 // Computed properties
-const categoryName = computed(() => {
-  const category = productsStore.categories.find(cat => cat.slug === props.product.category)
-  return category?.name || props.product.category
+const leagueName = computed(() => {
+  const league = productsStore.leagues.find(l => l.slug === props.product.league)
+  return league?.name || props.product.league || ''
 })
 
 function viewProduct() {

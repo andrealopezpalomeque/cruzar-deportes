@@ -28,7 +28,7 @@
           <h3 class="text-lg font-medium mb-4 text-gray-900 cursor-default">Enlaces Rápidos</h3>
           <ul class="space-y-2">
             <li><NuxtLink to="/" class="text-gray-800 hover:text-black transition-colors">Inicio</NuxtLink></li>
-            <li><NuxtLink to="/categories" class="text-gray-800 hover:text-black transition-colors">Categorías</NuxtLink></li>
+            <li><NuxtLink to="/categories" class="text-gray-800 hover:text-black transition-colors">Ligas</NuxtLink></li>
             <li><NuxtLink to="/products" class="text-gray-800 hover:text-black transition-colors">Todos los Productos</NuxtLink></li>
           </ul>
         </div>
