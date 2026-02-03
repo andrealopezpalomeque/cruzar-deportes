@@ -225,7 +225,7 @@
 
             <div class="bg-white rounded-lg p-6 border border-gray-200 cursor-default">
               <h3 class="font-medium text-lg mb-2">¿Cuánto tarda en llegar?</h3>
-              <p class="text-gray-800">El proceso de curación toma 2-3 días hábiles. Luego, el envío depende de tu ubicación (3-7 días hábiles).</p>
+              <p class="text-gray-800">Depende de tu ubicación, y puede tomar hasta 3-7 días hábiles.</p>
             </div>
           </div>
         </div>
