@@ -38,10 +38,10 @@
             </NuxtLink>
           </div>
 
-          <!-- League Pills -->
+          <!-- League Pills (all leagues with jerseys) -->
           <div class="flex flex-wrap items-center justify-center gap-3 pt-8">
             <NuxtLink
-              v-for="league in featuredLeagues"
+              v-for="league in jerseyLeagues"
               :key="league.id"
               :to="`/categories/${league.slug}`"
               class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium rounded-full hover:bg-white/20 hover:border-white/30 transition-all duration-200 shadow-sm"
@@ -211,12 +211,11 @@ import TeamOrdersCard from '~/components/deals/TeamOrdersCard.vue'
 
 const productsStore = useProductsStore()
 
-// Show first 6 leagues that have jersey-related products (football leagues + basquet)
-const featuredLeagues = computed(() => {
-  const jerseyLeagues = productsStore.leagues.filter(l =>
+// Show all leagues that have jerseys (camisetas) in their applicableTypes
+const jerseyLeagues = computed(() => {
+  return productsStore.leagues.filter(l =>
     l.applicableTypes?.includes('camisetas') && l.isActive !== false
   )
-  return jerseyLeagues.slice(0, 6)
 })
 const featuredProducts = computed(() => productsStore.getFeaturedProducts)
 

@@ -29,8 +29,8 @@
           :class="[
             'px-4 py-2 text-sm font-medium rounded-md transition-colors',
             selectedLeague === ''
-              ? 'bg-purple-600 text-white'
-              : 'bg-purple-100 text-purple-800 hover:bg-purple-200'
+              ? 'bg-gray-700 text-white'
+              : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
           ]"
         >
           Todas las Ligas
@@ -42,8 +42,8 @@
           :class="[
             'px-4 py-2 text-sm font-medium rounded-md transition-colors',
             selectedLeague === league.slug
-              ? 'bg-purple-600 text-white'
-              : 'bg-purple-100 text-purple-800 hover:bg-purple-200'
+              ? 'bg-gray-700 text-white'
+              : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
           ]"
         >
           {{ league.name }}
