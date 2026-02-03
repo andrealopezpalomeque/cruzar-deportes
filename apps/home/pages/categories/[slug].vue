@@ -130,7 +130,7 @@ import IconArrowLeft from '~icons/mdi/arrow-left'
 const route = useRoute()
 const productsStore = useProductsStore()
 
-const categorySlug = computed(() => route.params.slug as string)
+const categorySlug = computed(() => route.params.slug)
 const currentPage = ref(1)
 const selectedProductType = ref('')
 const itemsPerPage = 20

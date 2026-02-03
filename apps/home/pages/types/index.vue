@@ -25,7 +25,7 @@
       >
         <div class="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
           <IconTshirtCrew v-if="type.slug === 'camisetas'" class="w-24 h-24 text-gray-400 group-hover:text-gray-600 transition-colors" />
-          <IconShortsOutline v-else-if="type.slug === 'shorts'" class="w-24 h-24 text-gray-400 group-hover:text-gray-600 transition-colors" />
+          <IconTshirtCrew v-else-if="type.slug === 'shorts'" class="w-24 h-24 text-gray-400 group-hover:text-gray-600 transition-colors" />
           <IconHumanChild v-else-if="type.slug === 'kit-ninos'" class="w-24 h-24 text-gray-400 group-hover:text-gray-600 transition-colors" />
           <IconPackageVariant v-else class="w-24 h-24 text-gray-400 group-hover:text-gray-600 transition-colors" />
         </div>
@@ -48,7 +48,6 @@
 <script setup>
 import { useProductsStore } from '~/stores/products'
 import IconTshirtCrew from '~icons/mdi/tshirt-crew'
-import IconShortsOutline from '~icons/mdi/shorts'
 import IconHumanChild from '~icons/mdi/human-child'
 import IconPackageVariant from '~icons/mdi/package-variant'
 

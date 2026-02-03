@@ -136,7 +136,7 @@ const selectedLeague = ref('')
 const currentPage = ref(1)
 const itemsPerPage = 20
 
-const slug = computed(() => route.params.slug as string)
+const slug = computed(() => route.params.slug)
 
 const productType = computed(() =>
   productsStore.productTypes.find(t => t.slug === slug.value)
