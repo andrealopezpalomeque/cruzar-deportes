@@ -147,6 +147,7 @@ import { useProductsStore } from '~/stores/products'
 import IconTshirtCrew from '~icons/mdi/tshirt-crew'
 import IconRefresh from '~icons/mdi/refresh'
 
+const route = useRoute()
 const productsStore = useProductsStore()
 
 const selectedProductType = ref('')
@@ -221,6 +222,24 @@ const resetFilters = () => {
 watch([selectedProductType, selectedLeague], () => {
   currentPage.value = 1
 })
+
+// Read query params and set filters
+const applyQueryParams = () => {
+  const typeParam = route.query.type
+  const leagueParam = route.query.league
+
+  if (typeParam) {
+    selectedProductType.value = typeParam
+  }
+  if (leagueParam) {
+    selectedLeague.value = leagueParam
+  }
+}
+
+// Watch for route query changes
+watch(() => route.query, () => {
+  applyQueryParams()
+}, { immediate: true })
 
 onMounted(() => {
   productsStore.fetchProducts()

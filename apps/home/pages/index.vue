@@ -43,7 +43,7 @@
             <NuxtLink
               v-for="league in jerseyLeagues"
               :key="league.id"
-              :to="`/categories/${league.slug}`"
+              :to="`/products?type=camisetas&league=${league.slug}`"
               class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium rounded-full hover:bg-white/20 hover:border-white/30 transition-all duration-200 shadow-sm"
             >
               {{ league.name }}
