@@ -1,11 +1,7 @@
 <template>
   <div class="space-y-6">
-    <!-- Header -->
-    <div class="flex items-center justify-between">
-      <div>
-        <h1 class="text-2xl font-bold text-gray-900">Tipos de Producto</h1>
-        <p class="text-sm text-gray-500 mt-1">Gestiona los tipos de productos disponibles</p>
-      </div>
+    <!-- Header Actions -->
+    <div class="flex items-center justify-end">
       <button @click="openCreateModal" class="btn btn-primary">
         <IconPlus class="w-4 h-4 mr-2" />
         Nuevo Tipo

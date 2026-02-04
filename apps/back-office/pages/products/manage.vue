@@ -112,57 +112,6 @@
           </Transition>
         </div>
 
-        <!-- Category Dropdown (legacy) -->
-        <div class="relative">
-          <button
-            @click="isDropdownOpen = !isDropdownOpen"
-            :class="[
-              'group flex h-11 min-w-[220px] items-center justify-between gap-3 rounded-xl',
-              'border border-gray-200/80 bg-white px-4 transition-all duration-200',
-              'hover:border-gray-300 hover:shadow-sm',
-              'focus:outline-none focus:ring-2 focus:ring-gray-900/10 focus:ring-offset-0',
-              isDropdownOpen && 'border-gray-300 shadow-sm'
-            ]"
-          >
-            <span class="text-sm font-medium text-gray-900">
-              {{ getCategoryDisplayName(selectedCategory) }}
-            </span>
-            <IconChevronDown
-              :class="[
-                'w-4 h-4 text-gray-500 transition-transform duration-200',
-                isDropdownOpen && 'rotate-180'
-              ]"
-            />
-          </button>
-
-          <!-- Dropdown Menu -->
-          <Transition name="dropdown">
-            <div v-if="isDropdownOpen" class="relative z-[100]">
-              <div
-                class="fixed inset-0 z-[100]"
-                @click="isDropdownOpen = false"
-              />
-              <div class="absolute left-0 right-0 top-full z-[110] mt-2 rounded-xl border border-gray-200/80 bg-white shadow-lg shadow-gray-900/5 backdrop-blur-xl">
-                <div class="max-h-80 overflow-y-auto custom-scroll">
-                  <button
-                    v-for="category in categories"
-                    :key="category.value"
-                    @click="selectCategory(category.value)"
-                    :class="[
-                      'block w-full px-4 py-2.5 text-left text-sm transition-colors duration-150',
-                      category.value === selectedCategory
-                        ? 'bg-gray-900 text-white font-medium'
-                        : 'text-gray-700 hover:bg-gray-50'
-                    ]"
-                  >
-                    {{ category.label }}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </Transition>
-        </div>
-
         <!-- Enhanced Search Input -->
         <div class="relative">
           <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
@@ -1121,7 +1070,6 @@ const {
   updateProductStatus,
   deleteProduct
 } = useSharedProducts()
-const { loadCategories } = useCategories()
 const { loadProductTypes } = useProductTypes()
 const { loadLeagues, loadLeaguesByProductType } = useLeagues()
 const { getFolderImages, uploadImage, deleteImage: deleteCloudinaryImage } = useCloudinary()
@@ -1140,15 +1088,10 @@ const optimizeUrl = (url, size = 300) => {
 const loading = ref(false)
 const error = ref(null)
 const products = ref([])
-const selectedCategory = ref('')
 const searchTerm = ref('')
 const selectedProducts = ref([])
 const showBulkPricingModal = ref(false)
-const isDropdownOpen = ref(false)
 const showCreateProductModal = ref(false)
-
-// Category options - loaded from API
-const categories = ref([{ value: '', label: 'Todas las categorías', productCount: 0 }])
 
 // Product types and leagues - loaded from API
 const productTypes = ref([])
@@ -1157,25 +1100,6 @@ const selectedProductType = ref('')
 const selectedLeague = ref('')
 const isTypeDropdownOpen = ref(false)
 const isLeagueDropdownOpen = ref(false)
-
-// Load categories from API
-const fetchCategories = async () => {
-  try {
-    const apiCategories = await loadCategories()
-    const formattedCategories = [
-      { value: '', label: 'Todas las categorías', productCount: 0 },
-      ...apiCategories.map(cat => ({
-        value: cat.slug,
-        label: cat.emoji ? `${cat.emoji} ${cat.name}` : cat.name,
-        id: cat.id,
-        productCount: 0
-      }))
-    ]
-    categories.value = formattedCategories
-  } catch (err) {
-    console.error('Error loading categories:', err)
-  }
-}
 
 // Load product types from API
 const fetchProductTypes = async () => {
@@ -1786,10 +1710,6 @@ const removeFromSelection = (imageUrl) => {
 const filteredProducts = computed(() => {
   let filtered = products.value
 
-  if (selectedCategory.value) {
-    filtered = filtered.filter(p => p.category === selectedCategory.value)
-  }
-
   if (selectedProductType.value) {
     filtered = filtered.filter(p => p.productType === selectedProductType.value)
   }
@@ -1901,30 +1821,6 @@ const loadAllProducts = async () => {
   } finally {
     loading.value = false
   }
-}
-
-const getCategoryName = (category) => {
-  const match = categories.value.find(c => c.value === category)
-  if (match) {
-    return match.label
-  }
-  if (!category) {
-    return 'Sin categoría'
-  }
-  return category
-}
-
-const getCategoryDisplayName = (value) => {
-  if (!value) {
-    return 'Todas las categorías'
-  }
-  const category = categories.value.find(c => c.value === value)
-  return category ? category.label : 'Todas las categorías'
-}
-
-const selectCategory = (value) => {
-  selectedCategory.value = value
-  isDropdownOpen.value = false
 }
 
 const formatDate = (dateString) => {
@@ -2313,7 +2209,7 @@ watch(
 )
 
 // Watchers - Reset pagination when filters change
-watch([selectedCategory, selectedProductType, selectedLeague, searchTerm], async () => {
+watch([selectedProductType, selectedLeague, searchTerm], async () => {
   // Show loading state for filter changes
   isTransitioning.value = true
 
@@ -2367,7 +2263,6 @@ onBeforeRouteLeave((to, from, next) => {
 
 // Lifecycle
 onMounted(() => {
-  fetchCategories()
   fetchProductTypes()
   fetchLeagues()
   loadAllProducts()
