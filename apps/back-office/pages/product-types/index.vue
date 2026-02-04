@@ -67,13 +67,23 @@
                     {{ type.isActive ? 'Activo' : 'Inactivo' }}
                   </span>
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
-                  <button @click="openEditModal(type)" class="text-blue-600 hover:text-blue-800">
-                    Editar
-                  </button>
-                  <button @click="confirmDelete(type)" class="text-red-600 hover:text-red-800">
-                    Eliminar
-                  </button>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                  <div class="flex items-center justify-end gap-1">
+                    <button
+                      @click="openEditModal(type)"
+                      class="p-1.5 rounded-md text-gray-400 hover:text-blue-600 hover:bg-blue-50 transition-colors"
+                      title="Editar"
+                    >
+                      <IconPencil class="w-4 h-4" />
+                    </button>
+                    <button
+                      @click="confirmDelete(type)"
+                      class="p-1.5 rounded-md text-gray-400 hover:text-red-600 hover:bg-red-50 transition-colors"
+                      title="Eliminar"
+                    >
+                      <IconDelete class="w-4 h-4" />
+                    </button>
+                  </div>
                 </td>
               </tr>
             </tbody>
@@ -180,6 +190,8 @@
 <script setup>
 import IconPlus from '~icons/mdi/plus'
 import IconTag from '~icons/mdi/tag-outline'
+import IconPencil from '~icons/mdi/pencil'
+import IconDelete from '~icons/mdi/delete'
 
 definePageMeta({
   middleware: 'auth'
