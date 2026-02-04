@@ -52,7 +52,10 @@
           </button>
         </div>
 
-        <div class="grid grid-cols-4 gap-3">
+        <div
+          class="grid grid-cols-4 gap-3"
+          :class="{ 'shake': shakeSizes }"
+        >
           <button
             v-for="size in sizes"
             :key="size.id"
@@ -120,7 +123,7 @@
     <div class="space-y-4">
       <button
         @click="addToCart"
-        :disabled="!canAddToCart"
+        :disabled="isAddingToCart"
         class="w-full bg-black text-white py-4 px-6 rounded-lg font-medium text-lg hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         :class="{
           'animate-pulse': isAddingToCart
@@ -246,6 +249,8 @@ const selectedSize = ref('')
 const quantity = ref(1)
 const isAddingToCart = ref(false)
 const showSuccessMessage = ref(false)
+const showValidation = ref(false)
+const shakeSizes = ref(false)
 
 // Computed properties
 const leagueName = computed(() => {
@@ -266,6 +271,8 @@ const canAddToCart = computed(() => {
 })
 
 const validationMessages = computed(() => {
+  if (!showValidation.value) return []
+
   const messages = []
 
   if (!selectedSize.value || selectedSize.value.trim() === '') {
@@ -293,7 +300,12 @@ function decreaseQuantity() {
 }
 
 async function addToCart() {
-  if (!canAddToCart.value) return
+  if (!canAddToCart.value) {
+    showValidation.value = true
+    shakeSizes.value = true
+    setTimeout(() => { shakeSizes.value = false }, 600)
+    return
+  }
 
   isAddingToCart.value = true
 
@@ -322,12 +334,21 @@ async function addToCart() {
   }
 }
 
+// Clear validation when user selects a size
+watch(selectedSize, (val) => {
+  if (val && val.trim() !== '') {
+    showValidation.value = false
+  }
+})
+
 // Watch for product changes (if user navigates to different product)
 watch(() => props.product, () => {
   // Reset selections to empty state
   selectedSize.value = ''
   quantity.value = 1
   showSuccessMessage.value = false
+  showValidation.value = false
+  shakeSizes.value = false
 }, { immediate: true })
 </script>
 
@@ -364,5 +385,16 @@ input[type="number"] {
 
 .bg-green-50 {
   animation: slideIn 0.3s ease-out;
+}
+
+/* Shake animation for size selector */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 50%, 90% { transform: translateX(-4px); }
+  30%, 70% { transform: translateX(4px); }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
 }
 </style>
