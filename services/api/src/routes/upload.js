@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const router = express.Router();
-const { apiKeyAuth } = require('../middleware/auth');
+const { requireAuth } = require('../middleware/auth');
 const {
   uploadImage,
   uploadMultipleImages,
@@ -46,12 +46,12 @@ const handleMulterError = (err, req, res, next) => {
 };
 
 // POST /api/upload - Upload single image
-router.post('/', apiKeyAuth, upload.single('image'), handleMulterError, uploadImage);
+router.post('/', requireAuth, upload.single('image'), handleMulterError, uploadImage);
 
 // POST /api/upload/multiple - Upload multiple images (max 10)
-router.post('/multiple', apiKeyAuth, upload.array('images', 10), handleMulterError, uploadMultipleImages);
+router.post('/multiple', requireAuth, upload.array('images', 10), handleMulterError, uploadMultipleImages);
 
 // DELETE /api/upload/:publicId - Delete image (publicId can contain slashes)
-router.delete('/*', apiKeyAuth, deleteImage);
+router.delete('/*', requireAuth, deleteImage);
 
 module.exports = router;

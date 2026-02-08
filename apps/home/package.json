@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "cruzar-deportes-home",
   "type": "module",
   "private": true,
   "packageManager": "npm@11.3.0",
@@ -14,9 +14,7 @@
     "clean:all": "npm run clean && rm -rf node_modules",
     "firebase:build": "node scripts/generate-tsconfig.cjs && nuxt generate",
     "firebase:deploy": "cd ../.. && firebase deploy --only hosting:storefront",
-    "firebase:build-deploy": "npm run firebase:build && npm run firebase:deploy",
-    "migrate:cloudinary": "node scripts/migrateToCloudinary.js",
-    "retry:failed-uploads": "node scripts/retryFailedUploads.js"
+    "firebase:build-deploy": "npm run firebase:build && npm run firebase:deploy"
   },
   "dependencies": {
     "@cloudinary/url-gen": "^1.15.0",
@@ -25,9 +23,7 @@
     "@pinia/nuxt": "^0.11.2",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@vueuse/nuxt": "^14.0.0",
-    "cloudinary": "^2.8.0",
     "dayjs-nuxt": "^2.1.11",
-    "dotenv": "^17.2.3",
     "nuxt": "^4.2.1",
     "pinia": "^3.0.4",
     "unplugin-icons": "^22.5.0",

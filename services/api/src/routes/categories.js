@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { apiKeyAuth } = require('../middleware/auth');
+const { requireAuth } = require('../middleware/auth');
 const {
   getAllCategories,
   getCategoryById,
@@ -14,8 +14,8 @@ router.get('/', getAllCategories);
 router.get('/:id', getCategoryById);
 
 // Protected routes (require API key)
-router.post('/', apiKeyAuth, createCategory);
-router.put('/:id', apiKeyAuth, updateCategory);
-router.delete('/:id', apiKeyAuth, deleteCategory);
+router.post('/', requireAuth, createCategory);
+router.put('/:id', requireAuth, updateCategory);
+router.delete('/:id', requireAuth, deleteCategory);
 
 module.exports = router;

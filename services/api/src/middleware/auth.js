@@ -2,7 +2,7 @@
  * API Key authentication middleware
  * Checks for x-api-key header matching API_SECRET_KEY env var
  */
-const apiKeyAuth = (req, res, next) => {
+const requireAuth = (req, res, next) => {
   const apiKey = req.headers['x-api-key'];
   const secretKey = process.env.API_SECRET_KEY;
 
@@ -16,10 +16,10 @@ const apiKeyAuth = (req, res, next) => {
   }
 
   if (apiKey !== secretKey) {
-    return res.status(403).json({ error: 'Invalid API key' });
+    return res.status(401).json({ error: 'Invalid API key' });
   }
 
   next();
 };
 
-module.exports = { apiKeyAuth };
+module.exports = { requireAuth };

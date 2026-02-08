@@ -61,7 +61,6 @@
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
 import { getImageLoader } from '~/utils/cloudinaryImageLoader'
-import { getOptimalImageUrl, isCloudinaryUrl } from '~/utils/urlMapping'
 
 const props = defineProps({
   src: {
@@ -149,7 +148,7 @@ const imageData = computed(() => {
   const typeBreakpoints = breakpoints[props.type] || breakpoints.productCard
 
   // Only apply Cloudinary optimizations if it's a Cloudinary URL
-  if (isCloudinaryUrl(mappedSrc.value) && hasFileExtension(mappedSrc.value)) {
+  if (imageLoader.isCloudinaryUrl(mappedSrc.value) && hasFileExtension(mappedSrc.value)) {
     return imageLoader.generateResponsiveImageData(mappedSrc.value, typeBreakpoints, {
       quality: props.quality,
       crop: props.crop,
@@ -161,28 +160,16 @@ const imageData = computed(() => {
   }
 })
 
-// Load the optimal URL on component mount
-onMounted(async () => {
-  try {
-    mappedSrc.value = await getOptimalImageUrl(props.src)
-    isLoading.value = false
-  } catch (error) {
-    console.warn('Error mapping URL:', error)
-    mappedSrc.value = props.src
-    isLoading.value = false
-  }
+// Set the image URL on mount
+onMounted(() => {
+  mappedSrc.value = props.src
+  isLoading.value = false
 })
 
 // Watch for src changes
-watch(() => props.src, async (newSrc) => {
+watch(() => props.src, (newSrc) => {
   if (newSrc) {
-    isLoading.value = true
-    try {
-      mappedSrc.value = await getOptimalImageUrl(newSrc)
-    } catch (error) {
-      console.warn('Error mapping URL:', error)
-      mappedSrc.value = newSrc
-    }
+    mappedSrc.value = newSrc
     isLoading.value = false
   }
 })

@@ -30,59 +30,64 @@ const leaguesData = [
   { name: 'Ropa de Entrenamiento', slug: 'ropa-de-entrenamiento', order: 15, isActive: true, applicableTypes: ['otros-productos'] }
 ];
 
-// Seed categories (product types and leagues)
-const seedCategories = async (req, res) => {
+// Seed product types and leagues (additive - skips existing entries by slug)
+const seedProductTypesAndLeagues = async (req, res) => {
   try {
     const now = admin.firestore.FieldValue.serverTimestamp();
     const batch = db.batch();
+    let typesCreated = 0;
+    let typesSkipped = 0;
+    let leaguesCreated = 0;
+    let leaguesSkipped = 0;
 
-    // Clear existing data
+    // Check existing product types by slug
     const existingTypes = await productTypesCollection.get();
-    existingTypes.docs.forEach(doc => batch.delete(doc.ref));
+    const existingSlugs = new Set(existingTypes.docs.map(doc => doc.data().slug));
 
-    const existingLeagues = await leaguesCollection.get();
-    existingLeagues.docs.forEach(doc => batch.delete(doc.ref));
-
-    // Add product types
     for (const type of productTypesData) {
+      if (existingSlugs.has(type.slug)) {
+        typesSkipped++;
+        continue;
+      }
       const docRef = productTypesCollection.doc();
-      batch.set(docRef, {
-        ...type,
-        createdAt: now,
-        updatedAt: now
-      });
+      batch.set(docRef, { ...type, createdAt: now, updatedAt: now });
+      typesCreated++;
     }
 
-    // Add leagues
+    // Check existing leagues by slug
+    const existingLeagues = await leaguesCollection.get();
+    const existingLeagueSlugs = new Set(existingLeagues.docs.map(doc => doc.data().slug));
+
     for (const league of leaguesData) {
+      if (existingLeagueSlugs.has(league.slug)) {
+        leaguesSkipped++;
+        continue;
+      }
       const docRef = leaguesCollection.doc();
-      batch.set(docRef, {
-        ...league,
-        createdAt: now,
-        updatedAt: now
-      });
+      batch.set(docRef, { ...league, createdAt: now, updatedAt: now });
+      leaguesCreated++;
     }
 
     await batch.commit();
 
     res.json({
       success: true,
-      message: 'Categories seeded successfully',
+      message: 'Seed completed successfully',
       data: {
-        productTypesCreated: productTypesData.length,
-        leaguesCreated: leaguesData.length
+        productTypes: { created: typesCreated, skipped: typesSkipped },
+        leagues: { created: leaguesCreated, skipped: leaguesSkipped }
       }
     });
   } catch (error) {
-    console.error('Error seeding categories:', error);
+    console.error('Error seeding data:', error);
     res.status(500).json({
       success: false,
-      error: 'Failed to seed categories',
+      error: 'Failed to seed data',
       message: error.message
     });
   }
 };
 
 module.exports = {
-  seedCategories
+  seedProductTypesAndLeagues
 };

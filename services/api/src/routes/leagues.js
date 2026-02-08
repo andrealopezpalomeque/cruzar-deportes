@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { apiKeyAuth } = require('../middleware/auth');
+const { requireAuth } = require('../middleware/auth');
 const {
   getAllLeagues,
   getLeagueById,
@@ -16,8 +16,8 @@ router.get('/by-type/:slug', getLeaguesByProductType);
 router.get('/:id', getLeagueById);
 
 // Protected routes (require API key)
-router.post('/', apiKeyAuth, createLeague);
-router.put('/:id', apiKeyAuth, updateLeague);
-router.delete('/:id', apiKeyAuth, deleteLeague);
+router.post('/', requireAuth, createLeague);
+router.put('/:id', requireAuth, updateLeague);
+router.delete('/:id', requireAuth, deleteLeague);
 
 module.exports = router;
