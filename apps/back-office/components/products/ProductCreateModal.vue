@@ -222,7 +222,7 @@
                 ref="fileInputRef"
                 type="file"
                 class="hidden"
-                accept="image/*"
+                accept="image/jpeg,image/png,image/webp"
                 multiple
                 @change="handleFilesSelected"
               />
