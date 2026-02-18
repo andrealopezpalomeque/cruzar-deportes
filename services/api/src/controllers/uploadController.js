@@ -10,7 +10,7 @@ const uploadToCloudinary = (buffer, options = {}) => {
       folder: options.folder || DEFAULT_FOLDER,
       resource_type: 'image',
       allowed_formats: ALLOWED_FORMATS,
-      transformation: [{ quality: 'auto', fetch_format: 'auto' }],
+      transformation: [{ quality: 'auto' }],
       ...options
     };
 
