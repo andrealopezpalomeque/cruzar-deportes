@@ -41,6 +41,41 @@ export const useCloudinary = () => {
   }
 
   // ============================================
+  // CLIENT-SIDE COMPRESSION
+  // ============================================
+
+  const compressImage = (file, { maxSize = 1920, quality = 0.8 } = {}) => {
+    if (file.size <= 2 * 1024 * 1024) return Promise.resolve(file)
+
+    return new Promise((resolve, reject) => {
+      const img = new Image()
+      img.onload = () => {
+        let { width, height } = img
+        if (width > maxSize || height > maxSize) {
+          const ratio = Math.min(maxSize / width, maxSize / height)
+          width = Math.round(width * ratio)
+          height = Math.round(height * ratio)
+        }
+        const canvas = document.createElement('canvas')
+        canvas.width = width
+        canvas.height = height
+        canvas.getContext('2d').drawImage(img, 0, 0, width, height)
+        canvas.toBlob(
+          (blob) => {
+            if (!blob) return reject(new Error('Compression failed'))
+            const name = file.name.replace(/\.\w+$/, '.jpg')
+            resolve(new File([blob], name, { type: 'image/jpeg' }))
+          },
+          'image/jpeg',
+          quality
+        )
+      }
+      img.onerror = () => reject(new Error('Failed to load image'))
+      img.src = URL.createObjectURL(file)
+    })
+  }
+
+  // ============================================
   // UPLOAD OPERATIONS
   // ============================================
 
@@ -173,6 +208,7 @@ export const useCloudinary = () => {
   }
 
   return {
+    compressImage,
     getFolderImages,
     uploadImage,
     uploadMultipleImages,

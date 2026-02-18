@@ -464,7 +464,7 @@ const props = defineProps({
 const emit = defineEmits(['close', 'created'])
 
 const { saveProduct } = useSharedProducts()
-const { uploadImage } = useCloudinary()
+const { compressImage, uploadImage } = useCloudinary()
 const toast = useToast()
 
 const DEFAULT_SIZES = ['S', 'M', 'L', 'XL', 'XXL']
@@ -669,7 +669,8 @@ const handleFilesSelected = async (event) => {
 
   for (const file of files) {
     try {
-      const uploadedAsset = await uploadImage(file, generatedFolderPath.value)
+      const compressed = await compressImage(file)
+      const uploadedAsset = await uploadImage(compressed, generatedFolderPath.value)
       const secureUrl = uploadedAsset?.secure_url || uploadedAsset
       appendImageUrl(secureUrl)
       uploadState.uploaded += 1

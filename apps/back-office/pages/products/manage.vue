@@ -1072,7 +1072,7 @@ const {
 } = useSharedProducts()
 const { loadProductTypes } = useProductTypes()
 const { loadLeagues, loadLeaguesByProductType } = useLeagues()
-const { getFolderImages, uploadImage, deleteImage: deleteCloudinaryImage } = useCloudinary()
+const { compressImage, getFolderImages, uploadImage, deleteImage: deleteCloudinaryImage } = useCloudinary()
 const toast = useToast()
 
 // Helper to optimize Cloudinary URLs
@@ -1303,7 +1303,8 @@ const handleModalFilesSelected = async (event) => {
 
   for (const file of files) {
     try {
-      const uploadResult = await uploadImage(file, folderPath)
+      const compressed = await compressImage(file)
+      const uploadResult = await uploadImage(compressed, folderPath)
       const secureUrl = typeof uploadResult === 'string' ? uploadResult : uploadResult?.secure_url
       if (secureUrl) {
         uploadedUrls.push(secureUrl)
