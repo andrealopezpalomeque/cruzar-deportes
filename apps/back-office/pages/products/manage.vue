@@ -1311,7 +1311,8 @@ const handleModalFilesSelected = async (event) => {
       }
     } catch (error) {
       console.error('Error uploading image:', error)
-      toast.error(`No pudimos subir "${file.name}"`)
+      const msg = error?.data?.error || error?.message || 'Error desconocido'
+      toast.error(`No pudimos subir "${file.name}": ${msg}`)
     } finally {
       modalUploadState.uploaded += 1
     }

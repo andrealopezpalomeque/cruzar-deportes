@@ -676,7 +676,8 @@ const handleFilesSelected = async (event) => {
       uploadState.uploaded += 1
     } catch (error) {
       console.error('Error al subir imagen', error)
-      toast.error(`No pudimos subir "${file.name}"`)
+      const msg = error?.data?.error || error?.message || 'Error desconocido'
+      toast.error(`No pudimos subir "${file.name}": ${msg}`)
     }
   }
 
