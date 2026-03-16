@@ -33,6 +33,7 @@ export interface League {
   order: number
   isActive: boolean
   applicableTypes: string[]
+  group: 'ligas' | 'deportes' | 'accesorios'
 }
 
 export interface Category {
