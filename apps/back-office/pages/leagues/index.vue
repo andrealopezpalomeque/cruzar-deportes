@@ -41,6 +41,9 @@
                   Tipos Aplicables
                 </th>
                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Grupo
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Orden
                 </th>
                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -69,6 +72,19 @@
                       {{ getProductTypeName(typeSlug) }}
                     </span>
                   </div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <span
+                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
+                    :class="{
+                      'bg-blue-100 text-blue-800': league.group === 'ligas',
+                      'bg-purple-100 text-purple-800': league.group === 'deportes',
+                      'bg-amber-100 text-amber-800': league.group === 'accesorios',
+                      'bg-gray-100 text-gray-800': !league.group
+                    }"
+                  >
+                    {{ getGroupLabel(league.group) }}
+                  </span>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {{ league.order }}
@@ -161,6 +177,19 @@
             </div>
 
             <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Grupo</label>
+              <select
+                v-model="formData.group"
+                required
+                class="input"
+              >
+                <option value="ligas">Ligas de Futbol</option>
+                <option value="deportes">Mas Deportes</option>
+                <option value="accesorios">Indumentaria y Accesorios</option>
+              </select>
+            </div>
+
+            <div>
               <label class="block text-sm font-medium text-gray-700 mb-1">Orden</label>
               <input
                 v-model.number="formData.order"
@@ -246,12 +275,23 @@ const formData = ref({
   slug: '',
   order: 0,
   isActive: true,
-  applicableTypes: []
+  applicableTypes: [],
+  group: 'ligas'
 })
 
 const getProductTypeName = (slug) => {
   const type = productTypes.value.find(t => t.slug === slug)
   return type?.name || slug
+}
+
+const groupLabels = {
+  ligas: 'Ligas de Futbol',
+  deportes: 'Mas Deportes',
+  accesorios: 'Indumentaria y Accesorios'
+}
+
+const getGroupLabel = (group) => {
+  return groupLabels[group] || group || 'Sin grupo'
 }
 
 const generateSlug = () => {
@@ -272,7 +312,8 @@ const openCreateModal = () => {
     slug: '',
     order: leagues.value.length + 1,
     isActive: true,
-    applicableTypes: []
+    applicableTypes: [],
+    group: 'ligas'
   }
   showModal.value = true
 }
@@ -284,7 +325,8 @@ const openEditModal = (league) => {
     slug: league.slug,
     order: league.order,
     isActive: league.isActive,
-    applicableTypes: [...(league.applicableTypes || [])]
+    applicableTypes: [...(league.applicableTypes || [])],
+    group: league.group || 'ligas'
   }
   showModal.value = true
 }
