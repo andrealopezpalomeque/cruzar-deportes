@@ -53,6 +53,7 @@ interface ApiLeague {
   order: number
   isActive: boolean
   applicableTypes: string[]
+  group: 'ligas' | 'deportes' | 'accesorios'
 }
 
 interface ApiCategory {
@@ -148,7 +149,8 @@ const transformLeague = (apiLeague: ApiLeague): League => {
     slug: apiLeague.slug,
     order: apiLeague.order,
     isActive: apiLeague.isActive,
-    applicableTypes: apiLeague.applicableTypes || []
+    applicableTypes: apiLeague.applicableTypes || [],
+    group: apiLeague.group || 'ligas'
   }
 }
 
