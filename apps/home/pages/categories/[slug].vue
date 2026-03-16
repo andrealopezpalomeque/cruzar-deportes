@@ -8,7 +8,7 @@
         </li>
         <li class="text-gray-400">/</li>
         <li>
-          <NuxtLink to="/categories" class="text-gray-500 hover:text-gray-700">Ligas</NuxtLink>
+          <NuxtLink to="/categories" class="text-gray-500 hover:text-gray-700">Categorias</NuxtLink>
         </li>
         <li class="text-gray-400">/</li>
         <li class="text-gray-900 font-medium">{{ displayName }}</li>
