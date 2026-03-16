@@ -9,11 +9,12 @@
     <!-- Two-Tier Filters -->
     <div class="mb-8 space-y-4">
       <!-- Product Type Filter -->
-      <div class="flex flex-wrap gap-2">
+      <div class="relative">
+        <div class="filter-scroll flex flex-nowrap md:flex-wrap gap-2 overflow-x-auto md:overflow-x-visible">
         <button
           @click="selectProductType('')"
           :class="[
-            'px-4 py-2 text-sm font-medium rounded-md transition-colors',
+            'px-4 py-2 text-sm font-medium rounded-md transition-colors flex-shrink-0',
             selectedProductType === ''
               ? 'bg-black text-white'
               : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
@@ -26,7 +27,7 @@
           :key="type.id"
           @click="selectProductType(type.slug)"
           :class="[
-            'px-4 py-2 text-sm font-medium rounded-md transition-colors',
+            'px-4 py-2 text-sm font-medium rounded-md transition-colors flex-shrink-0',
             selectedProductType === type.slug
               ? 'bg-black text-white'
               : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
@@ -34,14 +35,17 @@
         >
           {{ type.name }}
         </button>
+        </div>
+        <div class="absolute right-0 top-0 h-full w-8 bg-gradient-to-r from-transparent to-white pointer-events-none md:hidden"></div>
       </div>
 
       <!-- League Filter (shown when product type is selected) -->
-      <div v-if="filteredLeagues.length > 0" class="flex flex-wrap gap-2">
+      <div v-if="filteredLeagues.length > 0" class="relative">
+        <div class="filter-scroll flex flex-nowrap md:flex-wrap gap-2 overflow-x-auto md:overflow-x-visible">
         <button
           @click="selectedLeague = ''"
           :class="[
-            'px-3 py-1.5 text-xs font-medium rounded-md transition-colors',
+            'px-3 py-1.5 text-xs font-medium rounded-md transition-colors flex-shrink-0',
             selectedLeague === ''
               ? 'bg-gray-700 text-white'
               : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
@@ -54,7 +58,7 @@
           :key="league.id"
           @click="selectedLeague = league.slug"
           :class="[
-            'px-3 py-1.5 text-xs font-medium rounded-md transition-colors',
+            'px-3 py-1.5 text-xs font-medium rounded-md transition-colors flex-shrink-0',
             selectedLeague === league.slug
               ? 'bg-gray-700 text-white'
               : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
@@ -62,6 +66,8 @@
         >
           {{ league.name }}
         </button>
+        </div>
+        <div class="absolute right-0 top-0 h-full w-8 bg-gradient-to-r from-transparent to-white pointer-events-none md:hidden"></div>
       </div>
 
       <div class="text-sm text-gray-800">
@@ -252,3 +258,13 @@ useHead({
   ]
 })
 </script>
+
+<style scoped>
+.filter-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.filter-scroll::-webkit-scrollbar {
+  display: none;
+}
+</style>
