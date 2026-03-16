@@ -92,6 +92,7 @@ const createLeague = async (req, res) => {
       order: leagueData.order ?? 0,
       isActive: leagueData.isActive ?? true,
       applicableTypes: leagueData.applicableTypes || [],
+      group: leagueData.group || 'ligas',
       createdAt: now,
       updatedAt: now
     };
