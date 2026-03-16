@@ -17,10 +17,11 @@
         v-for="section in visibleSections"
         :key="section.group"
       >
-        <!-- Section Header: icon box + label + divider line -->
+        <!-- Section Header: tinted icon box + label + divider line -->
         <div class="flex items-center gap-3 mb-6">
-          <div class="w-7 h-7 bg-gray-100 rounded-md flex items-center justify-center flex-shrink-0">
-            <component :is="section.icon" class="w-4 h-4 text-gray-600" />
+          <div class="w-7 h-7 rounded-md flex items-center justify-center flex-shrink-0"
+               :class="[section.headerBg]">
+            <component :is="section.icon" class="w-4 h-4" :class="[section.headerIconColor]" />
           </div>
           <h2 class="text-base font-semibold text-gray-900 whitespace-nowrap">{{ section.label }}</h2>
           <div class="flex-1 h-px bg-gray-200"></div>
@@ -34,7 +35,17 @@
             :to="`/categories/${league.slug}`"
             class="group"
           >
-            <div class="bg-gradient-to-br from-gray-800 to-black rounded-lg p-6 hover:from-gray-700 hover:to-gray-900 transition-all duration-300">
+            <div class="bg-gradient-to-br rounded-lg p-6 relative overflow-hidden transition-all duration-300 hover:brightness-110"
+                 :class="[section.gradient]">
+              <!-- Corner glow -->
+              <div class="absolute top-0 right-0 w-10 h-10 rounded-bl-full"
+                   :class="[section.glow]"></div>
+
+              <!-- Card icon -->
+              <component :is="getLeagueIcon(league.slug)"
+                         class="w-5 h-5 mb-3"
+                         :class="[section.iconColor]" />
+
               <h3 class="text-base font-medium text-white mb-1 group-hover:text-gray-100 transition-colors">
                 {{ league.name }}
               </h3>
@@ -66,14 +77,68 @@ import IconArrowRight from '~icons/mdi/arrow-right'
 import IconTshirtCrew from '~icons/mdi/tshirt-crew'
 import IconSoccer from '~icons/mdi/soccer'
 import IconTrophyOutline from '~icons/mdi/trophy-outline'
+import IconFlagVariant from '~icons/mdi/flag-variant'
+import IconBasketball from '~icons/mdi/basketball'
+import IconShoeCleat from '~icons/mdi/shoe-cleat'
+import IconHandBackRight from '~icons/mdi/hand-back-right'
+import IconCoatRack from '~icons/mdi/coat-rack'
+import IconRun from '~icons/mdi/run'
+import IconTagOutline from '~icons/mdi/tag-outline'
 
 const productsStore = useProductsStore()
 
 const sectionConfig = [
-  { group: 'ligas', label: 'Ligas de Futbol', icon: IconSoccer },
-  { group: 'deportes', label: 'Mas Deportes', icon: IconTrophyOutline },
-  { group: 'accesorios', label: 'Indumentaria y Accesorios', icon: IconTshirtCrew },
+  {
+    group: 'ligas',
+    label: 'Ligas de Futbol',
+    icon: IconSoccer,
+    gradient: 'from-[#0f172a] to-[#1e3a5f]',
+    glow: 'bg-blue-500/15',
+    iconColor: 'text-blue-400/50',
+    headerBg: 'bg-blue-50',
+    headerIconColor: 'text-blue-600',
+  },
+  {
+    group: 'deportes',
+    label: 'Mas Deportes',
+    icon: IconTrophyOutline,
+    gradient: 'from-[#1a0a2e] to-[#3b1d6e]',
+    glow: 'bg-violet-500/15',
+    iconColor: 'text-violet-400/50',
+    headerBg: 'bg-violet-50',
+    headerIconColor: 'text-violet-600',
+  },
+  {
+    group: 'accesorios',
+    label: 'Indumentaria y Accesorios',
+    icon: IconTshirtCrew,
+    gradient: 'from-[#2a1a0a] to-[#5c3a1a]',
+    glow: 'bg-amber-500/15',
+    iconColor: 'text-amber-400/50',
+    headerBg: 'bg-amber-50',
+    headerIconColor: 'text-amber-600',
+  },
 ]
+
+const iconMap = {
+  'futbol-argentino': IconSoccer,
+  'premier-league': IconSoccer,
+  'la-liga': IconSoccer,
+  'serie-a': IconSoccer,
+  'bundesliga': IconSoccer,
+  'brasileirao': IconSoccer,
+  'resto-del-mundo': IconSoccer,
+  'selecciones': IconFlagVariant,
+  'basquet': IconBasketball,
+  'otros-deportes': IconTrophyOutline,
+  'botines': IconShoeCleat,
+  'guantes': IconHandBackRight,
+  'pelotas': IconSoccer,
+  'abrigos': IconCoatRack,
+  'ropa-de-entrenamiento': IconRun,
+}
+
+const getLeagueIcon = (slug) => iconMap[slug] || IconTagOutline
 
 const activeLeagues = computed(() =>
   productsStore.leagues.filter(l => l.isActive !== false)
