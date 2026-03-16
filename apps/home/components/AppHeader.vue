@@ -28,7 +28,7 @@
             to="/categories"
             class="text-gray-800 hover:text-black transition-colors"
           >
-            Ligas
+            Categorias
           </NuxtLink>
           <NuxtLink 
             to="/products" 
@@ -99,7 +99,7 @@
             class="block px-3 py-2 text-gray-800 hover:text-black"
             @click="mobileMenuOpen = false"
           >
-            Ligas
+            Categorias
           </NuxtLink>
           <NuxtLink 
             to="/products" 
