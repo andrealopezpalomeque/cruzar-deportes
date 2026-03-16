@@ -1,8 +1,8 @@
 <template>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div class="text-center mb-12">
-      <h1 class="text-4xl font-light text-gray-900 mb-4">Comprar por Liga</h1>
-      <p class="text-lg text-gray-800">Explora nuestra coleccion organizada por ligas y competiciones</p>
+      <h1 class="text-4xl font-light text-gray-900 mb-4">Explora por Categoria</h1>
+      <p class="text-lg text-gray-800">Toda nuestra coleccion organizada para vos</p>
     </div>
 
     <GridSkeleton
@@ -12,49 +12,50 @@
       :cols="3"
     />
 
-    <div v-else-if="leagues.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <NuxtLink
-        v-for="league in leagues"
-        :key="league.id"
-        :to="`/categories/${league.slug}`"
-        class="group"
+    <div v-else class="space-y-12">
+      <section
+        v-for="section in visibleSections"
+        :key="section.group"
       >
-        <div class="bg-white rounded-lg shadow-sm border hover:shadow-md transition-all duration-300">
-          <div class="aspect-w-16 aspect-h-9 bg-gradient-to-br from-gray-800 to-black rounded-t-lg relative overflow-hidden">
-            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <OptimizedImage
-                src="/images/cruzar-logo-short-1.png"
-                alt="Cruzar Deportes"
-                type="logo"
-                loading="lazy"
-                img-class="h-24 w-auto brightness-0 invert opacity-90"
-              />
-            </div>
+        <!-- Section Header: icon box + label + divider line -->
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-7 h-7 bg-gray-100 rounded-md flex items-center justify-center flex-shrink-0">
+            <component :is="section.icon" class="w-4 h-4 text-gray-600" />
           </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-medium text-gray-900 mb-2 group-hover:text-black transition-colors">
-              {{ league.name }}
-            </h3>
-            <p class="text-gray-800 text-sm">
-              {{ getProductCount(league.slug) }} productos disponibles
-            </p>
-
-            <div class="mt-4 flex items-center text-gray-800 group-hover:text-black transition-colors">
-              <span class="text-sm font-medium">Comprar ahora</span>
-              <IconArrowRight class="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </div>
-          </div>
+          <h2 class="text-base font-semibold text-gray-900 whitespace-nowrap">{{ section.label }}</h2>
+          <div class="flex-1 h-px bg-gray-200"></div>
         </div>
-      </NuxtLink>
+
+        <!-- Category Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <NuxtLink
+            v-for="league in section.leagues"
+            :key="league.id"
+            :to="`/categories/${league.slug}`"
+            class="group"
+          >
+            <div class="bg-gradient-to-br from-gray-800 to-black rounded-lg p-6 hover:from-gray-700 hover:to-gray-900 transition-all duration-300">
+              <h3 class="text-base font-medium text-white mb-1 group-hover:text-gray-100 transition-colors">
+                {{ league.name }}
+              </h3>
+              <p class="text-sm text-white/50">
+                {{ getProductCount(league.slug) }} productos disponibles
+              </p>
+              <div class="mt-4 flex items-center text-white/60 group-hover:text-white/80 transition-colors">
+                <span class="text-sm font-medium">Comprar ahora</span>
+                <IconArrowRight class="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </NuxtLink>
+        </div>
+      </section>
     </div>
 
     <!-- Empty State -->
-    <div v-else class="text-center py-12">
+    <div v-if="!productsStore.loading && visibleSections.length === 0" class="text-center py-12">
       <IconTshirtCrew class="h-16 w-16 text-gray-400 mx-auto mb-4" />
-      <h3 class="text-lg font-medium text-gray-900 mb-2">No hay ligas disponibles</h3>
-      <p class="text-gray-800">No hay ligas disponibles en este momento.</p>
+      <h3 class="text-lg font-medium text-gray-900 mb-2">No hay categorias disponibles</h3>
+      <p class="text-gray-800">No hay categorias disponibles en este momento.</p>
     </div>
   </div>
 </template>
@@ -63,10 +64,31 @@
 import { useProductsStore } from '~/stores/products'
 import IconArrowRight from '~icons/mdi/arrow-right'
 import IconTshirtCrew from '~icons/mdi/tshirt-crew'
+import IconSoccer from '~icons/mdi/soccer'
+import IconTrophyOutline from '~icons/mdi/trophy-outline'
 
 const productsStore = useProductsStore()
 
-const leagues = computed(() => productsStore.leagues.filter(l => l.isActive !== false))
+const sectionConfig = [
+  { group: 'ligas', label: 'Ligas de Futbol', icon: IconSoccer },
+  { group: 'deportes', label: 'Mas Deportes', icon: IconTrophyOutline },
+  { group: 'accesorios', label: 'Indumentaria y Accesorios', icon: IconTshirtCrew },
+]
+
+const activeLeagues = computed(() =>
+  productsStore.leagues.filter(l => l.isActive !== false)
+)
+
+const visibleSections = computed(() => {
+  return sectionConfig
+    .map(section => ({
+      ...section,
+      leagues: activeLeagues.value
+        .filter(l => l.group === section.group)
+        .sort((a, b) => a.order - b.order)
+    }))
+    .filter(section => section.leagues.length > 0)
+})
 
 const getProductCount = (leagueSlug) => {
   return productsStore.getProductsByLeague(leagueSlug).length
@@ -77,9 +99,9 @@ onMounted(() => {
 })
 
 useHead({
-  title: 'Ligas - Cruzar Deportes',
+  title: 'Categorias - Cruzar Deportes',
   meta: [
-    { name: 'description', content: 'Navega por nuestras ligas de camisetas deportivas organizadas por competiciones de futbol.' }
+    { name: 'description', content: 'Explora nuestra coleccion de camisetas deportivas, indumentaria y accesorios organizados por categoria.' }
   ]
 })
 </script>
