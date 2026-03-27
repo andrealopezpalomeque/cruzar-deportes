@@ -11,6 +11,11 @@ const uploadToCloudinary = (buffer, options = {}) => {
       resource_type: 'image',
       allowed_formats: ALLOWED_FORMATS,
       transformation: [{ quality: 'auto' }],
+      eager: [
+        { width: 400, crop: 'limit', quality: 'auto', format: 'auto' },
+        { width: 800, crop: 'limit', quality: 'auto', format: 'auto' }
+      ],
+      eager_async: false,
       ...options
     };
 
@@ -36,11 +41,16 @@ const uploadImage = async (req, res) => {
     const folder = req.query.folder || DEFAULT_FOLDER;
     const result = await uploadToCloudinary(req.file.buffer, { folder });
 
+    const thumbnailUrl = result.eager && result.eager[0] ? result.eager[0].secure_url : result.secure_url;
+    const mainUrl = result.eager && result.eager[1] ? result.eager[1].secure_url : result.secure_url;
+
     res.json({
       success: true,
       data: {
         url: result.secure_url,
-        publicId: result.public_id
+        publicId: result.public_id,
+        thumbnail: thumbnailUrl,
+        main: mainUrl
       }
     });
   } catch (error) {
@@ -69,7 +79,9 @@ const uploadMultipleImages = async (req, res) => {
 
     const images = results.map(result => ({
       url: result.secure_url,
-      publicId: result.public_id
+      publicId: result.public_id,
+      thumbnail: result.eager && result.eager[0] ? result.eager[0].secure_url : result.secure_url,
+      main: result.eager && result.eager[1] ? result.eager[1].secure_url : result.secure_url
     }));
 
     res.json({
