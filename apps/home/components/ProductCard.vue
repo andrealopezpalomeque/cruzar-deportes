@@ -10,11 +10,10 @@
       <div class="aspect-w-1 aspect-h-1 bg-gray-200 rounded-t-lg overflow-hidden relative">
         <!-- Image Content Wrapper -->
         <OptimizedImage
-          v-if="product.images?.length > 0"
+          v-if="product.images?.length"
           wrapper-class="aspect-content block"
-          :src="product.images[0]"
+          :src="getFirstImageUrl(product.images, 'thumbnail')"
           :alt="product.name"
-          type="productCard"
           loading="lazy"
           fetchpriority="auto"
           img-class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
@@ -106,6 +105,7 @@ import IconStar from '~icons/mdi/star'
 import IconImageMultiple from '~icons/mdi/image-multiple'
 import IconPlus from '~icons/mdi/plus'
 import { formatArs } from '~/utils/currency'
+import { getFirstImageUrl } from '~/utils/imageHelpers'
 
 const props = defineProps(['product'])
 const productsStore = useProductsStore()

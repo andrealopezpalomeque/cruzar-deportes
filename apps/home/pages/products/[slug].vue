@@ -62,6 +62,7 @@ import { useProductsStore } from '~/stores/products'
 import IconChevronRight from '~icons/mdi/chevron-right'
 import IconAlertCircle from '~icons/mdi/alert-circle'
 import IconArrowLeft from '~icons/mdi/arrow-left'
+import { getFirstImageUrl } from '~/utils/imageHelpers'
 
 const route = useRoute()
 const productsStore = useProductsStore()
@@ -146,27 +147,27 @@ useHead({
     },
     { 
       property: 'og:image', 
-      content: () => productImages.value[0] || (product.value?.images?.[0] || '/images/cruzar-logo-1.png')
+      content: () => getFirstImageUrl(product.value?.images, 'main') || '/images/cruzar-logo-1.png'
     },
-    { 
-      property: 'og:type', 
+    {
+      property: 'og:type',
       content: 'product'
     },
-    { 
-      name: 'twitter:card', 
+    {
+      name: 'twitter:card',
       content: 'summary_large_image'
     },
-    { 
-      name: 'twitter:title', 
+    {
+      name: 'twitter:title',
       content: () => product.value ? `${product.value.name} - Cruzar Deportes` : 'Producto - Cruzar Deportes'
     },
-    { 
-      name: 'twitter:description', 
+    {
+      name: 'twitter:description',
       content: () => product.value?.description || `Compra ${product.value?.name || 'productos'} en Cruzar Deportes. ${leagueName.value} de calidad premium.`
     },
-    { 
-      name: 'twitter:image', 
-      content: () => productImages.value[0] || (product.value?.images?.[0] || '/images/cruzar-logo-1.png')
+    {
+      name: 'twitter:image',
+      content: () => getFirstImageUrl(product.value?.images, 'main') || '/images/cruzar-logo-1.png'
     }
   ],
   link: [

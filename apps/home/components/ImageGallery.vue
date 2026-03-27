@@ -21,7 +21,6 @@
         :key="currentImage"
         :src="currentImage"
         :alt="`${productName} - Imagen ${currentIndex + 1}`"
-        type="gallery"
         loading="eager"
         fetchpriority="high"
         wrapper-class="w-full h-full"
@@ -38,7 +37,7 @@
 
       <!-- Simple Navigation - only if multiple images -->
       <button
-        v-if="images.length > 1 && currentIndex > 0"
+        v-if="resolvedImages.length > 1 && currentIndex > 0"
         @click="previousImage"
         class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white shadow-lg text-gray-800 rounded-full p-2 hover:bg-gray-50"
       >
@@ -46,7 +45,7 @@
       </button>
       
       <button
-        v-if="images.length > 1 && currentIndex < images.length - 1"
+        v-if="resolvedImages.length > 1 && currentIndex < resolvedImages.length - 1"
         @click="nextImage"
         class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white shadow-lg text-gray-800 rounded-full p-2 hover:bg-gray-50"
       >
@@ -54,16 +53,16 @@
       </button>
       
       <!-- Simple counter -->
-      <div 
-        v-if="images.length > 1" 
+      <div
+        v-if="resolvedImages.length > 1"
         class="absolute bottom-2 right-2 bg-white text-gray-800 text-sm px-2 py-1 rounded shadow-sm"
       >
-        {{ currentIndex + 1 }} / {{ images.length }}
+        {{ currentIndex + 1 }} / {{ resolvedImages.length }}
       </div>
     </div>
     
     <!-- Thumbnail Strip -->
-    <div v-if="images.length > 1" class="relative">
+    <div v-if="resolvedImages.length > 1" class="relative">
       <!-- Thumbnail navigation buttons -->
       <button
         v-if="showThumbnailNav"
@@ -92,7 +91,7 @@
         style="scroll-behavior: smooth;"
       >
         <button
-          v-for="(image, index) in images"
+          v-for="(thumbnailUrl, index) in resolvedThumbnails"
           :key="index"
           @click="setCurrentImage(index)"
           class="flex-shrink-0 w-16 h-16 rounded-md overflow-hidden border-2 transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 shadow-sm hover:shadow-md"
@@ -102,9 +101,8 @@
           }"
         >
           <OptimizedImage
-            :src="image"
+            :src="thumbnailUrl"
             :alt="`${productName} thumbnail ${index + 1}`"
-            type="thumbnail"
             loading="lazy"
             wrapper-class="w-full h-full"
             img-class="w-full h-full object-cover"
@@ -119,6 +117,7 @@
 import IconImage from '~icons/mdi/image'
 import IconChevronLeft from '~icons/mdi/chevron-left'
 import IconChevronRight from '~icons/mdi/chevron-right'
+import { getImageUrl, getImageUrls } from '~/utils/imageHelpers'
 
 const props = defineProps(['images', 'productName'])
 
@@ -128,11 +127,15 @@ const imageLoading = ref(false)
 const thumbnailContainer = ref(null)
 const thumbnailScrollPosition = ref(0)
 
+// Resolved image URLs
+const resolvedImages = computed(() => getImageUrls(props.images, 'main'))
+const resolvedThumbnails = computed(() => getImageUrls(props.images, 'thumbnail'))
+
 // Computed properties
-const currentImage = computed(() => props.images[currentIndex.value])
+const currentImage = computed(() => resolvedImages.value[currentIndex.value])
 
 const showThumbnailNav = computed(() => {
-  if (!thumbnailContainer.value || props.images.length <= 4) return false
+  if (!thumbnailContainer.value || resolvedImages.value.length <= 4) return false
   return thumbnailContainer.value.scrollWidth > thumbnailContainer.value.clientWidth
 })
 
@@ -143,14 +146,14 @@ const maxThumbnailScroll = computed(() => {
 
 // Methods
 function setCurrentImage(index) {
-  if (index >= 0 && index < props.images.length) {
+  if (index >= 0 && index < resolvedImages.value.length) {
     imageLoading.value = true
     currentIndex.value = index
   }
 }
 
 function nextImage() {
-  if (currentIndex.value < props.images.length - 1) {
+  if (currentIndex.value < resolvedImages.value.length - 1) {
     setCurrentImage(currentIndex.value + 1)
   }
 }
