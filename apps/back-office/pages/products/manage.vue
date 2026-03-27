@@ -1076,11 +1076,13 @@ const { compressImage, getFolderImages, uploadImage, deleteImage: deleteCloudina
 const toast = useToast()
 
 // Helper to optimize Cloudinary URLs
-const optimizeUrl = (url, size = 300) => {
-  if (!url.includes('cloudinary.com')) {
+const optimizeUrl = (urlOrImage, size = 300) => {
+  const url = typeof urlOrImage === 'object' && urlOrImage !== null
+    ? (urlOrImage.thumbnail || urlOrImage.main || urlOrImage.original || '')
+    : urlOrImage
+  if (!url || !url.includes('cloudinary.com')) {
     return url
   }
-  // Use same optimization logic as home project
   return url.replace('/upload/', `/upload/c_thumb,w_${size},h_${size},g_face/`)
 }
 

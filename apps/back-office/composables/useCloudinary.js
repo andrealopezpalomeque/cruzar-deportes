@@ -98,7 +98,11 @@ export const useCloudinary = () => {
     })
 
     if (response.success && response.data) {
-      return response.data.url
+      return {
+        original: response.data.url,
+        main: response.data.main || response.data.url,
+        thumbnail: response.data.thumbnail || response.data.url
+      }
     }
     throw new Error(response.error || 'Upload failed')
   }
@@ -124,7 +128,11 @@ export const useCloudinary = () => {
     })
 
     if (response.success && response.data) {
-      return response.data.map(img => img.url)
+      return response.data.map(img => ({
+        original: img.url,
+        main: img.main || img.url,
+        thumbnail: img.thumbnail || img.url
+      }))
     }
     throw new Error(response.error || 'Upload failed')
   }
@@ -147,73 +155,11 @@ export const useCloudinary = () => {
     }
   }
 
-  // ============================================
-  // URL TRANSFORMATION (client-side only)
-  // ============================================
-
-  /**
-   * Get optimized image URL with Cloudinary transformations
-   * @param {string} url - Original Cloudinary URL
-   * @param {Object} options - Transformation options
-   * @returns {string} Optimized URL
-   */
-  const getOptimizedUrl = (url, options = {}) => {
-    if (!url || !url.includes('cloudinary.com')) {
-      return url
-    }
-
-    const {
-      width,
-      height,
-      quality = 'auto',
-      format = 'auto',
-      crop = 'fit'
-    } = options
-
-    const transformations = []
-
-    if (width || height) {
-      const dimensions = []
-      if (width) dimensions.push(`w_${width}`)
-      if (height) dimensions.push(`h_${height}`)
-      if (crop) dimensions.push(`c_${crop}`)
-      transformations.push(dimensions.join(','))
-    }
-
-    if (quality) transformations.push(`q_${quality}`)
-    if (format) transformations.push(`f_${format}`)
-
-    if (transformations.length === 0) {
-      return url
-    }
-
-    const transformString = transformations.join('/')
-    return url.replace('/upload/', `/upload/${transformString}/`)
-  }
-
-  /**
-   * Get thumbnail URL with square crop
-   * @param {string} url - Original Cloudinary URL
-   * @param {number} size - Thumbnail size in pixels
-   * @returns {string} Thumbnail URL
-   */
-  const getThumbnailUrl = (url, size = 300) => {
-    return getOptimizedUrl(url, {
-      width: size,
-      height: size,
-      crop: 'fill',
-      quality: 'auto',
-      format: 'auto'
-    })
-  }
-
   return {
     compressImage,
     getFolderImages,
     uploadImage,
     uploadMultipleImages,
-    deleteImage,
-    getOptimizedUrl,
-    getThumbnailUrl
+    deleteImage
   }
 }
