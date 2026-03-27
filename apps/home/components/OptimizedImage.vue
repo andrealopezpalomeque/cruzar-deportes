@@ -1,50 +1,7 @@
 <template>
-  <picture :class="['optimized-image', 'block', wrapperClass]">
-    <!-- WebP format sources -->
-    <source
-      v-if="imageData.webp"
-      type="image/webp"
-      :srcset="imageData.webp.mobile"
-      media="(max-width: 768px)"
-    />
-    <source
-      v-if="imageData.webp"
-      type="image/webp"
-      :srcset="imageData.webp.desktop"
-      media="(min-width: 769px)"
-    />
-
-    <!-- AVIF format sources (progressive enhancement) -->
-    <source
-      v-if="imageData.avif"
-      type="image/avif"
-      :srcset="imageData.avif.mobile"
-      media="(max-width: 768px)"
-    />
-    <source
-      v-if="imageData.avif"
-      type="image/avif"
-      :srcset="imageData.avif.desktop"
-      media="(min-width: 769px)"
-    />
-
-    <!-- JPEG fallback sources -->
-    <source
-      v-if="imageData.jpeg"
-      type="image/jpeg"
-      :srcset="imageData.jpeg.mobile"
-      media="(max-width: 768px)"
-    />
-    <source
-      v-if="imageData.jpeg"
-      type="image/jpeg"
-      :srcset="imageData.jpeg.desktop"
-      media="(min-width: 769px)"
-    />
-
-    <!-- Fallback img element -->
+  <div :class="['optimized-image', 'block', wrapperClass]">
     <img
-      :src="imageData.fallback || src"
+      :src="resolvedSrc"
       :alt="alt"
       :class="imgClass"
       :width="width"
@@ -55,13 +12,10 @@
       @load="handleLoad"
       @error="handleError"
     />
-  </picture>
+  </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
-import { getImageLoader } from '~/utils/cloudinaryImageLoader'
-
 const props = defineProps({
   src: {
     type: String,
@@ -70,11 +24,6 @@ const props = defineProps({
   alt: {
     type: String,
     required: true
-  },
-  type: {
-    type: String,
-    default: 'productCard',
-    validator: (value) => ['productCard', 'gallery', 'thumbnail', 'logo'].includes(value)
   },
   imgClass: {
     type: String,
@@ -103,20 +52,6 @@ const props = defineProps({
     default: 'auto',
     validator: (value) => ['high', 'low', 'auto'].includes(value)
   },
-  quality: {
-    type: [String, Number],
-    default: 'auto'
-  },
-  crop: {
-    type: String,
-    default: 'limit',
-    validator: (value) => ['fill', 'fit', 'limit', 'thumb'].includes(value)
-  },
-  formats: {
-    type: Array,
-    default: () => ['webp', 'jpeg'],
-    validator: (value) => value.every(format => ['webp', 'avif', 'jpeg'].includes(format))
-  },
   wrapperClass: {
     type: [String, Array, Object],
     default: ''
@@ -125,66 +60,15 @@ const props = defineProps({
 
 const emit = defineEmits(['load', 'error'])
 
-// Get image loader instance
-const imageLoader = getImageLoader()
+const resolvedSrc = computed(() => props.src || '')
 
-// Reactive reference for the mapped URL
-const mappedSrc = ref('')
-const isLoading = ref(true)
-
-// Basic heuristic for detecting if a Cloudinary URL already points to a transformed asset
-function hasFileExtension(url) {
-  return /\.(jpg|jpeg|png|webp|avif|gif|bmp|tiff)(\?|$)/i.test(url)
-}
-
-// Generate responsive image data
-const imageData = computed(() => {
-  if (!mappedSrc.value) {
-    return { fallback: props.src }
-  }
-
-  // Get breakpoints for the specified type
-  const breakpoints = imageLoader.getBreakpoints()
-  const typeBreakpoints = breakpoints[props.type] || breakpoints.productCard
-
-  // Only apply Cloudinary optimizations if it's a Cloudinary URL
-  if (imageLoader.isCloudinaryUrl(mappedSrc.value) && hasFileExtension(mappedSrc.value)) {
-    return imageLoader.generateResponsiveImageData(mappedSrc.value, typeBreakpoints, {
-      quality: props.quality,
-      crop: props.crop,
-      formats: props.formats
-    })
-  } else {
-    // For non-Cloudinary URLs, return simple fallback
-    return { fallback: mappedSrc.value }
-  }
-})
-
-// Set the image URL on mount
-onMounted(() => {
-  mappedSrc.value = props.src
-  isLoading.value = false
-})
-
-// Watch for src changes
-watch(() => props.src, (newSrc) => {
-  if (newSrc) {
-    mappedSrc.value = newSrc
-    isLoading.value = false
-  }
-})
-
-// Handle image load event
 function handleLoad(event) {
   emit('load', event)
 }
 
-// Handle image error event
 function handleError(event) {
   console.warn('OptimizedImage: Failed to load image:', props.src)
   emit('error', event)
-
-  // Try to load fallback image
   const img = event.target
   if (img && !img.src.includes('/images/cruzar-logo-1.png')) {
     img.src = '/images/cruzar-logo-1.png'
