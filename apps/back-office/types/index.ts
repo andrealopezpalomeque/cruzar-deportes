@@ -1,6 +1,12 @@
 // Category type (simple string for flexibility with external API)
 export type CategoryType = string
 
+export interface ProductImage {
+  original: string
+  main: string
+  thumbnail: string
+}
+
 // Base interfaces
 export interface Product {
   id: string
@@ -13,7 +19,7 @@ export interface Product {
   productType?: string
   league?: string
   subcategory?: string
-  images: string[]
+  images: (ProductImage | string)[]
   totalImages?: number
   sizes: string[]
   colors: string[]

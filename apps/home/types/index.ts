@@ -1,5 +1,11 @@
 export type CategoryType = string
 
+export interface ProductImage {
+  original: string
+  main: string
+  thumbnail: string
+}
+
 export interface Product {
   id: string
   name: string
@@ -11,7 +17,7 @@ export interface Product {
   productType?: string
   league?: string
   subcategory?: string
-  images: string[]
+  images: (ProductImage | string)[]
   totalImages?: number
   sizes: string[]
   inStock: boolean
