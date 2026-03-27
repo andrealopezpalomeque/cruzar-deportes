@@ -17,6 +17,31 @@
  */
 
 const admin = require('firebase-admin')
+const path = require('path')
+const fs = require('fs')
+
+// Load .env from services/api (manual parse to avoid dotenv version issues)
+const envPath = path.join(__dirname, '../services/api/.env')
+const envContent = fs.readFileSync(envPath, 'utf8')
+for (const line of envContent.split('\n')) {
+  const trimmed = line.trim()
+  if (!trimmed || trimmed.startsWith('#')) continue
+  const eqIndex = trimmed.indexOf('=')
+  if (eqIndex === -1) continue
+  const key = trimmed.slice(0, eqIndex)
+  let value = trimmed.slice(eqIndex + 1)
+  // Strip surrounding quotes (before \n conversion)
+  if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+    value = value.slice(1, -1)
+  }
+  // Trim trailing whitespace/newlines before \n conversion
+  value = value.trimEnd()
+  // Convert literal \n to real newlines (after quote stripping and trimming)
+  value = value.replace(/\\n/g, '\n')
+  if (!process.env[key]) {
+    process.env[key] = value
+  }
+}
 
 // --- Config ---
 const projectId = process.env.FIREBASE_PROJECT_ID
