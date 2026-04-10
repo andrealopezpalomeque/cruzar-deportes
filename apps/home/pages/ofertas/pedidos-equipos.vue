@@ -271,8 +271,8 @@
             </div>
 
             <div class="bg-white rounded-sm p-6 border border-surface-muted cursor-default">
-              <h3 class="font-medium text-lg mb-2">¿Cuánto tiempo tarda la producción?</h3>
-              <p class="text-ink">El tiempo de producción varía según la cantidad: 7-10 días para pedidos de 10-20 unidades, 10-14 días para pedidos mayores.</p>
+              <h3 class="font-medium text-lg mb-2">¿En cuánto tiempo me llega?</h3>
+              <p class="text-ink">El tiempo de producción y envío es de 21 a 25 días hábiles aproximadamente.</p>
             </div>
 
             <div class="bg-white rounded-sm p-6 border border-surface-muted cursor-default">
