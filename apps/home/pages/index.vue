@@ -7,7 +7,7 @@
         <img
           src="/images/session/hero-group-couch.jpg"
           alt=""
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover object-[center_25%]"
           fetchpriority="high"
           loading="eager"
         />
@@ -115,35 +115,35 @@
     <section class="py-16 md:py-24">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 reveal-stagger">
-          <div class="reveal col-span-2 md:col-span-1 md:row-span-2 overflow-hidden">
+          <div class="reveal col-span-2 md:col-span-1 md:row-span-2 overflow-hidden h-72 md:h-auto">
             <img
               src="/images/session/hero-model-argentina.jpg"
               alt="Camiseta Argentina retro"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
           </div>
-          <div class="reveal overflow-hidden">
+          <div class="reveal overflow-hidden h-56 md:h-auto">
             <img
               src="/images/session/detail-sevilla-closeup.jpg"
               alt="Detalle camiseta Sevilla"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              class="w-full h-full object-cover object-[center_30%] hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
           </div>
-          <div class="reveal overflow-hidden">
+          <div class="reveal overflow-hidden h-56 md:h-auto">
             <img
               src="/images/session/hero-beckham-back.jpg"
               alt="Camiseta Beckham Manchester United"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              class="w-full h-full object-cover object-[center_20%] hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
           </div>
-          <div class="reveal overflow-hidden col-span-2">
+          <div class="reveal overflow-hidden col-span-2 h-64 md:h-80">
             <img
               src="/images/session/hero-model-manchester.jpg"
               alt="Modelo con camiseta Manchester United"
-              class="w-full h-64 md:h-80 object-cover object-top hover:scale-105 transition-transform duration-700"
+              class="w-full h-full object-cover object-[center_25%] hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
           </div>
@@ -215,7 +215,7 @@
         <img
           src="/images/session/hero-model-sevilla.jpg"
           alt=""
-          class="w-full h-full object-cover object-top"
+          class="w-full h-full object-cover object-[30%_15%]"
           loading="lazy"
         />
         <div class="absolute inset-0 bg-gradient-to-l from-ink/85 via-ink/60 to-transparent"></div>
