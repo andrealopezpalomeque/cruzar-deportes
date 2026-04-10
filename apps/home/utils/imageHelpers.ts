@@ -4,7 +4,9 @@ const CLOUDINARY_OPTIMIZATIONS = 'f_auto,q_auto'
 
 function applyCloudinaryOptimizations(url: string): string {
   if (!url || !url.includes('res.cloudinary.com') || url.includes('f_auto')) return url
-  return url.replace('/upload/', `/upload/${CLOUDINARY_OPTIMIZATIONS},`)
+  const afterUpload = url.split('/upload/')[1] || ''
+  const separator = /^[a-z]_/.test(afterUpload) ? ',' : '/'
+  return url.replace('/upload/', `/upload/${CLOUDINARY_OPTIMIZATIONS}${separator}`)
 }
 
 /**
