@@ -7,7 +7,7 @@
         <img
           src="/images/session/hero-group-couch.jpg"
           alt=""
-          class="w-full h-full object-cover object-[center_25%]"
+          class="w-full h-full object-cover object-[center_30%]"
           fetchpriority="high"
           loading="eager"
         />
@@ -215,7 +215,7 @@
         <img
           src="/images/session/hero-model-sevilla.jpg"
           alt=""
-          class="w-full h-full object-cover object-[30%_15%]"
+          class="w-full h-full object-cover object-[30%_22%]"
           loading="lazy"
         />
         <div class="absolute inset-0 bg-gradient-to-l from-ink/85 via-ink/60 to-transparent"></div>

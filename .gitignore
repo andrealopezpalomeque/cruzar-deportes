@@ -31,3 +31,8 @@ logs
 firebase-debug.log
 firebase-debug.*.log
 .firebaserc
+.agents/
+.impeccable.md
+skills-lock.json
+.superpowers/
+docs/superpowers/
