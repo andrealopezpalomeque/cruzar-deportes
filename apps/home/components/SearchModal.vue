@@ -1,10 +1,10 @@
 <template>
   <div
     v-if="searchStore.isOpen"
-    class="fixed inset-0 z-50 overflow-y-auto"
+    class="fixed inset-0 z-[60] overflow-y-auto"
     @click="searchStore.closeSearch"
   >
-    <div class="flex min-h-screen items-start justify-center p-4 pt-16">
+    <div class="flex min-h-screen items-start justify-center p-4 pt-24">
       <!-- Backdrop -->
       <div class="fixed inset-0 bg-ink/25 transition-opacity"></div>
 

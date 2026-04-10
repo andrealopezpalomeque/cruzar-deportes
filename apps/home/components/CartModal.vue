@@ -1,10 +1,10 @@
 <template>
   <div
     v-if="cartStore.isOpen"
-    class="fixed inset-0 z-50 overflow-y-auto"
+    class="fixed inset-0 z-[60] overflow-y-auto"
     @click="cartStore.closeCart"
   >
-    <div class="flex min-h-screen items-start justify-center p-2 sm:p-4 pt-4 sm:pt-8">
+    <div class="flex min-h-screen items-start justify-center p-2 sm:p-4 pt-24 sm:pt-28">
       <!-- Backdrop -->
       <div class="fixed inset-0 bg-ink/25 transition-opacity"></div>
 
