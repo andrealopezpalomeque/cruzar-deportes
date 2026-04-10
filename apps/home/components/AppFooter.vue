@@ -9,7 +9,7 @@
               alt="Cruzar Deportes Logo"
               type="logo"
               loading="lazy"
-              img-class="h-16 w-auto brightness-0 invert"
+              img-class="h-20 md:h-24 w-auto brightness-0 invert"
             />
           </div>
           <p class="text-white/70 mb-6 leading-relaxed cursor-default max-w-xs">

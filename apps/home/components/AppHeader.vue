@@ -11,7 +11,7 @@
               type="logo"
               loading="eager"
               fetchpriority="high"
-              img-class="h-16 md:h-20 w-auto"
+              img-class="h-20 md:h-24 w-auto -my-2"
             />
           </NuxtLink>
         </div>
