@@ -90,7 +90,7 @@ const productsStore = useProductsStore()
 const sectionConfig = [
   {
     group: 'ligas',
-    label: 'Ligas de Futbol',
+    label: 'Futbol',
     icon: IconSoccer,
     gradient: 'from-[#0f172a] to-[#1e3a5f]',
     glow: 'bg-blue-500/15',

@@ -183,7 +183,7 @@
                 required
                 class="input"
               >
-                <option value="ligas">Ligas de Futbol</option>
+                <option value="ligas">Futbol</option>
                 <option value="deportes">Mas Deportes</option>
                 <option value="accesorios">Indumentaria y Accesorios</option>
               </select>
@@ -285,7 +285,7 @@ const getProductTypeName = (slug) => {
 }
 
 const groupLabels = {
-  ligas: 'Ligas de Futbol',
+  ligas: 'Futbol',
   deportes: 'Mas Deportes',
   accesorios: 'Indumentaria y Accesorios'
 }
