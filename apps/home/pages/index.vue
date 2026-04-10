@@ -233,7 +233,10 @@ onMounted(() => {
 useHead({
   title: 'Cruzar Deportes - Camisetas Deportivas',
   meta: [
-    { name: 'description', content: 'Compra camisetas deportivas de equipos de todo el mundo. Encuentra la mercadería de calidad premium de tu equipo favorito.' }
+    { name: 'description', content: 'Compra camisetas deportivas de equipos de todo el mundo. Encuentra la mercadería de calidad premium de tu equipo favorito.' },
+    { property: 'og:title', content: 'Cruzar Deportes - Camisetas Deportivas' },
+    { property: 'og:description', content: 'Compra camisetas deportivas de equipos de todo el mundo. Encuentra la mercadería de calidad premium de tu equipo favorito.' },
+    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
   ]
 })
 </script>

@@ -501,7 +501,26 @@ useHead({
         }
         return 'Busca entre miles de camisetas deportivas y encuentra la de tu equipo favorito en Cruzar Deportes.'
       })
-    }
+    },
+    {
+      property: 'og:title',
+      content: computed(() => {
+        if (searchQuery.value) {
+          return `Resultados para "${searchQuery.value}" - Cruzar Deportes`
+        }
+        return 'Buscar productos - Cruzar Deportes'
+      })
+    },
+    {
+      property: 'og:description',
+      content: computed(() => {
+        if (searchQuery.value) {
+          return `Encuentra ${searchQuery.value} y más productos en Cruzar Deportes. Camisetas deportivas de calidad.`
+        }
+        return 'Busca entre miles de camisetas deportivas y encuentra la de tu equipo favorito en Cruzar Deportes.'
+      })
+    },
+    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
   ]
 })
 </script>

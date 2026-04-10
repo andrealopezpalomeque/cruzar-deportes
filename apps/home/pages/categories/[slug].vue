@@ -221,7 +221,10 @@ onMounted(() => {
 useHead(() => ({
   title: `${displayName.value} - Cruzar Deportes`,
   meta: [
-    { name: 'description', content: `Explora nuestra colección de ${displayName.value.toLowerCase()}.` }
+    { name: 'description', content: `Explora nuestra colección de ${displayName.value.toLowerCase()}.` },
+    { property: 'og:title', content: `${displayName.value} - Cruzar Deportes` },
+    { property: 'og:description', content: `Explora nuestra colección de ${displayName.value.toLowerCase()}.` },
+    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
   ]
 }))
 </script>

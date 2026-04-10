@@ -254,7 +254,10 @@ onMounted(() => {
 useHead({
   title: 'Todos los Productos - Cruzar Deportes',
   meta: [
-    { name: 'description', content: 'Navega nuestra colección completa de camisetas deportivas de equipos de todo el mundo.' }
+    { name: 'description', content: 'Navega nuestra colección completa de camisetas deportivas de equipos de todo el mundo.' },
+    { property: 'og:title', content: 'Todos los Productos - Cruzar Deportes' },
+    { property: 'og:description', content: 'Navega nuestra colección completa de camisetas deportivas de equipos de todo el mundo.' },
+    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
   ]
 })
 </script>

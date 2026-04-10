@@ -66,7 +66,10 @@ onMounted(() => {
 useHead({
   title: 'Tipos de Producto - Cruzar Deportes',
   meta: [
-    { name: 'description', content: 'Explora nuestra colección de camisetas, shorts, kits para niños y más.' }
+    { name: 'description', content: 'Explora nuestra colección de camisetas, shorts, kits para niños y más.' },
+    { property: 'og:title', content: 'Tipos de Producto - Cruzar Deportes' },
+    { property: 'og:description', content: 'Explora nuestra colección de camisetas, shorts, kits para niños y más.' },
+    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
   ]
 })
 </script>

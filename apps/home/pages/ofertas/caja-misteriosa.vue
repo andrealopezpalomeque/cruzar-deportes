@@ -252,7 +252,10 @@ const scrollToConfigurator = () => {
 useHead({
   title: 'Caja Misteriosa - Ofertas Especiales - Cruzar Deportes',
   meta: [
-    { name: 'description', content: 'Recibí una selección sorpresa de camisetas deportivas. Configurá tu caja según tus preferencias y descubrí camisetas únicas.' }
+    { name: 'description', content: 'Recibí una selección sorpresa de camisetas deportivas. Configurá tu caja según tus preferencias y descubrí camisetas únicas.' },
+    { property: 'og:title', content: 'Caja Misteriosa - Ofertas Especiales - Cruzar Deportes' },
+    { property: 'og:description', content: 'Recibí una selección sorpresa de camisetas deportivas. Configurá tu caja según tus preferencias y descubrí camisetas únicas.' },
+    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
   ]
 })
 </script>

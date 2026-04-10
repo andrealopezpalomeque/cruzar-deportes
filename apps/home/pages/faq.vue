@@ -419,6 +419,9 @@ useHead({
       content:
         "Respuestas a las preguntas más frecuentes sobre compras, envíos, devoluciones y atención al cliente en Cruzar Deportes.",
     },
+    { property: 'og:title', content: 'Preguntas Frecuentes | Cruzar Deportes' },
+    { property: 'og:description', content: 'Respuestas a las preguntas más frecuentes sobre compras, envíos, devoluciones y atención al cliente en Cruzar Deportes.' },
+    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
   ],
 });
 

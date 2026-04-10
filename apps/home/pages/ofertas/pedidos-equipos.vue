@@ -317,7 +317,10 @@ const openWhatsApp = () => {
 useHead({
   title: 'Pedidos de Equipos - Ofertas Especiales - Cruzar Deportes',
   meta: [
-    { name: 'description', content: 'Equipá a todo tu equipo con camisetas personalizadas. Descuentos por cantidad y personalización incluida. Consultá por WhatsApp.' }
+    { name: 'description', content: 'Equipá a todo tu equipo con camisetas personalizadas. Descuentos por cantidad y personalización incluida. Consultá por WhatsApp.' },
+    { property: 'og:title', content: 'Pedidos de Equipos - Ofertas Especiales - Cruzar Deportes' },
+    { property: 'og:description', content: 'Equipá a todo tu equipo con camisetas personalizadas. Descuentos por cantidad y personalización incluida. Consultá por WhatsApp.' },
+    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
   ]
 })
 </script>
