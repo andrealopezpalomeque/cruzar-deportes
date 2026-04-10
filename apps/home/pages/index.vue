@@ -121,11 +121,11 @@
     <section class="py-16 md:py-24">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 reveal-stagger">
-          <div class="reveal col-span-2 md:col-span-1 md:row-span-2 overflow-hidden h-80 md:h-auto">
+          <div class="reveal col-span-2 md:col-span-1 md:row-span-2 overflow-hidden h-[28rem] md:h-auto">
             <img
               src="/images/session/hero-model-argentina.jpg"
               alt="Camiseta Argentina retro"
-              class="w-full h-full object-cover object-[center_20%] md:object-top hover:scale-105 transition-transform duration-700"
+              class="w-full h-full object-cover object-[center_35%] md:object-top hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
           </div>
@@ -133,7 +133,7 @@
             <img
               src="/images/session/detail-sevilla-closeup.jpg"
               alt="Detalle camiseta Sevilla"
-              class="w-full h-full object-cover object-[center_35%] md:object-[center_30%] hover:scale-105 transition-transform duration-700"
+              class="w-full h-full object-cover object-[center_40%] md:object-[center_30%] hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
           </div>
@@ -141,15 +141,15 @@
             <img
               src="/images/session/hero-beckham-back.jpg"
               alt="Camiseta Beckham Manchester United"
-              class="w-full h-full object-cover object-[center_25%] md:object-[center_20%] hover:scale-105 transition-transform duration-700"
+              class="w-full h-full object-cover object-[center_35%] md:object-[center_20%] hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
           </div>
-          <div class="reveal overflow-hidden col-span-2 h-64 md:h-96">
+          <div class="reveal overflow-hidden col-span-2 h-56 md:h-96">
             <img
               src="/images/session/detail-realmadrid-teka.jpg"
               alt="Camiseta Real Madrid retro Teka"
-              class="w-full h-full object-cover object-[center_30%] md:object-[center_20%] hover:scale-105 transition-transform duration-700"
+              class="w-full h-full object-cover object-[center_40%] md:object-[center_20%] hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
           </div>
