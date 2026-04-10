@@ -14,7 +14,9 @@
     "clean:all": "npm run clean && rm -rf node_modules",
     "firebase:build": "node scripts/generate-tsconfig.cjs && nuxt generate",
     "firebase:deploy": "cd ../.. && firebase deploy --only hosting:storefront",
-    "firebase:build-deploy": "npm run firebase:build && npm run firebase:deploy"
+    "firebase:build-deploy": "npm run firebase:build && npm run firebase:deploy",
+    "generate:favicon": "node scripts/generate-favicon.js",
+    "generate:og-image": "node scripts/generate-og-image.js"
   },
   "dependencies": {
     "@iconify/vue": "^5.0.0",
