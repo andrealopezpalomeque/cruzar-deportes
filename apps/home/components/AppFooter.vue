@@ -58,7 +58,7 @@
           &copy; {{ currentYear }} Cruzar Deportes. Todos los derechos reservados.
         </p>
         <p class="text-white/40 text-sm cursor-default">
-          Desarrollado por:
+          Desarrollado por
           <a
             href="https://wiseutils.com/"
             target="_blank"
