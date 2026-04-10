@@ -60,7 +60,7 @@
               {{ league.name }}
             </NuxtLink>
             <NuxtLink
-              to="/products"
+              to="/products?type=otros-productos"
               class="inline-flex items-center px-3 py-1.5 bg-white/10 backdrop-blur-sm text-white font-display text-xs font-semibold uppercase tracking-wider hover:bg-brand-orange-600/80 transition-all duration-200"
             >
               Otros Productos
