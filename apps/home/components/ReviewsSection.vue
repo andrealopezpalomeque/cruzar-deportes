@@ -56,12 +56,20 @@
             <!-- Author -->
             <div class="flex items-center gap-3 pt-5 border-t" :class="borderClass(index)">
               <div class="relative flex-shrink-0">
-                <img
+                <NuxtImg
                   :src="review.photo"
                   :alt="`Cliente ${review.name}`"
+                  width="44"
+                  height="44"
+                  sizes="44px"
+                  format="webp"
+                  quality="80"
+                  densities="x1 x2"
+                  fit="cover"
                   class="w-11 h-11 rounded-full object-cover ring-2"
                   :class="ringClass(index)"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="min-w-0 flex-1">

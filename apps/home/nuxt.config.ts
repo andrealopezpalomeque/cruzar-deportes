@@ -55,8 +55,22 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
     'unplugin-icons/nuxt',
-    'dayjs-nuxt'
+    'dayjs-nuxt',
+    '@nuxt/image'
   ],
+  image: {
+    provider: 'ipxStatic',
+    format: ['webp', 'jpeg'],
+    quality: 80,
+    densities: [1, 2],
+    screens: {
+      xs: 360,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+    },
+  },
   runtimeConfig: {
     public: {
       apiUrl: process.env.NUXT_PUBLIC_API_URL || 'http://localhost:3002',
