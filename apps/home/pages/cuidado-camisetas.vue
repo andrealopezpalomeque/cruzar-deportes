@@ -1,20 +1,20 @@
 <template>
-  <div class="min-h-screen bg-white">
+  <div class="min-h-screen bg-surface-cream">
     <!-- Hero Section -->
-    <div class="relative overflow-hidden bg-white">
-      <div class="absolute inset-0 bg-gray-50" />
+    <div class="relative overflow-hidden bg-surface-cream">
+      <div class="absolute inset-0 bg-surface-cream" />
       <div class="relative max-w-4xl mx-auto px-6 py-16 text-center">
-        <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700 mb-6">
+        <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-brand-orange-50 border border-brand-orange-200 text-brand-orange-700 mb-6">
           <IconCheckCircleFilled class="w-4 h-4 mr-2" />
           Guía Profesional
         </div>
-        <h1 class="text-4xl md:text-5xl font-light text-gray-900 mb-6 cursor-default">
+        <h1 class="font-display text-display-xl uppercase text-ink mb-6 cursor-default">
           Guía de Cuidado de
-          <span class="text-black">
+          <span class="text-ink">
             Camisetas
           </span>
         </h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed cursor-default">
+        <p class="text-xl text-ink-muted max-w-2xl mx-auto leading-relaxed cursor-default">
           Mantené tus camisetas deportivas como nuevas y en perfecto estado con nuestra guía completa de cuidado
           profesional.
         </p>
@@ -27,50 +27,50 @@
       <div class="grid md:grid-cols-3 gap-6 mb-8">
         <UiCard variant="modern">
           <div class="p-6 text-center cursor-default">
-            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <IconCheckCircle class="w-6 h-6 text-gray-600" />
+            <div class="w-12 h-12 bg-surface-muted rounded-xl flex items-center justify-center mx-auto mb-4">
+              <IconCheckCircle class="w-6 h-6 text-ink-muted" />
             </div>
-            <h3 class="font-medium text-gray-900 mb-2">Protección Total</h3>
-            <p class="text-sm text-gray-600">Preserva colores y estampados por más tiempo</p>
+            <h3 class="font-medium text-ink mb-2">Protección Total</h3>
+            <p class="text-sm text-ink-muted">Preserva colores y estampados por más tiempo</p>
           </div>
         </UiCard>
 
         <UiCard variant="modern">
           <div class="p-6 text-center cursor-default">
-            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <IconBolt class="w-6 h-6 text-gray-600" />
+            <div class="w-12 h-12 bg-surface-muted rounded-xl flex items-center justify-center mx-auto mb-4">
+              <IconBolt class="w-6 h-6 text-ink-muted" />
             </div>
-            <h3 class="font-medium text-gray-900 mb-2">Rendimiento</h3>
-            <p class="text-sm text-gray-600">Mantiene las propiedades técnicas de la tela</p>
+            <h3 class="font-medium text-ink mb-2">Rendimiento</h3>
+            <p class="text-sm text-ink-muted">Mantiene las propiedades técnicas de la tela</p>
           </div>
         </UiCard>
 
         <UiCard variant="modern">
           <div class="p-6 text-center cursor-default">
-            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <IconClock class="w-6 h-6 text-gray-600" />
+            <div class="w-12 h-12 bg-surface-muted rounded-xl flex items-center justify-center mx-auto mb-4">
+              <IconClock class="w-6 h-6 text-ink-muted" />
             </div>
-            <h3 class="font-medium text-gray-900 mb-2">Durabilidad</h3>
-            <p class="text-sm text-gray-600">Extiende significativamente la vida útil</p>
+            <h3 class="font-medium text-ink mb-2">Durabilidad</h3>
+            <p class="text-sm text-ink-muted">Extiende significativamente la vida útil</p>
           </div>
         </UiCard>
       </div>
 
       <!-- FAQ Section -->
       <div class="space-y-4">
-        <UiAccordionItem value="item-1" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+        <UiAccordionItem value="item-1" class="border-0 rounded-sm px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <IconRefresh class="w-5 h-5 text-gray-600" />
+              <div class="w-10 h-10 bg-surface-muted rounded-sm flex items-center justify-center flex-shrink-0">
+                <IconRefresh class="w-5 h-5 text-ink-muted" />
               </div>
-              <span class="font-medium text-gray-900">¿Debo dar vuelta mi camiseta antes de lavarla?</span>
+              <span class="font-medium text-ink">¿Debo dar vuelta mi camiseta antes de lavarla?</span>
             </div>
           </template>
           <template #content>
             <div class="pb-6 pt-2">
               <div class="ml-4 sm:ml-8 md:ml-14">
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <p class="text-ink-muted leading-relaxed mb-4">
                   Sí, siempre dale vuelta a tu camiseta antes de lavarla. Esto ayuda a proteger las estampas, logos
                   y escudos del daño durante el ciclo de lavado, manteniéndolos vibrantes e intactos por más tiempo.
                 </p>
@@ -91,19 +91,19 @@
           </template>
         </UiAccordionItem>
 
-        <UiAccordionItem value="item-2" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+        <UiAccordionItem value="item-2" class="border-0 rounded-sm px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <IconLightBulb class="w-5 h-5 text-gray-600" />
+              <div class="w-10 h-10 bg-surface-muted rounded-sm flex items-center justify-center flex-shrink-0">
+                <IconLightBulb class="w-5 h-5 text-ink-muted" />
               </div>
-              <span class="font-medium text-gray-900">¿Qué temperatura de agua debo usar?</span>
+              <span class="font-medium text-ink">¿Qué temperatura de agua debo usar?</span>
             </div>
           </template>
           <template #content>
             <div class="pb-6 pt-2">
               <div class="ml-4 sm:ml-8 md:ml-14">
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <p class="text-ink-muted leading-relaxed mb-4">
                   Siempre lavá tus camisetas con agua fría. El agua fría previene que los colores se destiñan,
                   reduce el encogimiento de la tela y ayuda a mantener el calce y apariencia original de la
                   camiseta.
@@ -124,19 +124,19 @@
           </template>
         </UiAccordionItem>
 
-        <UiAccordionItem value="item-3" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+        <UiAccordionItem value="item-3" class="border-0 rounded-sm px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <IconXMark class="w-5 h-5 text-gray-600" />
+              <div class="w-10 h-10 bg-surface-muted rounded-sm flex items-center justify-center flex-shrink-0">
+                <IconXMark class="w-5 h-5 text-ink-muted" />
               </div>
-              <span class="font-medium text-gray-900">¿Puedo usar suavizante en mi camiseta?</span>
+              <span class="font-medium text-ink">¿Puedo usar suavizante en mi camiseta?</span>
             </div>
           </template>
           <template #content>
             <div class="pb-6 pt-2">
               <div class="ml-4 sm:ml-8 md:ml-14">
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <p class="text-ink-muted leading-relaxed mb-4">
                   No recomendamos usar suavizante en camisetas deportivas. El suavizante puede obstruir las fibras y
                   reducir las propiedades de absorción de humedad de las telas técnicas.
                 </p>
@@ -156,19 +156,19 @@
           </template>
         </UiAccordionItem>
 
-        <UiAccordionItem value="item-4" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+        <UiAccordionItem value="item-4" class="border-0 rounded-sm px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <IconCog class="w-5 h-5 text-gray-600" />
+              <div class="w-10 h-10 bg-surface-muted rounded-sm flex items-center justify-center flex-shrink-0">
+                <IconCog class="w-5 h-5 text-ink-muted" />
               </div>
-              <span class="font-medium text-gray-900">¿Qué ciclo de lavarropas debo usar?</span>
+              <span class="font-medium text-ink">¿Qué ciclo de lavarropas debo usar?</span>
             </div>
           </template>
           <template #content>
             <div class="pb-6 pt-2">
               <div class="ml-4 sm:ml-8 md:ml-14">
-                <p class="text-gray-700 leading-relaxed">
+                <p class="text-ink-muted leading-relaxed">
                   Usá el ciclo delicado o para ropa deportiva si tu lavarropas lo tiene. Estos ciclos son más suaves
                   y ayudan a preservar la forma y las propiedades técnicas de la tela.
                 </p>
@@ -177,19 +177,19 @@
           </template>
         </UiAccordionItem>
 
-        <UiAccordionItem value="item-5" class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
+        <UiAccordionItem value="item-5" class="border-0 rounded-sm px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200">
           <template #trigger>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <IconSun class="w-5 h-5 text-gray-600" />
+              <div class="w-10 h-10 bg-surface-muted rounded-sm flex items-center justify-center flex-shrink-0">
+                <IconSun class="w-5 h-5 text-ink-muted" />
               </div>
-              <span class="font-medium text-gray-900">¿Cómo debo secar mi camiseta?</span>
+              <span class="font-medium text-ink">¿Cómo debo secar mi camiseta?</span>
             </div>
           </template>
           <template #content>
             <div class="pb-6 pt-2">
               <div class="ml-4 sm:ml-8 md:ml-14">
-                <p class="text-gray-700 leading-relaxed">
+                <p class="text-ink-muted leading-relaxed">
                   Lo ideal es secar al aire libre, colgada en un lugar con sombra. Evitá la exposición directa al
                   sol y el uso de secarropas cuando sea posible, ya que el calor excesivo puede dañar las fibras.
                 </p>
@@ -200,7 +200,7 @@
       </div>
 
       <!-- Help Section -->
-      <div class="relative bg-gradient-to-br from-black via-gray-900 to-gray-800 rounded-lg max-w-4xl mx-auto mt-12 overflow-hidden">
+      <div class="relative bg-gradient-to-br from-ink via-ink-light to-ink rounded-sm max-w-4xl mx-auto mt-12 overflow-hidden">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 opacity-15">
           <img
@@ -215,8 +215,8 @@
             <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
               <IconWhatsapp class="w-8 h-8 text-white" />
             </div>
-            <h3 class="text-3xl md:text-4xl font-light text-white mb-6 cursor-default">¿Necesitás más ayuda?</h3>
-            <p class="text-lg text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto cursor-default">
+            <h3 class="font-display text-display-lg uppercase text-white mb-6 cursor-default">¿Necesitás más ayuda?</h3>
+            <p class="text-lg text-ink-subtle mb-8 leading-relaxed max-w-2xl mx-auto cursor-default">
               Si tenés dudas específicas sobre el cuidado de tu camiseta o necesitás asistencia personalizada, no
               dudes en contactarnos.
             </p>
@@ -224,21 +224,21 @@
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 @click="openWhatsApp"
-                class="inline-flex items-center px-8 py-3 bg-white text-black text-base font-medium rounded-lg hover:bg-gray-100 transition-colors"
+                class="inline-flex items-center px-8 py-3 bg-white text-ink text-base font-medium rounded-sm hover:bg-surface-warm transition-colors"
               >
                 <IconWhatsapp class="w-5 h-5 mr-2" />
                 Contactar Soporte
               </button>
               <button
                 @click="navigateTo('/faq')"
-                class="inline-flex items-center px-8 py-3 bg-transparent border border-white/20 text-white text-base font-medium rounded-lg hover:bg-white/10 transition-colors"
+                class="inline-flex items-center px-8 py-3 bg-transparent border border-white/20 text-white text-base font-medium rounded-sm hover:bg-white/10 transition-colors"
               >
                 <IconQuestionMark class="w-5 h-5 mr-2" />
                 Preguntas Frecuentes
               </button>
             </div>
 
-            <p class="text-sm text-gray-400 mt-4 cursor-default">
+            <p class="text-sm text-ink-subtle mt-4 cursor-default">
               Respuesta en menos de 24 horas
             </p>
           </div>

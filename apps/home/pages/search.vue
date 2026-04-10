@@ -1,32 +1,32 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div class="min-h-screen bg-surface-cream">
     <!-- Search Header -->
     <div class="bg-white border-b">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h1 class="text-2xl font-bold text-gray-900">
+            <h1 class="text-2xl font-bold text-ink">
               Resultados de búsqueda
             </h1>
-            <p v-if="searchQuery" class="text-gray-800 mt-1">
+            <p v-if="searchQuery" class="text-ink mt-1">
               Mostrando resultados para: <span class="font-medium">"{{ searchQuery }}"</span>
             </p>
           </div>
-          
+
           <!-- Search Input -->
           <div class="relative max-w-md w-full">
             <input
               v-model="localQuery"
               type="text"
               placeholder="Buscar productos..."
-              class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              class="w-full pl-10 pr-4 py-2 border border-surface-muted rounded-sm focus:ring-2 focus:ring-brand-orange-500 focus:border-brand-orange-500"
               @keyup.enter="performSearch"
             />
-            <IconMagnify class="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+            <IconMagnify class="absolute left-3 top-2.5 h-5 w-5 text-ink-subtle" />
             <button
               v-if="localQuery"
               @click="clearLocalQuery"
-              class="absolute right-3 top-2.5 text-gray-400 hover:text-gray-800"
+              class="absolute right-3 top-2.5 text-ink-subtle hover:text-ink"
             >
               <IconClose class="h-5 w-5" />
             </button>
@@ -40,12 +40,12 @@
       <div class="flex flex-col lg:flex-row gap-8">
         <!-- Filters Sidebar -->
         <div class="w-full lg:w-64 flex-shrink-0">
-          <div class="bg-white rounded-lg shadow-sm p-6 sticky top-4">
-            <h3 class="font-medium text-gray-900 mb-4">Filtrar por</h3>
-            
+          <div class="bg-white rounded-sm p-6 sticky top-4">
+            <h3 class="font-medium text-ink mb-4">Filtrar por</h3>
+
             <!-- Category Filter -->
             <div class="mb-6">
-              <h4 class="text-sm font-medium text-gray-700 mb-3">Categoría</h4>
+              <h4 class="text-sm font-medium text-ink-muted mb-3">Categoría</h4>
               <div class="space-y-2">
                 <label
                   v-for="category in availableCategories"
@@ -56,17 +56,17 @@
                     v-model="selectedCategories"
                     :value="category.slug"
                     type="checkbox"
-                    class="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                    class="rounded border-surface-muted text-brand-orange-600 focus:ring-brand-orange-500"
                     @change="applyFilters"
                   />
-                  <span class="ml-3 text-sm text-gray-700">{{ category.name }}</span>
+                  <span class="ml-3 text-sm text-ink-muted">{{ category.name }}</span>
                 </label>
               </div>
             </div>
-            
+
             <!-- Price Range Filter -->
             <div class="mb-6">
-              <h4 class="text-sm font-medium text-gray-700 mb-3">Rango de precio</h4>
+              <h4 class="text-sm font-medium text-ink-muted mb-3">Rango de precio</h4>
               <div class="space-y-2">
                 <label class="flex items-center">
                   <input
@@ -74,10 +74,10 @@
                     value="0-50000"
                     type="radio"
                     name="price"
-                    class="text-primary-600 focus:ring-primary-500"
+                    class="text-brand-orange-600 focus:ring-brand-orange-500"
                     @change="applyFilters"
                   />
-                  <span class="ml-3 text-sm text-gray-700">Hasta $50.000</span>
+                  <span class="ml-3 text-sm text-ink-muted">Hasta $50.000</span>
                 </label>
                 <label class="flex items-center">
                   <input
@@ -85,10 +85,10 @@
                     value="50000-100000"
                     type="radio"
                     name="price"
-                    class="text-primary-600 focus:ring-primary-500"
+                    class="text-brand-orange-600 focus:ring-brand-orange-500"
                     @change="applyFilters"
                   />
-                  <span class="ml-3 text-sm text-gray-700">$50.000 - $100.000</span>
+                  <span class="ml-3 text-sm text-ink-muted">$50.000 - $100.000</span>
                 </label>
                 <label class="flex items-center">
                   <input
@@ -96,32 +96,32 @@
                     value="100000+"
                     type="radio"
                     name="price"
-                    class="text-primary-600 focus:ring-primary-500"
+                    class="text-brand-orange-600 focus:ring-brand-orange-500"
                     @change="applyFilters"
                   />
-                  <span class="ml-3 text-sm text-gray-700">Más de $100.000</span>
+                  <span class="ml-3 text-sm text-ink-muted">Más de $100.000</span>
                 </label>
               </div>
             </div>
-            
+
             <!-- Stock Filter -->
             <div class="mb-6">
               <label class="flex items-center">
                 <input
                   v-model="onlyInStock"
                   type="checkbox"
-                  class="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                  class="rounded border-surface-muted text-brand-orange-600 focus:ring-brand-orange-500"
                   @change="applyFilters"
                 />
-                <span class="ml-3 text-sm text-gray-700">Solo en stock</span>
+                <span class="ml-3 text-sm text-ink-muted">Solo en stock</span>
               </label>
             </div>
-            
+
             <!-- Clear Filters -->
             <button
               v-if="hasActiveFilters"
               @click="clearFilters"
-              class="w-full text-sm text-primary-600 hover:text-primary-700 font-medium"
+              class="w-full text-sm text-brand-orange-600 hover:text-brand-orange-700 font-medium"
             >
               Limpiar filtros
             </button>
@@ -132,16 +132,16 @@
         <div class="flex-1">
           <!-- Results Count and Sort -->
           <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
-            <p class="text-gray-800">
+            <p class="text-ink">
               {{ filteredResults.length }} producto{{ filteredResults.length !== 1 ? 's' : '' }} encontrado{{ filteredResults.length !== 1 ? 's' : '' }}
             </p>
-            
+
             <div class="flex items-center gap-2 mt-4 sm:mt-0">
-              <label class="text-sm text-gray-700">Ordenar por:</label>
+              <label class="text-sm text-ink-muted">Ordenar por:</label>
               <select
                 v-model="sortBy"
                 @change="applySorting"
-                class="border border-gray-300 rounded-md px-3 py-1 text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                class="border border-surface-muted rounded-sm px-3 py-1 text-sm focus:ring-2 focus:ring-brand-orange-500 focus:border-brand-orange-500"
               >
                 <option value="relevance">Relevancia</option>
                 <option value="price-low">Precio: menor a mayor</option>
@@ -150,16 +150,16 @@
               </select>
             </div>
           </div>
-          
+
           <!-- Loading State -->
           <div v-if="loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div v-for="i in 9" :key="i" class="animate-pulse">
-              <div class="bg-gray-200 aspect-square rounded-lg mb-4"></div>
-              <div class="h-4 bg-gray-200 rounded mb-2"></div>
-              <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+              <div class="bg-surface-muted aspect-square rounded-sm mb-4"></div>
+              <div class="h-4 bg-surface-muted rounded-sm mb-2"></div>
+              <div class="h-4 bg-surface-muted rounded-sm w-3/4"></div>
             </div>
           </div>
-          
+
           <!-- Results Grid -->
           <div v-else-if="sortedResults.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <ProductCard
@@ -168,50 +168,50 @@
               :product="product"
             />
           </div>
-          
+
           <!-- No Results -->
           <div v-else-if="searchQuery" class="text-center py-12">
-            <IconSearchOff class="h-16 w-16 text-gray-300 mx-auto mb-4" />
-            <h3 class="text-xl font-medium text-gray-900 mb-2">
+            <IconSearchOff class="h-16 w-16 text-ink-subtle mx-auto mb-4" />
+            <h3 class="text-xl font-medium text-ink mb-2">
               No encontramos productos
             </h3>
-            <p class="text-gray-700 mb-6">
-              Tu búsqueda "{{ searchQuery }}" no arrojó resultados. 
+            <p class="text-ink-muted mb-6">
+              Tu búsqueda "{{ searchQuery }}" no arrojó resultados.
               Intenta con términos diferentes o explora nuestras categorías.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 @click="clearSearch"
-                class="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors"
+                class="bg-brand-orange-600 text-white px-6 py-3 rounded-sm hover:bg-brand-orange-700 transition-colors"
               >
                 Limpiar búsqueda
               </button>
               <NuxtLink
                 to="/categories"
-                class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+                class="border-2 border-ink text-ink px-6 py-3 rounded-sm font-display font-semibold uppercase tracking-wide hover:bg-surface-warm transition-colors"
               >
                 Ver categorías
               </NuxtLink>
             </div>
           </div>
-          
+
           <!-- Empty State (no search query) -->
           <div v-else class="text-center py-12">
-            <IconMagnify class="h-16 w-16 text-gray-300 mx-auto mb-4" />
-            <h3 class="text-xl font-medium text-gray-900 mb-2">
+            <IconMagnify class="h-16 w-16 text-ink-subtle mx-auto mb-4" />
+            <h3 class="text-xl font-medium text-ink mb-2">
               Busca tu camiseta favorita
             </h3>
-            <p class="text-gray-700 mb-6">
+            <p class="text-ink-muted mb-6">
               Encuentra camisetas de tus equipos favoritos de diferentes ligas
             </p>
             <NuxtLink
               to="/products"
-              class="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors inline-block"
+              class="bg-brand-orange-600 text-white px-6 py-3 rounded-sm hover:bg-brand-orange-700 transition-colors inline-block"
             >
               Ver todos los productos
             </NuxtLink>
           </div>
-          
+
           <!-- Pagination -->
           <div v-if="totalPages > 1" class="flex justify-center mt-12">
             <nav class="flex items-center space-x-2">
@@ -219,37 +219,37 @@
                 :disabled="currentPage === 1"
                 @click="goToPage(currentPage - 1)"
                 :class="[
-                  'px-3 py-2 text-sm rounded-md',
-                  currentPage === 1 
-                    ? 'text-gray-400 cursor-not-allowed' 
-                    : 'text-gray-700 hover:bg-gray-100'
+                  'px-3 py-2 text-sm rounded-sm',
+                  currentPage === 1
+                    ? 'text-ink-subtle cursor-not-allowed'
+                    : 'text-ink-muted hover:bg-surface-muted'
                 ]"
               >
                 Anterior
               </button>
-              
+
               <button
                 v-for="page in visiblePages"
                 :key="page"
                 @click="goToPage(page)"
                 :class="[
-                  'px-3 py-2 text-sm rounded-md',
+                  'px-3 py-2 text-sm rounded-sm',
                   page === currentPage
-                    ? 'bg-primary-600 text-white'
-                    : 'text-gray-700 hover:bg-gray-100'
+                    ? 'bg-brand-orange-600 text-white'
+                    : 'text-ink-muted hover:bg-surface-muted'
                 ]"
               >
                 {{ page }}
               </button>
-              
+
               <button
                 :disabled="currentPage === totalPages"
                 @click="goToPage(currentPage + 1)"
                 :class="[
-                  'px-3 py-2 text-sm rounded-md',
-                  currentPage === totalPages 
-                    ? 'text-gray-400 cursor-not-allowed' 
-                    : 'text-gray-700 hover:bg-gray-100'
+                  'px-3 py-2 text-sm rounded-sm',
+                  currentPage === totalPages
+                    ? 'text-ink-subtle cursor-not-allowed'
+                    : 'text-ink-muted hover:bg-surface-muted'
                 ]"
               >
                 Siguiente
@@ -309,7 +309,7 @@ const availableCategories = computed(() => {
   searchResults.value.forEach(product => {
     categories.add(product.category)
   })
-  
+
   return Array.from(categories).map(slug => ({
     slug,
     name: categoryNames[slug] || slug
@@ -324,14 +324,14 @@ const hasActiveFilters = computed(() => {
 // Filter results based on selected filters
 const filteredResults = computed(() => {
   let results = [...searchResults.value]
-  
+
   // Filter by category
   if (selectedCategories.value.length > 0) {
-    results = results.filter(product => 
+    results = results.filter(product =>
       selectedCategories.value.includes(product.category)
     )
   }
-  
+
   // Filter by price range
   if (priceRange.value) {
     results = results.filter(product => {
@@ -347,19 +347,19 @@ const filteredResults = computed(() => {
       }
     })
   }
-  
+
   // Filter by stock
   if (onlyInStock.value) {
     results = results.filter(product => product.inStock)
   }
-  
+
   return results
 })
 
 // Sort results
 const sortedResults = computed(() => {
   const results = [...filteredResults.value]
-  
+
   switch (sortBy.value) {
     case 'price-low':
       return results.sort((a, b) => a.price - b.price)
@@ -386,20 +386,20 @@ const visiblePages = computed(() => {
   const pages = []
   const total = totalPages.value
   const current = currentPage.value
-  
+
   // Always show first page
   pages.push(1)
-  
+
   // Show pages around current page
   for (let i = Math.max(2, current - 1); i <= Math.min(total - 1, current + 1); i++) {
     pages.push(i)
   }
-  
+
   // Always show last page if more than 1 page
   if (total > 1) {
     pages.push(total)
   }
-  
+
   // Remove duplicates and sort
   return [...new Set(pages)].sort((a, b) => a - b)
 })
@@ -407,7 +407,7 @@ const visiblePages = computed(() => {
 // Perform search
 const performSearch = async () => {
   if (!localQuery.value.trim()) return
-  
+
   // Update URL
   router.push({ query: { q: localQuery.value } })
 }
@@ -418,13 +418,13 @@ const executeSearch = async (query) => {
     searchResults.value = []
     return
   }
-  
+
   loading.value = true
   try {
     const results = await productsStore.searchProducts(query)
     searchResults.value = results
     currentPage.value = 1
-    
+
     // Add to recent searches
     searchStore.addToRecentSearches(query)
   } catch (error) {

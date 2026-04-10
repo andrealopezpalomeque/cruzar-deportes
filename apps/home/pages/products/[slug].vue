@@ -1,27 +1,27 @@
 <template>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <!-- Breadcrumb Navigation -->
-    <nav class="flex items-center space-x-2 text-sm text-gray-800 mb-6">
-      <NuxtLink to="/" class="hover:text-black transition-colors">Inicio</NuxtLink>
+    <nav class="flex items-center space-x-2 text-sm text-ink mb-6">
+      <NuxtLink to="/" class="hover:text-brand-orange-600 transition-colors">Inicio</NuxtLink>
       <IconChevronRight class="h-4 w-4" />
-      <NuxtLink to="/products" class="hover:text-black transition-colors">Productos</NuxtLink>
+      <NuxtLink to="/products" class="hover:text-brand-orange-600 transition-colors">Productos</NuxtLink>
       <IconChevronRight class="h-4 w-4" />
-      <span class="text-gray-900 font-medium">{{ product?.name || 'Producto' }}</span>
+      <span class="text-ink font-medium">{{ product?.name || 'Producto' }}</span>
     </nav>
 
     <!-- Loading State -->
     <div v-if="loading" class="flex justify-center py-20">
-      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-black"></div>
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-ink"></div>
     </div>
 
     <!-- Product Not Found -->
     <div v-else-if="!product" class="text-center py-20">
-      <IconAlertCircle class="h-16 w-16 text-gray-400 mx-auto mb-4" />
-      <h2 class="text-2xl font-medium text-gray-900 mb-2">Producto no encontrado</h2>
-      <p class="text-gray-800 mb-6">El producto que buscas no existe o ha sido eliminado.</p>
-      <NuxtLink 
-        to="/products" 
-        class="inline-flex items-center px-4 py-2 bg-black text-white font-medium rounded-md hover:bg-gray-900 transition-colors"
+      <IconAlertCircle class="h-16 w-16 text-ink-subtle mx-auto mb-4" />
+      <h2 class="text-2xl font-medium text-ink mb-2">Producto no encontrado</h2>
+      <p class="text-ink mb-6">El producto que buscas no existe o ha sido eliminado.</p>
+      <NuxtLink
+        to="/products"
+        class="inline-flex items-center px-4 py-2 bg-ink text-white font-display font-semibold uppercase tracking-wide rounded-sm hover:bg-ink-light transition-colors"
       >
         <IconArrowLeft class="mr-2 h-4 w-4" />
         Volver a Productos
@@ -43,7 +43,7 @@
 
     <!-- Related Products -->
     <div v-if="!loading && relatedProducts.length > 0" class="mt-16">
-      <h2 class="text-2xl font-light text-gray-900 mb-8">Productos Relacionados</h2>
+      <h2 class="font-display text-display-lg uppercase text-ink mb-8">Productos Relacionados</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <ProductCard
           v-for="relatedProduct in relatedProducts.slice(0, 4)"
@@ -75,7 +75,7 @@ const productImages = ref([])
 const productSlug = computed(() => route.params.slug)
 
 // Find the product by slug
-const product = computed(() => 
+const product = computed(() =>
   productsStore.getProductBySlug(productSlug.value)
 )
 
@@ -133,20 +133,20 @@ const leagueName = computed(() => {
 useHead({
   title: () => product.value ? `${product.value.name} - Cruzar Deportes` : 'Producto - Cruzar Deportes',
   meta: [
-    { 
-      name: 'description', 
+    {
+      name: 'description',
       content: () => product.value?.description || `Compra ${product.value?.name || 'productos'} en Cruzar Deportes. ${leagueName.value} de calidad premium.`
     },
-    { 
-      property: 'og:title', 
+    {
+      property: 'og:title',
       content: () => product.value ? `${product.value.name} - Cruzar Deportes` : 'Producto - Cruzar Deportes'
     },
-    { 
-      property: 'og:description', 
+    {
+      property: 'og:description',
       content: () => product.value?.description || `Compra ${product.value?.name || 'productos'} en Cruzar Deportes. ${leagueName.value} de calidad premium.`
     },
-    { 
-      property: 'og:image', 
+    {
+      property: 'og:image',
       content: () => getFirstImageUrl(product.value?.images, 'main') || '/images/cruzar-logo-1.png'
     },
     {

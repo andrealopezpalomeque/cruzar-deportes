@@ -1,8 +1,8 @@
 <template>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div class="text-center mb-12">
-      <h1 class="text-4xl font-light text-gray-900 mb-4">Explora por Categoria</h1>
-      <p class="text-lg text-gray-800">Toda nuestra coleccion organizada para vos</p>
+      <h1 class="font-display text-display-xl uppercase text-ink mb-4">Explora por Categoria</h1>
+      <p class="text-lg text-ink">Toda nuestra coleccion organizada para vos</p>
     </div>
 
     <GridSkeleton
@@ -19,12 +19,12 @@
       >
         <!-- Section Header: tinted icon box + label + divider line -->
         <div class="flex items-center gap-3 mb-6">
-          <div class="w-7 h-7 rounded-md flex items-center justify-center flex-shrink-0"
+          <div class="w-7 h-7 rounded-sm flex items-center justify-center flex-shrink-0"
                :class="[section.headerBg]">
             <component :is="section.icon" class="w-4 h-4" :class="[section.headerIconColor]" />
           </div>
-          <h2 class="text-base font-semibold text-gray-900 whitespace-nowrap">{{ section.label }}</h2>
-          <div class="flex-1 h-px bg-gray-200"></div>
+          <h2 class="text-base font-semibold text-ink whitespace-nowrap">{{ section.label }}</h2>
+          <div class="flex-1 h-px bg-surface-muted"></div>
         </div>
 
         <!-- Category Cards Grid -->
@@ -35,7 +35,7 @@
             :to="`/categories/${league.slug}`"
             class="group"
           >
-            <div class="bg-gradient-to-br rounded-lg p-6 relative overflow-hidden transition-all duration-300 hover:brightness-110"
+            <div class="bg-gradient-to-br rounded-sm p-6 relative overflow-hidden transition-all duration-300 hover:brightness-110"
                  :class="[section.gradient]">
               <!-- Corner glow -->
               <div class="absolute top-0 right-0 w-10 h-10 rounded-bl-full"
@@ -64,9 +64,9 @@
 
     <!-- Empty State -->
     <div v-if="!productsStore.loading && visibleSections.length === 0" class="text-center py-12">
-      <IconTshirtCrew class="h-16 w-16 text-gray-400 mx-auto mb-4" />
-      <h3 class="text-lg font-medium text-gray-900 mb-2">No hay categorias disponibles</h3>
-      <p class="text-gray-800">No hay categorias disponibles en este momento.</p>
+      <IconTshirtCrew class="h-16 w-16 text-ink-subtle mx-auto mb-4" />
+      <h3 class="text-lg font-medium text-ink mb-2">No hay categorias disponibles</h3>
+      <p class="text-ink">No hay categorias disponibles en este momento.</p>
     </div>
   </div>
 </template>

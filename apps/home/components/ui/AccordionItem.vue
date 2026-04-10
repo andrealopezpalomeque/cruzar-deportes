@@ -1,5 +1,5 @@
 <template>
-  <div :class="`border border-gray-200 rounded-lg px-6 bg-white shadow-sm ${props.class}`">
+  <div :class="`border border-surface-muted rounded-sm px-6 bg-white ${props.class}`">
     <div>
       <button
         @click="toggleItem"
@@ -10,8 +10,8 @@
           <slot name="trigger" :isOpen="isOpen" />
         </div>
         <div class="ml-4 flex-shrink-0">
-          <IconChevronDown 
-            :class="`w-5 h-5 text-gray-500 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`"
+          <IconChevronDown
+            :class="`w-5 h-5 text-ink-muted transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`"
           />
         </div>
       </button>

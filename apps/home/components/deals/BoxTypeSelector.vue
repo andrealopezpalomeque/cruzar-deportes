@@ -5,10 +5,10 @@
       :key="box.value"
       @click="selectBox(box.value)"
       :class="[
-        'p-6 rounded-lg border-2 cursor-pointer transition-all',
+        'p-6 rounded-sm border-2 cursor-pointer transition-all',
         modelValue === box.value
-          ? 'border-black bg-gray-50'
-          : 'border-gray-200 hover:border-gray-300'
+          ? 'border-ink bg-surface-warm'
+          : 'border-surface-muted hover:border-surface-muted'
       ]"
     >
       <div class="flex items-center justify-between">
@@ -17,23 +17,23 @@
             :class="[
               'w-5 h-5 min-w-[20px] min-h-[20px] rounded-full border-2 flex items-center justify-center mr-4 flex-shrink-0',
               modelValue === box.value
-                ? 'border-black'
-                : 'border-gray-300'
+                ? 'border-ink'
+                : 'border-surface-muted'
             ]"
           >
             <div
               v-if="modelValue === box.value"
-              class="w-3 h-3 min-w-[12px] min-h-[12px] rounded-full bg-black"
+              class="w-3 h-3 min-w-[12px] min-h-[12px] rounded-full bg-ink"
             ></div>
           </div>
           <div>
             <h4 class="font-medium text-lg">{{ box.label }}</h4>
-            <p class="text-sm text-gray-600">{{ box.description }}</p>
+            <p class="text-sm text-ink-muted">{{ box.description }}</p>
           </div>
         </div>
         <div class="text-right">
           <div class="text-2xl font-medium">{{ box.price }}</div>
-          <div class="text-sm text-gray-600">{{ box.pricePerItem }}</div>
+          <div class="text-sm text-ink-muted">{{ box.pricePerItem }}</div>
         </div>
       </div>
     </div>

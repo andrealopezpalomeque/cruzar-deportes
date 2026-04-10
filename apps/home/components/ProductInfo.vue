@@ -2,35 +2,35 @@
   <div class="product-info space-y-6">
     <!-- Product Header -->
     <div>
-      <div class="flex items-center space-x-2 text-sm text-gray-800 mb-2">
-        <span v-if="leagueName" class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md font-medium shadow-sm">
+      <div class="flex items-center space-x-2 text-sm text-ink mb-2">
+        <span v-if="leagueName" class="px-2 py-1 bg-surface-muted text-ink-muted rounded-sm font-medium">
           {{ leagueName }}
         </span>
-        <span v-if="product.featured" class="px-2 py-1 bg-gray-100 text-gray-700 rounded-md font-medium shadow-sm">
+        <span v-if="product.featured" class="px-2 py-1 bg-surface-muted text-ink-muted rounded-sm font-medium">
           <IconStar class="h-3 w-3 inline mr-1" />
           Destacado
         </span>
       </div>
-      
-      <h1 class="text-3xl font-light text-gray-900 mb-4">{{ product.name }}</h1>
-      
+
+      <h1 class="text-3xl font-display font-bold uppercase text-ink mb-4">{{ product.name }}</h1>
+
       <div class="flex items-baseline space-x-3 mb-4">
-        <span class="text-3xl font-medium text-gray-900">{{ formatArs(product.price) }}</span>
-        <span 
+        <span class="text-3xl font-medium text-ink">{{ formatArs(product.price) }}</span>
+        <span
           v-if="product.originalPrice && product.originalPrice > product.price"
-          class="text-xl text-gray-700 line-through"
+          class="text-xl text-ink-muted line-through"
         >
           {{ formatArs(product.originalPrice) }}
         </span>
-        <span 
+        <span
           v-if="product.originalPrice && product.originalPrice > product.price"
-          class="text-sm font-medium text-white bg-black px-2 py-1 rounded-md shadow-sm"
+          class="text-sm font-medium text-white bg-ink px-2 py-1 rounded-sm"
         >
           {{ Math.round((1 - product.price / product.originalPrice) * 100) }}% OFF
         </span>
       </div>
-      
-      <p v-if="product.description" class="text-gray-800 text-lg leading-relaxed mb-6">
+
+      <p v-if="product.description" class="text-ink text-lg leading-relaxed mb-6">
         {{ product.description }}
       </p>
     </div>
@@ -40,12 +40,12 @@
       <!-- Size Selection -->
       <div class="space-y-4">
         <div class="flex items-center justify-between">
-          <label class="text-sm font-medium text-gray-900">
+          <label class="text-sm font-medium text-ink">
             Talla <span class="text-red-500">*</span>
           </label>
           <button
             @click="showSizeGuide = true"
-            class="text-sm text-gray-500 underline hover:text-gray-900 transition-colors flex items-center"
+            class="text-sm text-ink-muted underline hover:text-ink transition-colors flex items-center"
           >
             <IconRuler class="h-4 w-4 mr-1" />
             Guía de talles
@@ -60,10 +60,10 @@
             v-for="size in sizes"
             :key="size.id"
             @click="selectedSize = size.id"
-            class="relative flex h-12 items-center justify-center rounded-lg border text-sm font-medium transition-all duration-200 ease-out hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-1"
+            class="relative flex h-12 items-center justify-center rounded-sm border text-sm font-medium transition-all duration-200 ease-out hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-1"
             :class="{
               'border-gray-900 bg-gray-900 text-white shadow-md scale-[1.02]': selectedSize === size.id,
-              'border-gray-200 bg-white text-gray-900': selectedSize !== size.id
+              'border-surface-muted bg-white text-ink': selectedSize !== size.id
             }"
           >
             {{ size.label }}
@@ -71,7 +71,7 @@
             <!-- Selected Indicator -->
             <span
               v-if="selectedSize === size.id"
-              class="absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-white text-gray-900 shadow-sm ring-1 ring-gray-200"
+              class="absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-white text-ink shadow-sm ring-1 ring-surface-muted"
             >
               <IconCheck class="h-2.5 w-2.5" />
             </span>
@@ -80,38 +80,38 @@
 
         <p
           v-if="selectedSize"
-          class="text-sm text-gray-500 animate-in fade-in slide-in-from-top-1 duration-300"
+          class="text-sm text-ink-muted animate-in fade-in slide-in-from-top-1 duration-300"
         >
-          Has seleccionado: <span class="font-medium text-gray-900">{{ sizes.find(s => s.id === selectedSize)?.label }}</span>
+          Has seleccionado: <span class="font-medium text-ink">{{ sizes.find(s => s.id === selectedSize)?.label }}</span>
         </p>
       </div>
 
       <!-- Quantity Selection -->
       <div>
-        <label class="block text-sm font-medium text-gray-900 mb-3">
+        <label class="block text-sm font-medium text-ink mb-3">
           Cantidad
         </label>
         <div class="flex items-center space-x-3">
           <button
             @click="decreaseQuantity"
             :disabled="quantity <= 1"
-            class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+            class="w-10 h-10 rounded-sm border border-surface-muted flex items-center justify-center hover:bg-surface-warm focus:outline-none focus:ring-2 focus:ring-brand-orange-500 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <IconMinus class="h-4 w-4" />
           </button>
-          
+
           <input
             v-model.number="quantity"
             type="number"
             min="1"
             max="99"
-            class="w-16 h-10 text-center border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
+            class="w-16 h-10 text-center border border-surface-muted rounded-sm focus:outline-none focus:ring-2 focus:ring-brand-orange-500 focus:border-brand-orange-500"
           />
-          
+
           <button
             @click="increaseQuantity"
             :disabled="quantity >= 99"
-            class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+            class="w-10 h-10 rounded-sm border border-surface-muted flex items-center justify-center hover:bg-surface-warm focus:outline-none focus:ring-2 focus:ring-brand-orange-500 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <IconPlus class="h-4 w-4" />
           </button>
@@ -124,7 +124,7 @@
       <button
         @click="addToCart"
         :disabled="isAddingToCart"
-        class="w-full bg-black text-white py-4 px-6 rounded-lg font-medium text-lg hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+        class="w-full bg-ink text-white py-4 px-6 rounded-sm font-medium text-lg hover:bg-ink-light focus:outline-none focus:ring-4 focus:ring-surface-muted disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         :class="{
           'animate-pulse': isAddingToCart
         }"
@@ -132,7 +132,7 @@
         <IconLoading v-if="isAddingToCart" class="h-5 w-5 inline mr-2 animate-spin" />
         <IconClockOutline v-else-if="!product.inStock" class="h-5 w-5 inline mr-2" />
         <IconCartPlus v-else class="h-5 w-5 inline mr-2" />
-        
+
         <span v-if="isAddingToCart">Agregando...</span>
         <span v-else-if="!product.inStock">Encargar ahora - {{ formattedTotalPrice }}</span>
         <span v-else>Agregar al Carrito - {{ formattedTotalPrice }}</span>
@@ -140,7 +140,7 @@
 
       <!-- Validation Messages -->
       <div v-if="validationMessages.length > 0" class="space-y-1">
-        <div 
+        <div
           v-for="message in validationMessages"
           :key="message"
           class="flex items-center space-x-2 text-sm text-red-700"
@@ -154,7 +154,7 @@
     <!-- Success Message -->
     <div
       v-if="showSuccessMessage"
-      class="bg-green-50 border border-green-200 rounded-md p-4 flex items-center space-x-3"
+      class="bg-green-50 border border-green-200 rounded-sm p-4 flex items-center space-x-3"
     >
       <IconCheckCircle class="h-5 w-5 text-green-700 flex-shrink-0" />
       <div>
@@ -164,7 +164,7 @@
     </div>
 
     <!-- Payment Promotions -->
-    <div class="bg-amber-50/80 border-l-4 border-amber-400 rounded-r-lg p-3">
+    <div class="bg-amber-50/80 border-l-4 border-amber-400 rounded-r-sm p-3">
       <div class="flex items-center gap-2">
         <IconBuildingBank class="h-5 w-5 text-amber-600 flex-shrink-0" />
         <p class="text-sm text-amber-900">
@@ -175,23 +175,23 @@
 
     <!-- Product Features -->
     <div class="border-t pt-6 space-y-4">
-      <h3 class="text-lg font-medium text-gray-900">Características del producto</h3>
+      <h3 class="text-lg font-medium text-ink">Características del producto</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
         <div class="flex items-center space-x-2">
-          <IconShieldCheck class="h-4 w-4 text-gray-800" />
-          <span class="text-gray-800">Producto de calidad premium</span>
+          <IconShieldCheck class="h-4 w-4 text-ink" />
+          <span class="text-ink">Producto de calidad premium</span>
         </div>
         <div class="flex items-center space-x-2">
-          <IconTruck class="h-4 w-4 text-gray-800" />
-          <span class="text-gray-800">Envío gratuito en compras +$120.000</span>
+          <IconTruck class="h-4 w-4 text-ink" />
+          <span class="text-ink">Envío gratuito en compras +$120.000</span>
         </div>
         <div class="flex items-center space-x-2">
-          <IconRefresh class="h-4 w-4 text-gray-800" />
-          <span class="text-gray-800">30 días de devolución</span>
+          <IconRefresh class="h-4 w-4 text-ink" />
+          <span class="text-ink">30 días de devolución</span>
         </div>
         <div class="flex items-center space-x-2">
-          <IconMedal class="h-4 w-4 text-gray-800" />
-          <span class="text-gray-800">Materiales certificados</span>
+          <IconMedal class="h-4 w-4 text-ink" />
+          <span class="text-ink">Materiales certificados</span>
         </div>
       </div>
     </div>

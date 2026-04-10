@@ -6,22 +6,22 @@
   >
     <div class="flex min-h-screen items-start justify-center p-2 sm:p-4 pt-4 sm:pt-8">
       <!-- Backdrop -->
-      <div class="fixed inset-0 bg-black bg-opacity-25 transition-opacity"></div>
-      
+      <div class="fixed inset-0 bg-ink/25 transition-opacity"></div>
+
       <!-- Modal -->
       <div
-        class="relative w-full max-w-6xl transform rounded-lg bg-white shadow-xl transition-all"
+        class="relative w-full max-w-6xl transform rounded-sm bg-white shadow-xl transition-all"
         @click.stop
       >
         <!-- Header -->
-        <div class="border-b border-gray-200 px-4 sm:px-6 py-4">
+        <div class="border-b border-surface-muted px-4 sm:px-6 py-4">
           <div class="flex items-center justify-between">
             <div class="flex items-center">
-              <IconShopping class="h-6 w-6 text-black mr-2" />
-              <h2 class="text-lg sm:text-xl font-medium text-gray-900">Carrito de Compras</h2>
-              <span 
+              <IconShopping class="h-6 w-6 text-ink mr-2" />
+              <h2 class="text-lg sm:text-xl font-display font-semibold uppercase tracking-wide text-ink">Carrito de Compras</h2>
+              <span
                 v-if="cartStore.totalItems > 0"
-                class="ml-2 sm:ml-3 bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium px-2 sm:px-2.5 py-0.5 rounded-full"
+                class="ml-2 sm:ml-3 bg-surface-muted text-ink-muted text-xs sm:text-sm font-medium px-2 sm:px-2.5 py-0.5 rounded-full"
               >
                 {{ cartStore.totalItems }} {{ cartStore.totalItems === 1 ? 'producto' : 'productos' }}
               </span>
@@ -29,7 +29,7 @@
             <button
               type="button"
               @click="cartStore.closeCart"
-              class="text-gray-400 hover:text-gray-800 transition-colors p-1"
+              class="text-ink-subtle hover:text-ink transition-colors p-1"
               aria-label="Cerrar carrito de compras"
             >
               <IconClose class="h-6 w-6" />
@@ -42,12 +42,12 @@
         <div class="max-h-[80vh] overflow-y-auto">
           <!-- Empty Cart State -->
           <div v-if="cartItems.length === 0" class="text-center py-16 px-6">
-            <IconCartOff class="h-16 w-16 text-gray-300 mx-auto mb-4" />
-            <h3 class="text-lg font-medium text-gray-900 mb-2">Tu carrito está vacío</h3>
-            <p class="text-gray-700 mb-6">Agrega algunos productos para comenzar tu compra</p>
+            <IconCartOff class="h-16 w-16 text-ink-subtle mx-auto mb-4" />
+            <h3 class="text-lg font-display font-semibold uppercase tracking-wide text-ink mb-2">Tu carrito está vacío</h3>
+            <p class="text-ink-muted mb-6">Agrega algunos productos para comenzar tu compra</p>
             <button
               @click="goToProducts"
-              class="inline-flex items-center px-4 py-2 bg-black text-white font-medium rounded-md hover:bg-gray-900 transition-colors"
+              class="inline-flex items-center px-4 py-2 bg-ink text-white font-medium rounded-sm hover:bg-ink-light transition-colors"
             >
               <IconArrowRight class="mr-2 h-4 w-4" />
               Ver Productos
@@ -58,13 +58,13 @@
           <div v-else class="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-6 p-4 sm:p-6">
             <!-- Cart Items -->
             <div class="space-y-4 order-1 xl:order-1">
-              <h3 class="text-lg font-medium text-gray-900 mb-4">Productos en tu carrito</h3>
-              
+              <h3 class="text-lg font-display font-semibold uppercase tracking-wide text-sm text-ink mb-4">Productos en tu carrito</h3>
+
               <div class="space-y-3">
                 <div
                   v-for="item in cartItems"
                   :key="`${item.productId}-${item.size}`"
-                  class="bg-gray-50 rounded-lg p-4"
+                  class="bg-surface-warm rounded-sm p-4"
                 >
                   <!-- Mobile Layout (default) -->
                   <div class="block sm:hidden">
@@ -73,7 +73,7 @@
                       <img
                         :src="item.product.images[0]"
                         :alt="item.product.name"
-                        class="h-20 w-20 object-cover rounded-md"
+                        class="h-20 w-20 object-cover rounded-sm"
                       />
                       <button
                         @click="removeItem(item)"
@@ -85,34 +85,34 @@
                         <span class="sr-only">Eliminar producto</span>
                       </button>
                     </div>
-                    
+
                     <!-- Product Info -->
                     <div class="mb-3">
-                      <h4 class="font-medium text-gray-900 mb-1">{{ item.product.name }}</h4>
-                      <p class="text-sm text-gray-700">Talla: {{ item.size }}</p>
-                      <p class="text-lg font-medium text-black mt-1">{{ formatArs(item.product.price) }} c/u</p>
+                      <h4 class="font-medium text-ink mb-1">{{ item.product.name }}</h4>
+                      <p class="text-sm text-ink-muted">Talla: {{ item.size }}</p>
+                      <p class="text-lg font-medium text-ink mt-1">{{ formatArs(item.product.price) }} c/u</p>
                     </div>
-                    
+
                     <!-- Quantity Controls -->
                     <div class="flex items-center justify-between">
-                      <span class="text-sm font-medium text-gray-700">Cantidad:</span>
+                      <span class="text-sm font-medium text-ink-muted">Cantidad:</span>
                       <div class="flex items-center space-x-3">
                         <button
                           @click="updateQuantity(item, item.quantity - 1)"
                           :disabled="item.quantity <= 1"
-                          class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                          class="w-10 h-10 rounded-sm border border-surface-muted flex items-center justify-center hover:bg-surface-warm focus:outline-none focus:ring-2 focus:ring-brand-orange-500 disabled:opacity-50 disabled:cursor-not-allowed"
                           :aria-label="`Disminuir cantidad de ${item.product.name}`"
                         >
                           <IconMinus class="h-4 w-4" />
                           <span class="sr-only">Disminuir cantidad</span>
                         </button>
-                        
+
                         <span class="w-8 text-center font-medium">{{ item.quantity }}</span>
-                        
+
                         <button
                           @click="updateQuantity(item, item.quantity + 1)"
                           :disabled="item.quantity >= 99"
-                          class="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                          class="w-10 h-10 rounded-sm border border-surface-muted flex items-center justify-center hover:bg-surface-warm focus:outline-none focus:ring-2 focus:ring-brand-orange-500 disabled:opacity-50 disabled:cursor-not-allowed"
                           :aria-label="`Aumentar cantidad de ${item.product.name}`"
                         >
                           <IconPlus class="h-4 w-4" />
@@ -128,41 +128,41 @@
                     <img
                       :src="item.product.images[0]"
                       :alt="item.product.name"
-                      class="h-16 w-16 object-cover rounded-md flex-shrink-0"
+                      class="h-16 w-16 object-cover rounded-sm flex-shrink-0"
                     />
-                    
+
                     <!-- Product Info -->
                     <div class="flex-1 min-w-0">
-                      <h4 class="font-medium text-gray-900 truncate">{{ item.product.name }}</h4>
-                      <p class="text-sm text-gray-700">Talla: {{ item.size }}</p>
-                      <p class="text-sm font-medium text-black">{{ formatArs(item.product.price) }} c/u</p>
+                      <h4 class="font-medium text-ink truncate">{{ item.product.name }}</h4>
+                      <p class="text-sm text-ink-muted">Talla: {{ item.size }}</p>
+                      <p class="text-sm font-medium text-ink">{{ formatArs(item.product.price) }} c/u</p>
                     </div>
-                    
+
                     <!-- Quantity Controls -->
                     <div class="flex items-center space-x-2">
                       <button
                         @click="updateQuantity(item, item.quantity - 1)"
                         :disabled="item.quantity <= 1"
-                        class="w-8 h-8 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                        class="w-8 h-8 rounded-sm border border-surface-muted flex items-center justify-center hover:bg-surface-warm focus:outline-none focus:ring-2 focus:ring-brand-orange-500 disabled:opacity-50 disabled:cursor-not-allowed"
                         :aria-label="`Disminuir cantidad de ${item.product.name}`"
                       >
                         <IconMinus class="h-3 w-3" />
                         <span class="sr-only">Disminuir cantidad</span>
                       </button>
-                      
+
                       <span class="w-8 text-center text-sm font-medium">{{ item.quantity }}</span>
-                      
+
                       <button
                         @click="updateQuantity(item, item.quantity + 1)"
                         :disabled="item.quantity >= 99"
-                        class="w-8 h-8 rounded-md border border-gray-300 flex items-center justify-center hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                        class="w-8 h-8 rounded-sm border border-surface-muted flex items-center justify-center hover:bg-surface-warm focus:outline-none focus:ring-2 focus:ring-brand-orange-500 disabled:opacity-50 disabled:cursor-not-allowed"
                         :aria-label="`Aumentar cantidad de ${item.product.name}`"
                       >
                         <IconPlus class="h-3 w-3" />
                         <span class="sr-only">Aumentar cantidad</span>
                       </button>
                     </div>
-                    
+
                     <!-- Remove Button -->
                     <button
                       @click="removeItem(item)"
@@ -179,21 +179,21 @@
 
               <!-- Cart Summary -->
               <div class="border-t pt-4 mt-6">
-                <div class="flex justify-between text-lg font-medium text-gray-900">
+                <div class="flex justify-between text-lg font-medium text-ink">
                   <span>Total:</span>
-                  <span class="text-black">{{ cartStore.formattedTotalPrice }}</span>
+                  <span class="text-ink">{{ cartStore.formattedTotalPrice }}</span>
                 </div>
               </div>
             </div>
 
             <!-- Customer Form -->
-            <div class="bg-gray-50 rounded-lg p-4 sm:p-6 order-2 xl:order-2">
-              <h3 class="text-lg font-medium text-gray-900 mb-4">Información de contacto</h3>
-              
+            <div class="bg-surface-warm rounded-sm p-4 sm:p-6 order-2 xl:order-2">
+              <h3 class="text-lg font-display font-semibold uppercase tracking-wide text-sm text-ink mb-4">Información de contacto</h3>
+
               <form @submit.prevent="handleCheckout" class="space-y-4">
                 <!-- Name -->
                 <div>
-                  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">
+                  <label for="name" class="block text-sm font-medium text-ink-muted mb-1">
                     Nombre completo <span class="text-red-700">*</span>
                   </label>
                   <input
@@ -201,14 +201,14 @@
                     v-model="localCustomerInfo.name"
                     type="text"
                     placeholder="Tu nombre completo"
-                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
+                    class="w-full px-3 py-2 border border-surface-muted rounded-sm focus:outline-none focus:ring-2 focus:ring-brand-orange-500 focus:border-brand-orange-500"
                     :class="{ 'border-red-300': validationErrors.includes('El nombre es requerido') }"
                   />
                 </div>
 
                 <!-- Phone -->
                 <div>
-                  <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+                  <label for="phone" class="block text-sm font-medium text-ink-muted mb-1">
                     Teléfono <span class="text-red-700">*</span>
                   </label>
                   <input
@@ -216,14 +216,14 @@
                     v-model="localCustomerInfo.phone"
                     type="tel"
                     placeholder="+54 9 11 1234-5678"
-                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
+                    class="w-full px-3 py-2 border border-surface-muted rounded-sm focus:outline-none focus:ring-2 focus:ring-brand-orange-500 focus:border-brand-orange-500"
                     :class="{ 'border-red-300': validationErrors.some(error => error.includes('teléfono')) }"
                   />
                 </div>
 
                 <!-- Email -->
                 <div>
-                  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                  <label for="email" class="block text-sm font-medium text-ink-muted mb-1">
                     Email <span class="text-red-700">*</span>
                   </label>
                   <input
@@ -231,14 +231,14 @@
                     v-model="localCustomerInfo.email"
                     type="email"
                     placeholder="tu@email.com"
-                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
+                    class="w-full px-3 py-2 border border-surface-muted rounded-sm focus:outline-none focus:ring-2 focus:ring-brand-orange-500 focus:border-brand-orange-500"
                     :class="{ 'border-red-300': validationErrors.some(error => error.includes('email')) }"
                   />
                 </div>
 
                 <!-- Address -->
                 <div>
-                  <label for="address" class="block text-sm font-medium text-gray-700 mb-1">
+                  <label for="address" class="block text-sm font-medium text-ink-muted mb-1">
                     Dirección de envío <span class="text-red-700">*</span>
                   </label>
                   <textarea
@@ -246,14 +246,14 @@
                     v-model="localCustomerInfo.address"
                     rows="3"
                     placeholder="Calle, número, ciudad, provincia"
-                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500"
+                    class="w-full px-3 py-2 border border-surface-muted rounded-sm focus:outline-none focus:ring-2 focus:ring-brand-orange-500 focus:border-brand-orange-500"
                     :class="{ 'border-red-300': validationErrors.includes('La dirección es requerida') }"
                   ></textarea>
                 </div>
 
                 <!-- Payment Method -->
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-3">
+                  <label class="block text-sm font-medium text-ink-muted mb-3">
                     Método de pago preferido <span class="text-red-700">*</span>
                   </label>
                   <div class="space-y-2">
@@ -263,9 +263,9 @@
                         v-model="localCustomerInfo.paymentMethod"
                         type="radio"
                         value="transfer"
-                        class="h-4 w-4 text-black focus:ring-gray-500 border-gray-300"
+                        class="h-4 w-4 text-brand-orange-600 focus:ring-brand-orange-500 border-surface-muted"
                       />
-                      <label for="transfer" class="ml-3 text-sm text-gray-700">
+                      <label for="transfer" class="ml-3 text-sm text-ink-muted">
                         Transferencia bancaria (recomendado)
                       </label>
                     </div>
@@ -275,9 +275,9 @@
                         v-model="localCustomerInfo.paymentMethod"
                         type="radio"
                         value="cash"
-                        class="h-4 w-4 text-black focus:ring-gray-500 border-gray-300"
+                        class="h-4 w-4 text-brand-orange-600 focus:ring-brand-orange-500 border-surface-muted"
                       />
-                      <label for="cash" class="ml-3 text-sm text-gray-700">
+                      <label for="cash" class="ml-3 text-sm text-ink-muted">
                         Efectivo (contra entrega)
                       </label>
                     </div>
@@ -287,9 +287,9 @@
                         v-model="localCustomerInfo.paymentMethod"
                         type="radio"
                         value="card"
-                        class="h-4 w-4 text-black focus:ring-gray-500 border-gray-300"
+                        class="h-4 w-4 text-brand-orange-600 focus:ring-brand-orange-500 border-surface-muted"
                       />
-                      <label for="card" class="ml-3 text-sm text-gray-700">
+                      <label for="card" class="ml-3 text-sm text-ink-muted">
                         Tarjeta de crédito/débito
                       </label>
                     </div>
@@ -298,7 +298,7 @@
 
                 <!-- Validation Errors -->
                 <div v-if="validationErrors.length > 0" class="space-y-1">
-                  <div 
+                  <div
                     v-for="error in validationErrors"
                     :key="error"
                     class="flex items-center space-x-2 text-sm text-red-700"
@@ -315,7 +315,7 @@
                     <div>
                       <p class="text-sm font-medium text-green-800">Finalización via WhatsApp</p>
                       <p class="text-sm text-green-700 mt-1">
-                        Al continuar, serás redirigido a WhatsApp con todos los detalles de tu pedido pre-escritos. 
+                        Al continuar, serás redirigido a WhatsApp con todos los detalles de tu pedido pre-escritos.
                         <span class="font-medium">Solo presiona "Enviar" o Enter</span> para completar tu pedido.
                       </p>
                       <div class="mt-2 flex items-center text-xs text-green-700">
@@ -330,7 +330,7 @@
                 <button
                   type="submit"
                   :disabled="isProcessing"
-                  class="w-full bg-green-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center"
+                  class="w-full bg-brand-orange-600 text-white py-3 px-4 rounded-sm font-display font-bold uppercase tracking-wider hover:bg-brand-orange-700 focus:outline-none focus:ring-4 focus:ring-brand-orange-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center"
                   :class="{ 'animate-pulse': isProcessing }"
                 >
                   <IconWhatsapp v-if="!isProcessing" class="h-5 w-5 mr-2" />
@@ -409,26 +409,26 @@ function goToProducts() {
 async function handleCheckout() {
   // Update store with local customer info
   cartStore.setCustomerInfo(localCustomerInfo.value)
-  
+
   // Validate customer info
   validationErrors.value = cartStore.validateCustomerInfo()
-  
+
   if (validationErrors.value.length > 0) {
     toast.error('Por favor completa todos los campos requeridos')
     return
   }
-  
+
   if (cartItems.value.length === 0) {
     toast.error('Tu carrito está vacío')
     return
   }
-  
+
   isProcessing.value = true
 
   try {
     // Create order in database and generate WhatsApp URL with order number
     const whatsappURL = await cartStore.sendOrderToWhatsApp('5493794000783')
-    
+
     // Use mobile-optimized URL opening
     const openSuccess = openURLMobileOptimized(whatsappURL)
 
@@ -442,11 +442,11 @@ async function handleCheckout() {
       isProcessing.value = false
       return
     }
-    
+
     // Clear cart and close modal
     cartStore.clearCart()
     cartStore.closeCart()
-    
+
     // Reset form
     localCustomerInfo.value = {
       name: '',
@@ -455,9 +455,9 @@ async function handleCheckout() {
       address: '',
       paymentMethod: 'transfer'
     }
-    
+
     toast.success('¡Pedido enviado! Se abrió WhatsApp con los detalles.')
-    
+
   } catch (error) {
     console.error('Error processing checkout:', error)
     toast.error('Error al procesar el pedido. Por favor intenta de nuevo.')

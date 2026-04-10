@@ -6,23 +6,23 @@
   >
     <div class="flex min-h-screen items-start justify-center p-4 pt-16">
       <!-- Backdrop -->
-      <div class="fixed inset-0 bg-black bg-opacity-25 transition-opacity"></div>
-      
+      <div class="fixed inset-0 bg-ink/25 transition-opacity"></div>
+
       <!-- Modal -->
       <div
-        class="relative w-full max-w-2xl transform rounded-lg bg-white shadow-xl transition-all"
+        class="relative w-full max-w-2xl transform rounded-sm bg-white shadow-xl transition-all"
         @click.stop
       >
         <!-- Search Input -->
-        <div class="border-b border-gray-200 px-4 py-3">
+        <div class="border-b border-surface-muted px-4 py-3">
           <div class="flex items-center">
-            <IconMagnify class="h-5 w-5 text-gray-400 mr-3" />
+            <IconMagnify class="h-5 w-5 text-ink-subtle mr-3" />
             <input
               ref="searchInput"
               v-model="localQuery"
               type="text"
               placeholder="Buscar camisetas, equipos, ligas..."
-              class="w-full border-none outline-none text-lg placeholder-gray-500"
+              class="w-full border-none outline-none text-lg placeholder-ink-subtle font-body"
               @keydown="handleKeydown"
               @input="handleInput"
             />
@@ -30,7 +30,7 @@
               v-if="localQuery"
               type="button"
               @click="clearSearch"
-              class="ml-2 p-1 text-gray-400 hover:text-gray-800"
+              class="ml-2 p-1 text-ink-subtle hover:text-ink"
               aria-label="Limpiar búsqueda"
             >
               <IconClose class="h-5 w-5" />
@@ -39,7 +39,7 @@
             <button
               type="button"
               @click="searchStore.closeSearch"
-              class="ml-2 p-1 text-gray-400 hover:text-gray-800"
+              class="ml-2 p-1 text-ink-subtle hover:text-ink"
               aria-label="Cerrar búsqueda"
             >
               <IconClose class="h-6 w-6" />
@@ -47,20 +47,20 @@
             </button>
           </div>
         </div>
-        
+
         <!-- Search Results -->
         <div class="max-h-96 overflow-y-auto">
           <!-- Loading -->
           <div v-if="searchStore.loading" class="p-4">
             <div class="flex items-center justify-center py-8">
-              <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
-              <span class="ml-3 text-gray-800">Buscando...</span>
+              <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-orange-600"></div>
+              <span class="ml-3 text-ink">Buscando...</span>
             </div>
           </div>
-          
+
           <!-- Search Results -->
           <div v-else-if="searchStore.results.length > 0" class="p-2">
-            <div class="mb-2 px-2 py-1 text-sm text-gray-700">
+            <div class="mb-2 px-2 py-1 text-sm text-ink-muted">
               {{ searchStore.results.length }} resultado{{ searchStore.results.length > 1 ? 's' : '' }}
             </div>
             <div class="space-y-1">
@@ -68,8 +68,8 @@
                 v-for="(product, index) in searchStore.results.slice(0, 10)"
                 :key="product.id"
                 :class="[
-                  'flex items-center p-3 rounded-lg cursor-pointer transition-colors',
-                  selectedIndex === index ? 'bg-primary-50' : 'hover:bg-gray-50'
+                  'flex items-center p-3 rounded-sm cursor-pointer transition-colors',
+                  selectedIndex === index ? 'bg-brand-orange-50' : 'hover:bg-surface-warm'
                 ]"
                 @click="goToProduct(product)"
                 @mouseenter="selectedIndex = index"
@@ -82,16 +82,16 @@
                 <img
                   :src="product.images[0]"
                   :alt="product.name"
-                  class="h-12 w-12 object-cover rounded-md mr-3"
+                  class="h-12 w-12 object-cover rounded-sm mr-3"
                 />
                 <div class="flex-1 min-w-0">
-                  <h3 class="font-medium text-gray-900 truncate" v-html="highlightText(product.name, localQuery)"></h3>
-                  <p class="text-sm text-gray-700 capitalize">{{ getLeagueName(product.league) }}</p>
+                  <h3 class="font-medium text-ink truncate" v-html="highlightText(product.name, localQuery)"></h3>
+                  <p class="text-sm text-ink-muted capitalize">{{ getLeagueName(product.league) }}</p>
                   <div class="flex items-center space-x-2 mt-1">
-                    <span class="font-bold text-primary-600">{{ formatPrice(product.price) }}</span>
+                    <span class="font-bold text-brand-orange-600">{{ formatPrice(product.price) }}</span>
                     <span
                       v-if="product.originalPrice"
-                      class="text-sm text-gray-700 line-through"
+                      class="text-sm text-ink-muted line-through"
                     >
                       {{ formatPrice(product.originalPrice) }}
                     </span>
@@ -103,15 +103,15 @@
                     </span>
                   </div>
                 </div>
-                <IconArrowRight class="h-5 w-5 text-gray-400" />
+                <IconArrowRight class="h-5 w-5 text-ink-subtle" />
               </div>
             </div>
-            
+
             <!-- View all results link -->
             <div v-if="searchStore.results.length > 10" class="p-3 border-t">
               <NuxtLink
                 :to="`/search?q=${encodeURIComponent(localQuery)}`"
-                class="block text-center text-primary-600 hover:text-primary-700 font-medium"
+                class="block text-center text-brand-orange-600 hover:text-brand-orange-700 font-medium"
                 @click="searchStore.closeSearch"
                 :aria-label="`Ver todos los ${searchStore.results.length} resultados de búsqueda para '${localQuery}'`"
               >
@@ -119,37 +119,37 @@
               </NuxtLink>
             </div>
           </div>
-          
+
           <!-- No Results -->
           <div v-else-if="localQuery && !searchStore.loading" class="p-6 text-center">
-            <IconSearchOff class="h-12 w-12 text-gray-300 mx-auto mb-3" />
-            <h3 class="text-lg font-medium text-gray-900 mb-2">
+            <IconSearchOff class="h-12 w-12 text-ink-subtle mx-auto mb-3" />
+            <h3 class="text-lg font-medium text-ink mb-2">
               No encontramos resultados
             </h3>
-            <p class="text-gray-700 mb-4">
+            <p class="text-ink-muted mb-4">
               Intenta con otros términos de búsqueda o explora nuestras categorías
             </p>
             <div class="space-y-2">
               <NuxtLink
                 to="/categories"
-                class="inline-block bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors"
+                class="inline-block bg-brand-orange-600 text-white px-4 py-2 rounded-sm hover:bg-brand-orange-700 transition-colors"
                 @click="searchStore.closeSearch"
               >
                 Ver Categorías
               </NuxtLink>
             </div>
           </div>
-          
+
           <!-- Default State - Recent Searches & Suggestions -->
           <div v-else-if="!localQuery" class="p-4">
             <!-- Recent Searches -->
             <div v-if="searchStore.recentSearches.length > 0" class="mb-6">
               <div class="flex items-center justify-between mb-3">
-                <h3 class="text-sm font-medium text-gray-900">Búsquedas recientes</h3>
+                <h3 class="text-sm font-medium text-ink">Búsquedas recientes</h3>
                 <button
                   type="button"
                   @click="searchStore.clearRecentSearches"
-                  class="text-xs text-gray-700 hover:text-gray-700"
+                  class="text-xs text-ink-muted hover:text-ink-muted"
                   aria-label="Limpiar historial de búsquedas recientes"
                 >
                   Limpiar
@@ -161,27 +161,27 @@
                   :key="search"
                   type="button"
                   @click="setSearchQuery(search)"
-                  class="flex items-center w-full p-2 text-left rounded-lg hover:bg-gray-50 transition-colors"
+                  class="flex items-center w-full p-2 text-left rounded-sm hover:bg-surface-warm transition-colors"
                   :aria-label="`Buscar '${search}' nuevamente`"
                 >
-                  <IconHistory class="h-4 w-4 text-gray-400 mr-3" />
-                  <span class="text-gray-700">{{ search }}</span>
+                  <IconHistory class="h-4 w-4 text-ink-subtle mr-3" />
+                  <span class="text-ink-muted">{{ search }}</span>
                 </button>
               </div>
             </div>
-            
+
             <!-- Popular Leagues -->
             <div>
-              <h3 class="text-sm font-medium text-gray-900 mb-3">Ligas populares</h3>
+              <h3 class="text-sm font-medium text-ink mb-3">Ligas populares</h3>
               <div class="grid grid-cols-2 gap-2">
                 <NuxtLink
                   v-for="league in popularLeagues"
                   :key="league.slug"
                   :to="`/categories/${league.slug}`"
-                  class="flex items-center p-3 rounded-lg border border-gray-200 hover:border-primary-300 hover:bg-primary-50 transition-all"
+                  class="flex items-center p-3 rounded-sm border border-surface-muted hover:border-brand-orange-300 hover:bg-brand-orange-50 transition-all"
                   @click="searchStore.closeSearch"
                 >
-                  <span class="text-sm font-medium text-gray-900">{{ league.name }}</span>
+                  <span class="text-sm font-medium text-ink">{{ league.name }}</span>
                 </NuxtLink>
               </div>
             </div>
@@ -243,7 +243,7 @@ const handleInput = () => {
 // Handle keyboard navigation
 const handleKeydown = (event) => {
   const results = searchStore.results.slice(0, 10)
-  
+
   switch (event.key) {
     case 'ArrowDown':
       event.preventDefault()
@@ -319,7 +319,7 @@ const handleGlobalKeydown = (event) => {
   if (event.key === 'Escape' && searchStore.isOpen) {
     searchStore.closeSearch()
   }
-  
+
   // Cmd/Ctrl + K to open search
   if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
     event.preventDefault()

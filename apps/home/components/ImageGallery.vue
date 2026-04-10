@@ -1,7 +1,7 @@
 <template>
   <div class="image-gallery">
     <!-- Main Image Display - Simplified -->
-    <div class="relative bg-white rounded-lg overflow-hidden mb-4 shadow-sm" style="aspect-ratio: 1 / 1;">
+    <div class="relative bg-white rounded-sm overflow-hidden mb-4" style="aspect-ratio: 1 / 1;">
       <!-- Loading Overlay -->
       <Transition name="fade">
         <div
@@ -9,8 +9,8 @@
           class="absolute inset-0 z-10 flex items-center justify-center bg-white/80 backdrop-blur-sm"
         >
           <div class="flex flex-col items-center gap-2">
-            <div class="w-8 h-8 border-2 border-gray-300 border-t-gray-900 rounded-full animate-spin"></div>
-            <span class="text-sm text-gray-600">Cargando...</span>
+            <div class="w-8 h-8 border-2 border-surface-muted border-t-ink rounded-full animate-spin"></div>
+            <span class="text-sm text-ink-muted">Cargando...</span>
           </div>
         </div>
       </Transition>
@@ -32,60 +32,60 @@
 
       <!-- Simple Placeholder -->
       <div v-else class="w-full h-full flex items-center justify-center">
-        <IconImage class="h-24 w-24 text-gray-400" />
+        <IconImage class="h-24 w-24 text-ink-subtle" />
       </div>
 
       <!-- Simple Navigation - only if multiple images -->
       <button
         v-if="resolvedImages.length > 1 && currentIndex > 0"
         @click="previousImage"
-        class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white shadow-lg text-gray-800 rounded-full p-2 hover:bg-gray-50"
+        class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white shadow-lg text-ink rounded-full p-2 hover:bg-surface-warm"
       >
         <IconChevronLeft class="h-5 w-5" />
       </button>
-      
+
       <button
         v-if="resolvedImages.length > 1 && currentIndex < resolvedImages.length - 1"
         @click="nextImage"
-        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white shadow-lg text-gray-800 rounded-full p-2 hover:bg-gray-50"
+        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white shadow-lg text-ink rounded-full p-2 hover:bg-surface-warm"
       >
         <IconChevronRight class="h-5 w-5" />
       </button>
-      
+
       <!-- Simple counter -->
       <div
         v-if="resolvedImages.length > 1"
-        class="absolute bottom-2 right-2 bg-white text-gray-800 text-sm px-2 py-1 rounded shadow-sm"
+        class="absolute bottom-2 right-2 bg-white text-ink text-sm px-2 py-1 rounded shadow-sm"
       >
         {{ currentIndex + 1 }} / {{ resolvedImages.length }}
       </div>
     </div>
-    
+
     <!-- Thumbnail Strip -->
     <div v-if="resolvedImages.length > 1" class="relative">
       <!-- Thumbnail navigation buttons -->
       <button
         v-if="showThumbnailNav"
         @click="scrollThumbnails(-1)"
-        class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow-md rounded-full p-1 z-10 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500"
+        class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow-md rounded-full p-1 z-10 hover:bg-surface-warm focus:outline-none focus:ring-2 focus:ring-brand-orange-500"
         :disabled="thumbnailScrollPosition <= 0"
         :class="{ 'opacity-50 cursor-not-allowed': thumbnailScrollPosition <= 0 }"
       >
         <IconChevronLeft class="h-4 w-4" />
       </button>
-      
+
       <button
         v-if="showThumbnailNav"
         @click="scrollThumbnails(1)"
-        class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow-md rounded-full p-1 z-10 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500"
+        class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow-md rounded-full p-1 z-10 hover:bg-surface-warm focus:outline-none focus:ring-2 focus:ring-brand-orange-500"
         :disabled="thumbnailScrollPosition >= maxThumbnailScroll"
         :class="{ 'opacity-50 cursor-not-allowed': thumbnailScrollPosition >= maxThumbnailScroll }"
       >
         <IconChevronRight class="h-4 w-4" />
       </button>
-      
+
       <!-- Thumbnail container -->
-      <div 
+      <div
         ref="thumbnailContainer"
         class="flex space-x-2 overflow-x-auto scrollbar-hide"
         style="scroll-behavior: smooth;"
@@ -94,10 +94,10 @@
           v-for="(thumbnailUrl, index) in resolvedThumbnails"
           :key="index"
           @click="setCurrentImage(index)"
-          class="flex-shrink-0 w-16 h-16 rounded-md overflow-hidden border-2 transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 shadow-sm hover:shadow-md"
+          class="flex-shrink-0 w-16 h-16 rounded-sm overflow-hidden border-2 transition-all focus:outline-none focus:ring-2 focus:ring-brand-orange-500 hover:shadow-md"
           :class="{
-            'border-primary-600 shadow-md': currentIndex === index,
-            'border-gray-200 hover:border-gray-300': currentIndex !== index
+            'border-brand-orange-600 shadow-md': currentIndex === index,
+            'border-surface-muted hover:border-surface-muted': currentIndex !== index
           }"
         >
           <OptimizedImage
@@ -178,10 +178,10 @@ function handleImageError(event) {
 
 function scrollThumbnails(direction) {
   if (!thumbnailContainer.value) return
-  
+
   const scrollAmount = 200 // pixels to scroll
   const newPosition = thumbnailScrollPosition.value + (direction * scrollAmount)
-  
+
   thumbnailScrollPosition.value = Math.max(0, Math.min(newPosition, maxThumbnailScroll.value))
   thumbnailContainer.value.scrollLeft = thumbnailScrollPosition.value
 }
@@ -189,7 +189,7 @@ function scrollThumbnails(direction) {
 // Keyboard navigation
 function handleKeydown(event) {
   if (!event) return
-  
+
   switch (event.key) {
     case 'ArrowRight':
       event.preventDefault()
@@ -208,7 +208,7 @@ function handleKeydown(event) {
 // Lifecycle
 onMounted(() => {
   document.addEventListener('keydown', handleKeydown)
-  
+
   // Auto-scroll thumbnails to center current image
   nextTick(() => {
     if (thumbnailContainer.value && currentIndex.value > 3 && props.images?.length > currentIndex.value) {
@@ -241,8 +241,8 @@ watch(currentIndex, (newIndex) => {
         // Check if thumbnail is visible, if not scroll to it
         const containerRect = thumbnailContainer.value.getBoundingClientRect()
         const thumbnailRect = thumbnail.getBoundingClientRect()
-        
-        if (containerRect && thumbnailRect && 
+
+        if (containerRect && thumbnailRect &&
             (thumbnailRect.left < containerRect.left || thumbnailRect.right > containerRect.right)) {
           thumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
         }

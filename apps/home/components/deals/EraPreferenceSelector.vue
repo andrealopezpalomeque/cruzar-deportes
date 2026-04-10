@@ -6,10 +6,10 @@
       type="button"
       @click="selectEra(era.value)"
       :class="[
-        'w-full p-4 rounded-lg border-2 text-left transition-all',
+        'w-full p-4 rounded-sm border-2 text-left transition-all',
         modelValue === era.value
-          ? 'border-black bg-gray-50'
-          : 'border-gray-200 hover:border-gray-300'
+          ? 'border-ink bg-surface-warm'
+          : 'border-surface-muted hover:border-surface-muted'
       ]"
     >
       <div class="flex items-center">
@@ -17,18 +17,18 @@
           :class="[
             'w-5 h-5 min-w-[20px] min-h-[20px] rounded-full border-2 flex items-center justify-center mr-4 flex-shrink-0',
             modelValue === era.value
-              ? 'border-black'
-              : 'border-gray-300'
+              ? 'border-ink'
+              : 'border-surface-muted'
           ]"
         >
           <div
             v-if="modelValue === era.value"
-            class="w-3 h-3 min-w-[12px] min-h-[12px] rounded-full bg-black"
+            class="w-3 h-3 min-w-[12px] min-h-[12px] rounded-full bg-ink"
           ></div>
         </div>
         <div>
           <h4 class="font-medium">{{ era.label }}</h4>
-          <p class="text-sm text-gray-600">{{ era.description }}</p>
+          <p class="text-sm text-ink-muted">{{ era.description }}</p>
         </div>
       </div>
     </button>

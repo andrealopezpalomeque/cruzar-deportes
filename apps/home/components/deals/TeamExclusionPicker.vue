@@ -8,17 +8,17 @@
         @keyup.enter="addTeam"
         placeholder="Escribí el nombre del equipo..."
         :disabled="modelValue.length >= 5"
-        class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
+        class="flex-1 px-4 py-2 border border-surface-muted rounded-sm focus:outline-none focus:ring-2 focus:ring-brand-orange-500 focus:border-transparent disabled:bg-surface-muted disabled:cursor-not-allowed"
       />
       <button
         type="button"
         @click="addTeam"
         :disabled="!teamInput.trim() || modelValue.length >= 5"
         :class="[
-          'px-4 py-2 rounded-lg font-medium transition-colors flex-shrink-0',
+          'px-4 py-2 rounded-sm font-medium transition-colors flex-shrink-0',
           !teamInput.trim() || modelValue.length >= 5
-            ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-            : 'bg-black text-white hover:bg-gray-800'
+            ? 'bg-surface-muted text-ink-subtle cursor-not-allowed'
+            : 'bg-ink text-white hover:bg-ink-light'
         ]"
       >
         <IconPlus class="w-5 h-5" />
@@ -26,21 +26,21 @@
     </div>
 
     <!-- Info text -->
-    <p class="text-sm text-gray-600 mb-4">
+    <p class="text-sm text-ink-muted mb-4">
       <span v-if="modelValue.length >= 5">Alcanzaste el máximo de 5 equipos</span>
       <span v-else>Podés excluir hasta 5 equipos ({{ 5 - modelValue.length }} restantes)</span>
     </p>
 
     <!-- Excluded teams list -->
     <div v-if="modelValue.length > 0">
-      <p class="text-sm font-medium text-gray-700 mb-2">
+      <p class="text-sm font-medium text-ink-muted mb-2">
         Equipos excluidos:
       </p>
       <div class="flex flex-wrap gap-2">
         <span
           v-for="team in modelValue"
           :key="team"
-          class="inline-flex items-center px-3 py-1.5 bg-gray-100 text-gray-800 text-sm rounded-full"
+          class="inline-flex items-center px-3 py-1.5 bg-surface-muted text-ink text-sm rounded-full"
         >
           {{ team }}
           <button
@@ -55,8 +55,8 @@
     </div>
 
     <!-- Empty state -->
-    <div v-else class="p-4 bg-gray-50 rounded-lg text-center">
-      <p class="text-sm text-gray-500">No hay equipos excluidos</p>
+    <div v-else class="p-4 bg-surface-warm rounded-sm text-center">
+      <p class="text-sm text-ink-muted">No hay equipos excluidos</p>
     </div>
   </div>
 </template>

@@ -2,8 +2,8 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <!-- Header -->
     <div class="text-center mb-12">
-      <h1 class="text-4xl font-light text-gray-900 mb-4">Todos los Productos</h1>
-      <p class="text-lg text-gray-800">Navega nuestra colección completa de camisetas deportivas</p>
+      <h1 class="font-display text-display-xl uppercase text-ink mb-4">Todos los Productos</h1>
+      <p class="text-lg text-ink">Navega nuestra colección completa de camisetas deportivas</p>
     </div>
 
     <!-- Two-Tier Filters -->
@@ -14,10 +14,10 @@
         <button
           @click="selectProductType('')"
           :class="[
-            'px-4 py-2 text-sm font-medium rounded-md transition-colors flex-shrink-0',
+            'px-4 py-2 text-sm font-medium rounded-sm transition-colors flex-shrink-0',
             selectedProductType === ''
-              ? 'bg-black text-white'
-              : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+              ? 'bg-ink text-white'
+              : 'bg-surface-muted text-ink hover:bg-surface-muted'
           ]"
         >
           Todos
@@ -27,10 +27,10 @@
           :key="type.id"
           @click="selectProductType(type.slug)"
           :class="[
-            'px-4 py-2 text-sm font-medium rounded-md transition-colors flex-shrink-0',
+            'px-4 py-2 text-sm font-medium rounded-sm transition-colors flex-shrink-0',
             selectedProductType === type.slug
-              ? 'bg-black text-white'
-              : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+              ? 'bg-ink text-white'
+              : 'bg-surface-muted text-ink hover:bg-surface-muted'
           ]"
         >
           {{ type.name }}
@@ -45,10 +45,10 @@
         <button
           @click="selectedLeague = ''"
           :class="[
-            'px-3 py-1.5 text-xs font-medium rounded-md transition-colors flex-shrink-0',
+            'px-3 py-1.5 text-xs font-medium rounded-sm transition-colors flex-shrink-0',
             selectedLeague === ''
               ? 'bg-gray-700 text-white'
-              : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+              : 'bg-surface-muted text-ink hover:bg-surface-muted'
           ]"
         >
           Todas las Ligas
@@ -58,10 +58,10 @@
           :key="league.id"
           @click="selectedLeague = league.slug"
           :class="[
-            'px-3 py-1.5 text-xs font-medium rounded-md transition-colors flex-shrink-0',
+            'px-3 py-1.5 text-xs font-medium rounded-sm transition-colors flex-shrink-0',
             selectedLeague === league.slug
               ? 'bg-gray-700 text-white'
-              : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+              : 'bg-surface-muted text-ink hover:bg-surface-muted'
           ]"
         >
           {{ league.name }}
@@ -70,7 +70,7 @@
         <div class="absolute right-0 top-0 h-full w-8 bg-gradient-to-r from-transparent to-white pointer-events-none md:hidden"></div>
       </div>
 
-      <div class="text-sm text-gray-800">
+      <div class="text-sm text-ink">
         {{ filteredProducts.length }} {{ filteredProducts.length === 1 ? 'producto' : 'productos' }}
       </div>
     </div>
@@ -98,7 +98,7 @@
         <button
           @click="currentPage = Math.max(1, currentPage - 1)"
           :disabled="currentPage === 1"
-          class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+          class="px-3 py-2 text-sm font-medium text-ink-muted bg-white border border-surface-muted rounded-sm hover:bg-surface-warm disabled:bg-surface-muted disabled:text-ink-subtle disabled:cursor-not-allowed"
         >
           Anterior
         </button>
@@ -109,10 +109,10 @@
             :key="page"
             @click="currentPage = page"
             :class="[
-              'px-3 py-2 text-sm font-medium rounded-md',
+              'px-3 py-2 text-sm font-medium rounded-sm',
               currentPage === page
-                ? 'bg-black text-white'
-                : 'text-gray-800 bg-white border border-gray-300 hover:bg-gray-50'
+                ? 'bg-ink text-white'
+                : 'text-ink bg-white border border-surface-muted hover:bg-surface-warm'
             ]"
           >
             {{ page }}
@@ -122,7 +122,7 @@
         <button
           @click="currentPage = Math.min(totalPages, currentPage + 1)"
           :disabled="currentPage === totalPages"
-          class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+          class="px-3 py-2 text-sm font-medium text-ink-muted bg-white border border-surface-muted rounded-sm hover:bg-surface-warm disabled:bg-surface-muted disabled:text-ink-subtle disabled:cursor-not-allowed"
         >
           Siguiente
         </button>
@@ -131,15 +131,15 @@
 
     <!-- Empty State -->
     <div v-else class="text-center py-12">
-      <IconTshirtCrew class="h-16 w-16 text-gray-400 mx-auto mb-4" />
-      <h3 class="text-lg font-medium text-gray-900 mb-2">No se encontraron productos</h3>
-      <p class="text-gray-800 mb-6">
+      <IconTshirtCrew class="h-16 w-16 text-ink-subtle mx-auto mb-4" />
+      <h3 class="text-lg font-medium text-ink mb-2">No se encontraron productos</h3>
+      <p class="text-ink mb-6">
         {{ selectedProductType || selectedLeague ? 'No se encontraron productos con estos filtros.' : 'No hay productos disponibles en este momento.' }}
       </p>
       <button
         v-if="selectedProductType || selectedLeague"
         @click="resetFilters"
-        class="inline-flex items-center px-4 py-2 bg-black text-white font-medium rounded-md hover:bg-gray-900 transition-colors"
+        class="inline-flex items-center px-4 py-2 bg-ink text-white font-display font-semibold uppercase tracking-wide rounded-sm hover:bg-ink-light transition-colors"
       >
         <IconRefresh class="mr-2 h-4 w-4" />
         Mostrar Todos los Productos

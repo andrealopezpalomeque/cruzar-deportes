@@ -7,10 +7,10 @@
         type="button"
         @click="selectSize(size)"
         :class="[
-          'py-3 px-4 text-center font-medium rounded-lg border-2 transition-all',
+          'py-3 px-4 text-center font-medium rounded-sm border-2 transition-all',
           modelValue === size
-            ? 'border-black bg-black text-white'
-            : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300'
+            ? 'border-ink bg-ink text-white'
+            : 'border-surface-muted bg-white text-ink-muted hover:border-surface-muted'
         ]"
       >
         {{ size }}

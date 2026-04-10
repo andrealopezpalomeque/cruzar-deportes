@@ -4,9 +4,9 @@
       <div
         v-for="size in sizes"
         :key="size"
-        class="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
+        class="flex items-center justify-between p-3 bg-surface-warm rounded-sm"
       >
-        <span class="font-medium text-gray-900 w-12">{{ size }}</span>
+        <span class="font-medium text-ink w-12">{{ size }}</span>
         <div class="flex items-center space-x-3">
           <button
             type="button"
@@ -15,8 +15,8 @@
             :class="[
               'w-8 h-8 rounded-full flex items-center justify-center transition-colors',
               sizeDistribution[size] === 0
-                ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                ? 'bg-surface-muted text-ink-subtle cursor-not-allowed'
+                : 'bg-surface-muted text-ink-muted hover:bg-surface-muted'
             ]"
           >
             <IconMinus class="w-4 h-4" />
@@ -29,8 +29,8 @@
             :class="[
               'w-8 h-8 rounded-full flex items-center justify-center transition-colors',
               totalSelected >= jerseyCount
-                ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                : 'bg-black text-white hover:bg-gray-800'
+                ? 'bg-surface-muted text-ink-subtle cursor-not-allowed'
+                : 'bg-ink text-white hover:bg-ink-light'
             ]"
           >
             <IconPlus class="w-4 h-4" />
@@ -42,24 +42,24 @@
     <!-- Total indicator -->
     <div
       :class="[
-        'p-4 rounded-lg border-2 transition-colors',
+        'p-4 rounded-sm border-2 transition-colors',
         isValid
           ? 'bg-green-50 border-green-500'
-          : 'bg-gray-50 border-gray-200'
+          : 'bg-surface-warm border-surface-muted'
       ]"
     >
       <div class="flex items-center justify-between">
-        <span class="font-medium text-gray-700">Total:</span>
+        <span class="font-medium text-ink-muted">Total:</span>
         <span
           :class="[
             'text-lg font-medium',
-            isValid ? 'text-green-600' : 'text-gray-900'
+            isValid ? 'text-green-600' : 'text-ink'
           ]"
         >
           {{ totalSelected }}/{{ jerseyCount }} camisetas
         </span>
       </div>
-      <p v-if="!isValid" class="text-sm text-gray-600 mt-1">
+      <p v-if="!isValid" class="text-sm text-ink-muted mt-1">
         Seleccioná {{ jerseyCount - totalSelected }} talle(s) más
       </p>
       <p v-else class="text-sm text-green-600 mt-1">

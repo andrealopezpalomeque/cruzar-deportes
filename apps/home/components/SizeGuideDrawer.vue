@@ -18,16 +18,16 @@
               @click.stop
             >
               <!-- Header -->
-              <div class="sticky top-0 z-10 bg-white border-b border-gray-200 px-6 py-4">
+              <div class="sticky top-0 z-10 bg-white border-b border-surface-muted px-6 py-4">
                 <div class="flex items-center justify-between">
                   <div>
-                    <h2 class="text-xl font-medium text-gray-900">Guía de Talles</h2>
-                    <p class="text-sm text-gray-500 mt-1">Medidas en centímetros</p>
+                    <h2 class="text-xl font-medium text-ink">Guía de Talles</h2>
+                    <p class="text-sm text-ink-muted mt-1">Medidas en centímetros</p>
                   </div>
                   <button
                     type="button"
                     @click="close"
-                    class="text-gray-400 hover:text-gray-900 transition-colors p-2 -mr-2 rounded-lg hover:bg-gray-100"
+                    class="text-ink-subtle hover:text-ink transition-colors p-2 -mr-2 rounded-sm hover:bg-surface-muted"
                     aria-label="Cerrar guía de talles"
                   >
                     <IconClose class="h-6 w-6" />
@@ -38,7 +38,7 @@
               <!-- Content -->
               <div class="h-full overflow-y-auto pb-24">
                 <!-- Tab Navigation -->
-                <div class="sticky top-0 bg-white border-b border-gray-200 px-6">
+                <div class="sticky top-0 bg-white border-b border-surface-muted px-6">
                   <div class="flex space-x-1">
                     <button
                       v-for="tab in tabs"
@@ -46,14 +46,14 @@
                       @click="activeTab = tab.id"
                       class="flex-1 py-3 px-4 text-sm font-medium transition-colors relative"
                       :class="{
-                        'text-gray-900': activeTab === tab.id,
-                        'text-gray-500 hover:text-gray-700': activeTab !== tab.id
+                        'text-ink': activeTab === tab.id,
+                        'text-ink-muted hover:text-ink-muted': activeTab !== tab.id
                       }"
                     >
                       {{ tab.label }}
                       <span
                         v-if="activeTab === tab.id"
-                        class="absolute bottom-0 left-0 right-0 h-0.5 bg-black"
+                        class="absolute bottom-0 left-0 right-0 h-0.5 bg-ink"
                       ></span>
                     </button>
                   </div>
@@ -64,10 +64,10 @@
                   <!-- Retro/Fan Version -->
                   <div v-if="activeTab === 'retro'" class="space-y-6">
                     <div>
-                      <h3 class="text-lg font-medium text-gray-900 mb-4">Camisetas Versión Retro/Fan</h3>
+                      <h3 class="text-lg font-medium text-ink mb-4">Camisetas Versión Retro/Fan</h3>
 
                       <!-- Size Table -->
-                      <div class="overflow-x-auto rounded-lg border border-gray-200">
+                      <div class="overflow-x-auto rounded-sm border border-surface-muted">
                         <table class="w-full text-sm">
                           <thead>
                             <tr class="bg-gray-900 text-white">
@@ -77,22 +77,22 @@
                               <th class="px-4 py-3 text-center font-medium">Altura</th>
                             </tr>
                           </thead>
-                          <tbody class="divide-y divide-gray-200">
-                            <tr v-for="(row, index) in retroSizes" :key="row.size" :class="index % 2 === 0 ? 'bg-white' : 'bg-gray-50'">
-                              <td class="px-4 py-3 font-medium text-gray-900">{{ row.size }}</td>
-                              <td class="px-4 py-3 text-center text-gray-700">{{ row.largo }}</td>
-                              <td class="px-4 py-3 text-center text-gray-700">{{ row.ancho }}</td>
-                              <td class="px-4 py-3 text-center text-gray-700">{{ row.altura }}</td>
+                          <tbody class="divide-y divide-surface-muted">
+                            <tr v-for="(row, index) in retroSizes" :key="row.size" :class="index % 2 === 0 ? 'bg-white' : 'bg-surface-warm'">
+                              <td class="px-4 py-3 font-medium text-ink">{{ row.size }}</td>
+                              <td class="px-4 py-3 text-center text-ink-muted">{{ row.largo }}</td>
+                              <td class="px-4 py-3 text-center text-ink-muted">{{ row.ancho }}</td>
+                              <td class="px-4 py-3 text-center text-ink-muted">{{ row.altura }}</td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
 
                       <!-- Recommendation Note -->
-                      <div class="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                      <div class="mt-4 p-4 bg-surface-warm rounded-sm border border-surface-muted">
                         <div class="flex items-start space-x-3">
-                          <IconInformation class="h-5 w-5 text-gray-500 flex-shrink-0 mt-0.5" />
-                          <p class="text-sm text-gray-700">
+                          <IconInformation class="h-5 w-5 text-ink-muted flex-shrink-0 mt-0.5" />
+                          <p class="text-sm text-ink-muted">
                             Se recomienda pedir el mismo o un talle más al que usás habitualmente.
                           </p>
                         </div>
@@ -100,19 +100,19 @@
                     </div>
 
                     <!-- How to Measure -->
-                    <div class="border-t border-gray-200 pt-6">
-                      <h4 class="text-sm font-medium text-gray-900 mb-3">¿Cómo medir?</h4>
-                      <ul class="space-y-2 text-sm text-gray-700">
+                    <div class="border-t border-surface-muted pt-6">
+                      <h4 class="text-sm font-medium text-ink mb-3">¿Cómo medir?</h4>
+                      <ul class="space-y-2 text-sm text-ink-muted">
                         <li class="flex items-start space-x-2">
-                          <span class="font-medium text-gray-900">Largo:</span>
+                          <span class="font-medium text-ink">Largo:</span>
                           <span>Medida desde el hombro hasta el borde inferior</span>
                         </li>
                         <li class="flex items-start space-x-2">
-                          <span class="font-medium text-gray-900">Ancho:</span>
+                          <span class="font-medium text-ink">Ancho:</span>
                           <span>Medida de axila a axila</span>
                         </li>
                         <li class="flex items-start space-x-2">
-                          <span class="font-medium text-gray-900">Altura:</span>
+                          <span class="font-medium text-ink">Altura:</span>
                           <span>Estatura recomendada de la persona</span>
                         </li>
                       </ul>
@@ -122,10 +122,10 @@
                   <!-- Player Version -->
                   <div v-if="activeTab === 'jugador'" class="space-y-6">
                     <div>
-                      <h3 class="text-lg font-medium text-gray-900 mb-4">Camisetas Versión Jugador</h3>
+                      <h3 class="text-lg font-medium text-ink mb-4">Camisetas Versión Jugador</h3>
 
                       <!-- Size Table -->
-                      <div class="overflow-x-auto rounded-lg border border-gray-200">
+                      <div class="overflow-x-auto rounded-sm border border-surface-muted">
                         <table class="w-full text-sm">
                           <thead>
                             <tr class="bg-gray-900 text-white">
@@ -135,22 +135,22 @@
                               <th class="px-4 py-3 text-center font-medium">Altura</th>
                             </tr>
                           </thead>
-                          <tbody class="divide-y divide-gray-200">
-                            <tr v-for="(row, index) in jugadorSizes" :key="row.size" :class="index % 2 === 0 ? 'bg-white' : 'bg-gray-50'">
-                              <td class="px-4 py-3 font-medium text-gray-900">{{ row.size }}</td>
-                              <td class="px-4 py-3 text-center text-gray-700">{{ row.largo }}</td>
-                              <td class="px-4 py-3 text-center text-gray-700">{{ row.ancho }}</td>
-                              <td class="px-4 py-3 text-center text-gray-700">{{ row.altura }}</td>
+                          <tbody class="divide-y divide-surface-muted">
+                            <tr v-for="(row, index) in jugadorSizes" :key="row.size" :class="index % 2 === 0 ? 'bg-white' : 'bg-surface-warm'">
+                              <td class="px-4 py-3 font-medium text-ink">{{ row.size }}</td>
+                              <td class="px-4 py-3 text-center text-ink-muted">{{ row.largo }}</td>
+                              <td class="px-4 py-3 text-center text-ink-muted">{{ row.ancho }}</td>
+                              <td class="px-4 py-3 text-center text-ink-muted">{{ row.altura }}</td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
 
                       <!-- Recommendation Note -->
-                      <div class="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                      <div class="mt-4 p-4 bg-surface-warm rounded-sm border border-surface-muted">
                         <div class="flex items-start space-x-3">
-                          <IconInformation class="h-5 w-5 text-gray-500 flex-shrink-0 mt-0.5" />
-                          <p class="text-sm text-gray-700">
+                          <IconInformation class="h-5 w-5 text-ink-muted flex-shrink-0 mt-0.5" />
+                          <p class="text-sm text-ink-muted">
                             Se recomienda pedir uno o dos talles más al que usás habitualmente.
                           </p>
                         </div>
@@ -158,7 +158,7 @@
                     </div>
 
                     <!-- Difference Note -->
-                    <div class="p-4 bg-amber-50 rounded-lg border border-amber-200">
+                    <div class="p-4 bg-amber-50 rounded-sm border border-amber-200">
                       <div class="flex items-start space-x-3">
                         <IconAlertCircle class="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
                         <div>
@@ -171,19 +171,19 @@
                     </div>
 
                     <!-- How to Measure -->
-                    <div class="border-t border-gray-200 pt-6">
-                      <h4 class="text-sm font-medium text-gray-900 mb-3">¿Cómo medir?</h4>
-                      <ul class="space-y-2 text-sm text-gray-700">
+                    <div class="border-t border-surface-muted pt-6">
+                      <h4 class="text-sm font-medium text-ink mb-3">¿Cómo medir?</h4>
+                      <ul class="space-y-2 text-sm text-ink-muted">
                         <li class="flex items-start space-x-2">
-                          <span class="font-medium text-gray-900">Largo:</span>
+                          <span class="font-medium text-ink">Largo:</span>
                           <span>Medida desde el hombro hasta el borde inferior</span>
                         </li>
                         <li class="flex items-start space-x-2">
-                          <span class="font-medium text-gray-900">Ancho:</span>
+                          <span class="font-medium text-ink">Ancho:</span>
                           <span>Medida de axila a axila</span>
                         </li>
                         <li class="flex items-start space-x-2">
-                          <span class="font-medium text-gray-900">Altura:</span>
+                          <span class="font-medium text-ink">Altura:</span>
                           <span>Estatura recomendada de la persona</span>
                         </li>
                       </ul>

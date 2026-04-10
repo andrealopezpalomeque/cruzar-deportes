@@ -4,21 +4,21 @@
     <nav class="mb-6">
       <ol class="flex items-center space-x-2 text-sm">
         <li>
-          <NuxtLink to="/" class="text-gray-500 hover:text-gray-700">Inicio</NuxtLink>
+          <NuxtLink to="/" class="text-ink-muted hover:text-ink-muted">Inicio</NuxtLink>
         </li>
-        <li class="text-gray-400">/</li>
+        <li class="text-ink-subtle">/</li>
         <li>
-          <NuxtLink to="/types" class="text-gray-500 hover:text-gray-700">Tipos</NuxtLink>
+          <NuxtLink to="/types" class="text-ink-muted hover:text-ink-muted">Tipos</NuxtLink>
         </li>
-        <li class="text-gray-400">/</li>
-        <li class="text-gray-900 font-medium">{{ productType?.name || 'Cargando...' }}</li>
+        <li class="text-ink-subtle">/</li>
+        <li class="text-ink font-medium">{{ productType?.name || 'Cargando...' }}</li>
       </ol>
     </nav>
 
     <!-- Header -->
     <div class="mb-8">
-      <h1 class="text-4xl font-light text-gray-900 mb-4">{{ productType?.name || 'Cargando...' }}</h1>
-      <p class="text-lg text-gray-800">{{ filteredProducts.length }} productos disponibles</p>
+      <h1 class="font-display text-display-xl uppercase text-ink mb-4">{{ productType?.name || 'Cargando...' }}</h1>
+      <p class="text-lg text-ink">{{ filteredProducts.length }} productos disponibles</p>
     </div>
 
     <!-- League Filter -->
@@ -27,10 +27,10 @@
         <button
           @click="selectedLeague = ''"
           :class="[
-            'px-4 py-2 text-sm font-medium rounded-md transition-colors',
+            'px-4 py-2 text-sm font-medium rounded-sm transition-colors',
             selectedLeague === ''
               ? 'bg-gray-700 text-white'
-              : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+              : 'bg-surface-muted text-ink hover:bg-surface-muted'
           ]"
         >
           Todas las Ligas
@@ -40,10 +40,10 @@
           :key="league.id"
           @click="selectedLeague = league.slug"
           :class="[
-            'px-4 py-2 text-sm font-medium rounded-md transition-colors',
+            'px-4 py-2 text-sm font-medium rounded-sm transition-colors',
             selectedLeague === league.slug
               ? 'bg-gray-700 text-white'
-              : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+              : 'bg-surface-muted text-ink hover:bg-surface-muted'
           ]"
         >
           {{ league.name }}
@@ -74,7 +74,7 @@
         <button
           @click="currentPage = Math.max(1, currentPage - 1)"
           :disabled="currentPage === 1"
-          class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+          class="px-3 py-2 text-sm font-medium text-ink-muted bg-white border border-surface-muted rounded-sm hover:bg-surface-warm disabled:bg-surface-muted disabled:text-ink-subtle disabled:cursor-not-allowed"
         >
           Anterior
         </button>
@@ -85,10 +85,10 @@
             :key="page"
             @click="currentPage = page"
             :class="[
-              'px-3 py-2 text-sm font-medium rounded-md',
+              'px-3 py-2 text-sm font-medium rounded-sm',
               currentPage === page
-                ? 'bg-black text-white'
-                : 'text-gray-800 bg-white border border-gray-300 hover:bg-gray-50'
+                ? 'bg-ink text-white'
+                : 'text-ink bg-white border border-surface-muted hover:bg-surface-warm'
             ]"
           >
             {{ page }}
@@ -98,7 +98,7 @@
         <button
           @click="currentPage = Math.min(totalPages, currentPage + 1)"
           :disabled="currentPage === totalPages"
-          class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+          class="px-3 py-2 text-sm font-medium text-ink-muted bg-white border border-surface-muted rounded-sm hover:bg-surface-warm disabled:bg-surface-muted disabled:text-ink-subtle disabled:cursor-not-allowed"
         >
           Siguiente
         </button>
@@ -107,15 +107,15 @@
 
     <!-- Empty State -->
     <div v-else class="text-center py-12">
-      <IconTshirtCrew class="h-16 w-16 text-gray-400 mx-auto mb-4" />
-      <h3 class="text-lg font-medium text-gray-900 mb-2">No se encontraron productos</h3>
-      <p class="text-gray-800 mb-6">
+      <IconTshirtCrew class="h-16 w-16 text-ink-subtle mx-auto mb-4" />
+      <h3 class="text-lg font-medium text-ink mb-2">No se encontraron productos</h3>
+      <p class="text-ink mb-6">
         {{ selectedLeague ? 'No se encontraron productos en esta liga.' : 'No hay productos disponibles en este tipo.' }}
       </p>
       <button
         v-if="selectedLeague"
         @click="selectedLeague = ''"
-        class="inline-flex items-center px-4 py-2 bg-black text-white font-medium rounded-md hover:bg-gray-900 transition-colors"
+        class="inline-flex items-center px-4 py-2 bg-ink text-white font-display font-semibold uppercase tracking-wide rounded-sm hover:bg-ink-light transition-colors"
       >
         <IconRefresh class="mr-2 h-4 w-4" />
         Mostrar Todos

@@ -1,23 +1,23 @@
 <template>
-  <div class="min-h-screen bg-white">
+  <div class="min-h-screen bg-surface-cream">
     <!-- Hero Section -->
-    <div class="relative overflow-hidden bg-white">
-      <div class="absolute inset-0 bg-gray-50" />
+    <div class="relative overflow-hidden bg-surface-cream">
+      <div class="absolute inset-0 bg-surface-cream" />
       <div class="relative max-w-4xl mx-auto px-6 py-16 text-center">
         <div
-          class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700 mb-6"
+          class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-brand-orange-50 border border-brand-orange-200 text-brand-orange-700 mb-6"
         >
           <IconInformationCircle class="w-4 h-4 mr-2" />
           Centro de Ayuda
         </div>
         <h1
-          class="text-4xl md:text-5xl font-light text-gray-900 mb-6 cursor-default"
+          class="font-display text-display-xl uppercase text-ink mb-6 cursor-default"
         >
           Preguntas
-          <span class="text-black"> Frecuentes </span>
+          <span class="text-ink"> Frecuentes </span>
         </h1>
         <p
-          class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed cursor-default"
+          class="text-xl text-ink-muted max-w-2xl mx-auto leading-relaxed cursor-default"
         >
           Encontrá respuestas a las preguntas más comunes sobre compras, envíos,
           devoluciones y más.
@@ -29,43 +29,43 @@
     <div class="max-w-4xl mx-auto px-6 py-12">
       <!-- Key Features Grid -->
       <div class="grid md:grid-cols-3 gap-6 mb-8">
-        <UiCard class="border-0 shadow-lg bg-white/80 backdrop-blur-sm">
+        <UiCard class="border-0 shadow-md bg-white/80 backdrop-blur-sm">
           <div class="p-6 text-center cursor-default">
             <div
-              class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4"
+              class="w-12 h-12 bg-surface-muted rounded-xl flex items-center justify-center mx-auto mb-4"
             >
-              <IconCube class="w-6 h-6 text-gray-600" />
+              <IconCube class="w-6 h-6 text-ink-muted" />
             </div>
-            <h3 class="font-medium text-gray-900 mb-2">Envío Gratis</h3>
-            <p class="text-sm text-gray-600">
+            <h3 class="font-medium text-ink mb-2">Envío Gratis</h3>
+            <p class="text-sm text-ink-muted">
               En compras superiores a $120.000
             </p>
           </div>
         </UiCard>
 
-        <UiCard class="border-0 shadow-lg bg-white/80 backdrop-blur-sm">
+        <UiCard class="border-0 shadow-md bg-white/80 backdrop-blur-sm">
           <div class="p-6 text-center cursor-default">
             <div
-              class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4"
+              class="w-12 h-12 bg-surface-muted rounded-xl flex items-center justify-center mx-auto mb-4"
             >
-              <IconCreditCard class="w-6 h-6 text-gray-600" />
+              <IconCreditCard class="w-6 h-6 text-ink-muted" />
             </div>
-            <h3 class="font-medium text-gray-900 mb-2">Pago Seguro</h3>
-            <p class="text-sm text-gray-600">
+            <h3 class="font-medium text-ink mb-2">Pago Seguro</h3>
+            <p class="text-sm text-ink-muted">
               Múltiples métodos de pago disponibles
             </p>
           </div>
         </UiCard>
 
-        <UiCard class="border-0 shadow-lg bg-white/80 backdrop-blur-sm">
+        <UiCard class="border-0 shadow-md bg-white/80 backdrop-blur-sm">
           <div class="p-6 text-center cursor-default">
             <div
-              class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4"
+              class="w-12 h-12 bg-surface-muted rounded-xl flex items-center justify-center mx-auto mb-4"
             >
-              <IconHeart class="w-6 h-6 text-gray-600" />
+              <IconHeart class="w-6 h-6 text-ink-muted" />
             </div>
-            <h3 class="font-medium text-gray-900 mb-2">30 Días</h3>
-            <p class="text-sm text-gray-600">
+            <h3 class="font-medium text-ink mb-2">30 Días</h3>
+            <p class="text-sm text-ink-muted">
               Garantía de cambio o devolución por 30 días
             </p>
           </div>
@@ -77,16 +77,16 @@
         <!-- FAQ Item 1: Shipping -->
         <UiAccordionItem
           value="item-1"
-          class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200"
+          class="border-0 rounded-sm px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200"
         >
           <template #trigger>
             <div class="flex items-center gap-4">
               <div
-                class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                class="w-10 h-10 bg-surface-muted rounded-sm flex items-center justify-center flex-shrink-0"
               >
-                <IconCube class="w-5 h-5 text-gray-600" />
+                <IconCube class="w-5 h-5 text-ink-muted" />
               </div>
-              <span class="font-medium text-gray-900"
+              <span class="font-medium text-ink"
                 >¿Cuáles son los tiempos y costos de envío?</span
               >
             </div>
@@ -94,7 +94,7 @@
           <template #content>
             <div class="pb-6 pt-2">
               <div class="ml-4 sm:ml-8 md:ml-14">
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <p class="text-ink-muted leading-relaxed mb-4">
                   Realizamos envíos a todo el país. El envío es gratuito en
                   compras superiores a $120.000. Para montos menores, el costo
                   varía según la ubicación.
@@ -153,16 +153,16 @@
         <!-- FAQ Item 2: Payment -->
         <UiAccordionItem
           value="item-2"
-          class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200"
+          class="border-0 rounded-sm px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200"
         >
           <template #trigger>
             <div class="flex items-center gap-4">
               <div
-                class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                class="w-10 h-10 bg-surface-muted rounded-sm flex items-center justify-center flex-shrink-0"
               >
-                <IconCreditCard class="w-5 h-5 text-gray-600" />
+                <IconCreditCard class="w-5 h-5 text-ink-muted" />
               </div>
-              <span class="font-medium text-gray-900"
+              <span class="font-medium text-ink"
                 >¿Qué métodos de pago aceptan?</span
               >
             </div>
@@ -259,8 +259,8 @@
                   </div>
 
                   <!-- General Payment Methods -->
-                  <div class="mt-4 pt-4 border-t border-gray-200">
-                    <p class="text-gray-700 leading-relaxed text-sm">
+                  <div class="mt-4 pt-4 border-t border-surface-muted">
+                    <p class="text-ink-muted leading-relaxed text-sm">
                       También aceptamos todas las tarjetas de débito y crédito
                       (Visa, Mastercard, American Express), transferencias
                       bancarias, y MercadoPago.
@@ -275,16 +275,16 @@
         <!-- FAQ Item 3: Returns -->
         <UiAccordionItem
           value="item-3"
-          class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200"
+          class="border-0 rounded-sm px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200"
         >
           <template #trigger>
             <div class="flex items-center gap-4">
               <div
-                class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                class="w-10 h-10 bg-surface-muted rounded-sm flex items-center justify-center flex-shrink-0"
               >
-                <IconArrowLeft class="w-5 h-5 text-gray-600" />
+                <IconArrowLeft class="w-5 h-5 text-ink-muted" />
               </div>
-              <span class="font-medium text-gray-900"
+              <span class="font-medium text-ink"
                 >¿Puedo devolver o cambiar un producto?</span
               >
             </div>
@@ -292,7 +292,7 @@
           <template #content>
             <div class="pb-6 pt-2">
               <div class="ml-4 sm:ml-8 md:ml-14">
-                <p class="text-gray-700 leading-relaxed mb-4">
+                <p class="text-ink-muted leading-relaxed mb-4">
                   Sí, tenés 30 días desde la recepción del producto para
                   devolverlo o cambiarlo. El artículo debe estar sin usar, con
                   las etiquetas intactas y en su empaque inicial. Los gastos de
@@ -325,16 +325,16 @@
         <!-- FAQ Item 5: Tracking -->
         <UiAccordionItem
           value="item-5"
-          class="border-0 rounded-xl px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200"
+          class="border-0 rounded-sm px-6 py-2 bg-white/40 backdrop-blur-sm hover:bg-white/60 transition-all duration-200"
         >
           <template #trigger>
             <div class="flex items-center gap-4">
               <div
-                class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                class="w-10 h-10 bg-surface-muted rounded-sm flex items-center justify-center flex-shrink-0"
               >
-                <IconQuestionMarkCircle class="w-5 h-5 text-gray-600" />
+                <IconQuestionMarkCircle class="w-5 h-5 text-ink-muted" />
               </div>
-              <span class="font-medium text-gray-900"
+              <span class="font-medium text-ink"
                 >¿Cómo puedo rastrear mi pedido?</span
               >
             </div>
@@ -342,7 +342,7 @@
           <template #content>
             <div class="pb-6 pt-2">
               <div class="ml-4 sm:ml-8 md:ml-14">
-                <p class="text-gray-700 leading-relaxed">
+                <p class="text-ink-muted leading-relaxed">
                   Una vez que tu pedido sea despachado, recibirás un mensaje de
                   WhatsApp con el número de seguimiento y un enlace para
                   rastrear tu envío en tiempo real.
@@ -354,7 +354,7 @@
       </div>
 
       <!-- Help Section -->
-      <div class="relative bg-gradient-to-br from-black via-gray-900 to-gray-800 rounded-lg max-w-4xl mx-auto mt-12 overflow-hidden">
+      <div class="relative bg-gradient-to-br from-ink via-ink-light to-ink rounded-sm max-w-4xl mx-auto mt-12 overflow-hidden">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 opacity-15">
           <img
@@ -367,17 +367,17 @@
         <div class="p-8 md:p-12 text-center relative z-10">
           <div class="max-w-3xl mx-auto">
             <div
-              class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6"
+              class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6"
             >
               <IconWhatsapp class="w-8 h-8 text-white" />
             </div>
             <h3
-              class="text-3xl md:text-4xl font-light text-white mb-6 cursor-default"
+              class="font-display text-display-lg uppercase text-white mb-6 cursor-default"
             >
               ¿Necesitás más ayuda?
             </h3>
             <p
-              class="text-lg text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto cursor-default"
+              class="text-lg text-ink-subtle mb-8 leading-relaxed max-w-2xl mx-auto cursor-default"
             >
               Si tenés dudas específicas sobre tu compra o necesitás asistencia
               personalizada, no dudes en contactarnos.
@@ -385,13 +385,13 @@
 
             <button
               @click="openWhatsApp"
-              class="inline-flex items-center px-8 py-3 bg-white text-black text-base font-medium rounded-lg hover:bg-gray-100 transition-colors"
+              class="inline-flex items-center px-8 py-3 bg-white text-ink text-base font-medium rounded-sm hover:bg-surface-warm transition-colors"
             >
               <IconWhatsapp class="w-5 h-5 mr-2" />
               Contactar Soporte
             </button>
 
-            <p class="text-sm text-gray-400 mt-4 cursor-default">
+            <p class="text-sm text-ink-subtle mt-4 cursor-default">
               Respuesta en menos de 24 horas
             </p>
           </div>
