@@ -62,24 +62,19 @@ export default defineNuxtConfig({
     port: 3001 // Different port from main app
   },
 
-  // Inject hostname redirect before any other head content
-  vite: {
-    plugins: [
-      {
-        name: 'inject-hostname-redirect',
-        transformIndexHtml(html: string) {
-          return html.replace(
+  // Build configuration - static preset for Firebase Hosting (no Functions)
+  nitro: {
+    preset: 'static',
+    hooks: {
+      'prerender:generate'(route: any) {
+        if (route.contents) {
+          route.contents = route.contents.replace(
             '<head>',
-            `<head><script>if(location.hostname!=="admin.cruzardeportes.com"){location.replace("https://admin.cruzardeportes.com"+location.pathname);}<\/script>`
+            '<head><script>if(location.hostname!=="admin.cruzardeportes.com"){location.replace("https://admin.cruzardeportes.com"+location.pathname);}<\/script>'
           )
         }
       }
-    ]
-  },
-
-  // Build configuration - static preset for Firebase Hosting (no Functions)
-  nitro: {
-    preset: 'static'
+    }
   },
 
   // TypeScript configuration

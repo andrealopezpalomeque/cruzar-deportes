@@ -38,7 +38,17 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   nitro: {
-    preset: 'static'
+    preset: 'static',
+    hooks: {
+      'prerender:generate'(route: any) {
+        if (route.contents) {
+          route.contents = route.contents.replace(
+            '<head>',
+            '<head><script>if(location.hostname!=="cruzardeportes.com"){location.replace("https://cruzardeportes.com"+location.pathname);}<\/script>'
+          )
+        }
+      }
+    }
   },
   ssr: false,
   modules: [
@@ -69,17 +79,7 @@ export default defineNuxtConfig({
     dirs: ['~/components']
   },
   vite: {
-    plugins: [
-      {
-        name: 'inject-hostname-redirect',
-        transformIndexHtml(html: string) {
-          return html.replace(
-            '<head>',
-            `<head><script>if(location.hostname!=="cruzardeportes.com"){location.replace("https://cruzardeportes.com"+location.pathname);}<\/script>`
-          )
-        }
-      }
-    ],
+    plugins: [],
     build: {
       rollupOptions: {
         onwarn(warning, warn) {
