@@ -139,11 +139,11 @@
               loading="lazy"
             />
           </div>
-          <div class="reveal overflow-hidden col-span-2 h-80 md:h-[28rem]">
+          <div class="reveal overflow-hidden col-span-2 h-72 md:h-96">
             <img
-              src="/images/session/hero-model-manchester.jpg"
-              alt="Modelo con camiseta Manchester United"
-              class="w-full h-full object-cover object-[center_15%] hover:scale-105 transition-transform duration-700"
+              src="/images/session/detail-realmadrid-teka.jpg"
+              alt="Camiseta Real Madrid retro Teka"
+              class="w-full h-full object-cover object-[center_20%] hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
           </div>
