@@ -215,6 +215,9 @@
       </div>
     </section>
 
+    <!-- Reviews / Testimonials -->
+    <ReviewsSection />
+
     <!-- Custom Jersey CTA — Session photo hero -->
     <section class="relative py-24 md:py-32 overflow-hidden">
       <div class="absolute inset-0">
@@ -265,6 +268,7 @@ import IconWhatsapp from '~icons/mdi/whatsapp'
 import IconArrowRight from '~icons/mdi/arrow-right'
 import MysteryBoxCard from '~/components/deals/MysteryBoxCard.vue'
 import TeamOrdersCard from '~/components/deals/TeamOrdersCard.vue'
+import ReviewsSection from '~/components/ReviewsSection.vue'
 
 const productsStore = useProductsStore()
 const pageRef = ref(null)
