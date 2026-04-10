@@ -69,7 +69,17 @@ export default defineNuxtConfig({
     dirs: ['~/components']
   },
   vite: {
-    plugins: [],
+    plugins: [
+      {
+        name: 'inject-hostname-redirect',
+        transformIndexHtml(html: string) {
+          return html.replace(
+            '<head>',
+            `<head><script>if(location.hostname!=="cruzardeportes.com"){location.replace("https://cruzardeportes.com"+location.pathname);}<\/script>`
+          )
+        }
+      }
+    ],
     build: {
       rollupOptions: {
         onwarn(warning, warn) {
