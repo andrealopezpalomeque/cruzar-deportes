@@ -7,12 +7,12 @@
         <img
           src="/images/session/hero-group-couch.jpg"
           alt=""
-          class="w-full h-full object-cover object-[center_30%]"
+          class="w-full h-full object-cover object-[70%_25%] md:object-[center_30%]"
           fetchpriority="high"
           loading="eager"
         />
-        <!-- Warm overlay — NOT gray, tinted toward brand orange -->
-        <div class="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/50 to-transparent"></div>
+        <!-- Warm overlay: vertical on mobile, horizontal on desktop -->
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/70 to-ink/40 md:bg-gradient-to-r md:from-ink/80 md:via-ink/50 md:to-transparent"></div>
       </div>
 
       <div class="container mx-auto px-4 relative z-10">
@@ -121,35 +121,35 @@
     <section class="py-16 md:py-24">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 reveal-stagger">
-          <div class="reveal col-span-2 md:col-span-1 md:row-span-2 overflow-hidden h-72 md:h-auto">
+          <div class="reveal col-span-2 md:col-span-1 md:row-span-2 overflow-hidden h-80 md:h-auto">
             <img
               src="/images/session/hero-model-argentina.jpg"
               alt="Camiseta Argentina retro"
-              class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+              class="w-full h-full object-cover object-[center_20%] md:object-top hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
           </div>
-          <div class="reveal overflow-hidden h-56 md:h-auto">
+          <div class="reveal overflow-hidden h-64 md:h-auto">
             <img
               src="/images/session/detail-sevilla-closeup.jpg"
               alt="Detalle camiseta Sevilla"
-              class="w-full h-full object-cover object-[center_30%] hover:scale-105 transition-transform duration-700"
+              class="w-full h-full object-cover object-[center_35%] md:object-[center_30%] hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
           </div>
-          <div class="reveal overflow-hidden h-56 md:h-auto">
+          <div class="reveal overflow-hidden h-64 md:h-auto">
             <img
               src="/images/session/hero-beckham-back.jpg"
               alt="Camiseta Beckham Manchester United"
-              class="w-full h-full object-cover object-[center_20%] hover:scale-105 transition-transform duration-700"
+              class="w-full h-full object-cover object-[center_25%] md:object-[center_20%] hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
           </div>
-          <div class="reveal overflow-hidden col-span-2 h-72 md:h-96">
+          <div class="reveal overflow-hidden col-span-2 h-64 md:h-96">
             <img
               src="/images/session/detail-realmadrid-teka.jpg"
               alt="Camiseta Real Madrid retro Teka"
-              class="w-full h-full object-cover object-[center_20%] hover:scale-105 transition-transform duration-700"
+              class="w-full h-full object-cover object-[center_30%] md:object-[center_20%] hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
           </div>
@@ -221,13 +221,13 @@
         <img
           src="/images/session/hero-model-sevilla.jpg"
           alt=""
-          class="w-full h-full object-cover object-[30%_22%]"
+          class="w-full h-full object-cover object-[center_15%] md:object-[30%_22%]"
           loading="lazy"
         />
-        <div class="absolute inset-0 bg-gradient-to-l from-ink/85 via-ink/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/70 to-ink/40 md:bg-gradient-to-l md:from-ink/85 md:via-ink/60 md:to-transparent"></div>
       </div>
       <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-xl ml-auto text-right reveal">
+        <div class="max-w-xl md:ml-auto text-left md:text-right reveal">
           <h2 class="font-display text-display-lg text-white uppercase mb-6">
             ¿No encontrás la camiseta que buscás?
           </h2>
