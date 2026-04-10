@@ -53,9 +53,20 @@
         </div>
       </div>
 
-      <div class="border-t border-white/10 mt-12 pt-8 text-center">
+      <div class="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-3">
         <p class="text-white/40 text-sm cursor-default">
           &copy; {{ currentYear }} Cruzar Deportes. Todos los derechos reservados.
+        </p>
+        <p class="text-white/40 text-sm cursor-default">
+          Hecho por
+          <a
+            href="https://wiseutils.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-display font-semibold uppercase tracking-wider text-white/60 hover:text-brand-orange-400 transition-colors"
+          >
+            Wise Utils
+          </a>
         </p>
       </div>
     </div>
