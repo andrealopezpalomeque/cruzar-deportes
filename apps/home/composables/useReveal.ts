@@ -3,19 +3,27 @@ import { onMounted, onUnmounted, type Ref } from 'vue'
 /**
  * Observes elements with the `.reveal` class inside a container ref.
  * Adds `.revealed` when they enter the viewport (once).
+ * Uses MutationObserver to pick up dynamically added elements (e.g. async product cards).
  */
 export function useReveal(containerRef: Ref<HTMLElement | null>, options?: { threshold?: number; rootMargin?: string }) {
-  let observer: IntersectionObserver | null = null
+  let intersectionObserver: IntersectionObserver | null = null
+  let mutationObserver: MutationObserver | null = null
+
+  function observeElement(el: Element) {
+    if (!el.classList.contains('revealed')) {
+      intersectionObserver?.observe(el)
+    }
+  }
 
   onMounted(() => {
     if (!containerRef.value) return
 
-    observer = new IntersectionObserver(
+    intersectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('revealed')
-            observer?.unobserve(entry.target)
+            intersectionObserver?.unobserve(entry.target)
           }
         })
       },
@@ -25,11 +33,26 @@ export function useReveal(containerRef: Ref<HTMLElement | null>, options?: { thr
       }
     )
 
-    const targets = containerRef.value.querySelectorAll('.reveal')
-    targets.forEach((el) => observer?.observe(el))
+    // Observe existing .reveal elements
+    containerRef.value.querySelectorAll('.reveal').forEach(observeElement)
+
+    // Watch for dynamically added .reveal elements
+    mutationObserver = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        for (const node of mutation.addedNodes) {
+          if (node instanceof HTMLElement) {
+            if (node.classList.contains('reveal')) observeElement(node)
+            node.querySelectorAll('.reveal').forEach(observeElement)
+          }
+        }
+      }
+    })
+
+    mutationObserver.observe(containerRef.value, { childList: true, subtree: true })
   })
 
   onUnmounted(() => {
-    observer?.disconnect()
+    intersectionObserver?.disconnect()
+    mutationObserver?.disconnect()
   })
 }
