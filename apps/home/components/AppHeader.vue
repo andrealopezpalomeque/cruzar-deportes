@@ -112,12 +112,13 @@
       </div>
     </div>
 
-    <!-- Search Modal -->
-    <SearchModal />
-
-    <!-- Cart Modal -->
-    <CartModal />
   </header>
+
+  <!-- Teleport modals outside header's stacking context -->
+  <Teleport to="body">
+    <SearchModal />
+    <CartModal />
+  </Teleport>
 </template>
 
 <script setup>
