@@ -31,7 +31,7 @@
           <h3 class="font-display text-sm font-bold uppercase tracking-widest text-white mb-6 cursor-default">Enlaces Rápidos</h3>
           <ul class="space-y-3">
             <li><NuxtLink to="/" class="text-white/70 hover:text-brand-orange-400 transition-colors text-sm">Inicio</NuxtLink></li>
-            <li><NuxtLink to="/categories" class="text-white/70 hover:text-brand-orange-400 transition-colors text-sm">Ligas</NuxtLink></li>
+            <li><NuxtLink to="/categories" class="text-white/70 hover:text-brand-orange-400 transition-colors text-sm">Categorías</NuxtLink></li>
             <li><NuxtLink to="/products" class="text-white/70 hover:text-brand-orange-400 transition-colors text-sm">Todos los Productos</NuxtLink></li>
           </ul>
         </div>
