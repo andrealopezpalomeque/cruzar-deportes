@@ -93,8 +93,8 @@
                 <IconTshirt class="w-6 h-6 text-ink" />
               </div>
               <h3 class="text-2xl font-light mb-2">Individual</h3>
-              <div class="text-4xl font-light mb-4">$56.000</div>
-              <p class="text-sm text-ink mb-6">$56.000 por camiseta</p>
+              <div class="text-4xl font-light mb-4">$60.000</div>
+              <p class="text-sm text-ink mb-6">$60.000 por camiseta</p>
               <ul class="space-y-2 text-left mb-6">
                 <li class="flex items-start text-sm text-ink-muted">
                   <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-ink" />
@@ -118,7 +118,7 @@
               </div>
               <h3 class="text-2xl font-light mb-2">Básica</h3>
               <div class="text-4xl font-light mb-4">$165.000</div>
-              <p class="text-sm text-ink mb-6">~$55.000 por camiseta</p>
+              <p class="text-sm text-ink mb-6">$55.000 por camiseta</p>
               <ul class="space-y-2 text-left mb-6">
                 <li class="flex items-start text-sm text-ink-muted">
                   <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-ink" />
@@ -146,8 +146,8 @@
                 <IconTshirt class="w-6 h-6 text-white" />
               </div>
               <h3 class="text-2xl font-light mb-2">Premium</h3>
-              <div class="text-4xl font-light mb-4">$250.000</div>
-              <p class="text-sm text-ink mb-6">$50.000 por camiseta</p>
+              <div class="text-4xl font-light mb-4">$260.000</div>
+              <p class="text-sm text-ink mb-6">$52.000 por camiseta</p>
               <ul class="space-y-2 text-left mb-6">
                 <li class="flex items-start text-sm text-ink-muted">
                   <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-ink" />
@@ -170,8 +170,8 @@
                 <IconTshirt class="w-6 h-6 text-white" />
               </div>
               <h3 class="text-2xl font-light mb-2">Deluxe</h3>
-              <div class="text-4xl font-light mb-4">$450.000</div>
-              <p class="text-sm text-ink mb-6">$45.000 por camiseta</p>
+              <div class="text-4xl font-light mb-4">$500.000</div>
+              <p class="text-sm text-ink mb-6">$50.000 por camiseta</p>
               <ul class="space-y-2 text-left mb-6">
                 <li class="flex items-start text-sm text-ink-muted">
                   <IconCheck class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-ink" />

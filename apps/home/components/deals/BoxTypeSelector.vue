@@ -50,17 +50,17 @@ const boxTypes = [
     value: 'individual',
     label: 'Individual',
     description: '1 camiseta sorpresa',
-    price: '$56.000',
-    pricePerItem: '$56.000 c/u',
+    price: '$60.000',
+    pricePerItem: '$60.000 c/u',
     jerseyCount: 1,
-    priceValue: 56000
+    priceValue: 60000
   },
   {
     value: 'basic',
     label: 'Caja Básica',
     description: '3 camisetas sorpresa',
     price: '$165.000',
-    pricePerItem: '~$55.000 c/u',
+    pricePerItem: '$55.000 c/u',
     jerseyCount: 3,
     priceValue: 165000
   },
@@ -68,19 +68,19 @@ const boxTypes = [
     value: 'premium',
     label: 'Caja Premium',
     description: '5 camisetas sorpresa',
-    price: '$250.000',
-    pricePerItem: '$50.000 c/u',
+    price: '$260.000',
+    pricePerItem: '$52.000 c/u',
     jerseyCount: 5,
-    priceValue: 250000
+    priceValue: 260000
   },
   {
     value: 'deluxe',
     label: 'Caja Deluxe',
     description: '10 camisetas sorpresa',
-    price: '$450.000',
-    pricePerItem: '$45.000 c/u',
+    price: '$500.000',
+    pricePerItem: '$50.000 c/u',
     jerseyCount: 10,
-    priceValue: 450000
+    priceValue: 500000
   }
 ]
 

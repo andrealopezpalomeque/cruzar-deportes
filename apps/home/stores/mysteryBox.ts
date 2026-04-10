@@ -47,30 +47,30 @@ export const BOX_CONFIG = {
   individual: {
     label: 'Individual',
     jerseyCount: 1,
-    price: 56000,
-    priceFormatted: '$56.000',
-    pricePerItem: '$56.000'
+    price: 60000,
+    priceFormatted: '$60.000',
+    pricePerItem: '$60.000'
   },
   basic: {
     label: 'Básica',
     jerseyCount: 3,
     price: 165000,
     priceFormatted: '$165.000',
-    pricePerItem: '~$55.000'
+    pricePerItem: '$55.000'
   },
   premium: {
     label: 'Premium',
     jerseyCount: 5,
-    price: 250000,
-    priceFormatted: '$250.000',
-    pricePerItem: '$50.000'
+    price: 260000,
+    priceFormatted: '$260.000',
+    pricePerItem: '$52.000'
   },
   deluxe: {
     label: 'Deluxe',
     jerseyCount: 10,
-    price: 450000,
-    priceFormatted: '$450.000',
-    pricePerItem: '$45.000'
+    price: 500000,
+    priceFormatted: '$500.000',
+    pricePerItem: '$50.000'
   }
 } as const
 
