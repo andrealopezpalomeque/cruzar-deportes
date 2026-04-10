@@ -520,7 +520,7 @@ useHead({
         return 'Buscá entre miles de camisetas deportivas y encontrá la de tu equipo favorito en Cruzar Deportes.'
       })
     },
-    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
+    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.png' },
   ]
 })
 </script>

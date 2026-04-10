@@ -169,7 +169,7 @@ useHead({
     { name: 'description', content: 'Explorá nuestra colección de camisetas deportivas, indumentaria y accesorios organizados por categoría.' },
     { property: 'og:title', content: 'Categorías - Cruzar Deportes' },
     { property: 'og:description', content: 'Explorá nuestra colección de camisetas deportivas, indumentaria y accesorios organizados por categoría.' },
-    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
+    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.png' },
   ]
 })
 </script>

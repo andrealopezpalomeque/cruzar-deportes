@@ -224,7 +224,7 @@ useHead(() => ({
     { name: 'description', content: `Explorá nuestra colección de ${displayName.value.toLowerCase()}.` },
     { property: 'og:title', content: `${displayName.value} - Cruzar Deportes` },
     { property: 'og:description', content: `Explorá nuestra colección de ${displayName.value.toLowerCase()}.` },
-    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
+    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.png' },
   ]
 }))
 </script>

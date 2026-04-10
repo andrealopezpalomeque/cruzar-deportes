@@ -269,7 +269,7 @@ useHead({
     { name: 'description', content: 'Aprendé cómo cuidar adecuadamente tus camisetas deportivas para mantener su calidad y extender su vida útil.' },
     { property: 'og:title', content: 'Cuidado de Camisetas - Guía Completa | Cruzar Deportes' },
     { property: 'og:description', content: 'Aprendé cómo cuidar adecuadamente tus camisetas deportivas para mantener su calidad y extender su vida útil.' },
-    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
+    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.png' },
   ]
 })
 

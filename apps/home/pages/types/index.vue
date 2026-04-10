@@ -69,7 +69,7 @@ useHead({
     { name: 'description', content: 'Explorá nuestra colección de camisetas, shorts, kits para niños y más.' },
     { property: 'og:title', content: 'Tipos de Producto - Cruzar Deportes' },
     { property: 'og:description', content: 'Explorá nuestra colección de camisetas, shorts, kits para niños y más.' },
-    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
+    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.png' },
   ]
 })
 </script>

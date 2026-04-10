@@ -257,7 +257,7 @@ useHead({
     { name: 'description', content: 'Navegá nuestra colección completa de camisetas deportivas de equipos de todo el mundo.' },
     { property: 'og:title', content: 'Todos los Productos - Cruzar Deportes' },
     { property: 'og:description', content: 'Navegá nuestra colección completa de camisetas deportivas de equipos de todo el mundo.' },
-    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
+    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.png' },
   ]
 })
 </script>

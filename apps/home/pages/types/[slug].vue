@@ -198,7 +198,7 @@ useHead(() => ({
     { name: 'description', content: `Explorá nuestra colección de ${productType.value?.name?.toLowerCase() || 'productos'}.` },
     { property: 'og:title', content: `${productType.value?.name || 'Tipo'} - Cruzar Deportes` },
     { property: 'og:description', content: `Explorá nuestra colección de ${productType.value?.name?.toLowerCase() || 'productos'}.` },
-    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
+    { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.png' },
   ]
 }))
 </script>
