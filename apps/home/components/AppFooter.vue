@@ -58,12 +58,12 @@
           &copy; {{ currentYear }} Cruzar Deportes. Todos los derechos reservados.
         </p>
         <p class="text-white/40 text-sm cursor-default">
-          Hecho por
+          Desarrollado por:
           <a
             href="https://wiseutils.com/"
             target="_blank"
             rel="noopener noreferrer"
-            class="font-display font-semibold uppercase tracking-wider text-white/60 hover:text-brand-orange-400 transition-colors"
+            class="font-display font-semibold uppercase tracking-wider text-white/60 underline underline-offset-4 decoration-white/30 hover:text-brand-orange-400 hover:decoration-brand-orange-400 transition-colors"
           >
             Wise Utils
           </a>
