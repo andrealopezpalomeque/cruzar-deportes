@@ -29,7 +29,7 @@
             v-if="product.featured"
             class="absolute top-3 left-3"
           >
-            <span class="inline-flex items-center px-2.5 py-1 font-display text-[10px] font-bold uppercase tracking-wider bg-brand-orange-600 text-white pointer-events-auto">
+            <span class="inline-flex items-center px-2.5 py-1 font-display text-xs font-bold uppercase tracking-wider bg-brand-orange-600 text-white pointer-events-auto">
               <IconStar class="h-3 w-3 mr-1" />
               Destacado
             </span>
@@ -40,7 +40,7 @@
             v-if="product.originalPrice && product.originalPrice > product.price"
             :class="product.featured ? 'absolute top-12 left-3' : 'absolute top-3 right-3'"
           >
-            <span class="inline-flex items-center px-2.5 py-1 font-display text-[10px] font-bold uppercase tracking-wider bg-ink text-white pointer-events-auto">
+            <span class="inline-flex items-center px-2.5 py-1 font-display text-xs font-bold uppercase tracking-wider bg-ink text-white pointer-events-auto">
               -{{ Math.round((1 - product.price / product.originalPrice) * 100) }}%
             </span>
           </div>
@@ -50,7 +50,7 @@
             v-if="(product.totalImages || product.images?.length || 0) > 1"
             class="absolute bottom-3 right-3"
           >
-            <span class="inline-flex items-center px-2 py-1 text-[10px] font-medium bg-ink/70 text-white backdrop-blur-sm pointer-events-auto">
+            <span class="inline-flex items-center px-2 py-1 text-xs font-medium bg-ink/70 text-white backdrop-blur-sm pointer-events-auto">
               <IconImageMultiple class="h-3 w-3 mr-1" />
               {{ product.totalImages || product.images?.length || 0 }}
             </span>

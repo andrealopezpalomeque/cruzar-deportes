@@ -19,7 +19,7 @@
         <div class="max-w-2xl py-24 md:py-32">
           <!-- Badge -->
           <div class="opacity-0 animate-fade-up">
-            <span class="inline-flex items-center px-3 py-1 font-display text-[10px] font-bold uppercase tracking-widest bg-brand-orange-600 text-white mb-6">
+            <span class="inline-flex items-center px-3 py-1 font-display text-xs font-bold uppercase tracking-widest bg-brand-orange-600 text-white mb-6">
               <IconSoccer class="w-3 h-3 mr-1.5" />
               Nueva Coleccion 2026
             </span>
@@ -55,7 +55,7 @@
               v-for="league in jerseyLeagues"
               :key="league.id"
               :to="`/products?type=camisetas&league=${league.slug}`"
-              class="inline-flex items-center px-3 py-1.5 bg-white/10 backdrop-blur-sm text-white font-display text-[10px] font-semibold uppercase tracking-wider hover:bg-brand-orange-600/80 transition-all duration-200"
+              class="inline-flex items-center px-3 py-1.5 bg-white/10 backdrop-blur-sm text-white font-display text-xs font-semibold uppercase tracking-wider hover:bg-brand-orange-600/80 transition-all duration-200"
             >
               {{ league.name }}
             </NuxtLink>
@@ -73,8 +73,8 @@
               <IconTruck class="w-5 h-5 text-brand-orange-600" />
             </div>
             <div>
-              <h3 class="font-display text-xs font-bold uppercase tracking-wider text-ink">Envio Gratis</h3>
-              <p class="text-xs text-ink-muted mt-0.5">Compras +$120.000</p>
+              <h3 class="font-display text-sm font-bold uppercase tracking-wider text-ink">Envio Gratis</h3>
+              <p class="text-sm text-ink-muted mt-0.5">Compras +$120.000</p>
             </div>
           </div>
 
@@ -83,8 +83,8 @@
               <IconShieldCheck class="w-5 h-5 text-brand-sage-600" />
             </div>
             <div>
-              <h3 class="font-display text-xs font-bold uppercase tracking-wider text-ink">Calidad Premium</h3>
-              <p class="text-xs text-ink-muted mt-0.5">Garantizada</p>
+              <h3 class="font-display text-sm font-bold uppercase tracking-wider text-ink">Calidad Premium</h3>
+              <p class="text-sm text-ink-muted mt-0.5">Garantizada</p>
             </div>
           </div>
 
@@ -93,8 +93,8 @@
               <IconUserGroup class="w-5 h-5 text-brand-coral-600" />
             </div>
             <div>
-              <h3 class="font-display text-xs font-bold uppercase tracking-wider text-ink">Atencion 24/7</h3>
-              <p class="text-xs text-ink-muted mt-0.5">Soporte personalizado</p>
+              <h3 class="font-display text-sm font-bold uppercase tracking-wider text-ink">Atencion 24/7</h3>
+              <p class="text-sm text-ink-muted mt-0.5">Soporte personalizado</p>
             </div>
           </div>
 
@@ -103,8 +103,8 @@
               <IconMagnifyingGlass class="w-5 h-5 text-brand-olive-600" />
             </div>
             <div>
-              <h3 class="font-display text-xs font-bold uppercase tracking-wider text-ink">A Pedido</h3>
-              <p class="text-xs text-ink-muted mt-0.5">Te conseguimos todo</p>
+              <h3 class="font-display text-sm font-bold uppercase tracking-wider text-ink">A Pedido</h3>
+              <p class="text-sm text-ink-muted mt-0.5">Te conseguimos todo</p>
             </div>
           </div>
         </div>
@@ -156,7 +156,7 @@
       <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
           <div class="reveal">
-            <span class="font-display text-[10px] font-bold uppercase tracking-widest text-brand-orange-600 mb-2 block">Seleccion Curada</span>
+            <span class="font-display text-xs font-bold uppercase tracking-widest text-brand-orange-600 mb-2 block">Seleccion Curada</span>
             <h2 class="font-display text-display-lg text-ink uppercase">Productos Destacados</h2>
           </div>
           <div class="reveal">
@@ -198,7 +198,7 @@
     <section class="py-16 md:py-24">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-          <span class="reveal font-display text-[10px] font-bold uppercase tracking-widest text-brand-orange-600 mb-2 block">Ofertas Exclusivas</span>
+          <span class="reveal font-display text-xs font-bold uppercase tracking-widest text-brand-orange-600 mb-2 block">Ofertas Exclusivas</span>
           <h2 class="reveal font-display text-display-lg text-ink uppercase">Nuestras Promociones</h2>
         </div>
 
@@ -237,7 +237,7 @@
             Solicitar Camiseta
           </button>
 
-          <p class="text-white/50 mt-4 cursor-default font-display text-xs uppercase tracking-wider">
+          <p class="text-white/50 mt-4 cursor-default font-display text-sm uppercase tracking-wider">
             Respuesta en menos de 24 horas
           </p>
         </div>

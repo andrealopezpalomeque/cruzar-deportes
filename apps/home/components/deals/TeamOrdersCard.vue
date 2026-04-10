@@ -5,7 +5,7 @@
   >
     <div class="relative p-8 md:p-10">
       <div class="mb-6">
-        <span class="inline-flex items-center px-3 py-1 font-display text-[10px] font-bold uppercase tracking-widest bg-brand-sage-400 text-white">
+        <span class="inline-flex items-center px-3 py-1 font-display text-xs font-bold uppercase tracking-widest bg-brand-sage-400 text-white">
           <IconTag class="w-3 h-3 mr-1.5" />
           Precio Grupal
         </span>
