@@ -276,7 +276,7 @@ const validationMessages = computed(() => {
   const messages = []
 
   if (!selectedSize.value || selectedSize.value.trim() === '') {
-    messages.push('Por favor selecciona una talla')
+    messages.push('Por favor seleccioná una talla')
   }
 
   if (quantity.value < 1) {

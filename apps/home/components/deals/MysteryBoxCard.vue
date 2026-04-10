@@ -18,22 +18,22 @@
       <h3 class="font-display text-display-md text-white mb-4 uppercase">Caja Misteriosa</h3>
 
       <p class="text-white/80 mb-6 leading-relaxed max-w-md">
-        Recibi una seleccion sorpresa de camisetas retro y actuales. Vos elegis el tamano,
-        nosotros curamos la coleccion perfecta para tu guardarropa deportivo.
+        Recibí una selección sorpresa de camisetas retro y actuales. Vos elegís el tamaño,
+        nosotros curamos la colección perfecta para tu guardarropa deportivo.
       </p>
 
       <div class="space-y-2.5 mb-8">
         <div class="flex items-center text-sm text-white/90">
           <IconCheck class="w-4 h-4 mr-2.5 text-brand-orange-400 flex-shrink-0" />
-          <span>Selecciona tu talle</span>
+          <span>Seleccioná tu talle</span>
         </div>
         <div class="flex items-center text-sm text-white/90">
           <IconCheck class="w-4 h-4 mr-2.5 text-brand-orange-400 flex-shrink-0" />
-          <span>Exclui equipos que no te gusten</span>
+          <span>Excluí equipos que no te gusten</span>
         </div>
         <div class="flex items-center text-sm text-white/90">
           <IconCheck class="w-4 h-4 mr-2.5 text-brand-orange-400 flex-shrink-0" />
-          <span>Elegi entre retro o actuales</span>
+          <span>Elegí entre retro o actuales</span>
         </div>
         <div class="flex items-center text-sm text-white/90">
           <IconCheck class="w-4 h-4 mr-2.5 text-brand-orange-400 flex-shrink-0" />

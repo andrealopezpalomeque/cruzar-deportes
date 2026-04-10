@@ -320,7 +320,7 @@
                       </p>
                       <div class="mt-2 flex items-center text-xs text-green-700">
                         <IconInformationCircle class="h-3 w-3 mr-1" />
-                        <span>El mensaje estará listo - solo necesitas enviarlo</span>
+                        <span>El mensaje estará listo - solo necesitás enviarlo</span>
                       </div>
                     </div>
                   </div>

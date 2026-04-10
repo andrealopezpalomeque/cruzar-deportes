@@ -177,7 +177,7 @@
             </h3>
             <p class="text-ink-muted mb-6">
               Tu búsqueda "{{ searchQuery }}" no arrojó resultados.
-              Intenta con términos diferentes o explora nuestras categorías.
+              Intentá con términos diferentes o explorá nuestras categorías.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <button
@@ -199,10 +199,10 @@
           <div v-else class="text-center py-12">
             <IconMagnify class="h-16 w-16 text-ink-subtle mx-auto mb-4" />
             <h3 class="text-xl font-medium text-ink mb-2">
-              Busca tu camiseta favorita
+              Buscá tu camiseta favorita
             </h3>
             <p class="text-ink-muted mb-6">
-              Encuentra camisetas de tus equipos favoritos de diferentes ligas
+              Encontrá camisetas de tus equipos favoritos de diferentes ligas
             </p>
             <NuxtLink
               to="/products"
@@ -497,9 +497,9 @@ useHead({
       name: 'description',
       content: computed(() => {
         if (searchQuery.value) {
-          return `Encuentra ${searchQuery.value} y más productos en Cruzar Deportes. Camisetas deportivas de calidad.`
+          return `Encontrá ${searchQuery.value} y más productos en Cruzar Deportes. Camisetas deportivas de calidad.`
         }
-        return 'Busca entre miles de camisetas deportivas y encuentra la de tu equipo favorito en Cruzar Deportes.'
+        return 'Buscá entre miles de camisetas deportivas y encontrá la de tu equipo favorito en Cruzar Deportes.'
       })
     },
     {
@@ -515,9 +515,9 @@ useHead({
       property: 'og:description',
       content: computed(() => {
         if (searchQuery.value) {
-          return `Encuentra ${searchQuery.value} y más productos en Cruzar Deportes. Camisetas deportivas de calidad.`
+          return `Encontrá ${searchQuery.value} y más productos en Cruzar Deportes. Camisetas deportivas de calidad.`
         }
-        return 'Busca entre miles de camisetas deportivas y encuentra la de tu equipo favorito en Cruzar Deportes.'
+        return 'Buscá entre miles de camisetas deportivas y encontrá la de tu equipo favorito en Cruzar Deportes.'
       })
     },
     { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },

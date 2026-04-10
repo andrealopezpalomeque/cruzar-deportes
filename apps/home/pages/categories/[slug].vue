@@ -8,7 +8,7 @@
         </li>
         <li class="text-ink-subtle">/</li>
         <li>
-          <NuxtLink to="/categories" class="text-ink-muted hover:text-ink-muted">Categorias</NuxtLink>
+          <NuxtLink to="/categories" class="text-ink-muted hover:text-ink-muted">Categorías</NuxtLink>
         </li>
         <li class="text-ink-subtle">/</li>
         <li class="text-ink font-medium">{{ displayName }}</li>
@@ -221,9 +221,9 @@ onMounted(() => {
 useHead(() => ({
   title: `${displayName.value} - Cruzar Deportes`,
   meta: [
-    { name: 'description', content: `Explora nuestra colección de ${displayName.value.toLowerCase()}.` },
+    { name: 'description', content: `Explorá nuestra colección de ${displayName.value.toLowerCase()}.` },
     { property: 'og:title', content: `${displayName.value} - Cruzar Deportes` },
-    { property: 'og:description', content: `Explora nuestra colección de ${displayName.value.toLowerCase()}.` },
+    { property: 'og:description', content: `Explorá nuestra colección de ${displayName.value.toLowerCase()}.` },
     { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
   ]
 }))

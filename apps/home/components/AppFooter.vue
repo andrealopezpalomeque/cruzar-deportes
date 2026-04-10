@@ -13,7 +13,7 @@
             />
           </div>
           <p class="text-white/70 mb-6 leading-relaxed cursor-default max-w-xs">
-            Porque cada hincha merece vestir los colores de su pasion. Camisetas deportivas del mundo entero.
+            Porque cada hincha merece vestir los colores de su pasión. Camisetas deportivas del mundo entero.
           </p>
           <div class="flex">
             <a
@@ -28,7 +28,7 @@
         </div>
 
         <div>
-          <h3 class="font-display text-sm font-bold uppercase tracking-widest text-white mb-6 cursor-default">Enlaces Rapidos</h3>
+          <h3 class="font-display text-sm font-bold uppercase tracking-widest text-white mb-6 cursor-default">Enlaces Rápidos</h3>
           <ul class="space-y-3">
             <li><NuxtLink to="/" class="text-white/70 hover:text-brand-orange-400 transition-colors text-sm">Inicio</NuxtLink></li>
             <li><NuxtLink to="/categories" class="text-white/70 hover:text-brand-orange-400 transition-colors text-sm">Ligas</NuxtLink></li>
@@ -45,7 +45,7 @@
         </div>
 
         <div>
-          <h3 class="font-display text-sm font-bold uppercase tracking-widest text-white mb-6 cursor-default">Atencion al Cliente</h3>
+          <h3 class="font-display text-sm font-bold uppercase tracking-widest text-white mb-6 cursor-default">Atención al Cliente</h3>
           <ul class="space-y-3">
             <li><NuxtLink to="/cuidado-camisetas" class="text-white/70 hover:text-brand-orange-400 transition-colors text-sm">Cuidado de Camisetas</NuxtLink></li>
             <li><NuxtLink to="/faq" class="text-white/70 hover:text-brand-orange-400 transition-colors text-sm">Preguntas Frecuentes</NuxtLink></li>

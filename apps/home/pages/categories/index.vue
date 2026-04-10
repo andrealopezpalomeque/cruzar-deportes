@@ -1,8 +1,8 @@
 <template>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div class="text-center mb-12">
-      <h1 class="font-display text-display-xl uppercase text-ink mb-4">Explora por Categoria</h1>
-      <p class="text-lg text-ink">Toda nuestra coleccion organizada para vos</p>
+      <h1 class="font-display text-display-xl uppercase text-ink mb-4">Explorá por Categoría</h1>
+      <p class="text-lg text-ink">Toda nuestra colección organizada para vos</p>
     </div>
 
     <GridSkeleton
@@ -65,8 +65,8 @@
     <!-- Empty State -->
     <div v-if="!productsStore.loading && visibleSections.length === 0" class="text-center py-12">
       <IconTshirtCrew class="h-16 w-16 text-ink-subtle mx-auto mb-4" />
-      <h3 class="text-lg font-medium text-ink mb-2">No hay categorias disponibles</h3>
-      <p class="text-ink">No hay categorias disponibles en este momento.</p>
+      <h3 class="text-lg font-medium text-ink mb-2">No hay categorías disponibles</h3>
+      <p class="text-ink">No hay categorías disponibles en este momento.</p>
     </div>
   </div>
 </template>
@@ -100,7 +100,7 @@ const sectionConfig = [
   },
   {
     group: 'deportes',
-    label: 'Mas Deportes',
+    label: 'Más Deportes',
     icon: IconTrophyOutline,
     gradient: 'from-[#1a0a2e] to-[#3b1d6e]',
     glow: 'bg-violet-500/15',
@@ -164,11 +164,11 @@ onMounted(() => {
 })
 
 useHead({
-  title: 'Categorias - Cruzar Deportes',
+  title: 'Categorías - Cruzar Deportes',
   meta: [
-    { name: 'description', content: 'Explora nuestra coleccion de camisetas deportivas, indumentaria y accesorios organizados por categoria.' },
-    { property: 'og:title', content: 'Categorias - Cruzar Deportes' },
-    { property: 'og:description', content: 'Explora nuestra coleccion de camisetas deportivas, indumentaria y accesorios organizados por categoria.' },
+    { name: 'description', content: 'Explorá nuestra colección de camisetas deportivas, indumentaria y accesorios organizados por categoría.' },
+    { property: 'og:title', content: 'Categorías - Cruzar Deportes' },
+    { property: 'og:description', content: 'Explorá nuestra colección de camisetas deportivas, indumentaria y accesorios organizados por categoría.' },
     { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
   ]
 })

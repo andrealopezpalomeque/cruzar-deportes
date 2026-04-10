@@ -28,7 +28,7 @@
             to="/categories"
             class="font-display text-sm font-semibold uppercase tracking-wider text-ink hover:text-brand-orange-600 transition-colors"
           >
-            Categorias
+            Categorías
           </NuxtLink>
           <NuxtLink
             to="/products"
@@ -45,7 +45,7 @@
             @click="openSearch"
             class="p-2 text-ink hover:text-brand-orange-600 transition-colors"
             title="Buscar (Ctrl+K)"
-            aria-label="Abrir busqueda de productos"
+            aria-label="Abrir búsqueda de productos"
           >
             <IconMagnify class="h-5 w-5" />
             <span class="sr-only">Buscar productos</span>
@@ -59,7 +59,7 @@
           >
             <IconShopping class="h-5 w-5" />
             <span class="sr-only">
-              {{ cartStore.totalItems > 0 ? `Carrito con ${cartStore.totalItems} productos` : 'Carrito vacio' }}
+              {{ cartStore.totalItems > 0 ? `Carrito con ${cartStore.totalItems} productos` : 'Carrito vacío' }}
             </span>
             <span
               v-if="cartStore.totalItems > 0"
@@ -75,11 +75,11 @@
             type="button"
             @click="mobileMenuOpen = !mobileMenuOpen"
             class="md:hidden p-2 text-ink hover:text-brand-orange-600 transition-colors"
-            :aria-label="mobileMenuOpen ? 'Cerrar menu de navegacion' : 'Abrir menu de navegacion'"
+            :aria-label="mobileMenuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'"
             :aria-expanded="mobileMenuOpen"
           >
             <IconMenu class="h-5 w-5" />
-            <span class="sr-only">{{ mobileMenuOpen ? 'Cerrar menu' : 'Abrir menu' }}</span>
+            <span class="sr-only">{{ mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú' }}</span>
           </button>
         </div>
       </div>
@@ -99,7 +99,7 @@
             class="block px-3 py-2.5 font-display text-sm font-semibold uppercase tracking-wider text-ink hover:text-brand-orange-600 hover:bg-surface-warm transition-colors"
             @click="mobileMenuOpen = false"
           >
-            Categorias
+            Categorías
           </NuxtLink>
           <NuxtLink
             to="/products"

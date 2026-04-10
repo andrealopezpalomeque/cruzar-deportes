@@ -127,7 +127,7 @@
               No encontramos resultados
             </h3>
             <p class="text-ink-muted mb-4">
-              Intenta con otros términos de búsqueda o explora nuestras categorías
+              Intentá con otros términos de búsqueda o explorá nuestras categorías
             </p>
             <div class="space-y-2">
               <NuxtLink

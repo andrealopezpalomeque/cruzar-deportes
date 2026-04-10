@@ -195,9 +195,9 @@ onMounted(() => {
 useHead(() => ({
   title: `${productType.value?.name || 'Tipo'} - Cruzar Deportes`,
   meta: [
-    { name: 'description', content: `Explora nuestra colección de ${productType.value?.name?.toLowerCase() || 'productos'}.` },
+    { name: 'description', content: `Explorá nuestra colección de ${productType.value?.name?.toLowerCase() || 'productos'}.` },
     { property: 'og:title', content: `${productType.value?.name || 'Tipo'} - Cruzar Deportes` },
-    { property: 'og:description', content: `Explora nuestra colección de ${productType.value?.name?.toLowerCase() || 'productos'}.` },
+    { property: 'og:description', content: `Explorá nuestra colección de ${productType.value?.name?.toLowerCase() || 'productos'}.` },
     { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
   ]
 }))

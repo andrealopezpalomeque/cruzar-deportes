@@ -21,17 +21,17 @@
           <div class="opacity-0 animate-fade-up">
             <span class="inline-flex items-center px-3 py-1 font-display text-xs font-bold uppercase tracking-widest bg-brand-orange-600 text-white mb-6">
               <IconSoccer class="w-3 h-3 mr-1.5" />
-              Nueva Coleccion 2026
+              Nueva Colección 2026
             </span>
           </div>
 
           <!-- Headline — massive, condensed, athletic -->
           <h1 class="font-display text-display-xl text-white uppercase mb-6 opacity-0 animate-fade-up-delay-1">
-            Vesti tu Pasion<br/>por el Deporte
+            Vestí tu Pasión<br/>por el Deporte
           </h1>
 
           <p class="text-lg md:text-xl text-white/80 mb-8 max-w-lg leading-relaxed opacity-0 animate-fade-up-delay-2">
-            Descubri la coleccion mas completa de camisetas deportivas de equipos de todo el mundo. Calidad premium, disenos autenticos.
+            Descubrí la colección más completa de camisetas deportivas de equipos de todo el mundo. Calidad premium, diseños auténticos.
           </p>
 
           <div class="flex flex-wrap gap-4 opacity-0 animate-fade-up-delay-3">
@@ -39,13 +39,13 @@
               to="/products"
               class="inline-flex items-center px-8 py-3.5 bg-brand-orange-600 text-white font-display text-sm font-bold uppercase tracking-wider hover:bg-brand-orange-700 transition-colors"
             >
-              Explorar Coleccion
+              Explorar Colección
             </NuxtLink>
             <NuxtLink
               to="/categories"
               class="inline-flex items-center px-8 py-3.5 border-2 border-white text-white font-display text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-ink transition-colors"
             >
-              Ver Categorias
+              Ver Categorías
             </NuxtLink>
           </div>
 
@@ -79,7 +79,7 @@
               <IconTruck class="w-5 h-5 text-brand-orange-600" />
             </div>
             <div>
-              <h3 class="font-display text-sm font-bold uppercase tracking-wider text-ink">Envio Gratis</h3>
+              <h3 class="font-display text-sm font-bold uppercase tracking-wider text-ink">Envío Gratis</h3>
               <p class="text-sm text-ink-muted mt-0.5">Compras +$120.000</p>
             </div>
           </div>
@@ -99,7 +99,7 @@
               <IconUserGroup class="w-5 h-5 text-brand-coral-600" />
             </div>
             <div>
-              <h3 class="font-display text-sm font-bold uppercase tracking-wider text-ink">Atencion 24/7</h3>
+              <h3 class="font-display text-sm font-bold uppercase tracking-wider text-ink">Atención 24/7</h3>
               <p class="text-sm text-ink-muted mt-0.5">Soporte personalizado</p>
             </div>
           </div>
@@ -162,7 +162,7 @@
       <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
           <div class="reveal">
-            <span class="font-display text-xs font-bold uppercase tracking-widest text-brand-orange-600 mb-2 block">Seleccion Curada</span>
+            <span class="font-display text-xs font-bold uppercase tracking-widest text-brand-orange-600 mb-2 block">Selección Curada</span>
             <h2 class="font-display text-display-lg text-ink uppercase">Productos Destacados</h2>
           </div>
           <div class="reveal">
@@ -194,8 +194,8 @@
 
         <div v-if="featuredProducts.length === 0 && !productsStore.loading" class="text-center py-16 cursor-default">
           <IconTshirtCrew class="h-16 w-16 text-ink-subtle mx-auto mb-4" />
-          <h3 class="font-display text-display-sm text-ink uppercase mb-2">Aun no hay productos</h3>
-          <p class="text-ink-muted">Estamos trabajando en agregar productos. Volve pronto!</p>
+          <h3 class="font-display text-display-sm text-ink uppercase mb-2">Aún no hay productos</h3>
+          <p class="text-ink-muted">Estamos trabajando en agregar productos. Volvé pronto!</p>
         </div>
       </div>
     </section>
@@ -229,10 +229,10 @@
       <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-xl ml-auto text-right reveal">
           <h2 class="font-display text-display-lg text-white uppercase mb-6">
-            No encontras la camiseta que buscas?
+            ¿No encontrás la camiseta que buscás?
           </h2>
           <p class="text-lg text-white/80 mb-8 leading-relaxed">
-            Envianos las especificaciones de la camiseta que necesitas y nosotros la conseguimos para vos.
+            Envianos las especificaciones de la camiseta que necesitás y nosotros la conseguimos para vos.
           </p>
 
           <button
@@ -280,7 +280,7 @@ const featuredProducts = computed(() => productsStore.getFeaturedProducts)
 
 const openCustomJerseyWhatsApp = () => {
   const phoneNumber = '5493794000783'
-  const message = encodeURIComponent('Hola, estoy buscando una camiseta especifica y me gustaria consultar si pueden conseguirla.')
+  const message = encodeURIComponent('Hola, estoy buscando una camiseta específica y me gustaría consultar si pueden conseguirla.')
   window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank')
 }
 
@@ -291,9 +291,9 @@ onMounted(() => {
 useHead({
   title: 'Cruzar Deportes - Camisetas Deportivas',
   meta: [
-    { name: 'description', content: 'Compra camisetas deportivas de equipos de todo el mundo. Encuentra la mercaderia de calidad premium de tu equipo favorito.' },
+    { name: 'description', content: 'Comprá camisetas deportivas de equipos de todo el mundo. Encontrá la mercadería de calidad premium de tu equipo favorito.' },
     { property: 'og:title', content: 'Cruzar Deportes - Camisetas Deportivas' },
-    { property: 'og:description', content: 'Compra camisetas deportivas de equipos de todo el mundo. Encuentra la mercaderia de calidad premium de tu equipo favorito.' },
+    { property: 'og:description', content: 'Comprá camisetas deportivas de equipos de todo el mundo. Encontrá la mercadería de calidad premium de tu equipo favorito.' },
     { property: 'og:image', content: 'https://cruzardeportes.com/images/og-image.jpg' },
   ]
 })

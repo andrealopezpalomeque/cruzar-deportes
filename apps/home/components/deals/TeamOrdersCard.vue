@@ -14,8 +14,8 @@
       <h3 class="font-display text-display-md text-ink mb-4 uppercase">Pedidos de Equipos</h3>
 
       <p class="text-ink-muted mb-6 leading-relaxed max-w-md">
-        Equipa a todo tu equipo con camisetas personalizadas. Precios especiales para grupos,
-        con opcion de estampado de nombre y numero incluido.
+        Equipá a todo tu equipo con camisetas personalizadas. Precios especiales para grupos,
+        con opción de estampado de nombre y número incluido.
       </p>
 
       <div class="space-y-2.5 mb-8">
@@ -25,11 +25,11 @@
         </div>
         <div class="flex items-center text-sm text-ink-light">
           <IconCheck class="w-4 h-4 mr-2.5 text-brand-sage-500 flex-shrink-0" />
-          <span>Personalizacion incluida</span>
+          <span>Personalización incluida</span>
         </div>
         <div class="flex items-center text-sm text-ink-light">
           <IconCheck class="w-4 h-4 mr-2.5 text-brand-sage-500 flex-shrink-0" />
-          <span>Multiples talles disponibles</span>
+          <span>Múltiples talles disponibles</span>
         </div>
         <div class="flex items-center text-sm text-ink-light">
           <IconCheck class="w-4 h-4 mr-2.5 text-brand-sage-500 flex-shrink-0" />
