@@ -1,4 +1,5 @@
 const { db, admin } = require('../config/firebase');
+const { cache } = require('../utils/cache');
 
 const categoriesCollection = db.collection('categories');
 
@@ -15,17 +16,34 @@ const docToCategory = (doc) => {
 
 // Get all categories
 const getAllCategories = async (req, res) => {
+  const cacheKey = 'categories:all';
+
   try {
+    const cached = cache.get(cacheKey);
+    if (cached) {
+      return res.json(cached);
+    }
+
     const snapshot = await categoriesCollection.orderBy('order', 'asc').get();
     const categories = snapshot.docs.map(docToCategory);
 
-    res.json({
+    const response = {
       success: true,
       data: categories,
       total: categories.length
-    });
+    };
+
+    cache.set(cacheKey, response);
+    res.json(response);
   } catch (error) {
     console.error('Error fetching categories:', error);
+
+    const stale = cache.getStale(cacheKey);
+    if (stale) {
+      console.log('Serving stale cache for:', cacheKey);
+      return res.json(stale);
+    }
+
     res.status(500).json({
       success: false,
       error: 'Failed to fetch categories',
@@ -75,6 +93,7 @@ const createCategory = async (req, res) => {
     const docRef = await categoriesCollection.add(newCategory);
     const createdDoc = await docRef.get();
 
+    cache.invalidatePrefix('categories:');
     res.status(201).json({
       success: true,
       data: docToCategory(createdDoc)
@@ -114,6 +133,7 @@ const updateCategory = async (req, res) => {
     await docRef.update(dataToUpdate);
     const updatedDoc = await docRef.get();
 
+    cache.invalidatePrefix('categories:');
     res.json({ success: true, data: docToCategory(updatedDoc) });
   } catch (error) {
     console.error('Error updating category:', error);
@@ -139,6 +159,7 @@ const deleteCategory = async (req, res) => {
 
     await docRef.delete();
 
+    cache.invalidatePrefix('categories:');
     res.json({ success: true, message: 'Category deleted successfully' });
   } catch (error) {
     console.error('Error deleting category:', error);

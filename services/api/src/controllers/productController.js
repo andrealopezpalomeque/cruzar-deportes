@@ -1,5 +1,6 @@
 const { db, admin } = require('../config/firebase');
 const cloudinary = require('../config/cloudinary');
+const { cache } = require('../utils/cache');
 
 const productsCollection = db.collection('products');
 
@@ -31,7 +32,14 @@ const docToProduct = (doc) => {
 
 // Get all products (public, supports query filters)
 const getAllProducts = async (req, res) => {
+  const cacheKey = `products:all:${JSON.stringify(req.query)}`;
+
   try {
+    const cached = cache.get(cacheKey);
+    if (cached) {
+      return res.json(cached);
+    }
+
     const { category, productType, league, featured, limit } = req.query;
 
     let query = productsCollection.orderBy('createdAt', 'desc');
@@ -56,13 +64,23 @@ const getAllProducts = async (req, res) => {
       products = products.slice(0, parseInt(limit, 10));
     }
 
-    res.json({
+    const response = {
       success: true,
       data: products,
       total: products.length
-    });
+    };
+
+    cache.set(cacheKey, response);
+    res.json(response);
   } catch (error) {
     console.error('Error fetching products:', error);
+
+    const stale = cache.getStale(cacheKey);
+    if (stale) {
+      console.log('Serving stale cache for:', cacheKey);
+      return res.json(stale);
+    }
+
     res.status(500).json({
       success: false,
       error: 'Failed to fetch products',
@@ -137,6 +155,7 @@ const createProduct = async (req, res) => {
     }
     const createdDoc = await docRef.get();
 
+    cache.invalidatePrefix('products:');
     res.status(201).json({
       success: true,
       data: docToProduct(createdDoc)
@@ -181,6 +200,7 @@ const updateProduct = async (req, res) => {
     await docRef.update(dataToUpdate);
     const updatedDoc = await docRef.get();
 
+    cache.invalidatePrefix('products:');
     res.json({ success: true, data: docToProduct(updatedDoc) });
   } catch (error) {
     console.error('Error updating product:', error);
@@ -220,6 +240,7 @@ const deleteProduct = async (req, res) => {
 
     await docRef.delete();
 
+    cache.invalidatePrefix('products:');
     res.json({ success: true, message: 'Product deleted successfully' });
   } catch (error) {
     console.error('Error deleting product:', error);
