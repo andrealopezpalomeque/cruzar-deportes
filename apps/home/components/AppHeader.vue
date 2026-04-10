@@ -1,7 +1,7 @@
 <template>
-  <header class="bg-white shadow-sm border-b">
+  <header class="bg-surface-cream/95 backdrop-blur-sm sticky top-0 z-50 border-b border-surface-muted">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
+      <div class="flex justify-between items-center h-16 md:h-20">
         <!-- Logo -->
         <div class="flex-shrink-0">
           <NuxtLink to="/" class="flex items-center space-x-2">
@@ -11,59 +11,59 @@
               type="logo"
               loading="eager"
               fetchpriority="high"
-              img-class="h-20 w-auto"
+              img-class="h-16 md:h-20 w-auto"
             />
           </NuxtLink>
         </div>
 
         <!-- Navigation -->
-        <nav class="hidden md:flex space-x-8">
-          <NuxtLink 
-            to="/" 
-            class="text-gray-800 hover:text-black transition-colors"
+        <nav class="hidden md:flex items-center gap-8">
+          <NuxtLink
+            to="/"
+            class="font-display text-sm font-semibold uppercase tracking-wider text-ink hover:text-brand-orange-600 transition-colors"
           >
             Inicio
           </NuxtLink>
           <NuxtLink
             to="/categories"
-            class="text-gray-800 hover:text-black transition-colors"
+            class="font-display text-sm font-semibold uppercase tracking-wider text-ink hover:text-brand-orange-600 transition-colors"
           >
             Categorias
           </NuxtLink>
-          <NuxtLink 
-            to="/products" 
-            class="text-gray-800 hover:text-black transition-colors"
+          <NuxtLink
+            to="/products"
+            class="font-display text-sm font-semibold uppercase tracking-wider text-ink hover:text-brand-orange-600 transition-colors"
           >
             Todos los Productos
           </NuxtLink>
         </nav>
 
         <!-- Actions -->
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center gap-3">
           <button
             type="button"
             @click="openSearch"
-            class="p-2 text-black hover:text-gray-600 transition-colors"
+            class="p-2 text-ink hover:text-brand-orange-600 transition-colors"
             title="Buscar (Ctrl+K)"
-            aria-label="Abrir búsqueda de productos"
+            aria-label="Abrir busqueda de productos"
           >
-            <IconMagnify class="h-6 w-6" />
+            <IconMagnify class="h-5 w-5" />
             <span class="sr-only">Buscar productos</span>
           </button>
-          
+
           <button
             type="button"
             @click="openCart"
-            class="relative p-2 text-black hover:text-gray-600 transition-colors"
+            class="relative p-2 text-ink hover:text-brand-orange-600 transition-colors"
             :aria-label="cartStore.totalItems > 0 ? `Abrir carrito (${cartStore.totalItems} productos)` : 'Abrir carrito'"
           >
-            <IconShopping class="h-6 w-6" />
+            <IconShopping class="h-5 w-5" />
             <span class="sr-only">
-              {{ cartStore.totalItems > 0 ? `Carrito con ${cartStore.totalItems} productos` : 'Carrito vacío' }}
+              {{ cartStore.totalItems > 0 ? `Carrito con ${cartStore.totalItems} productos` : 'Carrito vacio' }}
             </span>
             <span
               v-if="cartStore.totalItems > 0"
-              class="absolute -top-1 -right-1 bg-black text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+              class="absolute -top-0.5 -right-0.5 bg-brand-orange-600 text-white text-[10px] font-display font-bold rounded-full h-[18px] w-[18px] flex items-center justify-center"
               aria-hidden="true"
             >
               {{ cartStore.totalItems }}
@@ -74,36 +74,36 @@
           <button
             type="button"
             @click="mobileMenuOpen = !mobileMenuOpen"
-            class="md:hidden p-2 text-black hover:text-gray-600 transition-colors"
-            :aria-label="mobileMenuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'"
+            class="md:hidden p-2 text-ink hover:text-brand-orange-600 transition-colors"
+            :aria-label="mobileMenuOpen ? 'Cerrar menu de navegacion' : 'Abrir menu de navegacion'"
             :aria-expanded="mobileMenuOpen"
           >
-            <IconMenu class="h-6 w-6" />
-            <span class="sr-only">{{ mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú' }}</span>
+            <IconMenu class="h-5 w-5" />
+            <span class="sr-only">{{ mobileMenuOpen ? 'Cerrar menu' : 'Abrir menu' }}</span>
           </button>
         </div>
       </div>
 
       <!-- Mobile menu -->
-      <div v-if="mobileMenuOpen" class="md:hidden">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <NuxtLink 
-            to="/" 
-            class="block px-3 py-2 text-gray-800 hover:text-black"
+      <div v-if="mobileMenuOpen" class="md:hidden border-t border-surface-muted">
+        <div class="py-4 space-y-1">
+          <NuxtLink
+            to="/"
+            class="block px-3 py-2.5 font-display text-sm font-semibold uppercase tracking-wider text-ink hover:text-brand-orange-600 hover:bg-surface-warm transition-colors"
             @click="mobileMenuOpen = false"
           >
             Inicio
           </NuxtLink>
           <NuxtLink
             to="/categories"
-            class="block px-3 py-2 text-gray-800 hover:text-black"
+            class="block px-3 py-2.5 font-display text-sm font-semibold uppercase tracking-wider text-ink hover:text-brand-orange-600 hover:bg-surface-warm transition-colors"
             @click="mobileMenuOpen = false"
           >
             Categorias
           </NuxtLink>
-          <NuxtLink 
-            to="/products" 
-            class="block px-3 py-2 text-gray-800 hover:text-black"
+          <NuxtLink
+            to="/products"
+            class="block px-3 py-2.5 font-display text-sm font-semibold uppercase tracking-wider text-ink hover:text-brand-orange-600 hover:bg-surface-warm transition-colors"
             @click="mobileMenuOpen = false"
           >
             Todos los Productos
@@ -111,10 +111,10 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Search Modal -->
     <SearchModal />
-    
+
     <!-- Cart Modal -->
     <CartModal />
   </header>

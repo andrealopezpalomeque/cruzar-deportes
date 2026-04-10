@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div class="min-h-screen bg-surface-cream">
     <PromotionalBanner />
     <AppHeader />
     <main>
@@ -11,5 +11,4 @@
 
 <script setup>
 import PromotionalBanner from '~/components/PromotionalBanner.vue'
-// Layout for the main ecommerce site
 </script>

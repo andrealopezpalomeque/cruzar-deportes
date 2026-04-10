@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white rounded-lg shadow-sm border hover:shadow-lg transition-all duration-200 group">
+  <div class="group cursor-pointer">
     <!-- Product Link Wrapper -->
     <NuxtLink
       :to="`/products/${product.slug}`"
@@ -7,8 +7,8 @@
       :aria-label="`Ver detalles de ${product.name}`"
     >
       <!-- Product Image -->
-      <div class="aspect-w-1 aspect-h-1 bg-gray-200 rounded-t-lg overflow-hidden relative">
-        <!-- Image Content Wrapper -->
+      <div class="aspect-w-1 aspect-h-1 bg-surface-warm overflow-hidden relative">
+        <!-- Image -->
         <OptimizedImage
           v-if="product.images?.length"
           wrapper-class="aspect-content block"
@@ -16,41 +16,41 @@
           :alt="product.name"
           loading="lazy"
           fetchpriority="auto"
-          img-class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+          img-class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
         />
         <div v-else class="aspect-content flex items-center justify-center">
-          <IconTshirtCrew class="h-16 w-16 text-gray-400" />
+          <IconTshirtCrew class="h-16 w-16 text-ink-subtle" />
         </div>
-        
-        <!-- Badges Container with better positioning -->
+
+        <!-- Badges -->
         <div class="absolute inset-0 pointer-events-none z-10">
-          <!-- Featured Badge - Top left corner -->
-          <div 
+          <!-- Featured Badge -->
+          <div
             v-if="product.featured"
-            class="absolute top-2 left-2"
+            class="absolute top-3 left-3"
           >
-            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-700 shadow-sm pointer-events-auto">
+            <span class="inline-flex items-center px-2.5 py-1 font-display text-[10px] font-bold uppercase tracking-wider bg-brand-orange-600 text-white pointer-events-auto">
               <IconStar class="h-3 w-3 mr-1" />
               Destacado
             </span>
           </div>
 
-          <!-- Discount Badge - Top right corner or below featured if both exist -->
-          <div 
+          <!-- Discount Badge -->
+          <div
             v-if="product.originalPrice && product.originalPrice > product.price"
-            :class="product.featured ? 'absolute top-12 left-2' : 'absolute top-2 right-2'"
+            :class="product.featured ? 'absolute top-12 left-3' : 'absolute top-3 right-3'"
           >
-            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-black text-white shadow-sm pointer-events-auto">
+            <span class="inline-flex items-center px-2.5 py-1 font-display text-[10px] font-bold uppercase tracking-wider bg-ink text-white pointer-events-auto">
               -{{ Math.round((1 - product.price / product.originalPrice) * 100) }}%
             </span>
           </div>
 
-          <!-- Image count indicator - Bottom right corner -->
-          <div 
+          <!-- Image count -->
+          <div
             v-if="(product.totalImages || product.images?.length || 0) > 1"
-            class="absolute bottom-2 right-2"
+            class="absolute bottom-3 right-3"
           >
-            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-black bg-opacity-70 text-white shadow-sm pointer-events-auto">
+            <span class="inline-flex items-center px-2 py-1 text-[10px] font-medium bg-ink/70 text-white backdrop-blur-sm pointer-events-auto">
               <IconImageMultiple class="h-3 w-3 mr-1" />
               {{ product.totalImages || product.images?.length || 0 }}
             </span>
@@ -58,27 +58,27 @@
         </div>
       </div>
     </NuxtLink>
-    
+
     <!-- Product Info -->
-    <div class="p-4">
+    <div class="pt-3 pb-1">
       <!-- Product Title and League -->
       <NuxtLink
         :to="`/products/${product.slug}`"
-        class="block hover:text-black transition-colors"
+        class="block group-hover:text-brand-orange-600 transition-colors"
         :aria-label="`Ver ${product.name} - ${leagueName}`"
       >
-        <h3 class="text-lg font-normal text-gray-900 mb-1 line-clamp-2">{{ product.name }}</h3>
+        <h3 class="text-base font-medium text-ink leading-snug line-clamp-2">{{ product.name }}</h3>
       </NuxtLink>
 
-      <p class="text-sm text-gray-800 mb-3 capitalize cursor-default">{{ leagueName }}</p>
+      <p class="text-ink-muted mt-0.5 capitalize cursor-default font-display text-xs uppercase tracking-wide">{{ leagueName }}</p>
 
-      <!-- Price and Add Button -->
-      <div class="flex items-center justify-between mb-3">
-        <div class="flex items-center space-x-2">
-          <span class="text-lg font-medium text-gray-900">{{ formatArs(product.price) }}</span>
+      <!-- Price and Action -->
+      <div class="flex items-center justify-between mt-2">
+        <div class="flex items-center gap-2">
+          <span class="text-lg font-semibold text-ink">{{ formatArs(product.price) }}</span>
           <span
             v-if="product.originalPrice && product.originalPrice > product.price"
-            class="text-sm text-gray-700 line-through"
+            class="text-sm text-ink-subtle line-through"
           >
             {{ formatArs(product.originalPrice) }}
           </span>
@@ -87,13 +87,12 @@
         <!-- Add Button -->
         <button
           @click.stop="viewProduct"
-          class="flex h-8 w-8 items-center justify-center rounded-full bg-black text-white hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+          class="flex h-8 w-8 items-center justify-center bg-ink text-surface-cream hover:bg-brand-orange-600 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-orange-500 focus:ring-offset-2"
           :aria-label="`Ver ${product.name}`"
         >
-          <IconPlus class="h-5 w-5" />
+          <IconPlus class="h-4 w-4" />
         </button>
       </div>
-
     </div>
   </div>
 </template>
@@ -110,14 +109,12 @@ import { getFirstImageUrl } from '~/utils/imageHelpers'
 const props = defineProps(['product'])
 const productsStore = useProductsStore()
 
-// Computed properties
 const leagueName = computed(() => {
   const league = productsStore.leagues.find(l => l.slug === props.product.league)
   return league?.name || props.product.league || ''
 })
 
 function viewProduct() {
-  // Navigate to product detail page
   navigateTo(`/products/${props.product.slug}`)
 }
 </script>

@@ -1,63 +1,61 @@
 <template>
-  <footer class="bg-white border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Company Info -->
+  <footer class="bg-ink text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         <div class="col-span-1 md:col-span-2 lg:col-span-1">
-          <div class="flex items-center space-x-2 mb-4">
+          <div class="flex items-center mb-6">
             <OptimizedImage
               src="/images/cruzar-logo-no-bg.png"
               alt="Cruzar Deportes Logo"
               type="logo"
               loading="lazy"
-              img-class="h-20 w-auto"
+              img-class="h-16 w-auto brightness-0 invert"
             />
           </div>
-          <p class="text-gray-800 mb-4 cursor-default">
-            Porque cada hincha merece vestir los colores de su pasión. Camisetas deportivas del mundo entero.
+          <p class="text-white/70 mb-6 leading-relaxed cursor-default max-w-xs">
+            Porque cada hincha merece vestir los colores de su pasion. Camisetas deportivas del mundo entero.
           </p>
-            <div class="flex">
-            <a href="https://www.instagram.com/cruzardeportes/" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-black transition-colors">
+          <div class="flex">
+            <a
+              href="https://www.instagram.com/cruzardeportes/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-white/60 hover:text-brand-orange-400 transition-colors"
+            >
               <IconInstagram class="h-6 w-6" />
             </a>
-            </div>
+          </div>
         </div>
 
-        <!-- Quick Links -->
         <div>
-          <h3 class="text-lg font-medium mb-4 text-gray-900 cursor-default">Enlaces Rápidos</h3>
-          <ul class="space-y-2">
-            <li><NuxtLink to="/" class="text-gray-800 hover:text-black transition-colors">Inicio</NuxtLink></li>
-            <li><NuxtLink to="/categories" class="text-gray-800 hover:text-black transition-colors">Ligas</NuxtLink></li>
-            <li><NuxtLink to="/products" class="text-gray-800 hover:text-black transition-colors">Todos los Productos</NuxtLink></li>
+          <h3 class="font-display text-sm font-bold uppercase tracking-widest text-white mb-6 cursor-default">Enlaces Rapidos</h3>
+          <ul class="space-y-3">
+            <li><NuxtLink to="/" class="text-white/70 hover:text-brand-orange-400 transition-colors text-sm">Inicio</NuxtLink></li>
+            <li><NuxtLink to="/categories" class="text-white/70 hover:text-brand-orange-400 transition-colors text-sm">Ligas</NuxtLink></li>
+            <li><NuxtLink to="/products" class="text-white/70 hover:text-brand-orange-400 transition-colors text-sm">Todos los Productos</NuxtLink></li>
           </ul>
         </div>
 
-        <!-- Special Offers -->
         <div>
-          <h3 class="text-lg font-medium mb-4 text-gray-900 cursor-default">Ofertas Especiales</h3>
-          <ul class="space-y-2">
-            <li><NuxtLink to="/ofertas/caja-misteriosa" class="text-gray-800 hover:text-black transition-colors">Caja Misteriosa</NuxtLink></li>
-            <li><NuxtLink to="/ofertas/pedidos-equipos" class="text-gray-800 hover:text-black transition-colors">Pedidos de Equipos</NuxtLink></li>
+          <h3 class="font-display text-sm font-bold uppercase tracking-widest text-white mb-6 cursor-default">Ofertas Especiales</h3>
+          <ul class="space-y-3">
+            <li><NuxtLink to="/ofertas/caja-misteriosa" class="text-white/70 hover:text-brand-orange-400 transition-colors text-sm">Caja Misteriosa</NuxtLink></li>
+            <li><NuxtLink to="/ofertas/pedidos-equipos" class="text-white/70 hover:text-brand-orange-400 transition-colors text-sm">Pedidos de Equipos</NuxtLink></li>
           </ul>
         </div>
 
-        <!-- Customer Service -->
         <div>
-          <h3 class="text-lg font-medium mb-4 text-gray-900 cursor-default">Atención al Cliente</h3>
-          <ul class="space-y-2">
-           <!--  <li><NuxtLink to="/contact" class="text-gray-800 hover:text-black transition-colors">Contáctanos</NuxtLink></li>
-            <li><NuxtLink to="/shipping" class="text-gray-800 hover:text-black transition-colors">Información de Envío</NuxtLink></li>
-            <li><NuxtLink to="/returns" class="text-gray-800 hover:text-black transition-colors">Devoluciones</NuxtLink></li> -->
-            <li><NuxtLink to="/cuidado-camisetas" class="text-gray-800 hover:text-black transition-colors">Cuidado de Camisetas</NuxtLink></li>
-            <li><NuxtLink to="/faq" class="text-gray-800 hover:text-black transition-colors">Preguntas Frecuentes</NuxtLink></li>
+          <h3 class="font-display text-sm font-bold uppercase tracking-widest text-white mb-6 cursor-default">Atencion al Cliente</h3>
+          <ul class="space-y-3">
+            <li><NuxtLink to="/cuidado-camisetas" class="text-white/70 hover:text-brand-orange-400 transition-colors text-sm">Cuidado de Camisetas</NuxtLink></li>
+            <li><NuxtLink to="/faq" class="text-white/70 hover:text-brand-orange-400 transition-colors text-sm">Preguntas Frecuentes</NuxtLink></li>
           </ul>
         </div>
       </div>
 
-      <div class="border-t border-gray-200 mt-8 pt-8 text-center">
-        <p class="text-gray-700 cursor-default">
-          © {{ currentYear }} Cruzar Deportes. Todos los derechos reservados.
+      <div class="border-t border-white/10 mt-12 pt-8 text-center">
+        <p class="text-white/40 text-sm cursor-default">
+          &copy; {{ currentYear }} Cruzar Deportes. Todos los derechos reservados.
         </p>
       </div>
     </div>

@@ -31,21 +31,23 @@ const props = defineProps({
 })
 
 const buttonClasses = computed(() => {
-  const base = 'inline-flex items-center justify-center rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2'
-  
+  const base = 'inline-flex items-center justify-center font-display font-semibold uppercase tracking-wide transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2'
+
   const variants = {
-    default: 'bg-black text-white hover:bg-gray-900 focus:ring-gray-500',
-    outline: 'border border-gray-300 bg-transparent text-gray-700 hover:bg-gray-50 focus:ring-gray-500',
-    white: 'bg-white text-black hover:bg-gray-100 focus:ring-gray-500',
-    whiteOutline: 'border-2 border-white text-white hover:bg-white hover:text-black bg-transparent focus:ring-white shadow-[0_0_0_2px_rgba(255,255,255,0.7)]'
+    default: 'bg-ink text-surface-cream hover:bg-ink-light focus:ring-ink rounded-sm',
+    brand: 'bg-brand-orange-600 text-white hover:bg-brand-orange-700 focus:ring-brand-orange-500 rounded-sm',
+    outline: 'border-2 border-ink text-ink hover:bg-ink hover:text-surface-cream focus:ring-ink rounded-sm',
+    ghost: 'text-ink hover:bg-surface-warm focus:ring-ink rounded-sm',
+    white: 'bg-white text-ink hover:bg-surface-cream focus:ring-white rounded-sm',
+    whiteOutline: 'border-2 border-white text-white hover:bg-white hover:text-ink bg-transparent focus:ring-white rounded-sm'
   }
-  
+
   const sizes = {
-    sm: 'px-3 py-2 text-sm font-medium',
-    md: 'px-4 py-2 text-base font-medium',
-    lg: 'px-6 py-3 text-lg font-medium'
+    sm: 'px-4 py-2 text-xs',
+    md: 'px-6 py-2.5 text-sm',
+    lg: 'px-8 py-3.5 text-base'
   }
-  
+
   return `${base} ${variants[props.variant] || variants.default} ${sizes[props.size] || sizes.md} ${props.class}`
 })
 </script>

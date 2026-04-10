@@ -1,64 +1,56 @@
 <template>
-  <Card class="overflow-hidden group hover:shadow-xl transition-all duration-300 cursor-pointer" @click="navigateToDeal">
-    <!-- Visual Header with Gradient -->
-    <div class="relative h-48 bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
-      <div class="relative h-full flex items-center justify-center">
-        <div class="text-center">
-          <div class="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-            <IconAccountGroup class="w-10 h-10 text-white" />
-          </div>
-          <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/20 backdrop-blur-sm text-white border border-white/30">
-            <IconTag class="w-3 h-3 mr-1" />
-            Precio Grupal
-          </div>
-        </div>
+  <div
+    class="group cursor-pointer relative overflow-hidden bg-surface-warm border border-surface-muted"
+    @click="navigateToDeal"
+  >
+    <div class="relative p-8 md:p-10">
+      <div class="mb-6">
+        <span class="inline-flex items-center px-3 py-1 font-display text-[10px] font-bold uppercase tracking-widest bg-brand-sage-400 text-white">
+          <IconTag class="w-3 h-3 mr-1.5" />
+          Precio Grupal
+        </span>
       </div>
-    </div>
 
-    <!-- Content -->
-    <div class="p-6">
-      <h3 class="text-2xl font-light text-gray-900 mb-3">Pedidos de Equipos</h3>
-      <p class="text-gray-800 mb-4 leading-relaxed">
-        Equipá a todo tu equipo con camisetas personalizadas. Precios especiales para grupos,
-        con opción de estampado de nombre y número incluido.
+      <h3 class="font-display text-display-md text-ink mb-4 uppercase">Pedidos de Equipos</h3>
+
+      <p class="text-ink-muted mb-6 leading-relaxed max-w-md">
+        Equipa a todo tu equipo con camisetas personalizadas. Precios especiales para grupos,
+        con opcion de estampado de nombre y numero incluido.
       </p>
 
-      <!-- Features List -->
-      <div class="space-y-2 mb-6">
-        <div class="flex items-center text-sm text-gray-700">
-          <IconCheck class="w-4 h-4 mr-2 text-black flex-shrink-0" />
+      <div class="space-y-2.5 mb-8">
+        <div class="flex items-center text-sm text-ink-light">
+          <IconCheck class="w-4 h-4 mr-2.5 text-brand-sage-500 flex-shrink-0" />
           <span>Descuento por cantidad</span>
         </div>
-        <div class="flex items-center text-sm text-gray-700">
-          <IconCheck class="w-4 h-4 mr-2 text-black flex-shrink-0" />
-          <span>Personalización incluida</span>
+        <div class="flex items-center text-sm text-ink-light">
+          <IconCheck class="w-4 h-4 mr-2.5 text-brand-sage-500 flex-shrink-0" />
+          <span>Personalizacion incluida</span>
         </div>
-        <div class="flex items-center text-sm text-gray-700">
-          <IconCheck class="w-4 h-4 mr-2 text-black flex-shrink-0" />
-          <span>Múltiples talles disponibles</span>
+        <div class="flex items-center text-sm text-ink-light">
+          <IconCheck class="w-4 h-4 mr-2.5 text-brand-sage-500 flex-shrink-0" />
+          <span>Multiples talles disponibles</span>
         </div>
-        <div class="flex items-center text-sm text-gray-700">
-          <IconCheck class="w-4 h-4 mr-2 text-black flex-shrink-0" />
+        <div class="flex items-center text-sm text-ink-light">
+          <IconCheck class="w-4 h-4 mr-2.5 text-brand-sage-500 flex-shrink-0" />
           <span>Asesoramiento personalizado</span>
         </div>
       </div>
 
-      <!-- CTA Button -->
-      <Button class="w-full" variant="default">
+      <button class="inline-flex items-center font-display text-sm font-bold uppercase tracking-wider text-ink group-hover:text-brand-sage-600 transition-colors">
         <IconWhatsapp class="w-5 h-5 mr-2" />
         Consultar por WhatsApp
-      </Button>
+        <IconArrowRight class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+      </button>
     </div>
-  </Card>
+  </div>
 </template>
 
 <script setup>
-import Button from '~/components/ui/Button.vue'
-import Card from '~/components/ui/Card.vue'
-import IconAccountGroup from '~icons/mdi/account-group-outline'
 import IconTag from '~icons/heroicons/tag'
 import IconCheck from '~icons/mdi/check-circle'
 import IconWhatsapp from '~icons/mdi/whatsapp'
+import IconArrowRight from '~icons/mdi/arrow-right'
 
 const navigateToDeal = () => {
   navigateTo('/ofertas/pedidos-equipos')
