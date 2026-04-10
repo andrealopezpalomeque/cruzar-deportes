@@ -139,11 +139,11 @@
               loading="lazy"
             />
           </div>
-          <div class="reveal overflow-hidden col-span-2 h-64 md:h-80">
+          <div class="reveal overflow-hidden col-span-2 h-80 md:h-[28rem]">
             <img
               src="/images/session/hero-model-manchester.jpg"
               alt="Modelo con camiseta Manchester United"
-              class="w-full h-full object-cover object-[center_25%] hover:scale-105 transition-transform duration-700"
+              class="w-full h-full object-cover object-[center_15%] hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
           </div>
