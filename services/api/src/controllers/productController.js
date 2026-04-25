@@ -1,5 +1,6 @@
 const { db, admin } = require('../config/firebase');
-const cloudinary = require('../config/cloudinary');
+const { DeleteObjectsCommand } = require('@aws-sdk/client-s3')
+const { s3, BUCKET } = require('../config/spaces')
 const { cache } = require('../utils/cache');
 
 const productsCollection = db.collection('products');
@@ -224,17 +225,25 @@ const deleteProduct = async (req, res) => {
       return res.status(404).json({ success: false, error: 'Product not found' });
     }
 
-    // Clean up Cloudinary images
+    // Clean up Spaces images
     const productData = doc.data();
     const images = productData.images || productData.selectedImages || [];
+    const keysToDelete = []
     for (const image of images) {
-      const publicId = typeof image === 'string' ? null : image.publicId;
+      const publicId = typeof image === 'string' ? null : image.publicId
       if (publicId) {
-        try {
-          await cloudinary.uploader.destroy(publicId);
-        } catch (err) {
-          console.error(`Failed to delete Cloudinary image ${publicId}:`, err.message);
-        }
+        keysToDelete.push(
+          { Key: `${publicId}_original.webp` },
+          { Key: `${publicId}_main.webp` },
+          { Key: `${publicId}_thumbnail.webp` },
+        )
+      }
+    }
+    if (keysToDelete.length > 0) {
+      try {
+        await s3.send(new DeleteObjectsCommand({ Bucket: BUCKET, Delete: { Objects: keysToDelete } }))
+      } catch (err) {
+        console.error('Failed to delete Spaces images:', err.message)
       }
     }
 
