@@ -1,133 +1,112 @@
-const cloudinary = require('../config/cloudinary');
+const sharp = require('sharp')
+const { PutObjectCommand, DeleteObjectsCommand } = require('@aws-sdk/client-s3')
+const { randomUUID } = require('crypto')
+const { s3, BUCKET, CDN_BASE } = require('../config/spaces')
 
-const DEFAULT_FOLDER = 'cruzar-deportes/products';
-const ALLOWED_FORMATS = ['jpg', 'jpeg', 'png', 'webp'];
+const DEFAULT_FOLDER = 'cruzar-deportes/products'
 
-// Upload buffer to Cloudinary
-const uploadToCloudinary = (buffer, options = {}) => {
-  return new Promise((resolve, reject) => {
-    const uploadOptions = {
-      folder: options.folder || DEFAULT_FOLDER,
-      resource_type: 'image',
-      allowed_formats: ALLOWED_FORMATS,
-      transformation: [{ quality: 'auto' }],
-      eager: [
-        { width: 400, crop: 'limit', quality: 'auto', format: 'auto' },
-        { width: 800, crop: 'limit', quality: 'auto', format: 'auto' }
-      ],
-      eager_async: false,
-      ...options
-    };
+// Generate 3 variants from a buffer using Sharp
+async function generateVariants(buffer) {
+  const [originalBuf, mainBuf, thumbBuf] = await Promise.all([
+    sharp(buffer).webp({ quality: 85 }).toBuffer(),
+    sharp(buffer).resize({ width: 800, withoutEnlargement: true }).webp({ quality: 85 }).toBuffer(),
+    sharp(buffer).resize({ width: 400, withoutEnlargement: true }).webp({ quality: 85 }).toBuffer(),
+  ])
+  return { originalBuf, mainBuf, thumbBuf }
+}
 
-    const uploadStream = cloudinary.uploader.upload_stream(
-      uploadOptions,
-      (error, result) => {
-        if (error) reject(error);
-        else resolve(result);
-      }
-    );
+// Upload a single buffer to Spaces
+async function uploadBuffer(buffer, key) {
+  await s3.send(new PutObjectCommand({
+    Bucket: BUCKET,
+    Key: key,
+    Body: buffer,
+    ContentType: 'image/webp',
+    ACL: 'public-read',
+  }))
+  return `${CDN_BASE}/${key}`
+}
 
-    uploadStream.end(buffer);
-  });
-};
+// Upload buffer → 3 variants → Spaces. Returns response data object.
+async function uploadToSpaces(buffer, folder) {
+  const { originalBuf, mainBuf, thumbBuf } = await generateVariants(buffer)
+  const key = `${folder}/${randomUUID()}`
 
-// Upload single image
+  const [originalUrl, mainUrl, thumbnailUrl] = await Promise.all([
+    uploadBuffer(originalBuf, `${key}_original.webp`),
+    uploadBuffer(mainBuf, `${key}_main.webp`),
+    uploadBuffer(thumbBuf, `${key}_thumbnail.webp`),
+  ])
+
+  return {
+    url: originalUrl,
+    publicId: key,
+    thumbnail: thumbnailUrl,
+    main: mainUrl,
+  }
+}
+
+// POST /api/upload — single image
 const uploadImage = async (req, res) => {
   try {
     if (!req.file) {
-      return res.status(400).json({ success: false, error: 'No image file provided' });
+      return res.status(400).json({ success: false, error: 'No image file provided' })
     }
 
-    const folder = req.query.folder || DEFAULT_FOLDER;
-    const result = await uploadToCloudinary(req.file.buffer, { folder });
+    const folder = req.query.folder || DEFAULT_FOLDER
+    const data = await uploadToSpaces(req.file.buffer, folder)
 
-    const thumbnailUrl = result.eager && result.eager[0] ? result.eager[0].secure_url : result.secure_url;
-    const mainUrl = result.eager && result.eager[1] ? result.eager[1].secure_url : result.secure_url;
-
-    res.json({
-      success: true,
-      data: {
-        url: result.secure_url,
-        publicId: result.public_id,
-        thumbnail: thumbnailUrl,
-        main: mainUrl
-      }
-    });
+    res.json({ success: true, data })
   } catch (error) {
-    console.error('Error uploading image:', error);
-    res.status(500).json({
-      success: false,
-      error: 'Failed to upload image',
-      message: error.message
-    });
+    console.error('Error uploading image:', error)
+    res.status(500).json({ success: false, error: 'Failed to upload image', message: error.message })
   }
-};
+}
 
-// Upload multiple images
+// POST /api/upload/multiple — up to 10 images
 const uploadMultipleImages = async (req, res) => {
   try {
     if (!req.files || req.files.length === 0) {
-      return res.status(400).json({ success: false, error: 'No image files provided' });
+      return res.status(400).json({ success: false, error: 'No image files provided' })
     }
 
-    const folder = req.query.folder || DEFAULT_FOLDER;
-    const uploadPromises = req.files.map(file =>
-      uploadToCloudinary(file.buffer, { folder })
-    );
+    const folder = req.query.folder || DEFAULT_FOLDER
+    const images = await Promise.all(
+      req.files.map(file => uploadToSpaces(file.buffer, folder))
+    )
 
-    const results = await Promise.all(uploadPromises);
-
-    const images = results.map(result => ({
-      url: result.secure_url,
-      publicId: result.public_id,
-      thumbnail: result.eager && result.eager[0] ? result.eager[0].secure_url : result.secure_url,
-      main: result.eager && result.eager[1] ? result.eager[1].secure_url : result.secure_url
-    }));
-
-    res.json({
-      success: true,
-      data: images
-    });
+    res.json({ success: true, data: images })
   } catch (error) {
-    console.error('Error uploading images:', error);
-    res.status(500).json({
-      success: false,
-      error: 'Failed to upload images',
-      message: error.message
-    });
+    console.error('Error uploading images:', error)
+    res.status(500).json({ success: false, error: 'Failed to upload images', message: error.message })
   }
-};
+}
 
-// Delete image from Cloudinary
+// DELETE /api/upload/:publicId — deletes all 3 variants
 const deleteImage = async (req, res) => {
   try {
-    const publicId = req.params[0]; // Wildcard param captures full path with slashes
+    const publicId = req.params[0]
 
     if (!publicId) {
-      return res.status(400).json({ success: false, error: 'Public ID is required' });
+      return res.status(400).json({ success: false, error: 'Public ID is required' })
     }
 
-    const result = await cloudinary.uploader.destroy(publicId);
+    await s3.send(new DeleteObjectsCommand({
+      Bucket: BUCKET,
+      Delete: {
+        Objects: [
+          { Key: `${publicId}_original.webp` },
+          { Key: `${publicId}_main.webp` },
+          { Key: `${publicId}_thumbnail.webp` },
+        ],
+      },
+    }))
 
-    if (result.result === 'ok') {
-      res.json({ success: true, message: 'Image deleted successfully' });
-    } else if (result.result === 'not found') {
-      res.status(404).json({ success: false, error: 'Image not found' });
-    } else {
-      res.status(500).json({ success: false, error: 'Failed to delete image', result });
-    }
+    res.json({ success: true, message: 'Image deleted successfully' })
   } catch (error) {
-    console.error('Error deleting image:', error);
-    res.status(500).json({
-      success: false,
-      error: 'Failed to delete image',
-      message: error.message
-    });
+    console.error('Error deleting image:', error)
+    res.status(500).json({ success: false, error: 'Failed to delete image', message: error.message })
   }
-};
+}
 
-module.exports = {
-  uploadImage,
-  uploadMultipleImages,
-  deleteImage
-};
+module.exports = { uploadImage, uploadMultipleImages, deleteImage }
