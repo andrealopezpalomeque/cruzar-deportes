@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;500;600;700;800;900&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,18 +6,64 @@
 
 @layer base {
   html {
-    @apply antialiased;
+    font-family: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+    color: #1a1a18;
+    background-color: #faf6f1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    @apply bg-gray-50 text-gray-900;
+    cursor: default;
+    @apply bg-surface-cream text-ink;
+  }
+
+  a,
+  button,
+  [role="button"],
+  summary,
+  label[for],
+  select {
+    cursor: pointer;
+  }
+
+  a[disabled],
+  button[disabled],
+  button:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="number"],
+  textarea {
+    cursor: text;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f5efe8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #9c948c;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6b6560;
   }
 }
 
 @layer components {
   /* Card component styles */
   .card {
-    @apply bg-white/80 backdrop-blur-sm rounded-xl shadow-sm border border-gray-200/60 overflow-hidden hover:shadow-md transition-shadow duration-200;
+    @apply bg-white rounded-sm border border-surface-muted overflow-hidden hover:shadow-md hover:shadow-ink/5 transition-shadow duration-200;
   }
 
   .card-body {
@@ -25,100 +71,112 @@
   }
 
   .card-header {
-    @apply border-b border-gray-200/60 px-6 py-4 bg-gray-50/50;
+    @apply border-b border-surface-muted px-6 py-4 bg-surface-warm/40;
   }
 
-  /* Button component styles */
+  /* Button component styles — match home Button.vue */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-display font-semibold uppercase tracking-wide rounded-sm border border-transparent transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
   .btn-primary {
-    @apply bg-gray-900 text-white border-gray-900 hover:bg-black hover:border-black focus:ring-gray-500;
+    @apply bg-ink text-surface-cream border-ink hover:bg-ink-light hover:border-ink-light focus:ring-ink;
+  }
+
+  .btn-brand {
+    @apply bg-brand-orange-600 text-white border-brand-orange-600 hover:bg-brand-orange-700 hover:border-brand-orange-700 focus:ring-brand-orange-500;
   }
 
   .btn-secondary {
-    @apply bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200 hover:border-gray-400 focus:ring-gray-500;
+    @apply bg-surface-warm text-ink border-surface-muted hover:bg-surface-muted hover:border-ink-subtle focus:ring-ink-subtle;
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-ink border-ink hover:bg-ink hover:text-surface-cream focus:ring-ink;
   }
 
   .btn-danger {
-    @apply bg-red-600 text-white border-red-600 hover:bg-red-700 hover:border-red-700 focus:ring-red-500;
+    @apply bg-brand-coral-600 text-white border-brand-coral-600 hover:bg-brand-coral-700 hover:border-brand-coral-700 focus:ring-brand-coral-500;
   }
 
   .btn-success {
-    @apply bg-green-600 text-white border-green-600 hover:bg-green-700 hover:border-green-700 focus:ring-green-500;
+    @apply bg-brand-sage-600 text-white border-brand-sage-600 hover:bg-brand-sage-700 hover:border-brand-sage-700 focus:ring-brand-sage-500;
   }
 
   .btn-sm {
-    @apply px-3 py-1.5 text-xs;
+    @apply px-4 py-2 text-xs;
   }
 
   .btn-lg {
-    @apply px-6 py-3 text-base;
+    @apply px-8 py-3.5 text-base;
   }
 
   /* Form component styles */
   .form-input {
-    @apply block w-full px-3 py-2 border border-gray-300 rounded-xl shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900/10 focus:border-gray-400 transition-colors duration-200;
+    @apply block w-full px-3 py-2 bg-white border border-surface-muted rounded-sm shadow-sm placeholder-ink-subtle text-ink focus:outline-none focus:ring-2 focus:ring-brand-orange-500/30 focus:border-brand-orange-500 transition-colors duration-200;
   }
 
   .form-label {
-    @apply block text-sm font-medium text-gray-700 mb-2;
+    @apply block text-xs font-display font-semibold uppercase tracking-wider text-ink-light mb-2;
   }
 
   .form-error {
-    @apply text-red-600 text-sm mt-1;
+    @apply text-brand-coral-600 text-sm mt-1;
   }
 
   /* Table styles */
   .table {
-    @apply min-w-full divide-y divide-gray-200;
+    @apply min-w-full divide-y divide-surface-muted;
   }
 
   .table-header {
-    @apply bg-gray-50;
+    @apply bg-surface-warm;
   }
 
   .table-header th {
-    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+    @apply px-6 py-3 text-left text-xs font-display font-semibold text-ink-light uppercase tracking-wider;
   }
 
   .table-body {
-    @apply bg-white divide-y divide-gray-200;
+    @apply bg-white divide-y divide-surface-muted;
   }
 
   .table-body td {
-    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+    @apply px-6 py-4 whitespace-nowrap text-sm text-ink;
   }
 
   /* Status badges */
   .badge {
-    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-sm text-xs font-display font-semibold uppercase tracking-wide;
   }
 
   .badge-success {
-    @apply bg-green-100 text-green-800;
+    @apply bg-brand-sage-100 text-brand-sage-800;
   }
 
   .badge-warning {
-    @apply bg-yellow-100 text-yellow-800;
+    @apply bg-brand-orange-100 text-brand-orange-800;
   }
 
   .badge-danger {
-    @apply bg-red-100 text-red-800;
+    @apply bg-brand-coral-100 text-brand-coral-800;
   }
 
   .badge-info {
-    @apply bg-blue-100 text-blue-800;
+    @apply bg-brand-olive-100 text-brand-olive-800;
+  }
+
+  .badge-neutral {
+    @apply bg-surface-muted text-ink-light;
   }
 
   /* Navigation styles */
   .nav-link {
-    @apply flex items-center gap-3 px-4 py-3 text-gray-600 rounded-xl hover:bg-gray-100 hover:text-gray-900 transition-all duration-200 font-medium;
+    @apply flex items-center gap-3 px-4 py-3 text-ink-light rounded-sm hover:bg-surface-warm hover:text-ink transition-all duration-200 font-display text-sm font-semibold uppercase tracking-wider;
   }
 
   .nav-link.active {
-    @apply bg-gray-900 text-white shadow-sm;
+    @apply bg-ink text-surface-cream shadow-sm;
   }
 
   .nav-link:hover:not(.active) {
@@ -132,7 +190,7 @@
 
   /* Drag and drop styles */
   .drag-over {
-    @apply bg-gray-100 border-gray-400 border-dashed;
+    @apply bg-surface-warm border-brand-orange-500 border-dashed;
   }
 
   .dragging {
@@ -145,14 +203,46 @@
   }
 
   .image-card {
-    @apply relative aspect-square bg-gray-100 rounded-lg overflow-hidden group cursor-pointer hover:shadow-md transition-shadow duration-200;
+    @apply relative aspect-square bg-surface-warm rounded-sm overflow-hidden group cursor-pointer hover:shadow-md hover:shadow-ink/10 transition-shadow duration-200;
   }
 
   .image-overlay {
-    @apply absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-200 flex items-center justify-center;
+    @apply absolute inset-0 bg-ink bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-200 flex items-center justify-center;
   }
 
   .image-checkbox {
-    @apply absolute top-2 right-2 w-5 h-5 text-gray-900 bg-white rounded border-2 border-gray-300 focus:ring-gray-500;
+    @apply absolute top-2 right-2 w-5 h-5 text-brand-orange-600 bg-white rounded-sm border-2 border-surface-muted focus:ring-brand-orange-500;
+  }
+}
+
+@layer utilities {
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

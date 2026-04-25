@@ -4,19 +4,19 @@
       v-if="show"
       class="fixed inset-0 z-50 flex items-center justify-center p-4"
     >
-      <div class="absolute inset-0 bg-black/40" @click="handleClose" />
+      <div class="absolute inset-0 bg-ink/50 backdrop-blur-sm" @click="handleClose" />
 
-      <div class="relative z-10 w-full max-w-5xl max-h-[92vh] overflow-hidden rounded-3xl bg-white shadow-2xl flex flex-col">
-        <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+      <div class="relative z-10 w-full max-w-5xl max-h-[92vh] overflow-hidden rounded-sm bg-white shadow-2xl shadow-ink/20 flex flex-col">
+        <div class="flex items-center justify-between px-6 py-4 border-b border-surface-muted">
           <div>
-            <p class="text-sm uppercase tracking-widest text-gray-400 font-semibold">Nuevo producto</p>
-            <h2 class="text-2xl font-semibold text-gray-900 flex items-center gap-2">
-              <IconImageMultiple class="w-6 h-6 text-blue-500" />
+            <p class="font-display text-xs font-semibold uppercase tracking-widest text-brand-orange-600">Nuevo producto</p>
+            <h2 class="font-display text-2xl font-bold uppercase tracking-tight text-ink flex items-center gap-2 mt-1">
+              <IconImageMultiple class="w-6 h-6 text-brand-orange-600" />
               Completa los detalles del artículo
             </h2>
           </div>
           <button
-            class="text-gray-400 hover:text-gray-600 transition-colors"
+            class="text-ink-subtle hover:text-ink transition-colors"
             :disabled="isSaving"
             @click="handleClose"
           >
@@ -24,51 +24,51 @@
           </button>
         </div>
 
-        <div class="flex-1 overflow-y-auto px-6 py-6 space-y-8 bg-gray-50/60">
+        <div class="flex-1 overflow-y-auto px-6 py-6 space-y-6 bg-surface-cream">
           <!-- General info -->
-          <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 space-y-4">
+          <section class="bg-white rounded-sm shadow-sm border border-surface-muted p-5 space-y-4">
             <div class="flex items-center justify-between">
               <div>
-                <p class="text-xs uppercase font-semibold text-gray-400">Identidad</p>
-                <h3 class="text-lg font-semibold text-gray-900">Nombre y descripción</h3>
+                <p class="font-display text-[11px] font-semibold uppercase tracking-widest text-brand-orange-600">Identidad</p>
+                <h3 class="font-display text-lg font-bold uppercase tracking-tight text-ink">Nombre y descripción</h3>
               </div>
-              <span class="text-xs text-gray-500">Los campos básicos del producto</span>
+              <span class="text-xs text-ink-muted">Los campos básicos del producto</span>
             </div>
 
             <div class="grid gap-4">
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                <label class="form-label">Nombre</label>
                 <input
                   v-model.trim="form.name"
                   type="text"
-                  class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
+                  class="form-input"
                   placeholder="Ej. Club Atlético Example 2025"
                   :disabled="isSaving"
                 />
               </div>
 
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center gap-2">
+                <label class="form-label flex items-center gap-2">
                   Slug
-                  <span class="text-xs text-gray-400"> URL del producto </span>
+                  <span class="text-xs text-ink-subtle"> URL del producto </span>
                 </label>
                 <input
                   v-model="form.slug"
                   type="text"
-                  class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
+                  class="form-input"
                   placeholder="club-example-2025"
                   :disabled="isSaving"
                   @input="markSlugEdited"
                   @blur="handleSlugBlur"
                 />
-                <p class="text-xs text-gray-500 mt-1">Se usará en el storefront para el enlace del producto.</p>
+                <p class="text-xs text-ink-muted mt-1">Se usará en el storefront para el enlace del producto.</p>
               </div>
 
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
+                <label class="form-label">Descripción</label>
                 <textarea
                   v-model="form.description"
-                  class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
+                  class="form-input"
                   rows="3"
                   placeholder="Agrega información relevante: torneo, año, detalles de tela..."
                   :disabled="isSaving"
@@ -78,41 +78,41 @@
           </section>
 
           <!-- Pricing and classification -->
-          <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 space-y-4">
+          <section class="bg-white rounded-sm shadow-sm border border-surface-muted p-5 space-y-4">
             <div class="flex items-center justify-between">
               <div>
-                <p class="text-xs uppercase font-semibold text-gray-400">Clasificación</p>
-                <h3 class="text-lg font-semibold text-gray-900">Precios y tipo de producto</h3>
+                <p class="font-display text-[11px] font-semibold uppercase tracking-widest text-brand-orange-600">Clasificación</p>
+                <h3 class="font-display text-lg font-bold uppercase tracking-tight text-ink">Precios y tipo de producto</h3>
               </div>
-              <span class="text-xs text-gray-500">Controla cómo se mostrará en la tienda</span>
+              <span class="text-xs text-ink-muted">Controla cómo se mostrará en la tienda</span>
             </div>
 
             <div class="grid gap-4 md:grid-cols-2">
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Precio</label>
+                <label class="form-label">Precio</label>
                 <div class="relative">
-                  <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">$</span>
+                  <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-ink-muted">$</span>
                   <input
                     v-model="form.price"
                     type="number"
                     min="0"
                     step="50"
-                    class="w-full rounded-xl border border-gray-200 bg-gray-50 pl-7 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
+                    class="form-input pl-7 pr-4"
                     placeholder="0"
                     :disabled="isSaving"
                   />
                 </div>
               </div>
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Precio original (opcional)</label>
+                <label class="form-label">Precio original (opcional)</label>
                 <div class="relative">
-                  <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">$</span>
+                  <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-ink-muted">$</span>
                   <input
                     v-model="form.originalPrice"
                     type="number"
                     min="0"
                     step="50"
-                    class="w-full rounded-xl border border-gray-200 bg-gray-50 pl-7 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
+                    class="form-input pl-7 pr-4"
                     placeholder="0"
                     :disabled="isSaving"
                   />
@@ -122,10 +122,10 @@
 
             <div class="grid gap-4 md:grid-cols-2">
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Tipo de Producto</label>
+                <label class="form-label">Tipo de Producto</label>
                 <select
                   v-model="form.productType"
-                  class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
+                  class="form-input"
                   :disabled="isSaving"
                 >
                   <option disabled value="">Selecciona un tipo</option>
@@ -139,10 +139,10 @@
                 </select>
               </div>
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Liga / Categoría</label>
+                <label class="form-label">Liga / Categoría</label>
                 <select
                   v-model="form.league"
-                  class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-gray-900"
+                  class="form-input"
                   :disabled="isSaving || !form.productType"
                 >
                   <option disabled value="">{{ form.productType ? 'Selecciona una liga' : 'Primero selecciona un tipo' }}</option>
@@ -159,24 +159,24 @@
           </section>
 
           <!-- Inventory -->
-          <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 space-y-4">
+          <section class="bg-white rounded-sm shadow-sm border border-surface-muted p-5 space-y-4">
             <div class="flex items-center justify-between">
               <div>
-                <p class="text-xs uppercase font-semibold text-gray-400">Disponibilidad</p>
-                <h3 class="text-lg font-semibold text-gray-900">Inventario y estados</h3>
+                <p class="font-display text-[11px] font-semibold uppercase tracking-widest text-brand-orange-600">Disponibilidad</p>
+                <h3 class="font-display text-lg font-bold uppercase tracking-tight text-ink">Inventario y estados</h3>
               </div>
             </div>
 
             <div class="grid gap-4 md:grid-cols-2">
-              <div class="flex items-center justify-between rounded-2xl border border-gray-100 px-4 py-3 bg-gray-50">
+              <div class="flex items-center justify-between rounded-sm border border-surface-muted px-4 py-3 bg-surface-warm/40">
                 <div>
-                  <p class="text-sm font-semibold text-gray-900">En stock</p>
-                  <p class="text-xs text-gray-500">Si está apagado, se mostrará "Encargar ahora"</p>
+                  <p class="text-sm font-semibold text-ink">En stock</p>
+                  <p class="text-xs text-ink-muted">Si está apagado, se mostrará "Encargar ahora"</p>
                 </div>
                 <button
                   type="button"
                   class="relative inline-flex h-7 w-12 items-center rounded-full transition-colors"
-                  :class="form.inStock ? 'bg-green-500' : 'bg-gray-300'"
+                  :class="form.inStock ? 'bg-brand-sage-600' : 'bg-ink-subtle'"
                   @click="form.inStock = !form.inStock"
                 >
                   <span
@@ -186,15 +186,15 @@
                 </button>
               </div>
 
-              <div class="flex items-center justify-between rounded-2xl border border-gray-100 px-4 py-3 bg-gray-50">
+              <div class="flex items-center justify-between rounded-sm border border-surface-muted px-4 py-3 bg-surface-warm/40">
                 <div>
-                  <p class="text-sm font-semibold text-gray-900">Destacado</p>
-                  <p class="text-xs text-gray-500">Mostrar en la home</p>
+                  <p class="text-sm font-semibold text-ink">Destacado</p>
+                  <p class="text-xs text-ink-muted">Mostrar en la home</p>
                 </div>
                 <button
                   type="button"
                   class="relative inline-flex h-7 w-12 items-center rounded-full transition-colors"
-                  :class="form.featured ? 'bg-yellow-500' : 'bg-gray-300'"
+                  :class="form.featured ? 'bg-brand-orange-600' : 'bg-ink-subtle'"
                   @click="form.featured = !form.featured"
                 >
                   <span
@@ -207,17 +207,17 @@
           </section>
 
           <!-- Cloudinary -->
-          <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 space-y-5">
+          <section class="bg-white rounded-sm shadow-sm border border-surface-muted p-5 space-y-5">
             <div>
-              <p class="text-xs uppercase font-semibold text-gray-400">Imágenes</p>
-              <h3 class="text-lg font-semibold text-gray-900">La carpeta se generará automáticamente</h3>
-              <p class="text-sm text-gray-500 mt-1">
+              <p class="font-display text-[11px] font-semibold uppercase tracking-widest text-brand-orange-600">Imágenes</p>
+              <h3 class="font-display text-lg font-bold uppercase tracking-tight text-ink">La carpeta se generará automáticamente</h3>
+              <p class="text-sm text-ink-muted mt-1">
                 Usamos el tipo de producto y el nombre para crear una nueva carpeta en Cloudinary.
               </p>
             </div>
 
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Ruta generada</label>
+              <label class="form-label">Ruta generada</label>
               <input
                 ref="fileInputRef"
                 type="file"
@@ -230,24 +230,24 @@
                 :value="generatedFolderPath"
                 type="text"
                 readonly
-                class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 focus:outline-none"
+                class="form-input bg-surface-warm/40"
               />
-              <p class="text-xs text-gray-500 mt-1">
+              <p class="text-xs text-ink-muted mt-1">
                 Se creará automáticamente en Cloudinary al guardar.
               </p>
             </div>
 
-            <div class="space-y-3 rounded-xl border border-dashed border-gray-200 bg-white/60 p-4">
+            <div class="space-y-3 rounded-sm border border-dashed border-surface-muted bg-white/60 p-4">
               <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <p class="text-sm font-semibold text-gray-900">Subí imágenes desde tu computadora</p>
-                  <p class="text-xs text-gray-500">
+                  <p class="text-sm font-semibold text-ink">Subí imágenes desde tu computadora</p>
+                  <p class="text-xs text-ink-muted">
                     Las enviaremos a <span class="font-mono text-[11px]">{{ generatedFolderPath || 'la carpeta del producto' }}</span>
                   </p>
                 </div>
                 <button
                   type="button"
-                  class="inline-flex items-center gap-2 rounded-xl border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                  class="btn btn-secondary btn-sm disabled:opacity-50 disabled:cursor-not-allowed"
                   :disabled="!generatedFolderPath || uploadState.isUploading || isSaving"
                   @click="triggerFilePicker"
                 >
@@ -255,19 +255,19 @@
                   {{ uploadState.isUploading ? 'Subiendo...' : 'Seleccionar archivos' }}
                 </button>
               </div>
-              <p v-if="uploadState.isUploading" class="text-xs text-gray-500">
+              <p v-if="uploadState.isUploading" class="text-xs text-ink-muted">
                 Subiendo {{ uploadState.uploaded }} de {{ uploadState.total }} archivos...
               </p>
-              <p class="text-xs text-gray-500">
+              <p class="text-xs text-ink-muted">
                 Podés seleccionar varias imágenes a la vez. Se agregarán automáticamente a la galería de este producto.
               </p>
             </div>
 
             <!--
-            <div class="space-y-3 rounded-xl border border-dashed border-gray-200 bg-white/60 p-4">
+            <div class="space-y-3 rounded-sm border border-dashed border-surface-muted bg-white/60 p-4">
               <div>
-                <p class="text-sm font-semibold text-gray-900">Agregar imágenes manualmente</p>
-                <p class="text-xs text-gray-500">
+                <p class="text-sm font-semibold text-ink">Agregar imágenes manualmente</p>
+                <p class="text-xs text-ink-muted">
                   Si ya tenés URLs (por ejemplo, de un producto existente), pegá el enlace y usá los botones de abajo.
                   <strong>Agregar URL</strong> incorpora una sola imagen y
                   <strong>Agregar lista de URLs</strong> acepta múltiples enlaces, uno por línea.
@@ -277,13 +277,13 @@
                 <input
                   v-model="manualImageUrl"
                   type="text"
-                  class="flex-1 rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-900"
+                  class="form-input flex-1"
                   placeholder="https://res.cloudinary.com/.../imagen.jpg"
                   :disabled="isSaving"
                 />
                 <button
                   type="button"
-                  class="inline-flex items-center gap-2 rounded-xl border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100"
+                  class="btn btn-secondary btn-sm"
                   @click="addManualImage"
                 >
                   <IconPlus class="w-4 h-4" />
@@ -294,13 +294,13 @@
                 <textarea
                   v-model="bulkImagesInput"
                   rows="3"
-                  class="w-full rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-900"
+                  class="form-input"
                   placeholder="Pega varias URLs separadas por saltos de línea"
                   :disabled="isSaving"
                 />
                 <button
                   type="button"
-                  class="inline-flex items-center gap-2 rounded-xl border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100"
+                  class="btn btn-secondary btn-sm"
                   @click="addBulkImages"
                 >
                   <IconPlus class="w-4 h-4" />
@@ -312,15 +312,15 @@
 
             <div class="space-y-3">
               <div class="flex items-center justify-between">
-                <p class="text-sm font-semibold text-gray-900">Imágenes disponibles</p>
-                <span class="text-xs text-gray-500">{{ availableImages.length }} encontradas</span>
+                <p class="text-sm font-semibold text-ink">Imágenes disponibles</p>
+                <span class="text-xs text-ink-muted">{{ availableImages.length }} encontradas</span>
               </div>
 
               <div
                 v-if="availableImages.length === 0"
-                class="flex flex-col items-center justify-center rounded-xl border border-dashed border-gray-200 py-8 text-center text-gray-500"
+                class="flex flex-col items-center justify-center rounded-sm border border-dashed border-surface-muted py-8 text-center text-ink-muted"
               >
-                <IconImageOff class="w-10 h-10 mb-2 text-gray-400" />
+                <IconImageOff class="w-10 h-10 mb-2 text-ink-subtle" />
                 Aún no agregaste imágenes. Subilas desde tu computadora usando el botón superior.
               </div>
 
@@ -332,14 +332,14 @@
                   v-for="image in availableImages"
                   :key="image"
                   type="button"
-                  class="relative group aspect-square rounded-xl overflow-hidden border transition-all focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  :class="isImageSelected(image) ? 'border-blue-500 shadow-lg' : 'border-gray-200 hover:border-gray-300'"
+                  class="relative group aspect-square rounded-sm overflow-hidden border-2 transition-all focus:outline-none focus:ring-2 focus:ring-brand-orange-500/40"
+                  :class="isImageSelected(image) ? 'border-brand-orange-500 shadow-lg shadow-ink/10' : 'border-surface-muted hover:border-ink-subtle'"
                   @click="toggleImageSelection(image)"
                 >
                   <img :src="image" :alt="'Imagen disponible'" class="w-full h-full object-cover" />
                   <div
                     v-if="isImageSelected(image)"
-                    class="absolute top-2 right-2 bg-blue-600 text-white rounded-full p-1 shadow"
+                    class="absolute top-2 right-2 bg-brand-orange-600 text-white rounded-full p-1 shadow"
                   >
                     <IconCheck class="w-4 h-4" />
                   </div>
@@ -349,24 +349,24 @@
 
             <div v-if="form.selectedImages.length" class="space-y-3">
               <div class="flex items-center justify-between">
-                <p class="text-sm font-semibold text-gray-900">Orden de las imágenes</p>
-                <span class="text-xs text-gray-500">Arrastra con los controles para priorizar</span>
+                <p class="text-sm font-semibold text-ink">Orden de las imágenes</p>
+                <span class="text-xs text-ink-muted">Arrastra con los controles para priorizar</span>
               </div>
               <div class="space-y-2">
                 <div
                   v-for="(image, index) in form.selectedImages"
                   :key="image"
-                  class="flex items-center gap-3 rounded-xl border border-gray-100 bg-gray-50 px-3 py-2"
+                  class="flex items-center gap-3 rounded-sm border border-surface-muted bg-surface-warm/40 px-3 py-2"
                 >
-                  <span class="w-6 text-xs font-semibold text-gray-500">#{{ index + 1 }}</span>
-                  <img :src="image" alt="Seleccionada" class="w-16 h-16 rounded-lg object-cover border border-gray-200" />
-                  <div class="flex-1 truncate text-sm text-gray-600">
+                  <span class="w-6 font-display text-xs font-semibold text-ink-muted">#{{ index + 1 }}</span>
+                  <img :src="image" alt="Seleccionada" class="w-16 h-16 rounded-sm object-cover border border-surface-muted" />
+                  <div class="flex-1 truncate text-sm text-ink-light">
                     {{ image }}
                   </div>
                   <div class="flex items-center gap-1">
                     <button
                       type="button"
-                      class="p-1.5 rounded-full border border-gray-200 text-gray-600 hover:bg-gray-100 disabled:opacity-40"
+                      class="p-1.5 rounded-full border border-surface-muted text-ink-light hover:bg-surface-warm disabled:opacity-40"
                       :disabled="index === 0"
                       @click="moveSelectedImage(index, -1)"
                     >
@@ -374,7 +374,7 @@
                     </button>
                     <button
                       type="button"
-                      class="p-1.5 rounded-full border border-gray-200 text-gray-600 hover:bg-gray-100 disabled:opacity-40"
+                      class="p-1.5 rounded-full border border-surface-muted text-ink-light hover:bg-surface-warm disabled:opacity-40"
                       :disabled="index === form.selectedImages.length - 1"
                       @click="moveSelectedImage(index, 1)"
                     >
@@ -382,7 +382,7 @@
                     </button>
                     <button
                       type="button"
-                      class="p-1.5 rounded-full border border-gray-200 text-gray-600 hover:bg-red-50 hover:text-red-600"
+                      class="p-1.5 rounded-full border border-surface-muted text-ink-light hover:bg-brand-coral-50 hover:text-brand-coral-700 hover:border-brand-coral-200"
                       @click="removeSelectedImage(index)"
                     >
                       <IconClose class="w-4 h-4" />
@@ -394,14 +394,14 @@
           </section>
         </div>
 
-        <div class="px-6 py-4 border-t border-gray-100 bg-white flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3">
-          <p class="text-sm text-gray-500">
+        <div class="px-6 py-4 border-t border-surface-muted bg-white flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3">
+          <p class="text-sm text-ink-muted">
             Se crearán {{ form.selectedImages.length }} imágenes destacadas al publicar este producto.
           </p>
           <div class="flex items-center gap-3">
             <button
               type="button"
-              class="px-5 py-2 rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-50"
+              class="btn btn-secondary"
               :disabled="isSaving"
               @click="handleClose"
             >
@@ -409,7 +409,7 @@
             </button>
             <button
               type="button"
-              class="px-5 py-2 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 flex items-center gap-2 disabled:opacity-60"
+              class="btn btn-brand"
               :disabled="isSaving"
               @click="handleSubmit"
             >

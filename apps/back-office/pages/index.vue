@@ -1,23 +1,23 @@
 <template>
   <div class="space-y-6">
     <!-- Welcome Header -->
-    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-black p-6 md:p-8">
+    <div class="relative overflow-hidden rounded-sm bg-ink p-6 md:p-8">
       <!-- Background Pattern -->
-      <div class="absolute inset-0 opacity-5">
-        <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white"></div>
-        <div class="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-white"></div>
-        <div class="absolute right-1/4 top-1/2 h-20 w-20 rounded-full bg-white"></div>
+      <div class="absolute inset-0 opacity-[0.07]">
+        <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-brand-orange-400"></div>
+        <div class="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-brand-coral-400"></div>
+        <div class="absolute right-1/4 top-1/2 h-20 w-20 rounded-full bg-brand-olive-400"></div>
       </div>
 
       <!-- Content -->
       <div class="relative">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
-            <p class="text-gray-400 text-sm font-medium mb-1">{{ todayFormatted }}</p>
-            <h1 class="text-2xl md:text-3xl font-bold text-white mb-2">
+            <p class="font-display text-xs font-semibold uppercase tracking-widest text-brand-orange-400 mb-2">{{ todayFormatted }}</p>
+            <h1 class="font-display text-3xl md:text-4xl font-bold uppercase tracking-tight text-white mb-2 leading-none">
               {{ greeting }}, {{ displayName }}
             </h1>
-            <p class="text-gray-400">
+            <p class="text-surface-cream/70">
               Aqui tienes el resumen de tu tienda
             </p>
           </div>
@@ -26,10 +26,10 @@
               v-if="authStore.currentUser?.username === 'tati_valesani'"
               src="/tati_valesani.png"
               alt="Profile"
-              class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover ring-4 ring-white/10 shadow-lg"
+              class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover ring-4 ring-brand-orange-500/30 shadow-lg"
               style="object-position: center 10%;"
             />
-            <div v-else class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 flex items-center justify-center ring-4 ring-white/10">
+            <div v-else class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 flex items-center justify-center ring-4 ring-brand-orange-500/30">
               <IconAccount class="w-8 h-8 text-white" />
             </div>
           </div>
@@ -43,13 +43,13 @@
         <div class="card-body">
           <div class="flex items-center">
             <div class="flex-shrink-0">
-              <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                <IconPackageVariant class="w-5 h-5 text-blue-600" />
+              <div class="w-11 h-11 bg-brand-olive-100 rounded-sm flex items-center justify-center">
+                <IconPackageVariant class="w-5 h-5 text-brand-olive-700" />
               </div>
             </div>
             <div class="ml-4">
-              <p class="text-sm font-medium text-gray-600">Ordenes Nuevas</p>
-              <p class="text-2xl font-bold text-gray-900">{{ orderStats.nuevo }}</p>
+              <p class="font-display text-[11px] font-semibold uppercase tracking-widest text-ink-muted">Ordenes Nuevas</p>
+              <p class="font-display text-3xl font-bold text-ink leading-none mt-1">{{ orderStats.nuevo }}</p>
             </div>
           </div>
         </div>
@@ -59,13 +59,13 @@
         <div class="card-body">
           <div class="flex items-center">
             <div class="flex-shrink-0">
-              <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
-                <IconClockOutline class="w-5 h-5 text-orange-600" />
+              <div class="w-11 h-11 bg-brand-orange-100 rounded-sm flex items-center justify-center">
+                <IconClockOutline class="w-5 h-5 text-brand-orange-600" />
               </div>
             </div>
             <div class="ml-4">
-              <p class="text-sm font-medium text-gray-600">Pend. Contacto</p>
-              <p class="text-2xl font-bold text-gray-900">{{ orderStats.pendingContact }}</p>
+              <p class="font-display text-[11px] font-semibold uppercase tracking-widest text-ink-muted">Pend. Contacto</p>
+              <p class="font-display text-3xl font-bold text-ink leading-none mt-1">{{ orderStats.pendingContact }}</p>
             </div>
           </div>
         </div>
@@ -75,13 +75,13 @@
         <div class="card-body">
           <div class="flex items-center">
             <div class="flex-shrink-0">
-              <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">
-                <IconProgressClock class="w-5 h-5 text-yellow-600" />
+              <div class="w-11 h-11 bg-brand-coral-100 rounded-sm flex items-center justify-center">
+                <IconProgressClock class="w-5 h-5 text-brand-coral-600" />
               </div>
             </div>
             <div class="ml-4">
-              <p class="text-sm font-medium text-gray-600">En Proceso</p>
-              <p class="text-2xl font-bold text-gray-900">{{ orderStats.inProcess }}</p>
+              <p class="font-display text-[11px] font-semibold uppercase tracking-widest text-ink-muted">En Proceso</p>
+              <p class="font-display text-3xl font-bold text-ink leading-none mt-1">{{ orderStats.inProcess }}</p>
             </div>
           </div>
         </div>
@@ -91,13 +91,13 @@
         <div class="card-body">
           <div class="flex items-center">
             <div class="flex-shrink-0">
-              <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                <IconCashMultiple class="w-5 h-5 text-green-600" />
+              <div class="w-11 h-11 bg-brand-sage-100 rounded-sm flex items-center justify-center">
+                <IconCashMultiple class="w-5 h-5 text-brand-sage-700" />
               </div>
             </div>
             <div class="ml-4">
-              <p class="text-sm font-medium text-gray-600">Vendido</p>
-              <p class="text-2xl font-bold text-gray-900">${{ formatNumber(orderStats.totalRevenue) }}</p>
+              <p class="font-display text-[11px] font-semibold uppercase tracking-widest text-ink-muted">Vendido</p>
+              <p class="font-display text-3xl font-bold text-ink leading-none mt-1">${{ formatNumber(orderStats.totalRevenue) }}</p>
             </div>
           </div>
         </div>
@@ -109,82 +109,82 @@
       <div class="card-header">
         <div class="flex items-center justify-between">
           <div>
-            <h3 class="text-lg font-medium text-gray-900">Ordenes que Requieren Atencion</h3>
-            <p class="text-sm text-gray-500 mt-1">Ordenes nuevas o pendientes de contacto</p>
+            <h3 class="font-display text-lg font-bold uppercase tracking-tight text-ink">Ordenes que Requieren Atencion</h3>
+            <p class="text-sm text-ink-muted mt-1">Ordenes nuevas o pendientes de contacto</p>
           </div>
           <NuxtLink
             to="/orders"
-            class="text-sm text-gray-900 hover:text-black font-medium underline underline-offset-2"
+            class="font-display text-xs font-semibold uppercase tracking-wider text-brand-orange-600 hover:text-brand-orange-700 transition-colors underline underline-offset-4 decoration-2"
           >
-            Ver todas las ordenes
+            Ver todas
           </NuxtLink>
         </div>
       </div>
       <div class="card-body p-0">
         <!-- Loading -->
         <div v-if="loading" class="p-6 text-center">
-          <div class="spinner w-6 h-6 text-gray-900 mx-auto"></div>
+          <div class="spinner w-6 h-6 text-brand-orange-600 mx-auto"></div>
         </div>
 
         <!-- Empty State -->
-        <div v-else-if="ordersNeedingAttention.length === 0" class="p-6 text-center">
-          <IconCheckCircle class="w-12 h-12 text-green-400 mx-auto mb-3" />
-          <p class="text-gray-500">No hay ordenes pendientes de atencion</p>
+        <div v-else-if="ordersNeedingAttention.length === 0" class="p-8 text-center">
+          <IconCheckCircle class="w-12 h-12 text-brand-sage-500 mx-auto mb-3" />
+          <p class="text-ink-muted">No hay ordenes pendientes de atencion</p>
         </div>
 
         <!-- Orders Table -->
         <div v-else class="overflow-x-auto">
-          <table class="min-w-full divide-y divide-gray-200">
-            <thead class="bg-gray-50">
+          <table class="table">
+            <thead class="table-header">
               <tr>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Orden</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Cliente</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Total</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Estado</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Fecha</th>
-                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase"></th>
+                <th>Orden</th>
+                <th>Cliente</th>
+                <th>Total</th>
+                <th>Estado</th>
+                <th>Fecha</th>
+                <th class="text-right"></th>
               </tr>
             </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
+            <tbody class="table-body">
               <tr
                 v-for="order in ordersNeedingAttention"
                 :key="order.id"
-                class="hover:bg-gray-50"
+                class="hover:bg-surface-warm/50 transition-colors"
               >
-                <td class="px-6 py-4 whitespace-nowrap">
+                <td>
                   <div class="flex items-center">
-                    <span class="text-sm font-medium text-gray-900">{{ order.orderNumber }}</span>
+                    <span class="text-sm font-semibold text-ink">{{ order.orderNumber }}</span>
                     <span
                       v-if="!order.contactado"
-                      class="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium bg-orange-100 text-orange-700"
+                      class="ml-2 inline-flex items-center px-1.5 py-0.5 rounded-sm text-xs font-medium bg-brand-orange-100 text-brand-orange-700"
                       title="Pendiente de contacto"
                     >
                       <IconClock class="w-3 h-3" />
                     </span>
                   </div>
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap">
-                  <div class="text-sm text-gray-900">{{ order.customer?.name || '-' }}</div>
-                  <div class="text-xs text-gray-500">{{ order.customer?.phone || '-' }}</div>
+                <td>
+                  <div class="text-sm text-ink">{{ order.customer?.name || '-' }}</div>
+                  <div class="text-xs text-ink-muted">{{ order.customer?.phone || '-' }}</div>
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                <td class="text-sm font-semibold text-ink">
                   ${{ formatNumber(order.totalAmount) }}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap">
+                <td>
                   <span
-                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
+                    class="inline-flex items-center px-2.5 py-0.5 rounded-sm text-xs font-display font-semibold uppercase tracking-wide"
                     :class="getStatusBadgeClass(order.status)"
                   >
                     {{ getStatusLabel(order.status) }}
                   </span>
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="text-sm text-ink-muted">
                   {{ formatRelativeDate(order.createdAt) }}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-right">
+                <td class="text-right">
                   <NuxtLink
                     :to="`/orders/${order.id}`"
-                    class="text-gray-900 hover:text-black text-sm font-medium underline underline-offset-2"
+                    class="font-display text-xs font-semibold uppercase tracking-wider text-brand-orange-600 hover:text-brand-orange-700 transition-colors underline underline-offset-4 decoration-2"
                   >
                     Ver
                   </NuxtLink>
@@ -199,21 +199,21 @@
     <!-- Product Stats (Secondary) -->
     <div class="card">
       <div class="card-header">
-        <h3 class="text-lg font-medium text-gray-900">Resumen de Productos</h3>
+        <h3 class="font-display text-lg font-bold uppercase tracking-tight text-ink">Resumen de Productos</h3>
       </div>
       <div class="card-body">
         <div class="grid grid-cols-3 gap-4">
-          <div class="text-center p-4 bg-gray-50 rounded-lg">
-            <p class="text-2xl font-bold text-gray-900">{{ productStats.totalProducts }}</p>
-            <p class="text-sm text-gray-600">Total</p>
+          <div class="text-center p-4 bg-surface-warm/50 rounded-sm border border-surface-muted">
+            <p class="font-display text-3xl font-bold text-ink leading-none">{{ productStats.totalProducts }}</p>
+            <p class="font-display text-[11px] font-semibold uppercase tracking-widest text-ink-muted mt-2">Total</p>
           </div>
-          <div class="text-center p-4 bg-gray-50 rounded-lg">
-            <p class="text-2xl font-bold text-gray-900">{{ productStats.featuredProducts }}</p>
-            <p class="text-sm text-gray-600">Destacados</p>
+          <div class="text-center p-4 bg-surface-warm/50 rounded-sm border border-surface-muted">
+            <p class="font-display text-3xl font-bold text-ink leading-none">{{ productStats.featuredProducts }}</p>
+            <p class="font-display text-[11px] font-semibold uppercase tracking-widest text-ink-muted mt-2">Destacados</p>
           </div>
-          <div class="text-center p-4 bg-gray-50 rounded-lg">
-            <p class="text-2xl font-bold text-gray-900">{{ productStats.inStockProducts }}</p>
-            <p class="text-sm text-gray-600">En Stock</p>
+          <div class="text-center p-4 bg-surface-warm/50 rounded-sm border border-surface-muted">
+            <p class="font-display text-3xl font-bold text-ink leading-none">{{ productStats.inStockProducts }}</p>
+            <p class="font-display text-[11px] font-semibold uppercase tracking-widest text-ink-muted mt-2">En Stock</p>
           </div>
         </div>
       </div>
@@ -291,13 +291,13 @@ const ordersNeedingAttention = computed(() => {
 const getStatusBadgeClass = (status) => {
   const color = getStatusColor(status)
   const colorMap = {
-    blue: 'bg-blue-100 text-blue-800',
-    yellow: 'bg-yellow-100 text-yellow-800',
-    green: 'bg-green-100 text-green-800',
-    purple: 'bg-purple-100 text-purple-800',
-    orange: 'bg-orange-100 text-orange-800',
-    red: 'bg-red-100 text-red-800',
-    gray: 'bg-gray-100 text-gray-800'
+    blue: 'bg-brand-olive-100 text-brand-olive-800',
+    yellow: 'bg-brand-orange-100 text-brand-orange-800',
+    green: 'bg-brand-sage-100 text-brand-sage-800',
+    purple: 'bg-brand-coral-100 text-brand-coral-800',
+    orange: 'bg-brand-orange-100 text-brand-orange-800',
+    red: 'bg-brand-coral-100 text-brand-coral-800',
+    gray: 'bg-surface-muted text-ink-light'
   }
   return colorMap[color] || colorMap.gray
 }
@@ -377,21 +377,3 @@ onMounted(() => {
   loadDashboardData()
 })
 </script>
-
-<style scoped>
-.card {
-  @apply bg-white rounded-lg shadow-sm border border-gray-200;
-}
-
-.card-header {
-  @apply px-6 py-4 border-b border-gray-200;
-}
-
-.card-body {
-  @apply px-6 py-4;
-}
-
-.spinner {
-  @apply animate-spin rounded-full border-2 border-gray-200 border-t-current;
-}
-</style>

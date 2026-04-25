@@ -1,13 +1,13 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50">
+  <div class="min-h-screen bg-surface-cream">
     <!-- Sidebar -->
     <div
-      class="fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-xl border-r border-gray-200 transform transition-transform duration-300 ease-in-out lg:translate-x-0"
+      class="fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-xl shadow-ink/5 border-r border-surface-muted transform transition-transform duration-300 ease-in-out lg:translate-x-0"
       :class="{ '-translate-x-full': !sidebarOpen, 'translate-x-0': sidebarOpen }"
     >
       <div class="flex flex-col h-full">
         <!-- Logo -->
-        <div class="flex items-center justify-between px-6 py-6 border-b border-gray-200/60 bg-gradient-to-r from-white to-gray-50/50">
+        <div class="flex items-center justify-between px-6 py-6 border-b border-surface-muted bg-surface-cream">
           <div class="flex items-center">
             <img
               src="/cruzar-logo-no-bg.png"
@@ -15,40 +15,40 @@
               class="h-16 w-auto object-contain mr-3"
             />
             <div>
-              <h1 class="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+              <h1 class="font-display text-xl font-bold uppercase tracking-tight text-ink leading-none">
                 Cruzar Deportes
               </h1>
-              <p class="text-xs text-gray-500 font-medium">Back Office</p>
+              <p class="font-display text-[10px] font-semibold uppercase tracking-widest text-brand-orange-600 mt-1">Back Office</p>
             </div>
           </div>
           <button
             @click="toggleSidebar"
-            class="lg:hidden p-2 rounded-md text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+            class="lg:hidden p-2 rounded-sm text-ink-muted hover:text-ink hover:bg-surface-warm transition-colors"
           >
             <IconClose class="w-5 h-5" />
           </button>
         </div>
 
         <!-- User Info -->
-        <div class="px-6 py-4 border-b border-gray-200/60 bg-gray-50/50">
+        <div class="px-6 py-4 border-b border-surface-muted bg-surface-warm/50">
           <div class="flex items-center">
             <div class="flex-shrink-0">
               <img
                 v-if="authStore.currentUser?.username === 'tati_valesani'"
                 src="/tati_valesani.png"
                 alt="Administrator"
-                class="w-10 h-10 rounded-full object-cover shadow-md ring-2 ring-gray-900/10"
+                class="w-10 h-10 rounded-full object-cover shadow-md ring-2 ring-brand-orange-500/30"
                 style="object-position: center 10%;"
               />
-              <div v-else class="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center shadow-md">
-                <IconAccount class="w-[18px] h-[18px] text-white" />
+              <div v-else class="w-10 h-10 bg-ink rounded-full flex items-center justify-center shadow-md">
+                <IconAccount class="w-[18px] h-[18px] text-surface-cream" />
               </div>
             </div>
             <div class="ml-3">
-              <p class="text-sm font-semibold text-gray-900">
+              <p class="text-sm font-semibold text-ink">
                 {{ displayName }}
               </p>
-              <p class="text-xs text-gray-500 font-medium">
+              <p class="font-display text-[10px] font-semibold uppercase tracking-widest text-ink-muted">
                 Administrador
               </p>
             </div>
@@ -75,7 +75,7 @@
               @click="closeSidebarOnMobile"
             >
               <IconTshirtCrew class="w-5 h-5" />
-              <span>Gestión de Productos</span>
+              <span>Productos</span>
             </NuxtLink>
 
             <NuxtLink
@@ -95,7 +95,7 @@
               @click="closeSidebarOnMobile"
             >
               <IconTag class="w-5 h-5" />
-              <span>Tipos de Producto</span>
+              <span>Tipos</span>
             </NuxtLink>
 
             <NuxtLink
@@ -111,15 +111,15 @@
         </nav>
 
         <!-- Logout Button -->
-        <div class="p-6 border-t border-gray-200/60">
+        <div class="p-6 border-t border-surface-muted">
           <button
             @click="handleLogout"
-            class="w-full flex items-center justify-center px-4 py-3 text-sm font-medium text-red-600 rounded-lg hover:bg-red-50 hover:text-red-700 transition-all duration-200 border border-red-200 hover:border-red-300"
+            class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 font-display text-xs font-semibold uppercase tracking-wider text-brand-coral-700 rounded-sm border border-brand-coral-200 hover:bg-brand-coral-50 hover:border-brand-coral-400 hover:text-brand-coral-800 transition-all duration-200"
             :disabled="authStore.loading"
           >
-            <IconLogout class="w-[18px] h-[18px] mr-2" />
+            <IconLogout class="w-[18px] h-[18px]" />
             <span>Cerrar Sesión</span>
-            <div v-if="authStore.loading" class="ml-2">
+            <div v-if="authStore.loading" class="ml-1">
               <div class="spinner w-4 h-4"></div>
             </div>
           </button>
@@ -130,37 +130,37 @@
     <!-- Mobile Sidebar Overlay -->
     <div
       v-if="sidebarOpen"
-      class="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+      class="fixed inset-0 bg-ink bg-opacity-50 z-40 lg:hidden"
       @click="closeSidebar"
     />
 
     <!-- Main Content -->
     <div class="lg:pl-64 min-h-screen">
       <!-- Mobile Header -->
-      <div class="lg:hidden sticky top-0 z-40 bg-white shadow-sm border-b border-gray-200">
+      <div class="lg:hidden sticky top-0 z-40 bg-surface-cream/95 backdrop-blur-sm shadow-sm border-b border-surface-muted">
         <div class="flex items-center justify-between px-4 py-3">
           <button
             @click="toggleSidebar"
-            class="p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 transition-colors"
+            class="p-2 rounded-sm text-ink-muted hover:text-ink hover:bg-surface-warm transition-colors"
           >
             <IconMenu class="w-5 h-5" />
           </button>
-          <h1 class="text-lg font-semibold text-gray-900">
+          <h1 class="font-display text-lg font-bold uppercase tracking-tight text-ink">
             {{ pageTitle }}
           </h1>
-          <div class="w-8"></div> <!-- Placeholder for alignment -->
+          <div class="w-8"></div>
         </div>
       </div>
 
       <!-- Page Header (Desktop) -->
-      <div class="hidden lg:block bg-white/80 backdrop-blur-sm shadow-sm border-b border-gray-200 sticky top-0 z-30">
-        <div class="px-6 py-4">
+      <div class="hidden lg:block bg-surface-cream/95 backdrop-blur-sm border-b border-surface-muted sticky top-0 z-30">
+        <div class="px-6 py-5">
           <div class="flex items-center justify-between">
             <div>
-              <h1 class="text-2xl font-bold text-gray-900">
+              <h1 class="font-display text-2xl font-bold uppercase tracking-tight text-ink leading-none">
                 {{ pageTitle }}
               </h1>
-              <p v-if="pageDescription" class="mt-1 text-sm text-gray-500">
+              <p v-if="pageDescription" class="mt-2 text-sm text-ink-muted">
                 {{ pageDescription }}
               </p>
             </div>
@@ -184,11 +184,11 @@
     <!-- Global Loading Overlay -->
     <div
       v-if="globalLoading"
-      class="fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center z-50"
+      class="fixed inset-0 bg-surface-cream bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50"
     >
       <div class="text-center">
-        <div class="spinner w-12 h-12 text-gray-900 mx-auto mb-4"></div>
-        <p class="text-gray-600">Cargando...</p>
+        <div class="spinner w-12 h-12 text-brand-orange-600 mx-auto mb-4"></div>
+        <p class="font-display text-sm font-semibold uppercase tracking-wider text-ink-muted">Cargando...</p>
       </div>
     </div>
   </div>
@@ -230,7 +230,7 @@ const displayName = computed(() => {
 const pageTitle = computed(() => {
   const titleMap = {
     '/': 'Dashboard',
-    '/products': 'Gestión de Productos',
+    '/products': 'Productos',
     '/orders': 'Ordenes',
     '/product-types': 'Tipos de Producto',
     '/leagues': 'Ligas'

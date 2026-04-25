@@ -9,7 +9,7 @@
       >
         <div
           v-if="toast.show"
-          class="max-w-sm bg-white shadow-lg rounded-lg border border-gray-200 overflow-hidden"
+          class="max-w-sm bg-white shadow-lg shadow-ink/10 rounded-sm border-l-4 border border-surface-muted overflow-hidden"
           :class="getToastClass(toast.type)"
         >
           <div class="p-4">
@@ -22,17 +22,17 @@
                 />
               </div>
               <div class="ml-3 flex-1">
-                <p class="text-sm font-medium text-gray-900">
+                <p class="text-sm font-semibold text-ink">
                   {{ toast.title }}
                 </p>
-                <p v-if="toast.message" class="mt-1 text-sm text-gray-600">
+                <p v-if="toast.message" class="mt-1 text-sm text-ink-muted">
                   {{ toast.message }}
                 </p>
               </div>
               <div class="ml-4 flex-shrink-0">
                 <button
                   @click="removeToast(toast.id)"
-                  class="inline-flex text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  class="inline-flex text-ink-subtle hover:text-ink focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-orange-500"
                 >
                   <IconClose class="w-4 h-4" />
                 </button>
@@ -42,7 +42,7 @@
 
           <!-- Progress bar -->
           <div
-            class="h-1 bg-gray-100"
+            class="h-1 bg-surface-muted"
             :class="getProgressBarClass(toast.type)"
           >
             <div
@@ -81,32 +81,32 @@ const getToastIcon = (type) => {
 
 const getToastClass = (type) => {
   const classMap = {
-    success: 'border-green-200',
-    error: 'border-red-200',
-    warning: 'border-yellow-200',
-    info: 'border-blue-200'
+    success: 'border-l-brand-sage-500',
+    error: 'border-l-brand-coral-500',
+    warning: 'border-l-brand-orange-500',
+    info: 'border-l-brand-olive-500'
   }
-  return classMap[type] || 'border-gray-200'
+  return classMap[type] || 'border-l-ink-subtle'
 }
 
 const getIconClass = (type) => {
   const classMap = {
-    success: 'text-green-500',
-    error: 'text-red-500',
-    warning: 'text-yellow-500',
-    info: 'text-blue-500'
+    success: 'text-brand-sage-600',
+    error: 'text-brand-coral-600',
+    warning: 'text-brand-orange-600',
+    info: 'text-brand-olive-600'
   }
-  return classMap[type] || 'text-gray-500'
+  return classMap[type] || 'text-ink-muted'
 }
 
 const getProgressBarClass = (type) => {
   const classMap = {
-    success: 'bg-green-100',
-    error: 'bg-red-100',
-    warning: 'bg-yellow-100',
-    info: 'bg-blue-100'
+    success: 'bg-brand-sage-100',
+    error: 'bg-brand-coral-100',
+    warning: 'bg-brand-orange-100',
+    info: 'bg-brand-olive-100'
   }
-  return classMap[type] || 'bg-gray-100'
+  return classMap[type] || 'bg-surface-muted'
 }
 </script>
 

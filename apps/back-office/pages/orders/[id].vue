@@ -5,15 +5,15 @@
       <div class="flex items-center space-x-4">
         <button
           @click="goBack"
-          class="p-2 rounded-md text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors"
+          class="p-2 rounded-md text-ink-subtle hover:text-ink-light hover:bg-surface-warm transition-colors"
         >
           <IconArrowLeft class="w-5 h-5" />
         </button>
         <div>
-          <h1 class="text-2xl font-bold text-gray-900">
+          <h1 class="font-display text-2xl font-bold uppercase tracking-tight text-ink">
             Orden {{ order?.orderNumber || '...' }}
           </h1>
-          <p v-if="order" class="text-sm text-gray-500">
+          <p v-if="order" class="text-sm text-ink-muted">
             Creada el {{ formatDate(order.createdAt) }}
           </p>
         </div>
@@ -41,16 +41,16 @@
     <!-- Loading State -->
     <div v-if="loading && !order" class="card">
       <div class="card-body p-8 text-center">
-        <div class="spinner w-8 h-8 text-gray-900 mx-auto mb-4"></div>
-        <p class="text-gray-500">Cargando orden...</p>
+        <div class="spinner w-8 h-8 text-ink mx-auto mb-4"></div>
+        <p class="text-ink-muted">Cargando orden...</p>
       </div>
     </div>
 
     <!-- Order Not Found -->
     <div v-else-if="!order && !loading" class="card">
       <div class="card-body p-8 text-center">
-        <IconPackageVariantClosed class="w-12 h-12 text-gray-300 mx-auto mb-4" />
-        <p class="text-gray-500">Orden no encontrada</p>
+        <IconPackageVariantClosed class="w-12 h-12 text-ink-subtle mx-auto mb-4" />
+        <p class="text-ink-muted">Orden no encontrada</p>
         <button @click="goBack" class="btn btn-secondary mt-4">
           Volver a ordenes
         </button>
@@ -65,24 +65,24 @@
           <!-- Customer Info -->
           <div class="card">
             <div class="card-header">
-              <h3 class="text-lg font-medium text-gray-900 flex items-center">
-                <IconAccount class="w-5 h-5 mr-2 text-gray-400" />
+              <h3 class="font-display text-lg font-bold uppercase tracking-tight text-ink flex items-center">
+                <IconAccount class="w-5 h-5 mr-2 text-ink-subtle" />
                 Datos del Cliente
               </h3>
             </div>
             <div class="card-body">
               <dl class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <dt class="text-sm font-medium text-gray-500">Nombre</dt>
-                  <dd class="text-sm text-gray-900">{{ order.customer?.name || '-' }}</dd>
+                  <dt class="text-sm font-medium text-ink-muted">Nombre</dt>
+                  <dd class="text-sm text-ink">{{ order.customer?.name || '-' }}</dd>
                 </div>
                 <div>
-                  <dt class="text-sm font-medium text-gray-500">Telefono</dt>
-                  <dd class="text-sm text-gray-900">
+                  <dt class="text-sm font-medium text-ink-muted">Telefono</dt>
+                  <dd class="text-sm text-ink">
                     <div v-if="order.customer?.phone" class="flex items-center gap-3">
                       <a
                         :href="`tel:${order.customer.phone}`"
-                        class="text-gray-900 hover:text-black underline"
+                        class="text-ink hover:text-ink underline"
                       >
                         {{ order.customer.phone }}
                       </a>
@@ -90,7 +90,7 @@
                         :href="getWhatsAppUrl(order.customer.phone)"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-green-500 hover:bg-green-600 text-white text-xs font-medium rounded-lg transition-colors"
+                        class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-brand-sage-600 hover:bg-brand-sage-700 text-white text-xs font-medium rounded-lg transition-colors"
                         title="Abrir conversacion en WhatsApp"
                       >
                         <IconWhatsapp class="w-4 h-4" />
@@ -101,12 +101,12 @@
                   </dd>
                 </div>
                 <div>
-                  <dt class="text-sm font-medium text-gray-500">Email</dt>
-                  <dd class="text-sm text-gray-900">
+                  <dt class="text-sm font-medium text-ink-muted">Email</dt>
+                  <dd class="text-sm text-ink">
                     <a
                       v-if="order.customer?.email"
                       :href="`mailto:${order.customer.email}`"
-                      class="text-gray-900 hover:text-black underline"
+                      class="text-ink hover:text-ink underline"
                     >
                       {{ order.customer.email }}
                     </a>
@@ -114,8 +114,8 @@
                   </dd>
                 </div>
                 <div>
-                  <dt class="text-sm font-medium text-gray-500">Direccion</dt>
-                  <dd class="text-sm text-gray-900">{{ order.customer?.address || '-' }}</dd>
+                  <dt class="text-sm font-medium text-ink-muted">Direccion</dt>
+                  <dd class="text-sm text-ink">{{ order.customer?.address || '-' }}</dd>
                 </div>
               </dl>
             </div>
@@ -124,57 +124,57 @@
           <!-- Products -->
           <div class="card">
             <div class="card-header">
-              <h3 class="text-lg font-medium text-gray-900 flex items-center">
-                <IconTshirtCrew class="w-5 h-5 mr-2 text-gray-400" />
+              <h3 class="font-display text-lg font-bold uppercase tracking-tight text-ink flex items-center">
+                <IconTshirtCrew class="w-5 h-5 mr-2 text-ink-subtle" />
                 Productos ({{ order.items?.length || 0 }})
               </h3>
             </div>
             <div class="card-body p-0">
-              <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
+              <table class="min-w-full divide-y divide-surface-muted">
+                <thead class="bg-surface-warm/40">
                   <tr>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                    <th class="px-6 py-3 text-left font-display text-xs font-semibold uppercase tracking-widest text-ink-muted">
                       Producto
                     </th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                    <th class="px-6 py-3 text-left font-display text-xs font-semibold uppercase tracking-widest text-ink-muted">
                       Talla
                     </th>
-                    <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">
+                    <th class="px-6 py-3 text-right font-display text-xs font-semibold uppercase tracking-widest text-ink-muted">
                       Cantidad
                     </th>
-                    <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">
+                    <th class="px-6 py-3 text-right font-display text-xs font-semibold uppercase tracking-widest text-ink-muted">
                       Precio Unit.
                     </th>
-                    <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">
+                    <th class="px-6 py-3 text-right font-display text-xs font-semibold uppercase tracking-widest text-ink-muted">
                       Subtotal
                     </th>
                   </tr>
                 </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
+                <tbody class="bg-white divide-y divide-surface-muted">
                   <tr v-for="(item, index) in order.items" :key="index">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-ink">
                       {{ item.productName }}
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-ink-muted">
                       {{ item.size }}
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-right">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-ink text-right">
                       {{ item.quantity }}
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-right">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-ink-muted text-right">
                       ${{ formatNumber(item.unitPrice) }}
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 text-right">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-ink text-right">
                       ${{ formatNumber(item.subtotal) }}
                     </td>
                   </tr>
                 </tbody>
-                <tfoot class="bg-gray-50">
+                <tfoot class="bg-surface-warm/40">
                   <tr>
-                    <td colspan="4" class="px-6 py-4 text-sm font-medium text-gray-900 text-right">
+                    <td colspan="4" class="px-6 py-4 text-sm font-medium text-ink text-right">
                       Total Original:
                     </td>
-                    <td class="px-6 py-4 text-sm font-medium text-gray-900 text-right">
+                    <td class="px-6 py-4 text-sm font-medium text-ink text-right">
                       ${{ formatNumber(order.totalAmount) }}
                     </td>
                   </tr>
@@ -189,12 +189,12 @@
           <!-- Status & Quick Actions -->
           <div class="card">
             <div class="card-header">
-              <h3 class="text-lg font-medium text-gray-900">Estado de la Orden</h3>
+              <h3 class="font-display text-lg font-bold uppercase tracking-tight text-ink">Estado de la Orden</h3>
             </div>
             <div class="card-body space-y-4">
               <!-- Current Status Badge -->
               <div class="flex items-center justify-between">
-                <span class="text-sm text-gray-500">Estado actual:</span>
+                <span class="text-sm text-ink-muted">Estado actual:</span>
                 <span
                   class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium"
                   :class="getStatusBadgeClass(editableOrder.status)"
@@ -205,12 +205,12 @@
 
               <!-- Status Selector -->
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">
+                <label class="block text-sm font-medium text-ink-light mb-2">
                   Cambiar estado:
                 </label>
                 <select
                   v-model="editableOrder.status"
-                  class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  class="w-full px-3 py-2 border border-surface-muted rounded-md shadow-sm focus:ring-brand-orange-500/30 focus:border-brand-orange-500"
                 >
                   <option
                     v-for="status in ORDER_STATUSES"
@@ -223,10 +223,10 @@
               </div>
 
               <!-- Contactado Status -->
-              <div class="flex items-center justify-between py-2 border-t border-gray-200">
+              <div class="flex items-center justify-between py-2 border-t border-surface-muted">
                 <div>
-                  <span class="text-sm text-gray-700 font-medium">Cliente contactado</span>
-                  <p class="text-xs text-gray-500">Marcar cuando recibas el WhatsApp del cliente</p>
+                  <span class="text-sm text-ink-light font-medium">Cliente contactado</span>
+                  <p class="text-xs text-ink-muted">Marcar cuando recibas el WhatsApp del cliente</p>
                 </div>
                 <label class="relative inline-flex items-center cursor-pointer">
                   <input
@@ -234,14 +234,14 @@
                     v-model="editableOrder.contactado"
                     class="sr-only peer"
                   />
-                  <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500"></div>
+                  <div class="w-11 h-6 bg-surface-muted peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-brand-orange-500/30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-surface-muted after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-sage-600"></div>
                 </label>
               </div>
 
               <!-- Payment Method -->
-              <div class="flex items-center justify-between py-2 border-t border-gray-200">
-                <span class="text-sm text-gray-500">Metodo de pago:</span>
-                <span class="text-sm text-gray-900">
+              <div class="flex items-center justify-between py-2 border-t border-surface-muted">
+                <span class="text-sm text-ink-muted">Metodo de pago:</span>
+                <span class="text-sm text-ink">
                   {{ paymentMethodLabel }}
                 </span>
               </div>
@@ -251,35 +251,35 @@
           <!-- Pricing -->
           <div class="card">
             <div class="card-header">
-              <h3 class="text-lg font-medium text-gray-900">Monto</h3>
+              <h3 class="font-display text-lg font-bold uppercase tracking-tight text-ink">Monto</h3>
             </div>
             <div class="card-body space-y-4">
               <div class="flex items-center justify-between">
-                <span class="text-sm text-gray-500">Total productos:</span>
-                <span class="text-sm text-gray-900">${{ formatNumber(order.totalAmount) }}</span>
+                <span class="text-sm text-ink-muted">Total productos:</span>
+                <span class="text-sm text-ink">${{ formatNumber(order.totalAmount) }}</span>
               </div>
 
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">
+                <label class="block text-sm font-medium text-ink-light mb-2">
                   Monto ajustado (descuentos):
                 </label>
                 <div class="relative">
-                  <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
+                  <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-ink-muted">$</span>
                   <input
                     v-model.number="editableOrder.adjustedAmount"
                     type="number"
                     min="0"
                     step="1"
-                    class="w-full pl-7 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                    class="w-full pl-7 pr-3 py-2 border border-surface-muted rounded-md shadow-sm focus:ring-brand-orange-500/30 focus:border-brand-orange-500"
                   />
                 </div>
               </div>
 
               <div
                 v-if="editableOrder.adjustedAmount !== order.totalAmount"
-                class="p-3 bg-yellow-50 rounded-md"
+                class="p-3 bg-brand-orange-50 rounded-md"
               >
-                <p class="text-sm text-yellow-800">
+                <p class="text-sm text-brand-orange-800">
                   Descuento aplicado: ${{ formatNumber(order.totalAmount - editableOrder.adjustedAmount) }}
                 </p>
               </div>
@@ -289,14 +289,14 @@
           <!-- Notes -->
           <div class="card">
             <div class="card-header">
-              <h3 class="text-lg font-medium text-gray-900">Notas</h3>
+              <h3 class="font-display text-lg font-bold uppercase tracking-tight text-ink">Notas</h3>
             </div>
             <div class="card-body">
               <textarea
                 v-model="editableOrder.notes"
                 rows="4"
                 placeholder="Agregar notas sobre la conversacion de WhatsApp, acuerdos, etc..."
-                class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                class="w-full px-3 py-2 border border-surface-muted rounded-md shadow-sm focus:ring-brand-orange-500/30 focus:border-brand-orange-500"
               ></textarea>
             </div>
           </div>
@@ -311,13 +311,13 @@
       @click.self="showDeleteConfirm = false"
     >
       <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6">
-        <div class="flex items-center justify-center w-12 h-12 mx-auto bg-red-100 rounded-full mb-4">
-          <IconAlertCircle class="w-6 h-6 text-red-600" />
+        <div class="flex items-center justify-center w-12 h-12 mx-auto bg-brand-coral-100 rounded-full mb-4">
+          <IconAlertCircle class="w-6 h-6 text-brand-coral-600" />
         </div>
-        <h3 class="text-lg font-medium text-gray-900 text-center mb-2">
+        <h3 class="font-display text-lg font-bold uppercase tracking-tight text-ink text-center mb-2">
           Eliminar Orden
         </h3>
-        <p class="text-sm text-gray-500 text-center mb-6">
+        <p class="text-sm text-ink-muted text-center mb-6">
           ¿Estas seguro de que deseas eliminar la orden {{ order?.orderNumber }}?
           Esta accion no se puede deshacer.
         </p>
@@ -404,13 +404,13 @@ const paymentMethodLabel = computed(() => {
 const getStatusBadgeClass = (status) => {
   const color = getStatusColor(status)
   const colorMap = {
-    blue: 'bg-blue-100 text-blue-800',
-    yellow: 'bg-yellow-100 text-yellow-800',
-    green: 'bg-green-100 text-green-800',
-    purple: 'bg-purple-100 text-purple-800',
-    orange: 'bg-orange-100 text-orange-800',
-    red: 'bg-red-100 text-red-800',
-    gray: 'bg-gray-100 text-gray-800'
+    blue: 'bg-brand-olive-100 text-brand-olive-800',
+    yellow: 'bg-brand-orange-100 text-brand-orange-800',
+    green: 'bg-brand-sage-100 text-brand-sage-800',
+    purple: 'bg-brand-coral-100 text-brand-coral-800',
+    orange: 'bg-brand-orange-100 text-brand-orange-800',
+    red: 'bg-brand-coral-100 text-brand-coral-800',
+    gray: 'bg-surface-muted text-ink-light'
   }
   return colorMap[color] || colorMap.gray
 }
@@ -508,27 +508,27 @@ onMounted(() => {
 }
 
 .btn-primary {
-  @apply border-transparent text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed;
+  @apply border-transparent text-white bg-brand-orange-600 hover:bg-brand-orange-700 focus:ring-brand-orange-500/30 disabled:opacity-50 disabled:cursor-not-allowed;
 }
 
 .btn-secondary {
-  @apply border-gray-300 text-gray-700 bg-white hover:bg-gray-50 focus:ring-blue-500;
+  @apply border-surface-muted text-ink-light bg-white hover:bg-surface-warm/50 focus:ring-brand-orange-500/30;
 }
 
 .btn-danger {
-  @apply border-transparent text-white bg-red-600 hover:bg-red-700 focus:ring-red-500 disabled:opacity-50 disabled:cursor-not-allowed;
+  @apply border-transparent text-white bg-brand-coral-600 hover:bg-brand-coral-700 focus:ring-brand-coral-500/30 disabled:opacity-50 disabled:cursor-not-allowed;
 }
 
 .spinner {
-  @apply animate-spin rounded-full border-2 border-gray-200 border-t-current;
+  @apply animate-spin rounded-full border-2 border-surface-muted border-t-current;
 }
 
 .card {
-  @apply bg-white rounded-lg shadow-sm border border-gray-200;
+  @apply bg-white rounded-lg shadow-sm border border-surface-muted;
 }
 
 .card-header {
-  @apply px-6 py-4 border-b border-gray-200;
+  @apply px-6 py-4 border-b border-surface-muted;
 }
 
 .card-body {
