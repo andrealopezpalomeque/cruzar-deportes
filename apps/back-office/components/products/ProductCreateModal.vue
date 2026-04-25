@@ -464,7 +464,7 @@ const props = defineProps({
 const emit = defineEmits(['close', 'created'])
 
 const { saveProduct } = useSharedProducts()
-const { compressImage, uploadImage } = useCloudinary()
+const { compressImage, uploadImage } = useUpload()
 const toast = useToast()
 
 const DEFAULT_SIZES = ['S', 'M', 'L', 'XL', 'XXL']
@@ -782,7 +782,7 @@ const handleSubmit = async () => {
     allAvailableImages: form.allAvailableImages.length > 0
       ? [...new Set(form.allAvailableImages)]
       : [...form.selectedImages],
-    cloudinaryFolderPath: generatedFolderPath.value,
+    folderPath: generatedFolderPath.value,
     sizes: [...DEFAULT_SIZES],
     inStock: form.inStock,
     featured: form.featured,
