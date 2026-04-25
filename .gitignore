@@ -36,3 +36,4 @@ firebase-debug.*.log
 skills-lock.json
 .superpowers/
 docs/superpowers/
+.worktrees/
