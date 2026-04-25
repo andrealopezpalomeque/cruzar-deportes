@@ -1072,7 +1072,7 @@ const {
 } = useSharedProducts()
 const { loadProductTypes } = useProductTypes()
 const { loadLeagues, loadLeaguesByProductType } = useLeagues()
-const { compressImage, getFolderImages, uploadImage, deleteImage: deleteCloudinaryImage } = useCloudinary()
+const { compressImage, uploadImage, deleteImage: deleteCloudinaryImage } = useUpload()
 const toast = useToast()
 
 // Helper to optimize Cloudinary URLs
@@ -1253,8 +1253,8 @@ const toggleSelectAllOnPage = () => {
 }
 
 const getProductFolderPath = (product) => {
-  if (product.cloudinaryFolderPath) {
-    return product.cloudinaryFolderPath
+  if (product.folderPath) {
+    return product.folderPath
   }
   const normalizedSlug = slugify(product.slug || product.name || product.id || 'producto')
   const folderSegment = normalizedSlug.replace(/-/g, '_')
@@ -1322,7 +1322,7 @@ const handleModalFilesSelected = async (event) => {
 
   if (uploadedUrls.length > 0) {
     await appendImagesToProduct(selectedProduct.value, uploadedUrls)
-    selectedProduct.value.cloudinaryFolderPath = folderPath
+    selectedProduct.value.folderPath = folderPath
     availableImages.value = [...selectedProduct.value.allAvailableImages]
     tempSelectedImages.value = [...selectedProduct.value.selectedImages]
     toast.success(
@@ -1879,14 +1879,7 @@ const openImageBrowser = async (product) => {
 
     let resolvedImages = []
 
-    if (product.cloudinaryFolderPath) {
-      try {
-        const assets = await getFolderImages(product.cloudinaryFolderPath)
-        resolvedImages = assets.map(asset => asset.secure_url)
-      } catch (cloudError) {
-        console.warn(`No se pudo leer la carpeta ${product.cloudinaryFolderPath}:`, cloudError)
-      }
-    }
+    // Images are stored in allAvailableImages after Spaces migration
 
     // If no images from Cloudinary folder, use product's existing images
     if (resolvedImages.length === 0) {
@@ -2009,8 +2002,8 @@ const saveProductChanges = async (product) => {
   try {
     savingProducts[productId] = true
 
-    // Preserve the existing cloudinaryFolderPath, or generate one if it doesn't exist
-    const existingFolderPath = product.cloudinaryFolderPath
+    // Preserve the existing folderPath, or generate one if it doesn't exist
+    const existingFolderPath = product.folderPath
     const folderPath = existingFolderPath || getProductFolderPath(product)
 
     const payload = {
@@ -2024,7 +2017,7 @@ const saveProductChanges = async (product) => {
       images: product.images || product.selectedImages || [],
       selectedImages: product.selectedImages || product.images || [],
       allAvailableImages: product.allAvailableImages || product.images || [],
-      cloudinaryFolderPath: folderPath,  // Always preserve the folder path
+      folderPath: folderPath,  // Always preserve the folder path
       inStock: product.inStock,
       featured: product.featured
     }
@@ -2035,7 +2028,7 @@ const saveProductChanges = async (product) => {
     product.name = trimmedName
     product.description = trimmedDescription
     product.slug = generatedSlug
-    product.cloudinaryFolderPath = folderPath  // Store the folder path locally too
+    product.folderPath = folderPath  // Store the folder path locally too
     product.lastModified = new Date().toISOString()
     captureDetailsSnapshot(product)
     delete dirtyProducts[productId]
