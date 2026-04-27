@@ -73,7 +73,6 @@ PM2 keeps an in-memory copy of env vars from when the process started. Always pa
 ```bash
 ssh root@<DROPLET_IP>
 cd /var/www/cruzar-deportes/services/api
-cp .env .env.bak.$(date +%Y%m%d-%H%M%S)
 # edit .env
 pm2 restart cruzar-api --update-env
 pm2 logs cruzar-api --lines 15 --nostream
